@@ -1,0 +1,205 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "LimitVolumeBox_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'LimitVolumeBox_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/LimitVolume/LimitVolumeBox.6"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'Actor'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "PalLimitVolumeBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PalLimitVolumeBoxComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DefaultSceneRoot",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "LimitVolumeBox_C'Default__LimitVolumeBox_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/LimitVolume/LimitVolumeBox.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "LimitVolumeBox_C",
+    "Name": "Default__LimitVolumeBox_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/LimitVolume/LimitVolumeBox.LimitVolumeBox_C'",
+    "Properties": {
+      "PrimaryActorTick": {
+        "bStartWithTickEnabled": false
+      }
+    }
+  },
+  {
+    "Type": "PalLimitVolumeBoxComponent",
+    "Name": "PalLimitVolumeBox_GEN_VARIABLE",
+    "Outer": "LimitVolumeBox_C",
+    "Class": "UScriptClass'PalLimitVolumeBoxComponent'",
+    "Properties": {
+      "LimitFlags": 7,
+      "BodyInstance": {
+        "CollisionProfileName": "Volume_PlayerOnly",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "LimitVolumeBox_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'LimitVolumeBox_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/LimitVolume/LimitVolumeBox.3"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'LimitVolumeBox_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/LimitVolume/LimitVolumeBox.5"
+        }
+      ],
+      "VariableGuid": "BA38D757-4ECDE377-EF7E4AB2-3D4DCED6",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PalLimitVolumeBoxComponent'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PalLimitVolumeBoxComponent'LimitVolumeBox_C:PalLimitVolumeBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/LimitVolume/LimitVolumeBox.2"
+      },
+      "VariableGuid": "2520E836-46F07399-99DC4F97-FC15EAEE",
+      "InternalVariableName": "PalLimitVolumeBox"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "LimitVolumeBox_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'LimitVolumeBox_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/LimitVolume/LimitVolumeBox.4"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'LimitVolumeBox_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/LimitVolume/LimitVolumeBox.4"
+        },
+        {
+          "ObjectName": "SCS_Node'LimitVolumeBox_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/LimitVolume/LimitVolumeBox.5"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'LimitVolumeBox_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/LimitVolume/LimitVolumeBox.4"
+      }
+    }
+  }
+]

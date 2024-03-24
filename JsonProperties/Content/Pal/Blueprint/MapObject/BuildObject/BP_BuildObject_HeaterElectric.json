@@ -1,0 +1,867 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_BuildObject_SwitchHeatSource_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_SwitchHeatSource.0"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.28"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_BuildObject_HeaterElectric_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.10"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_BuildObject_HeaterElectric_C:ExecuteUbergraph_BP_BuildObject_HeaterElectric'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.6"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_BuildObject_SwitchHeatSource_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_SwitchHeatSource.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_BuildObject_HeaterElectric_C:SetActive_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.9"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObject_HeaterElectric_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.8"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObject_HeaterElectric_C:OnAvailable_BlueprintImpl'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.7"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObject_HeaterElectric_C:ExecuteUbergraph_BP_BuildObject_HeaterElectric'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.6"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PalWorkFacing1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PalWorkFacingComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NS_StableFire_HeaterElectric1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NS_StableFire_HeaterElectric",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_InteractableBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CheckOverlapCollision",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BuildWorkableBounds",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SM_Wall_Stone",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Root",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_BuildObject_HeaterElectric": {
+        "ObjectName": "Function'BP_BuildObject_HeaterElectric_C:ExecuteUbergraph_BP_BuildObject_HeaterElectric'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.6"
+      },
+      "OnAvailable_BlueprintImpl": {
+        "ObjectName": "Function'BP_BuildObject_HeaterElectric_C:OnAvailable_BlueprintImpl'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.7"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_BuildObject_HeaterElectric_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.8"
+      },
+      "SetActive_Internal": {
+        "ObjectName": "Function'BP_BuildObject_HeaterElectric_C:SetActive_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.9"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_BuildObject_HeaterElectric_C'Default__BP_BuildObject_HeaterElectric_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.3"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "BuildWorkableBounds_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 270.0,
+        "Y": 270.0,
+        "Z": 47.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "bApplyImpulseOnDamage": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "CheckOverlapCollision_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 120.0,
+        "Y": 120.0,
+        "Z": 230.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "CollisionProfileName": "BuildingOverlap",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 230.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BP_BuildObject_HeaterElectric_C",
+    "Name": "Default__BP_BuildObject_HeaterElectric_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.BP_BuildObject_HeaterElectric_C'",
+    "Template": {
+      "ObjectName": "BP_BuildObject_SwitchHeatSource_C'Default__BP_BuildObject_SwitchHeatSource_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_SwitchHeatSource.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "VisualCtrl": {
+        "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_HeaterElectric_C:VisualController'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.13"
+      },
+      "OverlapCheckCollisionRef": {
+        "ComponentProperty": "CheckOverlapCollision"
+      },
+      "DamageReaction": {
+        "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_HeaterElectric_C:DamageReaction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.14"
+      },
+      "VisualEffect": {
+        "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_HeaterElectric_C:VisualEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.15"
+      }
+    }
+  },
+  {
+    "Type": "BP_HeatSourceSphereComponent_C",
+    "Name": "BP_HeatSourceComponent_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Component/HeatSource/BP_HeatSourceSphereComponent.BP_HeatSourceSphereComponent_C'",
+    "Template": {
+      "ObjectName": "BP_HeatSourceSphereComponent_C'BP_BuildObject_SwitchHeatSource_C:BP_HeatSourceComponent_GEN_VARIABLE'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_SwitchHeatSource.2"
+    },
+    "Properties": {
+      "HeatLevel_DayTime": 2,
+      "HeatLevel_NightTime": 2,
+      "SphereRadius": 3000.0,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 48.35873
+      }
+    }
+  },
+  {
+    "Type": "BP_InteractableBox_C",
+    "Name": "BP_InteractableBox_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.BP_InteractableBox_C'",
+    "Template": {
+      "ObjectName": "BP_InteractableBox_C'Default__BP_InteractableBox_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.1"
+    },
+    "Properties": {
+      "BoxExtent": {
+        "X": 250.0,
+        "Y": 250.0,
+        "Z": 47.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_BuildObject_HeaterElectric",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnAvailable_BlueprintImpl",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBuildObject:OnAvailable_BlueprintImpl'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_BuildObject_SwitchHeatSource_C:ReceiveBeginPlay'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_SwitchHeatSource.8"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_BuildObject_SwitchHeatSource_C:ReceiveBeginPlay'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_SwitchHeatSource.8"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetActive_Internal",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "bOn",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'InheritableComponentHandler'",
+    "Properties": {
+      "Records": [
+        {
+          "ComponentClass": {
+            "ObjectName": "BlueprintGeneratedClass'BP_HeatSourceSphereComponent_C'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Component/HeatSource/BP_HeatSourceSphereComponent.0"
+          },
+          "ComponentTemplate": {
+            "ObjectName": "BP_HeatSourceSphereComponent_C'BP_BuildObject_HeaterElectric_C:BP_HeatSourceComponent_GEN_VARIABLE'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.4"
+          },
+          "ComponentKey": {
+            "OwnerClass": {
+              "ObjectName": "BlueprintGeneratedClass'BP_BuildObject_SwitchHeatSource_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_SwitchHeatSource.0"
+            },
+            "SCSVariableName": "BP_HeatSourceComponent",
+            "AssociatedGuid": "1E09FEED-4514E631-8C2D98A5-E15B9BA0"
+          },
+          "CookedComponentInstancingData": {
+            "ChangedPropertyList": [],
+            "bHasValidCookedData": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "NS_StableFire_HeaterElectric1_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "Asset": {
+        "ObjectName": "NiagaraSystem'NS_StableFire_HeaterElectric'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/HeaterElectric/NS_StableFire_HeaterElectric.14"
+      },
+      "OverrideParameters": {},
+      "RelativeLocation": {
+        "X": 4.7691884,
+        "Y": -3.9384352E-07,
+        "Z": 84.336876
+      },
+      "RelativeScale3D": {
+        "X": 0.3,
+        "Y": 0.3,
+        "Z": 0.3
+      }
+    }
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "NS_StableFire_HeaterElectric_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "Asset": {
+        "ObjectName": "NiagaraSystem'NS_StableFire_HeaterElectric'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/HeaterElectric/NS_StableFire_HeaterElectric.14"
+      },
+      "OverrideParameters": {},
+      "RelativeLocation": {
+        "X": -2.2737368E-13,
+        "Y": -5.7128057E-07,
+        "Z": 384.59128
+      }
+    }
+  },
+  {
+    "Type": "PalBuildObjectVisualControlComponent",
+    "Name": "VisualController",
+    "Outer": "Default__BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'PalBuildObjectVisualControlComponent'",
+    "Template": {
+      "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_SwitchHeatSource_C:VisualController'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_SwitchHeatSource.9"
+    }
+  },
+  {
+    "Type": "PalMapObjectDamageReactionComponent",
+    "Name": "DamageReaction",
+    "Outer": "Default__BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'PalMapObjectDamageReactionComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_SwitchHeatSource_C:DamageReaction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_SwitchHeatSource.10"
+    }
+  },
+  {
+    "Type": "PalMapObjectVisualEffectComponent",
+    "Name": "VisualEffect",
+    "Outer": "Default__BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'PalMapObjectVisualEffectComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_SwitchHeatSource_C:VisualEffect'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_SwitchHeatSource.11"
+    }
+  },
+  {
+    "Type": "PalWorkFacingComponent",
+    "Name": "PalWorkFacing1_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'PalWorkFacingComponent'",
+    "Properties": {
+      "RelativeLocation": {
+        "X": 149.74416,
+        "Y": -2.2751021E-07,
+        "Z": 6.008072E-08
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "Root_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_HeaterElectric_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.17"
+      },
+      "VariableGuid": "B723046F-416C5C93-3C52F8B8-6FCF03D8",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'BP_BuildObject_HeaterElectric_C:NS_StableFire_HeaterElectric_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.12"
+      },
+      "VariableGuid": "A1F47458-47B5E414-06B17BB6-7D179B4C",
+      "InternalVariableName": "NS_StableFire_HeaterElectric"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_HeaterElectric_C:Root_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.18"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_SwitchHeatSource_C",
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.22"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.23"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.24"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.26"
+        }
+      ],
+      "VariableGuid": "FABFAA1C-40AD2AC9-040CF9A0-1D93FD8A",
+      "InternalVariableName": "Root"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_BuildObject_HeaterElectric_C:SM_Wall_Stone_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.29"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.20"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_8'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.27"
+        }
+      ],
+      "VariableGuid": "62051021-4242B820-2FE1A29B-4CAA1948",
+      "InternalVariableName": "SM_Wall_Stone"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_HeaterElectric_C:BuildWorkableBounds_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.1"
+      },
+      "VariableGuid": "D958371F-473A837F-7017CBA6-982BE50F",
+      "InternalVariableName": "BuildWorkableBounds"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_HeaterElectric_C:CheckOverlapCollision_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.2"
+      },
+      "VariableGuid": "259B0EC2-4D2E7BF9-FDD5CB8A-3946CD53",
+      "InternalVariableName": "CheckOverlapCollision"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PalWorkFacingComponent'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PalWorkFacingComponent'BP_BuildObject_HeaterElectric_C:PalWorkFacing1_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.16"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_SwitchHeatSource_C",
+      "VariableGuid": "96EDF905-4228DC38-9A4F9BBF-BA475914",
+      "InternalVariableName": "PalWorkFacing1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_7",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_InteractableBox_C'BP_BuildObject_HeaterElectric_C:BP_InteractableBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.5"
+      },
+      "VariableGuid": "42F566A2-41E84F8B-C52C6D90-C9D8B49B",
+      "InternalVariableName": "BP_InteractableBox"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_8",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'BP_BuildObject_HeaterElectric_C:NS_StableFire_HeaterElectric1_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.11"
+      },
+      "VariableGuid": "5E6D0AF7-4BAB139E-C094A19C-44F0C1E2",
+      "InternalVariableName": "NS_StableFire_HeaterElectric1"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.21"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.25"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.21"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.22"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.23"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.24"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.26"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.20"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_8'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.27"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.25"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_BuildObject_HeaterElectric_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_HeaterElectric.19"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "SM_Wall_Stone_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_HeaterElectric_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_HeaterElectric'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/HeaterElectric/SM_HeaterElectric.2"
+      },
+      "BodyInstance": {
+        "CollisionProfileName": "MapObjectPhysicsClimbable",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AroundInfoCollect",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "ClimbRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 5.0
+      }
+    }
+  }
+]

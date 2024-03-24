@@ -1,0 +1,141 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_SaintCentaur_Mining",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "BlendIn": {
+        "BlendTime": 0.1,
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "BlendOut": {
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "Default",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_SaintCentaur_Mining'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SaintCentaur/AM_SaintCentaur_Mining.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.333333,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_SaintCentaur_Deforest'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SaintCentaur/AS_SaintCentaur_Deforest.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'AS_SaintCentaur_Deforest'",
+                  "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SaintCentaur/AS_SaintCentaur_Deforest.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 1.333333,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalEffect",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "PalAnimNotifyState_Effect'AM_SaintCentaur_Mining:PalAnimNotifyState_Effect_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SaintCentaur/AM_SaintCentaur_Mining.1"
+          },
+          "Duration": 0.15013748,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_SaintCentaur_Mining'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SaintCentaur/AM_SaintCentaur_Mining.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": 0,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 1.333333,
+            "LinkValue": 0.67509043,
+            "LinkedSequence": {
+              "ObjectName": "AnimSequence'AS_SaintCentaur_Deforest'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SaintCentaur/AS_SaintCentaur_Deforest.0"
+            }
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_SaintCentaur_Mining'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SaintCentaur/AM_SaintCentaur_Mining.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.333333,
+          "LinkValue": 0.52495295,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_SaintCentaur_Deforest'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SaintCentaur/AS_SaintCentaur_Deforest.0"
+          }
+        }
+      ],
+      "SequenceLength": 1.333333,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SK_SaintCentaur_Skeleton'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Skeleton/SaintCentaur/SK_SaintCentaur_Skeleton.2"
+      }
+    },
+    "SkeletonGuid": "1B6F86C0-49C6A206-F6AA8B84-7880E34E"
+  },
+  {
+    "Type": "PalAnimNotifyState_Effect",
+    "Name": "PalAnimNotifyState_Effect_0",
+    "Outer": "AM_SaintCentaur_Mining",
+    "Class": "UScriptClass'PalAnimNotifyState_Effect'",
+    "Properties": {
+      "UserParameterMap": [
+        {
+          "Scale": 1.5
+        }
+      ],
+      "Template": {
+        "ObjectName": "NiagaraSystem'NS_PickelAxeHit_Pal'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/Pickel/NS_PickelAxeHit_Pal.56"
+      },
+      "SocketName": "root",
+      "LocationOffset": {
+        "X": 10.0,
+        "Y": 280.0,
+        "Z": 150.0
+      }
+    }
+  }
+]

@@ -1,0 +1,121 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_VolcanicMonster_SleepLoop",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "BlendIn": {
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "BlendOut": {
+        "BlendTime": 0.0,
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "Default",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_VolcanicMonster_SleepLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/VolcanicMonster/AM_VolcanicMonster_SleepLoop.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 4.0,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_VolcanicMonster_SleepLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/VolcanicMonster/AS_VolcanicMonster_SleepLoop.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'AS_VolcanicMonster_SleepLoop'",
+                  "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/VolcanicMonster/AS_VolcanicMonster_SleepLoop.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 4.0,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0001,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalFacialEye",
+          "Notify": {
+            "ObjectName": "PalAnimNotify_FacialEye'AM_VolcanicMonster_SleepLoop:PalAnimNotify_FacialEye_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/VolcanicMonster/AM_VolcanicMonster_SleepLoop.1"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_VolcanicMonster_SleepLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/VolcanicMonster/AM_VolcanicMonster_SleepLoop.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 4.0,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_VolcanicMonster_SleepLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/VolcanicMonster/AS_VolcanicMonster_SleepLoop.0"
+          }
+        }
+      ],
+      "SequenceLength": 4.0,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SK_VolcanicMonster_Skeleton'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Skeleton/VolcanicMonster/SK_VolcanicMonster_Skeleton.1"
+      }
+    },
+    "SkeletonGuid": "D4711E29-470468D6-35938CAA-12F6071A"
+  },
+  {
+    "Type": "PalAnimNotify_FacialEye",
+    "Name": "PalAnimNotify_FacialEye_0",
+    "Outer": "AM_VolcanicMonster_SleepLoop",
+    "Class": "UScriptClass'PalAnimNotify_FacialEye'",
+    "Properties": {
+      "EyeType": "EPalFacialEyeType::Close"
+    }
+  }
+]

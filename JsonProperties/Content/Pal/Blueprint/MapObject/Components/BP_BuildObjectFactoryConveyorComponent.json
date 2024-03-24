@@ -1,0 +1,467 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_BuildObjectFactoryConveyorComponent_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "SuperStruct": {
+      "ObjectName": "Class'PalItemFlowSplineComponent'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_BuildObjectFactoryConveyorComponent_C:SetRunningConveyor'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.5"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObjectFactoryConveyorComponent_C:OnUpdateRecipe'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.4"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObjectFactoryConveyorComponent_C:OnUpdateCurrentEnergyState'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.3"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObjectFactoryConveyorComponent_C:OnReadyOwnerEnergyModule'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.2"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObjectFactoryConveyorComponent_C:SetupByOwner'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.6"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ConveyerDynamicMaterialInstance",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'MaterialInstanceDynamic'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "ConveyorSpeed",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "ScrollMaterialParametername",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      }
+    ],
+    "FuncMap": {
+      "SetupByOwner": {
+        "ObjectName": "Function'BP_BuildObjectFactoryConveyorComponent_C:SetupByOwner'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.6"
+      },
+      "OnReadyOwnerEnergyModule": {
+        "ObjectName": "Function'BP_BuildObjectFactoryConveyorComponent_C:OnReadyOwnerEnergyModule'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.2"
+      },
+      "OnUpdateCurrentEnergyState": {
+        "ObjectName": "Function'BP_BuildObjectFactoryConveyorComponent_C:OnUpdateCurrentEnergyState'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.3"
+      },
+      "OnUpdateRecipe": {
+        "ObjectName": "Function'BP_BuildObjectFactoryConveyorComponent_C:OnUpdateRecipe'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.4"
+      },
+      "SetRunningConveyor": {
+        "ObjectName": "Function'BP_BuildObjectFactoryConveyorComponent_C:SetRunningConveyor'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.5"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_BuildObjectFactoryConveyorComponent_C'Default__BP_BuildObjectFactoryConveyorComponent_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_BuildObjectFactoryConveyorComponent_C",
+    "Name": "Default__BP_BuildObjectFactoryConveyorComponent_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/Components/BP_BuildObjectFactoryConveyorComponent.BP_BuildObjectFactoryConveyorComponent_C'",
+    "Properties": {
+      "ScrollMaterialParametername": "Panner Speed"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "OnReadyOwnerEnergyModule",
+    "Outer": "BP_BuildObjectFactoryConveyorComponent_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Model",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalMapObjectConcreteModelBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Module",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalMapObjectConcreteModelModuleBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalMapObjectEnergyModule:ReturnSelfMulticastDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Map_Object_Energy_Module",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalMapObjectEnergyModule'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnUpdateCurrentEnergyState",
+    "Outer": "BP_BuildObjectFactoryConveyorComponent_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Module",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalMapObjectEnergyModule'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsRequiredEnergy_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "CallFunc_GetCurrentState_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EPalMapObjectEnergyModuleStatusType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_ByteByte_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnUpdateRecipe",
+    "Outer": "BP_BuildObjectFactoryConveyorComponent_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Model",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalMapObjectConvertItemModel'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetCurrentRecipe_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 136,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalItemRecipe'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetRunningConveyor",
+    "Outer": "BP_BuildObjectFactoryConveyorComponent_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "bOn",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeColor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "Struct": {
+          "ObjectName": "ScriptStruct'LinearColor'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_SelectColor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "Struct": {
+          "ObjectName": "ScriptStruct'LinearColor'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_MakeColor_G_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetupByOwner",
+    "Outer": "BP_BuildObjectFactoryConveyorComponent_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ConcreteModel",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalMapObjectConcreteModelBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "ConveyorMaterialInstance",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'MaterialInstanceDynamic'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "ConvertItemModel",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "PropertyClass": {
+          "ObjectName": "Class'PalMapObjectConvertItemModel'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Map_Object_Convert_Item_Model",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalMapObjectConvertItemModel'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalMapObjectConvertItemModel:UpdateRecipeDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_GetObjectName_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Conv_StringToText_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalMapObjectModuleDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_FormatArgumentData",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'FormatArgumentData'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "K2Node_MakeArray_Array",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ReferenceParm",
+        "Inner": {
+          "Type": "StructProperty",
+          "Name": "K2Node_MakeArray_Array",
+          "Flags": "RF_Public",
+          "ElementSize": 80,
+          "Struct": {
+            "ObjectName": "ScriptStruct'FormatArgumentData'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Format_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Conv_TextToString_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetVectorParameterValue_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "Struct": {
+          "ObjectName": "ScriptStruct'LinearColor'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "K2Node_VariableSet_ConveyorSpeed_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

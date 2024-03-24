@@ -1,0 +1,1642 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_PlayerBase_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "DynamicBindingObjects": [
+        {
+          "ObjectName": "ComponentDelegateBinding'BP_PlayerBase_C:ComponentDelegateBinding_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.5"
+        }
+      ],
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_PlayerBase_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.49"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_PlayerBase_C:ExecuteUbergraph_BP_PlayerBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.10"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalPlayerCharacter'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:CreateLantern'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.9"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:SetPlayerLightEnable'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.19"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:OnLoaded_02DA547E4C37CAA237537F82C5DB3211'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.14"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:RegisterSwimEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.18"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:OnEnterWater'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.12"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:OnExitWater'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.13"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:UnregisterSwimEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.20"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:BndEvt__BP_PlayerBase_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.6"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:BndEvt__BP_PlayerBase_CapsuleComponent_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.7"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:OnCompleteInitializeParameterDelegate_イベント_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.11"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.16"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:OnUpdateLevelDelegate_イベント_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.15"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:ReceiveEndPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.17"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:BndEvt__BP_PlayerBase_CharacterMovement_K2Node_ComponentBoundEvent_2_OnJumpDelegate__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.8"
+      },
+      {
+        "ObjectName": "Function'BP_PlayerBase_C:ExecuteUbergraph_BP_PlayerBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.10"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DeadColllision",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'CapsuleComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PlayerLight",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_PalTimerPointLightComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/LightComponent/BP_PalTimerPointLightComponent.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Rider Component",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PalRiderComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bIsInCapturedCage",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Lantern",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_Lamp_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Item/Lamp/BP_Lamp.0"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_PlayerBase": {
+        "ObjectName": "Function'BP_PlayerBase_C:ExecuteUbergraph_BP_PlayerBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.10"
+      },
+      "BndEvt__BP_PlayerBase_CharacterMovement_K2Node_ComponentBoundEvent_2_OnJumpDelegate__DelegateSignature": {
+        "ObjectName": "Function'BP_PlayerBase_C:BndEvt__BP_PlayerBase_CharacterMovement_K2Node_ComponentBoundEvent_2_OnJumpDelegate__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.8"
+      },
+      "ReceiveEndPlay": {
+        "ObjectName": "Function'BP_PlayerBase_C:ReceiveEndPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.17"
+      },
+      "OnUpdateLevelDelegate_イベント_0": {
+        "ObjectName": "Function'BP_PlayerBase_C:OnUpdateLevelDelegate_イベント_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.15"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_PlayerBase_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.16"
+      },
+      "OnCompleteInitializeParameterDelegate_イベント_0": {
+        "ObjectName": "Function'BP_PlayerBase_C:OnCompleteInitializeParameterDelegate_イベント_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.11"
+      },
+      "BndEvt__BP_PlayerBase_CapsuleComponent_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature": {
+        "ObjectName": "Function'BP_PlayerBase_C:BndEvt__BP_PlayerBase_CapsuleComponent_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.7"
+      },
+      "BndEvt__BP_PlayerBase_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature": {
+        "ObjectName": "Function'BP_PlayerBase_C:BndEvt__BP_PlayerBase_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.6"
+      },
+      "UnregisterSwimEvent": {
+        "ObjectName": "Function'BP_PlayerBase_C:UnregisterSwimEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.20"
+      },
+      "OnExitWater": {
+        "ObjectName": "Function'BP_PlayerBase_C:OnExitWater'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.13"
+      },
+      "OnEnterWater": {
+        "ObjectName": "Function'BP_PlayerBase_C:OnEnterWater'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.12"
+      },
+      "RegisterSwimEvent": {
+        "ObjectName": "Function'BP_PlayerBase_C:RegisterSwimEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.18"
+      },
+      "OnLoaded_02DA547E4C37CAA237537F82C5DB3211": {
+        "ObjectName": "Function'BP_PlayerBase_C:OnLoaded_02DA547E4C37CAA237537F82C5DB3211'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.14"
+      },
+      "SetPlayerLightEnable": {
+        "ObjectName": "Function'BP_PlayerBase_C:SetPlayerLightEnable'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.19"
+      },
+      "CreateLantern": {
+        "ObjectName": "Function'BP_PlayerBase_C:CreateLantern'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.9"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Game",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_PlayerBase_C'Default__BP_PlayerBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.2"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_PalTimerPointLightComponent_C",
+    "Name": "PlayerLight_GEN_VARIABLE",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Component/LightComponent/BP_PalTimerPointLightComponent.BP_PalTimerPointLightComponent_C'",
+    "Template": {
+      "ObjectName": "BP_PalTimerPointLightComponent_C'Default__BP_PalTimerPointLightComponent_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Component/LightComponent/BP_PalTimerPointLightComponent.1"
+    },
+    "Properties": {
+      "LightCurve": {
+        "ObjectName": "CurveFloat'C_TimerLightCurve_ALL1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/LightComponent/C_TimerLightCurve_ALL1.0"
+      },
+      "bIsLocalOnly": true,
+      "bUseInverseSquaredFalloff": false,
+      "AttenuationRadius": 5000.0,
+      "Intensity": 100.0,
+      "LightColor": {
+        "B": 27,
+        "G": 53,
+        "R": 81,
+        "A": 255,
+        "Hex": "FF51351B"
+      },
+      "bVisible": false
+    }
+  },
+  {
+    "Type": "BP_PlayerBase_C",
+    "Name": "Default__BP_PlayerBase_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.BP_PlayerBase_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "ShooterComponent": {
+        "ObjectName": "PalShooterComponent'Default__BP_PlayerBase_C:ShooterComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.38"
+      },
+      "InteractComponent": {
+        "ObjectName": "PalInteractComponent'Default__BP_PlayerBase_C:InteractComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.32"
+      },
+      "BuilderComponent": {
+        "ObjectName": "PalBuilderComponent'Default__BP_PlayerBase_C:BuilderComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.23"
+      },
+      "LoadoutSelectorComponent": {
+        "ObjectName": "PalLoadoutSelectorComponent'Default__BP_PlayerBase_C:LoadoutSelectorComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.33"
+      },
+      "InsideBaseCampCheckComponent": {
+        "ObjectName": "PalInsideBaseCampCheckComponent'Default__BP_PlayerBase_C:InsideBaseCampCheckComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.31"
+      },
+      "HighPriorityObjectReplicatorComponent": {
+        "ObjectName": "PalObjectReplicatorComponent'Default__BP_PlayerBase_C:HighPriorityObjectReplicatorComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.35"
+      },
+      "CameraBoom": {
+        "ObjectName": "PalActionComponent'Default__BP_PlayerBase_C:ActionComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.21"
+      },
+      "FollowCamera": {
+        "ObjectName": "PalCharacterParameterComponent'Default__BP_PlayerBase_C:CharacterParameterComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.27"
+      },
+      "MulticastGateComponent": {
+        "ObjectName": "PalStaticCharacterParameterComponent'Default__BP_PlayerBase_C:StaticCharacterParameterComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.41"
+      },
+      "LookAtComponent": {
+        "ObjectName": "PalDamageReactionComponent'Default__BP_PlayerBase_C:DamageReactionComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.28"
+      },
+      "NavInvokerComponent": {
+        "ObjectName": "PalStatusComponent'Default__BP_PlayerBase_C:StatusComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.42"
+      },
+      "FootIKComponent": {
+        "ObjectName": "PalShooterSpringArmComponent'Default__BP_PlayerBase_C:CameraBoom'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.39"
+      },
+      "VisualEffectComponent": {
+        "ObjectName": "PalCharacterCameraComponent'Default__BP_PlayerBase_C:FollowCamera'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.25"
+      },
+      "PassiveSkillComponent": {
+        "ObjectName": "PalLookAtComponent'Default__BP_PlayerBase_C:LookAtComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.34"
+      },
+      "AnimNotifyComponent": {
+        "ObjectName": "PalFootIKComponent'Default__BP_PlayerBase_C:FootIKComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.29"
+      },
+      "AroundInfoCollectorComponent": {
+        "ObjectName": "PalVisualEffectComponent'Default__BP_PlayerBase_C:VisualEffectComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.43"
+      }
+    }
+  },
+  {
+    "Type": "CapsuleComponent",
+    "Name": "DeadColllision_GEN_VARIABLE",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'CapsuleComponent'",
+    "Properties": {
+      "CapsuleHalfHeight": 96.0,
+      "CapsuleRadius": 42.0,
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_GameTraceChannel3",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "PlayerDeadCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Type": "CapsuleComponent",
+    "Name": "CollisionCylinder",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'CapsuleComponent'",
+    "Properties": {
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_GameTraceChannel3",
+        "CollisionProfileName": "PlayerPawn",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Type": "ComponentDelegateBinding",
+    "Name": "ComponentDelegateBinding_0",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'ComponentDelegateBinding'",
+    "Properties": {
+      "ComponentDelegateBindings": [
+        {
+          "ComponentPropertyName": "CharacterMovement",
+          "DelegatePropertyName": "OnJumpDelegate",
+          "FunctionNameToBind": "BndEvt__BP_PlayerBase_CharacterMovement_K2Node_ComponentBoundEvent_2_OnJumpDelegate__DelegateSignature"
+        },
+        {
+          "ComponentPropertyName": "CapsuleComponent",
+          "DelegatePropertyName": "OnComponentEndOverlap",
+          "FunctionNameToBind": "BndEvt__BP_PlayerBase_CapsuleComponent_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature"
+        },
+        {
+          "ComponentPropertyName": "CapsuleComponent",
+          "DelegatePropertyName": "OnComponentBeginOverlap",
+          "FunctionNameToBind": "BndEvt__BP_PlayerBase_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__BP_PlayerBase_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OverlappedComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "OtherBodyIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bFromSweep",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "SweepResult",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_HasOutParms | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__BP_PlayerBase_CapsuleComponent_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OverlappedComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "OtherBodyIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__BP_PlayerBase_CharacterMovement_K2Node_ComponentBoundEvent_2_OnJumpDelegate__DelegateSignature",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "component",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterMovementComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CreateLantern",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalPlayerCharacter:CreateLantern'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeTransform_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FinishSpawningActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_Lamp_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Item/Lamp/BP_Lamp.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetRootComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_AttachToComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_PlayerBase",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalCharacter:OnCompleteInitializeParameter__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_CustomEvent_Loaded",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalIndividualCharacterParameter:UpdateLevelDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Temp_object_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsNiagara_System",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraSystem'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalDataTableRowName_SoundID",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_SoundID'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Character_Movement_Component",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterMovementComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Character_Movement_Component_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterMovementComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalCharacterMovementComponent:OnExitWater__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_AddVisualEffectForActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalVisualEffectBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OverlappedComponent_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherActor_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherComp_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherBodyIndex_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_ComponentBoundEvent_bFromSweep",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_ComponentBoundEvent_SweepResult",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ConstParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "CallFunc_GetCollisionObjectType_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'ECollisionChannel'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_ByteByte_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OverlappedComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherBodyIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "CallFunc_GetCollisionObjectType_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'ECollisionChannel'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_ByteByte_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_3",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalCharacterMovementComponent:OnEnterWater__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_CustomEvent_InCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_CustomEvent_addLevel",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_CustomEvent_nowLevel",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_4",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'KismetSystemLibrary:OnAssetLoaded__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnSystemAttached_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "K2Node_Event_EndPlayReason",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EEndPlayReason'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_component",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterMovementComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOnCompleteInitializeParameterDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterOnCompleteInitializeParameterWrapper'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalSoundOptions",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalSoundOptions'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnCompleteInitializeParameterDelegate_イベント_0",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "InCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnEnterWater",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnExitWater",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnLoaded_02DA547E4C37CAA237537F82C5DB3211",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Loaded",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnUpdateLevelDelegate_イベント_0",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "addLevel",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "nowLevel",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveEndPlay",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveEndPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ByteProperty",
+        "Name": "EndPlayReason",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EEndPlayReason'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "RegisterSwimEvent",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetPlayerLightEnable",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "isEnable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "UnregisterSwimEvent",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "PalActionComponent",
+    "Name": "ActionComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalActionComponent'"
+  },
+  {
+    "Type": "PalAnimNotifyParameterComponent",
+    "Name": "AnimNotifyComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalAnimNotifyParameterComponent'"
+  },
+  {
+    "Type": "PalBuilderComponent",
+    "Name": "BuilderComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalBuilderComponent'"
+  },
+  {
+    "Type": "PalCharacterAroundInfoCollectorComponent",
+    "Name": "AroundInfoCollectorComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalCharacterAroundInfoCollectorComponent'",
+    "Properties": {
+      "SphereRadius": 1200.0,
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_PlayerBase_C:CollisionCylinder'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.4"
+      }
+    }
+  },
+  {
+    "Type": "PalCharacterCameraComponent",
+    "Name": "FollowCamera",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalCharacterCameraComponent'",
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "PalShooterSpringArmComponent'Default__BP_PlayerBase_C:CameraBoom'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.39"
+      }
+    }
+  },
+  {
+    "Type": "PalCharacterMovementComponent",
+    "Name": "CharMoveComp",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalCharacterMovementComponent'",
+    "Properties": {
+      "WalkableFloorZ": 46.0,
+      "MovementMode": "EMovementMode::34"
+    }
+  },
+  {
+    "Type": "PalCharacterParameterComponent",
+    "Name": "CharacterParameterComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalCharacterParameterComponent'",
+    "Properties": {
+      "OnSPOverheatDelegate": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "BP_PlayerBase_C'Default__BP_PlayerBase_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.2"
+            },
+            "FunctionName": "OnSPOverhead"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "PalDamageReactionComponent",
+    "Name": "DamageReactionComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalDamageReactionComponent'",
+    "Properties": {
+      "DamageEffectSlotClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_HitEffectSlot_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Effect/BP_HitEffectSlot.0"
+      }
+    }
+  },
+  {
+    "Type": "PalFootIKComponent",
+    "Name": "FootIKComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalFootIKComponent'"
+  },
+  {
+    "Type": "PalHeadUpDisplayComponent",
+    "Name": "HUDComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalHeadUpDisplayComponent'"
+  },
+  {
+    "Type": "PalInsideBaseCampCheckComponent",
+    "Name": "InsideBaseCampCheckComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalInsideBaseCampCheckComponent'"
+  },
+  {
+    "Type": "PalInteractComponent",
+    "Name": "InteractComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalInteractComponent'"
+  },
+  {
+    "Type": "PalLoadoutSelectorComponent",
+    "Name": "LoadoutSelectorComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalLoadoutSelectorComponent'"
+  },
+  {
+    "Type": "PalLookAtComponent",
+    "Name": "LookAtComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalLookAtComponent'"
+  },
+  {
+    "Type": "PalObjectReplicatorComponent",
+    "Name": "HighPriorityObjectReplicatorComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalObjectReplicatorComponent'"
+  },
+  {
+    "Type": "PalPassiveSkillComponent",
+    "Name": "PassiveSkillComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalPassiveSkillComponent'"
+  },
+  {
+    "Type": "PalRiderComponent",
+    "Name": "Rider Component_GEN_VARIABLE",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'PalRiderComponent'"
+  },
+  {
+    "Type": "PalShooterComponent",
+    "Name": "ShooterComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalShooterComponent'",
+    "Properties": {
+      "OnStartAim": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "PalShooterSpringArmComponent'Default__BP_PlayerBase_C:CameraBoom'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.39"
+            },
+            "FunctionName": "ChangeArmParameter"
+          }
+        ]
+      },
+      "OnEndAim": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "PalShooterSpringArmComponent'Default__BP_PlayerBase_C:CameraBoom'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.39"
+            },
+            "FunctionName": "ChangeArmParameter"
+          }
+        ]
+      },
+      "OnPullTrigger": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "PalShooterSpringArmComponent'Default__BP_PlayerBase_C:CameraBoom'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.39"
+            },
+            "FunctionName": "ChangeArmParameter"
+          }
+        ]
+      },
+      "OnReleaseTrigger": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "PalShooterSpringArmComponent'Default__BP_PlayerBase_C:CameraBoom'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.39"
+            },
+            "FunctionName": "ChangeArmParameter"
+          }
+        ]
+      },
+      "OnReloadStartDelegate": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "BP_PlayerBase_C'Default__BP_PlayerBase_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.2"
+            },
+            "FunctionName": "OnReloadStart"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "PalShooterSpringArmComponent",
+    "Name": "CameraBoom",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalShooterSpringArmComponent'",
+    "Properties": {
+      "AimCameraOffset": {
+        "X": 0.0,
+        "Y": 60.0,
+        "Z": 43.0
+      },
+      "AirAimCameraOffset": {
+        "X": 0.0,
+        "Y": 60.0,
+        "Z": 43.0
+      },
+      "CrouchAimCameraOffset": {
+        "X": 0.0,
+        "Y": 40.0,
+        "Z": 43.0
+      },
+      "SlidingAimCameraOffset": {
+        "X": 0.0,
+        "Y": 40.0,
+        "Z": 43.0
+      },
+      "WaterProbeChannel": "ECollisionChannel::ECC_GameTraceChannel12",
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_PlayerBase_C:CollisionCylinder'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.4"
+      }
+    }
+  },
+  {
+    "Type": "PalSkeletalMeshComponent",
+    "Name": "CharacterMesh0",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalSkeletalMeshComponent'",
+    "Properties": {
+      "bEnablePhysicsOnDedicatedServer": false,
+      "bComponentUseFixedSkelBounds": true,
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_PlayerBase_C:CollisionCylinder'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.4"
+      }
+    }
+  },
+  {
+    "Type": "PalStaticCharacterParameterComponent",
+    "Name": "StaticCharacterParameterComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalStaticCharacterParameterComponent'"
+  },
+  {
+    "Type": "PalStatusComponent",
+    "Name": "StatusComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalStatusComponent'",
+    "Properties": {
+      "StatusMap": [
+        {
+          "EPalStatusID::ControlSP": {
+            "ObjectName": "Class'PalStatus_StaminaControl'",
+            "ObjectPath": "/Script/Pal"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "PalVisualEffectComponent",
+    "Name": "VisualEffectComponent",
+    "Outer": "Default__BP_PlayerBase_C",
+    "Class": "UScriptClass'PalVisualEffectComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_PlayerBase_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.44"
+      },
+      "VariableGuid": "D3524DDE-477DCE75-5664F2AA-340EA696",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PalRiderComponent'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PalRiderComponent'BP_PlayerBase_C:Rider Component_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.37"
+      },
+      "VariableGuid": "8E8DC274-4C1ACD93-4B48FBAC-9DDD832E",
+      "InternalVariableName": "Rider Component"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'CapsuleComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "CapsuleComponent'BP_PlayerBase_C:DeadColllision_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.3"
+      },
+      "ParentComponentOrVariableName": "CollisionCylinder",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "41F54DE5-47EEE417-A16393B7-08E56CA8",
+      "InternalVariableName": "DeadColllision"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_PalTimerPointLightComponent_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/LightComponent/BP_PalTimerPointLightComponent.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_PalTimerPointLightComponent_C'BP_PlayerBase_C:PlayerLight_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.1"
+      },
+      "ParentComponentOrVariableName": "CollisionCylinder",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "5860EAC1-424BB34D-6C28EF95-F7551081",
+      "InternalVariableName": "PlayerLight"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_PlayerBase_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PlayerBase_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.46"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_PlayerBase_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.48"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_PlayerBase_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.47"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PlayerBase_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.46"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_PlayerBase_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.48"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_PlayerBase_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.47"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_PlayerBase_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Base/BP_PlayerBase.45"
+      }
+    }
+  }
+]

@@ -1,0 +1,274 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_ActionThrow_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.0"
+    },
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_ActionThrow_C:ExecuteUbergraph_BP_ActionThrow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.2"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_ActionThrow_C:OnStartProcessAnimation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.4"
+      },
+      {
+        "ObjectName": "Function'BP_ActionThrow_C:Shoot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.5"
+      },
+      {
+        "ObjectName": "Function'BP_ActionThrow_C:OnBreakAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.3"
+      },
+      {
+        "ObjectName": "Function'BP_ActionThrow_C:ExecuteUbergraph_BP_ActionThrow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.2"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsShooted",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_ActionThrow": {
+        "ObjectName": "Function'BP_ActionThrow_C:ExecuteUbergraph_BP_ActionThrow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.2"
+      },
+      "OnBreakAction": {
+        "ObjectName": "Function'BP_ActionThrow_C:OnBreakAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.3"
+      },
+      "Shoot": {
+        "ObjectName": "Function'BP_ActionThrow_C:Shoot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.5"
+      },
+      "OnStartProcessAnimation": {
+        "ObjectName": "Function'BP_ActionThrow_C:OnStartProcessAnimation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.4"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_ActionThrow_C'Default__BP_ActionThrow_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_ActionThrow_C",
+    "Name": "Default__BP_ActionThrow_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionThrow.BP_ActionThrow_C'",
+    "Template": {
+      "ObjectName": "BP_ActionGeneralAttackFarBase_C'Default__BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "SkillEffectSpawnParameters": [
+        {
+          "TimeOffset": 0.2,
+          "SkillEffectClass": {
+            "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_ThrowBullet_C'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Throw/BP_SkillEffect_ThrowBullet.0"
+          },
+          "SpawnOffset": {
+            "X": 50.0,
+            "Y": 0.0,
+            "Z": 50.0
+          },
+          "bAttachToOwner": false,
+          "AttachSocketName": "None",
+          "AttachLocationType": "EPalBodyLocationType::BulletMuzzle"
+        }
+      ],
+      "WazaID": "EPalWazaID::Throw"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_ActionThrow",
+    "Outer": "BP_ActionThrow_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FindEffectByClass_Effect",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkillEffectBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetTargetLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Skill_Effect_Throw_Bullet",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_ThrowBullet_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Throw/BP_SkillEffect_ThrowBullet.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FindEffectByClass_Effect_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkillEffectBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Skill_Effect_Throw_Bullet_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_ThrowBullet_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Throw/BP_SkillEffect_ThrowBullet.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnBreakAction",
+    "Outer": "BP_ActionThrow_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnBreakAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.10"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnBreakAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.10"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnStartProcessAnimation",
+    "Outer": "BP_ActionThrow_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnStartProcessAnimation'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.15"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnStartProcessAnimation'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.15"
+    },
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Shoot",
+    "Outer": "BP_ActionThrow_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

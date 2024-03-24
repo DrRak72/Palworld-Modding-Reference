@@ -1,0 +1,853 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_BuildObject_Torch_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.0"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.23"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_BuildObject_TorchStand_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.8"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_BuildObject_TorchStand_C:ExecuteUbergraph_BP_BuildObject_TorchStand'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.5"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_BuildObject_Torch_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_BuildObject_TorchStand_C:SetActiveLight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.7"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObject_TorchStand_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.6"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObject_TorchStand_C:ExecuteUbergraph_BP_BuildObject_TorchStand'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.5"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NS_TorchFire",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BuildWorkableBounds",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PointLight",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PointLightComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CheckOverlapCollision",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SM_TorchStand",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_InteractableBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_BuildObject_TorchStand": {
+        "ObjectName": "Function'BP_BuildObject_TorchStand_C:ExecuteUbergraph_BP_BuildObject_TorchStand'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.5"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_BuildObject_TorchStand_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.6"
+      },
+      "SetActiveLight": {
+        "ObjectName": "Function'BP_BuildObject_TorchStand_C:SetActiveLight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.7"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_BuildObject_TorchStand_C'Default__BP_BuildObject_TorchStand_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.3"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "BuildWorkableBounds_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 100.0,
+        "Y": 100.0,
+        "Z": 47.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "bApplyImpulseOnDamage": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "CheckOverlapCollision_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 15.0,
+        "Y": 15.0,
+        "Z": 55.0
+      },
+      "bDynamicObstacle": true,
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Null'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "CollisionProfileName": "BuildingOverlap",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": -5.0,
+        "Z": 57.5
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BP_BuildObject_TorchStand_C",
+    "Name": "Default__BP_BuildObject_TorchStand_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.BP_BuildObject_TorchStand_C'",
+    "Template": {
+      "ObjectName": "BP_BuildObject_Torch_Base_C'Default__BP_BuildObject_Torch_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "VisualCtrl": {
+        "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_TorchStand_C:VisualController'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.10"
+      },
+      "OverlapCheckCollisionRef": {
+        "ComponentProperty": "CheckOverlapCollision"
+      },
+      "DamageReaction": {
+        "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_TorchStand_C:DamageReaction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.11"
+      },
+      "VisualEffect": {
+        "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_TorchStand_C:VisualEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.13"
+      }
+    }
+  },
+  {
+    "Type": "BP_InteractableBox_C",
+    "Name": "BP_InteractableBox_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.BP_InteractableBox_C'",
+    "Template": {
+      "ObjectName": "BP_InteractableBox_C'Default__BP_InteractableBox_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.1"
+    },
+    "Properties": {
+      "BoxExtent": {
+        "X": 91.0,
+        "Y": 90.0,
+        "Z": 47.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_BuildObject_TorchStand",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_BuildObject_Torch_Base_C:ReceiveBeginPlay'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.6"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_BuildObject_Torch_Base_C:ReceiveBeginPlay'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.6"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetActiveLight",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_BuildObject_Torch_Base_C:SetActiveLight'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.7"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_BuildObject_Torch_Base_C:SetActiveLight'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.7"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "bActive",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'InheritableComponentHandler'",
+    "Properties": {
+      "Records": [
+        {
+          "ComponentClass": {
+            "ObjectName": "Class'PalMapObjectTorchParameterComponent'",
+            "ObjectPath": "/Script/Pal"
+          },
+          "ComponentTemplate": {
+            "ObjectName": "PalMapObjectTorchParameterComponent'BP_BuildObject_TorchStand_C:TorchParameter_GEN_VARIABLE'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.12"
+          },
+          "ComponentKey": {
+            "OwnerClass": {
+              "ObjectName": "BlueprintGeneratedClass'BP_BuildObject_Torch_Base_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.0"
+            },
+            "SCSVariableName": "TorchParameter",
+            "AssociatedGuid": "3E4BE1F1-49036A8B-6C0F7EA0-82624B35"
+          },
+          "CookedComponentInstancingData": {
+            "ChangedPropertyList": [],
+            "bHasValidCookedData": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "NS_TorchFire_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "Asset": {
+        "ObjectName": "NiagaraSystem'NS_TorchFire'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/StableFire/NS_TorchFire.44"
+      },
+      "OverrideParameters": {
+        "UserParameterRedirects": [
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "PlayerVelocity",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'Vector3f'",
+                  "ObjectPath": "/Script/CoreUObject"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.PlayerVelocity",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'Vector3f'",
+                  "ObjectPath": "/Script/CoreUObject"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "Rate",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.Rate",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          }
+        ],
+        "SortedParameterOffsets": [
+          {
+            "Offset": 0,
+            "Name": "User.PlayerVelocity",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'Vector3f'",
+                "ObjectPath": "/Script/CoreUObject"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 12,
+            "Name": "User.Rate",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          }
+        ],
+        "ParameterData": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": -3.0,
+        "Z": 115.0
+      },
+      "bAutoActivate": false
+    }
+  },
+  {
+    "Type": "PalBuildObjectVisualControlComponent",
+    "Name": "VisualController",
+    "Outer": "Default__BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'PalBuildObjectVisualControlComponent'",
+    "Template": {
+      "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_Torch_Base_C:VisualController'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.8"
+    }
+  },
+  {
+    "Type": "PalMapObjectDamageReactionComponent",
+    "Name": "DamageReaction",
+    "Outer": "Default__BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'PalMapObjectDamageReactionComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_Torch_Base_C:DamageReaction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.9"
+    }
+  },
+  {
+    "Type": "PalMapObjectTorchParameterComponent",
+    "Name": "TorchParameter_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'PalMapObjectTorchParameterComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectTorchParameterComponent'BP_BuildObject_Torch_Base_C:TorchParameter_GEN_VARIABLE'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.10"
+    },
+    "Properties": {
+      "IgnitionMinutes": 240
+    }
+  },
+  {
+    "Type": "PalMapObjectVisualEffectComponent",
+    "Name": "VisualEffect",
+    "Outer": "Default__BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'PalMapObjectVisualEffectComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_Torch_Base_C:VisualEffect'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Torch_Base.11"
+    }
+  },
+  {
+    "Type": "PointLightComponent",
+    "Name": "PointLight_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'PointLightComponent'",
+    "Properties": {
+      "bUseInverseSquaredFalloff": false,
+      "SourceRadius": 750.0,
+      "SoftSourceRadius": 750.0,
+      "InverseExposureBlend": 1.0,
+      "AttenuationRadius": 2000.0,
+      "Intensity": 20.0,
+      "LightColor": {
+        "B": 31,
+        "G": 142,
+        "R": 231,
+        "A": 255,
+        "Hex": "FFE78E1F"
+      },
+      "CastShadows": false,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 180.0
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_TorchStand_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.15"
+      },
+      "VariableGuid": "B723046F-416C5C93-3C52F8B8-6FCF03D8",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_TorchStand_C:CheckOverlapCollision_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.2"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Torch_Base_C",
+      "VariableGuid": "A4B95905-450D394D-419687A0-9576809B",
+      "InternalVariableName": "CheckOverlapCollision"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_BuildObject_TorchStand_C:SM_TorchStand_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.24"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Torch_Base_C",
+      "VariableGuid": "62051021-4242B820-2FE1A29B-4CAA1948",
+      "InternalVariableName": "SM_TorchStand"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_InteractableBox_C'BP_BuildObject_TorchStand_C:BP_InteractableBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.4"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Torch_Base_C",
+      "VariableGuid": "355A1955-4FCC366E-8C55DF8D-E4208FF8",
+      "InternalVariableName": "BP_InteractableBox"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'BP_BuildObject_TorchStand_C:NS_TorchFire_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.9"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Torch_Base_C",
+      "VariableGuid": "C762373E-44EA3633-90B1C4BA-BA556181",
+      "InternalVariableName": "NS_TorchFire"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PointLightComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PointLightComponent'BP_BuildObject_TorchStand_C:PointLight_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.14"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Torch_Base_C",
+      "VariableGuid": "D8824B98-427C4B27-2FF18FBD-52243487",
+      "InternalVariableName": "PointLight"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_7",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_TorchStand_C:BuildWorkableBounds_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.1"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Torch_Base_C",
+      "VariableGuid": "04A5AC17-4F71E14B-704C0781-CB61576B",
+      "InternalVariableName": "BuildWorkableBounds"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.19"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.18"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.21"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.22"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.20"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.19"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.18"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.21"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.22"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.20"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_BuildObject_TorchStand_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_TorchStand.16"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "SM_TorchStand_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_TorchStand_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_TorchStand'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/TorchStand/SM_TorchStand.2"
+      },
+      "BodyInstance": {
+        "CollisionProfileName": "MapObjectPhysicsNoCollidePawn",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AroundInfoCollect",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "bCanEverAffectNavigation": false
+    }
+  }
+]

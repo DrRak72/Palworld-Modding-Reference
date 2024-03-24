@@ -1,0 +1,650 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.18"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalBuildObject'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "BuildWorkableBounds",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PlayerBlockBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "AffectNavigationBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SM_Wall_Stone",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Root",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CheckOverlapCollision",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_BuildObject_Stone_WindowWall_C'Default__BP_BuildObject_Stone_WindowWall_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.5"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "AffectNavigationBox_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 10.0,
+        "Y": 190.0,
+        "Z": 50.0
+      },
+      "bDynamicObstacle": true,
+      "AreaClassOverride": {
+        "ObjectName": "Class'PalNavArea_HighObstacle'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "MapObjectPhysics",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AroundInfoCollect",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 55.0
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "BuildWorkableBounds_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 27.10402,
+        "Y": 195.3138,
+        "Z": 168.69247
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "bApplyImpulseOnDamage": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 156.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "CheckOverlapCollision_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 13.0,
+        "Y": 156.0,
+        "Z": 117.0
+      },
+      "bDynamicObstacle": true,
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Null'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "CollisionProfileName": "BuildingOverlap",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 162.5
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "PlayerBlockBox_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 10.0,
+        "Y": 90.0,
+        "Z": 70.0
+      },
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "BlockPlayerOnly",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ClimbRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": -1E-06,
+        "Z": 156.07
+      }
+    }
+  },
+  {
+    "Type": "BP_BuildObject_Stone_WindowWall_C",
+    "Name": "Default__BP_BuildObject_Stone_WindowWall_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.BP_BuildObject_Stone_WindowWall_C'",
+    "Properties": {
+      "InstallStrategy": "EPalBuildObjectInstallStrategy::WallV2",
+      "VisualCtrl": {
+        "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_Stone_WindowWall_C:VisualController'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.6"
+      },
+      "OverlapCheckCollisionRef": {
+        "ComponentProperty": "CheckOverlapCollision"
+      },
+      "BuildCompleteSEOverride": {
+        "ObjectName": "AkAudioEvent'AKE_Build_BuildingMaterials_01'",
+        "ObjectPath": "Pal/Content/Pal/Sound/Events/SE/MapObject/Build/AKE_Build_BuildingMaterials_01.1"
+      },
+      "DamageReaction": {
+        "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_Stone_WindowWall_C:DamageReaction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.7"
+      },
+      "VisualEffect": {
+        "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_Stone_WindowWall_C:VisualEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.8"
+      }
+    }
+  },
+  {
+    "Type": "PalBuildObjectVisualControlComponent",
+    "Name": "VisualController",
+    "Outer": "Default__BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'PalBuildObjectVisualControlComponent'"
+  },
+  {
+    "Type": "PalMapObjectDamageReactionComponent",
+    "Name": "DamageReaction",
+    "Outer": "Default__BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'PalMapObjectDamageReactionComponent'"
+  },
+  {
+    "Type": "PalMapObjectVisualEffectComponent",
+    "Name": "VisualEffect",
+    "Outer": "Default__BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'PalMapObjectVisualEffectComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "Root_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_Stone_WindowWall_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.9"
+      },
+      "VariableGuid": "B723046F-416C5C93-3C52F8B8-6FCF03D8",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_Stone_WindowWall_C:CheckOverlapCollision_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.3"
+      },
+      "VariableGuid": "A4B95905-450D394D-419687A0-9576809B",
+      "InternalVariableName": "CheckOverlapCollision"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_Stone_WindowWall_C:Root_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.10"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.12"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.14"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.15"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.17"
+        }
+      ],
+      "VariableGuid": "FABFAA1C-40AD2AC9-040CF9A0-1D93FD8A",
+      "InternalVariableName": "Root"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_BuildObject_Stone_WindowWall_C:SM_Wall_Stone_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.19"
+      },
+      "VariableGuid": "62051021-4242B820-2FE1A29B-4CAA1948",
+      "InternalVariableName": "SM_Wall_Stone"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_Stone_WindowWall_C:AffectNavigationBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.1"
+      },
+      "VariableGuid": "94CDA721-44A34FA6-AA2F6183-102DCECE",
+      "InternalVariableName": "AffectNavigationBox"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_Stone_WindowWall_C:PlayerBlockBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.4"
+      },
+      "VariableGuid": "29D6BD66-4CCE4F16-B624739F-B5335F94",
+      "InternalVariableName": "PlayerBlockBox"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_Stone_WindowWall_C:BuildWorkableBounds_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.2"
+      },
+      "VariableGuid": "2A06F237-41688B2E-922BFF96-6967E6E6",
+      "InternalVariableName": "BuildWorkableBounds"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.13"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.12"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.14"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.15"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.17"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_BuildObject_Stone_WindowWall_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_Stone_WindowWall.11"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "SM_Wall_Stone_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Stone_WindowWall_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_WallWindow_Stone'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/Architecture_Stone/SM_WallWindow_Stone.2"
+      },
+      "BodyInstance": {
+        "CollisionProfileName": "MapObjectPhysicsClimbable",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AroundInfoCollect",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "ClimbRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 6.9
+      },
+      "bCanEverAffectNavigation": false
+    }
+  }
+]

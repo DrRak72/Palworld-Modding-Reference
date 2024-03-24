@@ -1,0 +1,785 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.24"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalBuildObjectGenerateEnergy'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_BuildObject_EnergyGenerator_Electric_Slave_C:OnEndGenerate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.5"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObject_EnergyGenerator_Electric_Slave_C:OnStartGenerate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.6"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "GenerateEnergyParameter",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PalMapObjectGenerateEnergyParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "EffectAttachment",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "StaticMesh",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_InteractableBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Meshes",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BuildWorkableBounds",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CheckOverlapCollision",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Root",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PlayingFX",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      }
+    ],
+    "FuncMap": {
+      "OnStartGenerate": {
+        "ObjectName": "Function'BP_BuildObject_EnergyGenerator_Electric_Slave_C:OnStartGenerate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.6"
+      },
+      "OnEndGenerate": {
+        "ObjectName": "Function'BP_BuildObject_EnergyGenerator_Electric_Slave_C:OnEndGenerate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.5"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_BuildObject_EnergyGenerator_Electric_Slave_C'Default__BP_BuildObject_EnergyGenerator_Electric_Slave_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.3"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "BuildWorkableBounds_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 170.0,
+        "Y": 170.0,
+        "Z": 47.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "bApplyImpulseOnDamage": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "CheckOverlapCollision_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 135.0,
+        "Y": 135.0,
+        "Z": 115.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "CollisionProfileName": "BuildingOverlap",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 120.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Name": "Default__BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.BP_BuildObject_EnergyGenerator_Electric_Slave_C'",
+    "Properties": {
+      "VisualCtrl": {
+        "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_EnergyGenerator_Electric_Slave_C:VisualController'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.7"
+      },
+      "OverlapCheckCollisionRef": {
+        "ComponentProperty": "CheckOverlapCollision"
+      },
+      "ConcreteModelClass": {
+        "ObjectName": "Class'PalMapObjectGenerateEnergyModel'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "DamageReaction": {
+        "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_EnergyGenerator_Electric_Slave_C:DamageReaction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.8"
+      },
+      "VisualEffect": {
+        "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_EnergyGenerator_Electric_Slave_C:VisualEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.10"
+      }
+    }
+  },
+  {
+    "Type": "BP_InteractableBox_C",
+    "Name": "BP_InteractableBox_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.BP_InteractableBox_C'",
+    "Template": {
+      "ObjectName": "BP_InteractableBox_C'Default__BP_InteractableBox_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.1"
+    },
+    "Properties": {
+      "BoxExtent": {
+        "X": 140.0,
+        "Y": 140.0,
+        "Z": 47.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "HumanPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Bullet",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "DropItem",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "OnEndGenerate",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBuildObjectGenerateEnergy:OnEndGenerate'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnStartGenerate",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBuildObjectGenerateEnergy:OnStartGenerate'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnSystemAttached_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "PalBuildObjectVisualControlComponent",
+    "Name": "VisualController",
+    "Outer": "Default__BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'PalBuildObjectVisualControlComponent'"
+  },
+  {
+    "Type": "PalMapObjectDamageReactionComponent",
+    "Name": "DamageReaction",
+    "Outer": "Default__BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'PalMapObjectDamageReactionComponent'"
+  },
+  {
+    "Type": "PalMapObjectGenerateEnergyParameterComponent",
+    "Name": "GenerateEnergyParameter_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'PalMapObjectGenerateEnergyParameterComponent'"
+  },
+  {
+    "Type": "PalMapObjectVisualEffectComponent",
+    "Name": "VisualEffect",
+    "Outer": "Default__BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'PalMapObjectVisualEffectComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "EffectAttachment_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'SceneComponent'",
+    "Properties": {
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 90.0
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "Meshes_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "Root_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_EnergyGenerator_Electric_Slave_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.11"
+      },
+      "VariableGuid": "AB3DF206-458C6D3B-167047B7-82C66A20",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_EnergyGenerator_Electric_Slave_C:Root_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.14"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_10'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_12'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.18"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.20"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.21"
+        }
+      ],
+      "VariableGuid": "6F8E2680-4D476BCD-E90F8E80-C7D49F9A",
+      "InternalVariableName": "Root"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_10",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_EnergyGenerator_Electric_Slave_C:CheckOverlapCollision_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.2"
+      },
+      "VariableGuid": "AEE79C1A-45F327BB-567DEA8B-FCF33EA5",
+      "InternalVariableName": "CheckOverlapCollision"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_12",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_EnergyGenerator_Electric_Slave_C:BuildWorkableBounds_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.1"
+      },
+      "VariableGuid": "19F93BB0-4A2E0193-DD9233A0-6701F6B4",
+      "InternalVariableName": "BuildWorkableBounds"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_EnergyGenerator_Electric_Slave_C:EffectAttachment_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.12"
+      },
+      "VariableGuid": "DB05154A-4778026A-BF6182B0-A034A324",
+      "InternalVariableName": "EffectAttachment"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_EnergyGenerator_Electric_Slave_C:Meshes_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.13"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_42'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.22"
+        }
+      ],
+      "VariableGuid": "53A8FE75-41FFB48B-95D127B5-1D6501FE",
+      "InternalVariableName": "Meshes"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_InteractableBox_C'BP_BuildObject_EnergyGenerator_Electric_Slave_C:BP_InteractableBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.4"
+      },
+      "VariableGuid": "BE24FA2D-40D15500-ED73C394-2AE98E91",
+      "InternalVariableName": "BP_InteractableBox"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_42",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_BuildObject_EnergyGenerator_Electric_Slave_C:StaticMesh_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.25"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.19"
+        }
+      ],
+      "VariableGuid": "0ADB6DB0-43622FF1-A7B8148C-0B25EDB0",
+      "InternalVariableName": "StaticMesh"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PalMapObjectGenerateEnergyParameterComponent'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PalMapObjectGenerateEnergyParameterComponent'BP_BuildObject_EnergyGenerator_Electric_Slave_C:GenerateEnergyParameter_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.9"
+      },
+      "VariableGuid": "FBDB09E5-4FBB3D58-A8B5CF9D-E4D8E41A",
+      "InternalVariableName": "GenerateEnergyParameter"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.23"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_10'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_12'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.18"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.20"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.21"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_42'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.22"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.19"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.23"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_BuildObject_EnergyGenerator_Electric_Slave_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_EnergyGenerator_Electric_Slave.15"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StaticMesh_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_EnergyGenerator_Electric_Slave_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'uploads_files_836438_S_TeslaCoilTower_01'",
+        "ObjectPath": "Pal/Content/Others/TeslaCoilTower/uploads_files_836438_S_TeslaCoilTower_01.2"
+      },
+      "BodyInstance": {
+        "CollisionProfileName": "MapObjectPhysics",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AroundInfoCollect",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      }
+    }
+  }
+]

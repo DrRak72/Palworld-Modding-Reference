@@ -1,0 +1,816 @@
+[
+  {
+    "Type": "ArrowComponent",
+    "Name": "WarpPoint_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'ArrowComponent'",
+    "Properties": {
+      "RelativeLocation": {
+        "X": -110.0,
+        "Y": 0.0,
+        "Z": 40.0
+      }
+    }
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.24"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalBuildObject'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Glow",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Location",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PalMapObjectLocationComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WarpPoint",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'ArrowComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "IndicatorOrigin",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_InteractableBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Mesh",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BuildWorkableBounds",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CheckOverlapCollision",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Root",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_BuildObject_FastTravelPoint_C'Default__BP_BuildObject_FastTravelPoint_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.4"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "BuildWorkableBounds_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 100.0,
+        "Y": 100.0,
+        "Z": 100.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "bApplyImpulseOnDamage": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 100.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "CheckOverlapCollision_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 100.0,
+        "Y": 50.0,
+        "Z": 62.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "CollisionProfileName": "BuildingOverlap",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": -50.0,
+        "Y": 0.0,
+        "Z": 65.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BP_BuildObject_FastTravelPoint_C",
+    "Name": "Default__BP_BuildObject_FastTravelPoint_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.BP_BuildObject_FastTravelPoint_C'",
+    "Properties": {
+      "VisualCtrl": {
+        "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_FastTravelPoint_C:VisualController'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.7"
+      },
+      "OverlapCheckCollisionRef": {
+        "ComponentProperty": "CheckOverlapCollision"
+      },
+      "ConcreteModelClass": {
+        "ObjectName": "Class'PalMapObjectFastTravelPointModel'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "DamageReaction": {
+        "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_FastTravelPoint_C:DamageReaction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.8"
+      },
+      "VisualEffect": {
+        "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_FastTravelPoint_C:VisualEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.10"
+      }
+    }
+  },
+  {
+    "Type": "BP_InteractableBox_C",
+    "Name": "BP_InteractableBox_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.BP_InteractableBox_C'",
+    "Template": {
+      "ObjectName": "BP_InteractableBox_C'Default__BP_InteractableBox_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.1"
+    },
+    "Properties": {
+      "IndicatorOriginRef": {
+        "ComponentProperty": "IndicatorOrigin"
+      },
+      "BoxExtent": {
+        "X": 150.0,
+        "Y": 150.0,
+        "Z": 150.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 100.0
+      }
+    }
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "Glow_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "Asset": {
+        "ObjectName": "NiagaraSystem'NS_StatueGlow'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/Glow/NS_StatueGlow.33"
+      },
+      "OverrideParameters": {
+        "UserParameterRedirects": [
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "Scale",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.Scale",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "BaseColor",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'LinearColor'",
+                  "ObjectPath": "/Script/CoreUObject"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.BaseColor",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'LinearColor'",
+                  "ObjectPath": "/Script/CoreUObject"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          }
+        ],
+        "SortedParameterOffsets": [
+          {
+            "Offset": 4,
+            "Name": "User.BaseColor",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'LinearColor'",
+                "ObjectPath": "/Script/CoreUObject"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 0,
+            "Name": "User.Scale",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          }
+        ],
+        "ParameterData": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          205,
+          204,
+          76,
+          62,
+          0,
+          0,
+          160,
+          64,
+          0,
+          0,
+          128,
+          63
+        ]
+      }
+    }
+  },
+  {
+    "Type": "PalBuildObjectVisualControlComponent",
+    "Name": "VisualController",
+    "Outer": "Default__BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'PalBuildObjectVisualControlComponent'"
+  },
+  {
+    "Type": "PalMapObjectDamageReactionComponent",
+    "Name": "DamageReaction",
+    "Outer": "Default__BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'PalMapObjectDamageReactionComponent'"
+  },
+  {
+    "Type": "PalMapObjectLocationComponent",
+    "Name": "Location_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'PalMapObjectLocationComponent'"
+  },
+  {
+    "Type": "PalMapObjectVisualEffectComponent",
+    "Name": "VisualEffect",
+    "Outer": "Default__BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'PalMapObjectVisualEffectComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "IndicatorOrigin_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'SceneComponent'",
+    "Properties": {
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 75.0
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "Root_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_FastTravelPoint_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.11"
+      },
+      "VariableGuid": "AB3DF206-458C6D3B-167047B7-82C66A20",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_FastTravelPoint_C:Root_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.13"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_10'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_12'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_13'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.18"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.20"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.19"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.21"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.23"
+        }
+      ],
+      "VariableGuid": "6F8E2680-4D476BCD-E90F8E80-C7D49F9A",
+      "InternalVariableName": "Root"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_10",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_FastTravelPoint_C:CheckOverlapCollision_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.3"
+      },
+      "VariableGuid": "AEE79C1A-45F327BB-567DEA8B-FCF33EA5",
+      "InternalVariableName": "CheckOverlapCollision"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_12",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_FastTravelPoint_C:BuildWorkableBounds_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.2"
+      },
+      "VariableGuid": "19F93BB0-4A2E0193-DD9233A0-6701F6B4",
+      "InternalVariableName": "BuildWorkableBounds"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_13",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_BuildObject_FastTravelPoint_C:Mesh_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.25"
+      },
+      "VariableGuid": "61580473-453095B6-C0FDB892-D4A8EC25",
+      "InternalVariableName": "Mesh"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_FastTravelPoint_C:IndicatorOrigin_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.12"
+      },
+      "VariableGuid": "55AAEED4-47B4F746-D5BCB281-31E1E4A5",
+      "InternalVariableName": "IndicatorOrigin"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_InteractableBox_C'BP_BuildObject_FastTravelPoint_C:BP_InteractableBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.5"
+      },
+      "VariableGuid": "59590DAC-41B5CCF5-FE91DAA7-8FCB53A9",
+      "InternalVariableName": "BP_InteractableBox"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'ArrowComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "ArrowComponent'BP_BuildObject_FastTravelPoint_C:WarpPoint_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.0"
+      },
+      "VariableGuid": "82F705DD-4622B035-1F5A3B88-E42F86FB",
+      "InternalVariableName": "WarpPoint"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PalMapObjectLocationComponent'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PalMapObjectLocationComponent'BP_BuildObject_FastTravelPoint_C:Location_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.9"
+      },
+      "VariableGuid": "0A329A12-473A6C56-57377698-AB504615",
+      "InternalVariableName": "Location"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'BP_BuildObject_FastTravelPoint_C:Glow_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.6"
+      },
+      "VariableGuid": "814EE329-43CC0DD6-B83581A5-A89BE6C0",
+      "InternalVariableName": "Glow"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.15"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.22"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.15"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_10'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_12'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_13'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.18"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.20"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.19"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.21"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.22"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.23"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_BuildObject_FastTravelPoint_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObject_FastTravelPoint.14"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "Mesh_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_FastTravelPoint_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_FastTravelStatue'",
+        "ObjectPath": "Pal/Content/Pal/Model/Other/FastTravelStatue/SM_FastTravelStatue.2"
+      },
+      "OverrideMaterials": [
+        null
+      ],
+      "BodyInstance": {
+        "CollisionProfileName": "MapObjectPhysics",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AroundInfoCollect",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 2.0,
+        "Z": 0.0
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": 90.0,
+        "Roll": 0.0
+      },
+      "RelativeScale3D": {
+        "X": 0.7,
+        "Y": 0.7,
+        "Z": 0.7
+      }
+    }
+  }
+]

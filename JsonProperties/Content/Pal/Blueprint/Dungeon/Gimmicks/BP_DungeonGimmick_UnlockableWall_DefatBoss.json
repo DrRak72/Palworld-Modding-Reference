@@ -1,0 +1,603 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.12"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:ExecuteUbergraph_BP_DungeonGimmick_UnlockableWall_DefatBoss'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.3"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalDungeonGimmickUnlockableDoor_DefeatBoss'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SetLock'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.5"
+      },
+      {
+        "ObjectName": "Function'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:OnChangeBossStateImpl'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.4"
+      },
+      {
+        "ObjectName": "Function'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:ExecuteUbergraph_BP_DungeonGimmick_UnlockableWall_DefatBoss'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.3"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NS_DungeonGate",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BlockEnterCollision",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Blocker",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DefaultSceneRoot",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_DungeonGimmick_UnlockableWall_DefatBoss": {
+        "ObjectName": "Function'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:ExecuteUbergraph_BP_DungeonGimmick_UnlockableWall_DefatBoss'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.3"
+      },
+      "OnChangeBossStateImpl": {
+        "ObjectName": "Function'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:OnChangeBossStateImpl'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.4"
+      },
+      "SetLock": {
+        "ObjectName": "Function'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SetLock'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.5"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C'Default__BP_DungeonGimmick_UnlockableWall_DefatBoss_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.2"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "BlockEnterCollision_GEN_VARIABLE",
+    "Outer": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 750.0,
+        "Y": 1.0,
+        "Z": 1000.0
+      },
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "BlockAll",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "ClimbRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 665.0
+      }
+    }
+  },
+  {
+    "Type": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Name": "Default__BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.BP_DungeonGimmick_UnlockableWall_DefatBoss_C'",
+    "Properties": {
+      "UberGraphFrame": {}
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_DungeonGimmick_UnlockableWall_DefatBoss",
+    "Outer": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "K2Node_Event_ToState",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "ConstParm",
+        "Enum": {
+          "ObjectName": "Enum'EPalDungeonInstanceBossState'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnChangeBossStateImpl",
+    "Outer": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalDungeonGimmickUnlockableDoor_DefeatBoss:OnChangeBossStateImpl'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "ToState",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPalDungeonInstanceBossState'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetLock",
+    "Outer": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "bLock",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "Temp_byte_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'ECollisionEnabled'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "Temp_byte_Variable_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'ECollisionEnabled'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Temp_bool_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "K2Node_Select_Default",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'ECollisionEnabled'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "NS_DungeonGate_GEN_VARIABLE",
+    "Outer": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "Asset": {
+        "ObjectName": "NiagaraSystem'NS_DungeonGate'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/Dungeon_Gate/NS_DungeonGate.25"
+      },
+      "OverrideParameters": {
+        "UserParameterRedirects": [
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "Scale",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.Scale",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "Trail_Alpha",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.Trail_Alpha",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          }
+        ],
+        "SortedParameterOffsets": [
+          {
+            "Offset": 0,
+            "Name": "User.Scale",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 4,
+            "Name": "User.Trail_Alpha",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          }
+        ],
+        "ParameterData": [
+          0,
+          0,
+          128,
+          63,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 800.0
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": 90.0,
+        "Roll": -0.0
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.7"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.9"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.10"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.11"
+        }
+      ],
+      "VariableGuid": "67DFEF16-4AB0D7ED-684E4F81-AC49F89A",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:Blocker_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.13"
+      },
+      "VariableGuid": "C522E1D0-4FC78F99-B7C93D96-CECDA4CF",
+      "InternalVariableName": "Blocker"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:BlockEnterCollision_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.1"
+      },
+      "VariableGuid": "B020D9F6-4794978B-476592B5-129F191C",
+      "InternalVariableName": "BlockEnterCollision"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:NS_DungeonGate_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.6"
+      },
+      "VariableGuid": "51323266-442B64E3-830D65B1-CA8075D1",
+      "InternalVariableName": "NS_DungeonGate"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.8"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.8"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.9"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.10"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.11"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_DungeonGimmick_UnlockableWall_DefatBoss_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Dungeon/Gimmicks/BP_DungeonGimmick_UnlockableWall_DefatBoss.8"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "Blocker_GEN_VARIABLE",
+    "Outer": "BP_DungeonGimmick_UnlockableWall_DefatBoss_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'Cube'",
+        "ObjectPath": "Engine/Content/BasicShapes/Cube.2"
+      },
+      "OverrideMaterials": [
+        {
+          "ObjectName": "MaterialInstanceConstant'MI_PalBox_Wall'",
+          "ObjectPath": "Pal/Content/Pal/Model/Other/PalBox/old/MI_PalBox_Wall.0"
+        }
+      ],
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 805.0
+      },
+      "RelativeScale3D": {
+        "X": 10.0,
+        "Y": 0.2,
+        "Z": 20.0
+      }
+    }
+  }
+]

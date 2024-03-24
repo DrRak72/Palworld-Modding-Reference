@@ -1,0 +1,1120 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionUniqueAttackBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionUniqueAttackBase.0"
+    },
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:ExecuteUbergraph_BP_Action_Unique_Horus_Flarestorm'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.3"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionUniqueAttackBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionUniqueAttackBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:SetEffectRotationYaw'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.11"
+      },
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:OnBreakAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.6"
+      },
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:CallEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.2"
+      },
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:PlayEffectByTime'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.10"
+      },
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:FadeOutEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.4"
+      },
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:OnCompletedEndMontage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.7"
+      },
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:OnMontageNotify'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.9"
+      },
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:OnBeginAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.5"
+      },
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:TickAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.12"
+      },
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:OnEndAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.8"
+      },
+      {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:ExecuteUbergraph_BP_Action_Unique_Horus_Flarestorm'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.3"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "CurrentEffect",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | ContainsInstancedReference",
+        "Inner": {
+          "Type": "ObjectProperty",
+          "Name": "CurrentEffect",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyFlags": "InstancedReference",
+          "PropertyClass": {
+            "ObjectName": "Class'NiagaraComponent'",
+            "ObjectPath": "/Script/Niagara"
+          }
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OmenEffect",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "SkillEffectSpawnParam",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 64,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'SkillEffectSpawnParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "StartEffect",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraSystem'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "LoopEffect",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraSystem'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "ShootDelay",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "FadeOutTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "FadeOutTime",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "FadeOutCurve",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'CurveFloat'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "LoopingEffect",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "FadeOutCurve01",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'CurveFloat'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "TackleModule",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_UniqueSkillModule_Tackle_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/UniqueSkillModule/BP_UniqueSkillModule_Tackle.0"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_Action_Unique_Horus_Flarestorm": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:ExecuteUbergraph_BP_Action_Unique_Horus_Flarestorm'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.3"
+      },
+      "OnEndAction": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:OnEndAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.8"
+      },
+      "TickAction": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:TickAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.12"
+      },
+      "OnBeginAction": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:OnBeginAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.5"
+      },
+      "OnMontageNotify": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:OnMontageNotify'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.9"
+      },
+      "OnCompletedEndMontage": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:OnCompletedEndMontage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.7"
+      },
+      "FadeOutEffect": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:FadeOutEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.4"
+      },
+      "PlayEffectByTime": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:PlayEffectByTime'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.10"
+      },
+      "CallEffect": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:CallEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.2"
+      },
+      "OnBreakAction": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:OnBreakAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.6"
+      },
+      "SetEffectRotationYaw": {
+        "ObjectName": "Function'BP_Action_Unique_Horus_Flarestorm_C:SetEffectRotationYaw'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.11"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_Action_Unique_Horus_Flarestorm_C'Default__BP_Action_Unique_Horus_Flarestorm_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Name": "Default__BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_Action_Unique_Horus_Flarestorm.BP_Action_Unique_Horus_Flarestorm_C'",
+    "Template": {
+      "ObjectName": "BP_ActionUniqueAttackBase_C'Default__BP_ActionUniqueAttackBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionUniqueAttackBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "SkillEffectSpawnParam": {
+        "TimeOffset": 1.2,
+        "SkillEffectClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_FlareTornado_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/FlareTornado/BP_SkillEffect_FlareTornado.0"
+        },
+        "SpawnOffset": {
+          "X": -500.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "bAttachToOwner": false,
+        "AttachSocketName": "None",
+        "AttachLocationType": "EPalBodyLocationType::BulletMuzzle"
+      },
+      "StartEffect": {
+        "ObjectName": "NiagaraSystem'NS_CommonSkill_FlareTornado_aura'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Skill/FlareTornado/NS_CommonSkill_FlareTornado_aura.81"
+      },
+      "LoopEffect": {
+        "ObjectName": "NiagaraSystem'NS_CommonSkill_FlareTornado_aura_loop'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Skill/FlareTornado/NS_CommonSkill_FlareTornado_aura_loop.37"
+      },
+      "FadeOutTime": 0.7,
+      "FadeOutCurve": {
+        "ObjectName": "CurveFloat'C_FrostbiteFadeOutCurve'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Effect/VisualEffect/Curve/C_FrostbiteFadeOutCurve.0"
+      },
+      "FadeOutCurve01": {
+        "ObjectName": "CurveFloat'C_FlareStormFadeOutCurve'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Effect/VisualEffect/Curve/C_FlareStormFadeOutCurve.0"
+      },
+      "RotateSpeed": 8.0,
+      "FindFrontTargetDegree": 50.0,
+      "FlagName": "UniqueHorus",
+      "IsHoldTarget": false,
+      "SkillModuleClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_UniqueSkillModule_Tackle_Horus_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/Horus/BP_UniqueSkillModule_Tackle_Horus.0"
+      },
+      "IsUseDummy": false,
+      "WazaID": "EPalWazaID::Unique_Horus_FlareBird",
+      "bIsReflectForClient": true
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "CallEffect",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "parameter",
+        "Flags": "RF_Public",
+        "ElementSize": 64,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'SkillEffectSpawnParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_Action_Unique_Horus_Flarestorm",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetAttackTargetLocation_Location",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeTransform_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Loop_Counter_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionCharacter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetMainMesh_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkeletalMeshComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Array_Index_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_CustomEvent_parameter",
+        "Flags": "RF_Public",
+        "ElementSize": 64,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'SkillEffectSpawnParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionCharacter_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'SkillEffectTimeDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_SetTimeCallbackBySkillEffectSpawnParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FinishSpawningActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkillEffectBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionCharacter_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "InterfaceProperty",
+        "Name": "K2Node_DynamicCast_AsBPI_Skill_Effect",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "InterfaceClass": {
+          "ObjectName": "BlueprintGeneratedClass'BPI_SkillEffect_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Common/BPI_SkillEffect.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionTarget_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnSystemAttached_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_UniqueSkillModule_Tackle_C:OnCompletedEndMontageDelegate__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/UniqueSkillModule/BP_UniqueSkillModule_Tackle.8"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_Add_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "K2Node_CustomEvent_DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Add_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_FClamp_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetFloatValue_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionCharacter_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetMainMesh_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkeletalMeshComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnSystemAttached_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_Add_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_FClamp_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetFloatValue_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateSkillActionModule_Module",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_UniqueSkillModule_Tackle_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/UniqueSkillModule/BP_UniqueSkillModule_Tackle.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetUniqueActionTarget_TargetActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetUniqueActionTarget_TargetActor_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_UniqueSkillModule_Tackle_C:OnCompletedEndMontageDelegate__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/UniqueSkillModule/BP_UniqueSkillModule_Tackle.8"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_3",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_UniqueSkillModule_Tackle_C:OnMontageNotifyDelegate__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/UniqueSkillModule/BP_UniqueSkillModule_Tackle.13"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_CustomEvent_Montage",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'AnimMontage'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "K2Node_CustomEvent_NotifyName",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionCharacter_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetMainMesh_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkeletalMeshComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetAnimInstance_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'AnimInstance'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Montage_IsPlaying_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Array_Get_Item",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_Length_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetFloatValue_InTime_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetFloatValue_InTime_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_FadeOutEffect_DeltaTime_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "FadeOutEffect",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DoubleProperty",
+        "Name": "DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnBeginAction",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionUniqueAttackBase_C:OnBeginAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionUniqueAttackBase.16"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionUniqueAttackBase_C:OnBeginAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionUniqueAttackBase.16"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnBreakAction",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalActionBase:OnBreakAction'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnCompletedEndMontage",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnEndAction",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionUniqueAttackBase_C:OnEndAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionUniqueAttackBase.17"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionUniqueAttackBase_C:OnEndAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionUniqueAttackBase.17"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnMontageNotify",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Montage",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'AnimMontage'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "NotifyName",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "PlayEffectByTime",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetEffectRotationYaw",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Loop_Counter_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Array_Index_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Array_Get_Item",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_Length_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentRotation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Roll",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Pitch",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Yaw",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionCharacter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorRotation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Roll_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Pitch_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Yaw_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotator_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetWorldRotation_SweepHitResult",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "TickAction",
+    "Outer": "BP_Action_Unique_Horus_Flarestorm_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionUniqueAttackBase_C:TickAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionUniqueAttackBase.23"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionUniqueAttackBase_C:TickAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionUniqueAttackBase.23"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  }
+]

@@ -1,0 +1,2312 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.43"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ExecuteUbergraph_BP_LevelInstance_BossRoomBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.13"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalBossBattleLevelInstance'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:GetSequencerTransform'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.15"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:CheckLevelLoaded'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.12"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:GetPlayerStartTransform'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.14"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:Spawn Boss Spawner_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.23"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:Set Spawn Boss Character'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.22"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ReceiveEndPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.19"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.18"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.20"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ResetBossLocation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.21"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:SpawnBossSpawner'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.24"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ExecuteUbergraph_BP_LevelInstance_BossRoomBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.13"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:OnLoadedLevel__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.16"
+      },
+      {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:OnSetBoss__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.17"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "ForNavMesh_Ground",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "EdgeBox3",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "EdgeBox2",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "EdgeBox1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "EdgeBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "GroundCheckPoint",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WallBox4",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WallBox3",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WallBox2",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WallBox1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CeilingBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SequencerTransform",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SM_EnemyPoint",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PlayerStartPoint",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BossSpawner",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance | AdvancedDisplay",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_BossBattle_BossCharacterSpawner_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_BossBattle_BossCharacterSpawner.0"
+        }
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnSetBoss",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:OnSetBoss__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.17"
+        }
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnLoadedLevel",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:OnLoadedLevel__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.16"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsLoaded",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FuncMap": {
+      "OnSetBoss__DelegateSignature": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:OnSetBoss__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.17"
+      },
+      "OnLoadedLevel__DelegateSignature": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:OnLoadedLevel__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.16"
+      },
+      "ExecuteUbergraph_BP_LevelInstance_BossRoomBase": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ExecuteUbergraph_BP_LevelInstance_BossRoomBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.13"
+      },
+      "SpawnBossSpawner": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:SpawnBossSpawner'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.24"
+      },
+      "ResetBossLocation": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ResetBossLocation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.21"
+      },
+      "ReceiveTick": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.20"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.18"
+      },
+      "ReceiveEndPlay": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:ReceiveEndPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.19"
+      },
+      "Set Spawn Boss Character": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:Set Spawn Boss Character'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.22"
+      },
+      "Spawn Boss Spawner_Internal": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:Spawn Boss Spawner_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.23"
+      },
+      "GetPlayerStartTransform": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:GetPlayerStartTransform'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.14"
+      },
+      "CheckLevelLoaded": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:CheckLevelLoaded'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.12"
+      },
+      "GetSequencerTransform": {
+        "ObjectName": "Function'BP_LevelInstance_BossRoomBase_C:GetSequencerTransform'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.15"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_LevelInstance_BossRoomBase_C'Default__BP_LevelInstance_BossRoomBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.11"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "CeilingBox_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 4000.0,
+        "Y": 4000.0,
+        "Z": 500.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "InvisibleWall",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel2",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel3",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel4",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel5",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel6",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": -5.109606E-07,
+        "Y": 5.3660187E-11,
+        "Z": 2310.1235
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "EdgeBox1_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 300.0,
+        "Y": 300.0,
+        "Z": 4000.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "InvisibleWall",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel2",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel3",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel4",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel5",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel6",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 2740.0,
+        "Y": 2770.0,
+        "Z": 3680.0
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "EdgeBox2_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 300.0,
+        "Y": 300.0,
+        "Z": 4000.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "InvisibleWall",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel2",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel3",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel4",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel5",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel6",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": -2730.0,
+        "Y": -2770.0,
+        "Z": 3680.0
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "EdgeBox3_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 300.0,
+        "Y": 300.0,
+        "Z": 4000.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "InvisibleWall",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel2",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel3",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel4",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel5",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel6",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 2740.0,
+        "Y": -2770.0,
+        "Z": 3680.0
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "EdgeBox_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 300.0,
+        "Y": 300.0,
+        "Z": 4000.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "InvisibleWall",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel2",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel3",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel4",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel5",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel6",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": -2730.0,
+        "Y": 2770.0,
+        "Z": 3680.0
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "ForNavMesh_Ground_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 3000.0,
+        "Y": 3000.0,
+        "Z": 1000.0
+      },
+      "bGenerateOverlapEvents": false,
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "Background",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "vsGroundRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "ClimbRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -999.0
+      },
+      "PrimaryComponentTick": {
+        "bStartWithTickEnabled": false
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "WallBox1_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 3500.0,
+        "Y": 260.0,
+        "Z": 4000.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "InvisibleWall",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel2",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel3",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel4",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel5",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel6",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 3200.0,
+        "Z": 3700.0
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "WallBox2_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 3500.0,
+        "Y": 260.0,
+        "Z": 4000.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "InvisibleWall",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel2",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel3",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel4",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel5",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel6",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": -3200.0,
+        "Z": 3700.0
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "WallBox3_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 3500.0,
+        "Y": 260.0,
+        "Z": 4000.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "InvisibleWall",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel2",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel3",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel4",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel5",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel6",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": -3200.0,
+        "Y": 0.0,
+        "Z": 3700.0
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": 90.0,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "WallBox4_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 3500.0,
+        "Y": 260.0,
+        "Z": 4000.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "InvisibleWall",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel2",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel3",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel4",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel5",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "EngineTraceChannel6",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 3200.0,
+        "Y": 7.771561E-14,
+        "Z": 3700.0
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": 90.0,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "BP_LevelInstance_BossRoomBase_C",
+    "Name": "Default__BP_LevelInstance_BossRoomBase_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.BP_LevelInstance_BossRoomBase_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "CookedWorldAsset": {
+        "AssetPathName": "/Game/Pal/Maps/Boss/SL_Boss_Stage01.SL_Boss_Stage01",
+        "SubPathString": ""
+      },
+      "RootComponent": {
+        "ObjectName": "LevelInstanceComponent'Default__BP_LevelInstance_BossRoomBase_C:Root'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.25"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "CheckLevelLoaded",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBossBattleLevelInstance:CheckLevelLoaded'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "Temp_object_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ConstParm | ReferenceParm",
+        "Inner": {
+          "Type": "ObjectProperty",
+          "Name": "Temp_object_Variable",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyClass": {
+            "ObjectName": "Class'Actor'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Add_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Add_VectorVector_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_LineTraceSingle_OutHit",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_LineTraceSingle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_LevelInstance_BossRoomBase",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "K2Node_Event_BossType",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EPalBossType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_Event_JoinPlayerNum",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "K2Node_Event_EndPlayReason",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EEndPlayReason'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetBossBattleManager_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalBossBattleManager'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GetIsServer_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetPlayerStartTransform",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBossBattleLevelInstance:GetPlayerStartTransform'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentToWorld_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetSequencerTransform",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBossBattleLevelInstance:GetSequencerTransform'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentToWorld_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnLoadedLevel__DelegateSignature",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnSetBoss__DelegateSignature",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Boss",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveEndPlay",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveEndPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ByteProperty",
+        "Name": "EndPlayReason",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EEndPlayReason'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveTick",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveTick'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ResetBossLocation",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBossBattleLevelInstance:ResetBossLocation'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Set Spawn Boss Character",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Boss",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Spawn Boss Spawner_Internal",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "Boss",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPalBossType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "JoinPlayerNum",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetBossBattleManager_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalBossBattleManager'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GetIsServer_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetBossBattleManager_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalBossBattleManager'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetStaticInfo_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 136,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalBossBattleStaticInfo'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentToWorld_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FinishSpawningActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_BossBattle_BossCharacterSpawner_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_BossBattle_BossCharacterSpawner.0"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SpawnBossSpawner",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBossBattleLevelInstance:SpawnBossSpawner'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "BossType",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPalBossType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "JoinPlayerNum",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "LevelInstanceComponent",
+    "Name": "Root",
+    "Outer": "Default__BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'LevelInstanceComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "GroundCheckPoint_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'SceneComponent'",
+    "Properties": {
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": -1980.0,
+        "Z": 50.0
+      },
+      "bVisible": false,
+      "PrimaryComponentTick": {
+        "bStartWithTickEnabled": false,
+        "bAllowTickOnDedicatedServer": false
+      }
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_LevelInstance_BossRoomBase_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.26"
+      },
+      "VariableGuid": "4C3773EB-4B687473-9B735880-E163B624",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_LevelInstance_BossRoomBase_C:PlayerStartPoint_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.44"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "60ECF10A-44B503E4-8A059BB4-6E825CDF",
+      "InternalVariableName": "PlayerStartPoint"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_10",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_LevelInstance_BossRoomBase_C:GroundCheckPoint_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.27"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "6B9C033F-4798785C-5A260EBE-09CA9DD6",
+      "InternalVariableName": "GroundCheckPoint"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_11",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_LevelInstance_BossRoomBase_C:EdgeBox1_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.2"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "3C3A8FBF-4F11F326-475377A0-8DAD1D02",
+      "InternalVariableName": "EdgeBox1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_12",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_LevelInstance_BossRoomBase_C:EdgeBox2_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.3"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "BCFFC301-45250C96-ABE0DAB3-B92AEA09",
+      "InternalVariableName": "EdgeBox2"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_13",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_LevelInstance_BossRoomBase_C:EdgeBox3_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.4"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "5399D3C0-4D45A2E7-AD9AF1BA-C1313238",
+      "InternalVariableName": "EdgeBox3"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_14",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_LevelInstance_BossRoomBase_C:ForNavMesh_Ground_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.6"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "5B3449E7-4031049D-6525A98F-F3C5E630",
+      "InternalVariableName": "ForNavMesh_Ground"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_LevelInstance_BossRoomBase_C:SM_EnemyPoint_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.46"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "535A8757-4A2CB788-5E86A7A6-08EF4B5E",
+      "InternalVariableName": "SM_EnemyPoint"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_LevelInstance_BossRoomBase_C:SequencerTransform_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.45"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "EED50DCA-482A12C5-E749C08A-4B125668",
+      "InternalVariableName": "SequencerTransform"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_LevelInstance_BossRoomBase_C:CeilingBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.1"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "28C01711-4EFFFE3A-4DB433B1-6FDDB375",
+      "InternalVariableName": "CeilingBox"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_LevelInstance_BossRoomBase_C:WallBox1_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.7"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "E6EFAE06-4A3AC6FC-40629794-1C3EC267",
+      "InternalVariableName": "WallBox1"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_LevelInstance_BossRoomBase_C:WallBox2_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.8"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "30DF85F2-430D61B2-6C739B8B-2977D470",
+      "InternalVariableName": "WallBox2"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_7",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_LevelInstance_BossRoomBase_C:WallBox3_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.9"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "B61B4854-43FC5AB9-1DCFACA4-92EC1167",
+      "InternalVariableName": "WallBox3"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_8",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_LevelInstance_BossRoomBase_C:WallBox4_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.10"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "624BEC4F-4A3B0502-1A898886-7E449158",
+      "InternalVariableName": "WallBox4"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_9",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_LevelInstance_BossRoomBase_C:EdgeBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.5"
+      },
+      "ParentComponentOrVariableName": "Root",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "B8EF6C7A-4D3D492B-C5116E9C-31C419AD",
+      "InternalVariableName": "EdgeBox"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.29"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.35"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.36"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.37"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.38"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.39"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.40"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_8'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.41"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_10'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.30"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_9'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.42"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_11'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.31"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_12'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.32"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_13'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.33"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_14'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.34"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.29"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.35"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.36"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.37"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.38"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.39"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.40"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_8'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.41"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_10'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.30"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_9'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.42"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_11'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.31"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_12'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.32"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_13'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.33"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_14'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.34"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_LevelInstance_BossRoomBase_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/BossBattle/Logic/BP_LevelInstance_BossRoomBase.28"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "PlayerStartPoint_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_EnemyPoint'",
+        "ObjectPath": "Pal/Content/Pal/Model/Other/EnemyPoint/SM_EnemyPoint.2"
+      },
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 9.969803E-13,
+        "Y": 2000.0,
+        "Z": 30.0
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": -90.0,
+        "Roll": 0.0
+      },
+      "bHiddenInGame": true,
+      "PrimaryComponentTick": {
+        "bStartWithTickEnabled": false,
+        "bAllowTickOnDedicatedServer": false
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "SequencerTransform_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_EnemyPoint'",
+        "ObjectPath": "Pal/Content/Pal/Model/Other/EnemyPoint/SM_EnemyPoint.2"
+      },
+      "bHiddenInGame": true
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "SM_EnemyPoint_GEN_VARIABLE",
+    "Outer": "BP_LevelInstance_BossRoomBase_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_EnemyCamp'",
+        "ObjectPath": "Pal/Content/Pal/Model/Other/EnemyPoint/SM_EnemyCamp.1"
+      },
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 3.6859404E-13,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": 90.0,
+        "Roll": -0.0
+      },
+      "bHiddenInGame": true,
+      "PrimaryComponentTick": {
+        "bStartWithTickEnabled": false,
+        "bAllowTickOnDedicatedServer": false
+      },
+      "bCanEverAffectNavigation": false
+    }
+  }
+]

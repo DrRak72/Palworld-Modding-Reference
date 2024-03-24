@@ -1,0 +1,69 @@
+[
+  {
+    "Type": "DataTable",
+    "Name": "DT_NPCTalk_Visitor_Present",
+    "Class": "UScriptClass'DataTable'",
+    "Properties": {
+      "RowStruct": {
+        "ObjectName": "ScriptStruct'PalNPCTalkDataTableRow'",
+        "ObjectPath": "/Script/Pal"
+      }
+    },
+    "Rows": {
+      "Default": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::SimpleMessages",
+            "MessageIDList": [
+              "Visitor_Present_1_1"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "None",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          },
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFunc",
+            "MessageIDList": [],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "SpawnItem",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": {
+              "ObjectName": "DataTable'DT_VisitorNPCPresentLottery'",
+              "ObjectPath": "Pal/Content/Pal/DataTable/NPCTalk/FunctionArgument/DT_VisitorNPCPresentLottery.0"
+            },
+            "SelectedChoiceCommandDataList": [
+              {
+                "selectedChoiceCommand": "EPalNPCTalkSelectedChoiceCommand::ChangeSeqence",
+                "SeqenceName": "Yes",
+                "CustomFuncName": "None",
+                "isCloseWhenCalledCustomFunc": false,
+                "CustomFuncParam": null
+              },
+              {
+                "selectedChoiceCommand": "EPalNPCTalkSelectedChoiceCommand::ChangeSeqence",
+                "SeqenceName": "No",
+                "CustomFuncName": "None",
+                "isCloseWhenCalledCustomFunc": false,
+                "CustomFuncParam": null
+              }
+            ]
+          },
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFunc",
+            "MessageIDList": [],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "ReturnToSpawnedPoint",
+            "isCloseWhenCalledCustomFunc": true,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          }
+        ]
+      }
+    }
+  }
+]

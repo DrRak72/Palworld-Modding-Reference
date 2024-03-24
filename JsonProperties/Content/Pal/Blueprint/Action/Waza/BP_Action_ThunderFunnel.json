@@ -1,0 +1,147 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_Action_ThunderFunnel_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.0"
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_Action_ThunderFunnel_C:OnSpawnEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_Action_ThunderFunnel.2"
+      }
+    ],
+    "FuncMap": {
+      "OnSpawnEffect": {
+        "ObjectName": "Function'BP_Action_ThunderFunnel_C:OnSpawnEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_Action_ThunderFunnel.2"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_Action_ThunderFunnel_C'Default__BP_Action_ThunderFunnel_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_Action_ThunderFunnel.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_Action_ThunderFunnel_C",
+    "Name": "Default__BP_Action_ThunderFunnel_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Action/Waza/BP_Action_ThunderFunnel.BP_Action_ThunderFunnel_C'",
+    "Template": {
+      "ObjectName": "BP_ActionGeneralAttackFarBase_C'Default__BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.1"
+    },
+    "Properties": {
+      "IsBullet": false,
+      "SkillEffectSpawnParameters": [
+        {
+          "TimeOffset": 0.0,
+          "SkillEffectClass": {
+            "ObjectName": "BlueprintGeneratedClass'BP_Skill_ThunderFunnel_C'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/ThunderFunnel/BP_Skill_ThunderFunnel.2"
+          },
+          "SpawnOffset": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "bAttachToOwner": false,
+          "AttachSocketName": "None",
+          "AttachLocationType": "EPalBodyLocationType::BulletMuzzle"
+        }
+      ],
+      "WazaID": "EPalWazaID::ThunderFunnel"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "OnSpawnEffect",
+    "Outer": "BP_Action_ThunderFunnel_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnSpawnEffect'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.13"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnSpawnEffect'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.13"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Effect",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkillEffectBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetTargetLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Conv_VectorToString_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Skill_Thunder_Funnel",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_Skill_ThunderFunnel_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/ThunderFunnel/BP_Skill_ThunderFunnel.2"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionTarget_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

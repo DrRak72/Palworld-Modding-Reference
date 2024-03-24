@@ -1,0 +1,391 @@
+[
+  {
+    "Type": "DistributionFloatConstant",
+    "Name": "RequiredDistributionSpawnRate",
+    "Outer": "ParticleModuleRequired_0",
+    "Class": "UScriptClass'DistributionFloatConstant'"
+  },
+  {
+    "Type": "DistributionFloatConstant",
+    "Name": "BurstScaleDistribution",
+    "Outer": "ParticleModuleSpawn_0",
+    "Class": "UScriptClass'DistributionFloatConstant'",
+    "Properties": {
+      "Constant": 1.0
+    }
+  },
+  {
+    "Type": "ParticleLODLevel",
+    "Name": "ParticleLODLevel_0",
+    "Outer": "ParticleSpriteEmitter_0",
+    "Class": "UScriptClass'ParticleLODLevel'",
+    "Properties": {
+      "RequiredModule": {
+        "ObjectName": "ParticleModuleRequired'PS_DroneCaptureEffect:ParticleModuleRequired_0'",
+        "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.6"
+      },
+      "Modules": [
+        {
+          "ObjectName": "ParticleModuleLifetime'PS_DroneCaptureEffect:ParticleModuleLifetime_0'",
+          "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.4"
+        },
+        {
+          "ObjectName": "ParticleModuleSize'PS_DroneCaptureEffect:ParticleModuleSize_0'",
+          "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.7"
+        },
+        {
+          "ObjectName": "ParticleModuleVelocity'PS_DroneCaptureEffect:ParticleModuleVelocity_0'",
+          "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.10"
+        },
+        {
+          "ObjectName": "ParticleModuleColorOverLife'PS_DroneCaptureEffect:ParticleModuleColorOverLife_0'",
+          "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.3"
+        },
+        {
+          "ObjectName": "ParticleModuleLocation_Seeded'PS_DroneCaptureEffect:ParticleModuleLocation_Seeded_0'",
+          "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.5"
+        },
+        {
+          "ObjectName": "ParticleModuleSizeMultiplyLife'PS_DroneCaptureEffect:ParticleModuleSizeMultiplyLife_0'",
+          "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.8"
+        }
+      ],
+      "SpawnModule": {
+        "ObjectName": "ParticleModuleSpawn'PS_DroneCaptureEffect:ParticleModuleSpawn_0'",
+        "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.9"
+      },
+      "PeakActiveParticles": 21
+    }
+  },
+  {
+    "Type": "ParticleModuleColorOverLife",
+    "Name": "ParticleModuleColorOverLife_0",
+    "Outer": "PS_DroneCaptureEffect",
+    "Class": "UScriptClass'ParticleModuleColorOverLife'",
+    "Properties": {
+      "ColorOverLife": {
+        "MinValue": 1.0,
+        "MaxValue": 1.0,
+        "MinValueVec": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        },
+        "MaxValueVec": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        },
+        "Distribution": null,
+        "Table": {
+          "Values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "Op": 1,
+          "EntryCount": 1,
+          "EntryStride": 3
+        }
+      },
+      "AlphaOverLife": {
+        "MaxValue": 1.0,
+        "Distribution": null,
+        "Table": {
+          "TimeScale": 1.0,
+          "Values": [
+            1.0,
+            0.0
+          ],
+          "Op": 1,
+          "EntryCount": 2,
+          "EntryStride": 1
+        }
+      },
+      "LODValidity": 1
+    }
+  },
+  {
+    "Type": "ParticleModuleLifetime",
+    "Name": "ParticleModuleLifetime_0",
+    "Outer": "PS_DroneCaptureEffect",
+    "Class": "UScriptClass'ParticleModuleLifetime'",
+    "Properties": {
+      "LifeTime": {
+        "MinValue": 1.0,
+        "MaxValue": 1.0,
+        "Distribution": null,
+        "Table": {
+          "Values": [
+            1.0
+          ],
+          "Op": 1,
+          "EntryCount": 1,
+          "EntryStride": 1
+        }
+      },
+      "LODValidity": 1
+    }
+  },
+  {
+    "Type": "ParticleModuleLocation_Seeded",
+    "Name": "ParticleModuleLocation_Seeded_0",
+    "Outer": "PS_DroneCaptureEffect",
+    "Class": "UScriptClass'ParticleModuleLocation_Seeded'",
+    "Properties": {
+      "StartLocation": {
+        "MinValue": -100.0,
+        "MaxValue": 100.0,
+        "MinValueVec": {
+          "X": -100.0,
+          "Y": -100.0,
+          "Z": 0.0
+        },
+        "MaxValueVec": {
+          "X": 100.0,
+          "Y": 100.0,
+          "Z": 0.0
+        },
+        "Distribution": null,
+        "Table": {
+          "Values": [
+            -100.0,
+            -100.0,
+            0.0,
+            100.0,
+            100.0,
+            0.0
+          ],
+          "Op": 2,
+          "EntryCount": 1,
+          "EntryStride": 6,
+          "SubEntryStride": 3
+        }
+      },
+      "LODValidity": 1
+    }
+  },
+  {
+    "Type": "ParticleModuleRequired",
+    "Name": "ParticleModuleRequired_0",
+    "Outer": "PS_DroneCaptureEffect",
+    "Class": "UScriptClass'ParticleModuleRequired'",
+    "Properties": {
+      "Material": {
+        "ObjectName": "Material'M_DroneCaptureEffect'",
+        "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/M_DroneCaptureEffect.0"
+      },
+      "bUseLegacyEmitterTime": false,
+      "SpawnRate": {
+        "Distribution": {
+          "ObjectName": "DistributionFloatConstant'PS_DroneCaptureEffect:ParticleModuleRequired_0.RequiredDistributionSpawnRate'",
+          "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.0"
+        }
+      },
+      "RandomImageTime": 1.0,
+      "EmitterLoops": 1,
+      "LODValidity": 1
+    }
+  },
+  {
+    "Type": "ParticleModuleSize",
+    "Name": "ParticleModuleSize_0",
+    "Outer": "PS_DroneCaptureEffect",
+    "Class": "UScriptClass'ParticleModuleSize'",
+    "Properties": {
+      "StartSize": {
+        "MinValue": 30.0,
+        "MaxValue": 20.0,
+        "MinValueVec": {
+          "X": 30.0,
+          "Y": 30.0,
+          "Z": 30.0
+        },
+        "MaxValueVec": {
+          "X": 20.0,
+          "Y": 20.0,
+          "Z": 20.0
+        },
+        "Distribution": null,
+        "Table": {
+          "Values": [
+            30.0,
+            30.0,
+            30.0,
+            20.0,
+            20.0,
+            20.0
+          ],
+          "Op": 2,
+          "EntryCount": 1,
+          "EntryStride": 6,
+          "SubEntryStride": 3
+        }
+      },
+      "LODValidity": 1
+    }
+  },
+  {
+    "Type": "ParticleModuleSizeMultiplyLife",
+    "Name": "ParticleModuleSizeMultiplyLife_0",
+    "Outer": "PS_DroneCaptureEffect",
+    "Class": "UScriptClass'ParticleModuleSizeMultiplyLife'",
+    "Properties": {
+      "LifeMultiplier": {
+        "MinValue": 0.5,
+        "MaxValue": 1.0,
+        "MinValueVec": {
+          "X": 0.5,
+          "Y": 0.5,
+          "Z": 0.5
+        },
+        "MaxValueVec": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        },
+        "Distribution": null,
+        "Table": {
+          "TimeScale": 1.0,
+          "Values": [
+            1.0,
+            1.0,
+            1.0,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "Op": 1,
+          "EntryCount": 2,
+          "EntryStride": 3
+        }
+      },
+      "LODValidity": 1
+    }
+  },
+  {
+    "Type": "ParticleModuleSpawn",
+    "Name": "ParticleModuleSpawn_0",
+    "Outer": "PS_DroneCaptureEffect",
+    "Class": "UScriptClass'ParticleModuleSpawn'",
+    "Properties": {
+      "Rate": {
+        "MinValue": 20.0,
+        "MaxValue": 20.0,
+        "Distribution": null,
+        "Table": {
+          "Values": [
+            20.0
+          ],
+          "Op": 1,
+          "EntryCount": 1,
+          "EntryStride": 1
+        }
+      },
+      "RateScale": {
+        "MinValue": 1.0,
+        "MaxValue": 1.0,
+        "Distribution": null,
+        "Table": {
+          "Values": [
+            1.0
+          ],
+          "Op": 1,
+          "EntryCount": 1,
+          "EntryStride": 1
+        }
+      },
+      "BurstScale": {
+        "Distribution": {
+          "ObjectName": "DistributionFloatConstant'PS_DroneCaptureEffect:ParticleModuleSpawn_0.BurstScaleDistribution'",
+          "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.1"
+        }
+      },
+      "LODValidity": 1
+    }
+  },
+  {
+    "Type": "ParticleModuleVelocity",
+    "Name": "ParticleModuleVelocity_0",
+    "Outer": "PS_DroneCaptureEffect",
+    "Class": "UScriptClass'ParticleModuleVelocity'",
+    "Properties": {
+      "StartVelocity": {
+        "MaxValue": 500.0,
+        "MinValueVec": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 400.0
+        },
+        "MaxValueVec": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 500.0
+        },
+        "Distribution": null,
+        "Table": {
+          "Values": [
+            0.0,
+            0.0,
+            400.0,
+            0.0,
+            0.0,
+            500.0
+          ],
+          "Op": 2,
+          "EntryCount": 1,
+          "EntryStride": 6,
+          "SubEntryStride": 3
+        }
+      },
+      "StartVelocityRadial": {
+        "Distribution": null,
+        "Table": {
+          "Values": [
+            0.0
+          ],
+          "Op": 1,
+          "EntryCount": 1,
+          "EntryStride": 1
+        }
+      },
+      "LODValidity": 1
+    }
+  },
+  {
+    "Type": "ParticleSpriteEmitter",
+    "Name": "ParticleSpriteEmitter_0",
+    "Outer": "PS_DroneCaptureEffect",
+    "Class": "UScriptClass'ParticleSpriteEmitter'",
+    "Properties": {
+      "LODLevels": [
+        {
+          "ObjectName": "ParticleLODLevel'PS_DroneCaptureEffect:ParticleSpriteEmitter_0.ParticleLODLevel_0'",
+          "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.2"
+        }
+      ],
+      "DetailModeBitmask": 7
+    }
+  },
+  {
+    "Type": "ParticleSystem",
+    "Name": "PS_DroneCaptureEffect",
+    "Class": "UScriptClass'ParticleSystem'",
+    "Properties": {
+      "Emitters": [
+        {
+          "ObjectName": "ParticleSpriteEmitter'PS_DroneCaptureEffect:ParticleSpriteEmitter_0'",
+          "ObjectPath": "Pal/Content/PalEditor/Maps/EnemyTest/PS_DroneCaptureEffect.11"
+        }
+      ],
+      "CurveEdSetup": null,
+      "LODDistances": [
+        0.0
+      ],
+      "LODSettings": [
+        {}
+      ],
+      "bShouldResetPeakCounts": true
+    }
+  }
+]

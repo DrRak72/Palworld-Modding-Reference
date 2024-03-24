@@ -1,0 +1,589 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_CoopParam_AssaultRifleMode_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:ExecuteUbergraph_BP_CoopParam_AssaultRifleMode'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.3"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'ActorComponent'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:CalcShootBlurRotator'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.2"
+      },
+      {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:GetWeaponDamage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.4"
+      },
+      {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:ShootBullet'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.7"
+      },
+      {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.6"
+      },
+      {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:ShootStart'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.8"
+      },
+      {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:ExecuteUbergraph_BP_CoopParam_AssaultRifleMode'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.3"
+      },
+      {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:OnShoot__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.5"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "MovingAnim",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | BlueprintReadOnly | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'AnimMontage'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "ShootingAnim",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | BlueprintReadOnly | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'AnimMontage'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "IdleAnim",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | BlueprintReadOnly | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'AnimMontage'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "BulletMesh",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalBullet'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "GunMesh",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Trainer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnShoot",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:OnShoot__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.5"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AimStartPoint",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "AimBlurAngle",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      }
+    ],
+    "FuncMap": {
+      "OnShoot__DelegateSignature": {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:OnShoot__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.5"
+      },
+      "ExecuteUbergraph_BP_CoopParam_AssaultRifleMode": {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:ExecuteUbergraph_BP_CoopParam_AssaultRifleMode'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.3"
+      },
+      "ShootStart": {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:ShootStart'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.8"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.6"
+      },
+      "ShootBullet": {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:ShootBullet'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.7"
+      },
+      "GetWeaponDamage": {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:GetWeaponDamage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.4"
+      },
+      "CalcShootBlurRotator": {
+        "ObjectName": "Function'BP_CoopParam_AssaultRifleMode_C:CalcShootBlurRotator'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.2"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_CoopParam_AssaultRifleMode_C'Default__BP_CoopParam_AssaultRifleMode_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_CoopParam_AssaultRifleMode_C",
+    "Name": "Default__BP_CoopParam_AssaultRifleMode_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_AssaultRifleMode.BP_CoopParam_AssaultRifleMode_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "MovingAnim": {
+        "ObjectName": "AnimMontage'AM_Monkey_Walk'",
+        "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Monkey/AM_Monkey_Walk.0"
+      },
+      "ShootingAnim": {
+        "ObjectName": "AnimMontage'AM_Monkey_FarSkill_ActionLoop'",
+        "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Monkey/AM_Monkey_FarSkill_ActionLoop.0"
+      },
+      "IdleAnim": {
+        "ObjectName": "AnimMontage'AM_Monkey_Encount'",
+        "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Monkey/AM_Monkey_Encount.0"
+      },
+      "BulletMesh": {
+        "ObjectName": "BlueprintGeneratedClass'BP_NormalBullet_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_NormalBullet.0"
+      },
+      "AimStartPoint": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "AimBlurAngle": 1.0,
+      "PrimaryComponentTick": {
+        "bStartWithTickEnabled": false,
+        "bAllowTickOnDedicatedServer": false
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "CalcShootBlurRotator",
+    "Outer": "BP_CoopParam_AssaultRifleMode_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DoubleProperty",
+        "Name": "BlurAngle",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "BlurRotator",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Parm | OutParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Blur",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Multiply_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotator_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_MakeRotator_Pitch_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_MakeRotator_Yaw_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_CoopParam_AssaultRifleMode",
+    "Outer": "BP_CoopParam_AssaultRifleMode_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "CallFunc_GetComponentsByTag_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ReferenceParm | ContainsInstancedReference",
+        "Inner": {
+          "Type": "ObjectProperty",
+          "Name": "CallFunc_GetComponentsByTag_ReturnValue",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyFlags": "InstancedReference",
+          "PropertyClass": {
+            "ObjectName": "Class'SkeletalMeshComponent'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Array_Get_Item",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetWeaponDamage",
+    "Outer": "BP_CoopParam_AssaultRifleMode_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "Damage",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Parm | OutParm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetActiveSkillMainValueByRank_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_FTrunc_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_FTrunc_A_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnShoot__DelegateSignature",
+    "Outer": "BP_CoopParam_AssaultRifleMode_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_CoopParam_AssaultRifleMode_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'ActorComponent:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ShootBullet",
+    "Outer": "BP_CoopParam_AssaultRifleMode_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "LocalRotation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_CalcShootBlurRotator_BlurRotator",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_GetWeaponDamage_Damage",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentRotation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotator_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FindOwnerActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnSystemAttached_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_ComposeRotators_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetSocketLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeTransform_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FinishSpawningActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalBullet'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_MakeRotator_Pitch_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ShootStart",
+    "Outer": "BP_CoopParam_AssaultRifleMode_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

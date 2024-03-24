@@ -1,0 +1,945 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_AIAction_CanCombatBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.0"
+    },
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ExecuteUbergraph_BP_AIAction_Visitor_TravelToBaseCamp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.8"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_AIAction_CanCombatBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:Tick Move to Base Camp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.14"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:SoundEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.13"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:Fun_Damage_AIResponse'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.9"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:SightCheckAndResponse'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.12"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionStart'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.6"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.7"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionAbort'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.2"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionPause'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.4"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionFinished'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.3"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionResume'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.5"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ExecuteUbergraph_BP_AIAction_Visitor_TravelToBaseCamp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.8"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:OnStuck__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.11"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:OnArrivedTargetPoint__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.10"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "BaseCampLocation",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "DashMode",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnArrivedTargetPoint",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:OnArrivedTargetPoint__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.10"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "PrevLocation",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "StuckElapsedTime",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnStuck",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:OnStuck__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.11"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsStuck",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FuncMap": {
+      "OnArrivedTargetPoint__DelegateSignature": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:OnArrivedTargetPoint__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.10"
+      },
+      "OnStuck__DelegateSignature": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:OnStuck__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.11"
+      },
+      "ExecuteUbergraph_BP_AIAction_Visitor_TravelToBaseCamp": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ExecuteUbergraph_BP_AIAction_Visitor_TravelToBaseCamp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.8"
+      },
+      "ActionResume": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionResume'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.5"
+      },
+      "ActionFinished": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionFinished'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.3"
+      },
+      "ActionPause": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionPause'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.4"
+      },
+      "ActionAbort": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionAbort'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.2"
+      },
+      "ActionTick": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.7"
+      },
+      "ActionStart": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:ActionStart'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.6"
+      },
+      "SightCheckAndResponse": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:SightCheckAndResponse'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.12"
+      },
+      "Fun_Damage_AIResponse": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:Fun_Damage_AIResponse'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.9"
+      },
+      "SoundEvent": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:SoundEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.13"
+      },
+      "Tick Move to Base Camp": {
+        "ObjectName": "Function'BP_AIAction_Visitor_TravelToBaseCamp_C:Tick Move to Base Camp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.14"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_AIAction_Visitor_TravelToBaseCamp_C'Default__BP_AIAction_Visitor_TravelToBaseCamp_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Name": "Default__BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Controller/AIAction/Visitor/BP_AIAction_Visitor_TravelToBaseCamp.BP_AIAction_Visitor_TravelToBaseCamp_C'",
+    "Template": {
+      "ObjectName": "BP_AIAction_CanCombatBase_C'Default__BP_AIAction_CanCombatBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "BaseCampLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "PrevLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionAbort",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionAbort'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.2"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionAbort'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.2"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionFinished",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionFinished'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.3"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionFinished'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.3"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "WithResult",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPawnActionResult'",
+          "ObjectPath": "/Script/AIModule"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionPause",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionPause'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.4"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionPause'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.4"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionResume",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionResume'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.5"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionResume'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.5"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionStart",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionStart'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.6"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionStart'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.6"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionTick",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PawnAction_BlueprintBase:ActionTick'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_AIAction_Visitor_TravelToBaseCamp",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "K2Node_Event_WithResult",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EPawnActionResult'",
+          "ObjectPath": "/Script/AIModule"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterMovementComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterMovementComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "Fun_Damage_AIResponse",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:Fun_Damage_AIResponse'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.9"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:Fun_Damage_AIResponse'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.9"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "DamageResult",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDamageResult'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterMovementComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnArrivedTargetPoint__DelegateSignature",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnStuck__DelegateSignature",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SightCheckAndResponse",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:SightCheckAndResponse'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.18"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:SightCheckAndResponse'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.18"
+    },
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "Current",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPalAIResponseType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "OverrideIsDamage",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "ChangeNextAction",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SoundEvent",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:SoundEvent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.20"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:SoundEvent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.20"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "EmitLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Tick Move to Base Camp",
+    "Outer": "BP_AIAction_Visitor_TravelToBaseCamp_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "tempCampToSelf",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Add_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsNearTwoPoint_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Add_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_InFanShap_TargetLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GreaterEqual_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Subtract_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsNearTwoPoint_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Add_DoubleDouble_B_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

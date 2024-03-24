@@ -1,0 +1,686 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_AIAction_TurnAndEscape_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_AIAction_CanCombatBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.0"
+    },
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:ExecuteUbergraph_BP_AIAction_TurnAndEscape'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.5"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_AIAction_CanCombatBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:OnSquadMemberDeadEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.6"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:SoundEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.8"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:SetUp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.7"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:ActionTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.4"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:ActionStart'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.3"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:ActionResume'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.2"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:ExecuteUbergraph_BP_AIAction_TurnAndEscape'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.5"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "TargetAct",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Turning",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CancelAble",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsStopByDelay",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_AIAction_TurnAndEscape": {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:ExecuteUbergraph_BP_AIAction_TurnAndEscape'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.5"
+      },
+      "ActionResume": {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:ActionResume'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.2"
+      },
+      "ActionStart": {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:ActionStart'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.3"
+      },
+      "ActionTick": {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:ActionTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.4"
+      },
+      "SetUp": {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:SetUp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.7"
+      },
+      "SoundEvent": {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:SoundEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.8"
+      },
+      "OnSquadMemberDeadEvent": {
+        "ObjectName": "Function'BP_AIAction_TurnAndEscape_C:OnSquadMemberDeadEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.6"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_AIAction_TurnAndEscape_C'Default__BP_AIAction_TurnAndEscape_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_AIAction_TurnAndEscape_C",
+    "Name": "Default__BP_AIAction_TurnAndEscape_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_TurnAndEscape.BP_AIAction_TurnAndEscape_C'",
+    "Template": {
+      "ObjectName": "BP_AIAction_CanCombatBase_C'Default__BP_AIAction_CanCombatBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "IsStopByDelay": true,
+      "DefaultPriority": "EAIRequestPriority::10"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionResume",
+    "Outer": "BP_AIAction_TurnAndEscape_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionResume'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.5"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionResume'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.5"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionStart",
+    "Outer": "BP_AIAction_TurnAndEscape_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionStart'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.6"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionStart'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.6"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionTick",
+    "Outer": "BP_AIAction_TurnAndEscape_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PawnAction_BlueprintBase:ActionTick'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_AIAction_TurnAndEscape",
+    "Outer": "BP_AIAction_TurnAndEscape_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_InFanShap_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAction_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CharacterMovementComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_ActionIsEmpty_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_X",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_Y",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_Z",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue_6",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_ActionIsEmpty_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalAIActionDynamicParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalAIActionDynamicParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SetAIActionClassParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Delay_Duration_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnSquadMemberDeadEvent",
+    "Outer": "BP_AIAction_TurnAndEscape_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:OnSquadMemberDeadEvent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.14"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:OnSquadMemberDeadEvent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.14"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "DeadInbfo",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDeadInfo'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetUp",
+    "Outer": "BP_AIAction_TurnAndEscape_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "TargetActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SoundEvent",
+    "Outer": "BP_AIAction_TurnAndEscape_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:SoundEvent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.20"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:SoundEvent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.20"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "EmitLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

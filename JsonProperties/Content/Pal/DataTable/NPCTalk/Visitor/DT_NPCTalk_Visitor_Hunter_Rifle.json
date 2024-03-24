@@ -1,0 +1,191 @@
+[
+  {
+    "Type": "DataTable",
+    "Name": "DT_NPCTalk_Visitor_Hunter_Rifle",
+    "Class": "UScriptClass'DataTable'",
+    "Properties": {
+      "RowStruct": {
+        "ObjectName": "ScriptStruct'PalNPCTalkDataTableRow'",
+        "ObjectPath": "/Script/Pal"
+      }
+    },
+    "Rows": {
+      "Default": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFunc",
+            "MessageIDList": [
+              "Visitor_Hunter_Rifle_1_1"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "RequestItem",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": {
+              "ObjectName": "DataTable'DT_VisitorNPCRequestItemLottery_Hunter'",
+              "ObjectPath": "Pal/Content/Pal/DataTable/NPCTalk/FunctionArgument/DT_VisitorNPCRequestItemLottery_Hunter.0"
+            },
+            "SelectedChoiceCommandDataList": []
+          },
+          {
+            "TalkCommand": "EPalNPCTalkCommand::SimpleMessages",
+            "MessageIDList": [
+              "Visitor_Hunter_Rifle_1_1"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "None",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          },
+          {
+            "TalkCommand": "EPalNPCTalkCommand::ChoiceYesNo",
+            "MessageIDList": [],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "AttackToPlayer",
+            "isCloseWhenCalledCustomFunc": true,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": [
+              {
+                "selectedChoiceCommand": "EPalNPCTalkSelectedChoiceCommand::ChangeSeqence",
+                "SeqenceName": "Yes",
+                "CustomFuncName": "None",
+                "isCloseWhenCalledCustomFunc": false,
+                "CustomFuncParam": null
+              },
+              {
+                "selectedChoiceCommand": "EPalNPCTalkSelectedChoiceCommand::ChangeSeqence",
+                "SeqenceName": "No",
+                "CustomFuncName": "None",
+                "isCloseWhenCalledCustomFunc": false,
+                "CustomFuncParam": null
+              }
+            ]
+          }
+        ]
+      },
+      "Yes": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFuncBranch",
+            "MessageIDList": [],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "HasRequestItem",
+            "isCloseWhenCalledCustomFunc": true,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": [
+              {
+                "selectedChoiceCommand": "EPalNPCTalkSelectedChoiceCommand::ChangeSeqence",
+                "SeqenceName": "Yes_Succeed",
+                "CustomFuncName": "None",
+                "isCloseWhenCalledCustomFunc": false,
+                "CustomFuncParam": null
+              },
+              {
+                "selectedChoiceCommand": "EPalNPCTalkSelectedChoiceCommand::ChangeSeqence",
+                "SeqenceName": "Yes_Failed",
+                "CustomFuncName": "None",
+                "isCloseWhenCalledCustomFunc": false,
+                "CustomFuncParam": null
+              }
+            ]
+          }
+        ]
+      },
+      "Yes_Succeed": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFunc",
+            "MessageIDList": [
+              "Visitor_Hunter_Rifle_2_1"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "CunsumeRequestItem",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          },
+          {
+            "TalkCommand": "EPalNPCTalkCommand::SimpleMessages",
+            "MessageIDList": [
+              "Visitor_Hunter_Rifle_2_1",
+              "Visitor_Hunter_Rifle_2_2"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "None",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          },
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFunc",
+            "MessageIDList": [],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "ReturnToSpawnedPointSquad",
+            "isCloseWhenCalledCustomFunc": true,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          }
+        ]
+      },
+      "Yes_Failed": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::SimpleMessages",
+            "MessageIDList": [
+              "Visitor_Hunter_Rifle_4_1"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "None",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          },
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFunc",
+            "MessageIDList": [],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "AttackToPlayer",
+            "isCloseWhenCalledCustomFunc": true,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          }
+        ]
+      },
+      "No": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::SimpleMessages",
+            "MessageIDList": [
+              "Visitor_Hunter_Rifle_3_1"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "None",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          },
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFunc",
+            "MessageIDList": [],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "AttackToPlayer",
+            "isCloseWhenCalledCustomFunc": true,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          }
+        ]
+      }
+    }
+  }
+]

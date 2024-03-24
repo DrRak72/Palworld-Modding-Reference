@@ -1,0 +1,115 @@
+[
+  {
+    "Type": "DataTable",
+    "Name": "DT_NPCTalk_CommonPalShop_RandomEvent",
+    "Class": "UScriptClass'DataTable'",
+    "Properties": {
+      "RowStruct": {
+        "ObjectName": "ScriptStruct'PalNPCTalkDataTableRow'",
+        "ObjectPath": "/Script/Pal"
+      }
+    },
+    "Rows": {
+      "Default": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::SimpleMessages",
+            "MessageIDList": [
+              "SHOP_PAL_RANDOMEVENT_WELCOME"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "None",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          },
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomChoice",
+            "MessageIDList": [],
+            "ChoiceMessageIDList": [
+              "CHOICE_SHOP_BUY",
+              "CHOICE_SHOP_SELL",
+              "CHOICE_SHOP_CANCEL"
+            ],
+            "TalkerNameID": "None",
+            "CustomFuncName": "None",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": [
+              {
+                "selectedChoiceCommand": "EPalNPCTalkSelectedChoiceCommand::ChangeSeqence",
+                "SeqenceName": "OpenShop_Buy",
+                "CustomFuncName": "None",
+                "isCloseWhenCalledCustomFunc": false,
+                "CustomFuncParam": null
+              },
+              {
+                "selectedChoiceCommand": "EPalNPCTalkSelectedChoiceCommand::ChangeSeqence",
+                "SeqenceName": "OpenShop_Sell",
+                "CustomFuncName": "None",
+                "isCloseWhenCalledCustomFunc": false,
+                "CustomFuncParam": null
+              },
+              {
+                "selectedChoiceCommand": "EPalNPCTalkSelectedChoiceCommand::ChangeSeqence",
+                "SeqenceName": "Exit",
+                "CustomFuncName": "None",
+                "isCloseWhenCalledCustomFunc": false,
+                "CustomFuncParam": null
+              }
+            ]
+          }
+        ]
+      },
+      "Exit": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::SimpleMessages",
+            "MessageIDList": [
+              "SHOP_EXIT_TEST"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "None",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          }
+        ]
+      },
+      "OpenShop_Buy": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFunc",
+            "MessageIDList": [
+              "CHOICE_YES"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "OpenPalShop_Buy",
+            "isCloseWhenCalledCustomFunc": true,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          }
+        ]
+      },
+      "OpenShop_Sell": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFunc",
+            "MessageIDList": [
+              "CHOICE_YES"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "OpenPalShop_Sell",
+            "isCloseWhenCalledCustomFunc": true,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          }
+        ]
+      }
+    }
+  }
+]

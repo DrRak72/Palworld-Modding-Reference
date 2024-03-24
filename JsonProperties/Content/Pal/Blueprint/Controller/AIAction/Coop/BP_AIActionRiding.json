@@ -1,0 +1,290 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_AIActionRiding_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_AIActionRiding_C:ExecuteUbergraph_BP_AIActionRiding'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.3"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalAIActionBase'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_AIActionRiding_C:SetRidingCharacter'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.5"
+      },
+      {
+        "ObjectName": "Function'BP_AIActionRiding_C:ActionStart'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.2"
+      },
+      {
+        "ObjectName": "Function'BP_AIActionRiding_C:OnCoopReleaseDelegate_イベント_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.4"
+      },
+      {
+        "ObjectName": "Function'BP_AIActionRiding_C:ExecuteUbergraph_BP_AIActionRiding'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.3"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "RidingCharacter",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "RidingSpeedUpFlagName",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OwnerPawn",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bIsRiding",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_AIActionRiding": {
+        "ObjectName": "Function'BP_AIActionRiding_C:ExecuteUbergraph_BP_AIActionRiding'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.3"
+      },
+      "OnCoopReleaseDelegate_イベント_0": {
+        "ObjectName": "Function'BP_AIActionRiding_C:OnCoopReleaseDelegate_イベント_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.4"
+      },
+      "ActionStart": {
+        "ObjectName": "Function'BP_AIActionRiding_C:ActionStart'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.2"
+      },
+      "SetRidingCharacter": {
+        "ObjectName": "Function'BP_AIActionRiding_C:SetRidingCharacter'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.5"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_AIActionRiding_C'Default__BP_AIActionRiding_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_AIActionRiding_C",
+    "Name": "Default__BP_AIActionRiding_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIActionRiding.BP_AIActionRiding_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "RidingSpeedUpFlagName": "RidingSpeedUp",
+      "AiActionCategory": "EPalAIActionCategory::Coop"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionStart",
+    "Outer": "BP_AIActionRiding_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PawnAction_BlueprintBase:ActionStart'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_AIActionRiding",
+    "Outer": "BP_AIActionRiding_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalRiderComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GetOff_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalRideMarkerComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalRiderComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Ride_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnCoopReleaseDelegate_イベント_0",
+    "Outer": "BP_AIActionRiding_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetRidingCharacter",
+    "Outer": "BP_AIActionRiding_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "RidingCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

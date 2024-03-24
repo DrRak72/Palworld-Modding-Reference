@@ -1,0 +1,243 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_ActionIceBlade_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.0"
+    },
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_ActionIceBlade_C:ExecuteUbergraph_BP_ActionIceBlade'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.2"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_ActionIceBlade_C:OnBeginAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.3"
+      },
+      {
+        "ObjectName": "Function'BP_ActionIceBlade_C:TickAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.5"
+      },
+      {
+        "ObjectName": "Function'BP_ActionIceBlade_C:OnSpawnEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.4"
+      },
+      {
+        "ObjectName": "Function'BP_ActionIceBlade_C:ExecuteUbergraph_BP_ActionIceBlade'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.2"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_ActionIceBlade": {
+        "ObjectName": "Function'BP_ActionIceBlade_C:ExecuteUbergraph_BP_ActionIceBlade'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.2"
+      },
+      "OnSpawnEffect": {
+        "ObjectName": "Function'BP_ActionIceBlade_C:OnSpawnEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.4"
+      },
+      "TickAction": {
+        "ObjectName": "Function'BP_ActionIceBlade_C:TickAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.5"
+      },
+      "OnBeginAction": {
+        "ObjectName": "Function'BP_ActionIceBlade_C:OnBeginAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.3"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_ActionIceBlade_C'Default__BP_ActionIceBlade_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_ActionIceBlade_C",
+    "Name": "Default__BP_ActionIceBlade_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionIceBlade.BP_ActionIceBlade_C'",
+    "Template": {
+      "ObjectName": "BP_ActionGeneralAttackFarBase_C'Default__BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "BulletSpeed": 1800.0,
+      "DoPredict?": true,
+      "PredictPowerRate": 2.0,
+      "SkillEffectSpawnParameters": [
+        {
+          "TimeOffset": 1.0,
+          "SkillEffectClass": {
+            "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_IceBlade_C'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/IceBlade/BP_SkillEffect_IceBlade.0"
+          },
+          "SpawnOffset": {
+            "X": 100.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "bAttachToOwner": false,
+          "AttachSocketName": "None",
+          "AttachLocationType": "EPalBodyLocationType::BulletMuzzle"
+        }
+      ],
+      "ReadyAnimationTime": 0.8,
+      "IsFindTargetOnRiding": true,
+      "FindTargetHeight": 800.0,
+      "FindTargetDegree": 20.0,
+      "FindTargetDistance": 500.0,
+      "WazaID": "EPalWazaID::IceBlade"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_ActionIceBlade",
+    "Outer": "BP_ActionIceBlade_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_Effect",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkillEffectBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Skill_Effect_Ice_Blade",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_IceBlade_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/IceBlade/BP_SkillEffect_IceBlade.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnBeginAction",
+    "Outer": "BP_ActionIceBlade_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnBeginAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.9"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnBeginAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.9"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnSpawnEffect",
+    "Outer": "BP_ActionIceBlade_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnSpawnEffect'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.13"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnSpawnEffect'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.13"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Effect",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkillEffectBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "TickAction",
+    "Outer": "BP_ActionIceBlade_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:TickAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.23"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:TickAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.23"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  }
+]

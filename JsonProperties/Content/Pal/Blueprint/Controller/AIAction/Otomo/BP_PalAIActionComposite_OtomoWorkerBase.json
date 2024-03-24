@@ -1,0 +1,223 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_PalAIActionComposite_OtomoWorkerBase_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "SuperStruct": {
+      "ObjectName": "Class'PalAIActionCompositeWorker'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_PalAIActionComposite_OtomoWorkerBase_C:OnTickInWaitAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Otomo/BP_PalAIActionComposite_OtomoWorkerBase.2"
+      }
+    ],
+    "FuncMap": {
+      "OnTickInWaitAction": {
+        "ObjectName": "Function'BP_PalAIActionComposite_OtomoWorkerBase_C:OnTickInWaitAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Otomo/BP_PalAIActionComposite_OtomoWorkerBase.2"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_PalAIActionComposite_OtomoWorkerBase_C'Default__BP_PalAIActionComposite_OtomoWorkerBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Otomo/BP_PalAIActionComposite_OtomoWorkerBase.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_PalAIActionComposite_OtomoWorkerBase_C",
+    "Name": "Default__BP_PalAIActionComposite_OtomoWorkerBase_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Controller/AIAction/Otomo/BP_PalAIActionComposite_OtomoWorkerBase.BP_PalAIActionComposite_OtomoWorkerBase_C'",
+    "Properties": {
+      "WaitActionClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_AIAction_OtomoFollow_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Otomo/BP_AIAction_OtomoFollow.0"
+      },
+      "ApproachActionClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_AIAction_Worker_Approach_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Work/BP_AIAction_Worker_Approach.0"
+      },
+      "WaitForWorkableActionClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_AIAction_Work_WaitForWorkable_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Work/BP_AIAction_Work_WaitForWorkable.0"
+      },
+      "WorkingActionClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_AIAction_Worker_Working_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Work/BP_AIAction_Worker_Working.0"
+      },
+      "SpeedFlagName": "WorkWalkSpeed"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "OnTickInWaitAction",
+    "Outer": "BP_PalAIActionComposite_OtomoWorkerBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalAIActionCompositeWorker:OnTickInWaitAction'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "TargetWork",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "PropertyClass": {
+          "ObjectName": "Class'PalWorkBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BP_TryGetWorkLocation_OutLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BP_TryGetWorkLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetWorkProgressManager_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalWorkProgressManager'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetCharacterParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetWorkAssign_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalWorkAssign'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayActionLocationByType_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetId_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalWorkAssignHandleId'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetWorkByAssignId_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalWorkBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_TryFindNextWork_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsTargetWorkable_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

@@ -1,0 +1,1417 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_AIAction_CanCombatBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.0"
+    },
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ExecuteUbergraph_BP_AIAction_Warning_PointWalk'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.9"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_AIAction_CanCombatBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:CancelTurnAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.8"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:PlayActionTurnIfNoneAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.10"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:TurnL45'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.14"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:TurnR45'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.16"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:StartJump'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.13"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:TurnMode'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.15"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:UpdateMoveGoal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.17"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:SoundEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.12"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:Setup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.11"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionStart'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.6"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.7"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionFinished'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.3"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionPause'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.4"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionResume'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.5"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionAbort'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.2"
+      },
+      {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ExecuteUbergraph_BP_AIAction_Warning_PointWalk'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.9"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AttentionPoint",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "ConstWalkSpeed",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "MoveGoalLocation",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "AcceptanceDistance",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "tempDeltaTime",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "Timer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "RandomWalkStartTime",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "TurnR_Direction",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "TurnL_Direction",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "MoveMode",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Enum": {
+          "ObjectName": "UserDefinedEnum'EWarningPalAIMoveType'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Enum/EWarningPalAIMoveType.0"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "TimeOutTime",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "TurnAction",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_AIAction_Warning_PointWalk": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ExecuteUbergraph_BP_AIAction_Warning_PointWalk'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.9"
+      },
+      "ActionAbort": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionAbort'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.2"
+      },
+      "ActionResume": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionResume'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.5"
+      },
+      "ActionPause": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionPause'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.4"
+      },
+      "ActionFinished": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionFinished'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.3"
+      },
+      "ActionTick": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.7"
+      },
+      "ActionStart": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:ActionStart'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.6"
+      },
+      "Setup": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:Setup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.11"
+      },
+      "SoundEvent": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:SoundEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.12"
+      },
+      "UpdateMoveGoal": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:UpdateMoveGoal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.17"
+      },
+      "TurnMode": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:TurnMode'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.15"
+      },
+      "StartJump": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:StartJump'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.13"
+      },
+      "TurnR45": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:TurnR45'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.16"
+      },
+      "TurnL45": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:TurnL45'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.14"
+      },
+      "PlayActionTurnIfNoneAction": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:PlayActionTurnIfNoneAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.10"
+      },
+      "CancelTurnAction": {
+        "ObjectName": "Function'BP_AIAction_Warning_PointWalk_C:CancelTurnAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.8"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_AIAction_Warning_PointWalk_C'Default__BP_AIAction_Warning_PointWalk_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_AIAction_Warning_PointWalk_C",
+    "Name": "Default__BP_AIAction_Warning_PointWalk_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_Warning_PointWalk.BP_AIAction_Warning_PointWalk_C'",
+    "Template": {
+      "ObjectName": "BP_AIAction_CanCombatBase_C'Default__BP_AIAction_CanCombatBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "AttentionPoint": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "ConstWalkSpeed": 0.25,
+      "MoveGoalLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "AcceptanceDistance": 200.0,
+      "TurnR_Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "TurnL_Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "TimeOutTime": 30.0,
+      "DefaultPriority": "EAIRequestPriority::10"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionAbort",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionAbort'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.2"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionAbort'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.2"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionFinished",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionFinished'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.3"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionFinished'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.3"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "WithResult",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPawnActionResult'",
+          "ObjectPath": "/Script/AIModule"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionPause",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionPause'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.4"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionPause'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.4"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionResume",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionResume'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.5"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionResume'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.5"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionStart",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionStart'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.6"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:ActionStart'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.6"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ActionTick",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PawnAction_BlueprintBase:ActionTick'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CancelTurnAction",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_AIAction_Warning_PointWalk",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Vector_Distance2DSquared_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_LessEqual_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Add_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GreaterEqual_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetActorForwardVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GreaterEqual_DoubleDouble_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GreaterGreater_VectorRotator_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GreaterGreater_VectorRotator_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GreaterEqual_DoubleDouble_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "K2Node_Event_WithResult",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EPawnActionResult'",
+          "ObjectPath": "/Script/AIModule"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GreaterEqual_DoubleDouble_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLeader_Leader",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetSelfPalBlackBoard_PalBlackBoard",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_PalAIBlackboard_Common_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Blackboard/BP_PalAIBlackboard_Common.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_ObjectObject_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_SightCheckAndResponse_ChangeNextAction",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_ControlledPawn_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetCharacterParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "K2Node_VariableSet_tempDeltaTime_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Delay_Duration_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "PlayActionTurnIfNoneAction",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "Direction",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActionComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_ActionDynamicParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 224,
+        "Struct": {
+          "ObjectName": "ScriptStruct'ActionDynamicParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayActionParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Setup",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "AttentionLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SoundEvent",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:SoundEvent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.20"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AIAction_CanCombatBase_C:SoundEvent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/WildPal/BP_AIAction_CanCombatBase.20"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "EmitLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "StartJump",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAction_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "TurnL45",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "TurnMode",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Subtract_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "TurnR45",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "UpdateMoveGoal",
+    "Outer": "BP_AIAction_Warning_PointWalk_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ArrayProperty",
+        "Name": "Temp_object_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ConstParm | ReferenceParm",
+        "Inner": {
+          "Type": "ObjectProperty",
+          "Name": "Temp_object_Variable",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyClass": {
+            "ObjectName": "Class'Actor'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Add_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsAIController",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'AIController'",
+          "ObjectPath": "/Script/AIModule"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Add_VectorVector_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "CallFunc_MoveToLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EPathFollowingRequestResult'",
+          "ObjectPath": "/Script/AIModule"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_LineTraceSingle_OutHit",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_LineTraceSingle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_ByteByte_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BreakHitResult_bBlockingHit",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BreakHitResult_bInitialOverlap",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakHitResult_Time",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakHitResult_Distance",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_Location",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_ImpactPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_Normal",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_ImpactNormal",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BreakHitResult_PhysMat",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PhysicalMaterial'",
+          "ObjectPath": "/Script/PhysicsCore"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BreakHitResult_HitActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BreakHitResult_HitComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_BreakHitResult_HitBoneName",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_BreakHitResult_BoneName",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_BreakHitResult_HitItem",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_BreakHitResult_ElementIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_BreakHitResult_FaceIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_TraceStart",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_TraceEnd",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_MoveToLocation_AcceptanceRadius_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

@@ -1,0 +1,225 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_DrillGame_ShellAttack_Loop",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "Default",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_DrillGame_ShellAttack_Loop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/DrillGame/AM_DrillGame_ShellAttack_Loop.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 3.0,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_DrillGame_ShellAttack_Loop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/DrillGame/AS_DrillGame_ShellAttack_Loop.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'AS_DrillGame_ShellAttack_Loop'",
+                  "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/DrillGame/AS_DrillGame_ShellAttack_Loop.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 3.0,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": -0.0001,
+          "EndTriggerTimeOffset": -0.0001,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalAttackCollision",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "PalAnimNotifyState_AttackCollision'AM_DrillGame_ShellAttack_Loop:PalAnimNotifyState_AttackCollision_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/DrillGame/AM_DrillGame_ShellAttack_Loop.1"
+          },
+          "Duration": 3.0,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_DrillGame_ShellAttack_Loop'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/DrillGame/AM_DrillGame_ShellAttack_Loop.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": 0,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 3.0,
+            "LinkValue": 3.0,
+            "LinkedSequence": {
+              "ObjectName": "AnimSequence'AS_DrillGame_ShellAttack_Loop'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/DrillGame/AS_DrillGame_ShellAttack_Loop.0"
+            }
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_DrillGame_ShellAttack_Loop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/DrillGame/AM_DrillGame_ShellAttack_Loop.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 3.0,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_DrillGame_ShellAttack_Loop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/DrillGame/AS_DrillGame_ShellAttack_Loop.0"
+          }
+        }
+      ],
+      "SequenceLength": 3.0,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SK_DrillGame_Skeleton'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Skeleton/DrillGame/SK_Drillgame_Skeleton.1"
+      }
+    },
+    "SkeletonGuid": "40E755F5-4419FCA0-5544618F-45D85E43"
+  },
+  {
+    "Type": "PalAnimNotifyState_AttackCollision",
+    "Name": "PalAnimNotifyState_AttackCollision_0",
+    "Outer": "AM_DrillGame_ShellAttack_Loop",
+    "Class": "UScriptClass'PalAnimNotifyState_AttackCollision'",
+    "Properties": {
+      "attachBoneName": "root",
+      "AttackFilter": {
+        "ObjectName": "PalAttackFilter'AM_DrillGame_ShellAttack_Loop:PalAnimNotifyState_AttackCollision_0.PalAttackFilter_0'",
+        "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/DrillGame/AM_DrillGame_ShellAttack_Loop.2"
+      },
+      "ShapeComponents": [
+        {
+          "ObjectName": "SphereComponent'AM_DrillGame_ShellAttack_Loop:PalAnimNotifyState_AttackCollision_0.SphereComponent_0'",
+          "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/DrillGame/AM_DrillGame_ShellAttack_Loop.3"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "PalAttackFilter",
+    "Name": "PalAttackFilter_0",
+    "Outer": "PalAnimNotifyState_AttackCollision_0",
+    "Class": "UScriptClass'PalAttackFilter'",
+    "Properties": {
+      "Waza": "EPalWazaID::Unique_DrillGame_ShellAttack",
+      "VelocityOwner": "EPalBlowVelocityOwner::AttackCharacter",
+      "NativeBlowVelocity": {
+        "X": 100.0,
+        "Y": 0.0,
+        "Z": 100.0
+      },
+      "WazaPowerRate": 0.02,
+      "MaxHitNum": 50,
+      "HitInterval": 0.1
+    }
+  },
+  {
+    "Type": "SphereComponent",
+    "Name": "SphereComponent_0",
+    "Outer": "PalAnimNotifyState_AttackCollision_0",
+    "Class": "UScriptClass'SphereComponent'",
+    "Properties": {
+      "SphereRadius": 250.0,
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_GameTraceChannel2",
+        "CollisionProfileName": "Attack",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "AttackHitOnly",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 100.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  }
+]

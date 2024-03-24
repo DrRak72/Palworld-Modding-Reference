@@ -1,0 +1,218 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_MonsterAIController_CapturedCage_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_MonsterAIController_CapturedCage_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.9"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_MonsterAIController_CapturedCage_C:ExecuteUbergraph_BP_MonsterAIController_CapturedCage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.2"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalAIController'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_MonsterAIController_CapturedCage_C:ReceivePossess'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.3"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_CapturedCage_C:ExecuteUbergraph_BP_MonsterAIController_CapturedCage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.2"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_MonsterAIController_CapturedCage": {
+        "ObjectName": "Function'BP_MonsterAIController_CapturedCage_C:ExecuteUbergraph_BP_MonsterAIController_CapturedCage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.2"
+      },
+      "ReceivePossess": {
+        "ObjectName": "Function'BP_MonsterAIController_CapturedCage_C:ReceivePossess'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.3"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_NotPlaceable | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_MonsterAIController_CapturedCage_C'Default__BP_MonsterAIController_CapturedCage_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_MonsterAIController_CapturedCage_C",
+    "Name": "Default__BP_MonsterAIController_CapturedCage_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.BP_MonsterAIController_CapturedCage_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "AIActionComponent": {
+        "ObjectName": "PalAIActionComponent'Default__BP_MonsterAIController_CapturedCage_C:ActionsComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.4"
+      },
+      "BrainComponent": {
+        "ObjectName": "PalFollowingComponent'Default__BP_MonsterAIController_CapturedCage_C:PathFollowingComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.5"
+      },
+      "Blackboard": {
+        "ObjectName": "PalAIActionComponent'Default__BP_MonsterAIController_CapturedCage_C:ActionsComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.4"
+      },
+      "ControlRotation": {
+        "Pitch": 0.0,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_MonsterAIController_CapturedCage",
+    "Outer": "BP_MonsterAIController_CapturedCage_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_PossessedPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAction_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceivePossess",
+    "Outer": "BP_MonsterAIController_CapturedCage_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Controller:ReceivePossess'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "PossessedPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "PalAIActionComponent",
+    "Name": "ActionsComp",
+    "Outer": "Default__BP_MonsterAIController_CapturedCage_C",
+    "Class": "UScriptClass'PalAIActionComponent'"
+  },
+  {
+    "Type": "PalFollowingComponent",
+    "Name": "PathFollowingComponent",
+    "Outer": "Default__BP_MonsterAIController_CapturedCage_C",
+    "Class": "UScriptClass'PalFollowingComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_MonsterAIController_CapturedCage_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "TransformComponent0",
+    "Outer": "Default__BP_MonsterAIController_CapturedCage_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_MonsterAIController_CapturedCage_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.6"
+      },
+      "VariableGuid": "591051CE-4FFE622A-765A858B-66D8E4CD",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_MonsterAIController_CapturedCage_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_MonsterAIController_CapturedCage_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_CapturedCage.8"
+      }
+    }
+  }
+]

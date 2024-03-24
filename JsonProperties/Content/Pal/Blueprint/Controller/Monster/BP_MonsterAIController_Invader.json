@@ -1,0 +1,900 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_MonsterAIControllerBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.0"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_MonsterAIController_Invader_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.22"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_MonsterAIController_Invader_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.14"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:ExecuteUbergraph_BP_MonsterAIController_Invader'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.3"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_MonsterAIControllerBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:GetMyBB'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.5"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:GetLeaderBB'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.4"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:ReturnSpawnedPoint'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.9"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:StartMartch'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.11"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:Setup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.10"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:ReceivePossess'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.8"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:カスタムイベント_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.12"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:カスタムイベント_OnDead'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.13"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:OnInvaderArrived'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.6"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:BindOnInvaderArrivedDelegate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.2"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:ExecuteUbergraph_BP_MonsterAIController_Invader'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.3"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:OnInvaderArrivedDelegate__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.7"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PalAISensor",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PalAISensorComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "TargetBaseCampPosition",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnInvaderArrivedDelegate",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_MonsterAIController_Invader_C:OnInvaderArrivedDelegate__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.7"
+        }
+      }
+    ],
+    "FuncMap": {
+      "OnInvaderArrivedDelegate__DelegateSignature": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:OnInvaderArrivedDelegate__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.7"
+      },
+      "ExecuteUbergraph_BP_MonsterAIController_Invader": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:ExecuteUbergraph_BP_MonsterAIController_Invader'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.3"
+      },
+      "BindOnInvaderArrivedDelegate": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:BindOnInvaderArrivedDelegate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.2"
+      },
+      "OnInvaderArrived": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:OnInvaderArrived'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.6"
+      },
+      "カスタムイベント_OnDead": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:カスタムイベント_OnDead'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.13"
+      },
+      "カスタムイベント_1": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:カスタムイベント_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.12"
+      },
+      "ReceivePossess": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:ReceivePossess'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.8"
+      },
+      "Setup": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:Setup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.10"
+      },
+      "StartMartch": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:StartMartch'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.11"
+      },
+      "ReturnSpawnedPoint": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:ReturnSpawnedPoint'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.9"
+      },
+      "GetLeaderBB": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:GetLeaderBB'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.4"
+      },
+      "GetMyBB": {
+        "ObjectName": "Function'BP_MonsterAIController_Invader_C:GetMyBB'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.5"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_NotPlaceable | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "Interfaces": [
+      {
+        "Class": {
+          "ObjectName": "BlueprintGeneratedClass'BPI_GetPalAIBlackboard_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Blackboard/BPI_GetPalAIBlackboard.0"
+        },
+        "PointerOffset": 0,
+        "bImplementedByK2": true
+      },
+      {
+        "Class": {
+          "ObjectName": "BlueprintGeneratedClass'BP_AIController_Interface_Invader_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Interface/BP_AIController_Interface_Invader.0"
+        },
+        "PointerOffset": 0,
+        "bImplementedByK2": true
+      }
+    ],
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_MonsterAIController_Invader_C'Default__BP_MonsterAIController_Invader_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal",
+      "ImplementedInterfaces": "((Interface=/Script/Engine.BlueprintGeneratedClass'\"/Game/Pal/Blueprint/Controller/Blackboard/BPI_GetPalAIBlackboard.BPI_GetPalAIBlackboard_C\"'),(Interface=/Script/Engine.BlueprintGeneratedClass'\"/Game/Pal/Blueprint/Controller/Interface/BP_AIController_Interface_Invader.BP_AIController_Interface_Invader_C\"'))"
+    }
+  },
+  {
+    "Type": "BP_MonsterAIController_Invader_C",
+    "Name": "Default__BP_MonsterAIController_Invader_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.BP_MonsterAIController_Invader_C'",
+    "Template": {
+      "ObjectName": "BP_MonsterAIControllerBase_C'Default__BP_MonsterAIControllerBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.2"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "TargetBaseCampPosition": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -1000000.0
+      },
+      "DefaultActionClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_AIAction_Invader_Idle_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Invader/BP_AIAction_Invader_Idle.0"
+      },
+      "CombatModuleClass": {
+        "ObjectName": "Class'PalAICombatModule_Invader'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "AIActionComponent": {
+        "ObjectName": "PalAIActionComponent'Default__BP_MonsterAIController_Invader_C:ActionsComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.15"
+      },
+      "IsDeadBodyTimeDelate": true,
+      "IsSelfTimeDelate_FromSpawnTime": true,
+      "BrainComponent": {
+        "ObjectName": "PalFollowingComponent'Default__BP_MonsterAIController_Invader_C:PathFollowingComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.17"
+      },
+      "Blackboard": {
+        "ObjectName": "PalAIActionComponent'Default__BP_MonsterAIController_Invader_C:ActionsComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.15"
+      },
+      "ControlRotation": {
+        "Pitch": 0.0,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "BindOnInvaderArrivedDelegate",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DelegateProperty",
+        "Name": "Event",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_MonsterAIController_Invader",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_Event_Event",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalCharacter:OnCompleteInitializeParameter__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalDamageReactionComponent:OnDeadDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_PossessedPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Character",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_CustomEvent_InCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOnCompleteInitializeParameterDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterOnCompleteInitializeParameterWrapper'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_CustomEvent_DeadInfo",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDeadInfo'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalDamageReactionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetBattleManager_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalBattleManager'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetLeaderBB",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "LeaderPalBrackboard",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_PalAIBlackboard_Common_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Blackboard/BP_PalAIBlackboard_Common.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLeaderPalBlackboard_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIBlackboardBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Pal_AIBlackboard_Common",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_PalAIBlackboard_Common_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Blackboard/BP_PalAIBlackboard_Common.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetMyBB",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "PalBrackboard",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_PalAIBlackboard_Common_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Blackboard/BP_PalAIBlackboard_Common.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetMyPalBlackboard_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIBlackboardBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Pal_AIBlackboard_Common",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_PalAIBlackboard_Common_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Blackboard/BP_PalAIBlackboard_Common.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnInvaderArrived",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnInvaderArrivedDelegate__DelegateSignature",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceivePossess",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_MonsterAIControllerBase_C:ReceivePossess'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.6"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_MonsterAIControllerBase_C:ReceivePossess'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.6"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "PossessedPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReturnSpawnedPoint",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "GoalLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalAIActionDynamicParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalAIActionDynamicParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_AIAction_Component",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SetActionClassParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Setup",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "BaseCampPos",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "StartMartch",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "GoalPosition",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalAIActionDynamicParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalAIActionDynamicParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalAIActionDynamicParameter_1",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalAIActionDynamicParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SetActionClassParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SetActionClassParameter_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "カスタムイベント_1",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "InCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "カスタムイベント_OnDead",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "DeadInfo",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDeadInfo'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'InheritableComponentHandler'"
+  },
+  {
+    "Type": "PalAIActionComponent",
+    "Name": "ActionsComp",
+    "Outer": "Default__BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'PalAIActionComponent'",
+    "Template": {
+      "ObjectName": "PalAIActionComponent'Default__BP_MonsterAIControllerBase_C:ActionsComp'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.13"
+    }
+  },
+  {
+    "Type": "PalAISensorComponent",
+    "Name": "PalAISensor_GEN_VARIABLE",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'PalAISensorComponent'"
+  },
+  {
+    "Type": "PalFollowingComponent",
+    "Name": "PathFollowingComponent",
+    "Outer": "Default__BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'PalFollowingComponent'",
+    "Template": {
+      "ObjectName": "PalFollowingComponent'Default__BP_MonsterAIControllerBase_C:PathFollowingComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.14"
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "TransformComponent0",
+    "Outer": "Default__BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'SceneComponent'",
+    "Template": {
+      "ObjectName": "SceneComponent'Default__BP_MonsterAIControllerBase_C:TransformComponent0'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.16"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_MonsterAIController_Invader_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.18"
+      },
+      "VariableGuid": "2B13C25A-44D3C9D2-D5CA0DB6-2307480E",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PalAISensorComponent'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PalAISensorComponent'BP_MonsterAIController_Invader_C:PalAISensor_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.16"
+      },
+      "VariableGuid": "E1B8389F-480C404A-13731C8D-6BE221D8",
+      "InternalVariableName": "PalAISensor"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_MonsterAIController_Invader_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_MonsterAIController_Invader_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.21"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_MonsterAIController_Invader_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.21"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_MonsterAIController_Invader_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIController_Invader.20"
+      }
+    }
+  }
+]

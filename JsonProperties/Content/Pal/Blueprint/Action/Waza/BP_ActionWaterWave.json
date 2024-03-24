@@ -1,0 +1,120 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_ActionWaterWave_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.0"
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_ActionWaterWave_C:OnStartProcessAnimation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionWaterWave.2"
+      }
+    ],
+    "FuncMap": {
+      "OnStartProcessAnimation": {
+        "ObjectName": "Function'BP_ActionWaterWave_C:OnStartProcessAnimation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionWaterWave.2"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_ActionWaterWave_C'Default__BP_ActionWaterWave_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionWaterWave.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_ActionWaterWave_C",
+    "Name": "Default__BP_ActionWaterWave_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionWaterWave.BP_ActionWaterWave_C'",
+    "Template": {
+      "ObjectName": "BP_ActionGeneralAttackFarBase_C'Default__BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.1"
+    },
+    "Properties": {
+      "SkillEffectSpawnParameters": [
+        {
+          "TimeOffset": 0.5,
+          "SkillEffectClass": {
+            "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_WaterWave_C'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WaterWave/BP_SkillEffect_WaterWave.0"
+          },
+          "SpawnOffset": {
+            "X": 200.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "bAttachToOwner": false,
+          "AttachSocketName": "None",
+          "AttachLocationType": "EPalBodyLocationType::BulletMuzzle"
+        }
+      ],
+      "ReadyAnimationTime": 2.0,
+      "WazaID": "EPalWazaID::WaterWave"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "OnStartProcessAnimation",
+    "Outer": "BP_ActionWaterWave_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnStartProcessAnimation'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.15"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnStartProcessAnimation'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.15"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FindEffectByClass_Effect",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkillEffectBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Skill_Effect_Water_Wave",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_WaterWave_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WaterWave/BP_SkillEffect_WaterWave.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

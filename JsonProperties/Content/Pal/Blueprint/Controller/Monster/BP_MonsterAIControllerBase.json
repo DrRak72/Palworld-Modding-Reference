@@ -1,0 +1,966 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_MonsterAIControllerBase_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.19"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ExecuteUbergraph_BP_MonsterAIControllerBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.4"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalAIController'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ToLogFontStyleName'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.11"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ShowBaseCampLog_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.9"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:CreateBaseCampLogMessageText'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.3"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:To Log Tone Type'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.10"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:PlayDefaultAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.5"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ReceivePossess'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.6"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.7"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:カスタムイベント_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.12"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:SetupBySpawner'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.8"
+      },
+      {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ExecuteUbergraph_BP_MonsterAIControllerBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.4"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_AIADamageReaction",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_AIADamageReaction_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/DamageReaction/BP_AIADamageReaction.0"
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "DefaultActionClass",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalAIActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "DefaultRootCompositeActionClass",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalAIActionCompositeBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bPlayDefaultCompositeAction",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsSetupEnd",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsAutoPlayDefaultAction",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_MonsterAIControllerBase": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ExecuteUbergraph_BP_MonsterAIControllerBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.4"
+      },
+      "SetupBySpawner": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:SetupBySpawner'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.8"
+      },
+      "カスタムイベント_0": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:カスタムイベント_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.12"
+      },
+      "ReceiveTick": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.7"
+      },
+      "ReceivePossess": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ReceivePossess'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.6"
+      },
+      "PlayDefaultAction": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:PlayDefaultAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.5"
+      },
+      "To Log Tone Type": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:To Log Tone Type'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.10"
+      },
+      "CreateBaseCampLogMessageText": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:CreateBaseCampLogMessageText'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.3"
+      },
+      "ShowBaseCampLog_Internal": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ShowBaseCampLog_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.9"
+      },
+      "ToLogFontStyleName": {
+        "ObjectName": "Function'BP_MonsterAIControllerBase_C:ToLogFontStyleName'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.11"
+      }
+    },
+    "ClassFlags": "CLASS_Abstract | CLASS_Config | CLASS_NotPlaceable | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_MonsterAIControllerBase_C'Default__BP_MonsterAIControllerBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.2"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_AIADamageReaction_C",
+    "Name": "BP_AIADamageReaction_GEN_VARIABLE",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Component/DamageReaction/BP_AIADamageReaction.BP_AIADamageReaction_C'",
+    "Template": {
+      "ObjectName": "BP_AIADamageReaction_C'Default__BP_AIADamageReaction_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Component/DamageReaction/BP_AIADamageReaction.1"
+    }
+  },
+  {
+    "Type": "BP_MonsterAIControllerBase_C",
+    "Name": "Default__BP_MonsterAIControllerBase_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.BP_MonsterAIControllerBase_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "IsAutoPlayDefaultAction": true,
+      "AIActionComponent": {
+        "ObjectName": "PalAIActionComponent'Default__BP_MonsterAIControllerBase_C:ActionsComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.13"
+      },
+      "PalBlackboardClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_PalAIBlackboard_Common_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Blackboard/BP_PalAIBlackboard_Common.0"
+      },
+      "BrainComponent": {
+        "ObjectName": "PalFollowingComponent'Default__BP_MonsterAIControllerBase_C:PathFollowingComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.14"
+      },
+      "Blackboard": {
+        "ObjectName": "PalAIActionComponent'Default__BP_MonsterAIControllerBase_C:ActionsComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.13"
+      },
+      "ControlRotation": {
+        "Pitch": 0.0,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "CreateBaseCampLogMessageText",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "Content",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalMonsterControllerBaseCampLogContent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "Result",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Parm | OutParm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsFormatText",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "MessageText",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedText_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_NameName_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_FormatArgumentData",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'FormatArgumentData'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "K2Node_MakeArray_Array",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ReferenceParm",
+        "Inner": {
+          "Type": "StructProperty",
+          "Name": "K2Node_MakeArray_Array",
+          "Flags": "RF_Public",
+          "ElementSize": 80,
+          "Struct": {
+            "ObjectName": "ScriptStruct'FormatArgumentData'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Format_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_GetEnumeratorUserFriendlyName_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_EnumToLocalizedText_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_MonsterAIControllerBase",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsDedicatedServer_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalCharacter:OnCompleteInitializeParameter__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_PossessedPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnObject_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActiveSkillSlot'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_CustomEvent_InCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Character",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOnCompleteInitializeParameterDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterOnCompleteInitializeParameterWrapper'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "PlayDefaultAction",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_AIAction_Component",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnObject_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionCompositeBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_AIAction_Component_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnObject_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalAIActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceivePossess",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Controller:ReceivePossess'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "PossessedPawn",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveTick",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveTick'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetupBySpawner",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ShowBaseCampLog_Internal",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "Content",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalMonsterControllerBaseCampLogContent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_CreateBaseCampLogMessageText_Result",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_K2_GetPawn_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Pawn'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_ToLogFontStyleName_StyleName",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "CallFunc_To_Log_Tone_Type_toneType",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EPalLogContentToneType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalLogAdditionalData",
+        "Flags": "RF_Public",
+        "ElementSize": 56,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalLogAdditionalData'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLogManager_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalLogManager'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_AddLog_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Guid'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "To Log Tone Type",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "LogType",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPalMonsterControllerBaseCampLogType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "toneType",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "Enum": {
+          "ObjectName": "Enum'EPalLogContentToneType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "ToLogFontStyleName",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "LogType",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPalMonsterControllerBaseCampLogType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "StyleName",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "Parm | OutParm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "カスタムイベント_0",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "InCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "PalAIActionComponent",
+    "Name": "ActionsComp",
+    "Outer": "Default__BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'PalAIActionComponent'"
+  },
+  {
+    "Type": "PalFollowingComponent",
+    "Name": "PathFollowingComponent",
+    "Outer": "Default__BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'PalFollowingComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "TransformComponent0",
+    "Outer": "Default__BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_MonsterAIControllerBase_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.15"
+      },
+      "VariableGuid": "AA6D6886-4AA35D78-2BBA67B7-84136CFB",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_AIADamageReaction_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/DamageReaction/BP_AIADamageReaction.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_AIADamageReaction_C'BP_MonsterAIControllerBase_C:BP_AIADamageReaction_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.1"
+      },
+      "VariableGuid": "3730C80B-4DC28740-E50A1F89-D2BA667F",
+      "InternalVariableName": "BP_AIADamageReaction"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_MonsterAIControllerBase_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_MonsterAIControllerBase_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.18"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_MonsterAIControllerBase_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.18"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_MonsterAIControllerBase_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/Monster/BP_MonsterAIControllerBase.17"
+      }
+    }
+  }
+]

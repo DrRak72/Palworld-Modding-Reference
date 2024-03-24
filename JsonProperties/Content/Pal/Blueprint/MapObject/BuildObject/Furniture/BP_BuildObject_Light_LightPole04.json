@@ -1,0 +1,609 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_BuildObject_Lamp_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.0"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.18"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_BuildObject_Light_LightPole04_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.6"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_BuildObject_Lamp_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_BuildObject_Light_LightPole04_C:SetActiveLight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.5"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "SM_LightPole_A",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CheckOverlapCollision",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BuildWorkableBounds",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PointLight",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PointLightComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_InteractableBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+        }
+      }
+    ],
+    "FuncMap": {
+      "SetActiveLight": {
+        "ObjectName": "Function'BP_BuildObject_Light_LightPole04_C:SetActiveLight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.5"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_BuildObject_Light_LightPole04_C'Default__BP_BuildObject_Light_LightPole04_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.3"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "BuildWorkableBounds_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 100.0,
+        "Y": 100.0,
+        "Z": 47.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "bApplyImpulseOnDamage": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "CheckOverlapCollision_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 15.0,
+        "Y": 15.0,
+        "Z": 170.0
+      },
+      "bDynamicObstacle": true,
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Null'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "CollisionProfileName": "BuildingOverlap",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 175.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BP_BuildObject_Light_LightPole04_C",
+    "Name": "Default__BP_BuildObject_Light_LightPole04_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.BP_BuildObject_Light_LightPole04_C'",
+    "Template": {
+      "ObjectName": "BP_BuildObject_Lamp_Base_C'Default__BP_BuildObject_Lamp_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.1"
+    },
+    "Properties": {
+      "VisualCtrl": {
+        "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_Light_LightPole04_C:VisualController'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.7"
+      },
+      "OverlapCheckCollisionRef": {
+        "ComponentProperty": "CheckOverlapCollision"
+      },
+      "DamageReaction": {
+        "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_Light_LightPole04_C:DamageReaction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.8"
+      },
+      "VisualEffect": {
+        "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_Light_LightPole04_C:VisualEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.9"
+      }
+    }
+  },
+  {
+    "Type": "BP_InteractableBox_C",
+    "Name": "BP_InteractableBox_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_LightPole04_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.BP_InteractableBox_C'",
+    "Template": {
+      "ObjectName": "BP_InteractableBox_C'Default__BP_InteractableBox_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.1"
+    },
+    "Properties": {
+      "BoxExtent": {
+        "X": 91.0,
+        "Y": 90.0,
+        "Z": 47.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "SetActiveLight",
+    "Outer": "BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_BuildObject_Lamp_Base_C:SetActiveLight'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.7"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_BuildObject_Lamp_Base_C:SetActiveLight'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.7"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "bActive",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'InheritableComponentHandler'"
+  },
+  {
+    "Type": "PalBuildObjectVisualControlComponent",
+    "Name": "VisualController",
+    "Outer": "Default__BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'PalBuildObjectVisualControlComponent'",
+    "Template": {
+      "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_Lamp_Base_C:VisualController'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.8"
+    }
+  },
+  {
+    "Type": "PalMapObjectDamageReactionComponent",
+    "Name": "DamageReaction",
+    "Outer": "Default__BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'PalMapObjectDamageReactionComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_Lamp_Base_C:DamageReaction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.9"
+    }
+  },
+  {
+    "Type": "PalMapObjectVisualEffectComponent",
+    "Name": "VisualEffect",
+    "Outer": "Default__BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'PalMapObjectVisualEffectComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_Lamp_Base_C:VisualEffect'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.10"
+    }
+  },
+  {
+    "Type": "PointLightComponent",
+    "Name": "PointLight_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'PointLightComponent'",
+    "Properties": {
+      "bUseInverseSquaredFalloff": false,
+      "SourceRadius": 1000.0,
+      "SoftSourceRadius": 1000.0,
+      "AttenuationRadius": 1100.0,
+      "Intensity": 30.0,
+      "LightColor": {
+        "B": 144,
+        "G": 179,
+        "R": 231,
+        "A": 255,
+        "Hex": "FFE7B390"
+      },
+      "CastShadows": false,
+      "RelativeLocation": {
+        "X": 69.24492,
+        "Y": -8.242296E-13,
+        "Z": 283.75748
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_Light_LightPole04_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.11"
+      },
+      "VariableGuid": "B723046F-416C5C93-3C52F8B8-6FCF03D8",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_Light_LightPole04_C:CheckOverlapCollision_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.2"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Lamp_Base_C",
+      "VariableGuid": "A4B95905-450D394D-419687A0-9576809B",
+      "InternalVariableName": "CheckOverlapCollision"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_BuildObject_Light_LightPole04_C:SM_LightPole_A_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.19"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Lamp_Base_C",
+      "VariableGuid": "6BC5478F-4070BB60-9FA6F49E-E693BF35",
+      "InternalVariableName": "SM_LightPole_A"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_InteractableBox_C'BP_BuildObject_Light_LightPole04_C:BP_InteractableBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.4"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Lamp_Base_C",
+      "VariableGuid": "355A1955-4FCC366E-8C55DF8D-E4208FF8",
+      "InternalVariableName": "BP_InteractableBox"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PointLightComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PointLightComponent'BP_BuildObject_Light_LightPole04_C:PointLight_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.10"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Lamp_Base_C",
+      "VariableGuid": "D8824B98-427C4B27-2FF18FBD-52243487",
+      "InternalVariableName": "PointLight"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_7",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_Light_LightPole04_C:BuildWorkableBounds_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.1"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Lamp_Base_C",
+      "VariableGuid": "04A5AC17-4F71E14B-704C0781-CB61576B",
+      "InternalVariableName": "BuildWorkableBounds"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.15"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.14"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.15"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.14"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_BuildObject_Light_LightPole04_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_LightPole04.12"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "SM_LightPole_A_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_LightPole04_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_LightPole_A'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Furniture/LightPolesPack_VOL1/SM_LightPole_A.2"
+      },
+      "BodyInstance": {
+        "CollisionProfileName": "MapObjectPhysicsClimbableWithGround",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AroundInfoCollect",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "vsGroundRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "ClimbRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      },
+      "RelativeScale3D": {
+        "X": 1.25,
+        "Y": 1.25,
+        "Z": 1.25
+      }
+    }
+  }
+]

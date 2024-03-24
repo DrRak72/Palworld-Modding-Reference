@@ -1,0 +1,62 @@
+[
+  {
+    "Type": "DataTable",
+    "Name": "DT_NPCTalk_Police001",
+    "Class": "UScriptClass'DataTable'",
+    "Properties": {
+      "RowStruct": {
+        "ObjectName": "ScriptStruct'PalNPCTalkDataTableRow'",
+        "ObjectPath": "/Script/Pal"
+      }
+    },
+    "Rows": {
+      "Default_0": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::SimpleMessages",
+            "MessageIDList": [
+              "Police001_1",
+              "Police001_2",
+              "Police001_3"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "None",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          },
+          {
+            "TalkCommand": "EPalNPCTalkCommand::CustomFunc",
+            "MessageIDList": [],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "AddItemToInventory",
+            "isCloseWhenCalledCustomFunc": true,
+            "CustomFuncParam": {
+              "ObjectName": "DataTable'DT_GiftPizza'",
+              "ObjectPath": "Pal/Content/Pal/DataTable/NPCTalk/FunctionArgument/DT_GiftPizza.0"
+            },
+            "SelectedChoiceCommandDataList": []
+          }
+        ]
+      },
+      "Default_1": {
+        "TalkData": [
+          {
+            "TalkCommand": "EPalNPCTalkCommand::SimpleMessages",
+            "MessageIDList": [
+              "Police001_Loop"
+            ],
+            "ChoiceMessageIDList": [],
+            "TalkerNameID": "None",
+            "CustomFuncName": "None",
+            "isCloseWhenCalledCustomFunc": false,
+            "CustomFuncParam": null,
+            "SelectedChoiceCommandDataList": []
+          }
+        ]
+      }
+    }
+  }
+]

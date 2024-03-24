@@ -1,0 +1,174 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_ActionSolarBeam_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.0"
+    },
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_ActionSolarBeam_C:ExecuteUbergraph_BP_ActionSolarBeam'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionSolarBeam.2"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_ActionSolarBeam_C:OnBreakAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionSolarBeam.3"
+      },
+      {
+        "ObjectName": "Function'BP_ActionSolarBeam_C:OnEndAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionSolarBeam.4"
+      },
+      {
+        "ObjectName": "Function'BP_ActionSolarBeam_C:ExecuteUbergraph_BP_ActionSolarBeam'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionSolarBeam.2"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_ActionSolarBeam": {
+        "ObjectName": "Function'BP_ActionSolarBeam_C:ExecuteUbergraph_BP_ActionSolarBeam'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionSolarBeam.2"
+      },
+      "OnEndAction": {
+        "ObjectName": "Function'BP_ActionSolarBeam_C:OnEndAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionSolarBeam.4"
+      },
+      "OnBreakAction": {
+        "ObjectName": "Function'BP_ActionSolarBeam_C:OnBreakAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionSolarBeam.3"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_ActionSolarBeam_C'Default__BP_ActionSolarBeam_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionSolarBeam.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_ActionSolarBeam_C",
+    "Name": "Default__BP_ActionSolarBeam_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Action/Waza/BP_ActionSolarBeam.BP_ActionSolarBeam_C'",
+    "Template": {
+      "ObjectName": "BP_ActionGeneralAttackFarBase_C'Default__BP_ActionGeneralAttackFarBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "IsBullet": false,
+      "ReadyTargetingSpeed": 1.9,
+      "ProcessTargetingSpeed": 2.9,
+      "SkillEffectSpawnParameters": [
+        {
+          "TimeOffset": 3.0,
+          "SkillEffectClass": {
+            "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_SolarBeam_C'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/SolarBeam/BP_SkillEffect_SolarBeam.0"
+          },
+          "SpawnOffset": {
+            "X": 200.0,
+            "Y": 0.0,
+            "Z": 50.0
+          },
+          "bAttachToOwner": true,
+          "AttachSocketName": "None",
+          "AttachLocationType": "EPalBodyLocationType::None"
+        },
+        {
+          "TimeOffset": 0.0,
+          "SkillEffectClass": {
+            "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_SolarBeam_Charge_C'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/SolarBeam/BP_SkillEffect_SolarBeam_Charge.0"
+          },
+          "SpawnOffset": {
+            "X": 200.0,
+            "Y": 0.0,
+            "Z": 50.0
+          },
+          "bAttachToOwner": true,
+          "AttachSocketName": "None",
+          "AttachLocationType": "EPalBodyLocationType::None"
+        }
+      ],
+      "ReadyAnimationTime": 2.799999952316284,
+      "ProcessAnimationTime": 2.200000047683716,
+      "AfterAnimationTime": 2.0,
+      "YawRate": 0.029999999329447746,
+      "WazaID": "EPalWazaID::SolarBeam"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_ActionSolarBeam",
+    "Outer": "BP_ActionSolarBeam_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnBreakAction",
+    "Outer": "BP_ActionSolarBeam_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnBreakAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.10"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnBreakAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.10"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnEndAction",
+    "Outer": "BP_ActionSolarBeam_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnEndAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.11"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ActionGeneralAttackFarBase_C:OnEndAction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Common/BP_ActionGeneralAttackFarBase.11"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  }
+]

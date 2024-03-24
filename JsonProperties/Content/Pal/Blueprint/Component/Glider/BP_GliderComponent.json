@@ -1,0 +1,1043 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_GliderComponent_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_GliderComponent_C:ExecuteUbergraph_BP_GliderComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.3"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalGliderComponent'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:CheckReturnSpawnedOtomo'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.2"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:SpawnGlidingEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.12"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:Setup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.11"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:OnInitializeGlider'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.7"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:OnGlidingCancleAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.6"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.10"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.9"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:OnStartGliding'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.8"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:OnEndGliding'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.5"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:OnChangeGliderVisibility'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.4"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:カスタムイベント'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.13"
+      },
+      {
+        "ObjectName": "Function'BP_GliderComponent_C:ExecuteUbergraph_BP_GliderComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.3"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CharacterMovement",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterMovementComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "GlidingEffect",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CurrentGliderObject",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'PalGliderObject'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "GliderDisableFlag",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "CurrentGliderActorClass",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalGliderObject'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "TimerHandle",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_GliderComponent": {
+        "ObjectName": "Function'BP_GliderComponent_C:ExecuteUbergraph_BP_GliderComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.3"
+      },
+      "カスタムイベント": {
+        "ObjectName": "Function'BP_GliderComponent_C:カスタムイベント'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.13"
+      },
+      "OnChangeGliderVisibility": {
+        "ObjectName": "Function'BP_GliderComponent_C:OnChangeGliderVisibility'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.4"
+      },
+      "OnEndGliding": {
+        "ObjectName": "Function'BP_GliderComponent_C:OnEndGliding'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.5"
+      },
+      "OnStartGliding": {
+        "ObjectName": "Function'BP_GliderComponent_C:OnStartGliding'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.8"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_GliderComponent_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.9"
+      },
+      "ReceiveTick": {
+        "ObjectName": "Function'BP_GliderComponent_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.10"
+      },
+      "OnGlidingCancleAction": {
+        "ObjectName": "Function'BP_GliderComponent_C:OnGlidingCancleAction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.6"
+      },
+      "OnInitializeGlider": {
+        "ObjectName": "Function'BP_GliderComponent_C:OnInitializeGlider'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.7"
+      },
+      "Setup": {
+        "ObjectName": "Function'BP_GliderComponent_C:Setup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.11"
+      },
+      "SpawnGlidingEffect": {
+        "ObjectName": "Function'BP_GliderComponent_C:SpawnGlidingEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.12"
+      },
+      "CheckReturnSpawnedOtomo": {
+        "ObjectName": "Function'BP_GliderComponent_C:CheckReturnSpawnedOtomo'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.2"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_GliderComponent_C'Default__BP_GliderComponent_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_GliderComponent_C",
+    "Name": "Default__BP_GliderComponent_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Component/Glider/BP_GliderComponent.BP_GliderComponent_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "GliderDisableFlag": "BP_Glider_Base",
+      "TimerHandle": {
+        "Handle": 0
+      },
+      "GliderPalInfos": [
+        {
+          "PalName": {
+            "Key": "Eagle"
+          },
+          "GliderPalArray": [
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/Eagle/BP_Glider_Eagle_Tier0.BP_Glider_Eagle_Tier0_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/Eagle/BP_Glider_Eagle_Tier1.BP_Glider_Eagle_Tier1_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/Eagle/BP_Glider_Eagle_Tier2.BP_Glider_Eagle_Tier2_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/Eagle/BP_Glider_Eagle_Tier3.BP_Glider_Eagle_Tier3_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/Eagle/BP_Glider_Eagle_Tier4.BP_Glider_Eagle_Tier4_C",
+              "SubPathString": ""
+            }
+          ]
+        },
+        {
+          "PalName": {
+            "Key": "NegativeOctopus"
+          },
+          "GliderPalArray": [
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/NegativeOctopus/BP_Glider_NegativeOctopus_Tier0.BP_Glider_NegativeOctopus_Tier0_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/NegativeOctopus/BP_Glider_NegativeOctopus_Tier1.BP_Glider_NegativeOctopus_Tier1_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/NegativeOctopus/BP_Glider_NegativeOctopus_Tier2.BP_Glider_NegativeOctopus_Tier2_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/NegativeOctopus/BP_Glider_NegativeOctopus_Tier3.BP_Glider_NegativeOctopus_Tier3_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/NegativeOctopus/BP_Glider_NegativeOctopus_Tier4.BP_Glider_NegativeOctopus_Tier4_C",
+              "SubPathString": ""
+            }
+          ]
+        },
+        {
+          "PalName": {
+            "Key": "FlyingManta"
+          },
+          "GliderPalArray": [
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/FlyingManta/BP_Glider_FlyingManta_Tier0.BP_Glider_FlyingManta_Tier0_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/FlyingManta/BP_Glider_FlyingManta_Tier1.BP_Glider_FlyingManta_Tier1_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/FlyingManta/BP_Glider_FlyingManta_Tier2.BP_Glider_FlyingManta_Tier2_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/FlyingManta/BP_Glider_FlyingManta_Tier3.BP_Glider_FlyingManta_Tier3_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/FlyingManta/BP_Glider_FlyingManta_Tier4.BP_Glider_FlyingManta_Tier4_C",
+              "SubPathString": ""
+            }
+          ]
+        },
+        {
+          "PalName": {
+            "Key": "WindChimes"
+          },
+          "GliderPalArray": [
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Base.BP_Glider_WindChimes_Base_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Tier1.BP_Glider_WindChimes_Tier1_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Tier2.BP_Glider_WindChimes_Tier2_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Tier3.BP_Glider_WindChimes_Tier3_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Tier4.BP_Glider_WindChimes_Tier4_C",
+              "SubPathString": ""
+            }
+          ]
+        },
+        {
+          "PalName": {
+            "Key": "WindChimes_Ice"
+          },
+          "GliderPalArray": [
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Ice_Tier0.BP_Glider_WindChimes_Ice_Tier0_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Ice_Tier1.BP_Glider_WindChimes_Ice_Tier1_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Ice_Tier2.BP_Glider_WindChimes_Ice_Tier2_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Ice_Tier3.BP_Glider_WindChimes_Ice_Tier3_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Ice_Tier4.BP_Glider_WindChimes_Ice_Tier4_C",
+              "SubPathString": ""
+            }
+          ]
+        },
+        {
+          "PalName": {
+            "Key": "BOSS_Eagle"
+          },
+          "GliderPalArray": [
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/Eagle/BP_Glider_Eagle_Tier0.BP_Glider_Eagle_Tier0_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/Eagle/BP_Glider_Eagle_Tier1.BP_Glider_Eagle_Tier1_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/Eagle/BP_Glider_Eagle_Tier2.BP_Glider_Eagle_Tier2_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/Eagle/BP_Glider_Eagle_Tier3.BP_Glider_Eagle_Tier3_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/Eagle/BP_Glider_Eagle_Tier4.BP_Glider_Eagle_Tier4_C",
+              "SubPathString": ""
+            }
+          ]
+        },
+        {
+          "PalName": {
+            "Key": "BOSS_NegativeOctopus"
+          },
+          "GliderPalArray": [
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/NegativeOctopus/BP_Glider_NegativeOctopus_Tier0.BP_Glider_NegativeOctopus_Tier0_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/NegativeOctopus/BP_Glider_NegativeOctopus_Tier1.BP_Glider_NegativeOctopus_Tier1_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/NegativeOctopus/BP_Glider_NegativeOctopus_Tier2.BP_Glider_NegativeOctopus_Tier2_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/NegativeOctopus/BP_Glider_NegativeOctopus_Tier3.BP_Glider_NegativeOctopus_Tier3_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/NegativeOctopus/BP_Glider_NegativeOctopus_Tier4.BP_Glider_NegativeOctopus_Tier4_C",
+              "SubPathString": ""
+            }
+          ]
+        },
+        {
+          "PalName": {
+            "Key": "BOSS_FlyingManta"
+          },
+          "GliderPalArray": [
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/FlyingManta/BP_Glider_FlyingManta_Tier0.BP_Glider_FlyingManta_Tier0_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/FlyingManta/BP_Glider_FlyingManta_Tier1.BP_Glider_FlyingManta_Tier1_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/FlyingManta/BP_Glider_FlyingManta_Tier2.BP_Glider_FlyingManta_Tier2_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/FlyingManta/BP_Glider_FlyingManta_Tier3.BP_Glider_FlyingManta_Tier3_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/FlyingManta/BP_Glider_FlyingManta_Tier4.BP_Glider_FlyingManta_Tier4_C",
+              "SubPathString": ""
+            }
+          ]
+        },
+        {
+          "PalName": {
+            "Key": "BOSS_WindChimes"
+          },
+          "GliderPalArray": [
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Base.BP_Glider_WindChimes_Base_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Tier1.BP_Glider_WindChimes_Tier1_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Tier2.BP_Glider_WindChimes_Tier2_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Tier3.BP_Glider_WindChimes_Tier3_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Tier4.BP_Glider_WindChimes_Tier4_C",
+              "SubPathString": ""
+            }
+          ]
+        },
+        {
+          "PalName": {
+            "Key": "BOSS_WindChimes_Ice"
+          },
+          "GliderPalArray": [
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Ice_Tier0.BP_Glider_WindChimes_Ice_Tier0_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Ice_Tier1.BP_Glider_WindChimes_Ice_Tier1_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Ice_Tier2.BP_Glider_WindChimes_Ice_Tier2_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Ice_Tier3.BP_Glider_WindChimes_Ice_Tier3_C",
+              "SubPathString": ""
+            },
+            {
+              "AssetPathName": "/Game/Pal/Blueprint/Equipment/Glider/WindChimes/BP_Glider_WindChimes_Ice_Tier4.BP_Glider_WindChimes_Ice_Tier4_C",
+              "SubPathString": ""
+            }
+          ]
+        }
+      ],
+      "PrimaryComponentTick": {
+        "bStartWithTickEnabled": true
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "CheckReturnSpawnedOtomo",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "CallFunc_GetAllGliderPalNames_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ReferenceParm",
+        "Inner": {
+          "Type": "NameProperty",
+          "Name": "CallFunc_GetAllGliderPalNames_ReturnValue",
+          "Flags": "RF_Public",
+          "ElementSize": 12
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasGliderPal_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Player_Controller",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerController'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetSpawnedOtomo_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Inactivate_Otomo_isSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_GetCharacterIDFromCharacter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Array_Contains_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_GliderComponent",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPlayerController:OnPressedThrowPalButtonDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Player_Controller",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerController'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_VSize_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_NormalizeToRange_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_FClamp_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_Event_bIsVisibility",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalDataTableRowName_SoundID",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_SoundID'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalSoundOptions",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalSoundOptions'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalDataTableRowName_SoundID_1",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_SoundID'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalSoundOptions_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalSoundOptions'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalDataTableRowName_SoundID_2",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_SoundID'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalDataTableRowName_SoundID_3",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_SoundID'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalSoundOptions_2",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalSoundOptions'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_SetFloatParameter_Param_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_SetFloatParameter_Param_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnChangeGliderVisibility",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalGliderComponent:OnChangeGliderVisibility'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "bIsVisibility",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnEndGliding",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalGliderComponent:OnEndGliding'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnGlidingCancleAction",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnInitializeGlider",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalGliderComponent:OnInitializeGlider'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnStartGliding",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalGliderComponent:OnStartGliding'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'ActorComponent:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveTick",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'ActorComponent:ReceiveTick'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Setup",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Character",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalCharacterMovementComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterMovementComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SpawnGlidingEffect",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "カスタムイベント",
+    "Outer": "BP_GliderComponent_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

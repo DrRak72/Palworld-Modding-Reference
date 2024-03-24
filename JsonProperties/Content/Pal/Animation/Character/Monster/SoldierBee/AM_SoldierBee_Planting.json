@@ -1,0 +1,142 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_SoldierBee_Planting",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "Default",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_SoldierBee_Planting'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SoldierBee/AM_SoldierBee_Planting.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.7575756,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_SoldierBee_Planting'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SoldierBee/AS_SoldierBee_Planting.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'AS_SoldierBee_Planting'",
+                  "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SoldierBee/AS_SoldierBee_Planting.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 1.9333333,
+                "AnimPlayRate": 1.1,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalEffect",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "PalAnimNotifyState_Effect'AM_SoldierBee_Planting:PalAnimNotifyState_Effect_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SoldierBee/AM_SoldierBee_Planting.1"
+          },
+          "Duration": 0.58522534,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_SoldierBee_Planting'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SoldierBee/AM_SoldierBee_Planting.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": 0,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 1.7575756,
+            "LinkValue": 1.2337191,
+            "LinkedSequence": {
+              "ObjectName": "AnimSequence'AS_SoldierBee_Planting'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SoldierBee/AS_SoldierBee_Planting.0"
+            }
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_SoldierBee_Planting'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SoldierBee/AM_SoldierBee_Planting.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.7575756,
+          "LinkValue": 0.64849377,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_SoldierBee_Planting'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/SoldierBee/AS_SoldierBee_Planting.0"
+          }
+        }
+      ],
+      "SequenceLength": 1.7575756,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SK_SoldierBee_Skeleton'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Skeleton/SoldierBee/SK_SoldierBee_Skeleton.3"
+      }
+    },
+    "SkeletonGuid": "72D3A7DF-425801A3-208A2081-627D1A35"
+  },
+  {
+    "Type": "PalAnimNotifyState_Effect",
+    "Name": "PalAnimNotifyState_Effect_0",
+    "Outer": "AM_SoldierBee_Planting",
+    "Class": "UScriptClass'PalAnimNotifyState_Effect'",
+    "Properties": {
+      "UserParameterMap": [
+        {
+          "Scale": 1.0
+        },
+        {
+          "LifeTime": 1.0
+        }
+      ],
+      "Template": {
+        "ObjectName": "NiagaraSystem'NS_Planting'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/Planting/NS_Planting.9"
+      },
+      "SocketName": "weapon_l",
+      "LocationOffset": {
+        "X": 10.0,
+        "Y": 5.0,
+        "Z": -10.0
+      },
+      "RotationOffset": {
+        "Pitch": 50.0,
+        "Yaw": 10.0,
+        "Roll": -130.0
+      }
+    }
+  }
+]

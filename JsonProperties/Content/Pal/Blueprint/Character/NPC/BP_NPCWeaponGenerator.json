@@ -1,0 +1,218 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_NPCWeaponGenerator_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_NPCWeaponGenerator_C:ExecuteUbergraph_BP_NPCWeaponGenerator'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/NPC/BP_NPCWeaponGenerator.2"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalNPCWeaponGenerator'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_NPCWeaponGenerator_C:OnSpawnEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/NPC/BP_NPCWeaponGenerator.3"
+      },
+      {
+        "ObjectName": "Function'BP_NPCWeaponGenerator_C:ExecuteUbergraph_BP_NPCWeaponGenerator'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/NPC/BP_NPCWeaponGenerator.2"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_NPCWeaponGenerator": {
+        "ObjectName": "Function'BP_NPCWeaponGenerator_C:ExecuteUbergraph_BP_NPCWeaponGenerator'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/NPC/BP_NPCWeaponGenerator.2"
+      },
+      "OnSpawnEvent": {
+        "ObjectName": "Function'BP_NPCWeaponGenerator_C:OnSpawnEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/NPC/BP_NPCWeaponGenerator.3"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_NPCWeaponGenerator_C'Default__BP_NPCWeaponGenerator_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/NPC/BP_NPCWeaponGenerator.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_NPCWeaponGenerator_C",
+    "Name": "Default__BP_NPCWeaponGenerator_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Character/NPC/BP_NPCWeaponGenerator.BP_NPCWeaponGenerator_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "WeaponIDMap": [
+        {
+          "EPalWeaponType::AssaultRifle": "AssaultRifle_NPC"
+        },
+        {
+          "EPalWeaponType::Handgun": "Handgun_NPC"
+        },
+        {
+          "EPalWeaponType::Shotgun": "Shotgun_NPC"
+        },
+        {
+          "EPalWeaponType::RocketLauncher": "RocketLauncher_NPC"
+        },
+        {
+          "EPalWeaponType::MeleeWeapon": "Bat_NPC"
+        },
+        {
+          "EPalWeaponType::FlameThrower": "FlameThrower_NPC"
+        },
+        {
+          "EPalWeaponType::GatlingGun": "GatlingGun_NPC"
+        },
+        {
+          "EPalWeaponType::BowGun": "BowGun_NPC"
+        },
+        {
+          "EPalWeaponType::ThrowObject": "FragGrenade_NPC"
+        },
+        {
+          "EPalWeaponType::LaserRifle": "LaserRifle_NPC"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_NPCWeaponGenerator",
+    "Outer": "BP_NPCWeaponGenerator_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_WeaponActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalWeaponBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Character",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Controller'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_NPCAIController",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_NPCAIController_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/NPC/BP_NPCAIController.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnSpawnEvent",
+    "Outer": "BP_NPCWeaponGenerator_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalNPCWeaponGenerator:OnSpawnEvent'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "WeaponActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalWeaponBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  }
+]

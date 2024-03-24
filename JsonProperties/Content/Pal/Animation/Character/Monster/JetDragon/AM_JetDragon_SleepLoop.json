@@ -1,0 +1,121 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_JetDragon_SleepLoop",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "BlendIn": {
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "BlendOut": {
+        "BlendTime": 0.0,
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "Default",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_JetDragon_SleepLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/JetDragon/AM_JetDragon_SleepLoop.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 3.6666667,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_JetDragon_SleepLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/JetDragon/AS_JetDragon_SleepLoop.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'AS_JetDragon_SleepLoop'",
+                  "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/JetDragon/AS_JetDragon_SleepLoop.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 3.6666667,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0001,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalFacialEye",
+          "Notify": {
+            "ObjectName": "PalAnimNotify_FacialEye'AM_JetDragon_SleepLoop:PalAnimNotify_FacialEye_2'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/JetDragon/AM_JetDragon_SleepLoop.1"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_JetDragon_SleepLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/JetDragon/AM_JetDragon_SleepLoop.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 3.6666667,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_JetDragon_SleepLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/JetDragon/AS_JetDragon_SleepLoop.0"
+          }
+        }
+      ],
+      "SequenceLength": 3.6666667,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SK_JetDragon_Skeleton'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Skeleton/JetDragon/SK_JetDragon_Skeleton.9"
+      }
+    },
+    "SkeletonGuid": "EC5E3E1D-4CEC5272-E304F3B3-041DBC6B"
+  },
+  {
+    "Type": "PalAnimNotify_FacialEye",
+    "Name": "PalAnimNotify_FacialEye_2",
+    "Outer": "AM_JetDragon_SleepLoop",
+    "Class": "UScriptClass'PalAnimNotify_FacialEye'",
+    "Properties": {
+      "EyeType": "EPalFacialEyeType::Close"
+    }
+  }
+]

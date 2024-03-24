@@ -1,0 +1,2389 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_Penguin_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_MonsterBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.0"
+    },
+    "Properties": {
+      "DynamicBindingObjects": [
+        {
+          "ObjectName": "ComponentDelegateBinding'BP_Penguin_C:ComponentDelegateBinding_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.5"
+        }
+      ],
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_Penguin_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.44"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_Penguin_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.17"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_Penguin_C:ExecuteUbergraph_BP_Penguin'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.9"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_MonsterBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_Penguin_C:GetDamegeToSelf'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.11"
+      },
+      {
+        "ObjectName": "Function'BP_Penguin_C:ProcessDamageSelf'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.14"
+      },
+      {
+        "ObjectName": "Function'BP_Penguin_C:ProcessDamageSelfAndReaction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.15"
+      },
+      {
+        "ObjectName": "Function'BP_Penguin_C:GetBlowVelocity'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.10"
+      },
+      {
+        "ObjectName": "Function'BP_Penguin_C:Set Disable Throw Pal Flag'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.16"
+      },
+      {
+        "ObjectName": "Function'BP_Penguin_C:OnActionEnd'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.12"
+      },
+      {
+        "ObjectName": "Function'BP_Penguin_C:BndEvt__BP_Penguin_BP_CoopParam_Weapon_K2Node_ComponentBoundEvent_3_OnDestroyBulletDelegate__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.6"
+      },
+      {
+        "ObjectName": "Function'BP_Penguin_C:BndEvt__BP_Penguin_BP_CoopParam_Weapon_K2Node_ComponentBoundEvent_4_OnCreatedBulletDelegate__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.7"
+      },
+      {
+        "ObjectName": "Function'BP_Penguin_C:BndEvt__BP_Penguin_PalPartnerSkillParameter_K2Node_ComponentBoundEvent_5_OnStop__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.8"
+      },
+      {
+        "ObjectName": "Function'BP_Penguin_C:PlayStunBlow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.13"
+      },
+      {
+        "ObjectName": "Function'BP_Penguin_C:ExecuteUbergraph_BP_Penguin'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.9"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PalBodyPartsCapsule",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PalBodyPartsCapsuleComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_CoopParam_Weapon",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_CoopParam_Weapon_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_Weapon.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PalBodyPartsSphere",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PalBodyPartsSphereComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "PartnerSkillMagnification",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Inner": {
+          "Type": "DoubleProperty",
+          "Name": "PartnerSkillMagnification",
+          "Flags": "RF_Public",
+          "ElementSize": 8
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "SelfDamageRate",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Inner": {
+          "Type": "DoubleProperty",
+          "Name": "SelfDamageRate",
+          "Flags": "RF_Public",
+          "ElementSize": 8
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_Penguin": {
+        "ObjectName": "Function'BP_Penguin_C:ExecuteUbergraph_BP_Penguin'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.9"
+      },
+      "PlayStunBlow": {
+        "ObjectName": "Function'BP_Penguin_C:PlayStunBlow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.13"
+      },
+      "BndEvt__BP_Penguin_PalPartnerSkillParameter_K2Node_ComponentBoundEvent_5_OnStop__DelegateSignature": {
+        "ObjectName": "Function'BP_Penguin_C:BndEvt__BP_Penguin_PalPartnerSkillParameter_K2Node_ComponentBoundEvent_5_OnStop__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.8"
+      },
+      "BndEvt__BP_Penguin_BP_CoopParam_Weapon_K2Node_ComponentBoundEvent_4_OnCreatedBulletDelegate__DelegateSignature": {
+        "ObjectName": "Function'BP_Penguin_C:BndEvt__BP_Penguin_BP_CoopParam_Weapon_K2Node_ComponentBoundEvent_4_OnCreatedBulletDelegate__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.7"
+      },
+      "BndEvt__BP_Penguin_BP_CoopParam_Weapon_K2Node_ComponentBoundEvent_3_OnDestroyBulletDelegate__DelegateSignature": {
+        "ObjectName": "Function'BP_Penguin_C:BndEvt__BP_Penguin_BP_CoopParam_Weapon_K2Node_ComponentBoundEvent_3_OnDestroyBulletDelegate__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.6"
+      },
+      "OnActionEnd": {
+        "ObjectName": "Function'BP_Penguin_C:OnActionEnd'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.12"
+      },
+      "Set Disable Throw Pal Flag": {
+        "ObjectName": "Function'BP_Penguin_C:Set Disable Throw Pal Flag'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.16"
+      },
+      "GetBlowVelocity": {
+        "ObjectName": "Function'BP_Penguin_C:GetBlowVelocity'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.10"
+      },
+      "ProcessDamageSelfAndReaction": {
+        "ObjectName": "Function'BP_Penguin_C:ProcessDamageSelfAndReaction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.15"
+      },
+      "ProcessDamageSelf": {
+        "ObjectName": "Function'BP_Penguin_C:ProcessDamageSelf'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.14"
+      },
+      "GetDamegeToSelf": {
+        "ObjectName": "Function'BP_Penguin_C:GetDamegeToSelf'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.11"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Game",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_Penguin_C'Default__BP_Penguin_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.3"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_CoopParam_Weapon_C",
+    "Name": "BP_CoopParam_Weapon_GEN_VARIABLE",
+    "Outer": "BP_Penguin_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_Weapon.BP_CoopParam_Weapon_C'",
+    "Template": {
+      "ObjectName": "BP_CoopParam_Weapon_C'Default__BP_CoopParam_Weapon_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_Weapon.1"
+    },
+    "Properties": {
+      "WeaponClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_PenguinLauncher_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_PenguinLauncher.0"
+      },
+      "WeaponAttachAction": {
+        "ObjectName": "BlueprintGeneratedClass'BP_Action_CoopWeapon_AttachPenguinLauncher_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Action/MonsterCoop/BP_Action_CoopWeapon_AttachPenguinLauncher.0"
+      }
+    }
+  },
+  {
+    "Type": "BP_PalCryComponent_C",
+    "Name": "BP_PalCryComponent_GEN_VARIABLE",
+    "Outer": "BP_Penguin_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Sound/Pal/Cry/BP_PalCryComponent.BP_PalCryComponent_C'",
+    "Template": {
+      "ObjectName": "BP_PalCryComponent_C'BP_MonsterBase_C:BP_PalCryComponent_GEN_VARIABLE'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.2"
+    },
+    "Properties": {
+      "CryPalID": "EPalTribeID::Penguin"
+    }
+  },
+  {
+    "Type": "BP_Penguin_C",
+    "Name": "Default__BP_Penguin_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.BP_Penguin_C'",
+    "Template": {
+      "ObjectName": "BP_MonsterBase_C'Default__BP_MonsterBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "PartnerSkillMagnification": [
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "SelfDamageRate": [
+        1.0,
+        1.0,
+        0.8,
+        0.6,
+        0.4,
+        0.2
+      ],
+      "LiftupObjectComponent": {
+        "ObjectName": "PalCharacterLiftupObjectComponent'Default__BP_Penguin_C:Liftup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.24"
+      },
+      "ActionComponent": {
+        "ObjectName": "PalActionComponent'Default__BP_Penguin_C:ActionComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.18"
+      },
+      "CharacterParameterComponent": {
+        "ObjectName": "PalCharacterParameterComponent'Default__BP_Penguin_C:CharacterParameterComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.26"
+      },
+      "StaticCharacterParameterComponent": {
+        "ObjectName": "PalStaticCharacterParameterComponent'Default__BP_Penguin_C:StaticCharacterParameterComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.36"
+      },
+      "DamageReactionComponent": {
+        "ObjectName": "PalDamageReactionComponent'Default__BP_Penguin_C:DamageReactionComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.27"
+      },
+      "StatusComponent": {
+        "ObjectName": "PalStatusComponent'Default__BP_Penguin_C:StatusComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.37"
+      },
+      "CameraBoom": {
+        "ObjectName": "PalShooterSpringArmComponent'Default__BP_Penguin_C:CameraBoom'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.34"
+      },
+      "FollowCamera": {
+        "ObjectName": "PalCharacterCameraComponent'Default__BP_Penguin_C:FollowCamera'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.23"
+      },
+      "MulticastGateComponent": {
+        "ObjectName": "PalLookAtComponent'Default__BP_Penguin_C:LookAtComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.31"
+      },
+      "NavInvokerComponent": {
+        "ObjectName": "PalFootIKComponent'Default__BP_Penguin_C:FootIKComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.28"
+      },
+      "FootIKComponent": {
+        "ObjectName": "PalVisualEffectComponent'Default__BP_Penguin_C:VisualEffectComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.38"
+      },
+      "VisualEffectComponent": {
+        "ObjectName": "PalPassiveSkillComponent'Default__BP_Penguin_C:PassiveSkillComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.33"
+      },
+      "PassiveSkillComponent": {
+        "ObjectName": "PalHeadUpDisplayComponent'Default__BP_Penguin_C:HUDComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.29"
+      },
+      "HUDComponent": {
+        "ObjectName": "PalAnimNotifyParameterComponent'Default__BP_Penguin_C:AnimNotifyComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.19"
+      },
+      "AnimNotifyComponent": {
+        "ObjectName": "PalCharacterAroundInfoCollectorComponent'Default__BP_Penguin_C:AroundInfoCollectorComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.22"
+      }
+    }
+  },
+  {
+    "Type": "CapsuleComponent",
+    "Name": "CollisionCylinder",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'CapsuleComponent'",
+    "Template": {
+      "ObjectName": "CapsuleComponent'Default__BP_MonsterBase_C:CollisionCylinder'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.3"
+    },
+    "Properties": {
+      "CapsuleHalfHeight": 42.0,
+      "CapsuleRadius": 32.0
+    }
+  },
+  {
+    "Type": "ComponentDelegateBinding",
+    "Name": "ComponentDelegateBinding_0",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'ComponentDelegateBinding'",
+    "Properties": {
+      "ComponentDelegateBindings": [
+        {
+          "ComponentPropertyName": "PalPartnerSkillParameter",
+          "DelegatePropertyName": "OnStop",
+          "FunctionNameToBind": "BndEvt__BP_Penguin_PalPartnerSkillParameter_K2Node_ComponentBoundEvent_5_OnStop__DelegateSignature"
+        },
+        {
+          "ComponentPropertyName": "BP_CoopParam_Weapon",
+          "DelegatePropertyName": "OnCreatedBulletDelegate",
+          "FunctionNameToBind": "BndEvt__BP_Penguin_BP_CoopParam_Weapon_K2Node_ComponentBoundEvent_4_OnCreatedBulletDelegate__DelegateSignature"
+        },
+        {
+          "ComponentPropertyName": "BP_CoopParam_Weapon",
+          "DelegatePropertyName": "OnDestroyBulletDelegate",
+          "FunctionNameToBind": "BndEvt__BP_Penguin_BP_CoopParam_Weapon_K2Node_ComponentBoundEvent_3_OnDestroyBulletDelegate__DelegateSignature"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__BP_Penguin_BP_CoopParam_Weapon_K2Node_ComponentBoundEvent_3_OnDestroyBulletDelegate__DelegateSignature",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "HitComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "HiｔResult",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__BP_Penguin_BP_CoopParam_Weapon_K2Node_ComponentBoundEvent_4_OnCreatedBulletDelegate__DelegateSignature",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Bullet",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalBullet'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__BP_Penguin_PalPartnerSkillParameter_K2Node_ComponentBoundEvent_5_OnStop__DelegateSignature",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_Penguin",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetTrainerPlayer_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorRotation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_SetActorRotation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_HitComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_ComponentBoundEvent_Hi_Result",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_ComponentBoundEvent_Bullet",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalBullet'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BreakHitResult_bBlockingHit",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BreakHitResult_bInitialOverlap",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakHitResult_Time",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakHitResult_Distance",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_Location",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_ImpactPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_Normal",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_ImpactNormal",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BreakHitResult_PhysMat",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PhysicalMaterial'",
+          "ObjectPath": "/Script/PhysicsCore"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BreakHitResult_HitActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BreakHitResult_HitComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_BreakHitResult_HitBoneName",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_BreakHitResult_BoneName",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_BreakHitResult_HitItem",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_BreakHitResult_ElementIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_BreakHitResult_FaceIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_TraceStart",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_TraceEnd",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetActorLocation_SweepHitResult",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_SetActorLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalActionBase:ActionEndDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_CustomEvent_BlowVelocity",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_ActionDynamicParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 224,
+        "Struct": {
+          "ObjectName": "ScriptStruct'ActionDynamicParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetTrainerPlayer_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayActionParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetTrainerPlayer_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetTransform_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakTransform_Location",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakTransform_Rotation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakTransform_Scale",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetActorLocation_SweepHitResult_1",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_SetActorLocation_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetBlowVelocity",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "HitResult",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "BlowVelocity",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Parm | OutParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "Force",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Blow",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_RandomIntegerInRange_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BreakHitResult_bBlockingHit",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BreakHitResult_bInitialOverlap",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakHitResult_Time",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakHitResult_Distance",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_Location",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_ImpactPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_Normal",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_ImpactNormal",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BreakHitResult_PhysMat",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PhysicalMaterial'",
+          "ObjectPath": "/Script/PhysicsCore"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BreakHitResult_HitActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BreakHitResult_HitComponent",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_BreakHitResult_HitBoneName",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_BreakHitResult_BoneName",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_BreakHitResult_HitItem",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_BreakHitResult_ElementIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_BreakHitResult_FaceIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_TraceStart",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakHitResult_TraceEnd",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Conv_IntToFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Subtract_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Multiply_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_VSize_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Normal_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Greater_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_RandomIntegerInRange_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Conv_IntToFloat_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Conv_FloatToVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Conv_DoubleToVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Multiply_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Multiply_VectorVector_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotFromX_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetAxes_X",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetAxes_Y",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetAxes_Z",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_RotateAngleAxis_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotFromX_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetAxes_X_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetAxes_Y_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetAxes_Z_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_RotateAngleAxis_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Multiply_DoubleDouble_A_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_RotateAngleAxis_AngleDeg_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetDamegeToSelf",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Parm | OutParm | ReturnParm"
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_GetMaxHP_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Conv_IntToDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_GetRank_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_LastIndex_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Min_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Array_Get_Item",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Multiply_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_FTrunc_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Max_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnActionEnd",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "PlayStunBlow",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "BlowVelocity",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ProcessDamageSelf",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "Damage",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "NoReaction",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "BlowVelocity",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ProcessDamageSelfAndReaction",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "HitResult",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Damage",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "BlowVelocity",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetBlowVelocity_BlowVelocity",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Convert_IntToFixedPoint_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_GetDamegeToSelf_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetHP_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint64'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Convert_FixedPoint64ToInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GreaterEqual_FixedPointInteger_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Set Disable Throw Pal Flag",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "IsDisable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "FlagName",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'InheritableComponentHandler'",
+    "Properties": {
+      "Records": [
+        {
+          "ComponentClass": {
+            "ObjectName": "Class'PalInteractableSphereComponentNative'",
+            "ObjectPath": "/Script/Pal"
+          },
+          "ComponentTemplate": {
+            "ObjectName": "PalInteractableSphereComponentNative'BP_Penguin_C:BP_InteractableSphere_GEN_VARIABLE'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.30"
+          },
+          "ComponentKey": {
+            "OwnerClass": {
+              "ObjectName": "BlueprintGeneratedClass'BP_MonsterBase_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.0"
+            },
+            "SCSVariableName": "BP_InteractableSphere",
+            "AssociatedGuid": "E1723F2E-426F1652-C58C1AA3-7D95233B"
+          },
+          "CookedComponentInstancingData": {
+            "ChangedPropertyList": [],
+            "bHasValidCookedData": false
+          }
+        },
+        {
+          "ComponentClass": {
+            "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+            "ObjectPath": "/Script/Pal"
+          },
+          "ComponentTemplate": {
+            "ObjectName": "PalPartnerSkillParameterComponent'BP_Penguin_C:PalPartnerSkillParameter_GEN_VARIABLE'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.32"
+          },
+          "ComponentKey": {
+            "OwnerClass": {
+              "ObjectName": "BlueprintGeneratedClass'BP_MonsterBase_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.0"
+            },
+            "SCSVariableName": "PalPartnerSkillParameter",
+            "AssociatedGuid": "D3F63977-4633371F-44BA068B-1594045A"
+          },
+          "CookedComponentInstancingData": {
+            "ChangedPropertyList": [],
+            "bHasValidCookedData": false
+          }
+        },
+        {
+          "ComponentClass": {
+            "ObjectName": "BlueprintGeneratedClass'BP_PalCryComponent_C'",
+            "ObjectPath": "Pal/Content/Pal/Sound/Pal/Cry/BP_PalCryComponent.0"
+          },
+          "ComponentTemplate": {
+            "ObjectName": "BP_PalCryComponent_C'BP_Penguin_C:BP_PalCryComponent_GEN_VARIABLE'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.2"
+          },
+          "ComponentKey": {
+            "OwnerClass": {
+              "ObjectName": "BlueprintGeneratedClass'BP_MonsterBase_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.0"
+            },
+            "SCSVariableName": "BP_PalCryComponent",
+            "AssociatedGuid": "A971BE27-4B3C10FC-863FA284-ECDC3286"
+          },
+          "CookedComponentInstancingData": {
+            "ChangedPropertyList": [],
+            "bHasValidCookedData": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "PalActionComponent",
+    "Name": "ActionComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalActionComponent'",
+    "Template": {
+      "ObjectName": "PalActionComponent'Default__BP_MonsterBase_C:ActionComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.35"
+    }
+  },
+  {
+    "Type": "PalAnimNotifyParameterComponent",
+    "Name": "AnimNotifyComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalAnimNotifyParameterComponent'",
+    "Template": {
+      "ObjectName": "PalAnimNotifyParameterComponent'Default__BP_MonsterBase_C:AnimNotifyComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.36"
+    }
+  },
+  {
+    "Type": "PalBodyPartsCapsuleComponent",
+    "Name": "PalBodyPartsCapsule_GEN_VARIABLE",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'PalBodyPartsCapsuleComponent'",
+    "Properties": {
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "RelativeLocation": {
+        "X": 16.154982,
+        "Y": 2.750165,
+        "Z": 1.2757135E-13
+      },
+      "RelativeRotation": {
+        "Pitch": 90.0,
+        "Yaw": 720.0,
+        "Roll": 720.0
+      },
+      "RelativeScale3D": {
+        "X": 1.5377188,
+        "Y": 1.5377188,
+        "Z": 1.3780859
+      }
+    }
+  },
+  {
+    "Type": "PalBodyPartsSphereComponent",
+    "Name": "PalBodyPartsSphere_GEN_VARIABLE",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'PalBodyPartsSphereComponent'",
+    "Properties": {
+      "BodyPartsType": "EPalBodyPartsType::Weak",
+      "SphereRadius": 38.0,
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "RelativeLocation": {
+        "X": 1.6776737E-07,
+        "Y": -8.165245,
+        "Z": 17.814926
+      },
+      "RelativeScale3D": {
+        "X": 0.6687428,
+        "Y": 0.6687428,
+        "Z": 0.6687428
+      }
+    }
+  },
+  {
+    "Type": "PalCharacterAroundInfoCollectorComponent",
+    "Name": "AroundInfoCollectorComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalCharacterAroundInfoCollectorComponent'",
+    "Template": {
+      "ObjectName": "PalCharacterAroundInfoCollectorComponent'Default__BP_MonsterBase_C:AroundInfoCollectorComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.37"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_Penguin_C:CollisionCylinder'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.4"
+      }
+    }
+  },
+  {
+    "Type": "PalCharacterCameraComponent",
+    "Name": "FollowCamera",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalCharacterCameraComponent'",
+    "Template": {
+      "ObjectName": "PalCharacterCameraComponent'Default__BP_MonsterBase_C:FollowCamera'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.38"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "PalShooterSpringArmComponent'Default__BP_Penguin_C:CameraBoom'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.34"
+      }
+    }
+  },
+  {
+    "Type": "PalCharacterLiftupObjectComponent",
+    "Name": "Liftup",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalCharacterLiftupObjectComponent'",
+    "Template": {
+      "ObjectName": "PalCharacterLiftupObjectComponent'Default__BP_MonsterBase_C:Liftup'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.39"
+    }
+  },
+  {
+    "Type": "PalCharacterMovementComponent",
+    "Name": "CharMoveComp",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalCharacterMovementComponent'",
+    "Template": {
+      "ObjectName": "PalCharacterMovementComponent'Default__BP_MonsterBase_C:CharMoveComp'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.40"
+    },
+    "Properties": {
+      "MaxWalkSpeedCrouched": 450.0,
+      "bUseSeparateBrakingFriction": false
+    }
+  },
+  {
+    "Type": "PalCharacterParameterComponent",
+    "Name": "CharacterParameterComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalCharacterParameterComponent'",
+    "Template": {
+      "ObjectName": "PalCharacterParameterComponent'Default__BP_MonsterBase_C:CharacterParameterComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.41"
+    },
+    "Properties": {
+      "ElementType1": "EPalElementType::Water",
+      "ElementType2": "EPalElementType::Ice"
+    }
+  },
+  {
+    "Type": "PalDamageReactionComponent",
+    "Name": "DamageReactionComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalDamageReactionComponent'",
+    "Template": {
+      "ObjectName": "PalDamageReactionComponent'Default__BP_MonsterBase_C:DamageReactionComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.42"
+    }
+  },
+  {
+    "Type": "PalFootIKComponent",
+    "Name": "FootIKComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalFootIKComponent'",
+    "Template": {
+      "ObjectName": "PalFootIKComponent'Default__BP_MonsterBase_C:FootIKComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.44"
+    }
+  },
+  {
+    "Type": "PalHeadUpDisplayComponent",
+    "Name": "HUDComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalHeadUpDisplayComponent'",
+    "Template": {
+      "ObjectName": "PalHeadUpDisplayComponent'Default__BP_MonsterBase_C:HUDComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.45"
+    }
+  },
+  {
+    "Type": "PalInteractableSphereComponentNative",
+    "Name": "BP_InteractableSphere_GEN_VARIABLE",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'PalInteractableSphereComponentNative'",
+    "Template": {
+      "ObjectName": "PalInteractableSphereComponentNative'BP_MonsterBase_C:BP_InteractableSphere_GEN_VARIABLE'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.46"
+    },
+    "Properties": {
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 8.9182825
+      }
+    }
+  },
+  {
+    "Type": "PalLookAtComponent",
+    "Name": "LookAtComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalLookAtComponent'",
+    "Template": {
+      "ObjectName": "PalLookAtComponent'Default__BP_MonsterBase_C:LookAtComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.47"
+    }
+  },
+  {
+    "Type": "PalPartnerSkillParameterComponent",
+    "Name": "PalPartnerSkillParameter_GEN_VARIABLE",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'PalPartnerSkillParameterComponent'",
+    "Template": {
+      "ObjectName": "PalPartnerSkillParameterComponent'BP_MonsterBase_C:PalPartnerSkillParameter_GEN_VARIABLE'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.49"
+    },
+    "Properties": {
+      "RestrictionItems": [
+        {
+          "Key": "SkillUnlock_Penguin"
+        }
+      ],
+      "SkillName": "RocketLauncher",
+      "ActiveSkill_MainValue_Overview_EditorOnly": "威力",
+      "ActiveSkill_MainValueByRank": [
+        250.0,
+        285.0,
+        325.0,
+        400.0,
+        500.0
+      ]
+    }
+  },
+  {
+    "Type": "PalPassiveSkillComponent",
+    "Name": "PassiveSkillComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalPassiveSkillComponent'",
+    "Template": {
+      "ObjectName": "PalPassiveSkillComponent'Default__BP_MonsterBase_C:PassiveSkillComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.50"
+    }
+  },
+  {
+    "Type": "PalShooterSpringArmComponent",
+    "Name": "CameraBoom",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalShooterSpringArmComponent'",
+    "Template": {
+      "ObjectName": "PalShooterSpringArmComponent'Default__BP_MonsterBase_C:CameraBoom'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.51"
+    },
+    "Properties": {
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_Penguin_C:CollisionCylinder'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.4"
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 108.91828
+      }
+    }
+  },
+  {
+    "Type": "PalSkeletalMeshComponent",
+    "Name": "CharacterMesh0",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalSkeletalMeshComponent'",
+    "Template": {
+      "ObjectName": "PalSkeletalMeshComponent'Default__BP_MonsterBase_C:CharacterMesh0'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.52"
+    },
+    "Properties": {
+      "bIsEnableGroundTilt": true,
+      "PitchAngle": 5.0,
+      "RollAngle": 5.0,
+      "AnimClass": {
+        "ObjectName": "AnimBlueprintGeneratedClass'ABP_Penguin_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/ABP_Penguin.1"
+      },
+      "SkeletalMesh": {
+        "ObjectName": "SkeletalMesh'SK_Penguin'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Penguin/SK_Penguin.0"
+      },
+      "SkinnedAsset": {
+        "ObjectName": "SkeletalMesh'SK_Penguin'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Penguin/SK_Penguin.0"
+      },
+      "AttachParent": {
+        "ObjectName": "CapsuleComponent'Default__BP_Penguin_C:CollisionCylinder'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.4"
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -42.0
+      }
+    }
+  },
+  {
+    "Type": "PalStaticCharacterParameterComponent",
+    "Name": "StaticCharacterParameterComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalStaticCharacterParameterComponent'",
+    "Template": {
+      "ObjectName": "PalStaticCharacterParameterComponent'Default__BP_MonsterBase_C:StaticCharacterParameterComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.53"
+    },
+    "Properties": {
+      "AIActionMap": [
+        {
+          "EPalAIActionType::Cooperation": {
+            "ObjectName": "BlueprintGeneratedClass'BP_AIAction_WeaponCall_C'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/Coop/BP_AIAction_WeaponCall.0"
+          }
+        }
+      ],
+      "RandomRestMontage": [
+        {
+          "ObjectName": "AnimMontage'AM_Penguin_Rest01'",
+          "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Rest01.0"
+        },
+        {
+          "ObjectName": "AnimMontage'AM_Penguin_Rest02'",
+          "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Rest02.0"
+        },
+        {
+          "ObjectName": "AnimMontage'AM_Penguin_Rest03'",
+          "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Rest03.0"
+        },
+        {
+          "ObjectName": "AnimMontage'AM_Penguin_Eat'",
+          "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Eat.0"
+        }
+      ],
+      "RandomRestMontageInfos": [
+        {
+          "RandomRestMontage": {
+            "ObjectName": "AnimMontage'AM_Penguin_Rest01'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Rest01.0"
+          },
+          "Weight": 1.0,
+          "LoopNum_Min": 2,
+          "LoopNum_Max": 3,
+          "AfterIdleTime": 2.0
+        },
+        {
+          "RandomRestMontage": {
+            "ObjectName": "AnimMontage'AM_Penguin_Rest02'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Rest02.0"
+          },
+          "Weight": 1.0,
+          "LoopNum_Min": 2,
+          "LoopNum_Max": 3,
+          "AfterIdleTime": 0.0
+        },
+        {
+          "RandomRestMontage": {
+            "ObjectName": "AnimMontage'AM_Penguin_Rest03'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Rest03.0"
+          },
+          "Weight": 1.0,
+          "LoopNum_Min": 5,
+          "LoopNum_Max": 8,
+          "AfterIdleTime": 2.0
+        },
+        {
+          "RandomRestMontage": {
+            "ObjectName": "AnimMontage'AM_Penguin_Eat'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Eat.0"
+          },
+          "Weight": 1.0,
+          "LoopNum_Min": 6,
+          "LoopNum_Max": 12,
+          "AfterIdleTime": 2.0
+        }
+      ],
+      "GeneralAnimSequenceMap": [
+        {
+          "EPalGeneralAnimSequenceType::JumpLoop": {
+            "ObjectName": "AnimSequence'AS_Penguin_JumpLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AS_Penguin_JumpLoop.0"
+          }
+        },
+        {
+          "EPalGeneralAnimSequenceType::JumpEnd": {
+            "ObjectName": "AnimSequence'AS_Penguin_JumpEnd'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AS_Penguin_JumpEnd.0"
+          }
+        }
+      ],
+      "GeneralMontageMap": [
+        {
+          "EPalGeneralMontageType::GeneralAttackReady_Far": {
+            "ObjectName": "AnimMontage'AM_Penguin_FarSkill_Start'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_FarSkill_Start.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::GeneralAttackReadyLoop_Far": {
+            "ObjectName": "AnimMontage'AM_Penguin_FarSkill_StartLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_FarSkill_StartLoop.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::GeneralAttackProcess_Far": {
+            "ObjectName": "AnimMontage'AM_Penguin_FarSkill_Action'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_FarSkill_Action.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::GeneralAttackProcessLoop_Far": {
+            "ObjectName": "AnimMontage'AM_Penguin_FarSkill_ActionLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_FarSkill_ActionLoop.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::GeneralAttackAfter_Far": {
+            "ObjectName": "AnimMontage'AM_Penguin_FarSkill_End'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_FarSkill_End.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::SleepStart": {
+            "ObjectName": "AnimMontage'AM_Penguin_SleepStart'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_SleepStart.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::SleepLoop": {
+            "ObjectName": "AnimMontage'AM_Penguin_SleepLoop'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_SleepLoop.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::SleepEnd": {
+            "ObjectName": "AnimMontage'AM_Penguin_SleepEnd'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_SleepEnd.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::DamageAdditive": {
+            "ObjectName": "AnimMontage'AM_Penguin_Hit'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Hit.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::BeLiftupStart": {
+            "ObjectName": "AnimMontage'AM_Penguin_Carrying_Start'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Carrying_Start.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::BeLiftupLoop": {
+            "ObjectName": "AnimMontage'AM_Penguin_Carrying'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Carrying.0"
+          }
+        },
+        {
+          "EPalGeneralMontageType::Step_Forward": null
+        },
+        {
+          "EPalGeneralMontageType::Step_Back": null
+        },
+        {
+          "EPalGeneralMontageType::Step_Right": null
+        },
+        {
+          "EPalGeneralMontageType::Step_Left": null
+        }
+      ],
+      "GeneralBlendSpaceMap": [
+        {
+          "EPalGeneralBlendSpaceType::GeneralMove": {
+            "ObjectName": "BlendSpace1D'BS_Move_Penguin'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BS_Move_Penguin.0"
+          }
+        },
+        {
+          "EPalGeneralBlendSpaceType::TransportingObjectMove": {
+            "ObjectName": "BlendSpace1D'BS_Transport_Penguin'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BS_Transport_Penguin.0"
+          }
+        }
+      ],
+      "RagdollPresetMap": [
+        {
+          "EPalRagdollPresetType::BeLiftup": {
+            "ObjectName": "BlueprintGeneratedClass'BP_RagdollPreset_Liftup_Penguin_C'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Ragdoll/BP_RagdollPreset_Liftup_Penguin.0"
+          }
+        }
+      ],
+      "ActionMontageMap": [
+        {
+          "EPalActionType::Menace": {
+            "ObjectName": "AnimMontage'AM_Penguin_Encount'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Encount.0"
+          }
+        },
+        {
+          "EPalActionType::Eat": {
+            "ObjectName": "AnimMontage'AM_Penguin_Eat'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Eat.0"
+          }
+        },
+        {
+          "EPalActionType::KnockBack": {
+            "ObjectName": "AnimMontage'AM_Penguin_Damage'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Damage.0"
+          }
+        },
+        {
+          "EPalActionType::ForwardWalk": {
+            "ObjectName": "AnimMontage'AM_Penguin_Walk'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Walk.0"
+          }
+        },
+        {
+          "EPalActionType::Architecture": {
+            "ObjectName": "AnimMontage'AM_Penguin_Architecture'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Architecture.0"
+          }
+        },
+        {
+          "EPalActionType::GetupUtubuse_orRight": {
+            "ObjectName": "AnimMontage'AM_Penguin_GetUp_FrontDown'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_GetUp_FrontDown.0"
+          }
+        },
+        {
+          "EPalActionType::IdleInSpa": {
+            "ObjectName": "AnimMontage'AM_Penguin_Spa'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Spa.0"
+          }
+        },
+        {
+          "EPalActionType::PalPetting": {
+            "ObjectName": "AnimMontage'AM_Penguin_Petting'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Petting.0"
+          }
+        },
+        {
+          "EPalActionType::CommonWork": {
+            "ObjectName": "AnimMontage'AM_Penguin_CommonWork'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_CommonWork.0"
+          }
+        },
+        {
+          "EPalActionType::Watering": {
+            "ObjectName": "AnimMontage'AM_Penguin_Watering'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Watering.0"
+          }
+        },
+        {
+          "EPalActionType::ElectricShock": {
+            "ObjectName": "AnimMontage'AM_Penguin_ElectricShock'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_ElectricShock.0"
+          }
+        },
+        {
+          "EPalActionType::Cool": {
+            "ObjectName": "AnimMontage'AM_Penguin_Cooling'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Penguin/AM_Penguin_Cooling.0"
+          }
+        }
+      ],
+      "StepVelocityXY": 10.0,
+      "PhysicsBodyRootName": "pevis",
+      "HPGaugeUIOffset": {
+        "X": 20.0,
+        "Y": -20.0
+      },
+      "Weight_KG": 20.0,
+      "GetupMotion_UtubuseOrRight_0FramePelvisLocation": {
+        "X": -0.007425,
+        "Y": -2.54035,
+        "Z": 22.182003
+      },
+      "PettingDistance": 110.0
+    }
+  },
+  {
+    "Type": "PalStatusComponent",
+    "Name": "StatusComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalStatusComponent'",
+    "Template": {
+      "ObjectName": "PalStatusComponent'Default__BP_MonsterBase_C:StatusComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.54"
+    }
+  },
+  {
+    "Type": "PalVisualEffectComponent",
+    "Name": "VisualEffectComponent",
+    "Outer": "Default__BP_Penguin_C",
+    "Class": "UScriptClass'PalVisualEffectComponent'",
+    "Template": {
+      "ObjectName": "PalVisualEffectComponent'Default__BP_MonsterBase_C:VisualEffectComponent'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/BP_MonsterBase.55"
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_Penguin_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.39"
+      },
+      "VariableGuid": "33213DEC-4134F70C-01DC4786-B0796B71",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_CoopParam_Weapon_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BP_CoopParam_Weapon.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_CoopParam_Weapon_C'BP_Penguin_C:BP_CoopParam_Weapon_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.1"
+      },
+      "VariableGuid": "46AC18F1-407934D7-74683EA3-C737219E",
+      "InternalVariableName": "BP_CoopParam_Weapon"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PalBodyPartsSphereComponent'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PalBodyPartsSphereComponent'BP_Penguin_C:PalBodyPartsSphere_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.21"
+      },
+      "AttachToName": "head",
+      "ParentComponentOrVariableName": "CharacterMesh0",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "70BC879E-4C0F5834-B180B299-D9BE58D2",
+      "InternalVariableName": "PalBodyPartsSphere"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PalBodyPartsCapsuleComponent'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PalBodyPartsCapsuleComponent'BP_Penguin_C:PalBodyPartsCapsule_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.20"
+      },
+      "AttachToName": "pevis",
+      "ParentComponentOrVariableName": "CharacterMesh0",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "58A06CBA-437942EF-E667FDA7-0698FF4D",
+      "InternalVariableName": "PalBodyPartsCapsule"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_Penguin_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_Penguin_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.42"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_Penguin_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.41"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_Penguin_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.43"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_Penguin_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.42"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_Penguin_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.41"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_Penguin_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.43"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_Penguin_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/PalActorBP/Penguin/BP_Penguin.40"
+      }
+    }
+  }
+]

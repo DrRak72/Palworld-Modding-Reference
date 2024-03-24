@@ -1,0 +1,606 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_BuildObject_Lamp_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.0"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.18"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_BuildObject_Light_CandleSticks_Top_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.6"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_BuildObject_Lamp_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_BuildObject_Light_CandleSticks_Top_C:SetActiveLight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.5"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "SM_Chandelier03",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_InteractableBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CheckOverlapCollision",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BuildWorkableBounds",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "PointLight",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PointLightComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "SetActiveLight": {
+        "ObjectName": "Function'BP_BuildObject_Light_CandleSticks_Top_C:SetActiveLight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.5"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_BuildObject_Light_CandleSticks_Top_C'Default__BP_BuildObject_Light_CandleSticks_Top_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.3"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "BuildWorkableBounds_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 80.0,
+        "Y": 80.0,
+        "Z": 100.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "bApplyImpulseOnDamage": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -100.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "CheckOverlapCollision_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 60.0,
+        "Y": 60.0,
+        "Z": 75.0
+      },
+      "bDynamicObstacle": true,
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Null'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "CollisionProfileName": "BuildingOverlap",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -80.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Name": "Default__BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.BP_BuildObject_Light_CandleSticks_Top_C'",
+    "Template": {
+      "ObjectName": "BP_BuildObject_Lamp_Base_C'Default__BP_BuildObject_Lamp_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.1"
+    },
+    "Properties": {
+      "InstallStrategy": "EPalBuildObjectInstallStrategy::AttachToCeil",
+      "VisualCtrl": {
+        "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_Light_CandleSticks_Top_C:VisualController'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.7"
+      },
+      "OverlapCheckCollisionRef": {
+        "ComponentProperty": "CheckOverlapCollision"
+      },
+      "DamageReaction": {
+        "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_Light_CandleSticks_Top_C:DamageReaction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.8"
+      },
+      "VisualEffect": {
+        "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_Light_CandleSticks_Top_C:VisualEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.9"
+      },
+      "bSpawnableIfOverlapped": true
+    }
+  },
+  {
+    "Type": "BP_InteractableBox_C",
+    "Name": "BP_InteractableBox_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.BP_InteractableBox_C'",
+    "Template": {
+      "ObjectName": "BP_InteractableBox_C'Default__BP_InteractableBox_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.1"
+    },
+    "Properties": {
+      "BoxExtent": {
+        "X": 90.0,
+        "Y": 90.0,
+        "Z": 100.0
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -100.0
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "SetActiveLight",
+    "Outer": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_BuildObject_Lamp_Base_C:SetActiveLight'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.7"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_BuildObject_Lamp_Base_C:SetActiveLight'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.7"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "bActive",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'InheritableComponentHandler'"
+  },
+  {
+    "Type": "PalBuildObjectVisualControlComponent",
+    "Name": "VisualController",
+    "Outer": "Default__BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'PalBuildObjectVisualControlComponent'",
+    "Template": {
+      "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObject_Lamp_Base_C:VisualController'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.8"
+    }
+  },
+  {
+    "Type": "PalMapObjectDamageReactionComponent",
+    "Name": "DamageReaction",
+    "Outer": "Default__BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'PalMapObjectDamageReactionComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObject_Lamp_Base_C:DamageReaction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.9"
+    }
+  },
+  {
+    "Type": "PalMapObjectVisualEffectComponent",
+    "Name": "VisualEffect",
+    "Outer": "Default__BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'PalMapObjectVisualEffectComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObject_Lamp_Base_C:VisualEffect'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Base/BP_BuildObject_Lamp_Base.10"
+    }
+  },
+  {
+    "Type": "PointLightComponent",
+    "Name": "PointLight_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'PointLightComponent'",
+    "Properties": {
+      "bUseInverseSquaredFalloff": false,
+      "SourceRadius": 700.0,
+      "SoftSourceRadius": 700.0,
+      "Intensity": 20.0,
+      "LightColor": {
+        "B": 146,
+        "G": 183,
+        "R": 231,
+        "A": 255,
+        "Hex": "FFE7B792"
+      },
+      "CastShadows": false,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -88.10167
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObject_Light_CandleSticks_Top_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.11"
+      },
+      "VariableGuid": "B723046F-416C5C93-3C52F8B8-6FCF03D8",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_Light_CandleSticks_Top_C:CheckOverlapCollision_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.2"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Lamp_Base_C",
+      "VariableGuid": "A4B95905-450D394D-419687A0-9576809B",
+      "InternalVariableName": "CheckOverlapCollision"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_InteractableBox_C'BP_BuildObject_Light_CandleSticks_Top_C:BP_InteractableBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.4"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Lamp_Base_C",
+      "VariableGuid": "350D33F2-4BB66B0D-35F410AC-EFF0AE77",
+      "InternalVariableName": "BP_InteractableBox"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_BuildObject_Light_CandleSticks_Top_C:SM_Chandelier03_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.19"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Lamp_Base_C",
+      "VariableGuid": "8BD9A651-42664FAB-7E8C7297-3FC0023F",
+      "InternalVariableName": "SM_Chandelier03"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PointLightComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PointLightComponent'BP_BuildObject_Light_CandleSticks_Top_C:PointLight_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.10"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Lamp_Base_C",
+      "VariableGuid": "D8824B98-427C4B27-2FF18FBD-52243487",
+      "InternalVariableName": "PointLight"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_7",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObject_Light_CandleSticks_Top_C:BuildWorkableBounds_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.1"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObject_Lamp_Base_C",
+      "VariableGuid": "04A5AC17-4F71E14B-704C0781-CB61576B",
+      "InternalVariableName": "BuildWorkableBounds"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.14"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.15"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.14"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.15"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_BuildObject_Light_CandleSticks_Top_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/Furniture/BP_BuildObject_Light_CandleSticks_Top.12"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "SM_Chandelier03_GEN_VARIABLE",
+    "Outer": "BP_BuildObject_Light_CandleSticks_Top_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_Chandelier03'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Furniture/Mansion/SM_Chandelier03.2"
+      },
+      "BodyInstance": {
+        "CollisionProfileName": "MapObjectPhysicsWithGround",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AroundInfoCollect",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "vsGroundRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": -7.396467E-07,
+        "Y": -1.9464549E-06,
+        "Z": -30.0
+      }
+    }
+  }
+]

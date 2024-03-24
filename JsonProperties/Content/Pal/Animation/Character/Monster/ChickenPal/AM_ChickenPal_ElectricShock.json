@@ -1,0 +1,171 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_ChickenPal_ElectricShock",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "BlendIn": {
+        "BlendTime": 0.05,
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "BlendOut": {
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "Default",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_ChickenPal_ElectricShock'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/ChickenPal/AM_ChickenPal_ElectricShock.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 0.481094,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_ChickenPal_Damage'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/ChickenPal/AS_ChickenPal_Damage.0"
+          }
+        },
+        {
+          "SectionName": "End",
+          "NextSectionName": "None",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_ChickenPal_ElectricShock'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/ChickenPal/AM_ChickenPal_ElectricShock.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 0.481094,
+          "LinkValue": 0.22417952,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_ChickenPal_Damage'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/ChickenPal/AS_ChickenPal_Damage.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'AS_ChickenPal_Damage'",
+                  "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/ChickenPal/AS_ChickenPal_Damage.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 1.018906,
+                "AnimEndTime": 1.5,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0001,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalEffect",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "PalAnimNotifyState_Effect'AM_ChickenPal_ElectricShock:PalAnimNotifyState_Effect_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/ChickenPal/AM_ChickenPal_ElectricShock.1"
+          },
+          "Duration": 0.60676074,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_ChickenPal_ElectricShock'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/ChickenPal/AM_ChickenPal_ElectricShock.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": -1.0,
+            "SegmentLength": -1.0,
+            "LinkValue": 0.60676074,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_ChickenPal_ElectricShock'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/ChickenPal/AM_ChickenPal_ElectricShock.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 0.481094,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_ChickenPal_Damage'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/ChickenPal/AS_ChickenPal_Damage.0"
+          }
+        }
+      ],
+      "SequenceLength": 0.481094,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SK_ChickenPal_Skeleton'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Skeleton/ChickenPal/SK_ChickenPal_Skeleton.1"
+      }
+    },
+    "SkeletonGuid": "57427850-47913113-DE11B680-D88E50D9"
+  },
+  {
+    "Type": "PalAnimNotifyState_Effect",
+    "Name": "PalAnimNotifyState_Effect_0",
+    "Outer": "AM_ChickenPal_ElectricShock",
+    "Class": "UScriptClass'PalAnimNotifyState_Effect'",
+    "Properties": {
+      "UserParameterMap": [
+        {
+          "Scale": 1.5
+        },
+        {
+          "Rate": 1.0
+        },
+        {
+          "GlowScaleX": 5.0
+        },
+        {
+          "GlowScaleY": 5.0
+        },
+        {
+          "ElecEmission": 100.0
+        },
+        {
+          "SparkleEmission": 50.0
+        },
+        {
+          "GlowEmission": 5.0
+        }
+      ],
+      "Template": {
+        "ObjectName": "NiagaraSystem'NS_Status_ElectricShock_Stun'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/StatusEffect/Electricshock/NS_Status_ElectricShock_Stun.73"
+      },
+      "SocketName": "head"
+    }
+  }
+]

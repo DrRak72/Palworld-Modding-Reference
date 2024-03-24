@@ -1,0 +1,399 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_PalExponentialHeightFogVolumeBox_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_PalExponentialHeightFogVolumeBox_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.11"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_PalExponentialHeightFogVolumeBox_C:ExecuteUbergraph_BP_PalExponentialHeightFogVolumeBox'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.4"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalExponentialHeightFogVolume'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_PalExponentialHeightFogVolumeBox_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.7"
+      },
+      {
+        "ObjectName": "Function'BP_PalExponentialHeightFogVolumeBox_C:ReceiveActorBeginOverlap'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.5"
+      },
+      {
+        "ObjectName": "Function'BP_PalExponentialHeightFogVolumeBox_C:ReceiveActorEndOverlap'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.6"
+      },
+      {
+        "ObjectName": "Function'BP_PalExponentialHeightFogVolumeBox_C:ExecuteUbergraph_BP_PalExponentialHeightFogVolumeBox'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.4"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_InteractableBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_PalExponentialHeightFogVolumeBox": {
+        "ObjectName": "Function'BP_PalExponentialHeightFogVolumeBox_C:ExecuteUbergraph_BP_PalExponentialHeightFogVolumeBox'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.4"
+      },
+      "ReceiveActorEndOverlap": {
+        "ObjectName": "Function'BP_PalExponentialHeightFogVolumeBox_C:ReceiveActorEndOverlap'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.6"
+      },
+      "ReceiveActorBeginOverlap": {
+        "ObjectName": "Function'BP_PalExponentialHeightFogVolumeBox_C:ReceiveActorBeginOverlap'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.5"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_PalExponentialHeightFogVolumeBox_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.7"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_PalExponentialHeightFogVolumeBox_C'Default__BP_PalExponentialHeightFogVolumeBox_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.2"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_InteractableBox_C",
+    "Name": "BP_InteractableBox_GEN_VARIABLE",
+    "Outer": "BP_PalExponentialHeightFogVolumeBox_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.BP_InteractableBox_C'",
+    "Template": {
+      "ObjectName": "BP_InteractableBox_C'Default__BP_InteractableBox_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.1"
+    },
+    "Properties": {
+      "BoxExtent": {
+        "X": 100.0,
+        "Y": 100.0,
+        "Z": 100.0
+      },
+      "BodyInstance": {
+        "CollisionProfileName": "Volume_PlayerOnly",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Type": "BP_PalExponentialHeightFogVolumeBox_C",
+    "Name": "Default__BP_PalExponentialHeightFogVolumeBox_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.BP_PalExponentialHeightFogVolumeBox_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "Component": {
+        "ObjectName": "ExponentialHeightFogComponent'Default__BP_PalExponentialHeightFogVolumeBox_C:HeightFogComponent0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.3"
+      },
+      "bDisableEnabledFlag": true,
+      "bGenerateOverlapEventsDuringLevelStreaming": true,
+      "UpdateOverlapsMethodDuringLevelStreaming": "EActorUpdateOverlapsMethod::AlwaysUpdate",
+      "RootComponent": {
+        "ObjectName": "ExponentialHeightFogComponent'Default__BP_PalExponentialHeightFogVolumeBox_C:HeightFogComponent0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.3"
+      }
+    }
+  },
+  {
+    "Type": "ExponentialHeightFogComponent",
+    "Name": "HeightFogComponent0",
+    "Outer": "Default__BP_PalExponentialHeightFogVolumeBox_C",
+    "Class": "UScriptClass'ExponentialHeightFogComponent'"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_PalExponentialHeightFogVolumeBox",
+    "Outer": "BP_PalExponentialHeightFogVolumeBox_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OtherActor_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_ObjectObject_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_ObjectObject_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveActorBeginOverlap",
+    "Outer": "BP_PalExponentialHeightFogVolumeBox_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveActorBeginOverlap'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveActorEndOverlap",
+    "Outer": "BP_PalExponentialHeightFogVolumeBox_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveActorEndOverlap'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_PalExponentialHeightFogVolumeBox_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_PalExponentialHeightFogVolumeBox_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_PalExponentialHeightFogVolumeBox_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.8"
+      },
+      "VariableGuid": "FD41491A-4881CBA8-2A57A4BB-AA1CC783",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_InteractableBox_C'BP_PalExponentialHeightFogVolumeBox_C:BP_InteractableBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.1"
+      },
+      "ParentComponentOrVariableName": "HeightFogComponent0",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "6B8E14BA-40D96667-62330D9C-B556CC98",
+      "InternalVariableName": "BP_InteractableBox"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_PalExponentialHeightFogVolumeBox_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PalExponentialHeightFogVolumeBox_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.10"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PalExponentialHeightFogVolumeBox_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.10"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_PalExponentialHeightFogVolumeBox_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Environment/BP_PalExponentialHeightFogVolumeBox.9"
+      }
+    }
+  }
+]

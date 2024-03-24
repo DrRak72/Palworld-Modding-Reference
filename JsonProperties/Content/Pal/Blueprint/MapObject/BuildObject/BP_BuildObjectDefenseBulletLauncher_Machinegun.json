@@ -1,0 +1,984 @@
+[
+  {
+    "Type": "ArrowComponent",
+    "Name": "CharacterLocation_GEN_VARIABLE",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'ArrowComponent'",
+    "Properties": {
+      "RelativeLocation": {
+        "X": 140.0,
+        "Y": -3.1840816E-14,
+        "Z": 50.0
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": 180.0,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_BuildObjectDefenseBulletLauncher_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Base.0"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.26"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.15"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:ExecuteUbergraph_BP_BuildObjectDefenseBulletLauncher_Machinegun'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.8"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_BuildObjectDefenseBulletLauncher_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Base.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:GetCharacterRotation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.10"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:GetCharacterLocation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.9"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:TurnToTarget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.14"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.11"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SetOwnerCharacter'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.13"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SetEnableTrigger'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.12"
+      },
+      {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:ExecuteUbergraph_BP_BuildObjectDefenseBulletLauncher_Machinegun'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.8"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Table",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CheckOverlapCollision",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BP_InteractableBox",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CharacterLocation",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'ArrowComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "BuildWorkableBounds",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_BuildObjectDefenseBulletLauncher_Machinegun": {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:ExecuteUbergraph_BP_BuildObjectDefenseBulletLauncher_Machinegun'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.8"
+      },
+      "SetEnableTrigger": {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SetEnableTrigger'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.12"
+      },
+      "SetOwnerCharacter": {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SetOwnerCharacter'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.13"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.11"
+      },
+      "TurnToTarget": {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:TurnToTarget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.14"
+      },
+      "GetCharacterLocation": {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:GetCharacterLocation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.9"
+      },
+      "GetCharacterRotation": {
+        "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:GetCharacterRotation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.10"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "Interfaces": [
+      {
+        "Class": {
+          "ObjectName": "Class'PalMapObjectLauncherControlInterface'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "PointerOffset": 0,
+        "bImplementedByK2": true
+      }
+    ],
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C'Default__BP_BuildObjectDefenseBulletLauncher_Machinegun_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.4"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal",
+      "ImplementedInterfaces": "((Interface=/Script/CoreUObject.Class'\"/Script/Pal.PalMapObjectLauncherControlInterface\"'))"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "BuildWorkableBounds_GEN_VARIABLE",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 220.0,
+        "Y": 220.0,
+        "Z": 47.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "bGenerateOverlapEvents": false,
+      "bApplyImpulseOnDamage": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "CheckOverlapCollision_GEN_VARIABLE",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 200.0,
+        "Y": 200.0,
+        "Z": 77.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "CollisionProfileName": "BuildingOverlap",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 80.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Name": "Default__BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.BP_BuildObjectDefenseBulletLauncher_Machinegun_C'",
+    "Template": {
+      "ObjectName": "BP_BuildObjectDefenseBulletLauncher_Base_C'Default__BP_BuildObjectDefenseBulletLauncher_Base_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Base.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "DefenseAIActionClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_AIAction_BaseCampDefenseGunner_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Controller/AIAction/BaseCamp/Defense/BP_AIAction_BaseCampDefenseGunner.0"
+      },
+      "BulletItemId": {
+        "Key": "RifleBullet"
+      },
+      "MagazineSize": 10,
+      "VisualCtrl": {
+        "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObjectDefenseBulletLauncher_Machinegun_C:VisualController'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.16"
+      },
+      "OverlapCheckCollisionRef": {
+        "ComponentProperty": "CheckOverlapCollision"
+      },
+      "ConcreteModelClass": {
+        "ObjectName": "Class'PalMapObjectDefenseBulletLauncherModel'",
+        "ObjectPath": "/Script/Pal"
+      },
+      "DamageReaction": {
+        "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObjectDefenseBulletLauncher_Machinegun_C:DamageReaction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.17"
+      },
+      "VisualEffect": {
+        "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObjectDefenseBulletLauncher_Machinegun_C:VisualEffect'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.18"
+      }
+    }
+  },
+  {
+    "Type": "BP_InteractableBox_C",
+    "Name": "BP_InteractableBox_GEN_VARIABLE",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.BP_InteractableBox_C'",
+    "Template": {
+      "ObjectName": "BP_InteractableBox_C'Default__BP_InteractableBox_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.1"
+    },
+    "Properties": {
+      "BoxExtent": {
+        "X": 210.0,
+        "Y": 210.0,
+        "Z": 47.5
+      },
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      }
+    }
+  },
+  {
+    "Type": "BP_StationaryLauncher_Machinegun_C",
+    "Name": "WeaponActor_GEN_VARIABLE_BP_StationaryLauncher_Machinegun_C_CAT",
+    "Outer": "WeaponActor_GEN_VARIABLE",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.BP_StationaryLauncher_Machinegun_C'",
+    "Template": {
+      "ObjectName": "BP_StationaryLauncher_Machinegun_C'Default__BP_StationaryLauncher_Machinegun_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.3"
+    }
+  },
+  {
+    "Type": "ChildActorComponent",
+    "Name": "WeaponActor_GEN_VARIABLE",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'ChildActorComponent'",
+    "Template": {
+      "ObjectName": "ChildActorComponent'BP_BuildObjectDefenseBulletLauncher_Base_C:WeaponActor_GEN_VARIABLE'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Base.2"
+    },
+    "Properties": {
+      "ChildActorClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_StationaryLauncher_Machinegun_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.2"
+      },
+      "ChildActorTemplate": {
+        "ObjectName": "BP_StationaryLauncher_Machinegun_C'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:WeaponActor_GEN_VARIABLE.WeaponActor_GEN_VARIABLE_BP_StationaryLauncher_Machinegun_C_CAT'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.6"
+      },
+      "RelativeLocation": {
+        "X": -10.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "RelativeRotation": {
+        "Pitch": 0.0,
+        "Yaw": 180.0,
+        "Roll": 0.0
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_BuildObjectDefenseBulletLauncher_Machinegun",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_TargetActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "ConstParm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetCharacterLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OwnerCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "ConstParm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Add_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "SoftObjectProperty",
+        "Name": "CallFunc_Conv_ObjectToSoftObjectReference_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 56,
+        "PropertyFlags": "UObjectWrapper",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_Event_EnableTrigger",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_TurnToTarget_Internal_DeltaTime_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetCharacterLocation",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "ConstParm | Parm | OutParm | ReturnParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetCharacterRotation",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "ConstParm | Parm | OutParm | ReturnParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentRotation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Base_C:ReceiveBeginPlay'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Base.7"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_BuildObjectDefenseBulletLauncher_Base_C:ReceiveBeginPlay'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Base.7"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetEnableTrigger",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "EnableTrigger",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetOwnerCharacter",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OwnerCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "TurnToTarget",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "TargetActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'InheritableComponentHandler'",
+    "Properties": {
+      "Records": [
+        {
+          "ComponentClass": {
+            "ObjectName": "Class'ChildActorComponent'",
+            "ObjectPath": "/Script/Engine"
+          },
+          "ComponentTemplate": {
+            "ObjectName": "ChildActorComponent'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:WeaponActor_GEN_VARIABLE'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.7"
+          },
+          "ComponentKey": {
+            "OwnerClass": {
+              "ObjectName": "BlueprintGeneratedClass'BP_BuildObjectDefenseBulletLauncher_Base_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Base.0"
+            },
+            "SCSVariableName": "WeaponActor",
+            "AssociatedGuid": "3B9EAD32-44E577AF-180BD3A0-964C4298"
+          },
+          "CookedComponentInstancingData": {
+            "ChangedPropertyList": [],
+            "bHasValidCookedData": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "PalBuildObjectVisualControlComponent",
+    "Name": "VisualController",
+    "Outer": "Default__BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'PalBuildObjectVisualControlComponent'",
+    "Template": {
+      "ObjectName": "PalBuildObjectVisualControlComponent'Default__BP_BuildObjectDefenseBulletLauncher_Base_C:VisualController'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Base.11"
+    }
+  },
+  {
+    "Type": "PalMapObjectDamageReactionComponent",
+    "Name": "DamageReaction",
+    "Outer": "Default__BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'PalMapObjectDamageReactionComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectDamageReactionComponent'Default__BP_BuildObjectDefenseBulletLauncher_Base_C:DamageReaction'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Base.12"
+    }
+  },
+  {
+    "Type": "PalMapObjectVisualEffectComponent",
+    "Name": "VisualEffect",
+    "Outer": "Default__BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'PalMapObjectVisualEffectComponent'",
+    "Template": {
+      "ObjectName": "PalMapObjectVisualEffectComponent'Default__BP_BuildObjectDefenseBulletLauncher_Base_C:VisualEffect'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Base.13"
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.19"
+      },
+      "VariableGuid": "B723046F-416C5C93-3C52F8B8-6FCF03D8",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:CheckOverlapCollision_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.3"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObjectDefenseBulletLauncher_Base_C",
+      "VariableGuid": "A4B95905-450D394D-419687A0-9576809B",
+      "InternalVariableName": "CheckOverlapCollision"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:Table_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.27"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObjectDefenseBulletLauncher_Base_C",
+      "VariableGuid": "63ADCCA2-462EB294-258A74B5-797D1799",
+      "InternalVariableName": "Table"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_InteractableBox_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Components/BP_InteractableBox.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_InteractableBox_C'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:BP_InteractableBox_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.5"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObjectDefenseBulletLauncher_Base_C",
+      "VariableGuid": "D4B79D79-474B4A10-B655D89F-36E23DA1",
+      "InternalVariableName": "BP_InteractableBox"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:BuildWorkableBounds_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.2"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObjectDefenseBulletLauncher_Base_C",
+      "VariableGuid": "5A90AE39-46BD894D-0E25A192-4337B204",
+      "InternalVariableName": "BuildWorkableBounds"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_9",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'ArrowComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "ArrowComponent'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:CharacterLocation_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.0"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_BuildObjectDefenseBulletLauncher_Base_C",
+      "VariableGuid": "1CC43BAE-44FD6F9F-4B4AB19D-E08910A7",
+      "InternalVariableName": "CharacterLocation"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.24"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_9'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.25"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.23"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.21"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.22"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.24"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_9'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.25"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.23"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.21"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.22"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_BuildObjectDefenseBulletLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/BuildObject/BP_BuildObjectDefenseBulletLauncher_Machinegun.20"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "Table_GEN_VARIABLE",
+    "Outer": "BP_BuildObjectDefenseBulletLauncher_Machinegun_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'Cylinder'",
+        "ObjectPath": "Engine/Content/BasicShapes/Cylinder.2"
+      },
+      "OverrideMaterials": [
+        {
+          "ObjectName": "Material'SimpleBuldge'",
+          "ObjectPath": "Engine/Content/MaterialTemplates/VertexAnimation/SimpleBuldge.0"
+        }
+      ],
+      "BodyInstance": {
+        "CollisionProfileName": "MapObjectPhysics",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AISightRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            },
+            {
+              "Channel": "AroundInfoCollect",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "RollingRayCast",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        }
+      },
+      "RelativeScale3D": {
+        "X": 4.0,
+        "Y": 4.0,
+        "Z": 0.1
+      },
+      "bHiddenInGame": true
+    }
+  }
+]

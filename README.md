@@ -1,0 +1,1 @@
+A modding reference for Palworld.

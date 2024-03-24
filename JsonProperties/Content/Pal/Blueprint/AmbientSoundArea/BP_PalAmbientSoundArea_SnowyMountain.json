@@ -1,0 +1,255 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_PalAmbientSoundArea_SnowyMountain_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_PalAmbientSoundArea_SnowyMountain_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.7"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalAmbientSoundAreaBase'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_PalAmbientSoundArea_SnowyMountain_C:GetAreaCollision'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.3"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Box",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'BoxComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DefaultSceneRoot",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "GetAreaCollision": {
+        "ObjectName": "Function'BP_PalAmbientSoundArea_SnowyMountain_C:GetAreaCollision'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.3"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_PalAmbientSoundArea_SnowyMountain_C'Default__BP_PalAmbientSoundArea_SnowyMountain_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.2"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BoxComponent",
+    "Name": "Box_GEN_VARIABLE",
+    "Outer": "BP_PalAmbientSoundArea_SnowyMountain_C",
+    "Class": "UScriptClass'BoxComponent'",
+    "Properties": {
+      "BoxExtent": {
+        "X": 500.0,
+        "Y": 500.0,
+        "Z": 200.0
+      },
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_GameTraceChannel5",
+        "CollisionProfileName": "Volume_PlayerOnly",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Type": "BP_PalAmbientSoundArea_SnowyMountain_C",
+    "Name": "Default__BP_PalAmbientSoundArea_SnowyMountain_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.BP_PalAmbientSoundArea_SnowyMountain_C'",
+    "Properties": {
+      "DayAmbientEvents": [
+        {
+          "ObjectName": "AkAudioEvent'AKE_SnowyMountain_Day_01'",
+          "ObjectPath": "Pal/Content/Pal/Sound/Events/Ambience/Environment/AKE_SnowyMountain_Day_01.1"
+        }
+      ],
+      "NightAmbientEvents": [
+        {
+          "ObjectName": "AkAudioEvent'AKE_SnowyMountain_Night_01'",
+          "ObjectPath": "Pal/Content/Pal/Sound/Events/Ambience/Environment/AKE_SnowyMountain_Night_01.1"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "GetAreaCollision",
+    "Outer": "BP_PalAmbientSoundArea_SnowyMountain_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalAmbientSoundAreaBase:GetAreaCollision'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | ReturnParm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_PalAmbientSoundArea_SnowyMountain_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_PalAmbientSoundArea_SnowyMountain_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.4"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PalAmbientSoundArea_SnowyMountain_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.6"
+        }
+      ],
+      "VariableGuid": "AF62C9C3-42C64175-6C3EE4A8-9E1A2E6B",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'BoxComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BoxComponent'BP_PalAmbientSoundArea_SnowyMountain_C:Box_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.1"
+      },
+      "VariableGuid": "41BC0100-454023BB-FB060A8B-7D2A3E3F",
+      "InternalVariableName": "Box"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_PalAmbientSoundArea_SnowyMountain_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PalAmbientSoundArea_SnowyMountain_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.5"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PalAmbientSoundArea_SnowyMountain_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.5"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_PalAmbientSoundArea_SnowyMountain_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.6"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_PalAmbientSoundArea_SnowyMountain_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/AmbientSoundArea/BP_PalAmbientSoundArea_SnowyMountain.5"
+      }
+    }
+  }
+]

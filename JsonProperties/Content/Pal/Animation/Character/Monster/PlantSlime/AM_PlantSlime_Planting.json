@@ -1,0 +1,142 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_PlantSlime_Planting",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "Default",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_PlantSlime_Planting'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/PlantSlime/AM_PlantSlime_Planting.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 2.6666667,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_PlantSlime_Planting'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/PlantSlime/AS_PlantSlime_Planting.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'AS_PlantSlime_Planting'",
+                  "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/PlantSlime/AS_PlantSlime_Planting.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 2.6666667,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalEffect",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "PalAnimNotifyState_Effect'AM_PlantSlime_Planting:PalAnimNotifyState_Effect_1'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/PlantSlime/AM_PlantSlime_Planting.1"
+          },
+          "Duration": 2.592921,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_PlantSlime_Planting'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/PlantSlime/AM_PlantSlime_Planting.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": 0,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 2.6666667,
+            "LinkValue": 2.6433089,
+            "LinkedSequence": {
+              "ObjectName": "AnimSequence'AS_PlantSlime_Planting'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/PlantSlime/AS_PlantSlime_Planting.0"
+            }
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_PlantSlime_Planting'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/PlantSlime/AM_PlantSlime_Planting.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 2.6666667,
+          "LinkValue": 0.05038795,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_PlantSlime_Planting'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/PlantSlime/AS_PlantSlime_Planting.0"
+          }
+        }
+      ],
+      "SequenceLength": 2.6666667,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SK_PlantSlime_Skeleton'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Skeleton/PlantSlime/SK_PlantSlime_Skeleton.2"
+      }
+    },
+    "SkeletonGuid": "489E59B9-4E62D50D-F551AAB3-3FB168C7"
+  },
+  {
+    "Type": "PalAnimNotifyState_Effect",
+    "Name": "PalAnimNotifyState_Effect_1",
+    "Outer": "AM_PlantSlime_Planting",
+    "Class": "UScriptClass'PalAnimNotifyState_Effect'",
+    "Properties": {
+      "UserParameterMap": [
+        {
+          "Scale": 1.0
+        },
+        {
+          "Lifetime": 1.0
+        }
+      ],
+      "Template": {
+        "ObjectName": "NiagaraSystem'NS_Planting01'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/Planting/NS_Planting01.9"
+      },
+      "SocketName": "head",
+      "LocationOffset": {
+        "X": 0.0,
+        "Y": -40.0,
+        "Z": 0.0
+      },
+      "RotationOffset": {
+        "Pitch": 0.0,
+        "Yaw": 20.0,
+        "Roll": 210.0
+      }
+    }
+  }
+]

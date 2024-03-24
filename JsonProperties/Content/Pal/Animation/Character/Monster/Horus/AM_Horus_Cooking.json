@@ -1,0 +1,151 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_Horus_Cooking",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "BlendIn": {
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "BlendOut": {
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "Default",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Horus_Cooking'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Horus/AM_Horus_Cooking.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.111111,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Horus_Cooking'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Horus/AS_Horus_Cooking.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "DefaultSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'AS_Horus_Cooking'",
+                  "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Horus/AS_Horus_Cooking.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 1.3333334,
+                "AnimPlayRate": 1.2,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0001,
+          "EndTriggerTimeOffset": -0.0001,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalEffect",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "PalAnimNotifyState_Effect'AM_Horus_Cooking:PalAnimNotifyState_Effect_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Horus/AM_Horus_Cooking.1"
+          },
+          "Duration": 1.111111,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_Horus_Cooking'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Horus/AM_Horus_Cooking.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": 0,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 1.111111,
+            "LinkValue": 1.111111,
+            "LinkedSequence": {
+              "ObjectName": "AnimSequence'AS_Horus_Cooking'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Horus/AS_Horus_Cooking.0"
+            }
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Horus_Cooking'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Horus/AM_Horus_Cooking.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.111111,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Horus_Cooking'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Horus/AS_Horus_Cooking.0"
+          }
+        }
+      ],
+      "SequenceLength": 1.111111,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SK_Horus_Skeleton'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Skeleton/Horus/SK_Horus_Skeleton.3"
+      }
+    },
+    "SkeletonGuid": "EBF6974A-4A4B2F95-73996580-0DB6FF86"
+  },
+  {
+    "Type": "PalAnimNotifyState_Effect",
+    "Name": "PalAnimNotifyState_Effect_0",
+    "Outer": "AM_Horus_Cooking",
+    "Class": "UScriptClass'PalAnimNotifyState_Effect'",
+    "Properties": {
+      "UserParameterMap": [
+        {
+          "Velocity": 1.5
+        },
+        {
+          "Rate": 1.0
+        },
+        {
+          "Scale": 3.0
+        }
+      ],
+      "Template": {
+        "ObjectName": "NiagaraSystem'NS_CookingFlame'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/Cooking/NS_CookingFlame.50"
+      },
+      "SocketName": "jaw",
+      "LocationOffset": {
+        "X": 110.0,
+        "Y": -55.0,
+        "Z": 0.0
+      },
+      "RotationOffset": {
+        "Pitch": 0.0,
+        "Yaw": -30.0,
+        "Roll": 0.0
+      }
+    }
+  }
+]

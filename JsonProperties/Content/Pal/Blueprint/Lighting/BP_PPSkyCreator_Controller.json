@@ -1,0 +1,3469 @@
+[
+  {
+    "Type": "AudioComponent",
+    "Name": "SoundRain_GEN_VARIABLE",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'AudioComponent'",
+    "Properties": {
+      "Sound": {
+        "ObjectName": "SoundCue'A_Rain_Cue'",
+        "ObjectPath": "Engine/Plugins/SkyCreatorPlugin/Content/Sounds/Rain/A_Rain_Cue.0"
+      }
+    }
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "NumReplicatedProperties": 1,
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_PPSkyCreator_Controller_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.30"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:ExecuteUbergraph_BP_PPSkyCreator_Controller'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.3"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'Actor'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:SetRainVolume'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.15"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:WeatherMaterialFX_Interpolation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.25"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:UserConstructionScript'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.24"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.13"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.14"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_WeatherInterpolation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.21"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_WeatherInterpolation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.9"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_WeatherChangeInterval'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.20"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_WeatherChangeInterval'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.8"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_PuddlesAccumulation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.4"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_WetnessAccumulation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.10"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_WetnessDry'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.11"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_PuddlesDry'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.5"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_WetnessAccumulate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.22"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_WetnessDry'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.23"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_PuddlesAccumulate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.16"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_PuddlesDry'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.17"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_SnowAccumulate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.18"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_SnowMelt'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.19"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_SnowAccumulate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.6"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_SnowDry'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.7"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:LightningStrike'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.12"
+      },
+      {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:ExecuteUbergraph_BP_PPSkyCreator_Controller'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.3"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SoundRain",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'AudioComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "TextRender",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'TextRenderComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DefaultSceneRoot",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SkyCreatorTarget",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate",
+        "PropertyClass": {
+          "ObjectName": "Class'PPSkyCreator'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bRealtimeWeatherChange",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "ChangeIntervalTimeMin",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "ChangeIntervalTimeMax",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "StartWeatherPreset",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "PropertyClass": {
+          "ObjectName": "Class'PPSkyCreatorWeatherPreset'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "InterpolateDurationTimeMin",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "InterpolateDurationTimeMax",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "RandomWeatherPresets",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Inner": {
+          "Type": "ObjectProperty",
+          "Name": "RandomWeatherPresets",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyClass": {
+            "ObjectName": "Class'PPSkyCreatorWeatherPreset'",
+            "ObjectPath": "/Script/PPSkyCreatorPlugin"
+          }
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "DrawDebugMessages",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Rain",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'SoundCue'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NextWeatherPreset",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'PPSkyCreatorWeatherPreset'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CurrentWeatherSettings",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1112,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PPSkyCreatorWeatherSettings'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "NextWeatherSettings",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1112,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PPSkyCreatorWeatherSettings'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "WeatherInterpolateDuration",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "InterpolateDurationAlpha",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CurrentChangeInterval",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Timer_WeatherInterpolateDuration",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | Net | DisableEditOnInstance",
+        "RepIndex": 10,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Timer_WeatherChangeInterval",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "bEnableRandomWind",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CloudWindSpeedMin",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CloudWindSpeedMax",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CurrentWindSettings",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 28,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PPSkyCreatorWindSettings'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "NextWindSettings",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 28,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PPSkyCreatorWindSettings'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CurrentWindDirection",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CurrentWindSpeed",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "WetnessAccumulateDuration",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "WetnessDryDuration",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "PuddlesAccumulateDuration",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "PuddlesDryDuration",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "SnowAccumulateDuration",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "SnowMeltDuration",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "WetnessAccumulationTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "WetnessDryTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "PuddlesAccumulationTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "PuddlesDryTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "SnowAccumulationTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "SnowMeltTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CurrentWetnessAmount",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "NextWetnessAmount",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CurrentPuddlesAmount",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "NextPuddlesAmount",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CurrentSnowAmount",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "NextSnowAmount",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Lightnings",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'SoundBase'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_PPSkyCreator_Controller": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:ExecuteUbergraph_BP_PPSkyCreator_Controller'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.3"
+      },
+      "LightningStrike": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:LightningStrike'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.12"
+      },
+      "Finish_SnowDry": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_SnowDry'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.7"
+      },
+      "Finish_SnowAccumulate": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_SnowAccumulate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.6"
+      },
+      "Start_SnowMelt": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_SnowMelt'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.19"
+      },
+      "Start_SnowAccumulate": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_SnowAccumulate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.18"
+      },
+      "Start_PuddlesDry": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_PuddlesDry'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.17"
+      },
+      "Start_PuddlesAccumulate": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_PuddlesAccumulate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.16"
+      },
+      "Start_WetnessDry": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_WetnessDry'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.23"
+      },
+      "Start_WetnessAccumulate": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_WetnessAccumulate'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.22"
+      },
+      "Finish_PuddlesDry": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_PuddlesDry'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.5"
+      },
+      "Finish_WetnessDry": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_WetnessDry'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.11"
+      },
+      "Finish_WetnessAccumulation": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_WetnessAccumulation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.10"
+      },
+      "Finish_PuddlesAccumulation": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_PuddlesAccumulation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.4"
+      },
+      "Finish_WeatherChangeInterval": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_WeatherChangeInterval'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.8"
+      },
+      "Start_WeatherChangeInterval": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_WeatherChangeInterval'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.20"
+      },
+      "Finish_WeatherInterpolation": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Finish_WeatherInterpolation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.9"
+      },
+      "Start_WeatherInterpolation": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:Start_WeatherInterpolation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.21"
+      },
+      "ReceiveTick": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.14"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.13"
+      },
+      "UserConstructionScript": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:UserConstructionScript'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.24"
+      },
+      "WeatherMaterialFX_Interpolation": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:WeatherMaterialFX_Interpolation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.25"
+      },
+      "SetRainVolume": {
+        "ObjectName": "Function'BP_PPSkyCreator_Controller_C:SetRainVolume'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.15"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_PPSkyCreator_Controller_C'Default__BP_PPSkyCreator_Controller_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.2"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_PPSkyCreator_Controller_C",
+    "Name": "Default__BP_PPSkyCreator_Controller_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.BP_PPSkyCreator_Controller_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "ChangeIntervalTimeMin": 20.0,
+      "ChangeIntervalTimeMax": 30.0,
+      "StartWeatherPreset": {
+        "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Default'",
+        "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Default.0"
+      },
+      "InterpolateDurationTimeMin": 6.0,
+      "InterpolateDurationTimeMax": 8.0,
+      "RandomWeatherPresets": [
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Clear_01'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Clear_01.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Clear_02'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Clear_02.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Clear_03'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Clear_03.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Clear_04'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Clear_04.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Cloudy_01'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Cloudy_01.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Cloudy_02'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Cloudy_02.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Cloudy_03'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Cloudy_03.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Cloudy_04'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Cloudy_04.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Cloudy_05'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Cloudy_05.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Cloudy_06'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Cloudy_06.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Default'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Default.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Fog_01'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Fog_01.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Fog_02'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Fog_02.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Fog_03'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Fog_03.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Fog_04'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Fog_04.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Overcast_01'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Overcast_01.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Overcast_02'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Overcast_02.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Overcast_03'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Overcast_03.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Overcast_04'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Overcast_04.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Rain_01'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Rain_01.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Rain_02'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Rain_02.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Rain_03'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Rain_03.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Rain_04'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Rain_04.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Snow_01'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Snow_01.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Snow_02'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Snow_02.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Snow_03'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Snow_03.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Snow_04'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Snow_04.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Storm_01'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Storm_01.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Storm_02'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Storm_02.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Storm_03'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Storm_03.0"
+        },
+        {
+          "ObjectName": "PPSkyCreatorWeatherPreset'DT_PPSC_Weather_Storm_04'",
+          "ObjectPath": "Pal/Content/PPSkyCreator/WeatherPresets/DT_PPSC_Weather_Storm_04.0"
+        }
+      ],
+      "Rain": {
+        "ObjectName": "SoundCue'A_Rain_Cue'",
+        "ObjectPath": "Engine/Plugins/SkyCreatorPlugin/Content/Sounds/Rain/A_Rain_Cue.0"
+      },
+      "CurrentWeatherSettings": {
+        "SkyAtmosphereSettings": {
+          "RayleighScatteringScale": 0.04,
+          "RayleighScattering": {
+            "R": 0.118,
+            "G": 0.28,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FF6090FF"
+          },
+          "RayleighExponentialDistribution": 8.0,
+          "MieScatteringScale": 0.002,
+          "MieScattering": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "MieAbsorptionScale": 0.04,
+          "MieAbsorption": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "MieAnisotropy": 0.72,
+          "MieExponentialDistribution": 1.2,
+          "AbsorptionScale": 0.004,
+          "Absorption": {
+            "R": 0.9,
+            "G": 1.0,
+            "B": 0.36,
+            "A": 1.0,
+            "Hex": "FFF4FFA2"
+          },
+          "SkyLuminanceFactor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "GroundAlbedo": {
+            "R": 0.65,
+            "G": 0.65,
+            "B": 0.65,
+            "A": 1.0,
+            "Hex": "FFD3D3D3"
+          },
+          "HeightFogContribution": 1.0
+        },
+        "VolumetricCloudSettings": {
+          "StratusCoverage": 0.0,
+          "StratusCoverageVariation": 0.5,
+          "StratusHeightVariation": 0.5,
+          "StratocumulusCoverage": 0.75,
+          "StratocumulusCoverageVariation": 0.5,
+          "StratocumulusHeightVariation": 0.5,
+          "CumulusCoverage": 0.75,
+          "CumulusCoverageVariation": 0.5,
+          "CumulusHeightVariation": 0.5,
+          "CumulonimbusCoverage": 0.0,
+          "CumulonimbusAnvil": 0.0,
+          "CumulonimbusHeightVariation": 0.5,
+          "DensityBottom": 0.001,
+          "DensityMiddle": 0.05,
+          "DensityTop": 0.1,
+          "albedo": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "GroundAlbedo": {
+            "R": 0.25,
+            "G": 0.25,
+            "B": 0.25,
+            "A": 1.0,
+            "Hex": "FF898989"
+          },
+          "BeersPowderIntensity": 0.25,
+          "BeersPowderDepth": 100.0,
+          "BottomOcclusion": 0.0,
+          "BottomOcclusionHeight": 0.25,
+          "NightEmissive": {
+            "R": 0.010725,
+            "G": 0.01588,
+            "B": 0.025,
+            "A": 1.0,
+            "Hex": "FF1A212B"
+          },
+          "PhaseG": 0.6,
+          "PhaseG2": -0.4,
+          "PhaseBlend": 0.5,
+          "MultiScatteringContribution": 0.5,
+          "MultiScatteringOcclusion": 0.1,
+          "MultiScatteringEccentricity": 0.5,
+          "NoiseShapeIntensityA": 0.5,
+          "NoiseShapeIntensityB": 0.625,
+          "NoiseShapeIntensityC": 0.25,
+          "NoiseShapeIntensityD": 0.125,
+          "TurbulenceIntensity": 0.25
+        },
+        "BackgroundCloudSettings": {
+          "BackgroundCloudsIntensity": 1.0,
+          "BackgroundCloudsColorTint": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "BackgroundCloudsLayerA": 0.5,
+          "BackgroundCloudsLayerB": 0.5,
+          "BackgroundCloudsLayerC": 0.5,
+          "BackgroundCloudsLightningPhase": 0.8
+        },
+        "SkyLightSettings": {
+          "Intensity": 1.0,
+          "NightIntensity": 4.0,
+          "LightColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "LowerHemisphereColor": {
+            "R": 0.0006,
+            "G": 0.0007,
+            "B": 0.001,
+            "A": 1.0,
+            "Hex": "FF010203"
+          },
+          "CloudAmbientOcclusionStrength": 0.25
+        },
+        "SunLightSettings": {
+          "Intensity": 10.0,
+          "LightColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 0.9,
+            "A": 1.0,
+            "Hex": "FFFFFFF4"
+          },
+          "Temperature": 5500.0,
+          "VolumetricScatteringIntensity": 1.0,
+          "AtmosphereDiskColorScale": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "CloudScatteredLuminanceScale": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "CloudShadowStrength": 1.0,
+          "CloudShadowOnAtmosphereStrength": 0.5,
+          "CloudShadowOnSurfaceStrength": 0.9
+        },
+        "MoonLightSettings": {
+          "Intensity": 0.04,
+          "LightColor": {
+            "R": 0.48,
+            "G": 0.74,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFB8E0FF"
+          },
+          "Temperature": 8500.0,
+          "VolumetricScatteringIntensity": 1.0,
+          "AtmosphereDiskColorScale": {
+            "R": 1.0,
+            "G": 0.88,
+            "B": 0.4,
+            "A": 1.0,
+            "Hex": "FFFFF1AA"
+          },
+          "CloudScatteredLuminanceScale": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "CloudShadowStrength": 1.0,
+          "CloudShadowOnAtmosphereStrength": 0.5,
+          "CloudShadowOnSurfaceStrength": 0.9
+        },
+        "ExponentialHeightFogSettings": {
+          "FogDensity": 0.002,
+          "FogHeightFalloff": 0.06,
+          "FogInscatteringColor": {
+            "R": 0.0,
+            "G": 0.0,
+            "B": 0.0,
+            "A": 1.0,
+            "Hex": "FF000000"
+          },
+          "FogStartDistance": 0.0,
+          "SecondFogDensity": 0.0,
+          "SecondFogHeightFalloff": 0.6,
+          "DirectionalInscatteringExponent": 8.0,
+          "DirectionalInscatteringStartDistance": 2000.0,
+          "DirectionalInscatteringColor": {
+            "R": 0.0,
+            "G": 0.0,
+            "B": 0.0,
+            "A": 1.0,
+            "Hex": "FF000000"
+          },
+          "VolumetricFogScatteringDistribution": 0.2,
+          "VolumetricFogAlbedo": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "VolumetricFogEmissive": {
+            "R": 0.0,
+            "G": 0.0,
+            "B": 0.0,
+            "A": 1.0,
+            "Hex": "FF000000"
+          },
+          "VolumetricFogExtinctionScale": 1.0
+        },
+        "StarMapSettings": {
+          "StarMapIntensity": 0.25,
+          "StarMapColorTint": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "StarMapTwinkleIntensity": 1.0,
+          "StarMapTwinkleSaturation": 0.25,
+          "StarMapTwinkleSpeed": 1.0,
+          "StarMapHorizonThreshold": 8.0,
+          "StarMapAtmosphereThreshold": 4.0,
+          "NightHorizonColor": {
+            "R": 0.0196,
+            "G": 0.027609,
+            "B": 0.04,
+            "A": 1.0,
+            "Hex": "FF262E38"
+          },
+          "NightZenithColor": {
+            "R": 0.001384,
+            "G": 0.002343,
+            "B": 0.004,
+            "A": 1.0,
+            "Hex": "FF04070C"
+          }
+        },
+        "WeatherFXSettings": {
+          "RainAmount": 0.0,
+          "RainColor": {
+            "R": 0.5,
+            "G": 0.5,
+            "B": 0.5,
+            "A": 0.5,
+            "Hex": "7FBCBCBC"
+          },
+          "RainGravity": -1000.0,
+          "RainLifetimeMin": 0.3,
+          "RainLifetimeMax": 0.6,
+          "RainSizeMin": 0.1,
+          "RainSizeMax": 0.8,
+          "RainSplashLifetimeMin": 0.2,
+          "RainSplashLifetimeMax": 0.3,
+          "RainSplashSizeMin": {
+            "X": 16.0,
+            "Y": 16.0
+          },
+          "RainSplashSizeMax": {
+            "X": 24.0,
+            "Y": 24.0
+          },
+          "SnowAmount": 0.0,
+          "SnowColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "SnowGravity": -100.0,
+          "SnowTurbulence": 100.0,
+          "SnowLifetimeMin": 1.0,
+          "SnowLifetimeMax": 2.0,
+          "SnowSizeMin": 1.0,
+          "SnowSizeMax": 2.0,
+          "EnableLightnings": false,
+          "LightningSpawnIntervalMin": 1.0,
+          "LightningSpawnIntervalMax": 10.0,
+          "LightningColorMin": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "LightningColorMax": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "LightningLifetime": 0.25,
+          "LightningBoltSpawnChance": 50.0,
+          "LightningBoltWidthMin": 0.004,
+          "LightningBoltWidthMax": 0.008,
+          "LightningBoltLengthMin": 2.0,
+          "LightningBoltLengthMax": 4.0,
+          "LightningBoltCurveFrequency": 0.5,
+          "LightningBoltCurveStrengthMin": 0.02,
+          "LightningBoltCurveStrengthMax": 0.08,
+          "LightningBoltJitterStrength": 0.0025,
+          "LightningBranchSpawnChance": 10.0,
+          "LightningBranchScaleMin": 0.0004,
+          "LightningBranchScaleMax": 0.0008,
+          "RainbowAmount": 0.0,
+          "RainbowColor": {
+            "R": 0.2,
+            "G": 0.2,
+            "B": 0.2,
+            "A": 1.0,
+            "Hex": "FF7C7C7C"
+          },
+          "RainbowRadius": 10000.0,
+          "RainbowThickness": 800.0,
+          "SecondaryRainbowColor": {
+            "R": 0.05,
+            "G": 0.05,
+            "B": 0.05,
+            "A": 1.0,
+            "Hex": "FF3F3F3F"
+          },
+          "SecondaryRainbowRadius": 14000.0,
+          "SecondaryRainbowThickness": 1600.0
+        },
+        "WeatherMaterialFXSettings": {
+          "WetnessAmount": 0.0,
+          "WetnessColor": {
+            "R": 0.5,
+            "G": 0.5,
+            "B": 0.5,
+            "A": 1.0,
+            "Hex": "FFBCBCBC"
+          },
+          "PuddlesAmount": 0.0,
+          "PuddlesColor": {
+            "R": 0.3,
+            "G": 0.3,
+            "B": 0.3,
+            "A": 1.0,
+            "Hex": "FF959595"
+          },
+          "RainRipplesAmount": 0.0,
+          "RainRipplesIntensity": 0.1,
+          "RainRipplesForceMinRadius": 0.5,
+          "RainRipplesForceMaxRadius": 1.0,
+          "RainRipplesRingsNumber": 2.0,
+          "RainRipplesRingsDelay": 8.0,
+          "RainRipplesDamping": 0.05,
+          "WindRipplesIntensity": 0.25,
+          "WindRipplesSpeed": 1.0,
+          "SnowAmount": 0.0,
+          "SnowColor": {
+            "R": 0.9,
+            "G": 0.9,
+            "B": 0.9,
+            "A": 1.0,
+            "Hex": "FFF4F4F4"
+          },
+          "SnowIntensity": 0.5,
+          "SnowSparklesThreshold": 0.95
+        },
+        "WindSettings": {
+          "CloudWindDirection": 0.0,
+          "CloudWindSpeed": 0.0,
+          "CloudNoiseShapeWindDirection": 0.0,
+          "CloudNoiseShapeWindSpeedHorizontal": 0.0,
+          "CloudNoiseDetailWindSpeedVertical": 2.0,
+          "PrecipitationWindDirection": 0.0,
+          "PrecipitationWindSpeed": 0.0
+        },
+        "PostProcessSettings": {
+          "BloomIntensity": 0.675,
+          "BloomThreshold": -1.0,
+          "ExposureCompensation": 1.0
+        }
+      },
+      "NextWeatherSettings": {
+        "SkyAtmosphereSettings": {
+          "RayleighScatteringScale": 0.04,
+          "RayleighScattering": {
+            "R": 0.118,
+            "G": 0.28,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FF6090FF"
+          },
+          "RayleighExponentialDistribution": 8.0,
+          "MieScatteringScale": 0.002,
+          "MieScattering": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "MieAbsorptionScale": 0.04,
+          "MieAbsorption": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "MieAnisotropy": 0.72,
+          "MieExponentialDistribution": 1.2,
+          "AbsorptionScale": 0.004,
+          "Absorption": {
+            "R": 0.9,
+            "G": 1.0,
+            "B": 0.36,
+            "A": 1.0,
+            "Hex": "FFF4FFA2"
+          },
+          "SkyLuminanceFactor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "GroundAlbedo": {
+            "R": 0.65,
+            "G": 0.65,
+            "B": 0.65,
+            "A": 1.0,
+            "Hex": "FFD3D3D3"
+          },
+          "HeightFogContribution": 1.0
+        },
+        "VolumetricCloudSettings": {
+          "StratusCoverage": 0.0,
+          "StratusCoverageVariation": 0.5,
+          "StratusHeightVariation": 0.5,
+          "StratocumulusCoverage": 0.75,
+          "StratocumulusCoverageVariation": 0.5,
+          "StratocumulusHeightVariation": 0.5,
+          "CumulusCoverage": 0.75,
+          "CumulusCoverageVariation": 0.5,
+          "CumulusHeightVariation": 0.5,
+          "CumulonimbusCoverage": 0.0,
+          "CumulonimbusAnvil": 0.0,
+          "CumulonimbusHeightVariation": 0.5,
+          "DensityBottom": 0.001,
+          "DensityMiddle": 0.05,
+          "DensityTop": 0.1,
+          "albedo": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "GroundAlbedo": {
+            "R": 0.25,
+            "G": 0.25,
+            "B": 0.25,
+            "A": 1.0,
+            "Hex": "FF898989"
+          },
+          "BeersPowderIntensity": 0.25,
+          "BeersPowderDepth": 100.0,
+          "BottomOcclusion": 0.0,
+          "BottomOcclusionHeight": 0.25,
+          "NightEmissive": {
+            "R": 0.010725,
+            "G": 0.01588,
+            "B": 0.025,
+            "A": 1.0,
+            "Hex": "FF1A212B"
+          },
+          "PhaseG": 0.6,
+          "PhaseG2": -0.4,
+          "PhaseBlend": 0.5,
+          "MultiScatteringContribution": 0.5,
+          "MultiScatteringOcclusion": 0.1,
+          "MultiScatteringEccentricity": 0.5,
+          "NoiseShapeIntensityA": 0.5,
+          "NoiseShapeIntensityB": 0.625,
+          "NoiseShapeIntensityC": 0.25,
+          "NoiseShapeIntensityD": 0.125,
+          "TurbulenceIntensity": 0.25
+        },
+        "BackgroundCloudSettings": {
+          "BackgroundCloudsIntensity": 1.0,
+          "BackgroundCloudsColorTint": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "BackgroundCloudsLayerA": 0.5,
+          "BackgroundCloudsLayerB": 0.5,
+          "BackgroundCloudsLayerC": 0.5,
+          "BackgroundCloudsLightningPhase": 0.8
+        },
+        "SkyLightSettings": {
+          "Intensity": 1.0,
+          "NightIntensity": 4.0,
+          "LightColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "LowerHemisphereColor": {
+            "R": 0.0006,
+            "G": 0.0007,
+            "B": 0.001,
+            "A": 1.0,
+            "Hex": "FF010203"
+          },
+          "CloudAmbientOcclusionStrength": 0.25
+        },
+        "SunLightSettings": {
+          "Intensity": 10.0,
+          "LightColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 0.9,
+            "A": 1.0,
+            "Hex": "FFFFFFF4"
+          },
+          "Temperature": 5500.0,
+          "VolumetricScatteringIntensity": 1.0,
+          "AtmosphereDiskColorScale": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "CloudScatteredLuminanceScale": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "CloudShadowStrength": 1.0,
+          "CloudShadowOnAtmosphereStrength": 0.5,
+          "CloudShadowOnSurfaceStrength": 0.9
+        },
+        "MoonLightSettings": {
+          "Intensity": 0.04,
+          "LightColor": {
+            "R": 0.48,
+            "G": 0.74,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFB8E0FF"
+          },
+          "Temperature": 8500.0,
+          "VolumetricScatteringIntensity": 1.0,
+          "AtmosphereDiskColorScale": {
+            "R": 1.0,
+            "G": 0.88,
+            "B": 0.4,
+            "A": 1.0,
+            "Hex": "FFFFF1AA"
+          },
+          "CloudScatteredLuminanceScale": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "CloudShadowStrength": 1.0,
+          "CloudShadowOnAtmosphereStrength": 0.5,
+          "CloudShadowOnSurfaceStrength": 0.9
+        },
+        "ExponentialHeightFogSettings": {
+          "FogDensity": 0.002,
+          "FogHeightFalloff": 0.06,
+          "FogInscatteringColor": {
+            "R": 0.0,
+            "G": 0.0,
+            "B": 0.0,
+            "A": 1.0,
+            "Hex": "FF000000"
+          },
+          "FogStartDistance": 0.0,
+          "SecondFogDensity": 0.0,
+          "SecondFogHeightFalloff": 0.6,
+          "DirectionalInscatteringExponent": 8.0,
+          "DirectionalInscatteringStartDistance": 2000.0,
+          "DirectionalInscatteringColor": {
+            "R": 0.0,
+            "G": 0.0,
+            "B": 0.0,
+            "A": 1.0,
+            "Hex": "FF000000"
+          },
+          "VolumetricFogScatteringDistribution": 0.2,
+          "VolumetricFogAlbedo": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "VolumetricFogEmissive": {
+            "R": 0.0,
+            "G": 0.0,
+            "B": 0.0,
+            "A": 1.0,
+            "Hex": "FF000000"
+          },
+          "VolumetricFogExtinctionScale": 1.0
+        },
+        "StarMapSettings": {
+          "StarMapIntensity": 0.25,
+          "StarMapColorTint": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "StarMapTwinkleIntensity": 1.0,
+          "StarMapTwinkleSaturation": 0.25,
+          "StarMapTwinkleSpeed": 1.0,
+          "StarMapHorizonThreshold": 8.0,
+          "StarMapAtmosphereThreshold": 4.0,
+          "NightHorizonColor": {
+            "R": 0.0196,
+            "G": 0.027609,
+            "B": 0.04,
+            "A": 1.0,
+            "Hex": "FF262E38"
+          },
+          "NightZenithColor": {
+            "R": 0.001384,
+            "G": 0.002343,
+            "B": 0.004,
+            "A": 1.0,
+            "Hex": "FF04070C"
+          }
+        },
+        "WeatherFXSettings": {
+          "RainAmount": 0.0,
+          "RainColor": {
+            "R": 0.5,
+            "G": 0.5,
+            "B": 0.5,
+            "A": 0.5,
+            "Hex": "7FBCBCBC"
+          },
+          "RainGravity": -1000.0,
+          "RainLifetimeMin": 0.3,
+          "RainLifetimeMax": 0.6,
+          "RainSizeMin": 0.1,
+          "RainSizeMax": 0.8,
+          "RainSplashLifetimeMin": 0.2,
+          "RainSplashLifetimeMax": 0.3,
+          "RainSplashSizeMin": {
+            "X": 16.0,
+            "Y": 16.0
+          },
+          "RainSplashSizeMax": {
+            "X": 24.0,
+            "Y": 24.0
+          },
+          "SnowAmount": 0.0,
+          "SnowColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "SnowGravity": -100.0,
+          "SnowTurbulence": 100.0,
+          "SnowLifetimeMin": 1.0,
+          "SnowLifetimeMax": 2.0,
+          "SnowSizeMin": 1.0,
+          "SnowSizeMax": 2.0,
+          "EnableLightnings": false,
+          "LightningSpawnIntervalMin": 1.0,
+          "LightningSpawnIntervalMax": 10.0,
+          "LightningColorMin": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "LightningColorMax": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFFFF"
+          },
+          "LightningLifetime": 0.25,
+          "LightningBoltSpawnChance": 50.0,
+          "LightningBoltWidthMin": 0.004,
+          "LightningBoltWidthMax": 0.008,
+          "LightningBoltLengthMin": 2.0,
+          "LightningBoltLengthMax": 4.0,
+          "LightningBoltCurveFrequency": 0.5,
+          "LightningBoltCurveStrengthMin": 0.02,
+          "LightningBoltCurveStrengthMax": 0.08,
+          "LightningBoltJitterStrength": 0.0025,
+          "LightningBranchSpawnChance": 10.0,
+          "LightningBranchScaleMin": 0.0004,
+          "LightningBranchScaleMax": 0.0008,
+          "RainbowAmount": 0.0,
+          "RainbowColor": {
+            "R": 0.2,
+            "G": 0.2,
+            "B": 0.2,
+            "A": 1.0,
+            "Hex": "FF7C7C7C"
+          },
+          "RainbowRadius": 10000.0,
+          "RainbowThickness": 800.0,
+          "SecondaryRainbowColor": {
+            "R": 0.05,
+            "G": 0.05,
+            "B": 0.05,
+            "A": 1.0,
+            "Hex": "FF3F3F3F"
+          },
+          "SecondaryRainbowRadius": 14000.0,
+          "SecondaryRainbowThickness": 1600.0
+        },
+        "WeatherMaterialFXSettings": {
+          "WetnessAmount": 0.0,
+          "WetnessColor": {
+            "R": 0.5,
+            "G": 0.5,
+            "B": 0.5,
+            "A": 1.0,
+            "Hex": "FFBCBCBC"
+          },
+          "PuddlesAmount": 0.0,
+          "PuddlesColor": {
+            "R": 0.3,
+            "G": 0.3,
+            "B": 0.3,
+            "A": 1.0,
+            "Hex": "FF959595"
+          },
+          "RainRipplesAmount": 0.0,
+          "RainRipplesIntensity": 0.1,
+          "RainRipplesForceMinRadius": 0.5,
+          "RainRipplesForceMaxRadius": 1.0,
+          "RainRipplesRingsNumber": 2.0,
+          "RainRipplesRingsDelay": 8.0,
+          "RainRipplesDamping": 0.05,
+          "WindRipplesIntensity": 0.25,
+          "WindRipplesSpeed": 1.0,
+          "SnowAmount": 0.0,
+          "SnowColor": {
+            "R": 0.9,
+            "G": 0.9,
+            "B": 0.9,
+            "A": 1.0,
+            "Hex": "FFF4F4F4"
+          },
+          "SnowIntensity": 0.5,
+          "SnowSparklesThreshold": 0.95
+        },
+        "WindSettings": {
+          "CloudWindDirection": 0.0,
+          "CloudWindSpeed": 0.0,
+          "CloudNoiseShapeWindDirection": 0.0,
+          "CloudNoiseShapeWindSpeedHorizontal": 0.0,
+          "CloudNoiseDetailWindSpeedVertical": 2.0,
+          "PrecipitationWindDirection": 0.0,
+          "PrecipitationWindSpeed": 0.0
+        },
+        "PostProcessSettings": {
+          "BloomIntensity": 0.675,
+          "BloomThreshold": -1.0,
+          "ExposureCompensation": 1.0
+        }
+      },
+      "WeatherInterpolateDuration": 5.0,
+      "Timer_WeatherInterpolateDuration": {
+        "Handle": 0
+      },
+      "Timer_WeatherChangeInterval": {
+        "Handle": 0
+      },
+      "bEnableRandomWind": true,
+      "CloudWindSpeedMax": 20.0,
+      "CurrentWindSettings": {
+        "CloudWindDirection": 0.0,
+        "CloudWindSpeed": 0.0,
+        "CloudNoiseShapeWindDirection": 0.0,
+        "CloudNoiseShapeWindSpeedHorizontal": 0.0,
+        "CloudNoiseDetailWindSpeedVertical": 2.0,
+        "PrecipitationWindDirection": 0.0,
+        "PrecipitationWindSpeed": 0.0
+      },
+      "NextWindSettings": {
+        "CloudWindDirection": 0.0,
+        "CloudWindSpeed": 0.0,
+        "CloudNoiseShapeWindDirection": 0.0,
+        "CloudNoiseShapeWindSpeedHorizontal": 0.0,
+        "CloudNoiseDetailWindSpeedVertical": 2.0,
+        "PrecipitationWindDirection": 0.0,
+        "PrecipitationWindSpeed": 0.0
+      },
+      "WetnessAccumulateDuration": 30.0,
+      "WetnessDryDuration": 60.0,
+      "PuddlesAccumulateDuration": 30.0,
+      "PuddlesDryDuration": 60.0,
+      "SnowAccumulateDuration": 30.0,
+      "SnowMeltDuration": 60.0,
+      "WetnessAccumulationTimer": {
+        "Handle": 0
+      },
+      "WetnessDryTimer": {
+        "Handle": 0
+      },
+      "PuddlesAccumulationTimer": {
+        "Handle": 0
+      },
+      "PuddlesDryTimer": {
+        "Handle": 0
+      },
+      "SnowAccumulationTimer": {
+        "Handle": 0
+      },
+      "SnowMeltTimer": {
+        "Handle": 0
+      },
+      "Lightnings": {
+        "ObjectName": "SoundCue'A_Lightning_Cue'",
+        "ObjectPath": "Engine/Plugins/SkyCreatorPlugin/Content/Sounds/Lightning/A_Lightning_Cue.0"
+      },
+      "PrimaryActorTick": {
+        "TickGroup": "ETickingGroup::TG_DuringPhysics",
+        "bCanEverTick": true
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_PPSkyCreator_Controller",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasAuthority_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasAuthority_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetWeatherPresetSettings_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1112,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PPSkyCreatorWeatherSettings'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerElapsedTimeHandle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_IsTimerActiveHandle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_GetWorldDeltaSeconds_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_GetWorldDeltaSeconds_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerRemainingTimeHandle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Conv_DoubleToString_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetTime_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Conv_DoubleToString_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_Length_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Subtract_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_RandomIntegerInRange_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetWeatherSettings_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1112,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PPSkyCreatorWeatherSettings'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Array_Get_Item",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PPSkyCreatorWeatherPreset'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_IsTimerActiveHandle_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetWeatherPresetSettings_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1112,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PPSkyCreatorWeatherSettings'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_GetDisplayName_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasAuthority_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasAuthority_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasAuthority_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetWindSettings_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 28,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PPSkyCreatorWindSettings'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PPSkyCreatorWindSettings",
+        "Flags": "RF_Public",
+        "ElementSize": 28,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PPSkyCreatorWindSettings'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasAuthority_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_3",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_4",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasAuthority_ReturnValue_6",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_5",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasAuthority_ReturnValue_7",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_DoubleDouble_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_DoubleDouble_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_NotEqual_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_NotEqual_DoubleDouble_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_6",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue_6",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasAuthority_ReturnValue_8",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_7",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue_7",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_DoubleDouble_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_DoubleDouble_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_NotEqual_DoubleDouble_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsDedicatedServer_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_8",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'OnLightningStrike__DelegateSignature'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_CustomEvent_LightningPosition",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnSound2D_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'AudioComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetTimeManager_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalTimeManager'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetCurrentPalWorldHoursFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetTimeManager_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalTimeManager'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetCurrentPalWorldHoursFloat_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasAuthority_ReturnValue_9",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetForwardVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Dot_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Multiply_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_FClamp_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Lerp_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetForwardVector_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Dot_VectorVector_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Lerp_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Multiply_DoubleDouble_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_FClamp_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_Value_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpWeatherSettings_Alpha_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PrintString_Duration_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PrintString_Duration_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Conv_DoubleToString_InDouble_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Conv_DoubleToString_InDouble_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_Time_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_Time_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpWindIndependentSettings_Alpha_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_MakeStruct_CloudWindDirection_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_MakeStruct_CloudWindSpeed_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_MakeStruct_PrecipitationWindDirection_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_MakeStruct_PrecipitationWindSpeed_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_Time_ImplicitCast_2",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_Time_ImplicitCast_3",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_Time_ImplicitCast_4",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_Time_ImplicitCast_5",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "K2Node_VariableSet_CurrentWetnessAmount_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "K2Node_VariableSet_NextWetnessAmount_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "K2Node_VariableSet_CurrentPuddlesAmount_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "K2Node_VariableSet_NextPuddlesAmount_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_Time_ImplicitCast_6",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_Time_ImplicitCast_7",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "K2Node_VariableSet_CurrentSnowAmount_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "K2Node_VariableSet_NextSnowAmount_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_SetOcclusionMaskDarkness_NewValue_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_SetBloomMaxBrightness_NewValue_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_SetScalarParameterValue_ParameterValue_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "Finish_PuddlesAccumulation",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Finish_PuddlesDry",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Finish_SnowAccumulate",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Finish_SnowDry",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Finish_WeatherChangeInterval",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Finish_WeatherInterpolation",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Finish_WetnessAccumulation",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Finish_WetnessDry",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "LightningStrike",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "LightningPosition",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveTick",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveTick'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetRainVolume",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetWeatherFXSettings_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 272,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PPSkyCreatorWeatherFXSettings'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Start_PuddlesAccumulate",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Start_PuddlesDry",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Start_SnowAccumulate",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Start_SnowMelt",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Start_WeatherChangeInterval",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Start_WeatherInterpolation",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Start_WetnessAccumulate",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Start_WetnessDry",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "UserConstructionScript",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:UserConstructionScript'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetActorOfClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PPSkyCreator'",
+          "ObjectPath": "/Script/PPSkyCreatorPlugin"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "WeatherMaterialFX_Interpolation",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_GetWorldDeltaSeconds_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerRemainingTimeHandle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Conv_DoubleToString_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerElapsedTimeHandle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_IsTimerActiveHandle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_GetWorldDeltaSeconds_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerRemainingTimeHandle_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Conv_DoubleToString_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerElapsedTimeHandle_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_IsTimerActiveHandle_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_GetWorldDeltaSeconds_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerRemainingTimeHandle_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Conv_DoubleToString_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerElapsedTimeHandle_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_IsTimerActiveHandle_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_GetWorldDeltaSeconds_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerRemainingTimeHandle_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Conv_DoubleToString_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerElapsedTimeHandle_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_IsTimerActiveHandle_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_GetWorldDeltaSeconds_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerRemainingTimeHandle_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Conv_DoubleToString_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerElapsedTimeHandle_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_IsTimerActiveHandle_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_GetWorldDeltaSeconds_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerRemainingTimeHandle_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Conv_DoubleToString_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_GetTimerElapsedTimeHandle_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_IsTimerActiveHandle_ReturnValue_5",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpSnowAmount_SnowAmountA_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PrintString_Duration_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Conv_DoubleToString_InDouble_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_Value_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpSnowAmount_Alpha_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpSnowAmount_SnowAmountB_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpSnowAmount_SnowAmountA_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PrintString_Duration_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Conv_DoubleToString_InDouble_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_Value_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpSnowAmount_Alpha_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpSnowAmount_SnowAmountB_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpPuddlesAmount_PuddlesAmountB_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpPuddlesAmount_PuddlesAmountA_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PrintString_Duration_ImplicitCast_2",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Conv_DoubleToString_InDouble_ImplicitCast_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_Value_ImplicitCast_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpPuddlesAmount_Alpha_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpPuddlesAmount_PuddlesAmountB_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpPuddlesAmount_PuddlesAmountA_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PrintString_Duration_ImplicitCast_3",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Conv_DoubleToString_InDouble_ImplicitCast_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_Value_ImplicitCast_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpPuddlesAmount_Alpha_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpWetnessAmount_WetnessAmountB_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpWetnessAmount_WetnessAmountA_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PrintString_Duration_ImplicitCast_4",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Conv_DoubleToString_InDouble_ImplicitCast_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_Value_ImplicitCast_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpWetnessAmount_Alpha_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpWetnessAmount_WetnessAmountB_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpWetnessAmount_WetnessAmountA_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_PrintString_Duration_ImplicitCast_5",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Conv_DoubleToString_InDouble_ImplicitCast_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_MapRangeClamped_Value_ImplicitCast_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_LerpWetnessAmount_Alpha_ImplicitCast_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_PPSkyCreator_Controller_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.26"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PPSkyCreator_Controller_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.28"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_PPSkyCreator_Controller_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.29"
+        }
+      ],
+      "VariableGuid": "EDA3CE69-4688D11F-F7DFD983-5D123DA7",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'TextRenderComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "TextRenderComponent'BP_PPSkyCreator_Controller_C:TextRender_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.31"
+      },
+      "VariableGuid": "0C381562-48ABD6C1-9704F5A7-78BACC41",
+      "InternalVariableName": "TextRender"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'AudioComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "AudioComponent'BP_PPSkyCreator_Controller_C:SoundRain_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.0"
+      },
+      "VariableGuid": "1070408C-44CC4487-F17C7EB5-F74013EF",
+      "InternalVariableName": "SoundRain"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PPSkyCreator_Controller_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.27"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PPSkyCreator_Controller_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.27"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_PPSkyCreator_Controller_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.28"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_PPSkyCreator_Controller_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.29"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_PPSkyCreator_Controller_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Lighting/BP_PPSkyCreator_Controller.27"
+      }
+    }
+  },
+  {
+    "Type": "TextRenderComponent",
+    "Name": "TextRender_GEN_VARIABLE",
+    "Outer": "BP_PPSkyCreator_Controller_C",
+    "Class": "UScriptClass'TextRenderComponent'",
+    "Properties": {
+      "Text": {
+        "Namespace": "",
+        "Key": "9E7019CA4936FAE0D261C9B86CFE73C4",
+        "SourceString": "Sky Creator\r\nController Example",
+        "LocalizedString": "Sky Creator\r\nController Example"
+      },
+      "HorizontalAlignment": "EHorizTextAligment::EHTA_Center",
+      "WorldSize": 48.0,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 50.0
+      },
+      "bHiddenInGame": true
+    }
+  }
+]

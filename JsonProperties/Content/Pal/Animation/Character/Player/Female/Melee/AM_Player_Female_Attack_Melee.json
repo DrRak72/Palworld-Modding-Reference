@@ -1,0 +1,1041 @@
+[
+  {
+    "Type": "AnimMontage",
+    "Name": "AM_Player_Female_Attack_Melee",
+    "Class": "UScriptClass'AnimMontage'",
+    "Properties": {
+      "BlendIn": {
+        "BlendTime": 0.18,
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "BlendOut": {
+        "BlendTime": 0.7,
+        "BlendOption": "EAlphaBlendOption::Cubic"
+      },
+      "CompositeSections": [
+        {
+          "SectionName": "Default",
+          "NextSectionName": "Loop",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "SectionName": "Loop",
+          "NextSectionName": "Loop",
+          "MetaData": [],
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 0.33262914,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        }
+      ],
+      "SlotAnimTracks": [
+        {
+          "SlotName": "AimingUpperSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+                  "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 1.6666666,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        },
+        {
+          "SlotName": "BasePoseAdditiveSlot",
+          "AnimTrack": {
+            "AnimSegments": [
+              {
+                "AnimReference": {
+                  "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee_Additive'",
+                  "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee_Additive.0"
+                },
+                "StartPos": 0.0,
+                "AnimStartTime": 0.0,
+                "AnimEndTime": 1.6666666,
+                "AnimPlayRate": 1.0,
+                "LoopingCount": 1
+              }
+            ]
+          }
+        }
+      ],
+      "BranchingPointMarkers": [
+        {
+          "NotifyIndex": 2,
+          "TriggerTime": 0.0001,
+          "NotifyEventType": "EAnimNotifyEventType::Begin"
+        },
+        {
+          "NotifyIndex": 2,
+          "TriggerTime": 0.7235978,
+          "NotifyEventType": "EAnimNotifyEventType::End"
+        },
+        {
+          "NotifyIndex": 7,
+          "TriggerTime": 0.81442446,
+          "NotifyEventType": "EAnimNotifyEventType::Begin"
+        },
+        {
+          "NotifyIndex": 7,
+          "TriggerTime": 1.4313263,
+          "NotifyEventType": "EAnimNotifyEventType::End"
+        }
+      ],
+      "BranchingPointStateNotifyIndices": [
+        2,
+        7
+      ],
+      "Notifies": [
+        {
+          "TriggerTimeOffset": 0.0001,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalLookAtDisable",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "PalAnimNotifyState_LookAtDisable'AM_Player_Female_Attack_Melee:PalAnimNotifyState_LookAtDisable_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.11"
+          },
+          "Duration": 2.766667,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": -1.0,
+            "SegmentLength": -1.0,
+            "LinkValue": 2.766667,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 0,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0001,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalWeaponControl",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "PalAnimNotifyState_WeaponControl'AM_Player_Female_Attack_Melee:PalAnimNotifyState_WeaponControl_1'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.12"
+          },
+          "Duration": 2.766667,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": -1.0,
+            "SegmentLength": -1.0,
+            "LinkValue": 2.766667,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 2,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0001,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PlayMontageNotifyWindow",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "AnimNotify_PlayMontageNotifyWindow'AM_Player_Female_Attack_Melee:AnimNotify_PlayMontageNotifyWindow_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.5"
+          },
+          "Duration": 0.7234978,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": 0,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 1.6666666,
+            "LinkValue": 0.7234978,
+            "LinkedSequence": {
+              "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+            }
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 4,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 0.0,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0001,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalStaminaMeleeAttack",
+          "Notify": {
+            "ObjectName": "PalAnimNotify_StaminaMeleeAttack'AM_Player_Female_Attack_Melee:PalAnimNotify_StaminaMeleeAttack_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.7"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 5,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 0.41199005,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalAttackCollision_Sphere",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "PalAnimNotifyState_AttackCollision'AM_Player_Female_Attack_Melee:PalAnimNotifyState_AttackCollision_Sphere_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.10"
+          },
+          "Duration": 0.10062122,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": 0,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 1.6666666,
+            "LinkValue": 0.67107415,
+            "LinkedSequence": {
+              "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+            }
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 0.5704529,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "AkEvent_C",
+          "Notify": {
+            "ObjectName": "AnimNotify_AkEvent_C'AM_Player_Female_Attack_Melee:AnimNotify_AkEvent_C_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.1"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.5729488,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 3,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 0.5729488,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "AkEvent_C",
+          "Notify": {
+            "ObjectName": "AnimNotify_AkEvent_C'AM_Player_Female_Attack_Melee:AnimNotify_AkEvent_C_1'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.2"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.5729488,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 0.3,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 6,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 0.5729488,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PlayMontageNotifyWindow",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "AnimNotify_PlayMontageNotifyWindow'AM_Player_Female_Attack_Melee:AnimNotify_PlayMontageNotifyWindow_2'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.6"
+          },
+          "Duration": 0.6169018,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": 0,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 1.6666666,
+            "LinkValue": 1.4313263,
+            "LinkedSequence": {
+              "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+            }
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 4,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 0.81442446,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0001,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalStaminaMeleeAttack",
+          "Notify": {
+            "ObjectName": "PalAnimNotify_StaminaMeleeAttack'AM_Player_Female_Attack_Melee:PalAnimNotify_StaminaMeleeAttack_1'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.8"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 0.0,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 5,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 1.1052722,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "PalAttackCollision_Sphere",
+          "Notify": null,
+          "NotifyStateClass": {
+            "ObjectName": "PalAnimNotifyState_AttackCollision'AM_Player_Female_Attack_Melee:PalAnimNotifyState_AttackCollision_0'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.9"
+          },
+          "Duration": 0.072873354,
+          "EndLink": {
+            "LinkedMontage": {
+              "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+            },
+            "SlotIndex": 0,
+            "SegmentIndex": 0,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 1.6666666,
+            "LinkValue": 1.2603416,
+            "LinkedSequence": {
+              "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+              "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+            }
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 1,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 1.1874683,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "AkEvent_C",
+          "Notify": {
+            "ObjectName": "AnimNotify_AkEvent_C'AM_Player_Female_Attack_Melee:AnimNotify_AkEvent_C_2'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.3"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 1.1999413,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 1.0,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 3,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 1.1999413,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        },
+        {
+          "TriggerTimeOffset": 0.0,
+          "EndTriggerTimeOffset": 0.0,
+          "TriggerWeightThreshold": 1E-05,
+          "NotifyName": "AkEvent_C",
+          "Notify": {
+            "ObjectName": "AnimNotify_AkEvent_C'AM_Player_Female_Attack_Melee:AnimNotify_AkEvent_C_3'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.4"
+          },
+          "NotifyStateClass": null,
+          "Duration": 0.0,
+          "EndLink": {
+            "LinkedMontage": null,
+            "SlotIndex": 0,
+            "SegmentIndex": -1,
+            "LinkMethod": "EAnimLinkMethod::Absolute",
+            "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+            "SegmentBeginTime": 0.0,
+            "SegmentLength": 0.0,
+            "LinkValue": 1.1999413,
+            "LinkedSequence": null
+          },
+          "bConvertedFromBranchingPoint": false,
+          "MontageTickType": "EMontageNotifyTickType::Queued",
+          "NotifyTriggerChance": 0.3,
+          "NotifyFilterType": "ENotifyFilterType::NoFiltering",
+          "NotifyFilterLOD": 0,
+          "bTriggerOnDedicatedServer": true,
+          "bTriggerOnFollower": false,
+          "TrackIndex": 6,
+          "LinkedMontage": {
+            "ObjectName": "AnimMontage'AM_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.0"
+          },
+          "SlotIndex": 0,
+          "SegmentIndex": 0,
+          "LinkMethod": "EAnimLinkMethod::Absolute",
+          "CachedLinkMethod": "EAnimLinkMethod::Absolute",
+          "SegmentBeginTime": 0.0,
+          "SegmentLength": 1.6666666,
+          "LinkValue": 1.1999413,
+          "LinkedSequence": {
+            "ObjectName": "AnimSequence'AS_Player_Female_Attack_Melee'",
+            "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AS_Player_Female_Attack_Melee.0"
+          }
+        }
+      ],
+      "SequenceLength": 1.6666666,
+      "Skeleton": {
+        "ObjectName": "Skeleton'SK_PalHuman_Skeleton'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Skeleton/Human/SK_PalHuman_Skeleton.19"
+      }
+    },
+    "SkeletonGuid": "403F66F1-45022D51-71AEEFBD-66495625"
+  },
+  {
+    "Type": "AnimNotify_AkEvent_C",
+    "Name": "AnimNotify_AkEvent_C_0",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "BlueprintGeneratedClass'Pal/Plugins/Wwise/Content/AnimNotify_AkEvent.AnimNotify_AkEvent_C'",
+    "Template": {
+      "ObjectName": "AnimNotify_AkEvent_C'Default__AnimNotify_AkEvent_C'",
+      "ObjectPath": "Pal/Plugins/Wwise/Content/AnimNotify_AkEvent.0"
+    },
+    "Properties": {
+      "Event": {
+        "ObjectName": "AkAudioEvent'AKE_Weapon_Axe_Attack'",
+        "ObjectPath": "Pal/Content/Pal/Sound/Events/SE/Weapon/Axe/AKE_Weapon_Axe_Attack.1"
+      }
+    }
+  },
+  {
+    "Type": "AnimNotify_AkEvent_C",
+    "Name": "AnimNotify_AkEvent_C_1",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "BlueprintGeneratedClass'Pal/Plugins/Wwise/Content/AnimNotify_AkEvent.AnimNotify_AkEvent_C'",
+    "Template": {
+      "ObjectName": "AnimNotify_AkEvent_C'Default__AnimNotify_AkEvent_C'",
+      "ObjectPath": "Pal/Plugins/Wwise/Content/AnimNotify_AkEvent.0"
+    },
+    "Properties": {
+      "Event": {
+        "ObjectName": "AkAudioEvent'AKE_AttackAxe'",
+        "ObjectPath": "Pal/Content/Pal/Sound/Events/Voice/Human/Action/AKE_AttackAxe.1"
+      }
+    }
+  },
+  {
+    "Type": "AnimNotify_AkEvent_C",
+    "Name": "AnimNotify_AkEvent_C_2",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "BlueprintGeneratedClass'Pal/Plugins/Wwise/Content/AnimNotify_AkEvent.AnimNotify_AkEvent_C'",
+    "Template": {
+      "ObjectName": "AnimNotify_AkEvent_C'Default__AnimNotify_AkEvent_C'",
+      "ObjectPath": "Pal/Plugins/Wwise/Content/AnimNotify_AkEvent.0"
+    },
+    "Properties": {
+      "Event": {
+        "ObjectName": "AkAudioEvent'AKE_Weapon_Axe_Attack'",
+        "ObjectPath": "Pal/Content/Pal/Sound/Events/SE/Weapon/Axe/AKE_Weapon_Axe_Attack.1"
+      }
+    }
+  },
+  {
+    "Type": "AnimNotify_AkEvent_C",
+    "Name": "AnimNotify_AkEvent_C_3",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "BlueprintGeneratedClass'Pal/Plugins/Wwise/Content/AnimNotify_AkEvent.AnimNotify_AkEvent_C'",
+    "Template": {
+      "ObjectName": "AnimNotify_AkEvent_C'Default__AnimNotify_AkEvent_C'",
+      "ObjectPath": "Pal/Plugins/Wwise/Content/AnimNotify_AkEvent.0"
+    },
+    "Properties": {
+      "Event": {
+        "ObjectName": "AkAudioEvent'AKE_AttackAxe'",
+        "ObjectPath": "Pal/Content/Pal/Sound/Events/Voice/Human/Action/AKE_AttackAxe.1"
+      }
+    }
+  },
+  {
+    "Type": "AnimNotify_PlayMontageNotifyWindow",
+    "Name": "AnimNotify_PlayMontageNotifyWindow_0",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "UScriptClass'AnimNotify_PlayMontageNotifyWindow'",
+    "Properties": {
+      "NotifyName": "Unstoppable"
+    }
+  },
+  {
+    "Type": "AnimNotify_PlayMontageNotifyWindow",
+    "Name": "AnimNotify_PlayMontageNotifyWindow_2",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "UScriptClass'AnimNotify_PlayMontageNotifyWindow'",
+    "Properties": {
+      "NotifyName": "Unstoppable"
+    }
+  },
+  {
+    "Type": "PalAnimNotify_StaminaMeleeAttack",
+    "Name": "PalAnimNotify_StaminaMeleeAttack_0",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "UScriptClass'PalAnimNotify_StaminaMeleeAttack'"
+  },
+  {
+    "Type": "PalAnimNotify_StaminaMeleeAttack",
+    "Name": "PalAnimNotify_StaminaMeleeAttack_1",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "UScriptClass'PalAnimNotify_StaminaMeleeAttack'"
+  },
+  {
+    "Type": "PalAnimNotifyState_AttackCollision",
+    "Name": "PalAnimNotifyState_AttackCollision_0",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "UScriptClass'PalAnimNotifyState_AttackCollision'",
+    "Properties": {
+      "attachBoneName": "root",
+      "AttackFilter": {
+        "ObjectName": "PalWeaponFilter'AM_Player_Female_Attack_Melee:PalAnimNotifyState_AttackCollision_0.PalWeaponFilter_0'",
+        "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.13"
+      },
+      "ShapeComponents": [
+        {
+          "ObjectName": "SphereComponent'AM_Player_Female_Attack_Melee:PalAnimNotifyState_AttackCollision_0.SphereComponent_0'",
+          "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.15"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "PalAnimNotifyState_AttackCollision",
+    "Name": "PalAnimNotifyState_AttackCollision_Sphere_0",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "UScriptClass'PalAnimNotifyState_AttackCollision'",
+    "Properties": {
+      "attachBoneName": "root",
+      "AttackFilter": {
+        "ObjectName": "PalWeaponFilter'AM_Player_Female_Attack_Melee:PalAnimNotifyState_AttackCollision_Sphere_0.PalWeaponFilter_0'",
+        "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.14"
+      },
+      "ShapeComponents": [
+        {
+          "ObjectName": "SphereComponent'AM_Player_Female_Attack_Melee:PalAnimNotifyState_AttackCollision_Sphere_0.SphereComponent_0'",
+          "ObjectPath": "Pal/Content/Pal/Animation/Character/Player/Female/Melee/AM_Player_Female_Attack_Melee.16"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "PalAnimNotifyState_LookAtDisable",
+    "Name": "PalAnimNotifyState_LookAtDisable_0",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "UScriptClass'PalAnimNotifyState_LookAtDisable'"
+  },
+  {
+    "Type": "PalAnimNotifyState_WeaponControl",
+    "Name": "PalAnimNotifyState_WeaponControl_1",
+    "Outer": "AM_Player_Female_Attack_Melee",
+    "Class": "UScriptClass'PalAnimNotifyState_WeaponControl'",
+    "Properties": {
+      "bIsDisableAttachLeftHand": true,
+      "bIsDisableChangeWeapon": true
+    }
+  },
+  {
+    "Type": "PalWeaponFilter",
+    "Name": "PalWeaponFilter_0",
+    "Outer": "PalAnimNotifyState_AttackCollision_0",
+    "Class": "UScriptClass'PalWeaponFilter'",
+    "Properties": {
+      "BlowSpeed": 1000.0
+    }
+  },
+  {
+    "Type": "PalWeaponFilter",
+    "Name": "PalWeaponFilter_0",
+    "Outer": "PalAnimNotifyState_AttackCollision_Sphere_0",
+    "Class": "UScriptClass'PalWeaponFilter'",
+    "Properties": {
+      "BlowSpeed": 1000.0
+    }
+  },
+  {
+    "Type": "SphereComponent",
+    "Name": "SphereComponent_0",
+    "Outer": "PalAnimNotifyState_AttackCollision_0",
+    "Class": "UScriptClass'SphereComponent'",
+    "Properties": {
+      "SphereRadius": 80.0,
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_GameTraceChannel2",
+        "CollisionProfileName": "Attack",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "AttackHitOnly",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 80.0,
+        "Z": 100.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  },
+  {
+    "Type": "SphereComponent",
+    "Name": "SphereComponent_0",
+    "Outer": "PalAnimNotifyState_AttackCollision_Sphere_0",
+    "Class": "UScriptClass'SphereComponent'",
+    "Properties": {
+      "SphereRadius": 80.0,
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_GameTraceChannel2",
+        "CollisionProfileName": "Attack",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "WorldStatic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "WorldDynamic",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Destructible",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "SystemVolume",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "AttackHitOnly",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 80.0,
+        "Z": 100.0
+      },
+      "bCanEverAffectNavigation": false
+    }
+  }
+]
