@@ -1,0 +1,362 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_ChickenPal_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_ChickenPal_PhysicsAsset:SkeletalBodySetup_50'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/ChickenPal/PA_ChickenPal_PhysicsAsset.7"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_ChickenPal_PhysicsAsset:SkeletalBodySetup_53'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/ChickenPal/PA_ChickenPal_PhysicsAsset.8"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_ChickenPal_PhysicsAsset:SkeletalBodySetup_54'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/ChickenPal/PA_ChickenPal_PhysicsAsset.9"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_ChickenPal_PhysicsAsset:SkeletalBodySetup_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/ChickenPal/PA_ChickenPal_PhysicsAsset.5"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_ChickenPal_PhysicsAsset:SkeletalBodySetup_4'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/ChickenPal/PA_ChickenPal_PhysicsAsset.6"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_ChickenPal_PhysicsAsset:PhysicsConstraintTemplate_44'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/ChickenPal/PA_ChickenPal_PhysicsAsset.3"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_ChickenPal_PhysicsAsset:PhysicsConstraintTemplate_45'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/ChickenPal/PA_ChickenPal_PhysicsAsset.4"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_ChickenPal_PhysicsAsset:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/ChickenPal/PA_ChickenPal_PhysicsAsset.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_ChickenPal_PhysicsAsset:PhysicsConstraintTemplate_4'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/ChickenPal/PA_ChickenPal_PhysicsAsset.2"
+        }
+      ],
+      "SolverSettings": {
+        "CullDistance": 1.0,
+        "bUseLinearJointSolver": false
+      },
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_ChickenPal_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "pelvis",
+        "ConstraintBone1": "pelvis",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": 13.6260605,
+          "Y": -5.7117556E-23,
+          "Z": 9.328004E-07
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": -1.2325952E-32,
+          "Z": -0.0
+        },
+        "SecAxis2": {
+          "X": 1.2325952E-32,
+          "Y": 1.0,
+          "Z": 2.4651903E-32
+        },
+        "ProfileInstance": {
+          "LinearLimit": {
+            "XMotion": "ELinearConstraintMotion::LCM_Free",
+            "YMotion": "ELinearConstraintMotion::LCM_Free",
+            "ZMotion": "ELinearConstraintMotion::LCM_Free"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_4",
+    "Outer": "PA_ChickenPal_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "hair_01",
+        "ConstraintBone1": "hair_01",
+        "ConstraintBone2": "pelvis",
+        "Pos2": {
+          "X": 50.37616,
+          "Y": 1.8181766,
+          "Z": -7.958079E-13
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1LimitDegrees": 65.0,
+            "Swing2LimitDegrees": 65.0,
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistLimitDegrees": 15.0,
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_44",
+    "Outer": "PA_ChickenPal_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "wing_01_l",
+        "ConstraintBone1": "wing_01_l",
+        "ConstraintBone2": "pelvis",
+        "Pos2": {
+          "X": 19.003231,
+          "Y": -4.4178605,
+          "Z": 27.551413
+        },
+        "PriAxis2": {
+          "X": -2.220446E-16,
+          "Y": 0.0,
+          "Z": 1.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1LimitDegrees": 65.0,
+            "Swing2LimitDegrees": 65.0,
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Locked"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_45",
+    "Outer": "PA_ChickenPal_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "wing_01_r",
+        "ConstraintBone1": "wing_01_r",
+        "ConstraintBone2": "pelvis",
+        "Pos2": {
+          "X": 19.003239,
+          "Y": -4.41786,
+          "Z": -27.5514
+        },
+        "PriAxis2": {
+          "X": -2.220446E-16,
+          "Y": 0.0,
+          "Z": 1.0
+        },
+        "SecAxis2": {
+          "X": -1.2246469E-16,
+          "Y": -1.0,
+          "Z": 0.0
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1LimitDegrees": 65.0,
+            "Swing2LimitDegrees": 65.0,
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Locked"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_ChickenPal_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": -0.0,
+              "Yaw": -90.0,
+              "Roll": 0.0
+            },
+            "Radius": 0.505,
+            "Length": 0.505,
+            "RestOffset": 0.0,
+            "Name": "root_capsule",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "root",
+      "PhysicsType": "EPhysicsType::PhysType_Kinematic",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "474FA66349C8C9B3956091A4F98433E4"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_4",
+    "Outer": "PA_ChickenPal_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 8.900941,
+              "Y": 4.5606775,
+              "Z": 1.9853426E-08
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -162.01659,
+              "Roll": -90.0
+            },
+            "X": 21.980919,
+            "Y": 12.053316,
+            "Z": 30.778418,
+            "RestOffset": 0.0,
+            "Name": "hair_01_box",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "hair_01",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "DBF173EE4C6A95D8E06ACF85C5CD7DD7"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_50",
+    "Outer": "PA_ChickenPal_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphereElems": [
+          {
+            "Center": {
+              "X": 20.66542,
+              "Y": 0.6139829,
+              "Z": 2.2664116E-07
+            },
+            "Radius": 32.694016,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "pelvis",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "4CCA95744805A2A444754E954464E268"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_53",
+    "Outer": "PA_ChickenPal_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": 17.816975,
+              "Y": 0.4045779,
+              "Z": 0.031607155
+            },
+            "Rotation": {
+              "Pitch": 0.48871845,
+              "Yaw": -90.0,
+              "Roll": -2.9641678
+            },
+            "X": 6.277304,
+            "Y": 32.720078,
+            "Z": 32.164238,
+            "RestOffset": 0.0,
+            "Name": "wing_01_l_box",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "wing_01_l",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "5F6F8A2449A29A1EF5716E886C7202BD"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_54",
+    "Outer": "PA_ChickenPal_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "BoxElems": [
+          {
+            "Center": {
+              "X": -22.502419,
+              "Y": -0.40664685,
+              "Z": -0.27422073
+            },
+            "Rotation": {
+              "Pitch": 0.48871845,
+              "Yaw": -90.0,
+              "Roll": -2.9641678
+            },
+            "X": 6.277304,
+            "Y": 32.720078,
+            "Z": 32.164238,
+            "RestOffset": 0.0,
+            "Name": "wing_01_r_box",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "wing_01_r",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "89FD2B054844F917F1DC519A24123DFE"
+  }
+]

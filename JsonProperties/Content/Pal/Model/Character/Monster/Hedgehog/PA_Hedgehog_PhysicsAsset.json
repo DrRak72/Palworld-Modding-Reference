@@ -1,0 +1,284 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Hedgehog_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Hedgehog_PhysicsAsset:SkeletalBodySetup_11'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Hedgehog/PA_Hedgehog_PhysicsAsset.5"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Hedgehog_PhysicsAsset:SkeletalBodySetup_12'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Hedgehog/PA_Hedgehog_PhysicsAsset.6"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Hedgehog_PhysicsAsset:SkeletalBodySetup_14'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Hedgehog/PA_Hedgehog_PhysicsAsset.7"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Hedgehog_PhysicsAsset:SkeletalBodySetup_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Hedgehog/PA_Hedgehog_PhysicsAsset.4"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Hedgehog_PhysicsAsset:PhysicsConstraintTemplate_9'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Hedgehog/PA_Hedgehog_PhysicsAsset.3"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Hedgehog_PhysicsAsset:PhysicsConstraintTemplate_11'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Hedgehog/PA_Hedgehog_PhysicsAsset.2"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Hedgehog_PhysicsAsset:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Hedgehog/PA_Hedgehog_PhysicsAsset.1"
+        }
+      ],
+      "SolverSettings": {
+        "CullDistance": 1.0,
+        "bUseLinearJointSolver": false
+      },
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Hedgehog_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "pelvis",
+        "ConstraintBone1": "pelvis",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": 2.1455333E-09,
+          "Y": -20.00432,
+          "Z": 19.833445
+        },
+        "PriAxis2": {
+          "X": 3.825183E-07,
+          "Y": 0.88315284,
+          "Z": 0.4690854
+        },
+        "SecAxis2": {
+          "X": 6.725415E-07,
+          "Y": -0.4690854,
+          "Z": 0.88315284
+        },
+        "ProfileInstance": {
+          "LinearLimit": {
+            "XMotion": "ELinearConstraintMotion::LCM_Free",
+            "YMotion": "ELinearConstraintMotion::LCM_Free",
+            "ZMotion": "ELinearConstraintMotion::LCM_Free"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_11",
+    "Outer": "PA_Hedgehog_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "head",
+        "ConstraintBone1": "head",
+        "ConstraintBone2": "spine_02",
+        "Pos2": {
+          "X": 27.50547,
+          "Y": -2.337738,
+          "Z": 2.6244306E-06
+        },
+        "PriAxis2": {
+          "X": 2.7261983E-08,
+          "Y": -6.222762E-09,
+          "Z": 1.0
+        },
+        "SecAxis2": {
+          "X": -0.23890725,
+          "Y": -0.9710424,
+          "Z": 4.7051973E-10
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1LimitDegrees": 10.0,
+            "Swing2LimitDegrees": 10.0,
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Locked"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_9",
+    "Outer": "PA_Hedgehog_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "spine_02",
+        "ConstraintBone1": "spine_02",
+        "ConstraintBone2": "pelvis",
+        "Pos2": {
+          "X": 11.549385,
+          "Y": -2.2545002,
+          "Z": -1.7631345E-06
+        },
+        "PriAxis2": {
+          "X": 0.96964675,
+          "Y": -0.24451017,
+          "Z": -1.8025088E-07
+        },
+        "SecAxis2": {
+          "X": 0.24451017,
+          "Y": 0.96964675,
+          "Z": -5.860664E-07
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1LimitDegrees": 10.0,
+            "Swing2LimitDegrees": 10.0,
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Locked"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Hedgehog_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": -0.0,
+              "Yaw": -90.0,
+              "Roll": 0.0
+            },
+            "Radius": 0.505,
+            "Length": 0.505,
+            "RestOffset": 0.0,
+            "Name": "root_capsule",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "root",
+      "PhysicsType": "EPhysicsType::PhysType_Kinematic",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F7A4C69944CA6244D1BA2D86C5C14CFE"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_11",
+    "Outer": "PA_Hedgehog_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphereElems": [
+          {
+            "Center": {
+              "X": -12.244188,
+              "Y": 6.1525135,
+              "Z": 8.589464E-05
+            },
+            "Radius": 21.78303,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "pelvis",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "2811A8C445CE4015387206B0C609E8AC"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_12",
+    "Outer": "PA_Hedgehog_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphereElems": [
+          {
+            "Center": {
+              "X": 5.402155,
+              "Y": 0.96468824,
+              "Z": -0.3653036
+            },
+            "Radius": 25.745644,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "spine_02",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "FC2496F54631DFF7AE1B3F812B8550D8"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_14",
+    "Outer": "PA_Hedgehog_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphereElems": [
+          {
+            "Center": {
+              "X": -0.017598147,
+              "Y": -3.1341903,
+              "Z": 3.5412476
+            },
+            "Radius": 17.625,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "DefaultInstance": {
+        "MassInKgOverride": 4.0,
+        "bOverrideMass": true
+      },
+      "BoneName": "head",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "51289DDF4855FE9574FF82AB4E424C6E"
+  }
+]

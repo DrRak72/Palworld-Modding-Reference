@@ -1,0 +1,764 @@
+[
+  {
+    "Type": "Function",
+    "Name": "AddBuildObjectList",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ArrayProperty",
+        "Name": "buildObjectDataArray",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm",
+        "Inner": {
+          "Type": "StructProperty",
+          "Name": "buildObjectDataArray",
+          "Flags": "RF_Public",
+          "ElementSize": 144,
+          "Struct": {
+            "ObjectName": "ScriptStruct'PalBuildObjectData'",
+            "ObjectPath": "/Script/Pal"
+          }
+        }
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "typeB",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPalBuildObjectTypeB'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "typeA",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPalBuildObjectTypeA'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_Length_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Array_Index_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Loop_Counter_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Array_Get_Item",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalBuildObjectData'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateBuildObjectIconWidget_createdWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CreateBuildObjectIconWidget",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "buildObjectData",
+        "Flags": "RF_Public",
+        "ElementSize": 144,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalBuildObjectData'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "createdWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_PalBuildObjectThumbnailButton_C:OnClicked__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.15"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_PalBuildObjectThumbnailButton_C:OnHovered__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.17"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_PalBuildObjectThumbnailButton_C:OnUnhovered__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.20"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Create_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "FocusTopContent",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetChildAt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'Widget'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsWBP_Pal_Build_Object_Thumbnail_Button",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetBuildObjectTypeA",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "NewParam",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "Enum": {
+          "ObjectName": "Enum'EPalBuildObjectTypeA'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetBuildObjectTypeB",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "typeB",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "Enum": {
+          "ObjectName": "Enum'EPalBuildObjectTypeB'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetFocusTarget",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "target",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'Widget'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetChildAt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'Widget'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsWBP_Pal_Build_Object_Thumbnail_Button",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnClicked_Internal",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "selfWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnClickedAnyContent__DelegateSignature",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "widget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnHovered_Internal",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "selfWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnHoveredAnyContent__DelegateSignature",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "widget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnUnhovered_Internal",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "selftWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnUnhoveredAnyContent__DelegateSignature",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "widget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalBuildObjectThumbnailButton_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/BuildObject/WBP_PalBuildObjectThumbnailButton.34"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetCategoryName",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "TextProperty",
+        "Name": "categoryNameText",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "WBP_BuildObjectScrollListBlock_C",
+    "Name": "Default__WBP_BuildObjectScrollListBlock_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.WBP_BuildObjectScrollListBlock_C'",
+    "Properties": {
+      "bHasScriptImplementedTick": false,
+      "bHasScriptImplementedPaint": false
+    }
+  },
+  {
+    "Type": "WBP_ConstructionListContent_C",
+    "Name": "WBP_ConstructionListContent",
+    "Outer": "WidgetTree",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Construction/WBP_ConstructionListContent.WBP_ConstructionListContent_C'",
+    "Template": {
+      "ObjectName": "WBP_ConstructionListContent_C'Default__WBP_ConstructionListContent_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Construction/WBP_ConstructionListContent.33"
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_BuildObjectScrollListBlock_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.16"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalUserWidget'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:GetFocusTarget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.5"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:GetBuildObjectTypeA'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.3"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:FocusTopContent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.2"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:GetBuildObjectTypeB'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.4"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnUnhovered_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.10"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnHovered_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.8"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnClicked_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.6"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:SetCategoryName'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.12"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:CreateBuildObjectIconWidget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.1"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:AddBuildObjectList'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.0"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnUnhoveredAnyContent__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.11"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnHoveredAnyContent__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.9"
+      },
+      {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnClickedAnyContent__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.7"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "WBP_ConstructionListContent",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_ConstructionListContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Construction/WBP_ConstructionListContent.36"
+        }
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnClickedAnyContent",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnClickedAnyContent__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.7"
+        }
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnHoveredAnyContent",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnHoveredAnyContent__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.9"
+        }
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnUnhoveredAnyContent",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnUnhoveredAnyContent__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.11"
+        }
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "typeB",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Enum": {
+          "ObjectName": "Enum'EPalBuildObjectTypeB'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "typeA",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Enum": {
+          "ObjectName": "Enum'EPalBuildObjectTypeA'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      }
+    ],
+    "FuncMap": {
+      "OnClickedAnyContent__DelegateSignature": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnClickedAnyContent__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.7"
+      },
+      "OnHoveredAnyContent__DelegateSignature": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnHoveredAnyContent__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.9"
+      },
+      "OnUnhoveredAnyContent__DelegateSignature": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnUnhoveredAnyContent__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.11"
+      },
+      "AddBuildObjectList": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:AddBuildObjectList'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.0"
+      },
+      "CreateBuildObjectIconWidget": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:CreateBuildObjectIconWidget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.1"
+      },
+      "SetCategoryName": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:SetCategoryName'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.12"
+      },
+      "OnClicked_Internal": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnClicked_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.6"
+      },
+      "OnHovered_Internal": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnHovered_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.8"
+      },
+      "OnUnhovered_Internal": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:OnUnhovered_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.10"
+      },
+      "GetBuildObjectTypeB": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:GetBuildObjectTypeB'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.4"
+      },
+      "FocusTopContent": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:FocusTopContent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.2"
+      },
+      "GetBuildObjectTypeA": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:GetBuildObjectTypeA'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.3"
+      },
+      "GetFocusTarget": {
+        "ObjectName": "Function'WBP_BuildObjectScrollListBlock_C:GetFocusTarget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.5"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_BuildObjectScrollListBlock_C'Default__WBP_BuildObjectScrollListBlock_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.13"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_BuildObjectScrollListBlock_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "WBP_ConstructionListContent_C'WBP_BuildObjectScrollListBlock_C:WidgetTree.WBP_ConstructionListContent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BuildMenu/WBP_BuildObjectScrollListBlock.14"
+      }
+    }
+  }
+]

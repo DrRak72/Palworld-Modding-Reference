@@ -1,0 +1,651 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_SkillEffectBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Common/BP_SkillEffectBase.0"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_SkillEffect_WindCutterShot_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.16"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_SkillEffect_WindCutterShot_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.9"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:ExecuteUbergraph_BP_SkillEffect_WindCutterShot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.2"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_SkillEffectBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Common/BP_SkillEffectBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:SetTargetLocation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.7"
+      },
+      {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.6"
+      },
+      {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:Shoot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.8"
+      },
+      {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:OnDestroyed_イベント_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.3"
+      },
+      {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:OnSystemFinished'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.5"
+      },
+      {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:ExecuteUbergraph_BP_SkillEffect_WindCutterShot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.2"
+      },
+      {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:OnSpawnBulletDelegate__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.4"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "NS_WindCutterShoot",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "ShootIntervalTime",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "TimeHandle",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "BulletClass",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnSpawnBulletDelegate",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:OnSpawnBulletDelegate__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.4"
+        }
+      }
+    ],
+    "FuncMap": {
+      "OnSpawnBulletDelegate__DelegateSignature": {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:OnSpawnBulletDelegate__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.4"
+      },
+      "ExecuteUbergraph_BP_SkillEffect_WindCutterShot": {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:ExecuteUbergraph_BP_SkillEffect_WindCutterShot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.2"
+      },
+      "OnSystemFinished": {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:OnSystemFinished'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.5"
+      },
+      "OnDestroyed_イベント_0": {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:OnDestroyed_イベント_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.3"
+      },
+      "Shoot": {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:Shoot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.8"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.6"
+      },
+      "SetTargetLocation": {
+        "ObjectName": "Function'BP_SkillEffect_WindCutterShot_C:SetTargetLocation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.7"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_SkillEffect_WindCutterShot_C'Default__BP_SkillEffect_WindCutterShot_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_SkillEffect_WindCutterShot_C",
+    "Name": "Default__BP_SkillEffect_WindCutterShot_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.BP_SkillEffect_WindCutterShot_C'",
+    "Template": {
+      "ObjectName": "BP_SkillEffectBase_C'Default__BP_SkillEffectBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Common/BP_SkillEffectBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "ShootIntervalTime": 0.5,
+      "TimeHandle": {
+        "Handle": 0
+      },
+      "BulletClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_SkillEffect_WindCutter_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutter.0"
+      },
+      "EffectSize": 2.0,
+      "LifeTime": 5.0,
+      "AttackFilter": {
+        "ObjectName": "PalAttackFilter'Default__BP_SkillEffect_WindCutterShot_C:PalAttackFilter_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.11"
+      },
+      "HitFilterGround": {
+        "ObjectName": "PalHitFilter'Default__BP_SkillEffect_WindCutterShot_C:PalHitFilter_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.12"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_SkillEffect_WindCutterShot",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "SparseDelegateFunction'ActorDestroyedSignature__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'OnNiagaraSystemFinished__DelegateSignature'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetTransform_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_CustomEvent_DestroyedActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FinishSpawningActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_CustomEvent_PSystem",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwnerCharacter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsPlayerControlled_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_Time_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDestroyed_イベント_0",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "DestroyedActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnSpawnBulletDelegate__DelegateSignature",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Bullet",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnSystemFinished",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "PSystem",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_SkillEffectBase_C:ReceiveBeginPlay'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Common/BP_SkillEffectBase.22"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_SkillEffectBase_C:ReceiveBeginPlay'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Common/BP_SkillEffectBase.22"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetTargetLocation",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "TargetLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Subtract_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotFromX_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_SetActorRotation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Shoot",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'InheritableComponentHandler'"
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "NS_WindCutterShoot_GEN_VARIABLE",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "Asset": {
+        "ObjectName": "NiagaraSystem'NS_WindCutterShoot'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Skill/WindCutter/NS_WindCutterShoot.32"
+      },
+      "OverrideParameters": {
+        "UserParameterRedirects": [
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "Scale",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.Scale",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          }
+        ],
+        "SortedParameterOffsets": [
+          {
+            "Offset": 0,
+            "Name": "User.Scale",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          }
+        ],
+        "ParameterData": [
+          0,
+          0,
+          128,
+          63
+        ]
+      },
+      "bAutoActivate": false
+    }
+  },
+  {
+    "Type": "PalAttackFilter",
+    "Name": "PalAttackFilter_0",
+    "Outer": "Default__BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'PalAttackFilter'",
+    "Template": {
+      "ObjectName": "PalAttackFilter'Default__BP_SkillEffectBase_C:PalAttackFilter_0'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Common/BP_SkillEffectBase.27"
+    },
+    "Properties": {
+      "Waza": "EPalWazaID::WindCutter"
+    }
+  },
+  {
+    "Type": "PalHitFilter",
+    "Name": "PalHitFilter_1",
+    "Outer": "Default__BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'PalHitFilter'",
+    "Template": {
+      "ObjectName": "PalHitFilter'Default__BP_SkillEffectBase_C:PalHitFilter_1'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Common/BP_SkillEffectBase.28"
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_SkillEffect_WindCutterShot_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.13"
+      },
+      "VariableGuid": "9C58E24E-4FE04F8B-38FA4087-20801383",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'BP_SkillEffect_WindCutterShot_C:NS_WindCutterShoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.10"
+      },
+      "ParentComponentOrVariableName": "MovementSphereRoot",
+      "ParentComponentOwnerClassName": "BP_SkillEffectBase_C",
+      "VariableGuid": "5CCC8ED2-49F3816C-82342D86-10410254",
+      "InternalVariableName": "NS_WindCutterShoot"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_SkillEffect_WindCutterShot_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_SkillEffect_WindCutterShot_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.15"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_SkillEffect_WindCutterShot_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.15"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_SkillEffect_WindCutterShot_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/WindCutter/BP_SkillEffect_WindCutterShot.14"
+      }
+    }
+  }
+]

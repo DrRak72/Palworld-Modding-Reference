@@ -1,0 +1,254 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_PalMapObjectManager_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "SuperStruct": {
+      "ObjectName": "Class'PalMapObjectManager'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_PalMapObjectManager_C'Default__BP_PalMapObjectManager_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/System/BP_PalMapObjectManager.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_PalMapObjectManager_C",
+    "Name": "Default__BP_PalMapObjectManager_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/System/BP_PalMapObjectManager.BP_PalMapObjectManager_C'",
+    "Properties": {
+      "BuildObjectDataTable": {
+        "ObjectName": "DataTable'DT_BuildObjectDataTable'",
+        "ObjectPath": "Pal/Content/Pal/DataTable/MapObject/Building/DT_BuildObjectDataTable.0"
+      },
+      "BuildObjectNameTable": {
+        "ObjectName": "DataTable'DT_MapObjectNameText'",
+        "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_MapObjectNameText.0"
+      },
+      "BuildObjectDescTable": {
+        "ObjectName": "DataTable'DT_BuildObjectDescText'",
+        "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_BuildObjectDescText.0"
+      },
+      "MapObjectAssignTable": {
+        "ObjectName": "DataTable'DT_MapObjectAssignData'",
+        "ObjectPath": "Pal/Content/Pal/DataTable/MapObject/DT_MapObjectAssignData.0"
+      },
+      "BuildingSurfaceMaterialSet": {
+        "Highlight": {
+          "ObjectName": "MaterialInstanceConstant'MI_LooksPredicatorNormal'",
+          "ObjectPath": "Pal/Content/Pal/Material/MapObject/BuildObject/BuildingProcess/MI_LooksPredicatorNormal.0"
+        },
+        "Error": {
+          "ObjectName": "MaterialInstanceConstant'MI_LooksPredicatorError'",
+          "ObjectPath": "Pal/Content/Pal/Material/MapObject/BuildObject/BuildingProcess/MI_LooksPredicatorError.0"
+        },
+        "Building": {
+          "ObjectName": "MaterialInstanceConstant'MI_LooksPredicatorBuilding'",
+          "ObjectPath": "Pal/Content/Pal/Material/MapObject/BuildObject/BuildingProcess/MI_LooksPredicatorBuilding.0"
+        },
+        "BuildComplete": {
+          "ObjectName": "MaterialInstanceConstant'MI_BuildObjectComplete'",
+          "ObjectPath": "Pal/Content/Pal/Material/MapObject/BuildObject/BuildingProcess/MI_BuildObjectComplete.0"
+        },
+        "Dismantle": {
+          "ObjectName": "MaterialInstanceConstant'MI_LooksPredicatorDismantle'",
+          "ObjectPath": "Pal/Content/Pal/Material/MapObject/BuildObject/BuildingProcess/MI_LooksPredicatorDismantle.0"
+        },
+        "BuildCompleteAnimationCurve": {
+          "ObjectName": "CurveFloat'C_BuildCompleteMaterialAnimation'",
+          "ObjectPath": "Pal/Content/Pal/Material/MapObject/BuildObject/BuildingProcess/C_BuildCompleteMaterialAnimation.0"
+        }
+      },
+      "FoliagePresetDataSet": {
+        "ObjectName": "PalFoliagePresetDataSet'DA_FoliagePresetDataSet'",
+        "ObjectPath": "Pal/Content/Pal/DataAsset/Foliage/DA_FoliagePresetDataSet.0"
+      },
+      "FoliageModelChunkClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_FoliageModelChunk_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/MapObject/Foliage/BP_FoliageModelChunk.0"
+      },
+      "StaticData": {
+        "DummyFoliageMapObjectId": "DummyFoliage",
+        "DropItemMapObjectId": "CommonDropItem",
+        "DropItem3DMapObjectId": "CommonDropItem3D",
+        "BuildObjectId_PalStorage": "PalStorage",
+        "MapObjectId_ItemChest": "ItemChest",
+        "MapObjectId_DeathPenalty": "DeathPenaltyChest",
+        "MapObjectId_DroppedCharacter": "DroppedCharacter",
+        "MapObjectId_TreasureBox_VisibleContent": "TreasureBox_VisibleContent",
+        "MapObjectId_SkillFruit_VisibleContent": "TreasureBox_VisibleContent_SkillFruits"
+      },
+      "DropItemMapObjectId": "CommonDropItem",
+      "BuildObjectId_PalStorage": "PalStorage",
+      "SearchObjectTypes": [
+        "ObjectTypeQuery2",
+        "ObjectTypeQuery7",
+        "ObjectTypeQuery13"
+      ],
+      "DestroyEffectMap": [
+        {
+          "EPalMapObjectDestroyFXType::Normal": {
+            "ObjectName": "NiagaraSystem'NS_Destruction_Smoke_Metal'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Smoke/NS_Destruction_Smoke_Metal.29"
+          }
+        },
+        {
+          "EPalMapObjectDestroyFXType::LowTree": {
+            "ObjectName": "NiagaraSystem'NS_Destruction_Smoke_Small'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Smoke/NS_Destruction_Smoke_Small.21"
+          }
+        },
+        {
+          "EPalMapObjectDestroyFXType::Pickup": {
+            "ObjectName": "NiagaraSystem'NS_PickUpItem'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Harvest/NS_PickUpItem.15"
+          }
+        },
+        {
+          "EPalMapObjectDestroyFXType::Pickup_Wood": {
+            "ObjectName": "NiagaraSystem'NS_PickUpWoodStick'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Harvest/NS_PickUpWoodStick.37"
+          }
+        },
+        {
+          "EPalMapObjectDestroyFXType::Pickup_Stone": {
+            "ObjectName": "NiagaraSystem'NS_PickUpStone'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Harvest/NS_PickUpStone.37"
+          }
+        },
+        {
+          "EPalMapObjectDestroyFXType::Pickup_Berry": {
+            "ObjectName": "NiagaraSystem'NS_HarvestBerry'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Harvest/NS_HarvestBerry.39"
+          }
+        },
+        {
+          "EPalMapObjectDestroyFXType::FoliageTree": {
+            "ObjectName": "NiagaraSystem'NS_TreeDestroy'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Axe/NS_TreeDestroy.60"
+          }
+        },
+        {
+          "EPalMapObjectDestroyFXType::Rock": {
+            "ObjectName": "NiagaraSystem'NS_RockSmoke_Destory'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Smoke/NS_RockSmoke_Destory.39"
+          }
+        },
+        {
+          "EPalMapObjectDestroyFXType::NormalWood": {
+            "ObjectName": "NiagaraSystem'NS_Destruction_Smoke_Wood'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Smoke/NS_Destruction_Smoke_Wood.40"
+          }
+        },
+        {
+          "EPalMapObjectDestroyFXType::NormalRock": {
+            "ObjectName": "NiagaraSystem'NS_Destruction_Smoke_Rock'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Smoke/NS_Destruction_Smoke_Rock.20"
+          }
+        },
+        {
+          "EPalMapObjectDestroyFXType::NormalMetal": {
+            "ObjectName": "NiagaraSystem'NS_Destruction_Smoke_Metal'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Smoke/NS_Destruction_Smoke_Metal.29"
+          }
+        }
+      ],
+      "MapObjectDestroyFXUserParamName_BoxSize": "User.Rectangle",
+      "MapObjectDestroyFXUserParamName_BoxSurfaceArea": "User.SurfaceArea",
+      "BuildStartEffect": {
+        "ObjectName": "NiagaraSystem'NS_BuildObject_Start'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/CraftFin/NS_BuildObject_Start.13"
+      },
+      "BuildCompleteEffect": {
+        "ObjectName": "NiagaraSystem'NS_BuildObject_Complete'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/CraftFin/NS_BuildObject_Complete.52"
+      },
+      "BuildFXUserParamName_BoxCenter": "User.BoxCenter",
+      "BuildFXUserParamName_BoxSize": "User.BoxSize",
+      "BuildFXUserParamName_BoxSurfaceArea": "User.SurfaceArea",
+      "BuildCompleteSE": {
+        "ObjectName": "AkAudioEvent'AKE_Build_NormalObject'",
+        "ObjectPath": "Pal/Content/Pal/Sound/Events/SE/MapObject/Build/AKE_Build_NormalObject.1"
+      },
+      "RepairEffect": {
+        "ObjectName": "NiagaraSystem'NS_ObjectFixStars'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/Glow/NS_ObjectFixStars.46"
+      },
+      "DamageEffect": {
+        "ObjectName": "NiagaraSystem'NS_Damage_Smoke'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/Smoke/NS_Damage_Smoke.17"
+      },
+      "DamageFXUserParamName_Alpha": "User.Alpha",
+      "DamageFXUserParamName_Rate": "User.Rate",
+      "DamageFXUserParamName_Scale": "User.Scale",
+      "DamageFXUserParamName_RadiusScale": "User.RadiusScale",
+      "DamageFXUserParamName_AddRate": "User.AddRate",
+      "DamageFXUserParamName_EndAlpha": "User.EndAlpha",
+      "DamageParam_MaxScale": 3.0,
+      "DamageParam_MaxRadiusScale": 14.0,
+      "DamageParam_RadiusScaleMultiplier": 1.0,
+      "DamageFX_DefaultBoundsSphereRadius": 100.0,
+      "DamageFX_EndFadeTime": 0.7,
+      "DropItemSpawnDirectionZ": 8.0,
+      "FoliageDropItemSpawnOffset": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 100.0
+      },
+      "DropItemReleaseDirectionRelative": {
+        "X": 0.0,
+        "Y": -1.0,
+        "Z": -1.0
+      },
+      "HitEffectSlotClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_HitEffectSlot_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Effect/BP_HitEffectSlot.0"
+      },
+      "ChangeMeshEffectMap": [
+        {
+          "EPalMapObjectChangeMeshFXType::RockDestroyProgress": {
+            "ObjectName": "NiagaraSystem'NS_RockSmoke'",
+            "ObjectPath": "Pal/Content/Pal/Effect/Common/Smoke/NS_RockSmoke.27"
+          }
+        }
+      ],
+      "VisualEffectAssets": {
+        "AssetMap": [
+          {
+            "EPalMapObjectVisualEffectType::Burn": {
+              "AssetPathName": "/Game/Pal/Effect/Common/StatusEffect/Flamed/NS_Status_Flamed_StaticMesh.NS_Status_Flamed_StaticMesh",
+              "SubPathString": ""
+            }
+          }
+        ]
+      },
+      "TreasureBoxOpenRequiredItemMap": [
+        {
+          "EPalMapObjectTreasureGradeType::Grade2": {
+            "Key": "TreasureBoxKey01"
+          }
+        },
+        {
+          "EPalMapObjectTreasureGradeType::Grade4": {
+            "Key": "TreasureBoxKey02"
+          }
+        },
+        {
+          "EPalMapObjectTreasureGradeType::Grade6": {
+            "Key": "TreasureBoxKey03"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_NPCPathWalkPointComponent_1_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "SuperStruct": {
+      "ObjectName": "Class'StaticMeshComponent'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "DoubleProperty",
+        "Name": "WaitTime",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "ActionType",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Enum": {
+          "ObjectName": "Enum'EPalActionType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      }
+    ],
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_NPCPathWalkPointComponent_1_C'Default__BP_NPCPathWalkPointComponent_1_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Spawner/EnemyCamp/Z_Struct/BP_NPCPathWalkPointComponent_1.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_NPCPathWalkPointComponent_1_C",
+    "Name": "Default__BP_NPCPathWalkPointComponent_1_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Spawner/EnemyCamp/Z_Struct/BP_NPCPathWalkPointComponent_1.BP_NPCPathWalkPointComponent_1_C'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_WalkPoint'",
+        "ObjectPath": "Pal/Content/Pal/Model/Other/EnemyPoint/SM_WalkPoint.2"
+      },
+      "OverrideMaterials": [
+        {
+          "ObjectName": "MaterialInstanceConstant'MI_Debug_Blue'",
+          "ObjectPath": "Pal/Content/Pal/Material/Debug/MI_Debug_Blue.0"
+        }
+      ],
+      "bGenerateOverlapEvents": false,
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseToChannels": {
+            "Visibility": "ECollisionResponse::ECR_Ignore",
+            "Camera": "ECollisionResponse::ECR_Ignore",
+            "GameTraceChannel2": "ECollisionResponse::ECR_Overlap",
+            "GameTraceChannel8": "ECollisionResponse::ECR_Ignore",
+            "GameTraceChannel9": "ECollisionResponse::ECR_Ignore",
+            "GameTraceChannel11": "ECollisionResponse::ECR_Ignore",
+            "GameTraceChannel15": "ECollisionResponse::ECR_Ignore"
+          },
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "bHiddenInGame": true,
+      "PrimaryComponentTick": {
+        "bStartWithTickEnabled": false
+      }
+    },
+    "LODData": null
+  }
+]

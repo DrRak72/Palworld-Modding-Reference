@@ -1,0 +1,192 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "SK_DefenseFacilityElectric_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'SK_DefenseFacilityElectric_PhysicsAsset:SkeletalBodySetup_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityElectric/SK_DefenseFacilityElectric_PhysicsAsset.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'SK_DefenseFacilityElectric_PhysicsAsset:SkeletalBodySetup_1'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityElectric/SK_DefenseFacilityElectric_PhysicsAsset.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'SK_DefenseFacilityElectric_PhysicsAsset:SkeletalBodySetup_2'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityElectric/SK_DefenseFacilityElectric_PhysicsAsset.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'SK_DefenseFacilityElectric_PhysicsAsset:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityElectric/SK_DefenseFacilityElectric_PhysicsAsset.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'SK_DefenseFacilityElectric_PhysicsAsset:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityElectric/SK_DefenseFacilityElectric_PhysicsAsset.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "SK_DefenseFacilityElectric_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "DefenseFacilityElectric_HorizonalTurn",
+        "ConstraintBone1": "DefenseFacilityElectric_HorizonalTurn",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -2.3954486E-15,
+          "Z": 39.120644
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "SK_DefenseFacilityElectric_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "DefenseFacilityElectric_VerricalTurn",
+        "ConstraintBone1": "DefenseFacilityElectric_VerricalTurn",
+        "ConstraintBone2": "DefenseFacilityElectric_HorizonalTurn",
+        "Pos2": {
+          "X": -60.183903,
+          "Y": -3.847244E-15,
+          "Z": 2.6463623
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "SK_DefenseFacilityElectric_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -0.021689568,
+              "Y": -0.023864286,
+              "Z": 18.27724
+            },
+            "Rotation": {
+              "Pitch": 0.29974937,
+              "Yaw": 47.733196,
+              "Roll": -90.0
+            },
+            "Radius": 96.34194,
+            "Length": 96.34326,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "root",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "139C278C44AD4C2587547BBB1D36EFCB"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "SK_DefenseFacilityElectric_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -13.706149,
+              "Y": 0.040680483,
+              "Z": 7.8811584
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 89.82997,
+              "Roll": -86.969406
+            },
+            "Radius": 43.141125,
+            "Length": 56.78445,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "DefenseFacilityElectric_HorizonalTurn",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "E5C1DF764D9133DBFC71EB942FDC1E83"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "SK_DefenseFacilityElectric_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 38.61432,
+              "Y": -0.2752728,
+              "Z": 46.226902
+            },
+            "Rotation": {
+              "Pitch": -1.9878467E-16,
+              "Yaw": -1.0470575,
+              "Roll": -89.50589
+            },
+            "Radius": 70.57509,
+            "Length": 78.61278,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "DefenseFacilityElectric_VerricalTurn",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "336FD03248D31ECEE62FDFB8EC095620"
+  }
+]

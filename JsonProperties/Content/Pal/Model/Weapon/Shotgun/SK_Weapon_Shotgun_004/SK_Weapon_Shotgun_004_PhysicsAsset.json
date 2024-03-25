@@ -1,0 +1,127 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "SK_Weapon_Shotgun_004_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'SK_Weapon_Shotgun_004_PhysicsAsset:SkeletalBodySetup_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/Shotgun/SK_Weapon_Shotgun_004/SK_Weapon_Shotgun_004_PhysicsAsset.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'SK_Weapon_Shotgun_004_PhysicsAsset:SkeletalBodySetup_1'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/Shotgun/SK_Weapon_Shotgun_004/SK_Weapon_Shotgun_004_PhysicsAsset.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'SK_Weapon_Shotgun_004_PhysicsAsset:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/Shotgun/SK_Weapon_Shotgun_004/SK_Weapon_Shotgun_004_PhysicsAsset.1"
+        }
+      ],
+      "SolverSettings": {
+        "CullDistance": 1.0,
+        "bUseLinearJointSolver": false
+      },
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "SK_Weapon_Shotgun_004_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "barrelbreak",
+        "ConstraintBone1": "barrelbreak",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": 17.574696,
+          "Y": -1.2178858E-06,
+          "Z": 1.8781095
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "SK_Weapon_Shotgun_004_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -7.3079557,
+              "Y": 0.00016212463,
+              "Z": -1.929028
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 89.99552,
+              "Roll": -70.802505
+            },
+            "Radius": 7.297414,
+            "Length": 25.920963,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "root",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "311F03FE4BF8C0FECC14E48A77338C66"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "SK_Weapon_Shotgun_004_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 31.547838,
+              "Y": 0.00092697144,
+              "Z": 1.2545547
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": 90.00605,
+              "Roll": -89.36986
+            },
+            "Radius": 3.4119267,
+            "Length": 38.215263,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "barrelbreak",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F8FA4623422A23BF732D7DAAAF69E4C3"
+  }
+]

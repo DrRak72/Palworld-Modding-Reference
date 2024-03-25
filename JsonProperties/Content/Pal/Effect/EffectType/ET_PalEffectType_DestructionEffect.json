@@ -1,0 +1,85 @@
+[
+  {
+    "Type": "NiagaraEffectType",
+    "Name": "ET_PalEffectType_DestructionEffect",
+    "Class": "UScriptClass'NiagaraEffectType'",
+    "Properties": {
+      "UpdateFrequency": "ENiagaraScalabilityUpdateFrequency::High",
+      "CullReaction": "ENiagaraCullReaction::DeactivateResume",
+      "SignificanceHandler": {
+        "ObjectName": "NiagaraSignificanceHandlerDistance'ET_PalEffectType_DestructionEffect:NiagaraSignificanceHandlerDistance_0'",
+        "ObjectPath": "Pal/Content/Pal/Effect/EffectType/ET_PalEffectType_DestructionEffect.1"
+      },
+      "SystemScalabilitySettings": {
+        "Settings": [
+          {
+            "Platforms": {
+              "QualityLevelMask": -1,
+              "DeviceProfileStates": [],
+              "CVarConditions": []
+            },
+            "bCullByDistance": true,
+            "bCullMaxInstanceCount": false,
+            "bCullPerSystemMaxInstanceCount": true,
+            "MaxDistance": 6400.0,
+            "MaxInstances": 0,
+            "MaxSystemInstances": 5,
+            "CullProxyMode": "ENiagaraCullProxyMode::None",
+            "MaxSystemProxies": 32,
+            "VisibilityCulling": {
+              "bCullWhenNotRendered": true,
+              "bCullByViewFrustum": true,
+              "bAllowPreCullingByViewFrustum": true,
+              "MaxTimeOutsideViewFrustum": 1.0,
+              "MaxTimeWithoutRender": 1.0
+            },
+            "BudgetScaling": {
+              "bCullByGlobalBudget": false,
+              "bScaleMaxDistanceByGlobalBudgetUse": false,
+              "bScaleMaxInstanceCountByGlobalBudgetUse": false,
+              "bScaleSystemInstanceCountByGlobalBudgetUse": false,
+              "MaxGlobalBudgetUsage": 1.0,
+              "MaxDistanceScaleByGlobalBudgetUse": {
+                "StartX": 0.5,
+                "StartY": 1.0,
+                "EndX": 1.0,
+                "EndY": 0.5
+              },
+              "MaxInstanceCountScaleByGlobalBudgetUse": {
+                "StartX": 0.5,
+                "StartY": 1.0,
+                "EndX": 1.0,
+                "EndY": 0.5
+              },
+              "MaxSystemInstanceCountScaleByGlobalBudgetUse": {
+                "StartX": 0.5,
+                "StartY": 1.0,
+                "EndX": 1.0,
+                "EndY": 0.5
+              }
+            }
+          }
+        ]
+      },
+      "EmitterScalabilitySettings": {
+        "Settings": [
+          {
+            "Platforms": {
+              "QualityLevelMask": -1,
+              "DeviceProfileStates": [],
+              "CVarConditions": []
+            },
+            "bScaleSpawnCount": false,
+            "SpawnCountScale": 1.0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "NiagaraSignificanceHandlerDistance",
+    "Name": "NiagaraSignificanceHandlerDistance_0",
+    "Outer": "ET_PalEffectType_DestructionEffect",
+    "Class": "UScriptClass'NiagaraSignificanceHandlerDistance'"
+  }
+]

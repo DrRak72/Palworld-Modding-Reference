@@ -1,0 +1,336 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_MeleeWeaponBase_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_MeleeWeaponBase_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.10"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalWeaponBase'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_MeleeWeaponBase_C:SeekRightHandOpen'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.6"
+      },
+      {
+        "ObjectName": "Function'BP_MeleeWeaponBase_C:SeekLeftHandOpen'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.5"
+      },
+      {
+        "ObjectName": "Function'BP_MeleeWeaponBase_C:GetLeftHandTransform'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.3"
+      },
+      {
+        "ObjectName": "Function'BP_MeleeWeaponBase_C:IsUseLeftHandAttach'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.4"
+      },
+      {
+        "ObjectName": "Function'BP_MeleeWeaponBase_C:GetEquipSocketName'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.2"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "SkeletalMesh",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DefaultSceneRoot",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "GetEquipSocketName": {
+        "ObjectName": "Function'BP_MeleeWeaponBase_C:GetEquipSocketName'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.2"
+      },
+      "IsUseLeftHandAttach": {
+        "ObjectName": "Function'BP_MeleeWeaponBase_C:IsUseLeftHandAttach'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.4"
+      },
+      "GetLeftHandTransform": {
+        "ObjectName": "Function'BP_MeleeWeaponBase_C:GetLeftHandTransform'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.3"
+      },
+      "SeekLeftHandOpen": {
+        "ObjectName": "Function'BP_MeleeWeaponBase_C:SeekLeftHandOpen'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.5"
+      },
+      "SeekRightHandOpen": {
+        "ObjectName": "Function'BP_MeleeWeaponBase_C:SeekRightHandOpen'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.6"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_MeleeWeaponBase_C'Default__BP_MeleeWeaponBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_MeleeWeaponBase_C",
+    "Name": "Default__BP_MeleeWeaponBase_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.BP_MeleeWeaponBase_C'",
+    "Properties": {
+      "RecoilCurve": {
+        "ObjectName": "CurveFloat'C_AssaultRifleRecoilCurve'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/RecoilCurve/C_AssaultRifleRecoilCurve.0"
+      },
+      "ShotCameraShake": {
+        "ObjectName": "BlueprintGeneratedClass'BP_WeaponCameraShake_MeleeHit_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/CameraShake/BP_WeaponCameraShake_MeleeHit.0"
+      },
+      "WeaponType": "EPalWeaponType::MeleeWeapon",
+      "IsRequiredBullet": false
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "GetEquipSocketName",
+    "Outer": "BP_MeleeWeaponBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:GetEquipSocketName'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "NameProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "Parm | OutParm | ReturnParm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetLeftHandTransform",
+    "Outer": "BP_MeleeWeaponBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:GetLeftHandTransform'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetSocketTransform_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "IsUseLeftHandAttach",
+    "Outer": "BP_MeleeWeaponBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:IsUseLeftHandAttach'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "SeekLeftHandOpen",
+    "Outer": "BP_MeleeWeaponBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:SeekLeftHandOpen'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "SeekRightHandOpen",
+    "Outer": "BP_MeleeWeaponBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:SeekRightHandOpen'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_MeleeWeaponBase_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_MeleeWeaponBase_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.7"
+      },
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_MeleeWeaponBase_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.9"
+        }
+      ],
+      "VariableGuid": "A6ACEA61-4BC8F7E4-3EDF279D-29DECAFF",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SkeletalMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SkeletalMeshComponent'BP_MeleeWeaponBase_C:SkeletalMesh_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.11"
+      },
+      "VariableGuid": "AFD4F9AE-4632E562-DA7507AF-6A132605",
+      "InternalVariableName": "SkeletalMesh"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_MeleeWeaponBase_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_MeleeWeaponBase_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.8"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_MeleeWeaponBase_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.8"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_MeleeWeaponBase_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.9"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_MeleeWeaponBase_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeleeWeaponBase.8"
+      }
+    }
+  },
+  {
+    "Type": "SkeletalMeshComponent",
+    "Name": "SkeletalMesh_GEN_VARIABLE",
+    "Outer": "BP_MeleeWeaponBase_C",
+    "Class": "UScriptClass'SkeletalMeshComponent'",
+    "Properties": {
+      "ClothingSimulationFactory": {
+        "ObjectName": "Class'ClothingSimulationFactoryNv'",
+        "ObjectPath": "/Script/ClothingSystemRuntimeNv"
+      }
+    }
+  }
+]

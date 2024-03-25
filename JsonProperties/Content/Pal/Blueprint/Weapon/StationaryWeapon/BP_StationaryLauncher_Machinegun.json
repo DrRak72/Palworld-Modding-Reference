@@ -1,0 +1,1311 @@
+[
+  {
+    "Type": "ArrowComponent",
+    "Name": "MuzzleDirection_GEN_VARIABLE",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'ArrowComponent'",
+    "Properties": {
+      "RelativeLocation": {
+        "X": 90.0,
+        "Y": 0.0,
+        "Z": 43.0
+      }
+    }
+  },
+  {
+    "Type": "ArrowComponent",
+    "Name": "RotatePartPoint_GEN_VARIABLE",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'ArrowComponent'",
+    "Properties": {
+      "ArrowLength": 20.0,
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 40.0
+      }
+    }
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_NormalStationaryLauncherBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.0"
+    },
+    "Properties": {
+      "NumReplicatedProperties": 1,
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.30"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_StationaryLauncher_Machinegun_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.20"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_NormalStationaryLauncherBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:OnRep_Rotation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.17"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:RotatePitchToTarget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.19"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetMuzzleRotateLocation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.10"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetAttackableDistance'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.6"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetRotateMuzzleRef'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.13"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetAttackableAngle'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.5"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetPullTriggerInterval'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.12"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetShootNumMax'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.15"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:CalcBarrelDirection'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.4"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:OnShoot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.18"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetWeaponDamage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.16"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetMuzzleRotator'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.11"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetShootInterval'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.14"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetBlurAngle'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.7"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetBulletClass'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.8"
+      },
+      {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetMuzzleLocation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.9"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "PoseableMesh",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'PoseableMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "M2HMG_RotatePart",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DefenseFacilityMedieval_Sand",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "RotatePartPoint",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'ArrowComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "MuzzleDirection",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'ArrowComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "PitchRange",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Rotation",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | Net | DisableEditOnInstance | RepNotify",
+        "RepIndex": 13,
+        "RepNotifyFunc": "OnRep_Rotation",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "HorizontalBoneName",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "VerticalBoneName",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      }
+    ],
+    "FuncMap": {
+      "GetMuzzleLocation": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetMuzzleLocation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.9"
+      },
+      "GetBulletClass": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetBulletClass'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.8"
+      },
+      "GetBlurAngle": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetBlurAngle'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.7"
+      },
+      "GetShootInterval": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetShootInterval'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.14"
+      },
+      "GetMuzzleRotator": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetMuzzleRotator'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.11"
+      },
+      "GetWeaponDamage": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetWeaponDamage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.16"
+      },
+      "OnShoot": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:OnShoot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.18"
+      },
+      "CalcBarrelDirection": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:CalcBarrelDirection'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.4"
+      },
+      "GetShootNumMax": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetShootNumMax'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.15"
+      },
+      "GetPullTriggerInterval": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetPullTriggerInterval'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.12"
+      },
+      "GetAttackableAngle": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetAttackableAngle'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.5"
+      },
+      "GetRotateMuzzleRef": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetRotateMuzzleRef'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.13"
+      },
+      "GetAttackableDistance": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetAttackableDistance'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.6"
+      },
+      "GetMuzzleRotateLocation": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:GetMuzzleRotateLocation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.10"
+      },
+      "RotatePitchToTarget": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:RotatePitchToTarget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.19"
+      },
+      "OnRep_Rotation": {
+        "ObjectName": "Function'BP_StationaryLauncher_Machinegun_C:OnRep_Rotation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.17"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_StationaryLauncher_Machinegun_C'Default__BP_StationaryLauncher_Machinegun_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.3"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_StationaryLauncher_Machinegun_C",
+    "Name": "Default__BP_StationaryLauncher_Machinegun_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.BP_StationaryLauncher_Machinegun_C'",
+    "Template": {
+      "ObjectName": "BP_NormalStationaryLauncherBase_C'Default__BP_NormalStationaryLauncherBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.1"
+    },
+    "Properties": {
+      "PitchRange": 20.0,
+      "Rotation": {
+        "Pitch": 0.0,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      },
+      "HorizontalBoneName": "DefenseFacilityModern_HorizonalTurn",
+      "VerticalBoneName": "DefenseFacilityModern_VerricalTurn",
+      "BulletItemName": "SmallBullet",
+      "RemoteRole": "ENetRole::ROLE_SimulatedProxy"
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "CalcBarrelDirection",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "TargetLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "OriginWorldLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "BarrelUpOffset",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Direction",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Parm | OutParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetUpVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Multiply_VectorFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Subtract_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Add_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetAttackableAngle",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetAttackableAngle'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.5"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetAttackableAngle'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.5"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Parm | OutParm | ReturnParm"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetAttackableAngle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetAttackableDistance",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetAttackableDistance'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.6"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetAttackableDistance'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.6"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Parm | OutParm | ReturnParm"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetAttackableDistance_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetBlurAngle",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetBlurAngle'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.7"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetBlurAngle'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.7"
+    },
+    "ChildProperties": [
+      {
+        "Type": "DoubleProperty",
+        "Name": "Angle",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetBulletClass",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetBulletClass'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.8"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetBulletClass'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.8"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ClassProperty",
+        "Name": "NewParam",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalBullet'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetMuzzleLocation",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetMuzzleLocation'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.12"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetMuzzleLocation'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.12"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "MuzzleLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Parm | OutParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetMuzzleRotateLocation",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetMuzzleRotateLocation'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.13"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetMuzzleRotateLocation'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.13"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "RotateLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Parm | OutParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetMuzzleRotator",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetMuzzleRotator'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.14"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetMuzzleRotator'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.14"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "Rotator",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Parm | OutParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetComponentRotation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetPullTriggerInterval",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetPullTriggerInterval'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.16"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetPullTriggerInterval'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.16"
+    },
+    "ChildProperties": [
+      {
+        "Type": "DoubleProperty",
+        "Name": "PullTriggerInterval",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_GetPullTriggerInterval_PullTriggerInterval",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetRotateMuzzleRef",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetRotateMuzzleRef'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.17"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetRotateMuzzleRef'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.17"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Muzzle",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetShootInterval",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetShootInterval'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.18"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetShootInterval'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.18"
+    },
+    "ChildProperties": [
+      {
+        "Type": "DoubleProperty",
+        "Name": "Time",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetShootNumMax",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetShootNumMax'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.19"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetShootNumMax'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.19"
+    },
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "ShootNumMax",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Parm | OutParm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetWeaponDamage",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetWeaponDamage'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.21"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:GetWeaponDamage'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.21"
+    },
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Parm | OutParm | ReturnParm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnRep_Rotation",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetBoneRotationByName_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Roll",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Pitch",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Yaw",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Roll_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Pitch_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Yaw_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Roll_2",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Pitch_2",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Yaw_2",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetBoneRotationByName_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotator_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Roll_3",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Pitch_3",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Yaw_3",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotator_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetRelativeRotation_SweepHitResult",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnShoot",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:OnShoot'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.27"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:OnShoot'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.27"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnSystemAttached_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "RotatePitchToTarget",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:RotatePitchToTarget'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.33"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_NormalStationaryLauncherBase_C:RotatePitchToTarget'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.33"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "TargetLocation",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "LerpSpeed",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_RSign_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Roll",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Pitch",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakRotator_Yaw",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_ClampAngle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotator_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_RSign_V_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "ConstParm"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_ClampAngle_MinAngleDegrees_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_ClampAngle_AngleDegrees_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_MakeRotator_Pitch_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'InheritableComponentHandler'",
+    "Properties": {
+      "Records": [
+        {
+          "ComponentClass": {
+            "ObjectName": "Class'SceneComponent'",
+            "ObjectPath": "/Script/Engine"
+          },
+          "ComponentTemplate": {
+            "ObjectName": "SceneComponent'BP_StationaryLauncher_Machinegun_C:ICH-DefaultSceneRoot_GEN_VARIABLE'",
+            "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.23"
+          },
+          "ComponentKey": {
+            "OwnerClass": {
+              "ObjectName": "BlueprintGeneratedClass'BP_NormalStationaryLauncherBase_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_NormalStationaryLauncherBase.0"
+            },
+            "SCSVariableName": "DefaultSceneRoot",
+            "AssociatedGuid": "2BB22574-4AEEFCB2-8CEEB38D-F002435F"
+          },
+          "CookedComponentInstancingData": {
+            "ChangedPropertyList": [],
+            "bHasValidCookedData": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "PoseableMeshComponent",
+    "Name": "PoseableMesh_GEN_VARIABLE",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'PoseableMeshComponent'",
+    "Properties": {
+      "SkeletalMesh": {
+        "ObjectName": "SkeletalMesh'SK_DefenseFacilityModern'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityModern/SK_DefenseFacilityModern.0"
+      },
+      "SkinnedAsset": {
+        "ObjectName": "SkeletalMesh'SK_DefenseFacilityModern'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityModern/SK_DefenseFacilityModern.0"
+      }
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "ICH-DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'SceneComponent'",
+    "Properties": {
+      "bReplicates": true
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_StationaryLauncher_Machinegun_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.22"
+      },
+      "VariableGuid": "31623630-49B88C5E-449E91AD-E9375BB2",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'ArrowComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "ArrowComponent'BP_StationaryLauncher_Machinegun_C:RotatePartPoint_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.1"
+      },
+      "MetaDataArray": [
+        {
+          "DataKey": "tooltip",
+          "DataValue": ""
+        }
+      ],
+      "VariableGuid": "F9F3C424-40ABBBFB-1177D297-4EF70821",
+      "InternalVariableName": "RotatePartPoint"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_11",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_StationaryLauncher_Machinegun_C:M2HMG_RotatePart_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.32"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_NormalStationaryLauncherBase_C",
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_13'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.27"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.25"
+        }
+      ],
+      "VariableGuid": "7FCEE932-41AA10F1-91381A94-75B3083C",
+      "InternalVariableName": "M2HMG_RotatePart"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_13",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'ArrowComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "ArrowComponent'BP_StationaryLauncher_Machinegun_C:MuzzleDirection_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.0"
+      },
+      "VariableGuid": "5A1BADBC-40F29F41-1C6C5DAA-5667046E",
+      "InternalVariableName": "MuzzleDirection"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_StationaryLauncher_Machinegun_C:DefenseFacilityMedieval_Sand_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.31"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_NormalStationaryLauncherBase_C",
+      "VariableGuid": "E4D46A6A-42B6592D-0467F2AA-55DCCBFE",
+      "InternalVariableName": "DefenseFacilityMedieval_Sand"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'PoseableMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "PoseableMeshComponent'BP_StationaryLauncher_Machinegun_C:PoseableMesh_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.21"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_NormalStationaryLauncherBase_C",
+      "VariableGuid": "EB53C86D-4BE1B9B8-62D717AB-1EE94612",
+      "InternalVariableName": "PoseableMesh"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.28"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_11'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.26"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.29"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_13'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.27"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.25"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.28"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_11'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.26"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.29"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_StationaryLauncher_Machinegun_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/StationaryWeapon/BP_StationaryLauncher_Machinegun.24"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "DefenseFacilityMedieval_Sand_GEN_VARIABLE",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'DefenseFacilityMedieval_Sand'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityMedieval/DefenseFacilityMedieval_Sand.2"
+      },
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "M2HMG_RotatePart_GEN_VARIABLE",
+    "Outer": "BP_StationaryLauncher_Machinegun_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "RelativeScale3D": {
+        "X": 2.0,
+        "Y": 2.0,
+        "Z": 2.0
+      },
+      "bReplicates": true
+    }
+  }
+]

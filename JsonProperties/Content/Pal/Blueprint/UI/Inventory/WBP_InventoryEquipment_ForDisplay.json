@@ -1,0 +1,941 @@
+[
+  {
+    "Type": "ComponentDelegateBinding",
+    "Name": "ComponentDelegateBinding_0",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'ComponentDelegateBinding'",
+    "Properties": {
+      "ComponentDelegateBindings": [
+        {
+          "ComponentPropertyName": "WBP_InventoryEquipment",
+          "DelegatePropertyName": "OnClickedSortButton",
+          "FunctionNameToBind": "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_4_OnClickedSortButton__DelegateSignature"
+        },
+        {
+          "ComponentPropertyName": "WBP_InventoryEquipment",
+          "DelegatePropertyName": "OnRequestSwapEquipment",
+          "FunctionNameToBind": "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_3_OnRequestSwapEquipment__DelegateSignature"
+        },
+        {
+          "ComponentPropertyName": "WBP_InventoryEquipment",
+          "DelegatePropertyName": "OnConfirmStatusPointEdit",
+          "FunctionNameToBind": "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_2_OnConfirmStatusPointEdit__DelegateSignature"
+        },
+        {
+          "ComponentPropertyName": "WBP_InventoryEquipment",
+          "DelegatePropertyName": "OnClickedItemDestroy",
+          "FunctionNameToBind": "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_1_OnClickedItemDestroy__DelegateSignature"
+        },
+        {
+          "ComponentPropertyName": "WBP_InventoryEquipment",
+          "DelegatePropertyName": "OnClickedItemDrop",
+          "FunctionNameToBind": "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_0_OnClickedItemDrop__DelegateSignature"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_0_OnClickedItemDrop__DelegateSignature",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_1_OnClickedItemDestroy__DelegateSignature",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_2_OnConfirmStatusPointEdit__DelegateSignature",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "MapProperty",
+        "Name": "PointMap",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "KeyProp": {
+          "Type": "NameProperty",
+          "Name": "PointMap",
+          "Flags": "RF_Public",
+          "ElementSize": 12
+        },
+        "ValueProp": {
+          "Type": "IntProperty",
+          "Name": "PointMap_Value",
+          "Flags": "RF_Public",
+          "ElementSize": 4
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_3_OnRequestSwapEquipment__DelegateSignature",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "EquipType",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPalPlayerEquipItemSlotType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_4_OnClickedSortButton__DelegateSignature",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BP_GetDesiredFocusTarget",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'CommonActivatableWidget:BP_GetDesiredFocusTarget'",
+      "ObjectPath": "/Script/CommonUI"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | ReturnParm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'Widget'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsSimulatingStatusPoint_IsSimulating",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetStatusPointTopFocusTarget_TargetWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'Widget'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Get_Inventory_Last_Focus_Target_TargetWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'Widget'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "CancelSimulateStatusPoint",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Construct",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'UserWidget:Construct'",
+      "ObjectPath": "/Script/UMG"
+    },
+    "FunctionFlags": "FUNC_BlueprintCosmetic | FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Destruct",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'UserWidget:Destruct'",
+      "ObjectPath": "/Script/UMG"
+    },
+    "FunctionFlags": "FUNC_BlueprintCosmetic | FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_WBP_InventoryEquipment_ForDisplay",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "MapProperty",
+        "Name": "K2Node_ComponentBoundEvent_PointMap",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "KeyProp": {
+          "Type": "NameProperty",
+          "Name": "K2Node_ComponentBoundEvent_PointMap",
+          "Flags": "RF_Public",
+          "ElementSize": 12
+        },
+        "ValueProp": {
+          "Type": "IntProperty",
+          "Name": "K2Node_ComponentBoundEvent_PointMap_Value",
+          "Flags": "RF_Public",
+          "ElementSize": 4
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Map_Length_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Greater_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "K2Node_ComponentBoundEvent_EquipType",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EPalPlayerEquipItemSlotType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalGliderComponent:OnStartGliding__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalGliderComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalGliderComponent:OnEndGliding__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsGliding_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalGliderComponent:OnStartGliding__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_3",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalGliderComponent:OnEndGliding__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "IsSimulatingStatusPoint",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "IsSimulating",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnEndGlide",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnStartGlide",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnUpdateInventoryWeight",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "nowWeight",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalInventoryData_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerInventoryData'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_SetInventoryWeight_NowWeight_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_SetInventoryWeight_MaxWeight_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Setup",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Model",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_InGameMenuInventoryModel_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/InGameMainMenu/Model/BP_InGameMenuInventoryModel.0"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Setup Static Input Action",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'OnInputAction__DelegateSignature'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'OnInputAction__DelegateSignature'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_RegisterActionBinding_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalUIActionBindData'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_RegisterActionBinding_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalUIActionBindData'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Try Start Simulate Status Point",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetCharacterParameterComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsSimulatingStatusPoint_IsSimulating",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetIndividualParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_GetUnusedStatusPoint_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Greater_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InvalidationBox",
+    "Name": "InvalidationBox_0",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'InvalidationBox'",
+    "Properties": {
+      "bCanCache": false,
+      "Slots": [
+        {
+          "ObjectName": "PanelSlot'WBP_InventoryEquipment_ForDisplay_C:WidgetTree.InvalidationBox_0.PanelSlot_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.19"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "PanelSlot",
+    "Name": "PanelSlot_0",
+    "Outer": "InvalidationBox_0",
+    "Class": "UScriptClass'PanelSlot'",
+    "Properties": {
+      "Parent": {
+        "ObjectName": "InvalidationBox'WBP_InventoryEquipment_ForDisplay_C:WidgetTree.InvalidationBox_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.18"
+      },
+      "Content": {
+        "ObjectName": "WBP_InventoryEquipment_C'WBP_InventoryEquipment_ForDisplay_C:WidgetTree.WBP_InventoryEquipment'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.20"
+      }
+    }
+  },
+  {
+    "Type": "WBP_InventoryEquipment_C",
+    "Name": "WBP_InventoryEquipment",
+    "Outer": "WidgetTree",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/InventoryEquipment/WBP_InventoryEquipment.WBP_InventoryEquipment_C'",
+    "Template": {
+      "ObjectName": "WBP_InventoryEquipment_C'Default__WBP_InventoryEquipment_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/InventoryEquipment/WBP_InventoryEquipment.312"
+    },
+    "Properties": {
+      "bAutoActivate": true,
+      "bSupportsActivationFocus": false,
+      "Slot": {
+        "ObjectName": "PanelSlot'WBP_InventoryEquipment_ForDisplay_C:WidgetTree.InvalidationBox_0.PanelSlot_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.19"
+      }
+    }
+  },
+  {
+    "Type": "WBP_InventoryEquipment_ForDisplay_C",
+    "Name": "Default__WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.WBP_InventoryEquipment_ForDisplay_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "SimulateStatusPointInput": {
+        "Key": "InventoryEditStatusPoint"
+      },
+      "ConfirmStatusPointInput": {
+        "Key": "InventoryConfirmStatusEdit"
+      },
+      "InputConfig": "EPalWidgetInputMode::Menu",
+      "bHasScriptImplementedTick": false,
+      "bHasScriptImplementedPaint": false
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_InventoryEquipment_ForDisplay_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.23"
+      },
+      "bClassRequiresNativeTick": true,
+      "DynamicBindingObjects": [
+        {
+          "ObjectName": "ComponentDelegateBinding'WBP_InventoryEquipment_ForDisplay_C:ComponentDelegateBinding_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.0"
+        }
+      ],
+      "UberGraphFunction": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:ExecuteUbergraph_WBP_InventoryEquipment_ForDisplay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.10"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalUIInventoryEquipment'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:OnEndGlide'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.12"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:OnStartGlide'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.13"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:Try Start Simulate Status Point'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.17"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:Setup Static Input Action'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.16"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:CancelSimulateStatusPoint'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.7"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:IsSimulatingStatusPoint'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.11"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BP_GetDesiredFocusTarget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.6"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:OnUpdateInventoryWeight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.14"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:Setup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.15"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:Construct'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.8"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_0_OnClickedItemDrop__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.1"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_1_OnClickedItemDestroy__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.2"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_2_OnConfirmStatusPointEdit__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.3"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_3_OnRequestSwapEquipment__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.4"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_4_OnClickedSortButton__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.5"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:Destruct'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.9"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:ExecuteUbergraph_WBP_InventoryEquipment_ForDisplay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.10"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "InvalidationBox_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'InvalidationBox'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WBP_InventoryEquipment",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_InventoryEquipment_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/InventoryEquipment/WBP_InventoryEquipment.355"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Model",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_InGameMenuInventoryModel_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/InGameMainMenu/Model/BP_InGameMenuInventoryModel.0"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "SimulateStatusPointInput",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_UIInputAction'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "ConfirmStatusPointInput",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_UIInputAction'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_WBP_InventoryEquipment_ForDisplay": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:ExecuteUbergraph_WBP_InventoryEquipment_ForDisplay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.10"
+      },
+      "Destruct": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:Destruct'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.9"
+      },
+      "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_4_OnClickedSortButton__DelegateSignature": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_4_OnClickedSortButton__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.5"
+      },
+      "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_3_OnRequestSwapEquipment__DelegateSignature": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_3_OnRequestSwapEquipment__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.4"
+      },
+      "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_2_OnConfirmStatusPointEdit__DelegateSignature": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_2_OnConfirmStatusPointEdit__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.3"
+      },
+      "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_1_OnClickedItemDestroy__DelegateSignature": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_1_OnClickedItemDestroy__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.2"
+      },
+      "BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_0_OnClickedItemDrop__DelegateSignature": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_0_OnClickedItemDrop__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.1"
+      },
+      "Construct": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:Construct'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.8"
+      },
+      "Setup": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:Setup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.15"
+      },
+      "OnUpdateInventoryWeight": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:OnUpdateInventoryWeight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.14"
+      },
+      "BP_GetDesiredFocusTarget": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:BP_GetDesiredFocusTarget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.6"
+      },
+      "IsSimulatingStatusPoint": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:IsSimulatingStatusPoint'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.11"
+      },
+      "CancelSimulateStatusPoint": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:CancelSimulateStatusPoint'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.7"
+      },
+      "Setup Static Input Action": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:Setup Static Input Action'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.16"
+      },
+      "Try Start Simulate Status Point": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:Try Start Simulate Status Point'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.17"
+      },
+      "OnStartGlide": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:OnStartGlide'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.13"
+      },
+      "OnEndGlide": {
+        "ObjectName": "Function'WBP_InventoryEquipment_ForDisplay_C:OnEndGlide'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.12"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_InventoryEquipment_ForDisplay_C'Default__WBP_InventoryEquipment_ForDisplay_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.21"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_InventoryEquipment_ForDisplay_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "InvalidationBox'WBP_InventoryEquipment_ForDisplay_C:WidgetTree.InvalidationBox_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Inventory/WBP_InventoryEquipment_ForDisplay.18"
+      }
+    }
+  }
+]

@@ -1,0 +1,442 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Ganesha_PhysicsAsset:SkeletalBodySetup_10'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.7"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Ganesha_PhysicsAsset:SkeletalBodySetup_12'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.8"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Ganesha_PhysicsAsset:SkeletalBodySetup_14'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.9"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Ganesha_PhysicsAsset:SkeletalBodySetup_17'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.10"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Ganesha_PhysicsAsset:SkeletalBodySetup_19'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.11"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_Ganesha_PhysicsAsset:SkeletalBodySetup_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.6"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Ganesha_PhysicsAsset:PhysicsConstraintTemplate_10'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.2"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Ganesha_PhysicsAsset:PhysicsConstraintTemplate_12'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.3"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Ganesha_PhysicsAsset:PhysicsConstraintTemplate_15'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.4"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Ganesha_PhysicsAsset:PhysicsConstraintTemplate_17'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.5"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_Ganesha_PhysicsAsset:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Ganesha/PA_Ganesha_PhysicsAsset.1"
+        }
+      ],
+      "SolverSettings": {
+        "CullDistance": 1.0,
+        "bUseLinearJointSolver": false
+      },
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "pelvis",
+        "ConstraintBone1": "pelvis",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": -2.0922498E-11,
+          "Y": -23.985949,
+          "Z": 40.60558
+        },
+        "PriAxis2": {
+          "X": 1.7881393E-07,
+          "Y": 1.0,
+          "Z": 0.0
+        },
+        "SecAxis2": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0
+        },
+        "ProfileInstance": {
+          "LinearLimit": {
+            "XMotion": "ELinearConstraintMotion::LCM_Free",
+            "YMotion": "ELinearConstraintMotion::LCM_Free",
+            "ZMotion": "ELinearConstraintMotion::LCM_Free"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_10",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "hair",
+        "ConstraintBone1": "hair",
+        "ConstraintBone2": "pelvis",
+        "Pos2": {
+          "X": 24.195456,
+          "Y": 39.599834,
+          "Z": -2.5331914E-10
+        },
+        "PriAxis2": {
+          "X": -0.25933185,
+          "Y": 0.96578825,
+          "Z": -2.2024463E-17
+        },
+        "SecAxis2": {
+          "X": -0.96578825,
+          "Y": -0.25933185,
+          "Z": -1.6890677E-17
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_12",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "ear_01_l",
+        "ConstraintBone1": "ear_01_l",
+        "ConstraintBone2": "pelvis",
+        "Pos2": {
+          "X": 37.32485,
+          "Y": -0.6133276,
+          "Z": 36.066376
+        },
+        "PriAxis2": {
+          "X": 0.016479246,
+          "Y": 0.0024953508,
+          "Z": 0.9998611
+        },
+        "SecAxis2": {
+          "X": -0.9998642,
+          "Y": 4.130018E-05,
+          "Z": 0.016479196
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_15",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "ear_01_r",
+        "ConstraintBone1": "ear_01_r",
+        "ConstraintBone2": "pelvis",
+        "Pos2": {
+          "X": 37.32485,
+          "Y": -0.6132843,
+          "Z": -36.0664
+        },
+        "PriAxis2": {
+          "X": -0.016479246,
+          "Y": -0.0024953508,
+          "Z": 0.9998611
+        },
+        "SecAxis2": {
+          "X": 0.9998642,
+          "Y": -4.130018E-05,
+          "Z": 0.016479196
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_17",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "tail_03",
+        "ConstraintBone1": "tail_03",
+        "ConstraintBone2": "pelvis",
+        "Pos2": {
+          "X": -48.083843,
+          "Y": -13.110459,
+          "Z": 2.0108723E-07
+        },
+        "PriAxis2": {
+          "X": -1.0,
+          "Y": 1.2246467E-16,
+          "Z": -1.4292692E-07
+        },
+        "SecAxis2": {
+          "X": 1.224647E-16,
+          "Y": 1.0,
+          "Z": -1.2246467E-16
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Rotation": {
+              "Pitch": -0.0,
+              "Yaw": -90.0,
+              "Roll": 0.0
+            },
+            "Radius": 0.505,
+            "Length": 0.505,
+            "RestOffset": 0.0,
+            "Name": "root_capsule",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "root",
+      "PhysicsType": "EPhysicsType::PhysType_Kinematic",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "510F66F443DC754917D709976205C81F"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_10",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphereElems": [
+          {
+            "Center": {
+              "X": 26.458828,
+              "Y": -2.5433471,
+              "Z": 0.038449153
+            },
+            "Radius": 45.576294,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "pelvis",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "509BDFE1471D4B7819056F9CCC28091C"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_12",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphereElems": [
+          {
+            "Center": {
+              "X": 12.5287285,
+              "Y": -2.323699,
+              "Z": 0.6979001
+            },
+            "Radius": 16.806652,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "hair",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "A5F4B39E4FC596FD35F8A5A7B3B76D2E"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_14",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphereElems": [
+          {
+            "Center": {
+              "X": 13.395383,
+              "Y": 0.006774538,
+              "Z": -1.2116108
+            },
+            "Radius": 25.171864,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "ear_01_l",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "3C83FCCF421E365BAF2950BC84A6620D"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_17",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphereElems": [
+          {
+            "Center": {
+              "X": -13.39537,
+              "Y": -0.006792826,
+              "Z": 1.2115699
+            },
+            "Radius": 25.171864,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "ear_01_r",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "5300F2F94DAA42E16AA5AABC22DD2DC0"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_19",
+    "Outer": "PA_Ganesha_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphereElems": [
+          {
+            "Center": {
+              "X": 25.478506,
+              "Y": -1.5540351E-07,
+              "Z": -7.2321E-14
+            },
+            "Radius": 12.75,
+            "RestOffset": 0.0,
+            "Name": "tail_03_sphere",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ],
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -8.418707,
+              "Y": -0.56035787,
+              "Z": -4.966805E-06
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -87.99013,
+              "Roll": -89.99998
+            },
+            "Radius": 9.559755,
+            "Length": 22.775969,
+            "RestOffset": 0.0,
+            "Name": "tail_03_capsule",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "tail_03",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "F49DA86548E870088C4AC0914FAE854E"
+  }
+]

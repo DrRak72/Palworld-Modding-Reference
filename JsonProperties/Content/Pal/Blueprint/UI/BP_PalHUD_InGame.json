@@ -1,0 +1,1743 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_PalHUD_InGame_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.25"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ExecuteUbergraph_BP_PalHUD_InGame'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.6"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalHUDInGame'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:DisplayHUD_Respawn'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.5"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:HideHUD_ForDeath'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.7"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:UpdateWorldHUDs'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.22"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnUpdateLiftSlot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.15"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:HideLiftItemDisplay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.8"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ShowLiftItemDisplay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.21"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:Setup Lift Item Event'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.19"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:SetupHUD_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.20"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnLoaded_39EEADC54AE57646EA72A79D911211B6'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.12"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnLoaded_EF35A3894C280426B58FA0A0D5280930'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.13"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnLoaded_01D7FBF3483366434C8293A197BFD965'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.11"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.18"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:Initialize'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.9"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ReceiveEndPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.17"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:AsyncSetupHUDEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.3"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:AsyncLoadAndCreateWidget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.2"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnDyingEnd'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.10"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnRespawnPlayer'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.14"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:BindGameOverUI'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.4"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ReceiveDrawHUD'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.16"
+      },
+      {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ExecuteUbergraph_BP_PalHUD_InGame'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.6"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DefaultSceneRoot",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "UMG_LiftItem",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalLiftItem_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/Thumbnails/Item/WBP_PalLiftItem.24"
+        }
+      },
+      {
+        "Type": "MapProperty",
+        "Name": "PriorityMap",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 80,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "KeyProp": {
+          "Type": "ClassProperty",
+          "Name": "PriorityMap",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyClass": {
+            "ObjectName": "Class'Class'",
+            "ObjectPath": "/Script/CoreUObject"
+          },
+          "MetaClass": {
+            "ObjectName": "Class'PalUserWidget'",
+            "ObjectPath": "/Script/Pal"
+          }
+        },
+        "ValueProp": {
+          "Type": "EnumProperty",
+          "Name": "PriorityMap_Value",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": {
+            "ObjectName": "Enum'EPalHUDWidgetPriority'",
+            "ObjectPath": "/Script/Pal"
+          },
+          "UnderlyingProp": {
+            "Type": "ByteProperty",
+            "Name": "UnderlyingType",
+            "Flags": "RF_Public",
+            "ElementSize": 1,
+            "Enum": null
+          }
+        }
+      },
+      {
+        "Type": "MapProperty",
+        "Name": "CreatedWidgetMap",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 80,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | ContainsInstancedReference",
+        "KeyProp": {
+          "Type": "ClassProperty",
+          "Name": "CreatedWidgetMap",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyClass": {
+            "ObjectName": "Class'Class'",
+            "ObjectPath": "/Script/CoreUObject"
+          },
+          "MetaClass": {
+            "ObjectName": "Class'PalUserWidget'",
+            "ObjectPath": "/Script/Pal"
+          }
+        },
+        "ValueProp": {
+          "Type": "ObjectProperty",
+          "Name": "CreatedWidgetMap_Value",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyFlags": "InstancedReference",
+          "PropertyClass": {
+            "ObjectName": "Class'PalUserWidget'",
+            "ObjectPath": "/Script/Pal"
+          }
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "NewVar",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Guid'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "GameOverUIBinded",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_PalHUD_InGame": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ExecuteUbergraph_BP_PalHUD_InGame'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.6"
+      },
+      "ReceiveDrawHUD": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ReceiveDrawHUD'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.16"
+      },
+      "BindGameOverUI": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:BindGameOverUI'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.4"
+      },
+      "OnRespawnPlayer": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnRespawnPlayer'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.14"
+      },
+      "OnDyingEnd": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnDyingEnd'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.10"
+      },
+      "AsyncLoadAndCreateWidget": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:AsyncLoadAndCreateWidget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.2"
+      },
+      "AsyncSetupHUDEvent": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:AsyncSetupHUDEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.3"
+      },
+      "ReceiveEndPlay": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ReceiveEndPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.17"
+      },
+      "Initialize": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:Initialize'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.9"
+      },
+      "ReceiveTick": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.18"
+      },
+      "OnLoaded_01D7FBF3483366434C8293A197BFD965": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnLoaded_01D7FBF3483366434C8293A197BFD965'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.11"
+      },
+      "OnLoaded_EF35A3894C280426B58FA0A0D5280930": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnLoaded_EF35A3894C280426B58FA0A0D5280930'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.13"
+      },
+      "OnLoaded_39EEADC54AE57646EA72A79D911211B6": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnLoaded_39EEADC54AE57646EA72A79D911211B6'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.12"
+      },
+      "SetupHUD_Internal": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:SetupHUD_Internal'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.20"
+      },
+      "Setup Lift Item Event": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:Setup Lift Item Event'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.19"
+      },
+      "ShowLiftItemDisplay": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:ShowLiftItemDisplay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.21"
+      },
+      "HideLiftItemDisplay": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:HideLiftItemDisplay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.8"
+      },
+      "OnUpdateLiftSlot": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:OnUpdateLiftSlot'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.15"
+      },
+      "UpdateWorldHUDs": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:UpdateWorldHUDs'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.22"
+      },
+      "HideHUD_ForDeath": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:HideHUD_ForDeath'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.7"
+      },
+      "DisplayHUD_Respawn": {
+        "ObjectName": "Function'BP_PalHUD_InGame_C:DisplayHUD_Respawn'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.5"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_Transient | CLASS_NotPlaceable | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Game",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_PalHUD_InGame_C'Default__BP_PalHUD_InGame_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_PalHUD_InGame_C",
+    "Name": "Default__BP_PalHUD_InGame_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.BP_PalHUD_InGame_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "PriorityMap": [
+        {
+          "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/CaptureSeqence/WBP_CaptureReticle.WBP_CaptureReticle_C'": "EPalHUDWidgetPriority::CaptureReticle"
+        },
+        {
+          "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/Loupe/WBP_PalCapturingLoupeCanvas.WBP_PalCapturingLoupeCanvas_C'": "EPalHUDWidgetPriority::CaptureingLoupe"
+        },
+        {
+          "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/WBP_PlayerUI.WBP_PlayerUI_C'": "EPalHUDWidgetPriority::PlayerUI"
+        },
+        {
+          "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PalNPCHPGaugeCanvas.WBP_PalNPCHPGaugeCanvas_C'": "EPalHUDWidgetPriority::EPalHUDWidgetPriority_MAX"
+        },
+        {
+          "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/DamageText/WBP_PalDamageCanvas_StackDamage.WBP_PalDamageCanvas_StackDamage_C'": "EPalHUDWidgetPriority::DamagePopUp"
+        },
+        {
+          "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/DamageText/WBP_PalDamageCanvas_OneShotText.WBP_PalDamageCanvas_OneShotText_C'": "EPalHUDWidgetPriority::DamagePopUp"
+        },
+        {
+          "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/EnemyMark/WBP_EnemyMark.WBP_EnemyMark_C'": "EPalHUDWidgetPriority::EnemyMark"
+        },
+        {
+          "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/DebugInfo/WBP_PalDebugInfo.WBP_PalDebugInfo_C'": "EPalHUDWidgetPriority::DebugInfo"
+        }
+      ],
+      "NewVar": "00000000-00000000-00000000-00000000",
+      "HUDLayoutClass": {
+        "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PalHUDLayout_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.13"
+      },
+      "PlayerInputGuardClass": {
+        "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerInputGuard_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PlayerInputGuard.3"
+      },
+      "CommonUIClassMap": [
+        {
+          "EPalWidgetBlueprintType::Dialog": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/Dialog/WBP_PalDialog.WBP_PalDialog_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::MonsterDetail": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/PalStatus/StatusPopup/WBP_PalStatusPopup.WBP_PalStatusPopup_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::ConvertItemDetail": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/IngameMenu/WBP_IngameMenu_WorkSpace.WBP_IngameMenu_WorkSpace_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::ItemChest": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/MapObject/ItemChest/WBP_ItemChest.WBP_ItemChest_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::WorkerRadialMenu": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/WorkerRadialMenu/WBP_WorkerRadialMenu_Overlay.WBP_WorkerRadialMenu_Overlay_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::SelectItem_PlayerInventory": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/SelectItemInventory/WBP_SelectItemInventory.WBP_SelectItemInventory_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::WorldMap": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/Map/WBP_Map_Base.WBP_Map_Base_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::FoodBox": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/MapObject/ItemChest/WBP_ItemChest.WBP_ItemChest_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::PlayerStatusOperation": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/IngameMenu/Buildup/WBP_Buildup_Player.WBP_Buildup_Player_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::PalStatusOperation": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/IngameMenu/Buildup/WBP_Buildup_Pal.WBP_Buildup_Pal_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::PasswordSetting": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/IngameMenu/Chest/WBP_IngameMenu_Chest_LockPass.WBP_IngameMenu_Chest_LockPass_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::MapObjectSecuritySetting": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/IngameMenu/Chest/WBP_IngameMenu_Chest_LockSettings.WBP_IngameMenu_Chest_LockSettings_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::BaseCampWorkHard": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/IngameMenu/Monitoring/WBP_IngameMenu_Monitoring.WBP_IngameMenu_Monitoring_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWidgetBlueprintType::CutsceneOverlay": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/WBP_PalCutsceneOverlay.WBP_PalCutsceneOverlay_C",
+            "SubPathString": ""
+          }
+        }
+      ],
+      "WorldHUDClassMap": [
+        {
+          "EPalWorldHUDWidgetBlueprintType::ConvertItem": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/CovertItemMenu/StatusIndicator/WBP_ConvertItemStatusIndicator.WBP_ConvertItemStatusIndicator_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::ProductItem": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/InGame/CampInfo/WBP_PalWorkProduct.WBP_PalWorkProduct_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::BuildProgress": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/BuildProgress/WBP_BuildProgress.WBP_BuildProgress_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::HeadupWantFood": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/PalThoughtHud/WBP_PalHungerHud.WBP_PalHungerHud_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::HeadupPossessItem": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/PalThoughtHud/WBP_PalHud_PossessItem.WBP_PalHud_PossessItem_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::LackElectricity": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/BuildObject/WBP_BuildObjectIndicator_PowerSufficiency.WBP_BuildObjectIndicator_PowerSufficiency_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::FarmBlockV2": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/InGame/CampInfo/WBP_PalWorkFarm.WBP_PalWorkFarm_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::RecoverPal": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/RecoveryPal/Indicator/WBP_RecoverPalStateIndicator.WBP_RecoverPalStateIndicator_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::HatchingPalEgg": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/InGame/Incubator/WBP_Ingame_Incubator.WBP_Ingame_Incubator_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::GenerateEnergy": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/InGame/CampInfo/WBP_PalWorkPowerPlant.WBP_PalWorkPowerPlant_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::HeadupInvader": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/PalThoughtHud/WBP_PalHudInvader.WBP_PalHudInvader_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::BossEntryWait": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/InGame/BattleEntry/WBP_BattleEntry_Wait.WBP_BattleEntry_Wait_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::MapObjectHP": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/InGame/Interact/WBP_Ingame_InteractDurability.WBP_Ingame_InteractDurability_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::CommonWorkRequirement": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/InGame/CampInfo/WBP_CommonWorkRequirement.WBP_CommonWorkRequirement_C",
+            "SubPathString": ""
+          }
+        },
+        {
+          "EPalWorldHUDWidgetBlueprintType::BreedFarm": {
+            "AssetPathName": "/Game/Pal/Blueprint/UI/UserInterface/InGame/CampInfo/WBP_PalWork_BreedFarm.WBP_PalWork_BreedFarm_C",
+            "SubPathString": ""
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "AsyncLoadAndCreateWidget",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "SoftClassProperty",
+        "Name": "widgetClass",
+        "Flags": "RF_Public",
+        "ElementSize": 56,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "AsyncSetupHUDEvent",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BindGameOverUI",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalHUDInGame:BindGameOverUI'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "DisplayHUD_Respawn",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Array_Index_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Loop_Counter_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "CallFunc_Map_Keys_Keys",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ReferenceParm",
+        "Inner": {
+          "Type": "ClassProperty",
+          "Name": "CallFunc_Map_Keys_Keys",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyClass": {
+            "ObjectName": "Class'Class'",
+            "ObjectPath": "/Script/CoreUObject"
+          },
+          "MetaClass": {
+            "ObjectName": "Class'PalUserWidget'",
+            "ObjectPath": "/Script/Pal"
+          }
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_Length_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "CallFunc_Array_Get_Item",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_ClassClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Map_Find_Value",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Map_Find_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_PalHUD_InGame",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalDebugSetting_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalDebugSetting'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "Temp_class_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "K2Node_ClassDynamicCast_AsPal_User_Widget_Stackable_UI",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalUserWidgetStackableUI'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_ClassDynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "K2Node_CustomEvent_Loaded_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "UObjectWrapper",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_PushWidgetStackableUI_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Guid'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "Temp_class_Variable_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "K2Node_ClassDynamicCast_AsPal_User_Widget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_ClassDynamicCast_bSuccess_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "K2Node_CustomEvent_Loaded",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "UObjectWrapper",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "Temp_class_Variable_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "K2Node_ClassDynamicCast_AsPal_User_Widget_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_ClassDynamicCast_bSuccess_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateHUDWidget_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Temp_bool_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "Temp_byte_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EPalHUDWidgetPriority'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "K2Node_CustomEvent_Loaded_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "UObjectWrapper",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "K2Node_Event_EndPlayReason",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EEndPlayReason'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'KismetSystemLibrary:OnAssetClassLoaded__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "SoftClassProperty",
+        "Name": "K2Node_CustomEvent_widgetClass",
+        "Flags": "RF_Public",
+        "ElementSize": 56,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'KismetSystemLibrary:OnAssetClassLoaded__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_CustomEvent_PlayerCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetHUDService_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalHUDService'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Push_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Guid'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'KismetSystemLibrary:OnAssetClassLoaded__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "CallFunc_Map_Find_Value",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EPalHUDWidgetPriority'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Map_Find_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_CustomEvent_Player",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "EnumProperty",
+        "Name": "K2Node_Select_Default",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EPalHUDWidgetPriority'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateHUDWidget_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetGameSetting_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalGameSetting'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetHUDService_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalHUDService'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_3",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalDamageReactionComponent:OnDyingDeadEnd__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalDamageReactionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_4",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPlayerCharacter:OnPlayerRespawnDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_Event_SizeX",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_Event_SizeY",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "HideHUD_ForDeath",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Array_Index_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Loop_Counter_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "CallFunc_Map_Keys_Keys",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ReferenceParm",
+        "Inner": {
+          "Type": "ClassProperty",
+          "Name": "CallFunc_Map_Keys_Keys",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyClass": {
+            "ObjectName": "Class'Class'",
+            "ObjectPath": "/Script/CoreUObject"
+          },
+          "MetaClass": {
+            "ObjectName": "Class'PalUserWidget'",
+            "ObjectPath": "/Script/Pal"
+          }
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_Length_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "CallFunc_Array_Get_Item",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_EqualEqual_ClassClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Map_Find_Value",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Map_Find_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "HideLiftItemDisplay",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Initialize",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalHUDInGame:Initialize'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDyingEnd",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "PlayerCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnLoaded_01D7FBF3483366434C8293A197BFD965",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ClassProperty",
+        "Name": "Loaded",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | UObjectWrapper",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnLoaded_39EEADC54AE57646EA72A79D911211B6",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ClassProperty",
+        "Name": "Loaded",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | UObjectWrapper",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnLoaded_EF35A3894C280426B58FA0A0D5280930",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ClassProperty",
+        "Name": "Loaded",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | UObjectWrapper",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnRespawnPlayer",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Player",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnUpdateLiftSlot",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsLift_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveDrawHUD",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'HUD:ReceiveDrawHUD'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "SizeX",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "SizeY",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCosmetic | FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveEndPlay",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveEndPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ByteProperty",
+        "Name": "EndPlayReason",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EEndPlayReason'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveTick",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveTick'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Setup Lift Item Event",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalUILiftSlotModel:OnUpdateDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetupHUD_Internal",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsEditorBuild_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalDebugSetting_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalDebugSetting'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ShowLiftItemDisplay",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "LiftItemData",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalItemData'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "UpdateWorldHUDs",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_PalHUD_InGame_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.23"
+      },
+      "VariableGuid": "C8ABDB7D-4D1C35CC-9BDC8F81-925B33D2",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_PalHUD_InGame_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PalHUD_InGame_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.24"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_PalHUD_InGame_C:SimpleConstructionScript_0.SCS_Node_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.24"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_PalHUD_InGame_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/BP_PalHUD_InGame.24"
+      }
+    }
+  }
+]

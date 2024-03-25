@@ -1,0 +1,294 @@
+[
+  {
+    "Type": "Function",
+    "Name": "Construct",
+    "Outer": "WBP_CommonCircularGauge_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'UserWidget:Construct'",
+      "ObjectPath": "/Script/UMG"
+    },
+    "FunctionFlags": "FUNC_BlueprintCosmetic | FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_WBP_CommonCircularGauge",
+    "Outer": "WBP_CommonCircularGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_Event_MyGeometry",
+        "Flags": "RF_Public",
+        "ElementSize": 64,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Geometry'",
+          "ObjectPath": "/Script/SlateCore"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_InDeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReflectRateToImage",
+    "Outer": "WBP_CommonCircularGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetDynamicMaterial_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'MaterialInstanceDynamic'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetTargetValue",
+    "Outer": "WBP_CommonCircularGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DoubleProperty",
+        "Name": "Value",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_SetGaugeInterpolationTargetValue_TargetValue_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "ConstParm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Tick",
+    "Outer": "WBP_CommonCircularGauge_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'UserWidget:Tick'",
+      "ObjectPath": "/Script/UMG"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "MyGeometry",
+        "Flags": "RF_Public",
+        "ElementSize": 64,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Geometry'",
+          "ObjectPath": "/Script/SlateCore"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "InDeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCosmetic | FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Image",
+    "Name": "Image_81",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Image'",
+    "Properties": {
+      "Brush": {
+        "ResourceObject": {
+          "ObjectName": "MaterialInstanceConstant'MI_CircleGauge_Craft'",
+          "ObjectPath": "Pal/Content/Pal/Material/UI/Ingame/MI_CircleGauge_Craft.0"
+        }
+      }
+    }
+  },
+  {
+    "Type": "WBP_CommonCircularGauge_C",
+    "Name": "Default__WBP_CommonCircularGauge_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.WBP_CommonCircularGauge_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "GaugeInterpolationCalculator": {
+        "CurrentValue": 0.0,
+        "TargetValue": 0.0,
+        "bDirectionPositive": true
+      },
+      "bHasScriptImplementedPaint": false
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_CommonCircularGauge_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_CommonCircularGauge_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.8"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:ExecuteUbergraph_WBP_CommonCircularGauge'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.1"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'UserWidget'",
+      "ObjectPath": "/Script/UMG"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:SetTargetValue'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.3"
+      },
+      {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:ReflectRateToImage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.2"
+      },
+      {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:Tick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.4"
+      },
+      {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:Construct'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.0"
+      },
+      {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:ExecuteUbergraph_WBP_CommonCircularGauge'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.1"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Image_81",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Image'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "GaugeInterpolationCalculator",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalGaugeInterpolationCalculator'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_WBP_CommonCircularGauge": {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:ExecuteUbergraph_WBP_CommonCircularGauge'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.1"
+      },
+      "Construct": {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:Construct'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.0"
+      },
+      "Tick": {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:Tick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.4"
+      },
+      "ReflectRateToImage": {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:ReflectRateToImage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.2"
+      },
+      "SetTargetValue": {
+        "ObjectName": "Function'WBP_CommonCircularGauge_C:SetTargetValue'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.3"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_CommonCircularGauge_C'Default__WBP_CommonCircularGauge_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.6"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_CommonCircularGauge_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "Image'WBP_CommonCircularGauge_C:WidgetTree.Image_81'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Common/WBP_CommonCircularGauge.5"
+      }
+    }
+  }
+]

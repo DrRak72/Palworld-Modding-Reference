@@ -1,0 +1,1282 @@
+[
+  {
+    "Type": "Function",
+    "Name": "AnmEvent_End",
+    "Outer": "WBP_IngameDamageVinette_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "AnmEvent_Start",
+    "Outer": "WBP_IngameDamageVinette_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_WBP_IngameDamageVinette",
+    "Outer": "WBP_IngameDamageVinette_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAnimation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'UMGSequencePlayer'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAnimation_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'UMGSequencePlayer'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAnimation_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'UMGSequencePlayer'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Image",
+    "Name": "DamageVinette",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Image'",
+    "Properties": {
+      "Brush": {
+        "DrawAs": "ESlateBrushDrawType::Box",
+        "ImageSize": {
+          "X": 512.0,
+          "Y": 512.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_damage_Vinette'",
+          "ObjectPath": "Pal/Content/Pal/Texture/UI/InGame/T_damage_Vinette.0"
+        }
+      },
+      "ColorAndOpacity": {
+        "R": 0.942708,
+        "G": 0.0,
+        "B": 0.0,
+        "A": 0.5,
+        "Hex": "7FF90000"
+      },
+      "Slot": {
+        "ObjectName": "OverlaySlot'WBP_IngameDamageVinette_C:WidgetTree.Overlay_0.OverlaySlot_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.28"
+      }
+    }
+  },
+  {
+    "Type": "Image",
+    "Name": "DamageVinette_1",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Image'",
+    "Properties": {
+      "Brush": {
+        "DrawAs": "ESlateBrushDrawType::Box",
+        "ImageSize": {
+          "X": 512.0,
+          "Y": 512.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_damage_Vinette'",
+          "ObjectPath": "Pal/Content/Pal/Texture/UI/InGame/T_damage_Vinette.0"
+        }
+      },
+      "ColorAndOpacity": {
+        "R": 0.942708,
+        "G": 0.0,
+        "B": 0.0,
+        "A": 0.3,
+        "Hex": "4CF90000"
+      },
+      "Slot": {
+        "ObjectName": "OverlaySlot'WBP_IngameDamageVinette_C:WidgetTree.Overlay_0.OverlaySlot_2'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.29"
+      },
+      "RenderTransform": {
+        "Scale": {
+          "X": -1.0,
+          "Y": 1.0
+        }
+      }
+    }
+  },
+  {
+    "Type": "MovieScene",
+    "Name": "Anm_Close",
+    "Outer": "Anm_Close_INST",
+    "Class": "UScriptClass'MovieScene'",
+    "Properties": {
+      "Possessables": [
+        {
+          "Tags": [],
+          "Guid": "6FD96839-43937045-EC535790-FF339BFB",
+          "Name": "Overlay_0",
+          "ParentGuid": "00000000-00000000-00000000-00000000",
+          "SpawnableObjectBindingID": {
+            "Guid": "00000000-00000000-00000000-00000000",
+            "SequenceID": 0,
+            "ResolveParentIndex": -1
+          }
+        }
+      ],
+      "ObjectBindings": [
+        {
+          "ObjectGuid": "6FD96839-43937045-EC535790-FF339BFB",
+          "BindingName": "Overlay_0",
+          "Tracks": [
+            {
+              "ObjectName": "MovieSceneFloatTrack'WBP_IngameDamageVinette_C:Anm_Close_INST.Anm_Close.MovieSceneFloatTrack_1'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.23"
+            }
+          ]
+        }
+      ],
+      "PlaybackRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 0,
+            "Value": {
+              "Value": 23001
+            }
+          }
+        }
+      },
+      "DisplayRate": {
+        "Numerator": 60
+      },
+      "Signature": "64DC4227-42B807A0-BFCBFB98-BC3162B1"
+    }
+  },
+  {
+    "Type": "MovieScene",
+    "Name": "Anm_Loop",
+    "Outer": "Anm_Loop_INST",
+    "Class": "UScriptClass'MovieScene'",
+    "Properties": {
+      "Possessables": [
+        {
+          "Tags": [],
+          "Guid": "8469DC35-4D266172-3E668081-0E1DF6DF",
+          "Name": "DamageVinette",
+          "ParentGuid": "00000000-00000000-00000000-00000000",
+          "SpawnableObjectBindingID": {
+            "Guid": "00000000-00000000-00000000-00000000",
+            "SequenceID": 0,
+            "ResolveParentIndex": -1
+          }
+        },
+        {
+          "Tags": [],
+          "Guid": "03B81792-4A5D4B14-37E59EB7-0EC203B7",
+          "Name": "DamageVinette_1",
+          "ParentGuid": "00000000-00000000-00000000-00000000",
+          "SpawnableObjectBindingID": {
+            "Guid": "00000000-00000000-00000000-00000000",
+            "SequenceID": 0,
+            "ResolveParentIndex": -1
+          }
+        }
+      ],
+      "ObjectBindings": [
+        {
+          "ObjectGuid": "8469DC35-4D266172-3E668081-0E1DF6DF",
+          "BindingName": "DamageVinette",
+          "Tracks": [
+            {
+              "ObjectName": "MovieSceneFloatTrack'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop.MovieSceneFloatTrack_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.24"
+            }
+          ]
+        },
+        {
+          "ObjectGuid": "03B81792-4A5D4B14-37E59EB7-0EC203B7",
+          "BindingName": "DamageVinette_1",
+          "Tracks": [
+            {
+              "ObjectName": "MovieSceneFloatTrack'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop.MovieSceneFloatTrack_1'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.25"
+            }
+          ]
+        }
+      ],
+      "PlaybackRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 0,
+            "Value": {
+              "Value": 104752
+            }
+          }
+        }
+      },
+      "DisplayRate": {
+        "Numerator": 60
+      },
+      "Signature": "680DEB22-4FF50545-50DB1B88-FFFAA4DF"
+    }
+  },
+  {
+    "Type": "MovieScene",
+    "Name": "Anm_Open",
+    "Outer": "Anm_Open_INST",
+    "Class": "UScriptClass'MovieScene'",
+    "Properties": {
+      "Possessables": [
+        {
+          "Tags": [],
+          "Guid": "38F3AB50-4D112E98-D4005D9B-C3273A65",
+          "Name": "Overlay_0",
+          "ParentGuid": "00000000-00000000-00000000-00000000",
+          "SpawnableObjectBindingID": {
+            "Guid": "00000000-00000000-00000000-00000000",
+            "SequenceID": 0,
+            "ResolveParentIndex": -1
+          }
+        }
+      ],
+      "ObjectBindings": [
+        {
+          "ObjectGuid": "38F3AB50-4D112E98-D4005D9B-C3273A65",
+          "BindingName": "Overlay_0",
+          "Tracks": [
+            {
+              "ObjectName": "MovieSceneFloatTrack'WBP_IngameDamageVinette_C:Anm_Open_INST.Anm_Open.MovieSceneFloatTrack_1'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.26"
+            }
+          ]
+        }
+      ],
+      "PlaybackRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 0,
+            "Value": {
+              "Value": 12001
+            }
+          }
+        }
+      },
+      "DisplayRate": {
+        "Numerator": 60
+      },
+      "Signature": "00CA2ACA-44103DFF-249C4398-8EFC78D6"
+    }
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseInFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseOutFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseInFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseOutFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseInFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseOutFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseInFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseOutFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneCompiledData",
+    "Name": "CompiledData",
+    "Outer": "Anm_Close_INST",
+    "Class": "UScriptClass'MovieSceneCompiledData'"
+  },
+  {
+    "Type": "MovieSceneCompiledData",
+    "Name": "CompiledData",
+    "Outer": "Anm_Loop_INST",
+    "Class": "UScriptClass'MovieSceneCompiledData'"
+  },
+  {
+    "Type": "MovieSceneCompiledData",
+    "Name": "CompiledData",
+    "Outer": "Anm_Open_INST",
+    "Class": "UScriptClass'MovieSceneCompiledData'"
+  },
+  {
+    "Type": "MovieSceneFloatSection",
+    "Name": "MovieSceneFloatSection_0",
+    "Outer": "MovieSceneFloatTrack_1",
+    "Class": "UScriptClass'MovieSceneFloatSection'",
+    "Properties": {
+      "FloatCurve": {
+        "PreInfinityExtrap": "RCCE_Constant",
+        "PostInfinityExtrap": "RCCE_Constant",
+        "Times": [
+          {
+            "Value": 0
+          },
+          {
+            "Value": 23000
+          }
+        ],
+        "Values": [
+          {
+            "Value": 0.6,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 0.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          }
+        ],
+        "DefaultValue": 0.0,
+        "bHasDefaultValue": false,
+        "TickResolution": {
+          "Numerator": 60000,
+          "Denominator": 1
+        },
+        "bShowCurve": false
+      },
+      "Easing": {
+        "EaseIn": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_IngameDamageVinette_C:Anm_Close_INST.Anm_Close.MovieSceneFloatTrack_1.MovieSceneFloatSection_0.EaseInFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.8"
+        },
+        "EaseOut": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_IngameDamageVinette_C:Anm_Close_INST.Anm_Close.MovieSceneFloatTrack_1.MovieSceneFloatSection_0.EaseOutFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.9"
+        }
+      },
+      "SectionRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 23000
+            }
+          }
+        }
+      },
+      "Signature": "F0F2C193-489D2104-89B0848D-B9AA7390"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatSection",
+    "Name": "MovieSceneFloatSection_0",
+    "Outer": "MovieSceneFloatTrack_0",
+    "Class": "UScriptClass'MovieSceneFloatSection'",
+    "Properties": {
+      "FloatCurve": {
+        "PreInfinityExtrap": "RCCE_Constant",
+        "PostInfinityExtrap": "RCCE_Constant",
+        "Times": [
+          {
+            "Value": 0
+          },
+          {
+            "Value": 52375
+          },
+          {
+            "Value": 104750
+          }
+        ],
+        "Values": [
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 0.5,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          }
+        ],
+        "DefaultValue": 0.0,
+        "bHasDefaultValue": false,
+        "TickResolution": {
+          "Numerator": 60000,
+          "Denominator": 1
+        },
+        "bShowCurve": false
+      },
+      "Easing": {
+        "EaseIn": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop.MovieSceneFloatTrack_0.MovieSceneFloatSection_0.EaseInFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.10"
+        },
+        "EaseOut": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop.MovieSceneFloatTrack_0.MovieSceneFloatSection_0.EaseOutFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.11"
+        }
+      },
+      "SectionRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 104750
+            }
+          }
+        }
+      },
+      "Signature": "A18BB3FB-4066DC9E-AC289195-9E0B0B4D"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatSection",
+    "Name": "MovieSceneFloatSection_0",
+    "Outer": "MovieSceneFloatTrack_1",
+    "Class": "UScriptClass'MovieSceneFloatSection'",
+    "Properties": {
+      "FloatCurve": {
+        "PreInfinityExtrap": "RCCE_Constant",
+        "PostInfinityExtrap": "RCCE_Constant",
+        "Times": [
+          {
+            "Value": 0
+          },
+          {
+            "Value": 26188
+          },
+          {
+            "Value": 52376
+          },
+          {
+            "Value": 78563
+          },
+          {
+            "Value": 104751
+          }
+        ],
+        "Values": [
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 0.1,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 0.1,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          }
+        ],
+        "DefaultValue": 0.0,
+        "bHasDefaultValue": false,
+        "TickResolution": {
+          "Numerator": 60000,
+          "Denominator": 1
+        },
+        "bShowCurve": false
+      },
+      "Easing": {
+        "EaseIn": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop.MovieSceneFloatTrack_1.MovieSceneFloatSection_0.EaseInFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.12"
+        },
+        "EaseOut": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop.MovieSceneFloatTrack_1.MovieSceneFloatSection_0.EaseOutFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.13"
+        }
+      },
+      "SectionRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 104751
+            }
+          }
+        }
+      },
+      "Signature": "8BEBFC13-403F4AC8-2AC97C90-E964404B"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatSection",
+    "Name": "MovieSceneFloatSection_0",
+    "Outer": "MovieSceneFloatTrack_1",
+    "Class": "UScriptClass'MovieSceneFloatSection'",
+    "Properties": {
+      "FloatCurve": {
+        "PreInfinityExtrap": "RCCE_Constant",
+        "PostInfinityExtrap": "RCCE_Constant",
+        "Times": [
+          {
+            "Value": 0
+          },
+          {
+            "Value": 12000
+          }
+        ],
+        "Values": [
+          {
+            "Value": 0.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 0.6,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          }
+        ],
+        "DefaultValue": 0.0,
+        "bHasDefaultValue": false,
+        "TickResolution": {
+          "Numerator": 60000,
+          "Denominator": 1
+        },
+        "bShowCurve": false
+      },
+      "Easing": {
+        "EaseIn": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_IngameDamageVinette_C:Anm_Open_INST.Anm_Open.MovieSceneFloatTrack_1.MovieSceneFloatSection_0.EaseInFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.14"
+        },
+        "EaseOut": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_IngameDamageVinette_C:Anm_Open_INST.Anm_Open.MovieSceneFloatTrack_1.MovieSceneFloatSection_0.EaseOutFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.15"
+        }
+      },
+      "SectionRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 12000
+            }
+          }
+        }
+      },
+      "Signature": "8BA9C3BC-44B81554-38AC56BF-9EB92ECE"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatTrack",
+    "Name": "MovieSceneFloatTrack_1",
+    "Outer": "Anm_Close",
+    "Class": "UScriptClass'MovieSceneFloatTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderOpacity",
+        "PropertyPath": "RenderOpacity",
+        "bCanUseClassLookup": true
+      },
+      "Sections": [
+        {
+          "ObjectName": "MovieSceneFloatSection'WBP_IngameDamageVinette_C:Anm_Close_INST.Anm_Close.MovieSceneFloatTrack_1.MovieSceneFloatSection_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.19"
+        }
+      ],
+      "EvaluationFieldGuid": "C8EAFDB6-4D13D9AE-8B794B90-8FEACC09",
+      "EvaluationField": {
+        "Entries": [
+          {
+            "Section": {
+              "ObjectName": "MovieSceneFloatSection'WBP_IngameDamageVinette_C:Anm_Close_INST.Anm_Close.MovieSceneFloatTrack_1.MovieSceneFloatSection_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.19"
+            },
+            "Range": {
+              "LowerBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 0
+                }
+              },
+              "UpperBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 23000
+                }
+              }
+            },
+            "ForcedTime": {
+              "Value": -2147483648
+            },
+            "Flags": "ESectionEvaluationFlags::None",
+            "LegacySortOrder": 0
+          }
+        ]
+      },
+      "Signature": "C8EAFDB6-4D13D9AE-8B794B90-8FEACC09"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatTrack",
+    "Name": "MovieSceneFloatTrack_0",
+    "Outer": "Anm_Loop",
+    "Class": "UScriptClass'MovieSceneFloatTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderOpacity",
+        "PropertyPath": "RenderOpacity",
+        "bCanUseClassLookup": true
+      },
+      "Sections": [
+        {
+          "ObjectName": "MovieSceneFloatSection'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop.MovieSceneFloatTrack_0.MovieSceneFloatSection_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.20"
+        }
+      ],
+      "EvaluationFieldGuid": "30C2ECEE-49EACA52-94BEB9BD-92C41E15",
+      "EvaluationField": {
+        "Entries": [
+          {
+            "Section": {
+              "ObjectName": "MovieSceneFloatSection'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop.MovieSceneFloatTrack_0.MovieSceneFloatSection_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.20"
+            },
+            "Range": {
+              "LowerBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 0
+                }
+              },
+              "UpperBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 104750
+                }
+              }
+            },
+            "ForcedTime": {
+              "Value": -2147483648
+            },
+            "Flags": "ESectionEvaluationFlags::None",
+            "LegacySortOrder": 0
+          }
+        ]
+      },
+      "Signature": "30C2ECEE-49EACA52-94BEB9BD-92C41E15"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatTrack",
+    "Name": "MovieSceneFloatTrack_1",
+    "Outer": "Anm_Loop",
+    "Class": "UScriptClass'MovieSceneFloatTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderOpacity",
+        "PropertyPath": "RenderOpacity",
+        "bCanUseClassLookup": true
+      },
+      "Sections": [
+        {
+          "ObjectName": "MovieSceneFloatSection'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop.MovieSceneFloatTrack_1.MovieSceneFloatSection_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.21"
+        }
+      ],
+      "EvaluationFieldGuid": "C32E1618-4DCCE795-2E4F58AA-9F1DABB7",
+      "EvaluationField": {
+        "Entries": [
+          {
+            "Section": {
+              "ObjectName": "MovieSceneFloatSection'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop.MovieSceneFloatTrack_1.MovieSceneFloatSection_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.21"
+            },
+            "Range": {
+              "LowerBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 0
+                }
+              },
+              "UpperBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 104751
+                }
+              }
+            },
+            "ForcedTime": {
+              "Value": -2147483648
+            },
+            "Flags": "ESectionEvaluationFlags::None",
+            "LegacySortOrder": 0
+          }
+        ]
+      },
+      "Signature": "C32E1618-4DCCE795-2E4F58AA-9F1DABB7"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatTrack",
+    "Name": "MovieSceneFloatTrack_1",
+    "Outer": "Anm_Open",
+    "Class": "UScriptClass'MovieSceneFloatTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderOpacity",
+        "PropertyPath": "RenderOpacity",
+        "bCanUseClassLookup": true
+      },
+      "Sections": [
+        {
+          "ObjectName": "MovieSceneFloatSection'WBP_IngameDamageVinette_C:Anm_Open_INST.Anm_Open.MovieSceneFloatTrack_1.MovieSceneFloatSection_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.22"
+        }
+      ],
+      "EvaluationFieldGuid": "E83AC81B-435A1D8D-7813F893-38DB5AAD",
+      "EvaluationField": {
+        "Entries": [
+          {
+            "Section": {
+              "ObjectName": "MovieSceneFloatSection'WBP_IngameDamageVinette_C:Anm_Open_INST.Anm_Open.MovieSceneFloatTrack_1.MovieSceneFloatSection_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.22"
+            },
+            "Range": {
+              "LowerBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 0
+                }
+              },
+              "UpperBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 12000
+                }
+              }
+            },
+            "ForcedTime": {
+              "Value": -2147483648
+            },
+            "Flags": "ESectionEvaluationFlags::None",
+            "LegacySortOrder": 0
+          }
+        ]
+      },
+      "Signature": "E83AC81B-435A1D8D-7813F893-38DB5AAD"
+    }
+  },
+  {
+    "Type": "Overlay",
+    "Name": "Overlay_0",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Overlay'",
+    "Properties": {
+      "Slots": [
+        {
+          "ObjectName": "OverlaySlot'WBP_IngameDamageVinette_C:WidgetTree.Overlay_0.OverlaySlot_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.28"
+        },
+        {
+          "ObjectName": "OverlaySlot'WBP_IngameDamageVinette_C:WidgetTree.Overlay_0.OverlaySlot_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.29"
+        }
+      ],
+      "RenderOpacity": 0.0
+    }
+  },
+  {
+    "Type": "OverlaySlot",
+    "Name": "OverlaySlot_0",
+    "Outer": "Overlay_0",
+    "Class": "UScriptClass'OverlaySlot'",
+    "Properties": {
+      "Padding": {
+        "Left": -270.0,
+        "Top": -270.0,
+        "Right": -270.0,
+        "Bottom": -270.0
+      },
+      "HorizontalAlignment": "EHorizontalAlignment::HAlign_Fill",
+      "VerticalAlignment": "EVerticalAlignment::VAlign_Fill",
+      "Parent": {
+        "ObjectName": "Overlay'WBP_IngameDamageVinette_C:WidgetTree.Overlay_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.27"
+      },
+      "Content": {
+        "ObjectName": "Image'WBP_IngameDamageVinette_C:WidgetTree.DamageVinette'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.3"
+      }
+    }
+  },
+  {
+    "Type": "OverlaySlot",
+    "Name": "OverlaySlot_2",
+    "Outer": "Overlay_0",
+    "Class": "UScriptClass'OverlaySlot'",
+    "Properties": {
+      "Padding": {
+        "Left": -400.0,
+        "Top": -150.0,
+        "Right": -400.0,
+        "Bottom": -150.0
+      },
+      "HorizontalAlignment": "EHorizontalAlignment::HAlign_Fill",
+      "VerticalAlignment": "EVerticalAlignment::VAlign_Fill",
+      "Parent": {
+        "ObjectName": "Overlay'WBP_IngameDamageVinette_C:WidgetTree.Overlay_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.27"
+      },
+      "Content": {
+        "ObjectName": "Image'WBP_IngameDamageVinette_C:WidgetTree.DamageVinette_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.4"
+      }
+    }
+  },
+  {
+    "Type": "WBP_IngameDamageVinette_C",
+    "Name": "Default__WBP_IngameDamageVinette_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.WBP_IngameDamageVinette_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "bHasScriptImplementedTick": false,
+      "bHasScriptImplementedPaint": false
+    }
+  },
+  {
+    "Type": "WidgetAnimation",
+    "Name": "Anm_Close_INST",
+    "Outer": "WBP_IngameDamageVinette_C",
+    "Class": "UScriptClass'WidgetAnimation'",
+    "Properties": {
+      "MovieScene": {
+        "ObjectName": "MovieScene'WBP_IngameDamageVinette_C:Anm_Close_INST.Anm_Close'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.5"
+      },
+      "AnimationBindings": [
+        {
+          "WidgetName": "Overlay_0",
+          "SlotWidgetName": "None",
+          "AnimationGuid": "6FD96839-43937045-EC535790-FF339BFB",
+          "bIsRootWidget": false
+        }
+      ],
+      "DisplayLabel": "Anm_Close",
+      "CompiledData": {
+        "ObjectName": "MovieSceneCompiledData'WBP_IngameDamageVinette_C:Anm_Close_INST.CompiledData'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.16"
+      },
+      "Signature": "9419BE08-4A0DDD5E-C33E7383-5EB8D20F"
+    }
+  },
+  {
+    "Type": "WidgetAnimation",
+    "Name": "Anm_Loop_INST",
+    "Outer": "WBP_IngameDamageVinette_C",
+    "Class": "UScriptClass'WidgetAnimation'",
+    "Properties": {
+      "MovieScene": {
+        "ObjectName": "MovieScene'WBP_IngameDamageVinette_C:Anm_Loop_INST.Anm_Loop'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.6"
+      },
+      "AnimationBindings": [
+        {
+          "WidgetName": "DamageVinette",
+          "SlotWidgetName": "None",
+          "AnimationGuid": "8469DC35-4D266172-3E668081-0E1DF6DF",
+          "bIsRootWidget": false
+        },
+        {
+          "WidgetName": "DamageVinette_1",
+          "SlotWidgetName": "None",
+          "AnimationGuid": "03B81792-4A5D4B14-37E59EB7-0EC203B7",
+          "bIsRootWidget": false
+        }
+      ],
+      "DisplayLabel": "Anm_Loop",
+      "CompiledData": {
+        "ObjectName": "MovieSceneCompiledData'WBP_IngameDamageVinette_C:Anm_Loop_INST.CompiledData'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.17"
+      },
+      "Signature": "F408D0B9-40F22C19-4656399F-046F4FD1"
+    }
+  },
+  {
+    "Type": "WidgetAnimation",
+    "Name": "Anm_Open_INST",
+    "Outer": "WBP_IngameDamageVinette_C",
+    "Class": "UScriptClass'WidgetAnimation'",
+    "Properties": {
+      "MovieScene": {
+        "ObjectName": "MovieScene'WBP_IngameDamageVinette_C:Anm_Open_INST.Anm_Open'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.7"
+      },
+      "AnimationBindings": [
+        {
+          "WidgetName": "Overlay_0",
+          "SlotWidgetName": "None",
+          "AnimationGuid": "38F3AB50-4D112E98-D4005D9B-C3273A65",
+          "bIsRootWidget": false
+        }
+      ],
+      "DisplayLabel": "Anm_Open",
+      "CompiledData": {
+        "ObjectName": "MovieSceneCompiledData'WBP_IngameDamageVinette_C:Anm_Open_INST.CompiledData'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.18"
+      },
+      "Signature": "3E7B3F30-4E3D7C2D-4FADB2B0-A062F7C5"
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_IngameDamageVinette_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_IngameDamageVinette_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.35"
+      },
+      "Animations": [
+        {
+          "ObjectName": "WidgetAnimation'WBP_IngameDamageVinette_C:Anm_Open_INST'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.33"
+        },
+        {
+          "ObjectName": "WidgetAnimation'WBP_IngameDamageVinette_C:Anm_Close_INST'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.31"
+        },
+        {
+          "ObjectName": "WidgetAnimation'WBP_IngameDamageVinette_C:Anm_Loop_INST'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.32"
+        }
+      ],
+      "UberGraphFunction": {
+        "ObjectName": "Function'WBP_IngameDamageVinette_C:ExecuteUbergraph_WBP_IngameDamageVinette'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.2"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'UserWidget'",
+      "ObjectPath": "/Script/UMG"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_IngameDamageVinette_C:AnmEvent_Start'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.1"
+      },
+      {
+        "ObjectName": "Function'WBP_IngameDamageVinette_C:AnmEvent_End'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.0"
+      },
+      {
+        "ObjectName": "Function'WBP_IngameDamageVinette_C:ExecuteUbergraph_WBP_IngameDamageVinette'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.2"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Anm_Loop",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Transient | RepSkip",
+        "PropertyClass": {
+          "ObjectName": "Class'WidgetAnimation'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Anm_Close",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Transient | RepSkip",
+        "PropertyClass": {
+          "ObjectName": "Class'WidgetAnimation'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Anm_Open",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Transient | RepSkip",
+        "PropertyClass": {
+          "ObjectName": "Class'WidgetAnimation'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DamageVinette",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Image'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "DamageVinette_1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Image'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_WBP_IngameDamageVinette": {
+        "ObjectName": "Function'WBP_IngameDamageVinette_C:ExecuteUbergraph_WBP_IngameDamageVinette'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.2"
+      },
+      "AnmEvent_End": {
+        "ObjectName": "Function'WBP_IngameDamageVinette_C:AnmEvent_End'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.0"
+      },
+      "AnmEvent_Start": {
+        "ObjectName": "Function'WBP_IngameDamageVinette_C:AnmEvent_Start'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.1"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_IngameDamageVinette_C'Default__WBP_IngameDamageVinette_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.30"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_IngameDamageVinette_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "Overlay'WBP_IngameDamageVinette_C:WidgetTree.Overlay_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/DamageEffect/WBP_IngameDamageVinette.27"
+      }
+    }
+  }
+]

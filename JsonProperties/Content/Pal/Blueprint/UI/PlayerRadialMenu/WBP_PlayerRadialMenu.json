@@ -1,0 +1,3623 @@
+[
+  {
+    "Type": "CanvasPanel",
+    "Name": "CanvasPanel_0",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'CanvasPanel'",
+    "Properties": {
+      "Slots": [
+        {
+          "ObjectName": "CanvasPanelSlot'WBP_PlayerRadialMenu_C:WidgetTree.CanvasPanel_0.CanvasPanelSlot_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.1"
+        }
+      ],
+      "bIsVariable": true,
+      "Visibility": "ESlateVisibility::Hidden"
+    }
+  },
+  {
+    "Type": "CanvasPanelSlot",
+    "Name": "CanvasPanelSlot_1",
+    "Outer": "CanvasPanel_0",
+    "Class": "UScriptClass'CanvasPanelSlot'",
+    "Properties": {
+      "LayoutData": {
+        "Offsets": {
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "Anchors": {
+          "Maximum": {
+            "X": 1.0,
+            "Y": 1.0
+          }
+        },
+        "Alignment": {
+          "X": 0.5,
+          "Y": 0.5
+        }
+      },
+      "Parent": {
+        "ObjectName": "CanvasPanel'WBP_PlayerRadialMenu_C:WidgetTree.CanvasPanel_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.0"
+      },
+      "Content": {
+        "ObjectName": "WBP_CommonRadialMenuBase_C'WBP_PlayerRadialMenu_C:WidgetTree.WBP_CommonRadialMenuBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.39"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "BindOpenPlayerActionMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "BindPlayerActionMenuEvent",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_OtomoPalHolderComponent_C:OnInactiveOtomoEvent__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.40"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalDamageReactionComponent:OnDamageDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_OtomoPalHolderComponent_C:OnActivateOtomo__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.38"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Otomo_Pal_Holder_Component",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Can Open Player Action Menu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "Result",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetExecutionStatus_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalStatusBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsExecuting_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Player_Controller",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerController'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsRiding_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "CloseConstructionMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Menu",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_IngameMenuConstruction_Radial_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/IngameMenu/Construction/WBP_IngameMenuConstruction_Radial.200"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "FindIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetHUDService_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalHUDService'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_RemoveChild_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CloseMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetHUDService_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalHUDService'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasConstructionMenu_HasMenu",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CloseSetup",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalShooterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Player_Controller",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerController'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchEnum_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CreateConstructionMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "createdWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_IngameMenuConstruction_Radial_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/IngameMenu/Construction/WBP_IngameMenuConstruction_Radial.200"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_AddChildToCanvas_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_Anchors",
+        "Flags": "RF_Public",
+        "ElementSize": 32,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Anchors'",
+          "ObjectPath": "/Script/Slate"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Create_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_IngameMenuConstruction_Radial_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/IngameMenu/Construction/WBP_IngameMenuConstruction_Radial.200"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CreateEmoteMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_2",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_3",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_4",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_5",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_6",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_6",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_6",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CreateInstructionsAdditionalWidget",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "TextProperty",
+        "Name": "inText",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "createdWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Create_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CreatePlayerActionMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "TmpMsgID",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "OtomoNickName",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "TextColor_NothingOtomo",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Struct": {
+          "ObjectName": "ScriptStruct'SlateColor'",
+          "ObjectPath": "/Script/SlateCore"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SpawnedOtomo",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsOtomoActivated",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetHasWeapon_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalWeaponBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Meat_Cutter_Knife",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_MeatCutterKnife_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeatCutterKnife.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_2",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_3",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_4",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_5",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Conv_StringToText_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_FormatArgumentData",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'FormatArgumentData'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "K2Node_MakeArray_Array",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ReferenceParm",
+        "Inner": {
+          "Type": "StructProperty",
+          "Name": "K2Node_MakeArray_Array",
+          "Flags": "RF_Public",
+          "ElementSize": 80,
+          "Struct": {
+            "ObjectName": "ScriptStruct'FormatArgumentData'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Conv_StringToText_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Format_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_FormatArgumentData_1",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'FormatArgumentData'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "K2Node_MakeArray_Array_1",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ReferenceParm",
+        "Inner": {
+          "Type": "StructProperty",
+          "Name": "K2Node_MakeArray_Array_1",
+          "Flags": "RF_Public",
+          "ElementSize": 80,
+          "Struct": {
+            "ObjectName": "ScriptStruct'FormatArgumentData'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_4",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_6",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Format_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_6",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_5",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_6",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_7",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateInstructionsAdditionalWidget_createdWidget_7",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_PlayerRadialMenu_MenuContent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu_MenuContent.4"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetSpawnedOtomo_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetCharacterParameterComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetIndividualParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_GetNickName_outName",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Set_Additional_Widget_Canvas_7",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "EmptyFunction",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_WBP_PlayerRadialMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPlayerController:OnPressConstructionMenuButtonDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetHUDService_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalHUDService'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalHUDService:OnPushedStackableUI__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalRiderComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalRiderComponent:OnRide__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_3",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPlayerController:OnPressedPartnerInstructionsButtonDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Player_Controller",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerController'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Player_Controller_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerController'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Player_Controller_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerController'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_4",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "HasConstructionMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "HasMenu",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "IsAnyMenuOpened",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "IsOpened",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "IsPlayerDying",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "IsDying",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetExecutionStatus_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalStatusBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "IsPlayerRiding",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "IsRiding",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Player_Controller",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerController'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsRiding_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDamagedPlayer",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "DamageResult",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDamageResult'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDecidedEmoteMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "index",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "EmoteAction",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchInteger_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValidClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAction_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetCurrentAction_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "CallFunc_GetObjectClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_ClassIsChildOf_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDecidedInstruction_Care",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "HumanAction",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Enum": {
+          "ObjectName": "Enum'EPalActionType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetCurrentAction_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Action_Pair_Standby_Petting",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_ActionPairStandby_Petting_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Palmi/Pair/BP_ActionPairStandby_Petting.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Action_Cut_Pal_Meat_Player",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_ActionCutPalMeat_Player_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Action/Palmi/BP_ActionCutPalMeat_Player.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetHasWeapon_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalWeaponBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Meat_Cutter_Knife",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_MeatCutterKnife_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_MeatCutterKnife.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetSpawnedOtomo_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_ActionDynamicParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 224,
+        "Struct": {
+          "ObjectName": "ScriptStruct'ActionDynamicParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayActionByTypeParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalActionBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDecidedInstruction_Feed",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetSpawnedOtomo_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDecidedPlayerActionMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "index",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_SwitchInteger_CmpSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnOtomoChanged_Activated",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnOtomoChanged_Inactivated",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnPlayerRideOn",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "RideActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnPressConstructionMenuButton",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnPushedAnyWidget",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "pushedWidgetID",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Guid'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Open Emote Menu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_CommonRadialMenuBase_C:OnDecideIndex_forBP__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/RadialMenu/WBP_CommonRadialMenuBase.25"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OpenConstructionMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "NameProperty",
+        "Name": "SelectMapObjectId",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "SelectedIndex",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GreaterEqual_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Divide_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsPlayerDying_IsDying",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetHUDService_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalHUDService'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_IngameMenuConstruction_Radial_C:OnBuildModeStart__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/IngameMenu/Construction/WBP_IngameMenuConstruction_Radial.47"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_HasConstructionMenu_HasMenu",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_CreateConstructionMenu_createdWidget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_IngameMenuConstruction_Radial_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/IngameMenu/Construction/WBP_IngameMenuConstruction_Radial.200"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsPlayerRiding_IsRiding",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BooleanOR_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OpenMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetHUDService_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalHUDService'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OpenPlayerActionMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Can_Open_Player_Action_Menu_Result",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_CommonRadialMenuBase_C:OnDecideIndex_forBP__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/RadialMenu/WBP_CommonRadialMenuBase.25"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_GetSpawnedOtomoID_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetSpawnedOtomo_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OpenSetup",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'OnInputAction__DelegateSignature'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'OnInputAction__DelegateSignature'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalShooterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Player_Controller",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerController'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetInteractEnable",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "IsInteractEnable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalInteractComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetupEvent",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "UnbindOpenPlayerActionMenu",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "UnbindPlayerActionMenuEvent",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_OtomoPalHolderComponent_C:OnInactiveOtomoEvent__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.40"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_OtomoPalHolderComponent_C:OnActivateOtomo__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.38"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalDamageReactionComponent:OnDamageDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Otomo_Pal_Holder_Component",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "MovieScene",
+    "Name": "Default_In",
+    "Outer": "Default_In_INST",
+    "Class": "UScriptClass'MovieScene'",
+    "Properties": {
+      "PlaybackRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 0,
+            "Value": {
+              "Value": 300001
+            }
+          }
+        }
+      },
+      "DisplayRate": {
+        "Numerator": 20
+      },
+      "Signature": "5D195B29-4BB70C8A-21EEB983-5E550B36"
+    }
+  },
+  {
+    "Type": "MovieSceneCompiledData",
+    "Name": "CompiledData",
+    "Outer": "Default_In_INST",
+    "Class": "UScriptClass'MovieSceneCompiledData'",
+    "Properties": {
+      "CompiledSignature": "4EB89F1C-46D344FF-03881186-90646793",
+      "CompilerVersion": "7D4B9809-2FAC4A6B-964ECF72-D8279EF8"
+    }
+  },
+  {
+    "Type": "WBP_CommonRadialMenuBase_C",
+    "Name": "WBP_CommonRadialMenuBase",
+    "Outer": "WidgetTree",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/CommonWidget/RadialMenu/WBP_CommonRadialMenuBase.WBP_CommonRadialMenuBase_C'",
+    "Template": {
+      "ObjectName": "WBP_CommonRadialMenuBase_C'Default__WBP_CommonRadialMenuBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/RadialMenu/WBP_CommonRadialMenuBase.51"
+    },
+    "Properties": {
+      "additionalWidgetOffsetLength": 350.0,
+      "shiftDegree": 0,
+      "OnVisibilityChanged": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "WBP_CommonRadialMenuBase_C'WBP_PlayerRadialMenu_C:WidgetTree.WBP_CommonRadialMenuBase'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.39"
+            },
+            "FunctionName": "VisibilityOverride"
+          }
+        ]
+      },
+      "Slot": {
+        "ObjectName": "CanvasPanelSlot'WBP_PlayerRadialMenu_C:WidgetTree.CanvasPanel_0.CanvasPanelSlot_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.1"
+      }
+    }
+  },
+  {
+    "Type": "WBP_PlayerRadialMenu_C",
+    "Name": "Default__WBP_PlayerRadialMenu_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.WBP_PlayerRadialMenu_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "cameraModifierName": "RadialMenuCameraMod",
+      "DecideMenuAction": {
+        "Key": "RadialMenuDecide"
+      },
+      "Action Handle": {},
+      "FeedMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PAL_INSTRUCTION_FEED"
+      },
+      "FeedWithNameMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PAL_INSTRUCTION_FEED_WITH_NAME"
+      },
+      "CareMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PAL_INSTRUCTION_CARE"
+      },
+      "CareWithNameMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PAL_INSTRUCTION_CARE_WITH_NAME"
+      },
+      "EmoteTitleMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PLAYER_ACTION_RADIALMENU_EMOTE"
+      },
+      "InteractDIsableFlagName": "PlayerRadialMenu",
+      "InstructionAttackMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PAL_INSTRUCTION_ATTACK"
+      },
+      "InstructionAssistMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PAL_INSTRUCTION_ASSIST"
+      },
+      "InstructionEscapetMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PAL_INSTRUCTION_ESCAPE"
+      },
+      "EmoteMsgID_0": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PLAYER_ACTION_EMOTE_0"
+      },
+      "EmoteMsgID_1": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PLAYER_ACTION_EMOTE_1"
+      },
+      "EmoteMsgID_2": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PLAYER_ACTION_EMOTE_2"
+      },
+      "EmoteMsgID_3": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PLAYER_ACTION_EMOTE_3"
+      },
+      "EmoteMsgID_4": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PLAYER_ACTION_EMOTE_4"
+      },
+      "EmoteMsgID_5": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PLAYER_ACTION_EMOTE_5"
+      },
+      "EmoteMsgID_6": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PLAYER_ACTION_EMOTE_6"
+      },
+      "EmoteMsgID_7": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PLAYER_ACTION_EMOTE_7"
+      },
+      "SlaughterMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "PAL_INSTRUCTION_SLAUGHTER"
+      },
+      "bConsumePointerInput": true,
+      "Priority": 15,
+      "bIsFocusable": true,
+      "bHasScriptImplementedTick": false,
+      "bHasScriptImplementedPaint": false,
+      "Visibility": "ESlateVisibility::HitTestInvisible"
+    }
+  },
+  {
+    "Type": "WidgetAnimation",
+    "Name": "Default_In_INST",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'WidgetAnimation'",
+    "Properties": {
+      "MovieScene": {
+        "ObjectName": "MovieScene'WBP_PlayerRadialMenu_C:Default_In_INST.Default_In'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.37"
+      },
+      "DisplayLabel": "Default_In",
+      "CompiledData": {
+        "ObjectName": "MovieSceneCompiledData'WBP_PlayerRadialMenu_C:Default_In_INST.CompiledData'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.38"
+      },
+      "Signature": "4EB89F1C-46D344FF-03881186-90646793"
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_PlayerRadialMenu_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.43"
+      },
+      "bClassRequiresNativeTick": true,
+      "Animations": [
+        {
+          "ObjectName": "WidgetAnimation'WBP_PlayerRadialMenu_C:Default_In_INST'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.41"
+        }
+      ],
+      "UberGraphFunction": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:ExecuteUbergraph_WBP_PlayerRadialMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.13"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalUIPlayerRadialMenuBase'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:IsPlayerDying'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.16"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:IsAnyMenuOpened'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.15"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:SetInteractEnable'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.33"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:EmptyFunction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.12"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:HasConstructionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.14"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:IsPlayerRiding'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.17"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CloseConstructionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.5"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CreateConstructionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.8"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OpenConstructionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.29"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnPressConstructionMenuButton'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.26"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnDecidedEmoteMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.19"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CreateEmoteMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.9"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:Open Emote Menu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.28"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnPlayerRideOn'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.25"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnDecidedInstruction_Care'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.20"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnDecidedInstruction_Feed'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.21"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnDecidedPlayerActionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.22"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnOtomoChanged_Inactivated'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.24"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnOtomoChanged_Activated'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.23"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:UnbindPlayerActionMenuEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.36"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:BindPlayerActionMenuEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.3"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CreateInstructionsAdditionalWidget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.10"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnDamagedPlayer'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.18"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CloseSetup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.7"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CloseMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.6"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CreatePlayerActionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.11"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:Can Open Player Action Menu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.4"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OpenSetup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.32"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OpenMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.30"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OpenPlayerActionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.31"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnPushedAnyWidget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.27"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:BindOpenPlayerActionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.2"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:UnbindOpenPlayerActionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.35"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:SetupEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.34"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:ExecuteUbergraph_WBP_PlayerRadialMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.13"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Default_In",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Transient | RepSkip",
+        "PropertyClass": {
+          "ObjectName": "Class'WidgetAnimation'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CanvasPanel_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanel'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WBP_CommonRadialMenuBase",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_CommonRadialMenuBase_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/RadialMenu/WBP_CommonRadialMenuBase.55"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "isAnyRadialMenuOpened",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "cameraModifierName",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "OpenedRadialType",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Enum": {
+          "ObjectName": "UserDefinedEnum'EPlayerRadialMenuOpenType'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/EPlayerRadialMenuOpenType.0"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "otomoIndex",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "DecideMenuAction",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_UIInputAction'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Action Handle",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalUIActionBindData'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "FeedMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "FeedWithNameMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CareMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CareWithNameMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "EmoteTitleMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "ConstructionMenu",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_IngameMenuConstruction_Radial_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/IngameMenu/Construction/WBP_IngameMenuConstruction_Radial.200"
+        }
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "InteractDIsableFlagName",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 12,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "InstructionAttackMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "InstructionAssistMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "InstructionEscapetMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "EmoteMsgID_0",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "EmoteMsgID_1",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "EmoteMsgID_2",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "EmoteMsgID_3",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "EmoteMsgID_4",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "EmoteMsgID_5",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "EmoteMsgID_6",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "EmoteMsgID_7",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "SlaughterMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_WBP_PlayerRadialMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:ExecuteUbergraph_WBP_PlayerRadialMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.13"
+      },
+      "SetupEvent": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:SetupEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.34"
+      },
+      "UnbindOpenPlayerActionMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:UnbindOpenPlayerActionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.35"
+      },
+      "BindOpenPlayerActionMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:BindOpenPlayerActionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.2"
+      },
+      "OnPushedAnyWidget": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnPushedAnyWidget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.27"
+      },
+      "OpenPlayerActionMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OpenPlayerActionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.31"
+      },
+      "OpenMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OpenMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.30"
+      },
+      "OpenSetup": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OpenSetup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.32"
+      },
+      "Can Open Player Action Menu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:Can Open Player Action Menu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.4"
+      },
+      "CreatePlayerActionMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CreatePlayerActionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.11"
+      },
+      "CloseMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CloseMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.6"
+      },
+      "CloseSetup": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CloseSetup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.7"
+      },
+      "OnDamagedPlayer": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnDamagedPlayer'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.18"
+      },
+      "CreateInstructionsAdditionalWidget": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CreateInstructionsAdditionalWidget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.10"
+      },
+      "BindPlayerActionMenuEvent": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:BindPlayerActionMenuEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.3"
+      },
+      "UnbindPlayerActionMenuEvent": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:UnbindPlayerActionMenuEvent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.36"
+      },
+      "OnOtomoChanged_Activated": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnOtomoChanged_Activated'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.23"
+      },
+      "OnOtomoChanged_Inactivated": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnOtomoChanged_Inactivated'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.24"
+      },
+      "OnDecidedPlayerActionMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnDecidedPlayerActionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.22"
+      },
+      "OnDecidedInstruction_Feed": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnDecidedInstruction_Feed'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.21"
+      },
+      "OnDecidedInstruction_Care": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnDecidedInstruction_Care'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.20"
+      },
+      "OnPlayerRideOn": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnPlayerRideOn'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.25"
+      },
+      "Open Emote Menu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:Open Emote Menu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.28"
+      },
+      "CreateEmoteMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CreateEmoteMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.9"
+      },
+      "OnDecidedEmoteMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnDecidedEmoteMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.19"
+      },
+      "OnPressConstructionMenuButton": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OnPressConstructionMenuButton'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.26"
+      },
+      "OpenConstructionMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:OpenConstructionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.29"
+      },
+      "CreateConstructionMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CreateConstructionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.8"
+      },
+      "CloseConstructionMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:CloseConstructionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.5"
+      },
+      "IsPlayerRiding": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:IsPlayerRiding'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.17"
+      },
+      "HasConstructionMenu": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:HasConstructionMenu'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.14"
+      },
+      "EmptyFunction": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:EmptyFunction'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.12"
+      },
+      "SetInteractEnable": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:SetInteractEnable'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.33"
+      },
+      "IsAnyMenuOpened": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:IsAnyMenuOpened'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.15"
+      },
+      "IsPlayerDying": {
+        "ObjectName": "Function'WBP_PlayerRadialMenu_C:IsPlayerDying'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.16"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_PlayerRadialMenu_C'Default__WBP_PlayerRadialMenu_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.40"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_PlayerRadialMenu_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "CanvasPanel'WBP_PlayerRadialMenu_C:WidgetTree.CanvasPanel_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PlayerRadialMenu/WBP_PlayerRadialMenu.0"
+      }
+    }
+  }
+]

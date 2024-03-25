@@ -1,0 +1,507 @@
+[
+  {
+    "Type": "BP_PalTextBlock_C",
+    "Name": "Text_Price",
+    "Outer": "WidgetTree",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/PalTextBlock/BP_PalTextBlock.BP_PalTextBlock_C'",
+    "Template": {
+      "ObjectName": "BP_PalTextBlock_C'Default__BP_PalTextBlock_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PalTextBlock/BP_PalTextBlock.1"
+    },
+    "Properties": {
+      "Text": {
+        "Namespace": "",
+        "Key": "1638D765413FE70E2D88978A8FD67922",
+        "SourceString": "999999(99999)",
+        "LocalizedString": "999999(99999)"
+      },
+      "Font": {
+        "FontMaterial": {
+          "ObjectName": "MaterialInstanceConstant'MI_UI_Color_White_01'",
+          "ObjectPath": "Pal/Content/Pal/Material/UI/Fontcolor/MI_UI_Color_White_01.0"
+        },
+        "OutlineSettings": {
+          "OutlineColor": {
+            "R": 0.0,
+            "G": 0.0,
+            "B": 0.0,
+            "A": 0.0,
+            "Hex": "000000"
+          }
+        },
+        "TypefaceFontName": "Medium",
+        "Size": 12
+      },
+      "Slot": {
+        "ObjectName": "HorizontalBoxSlot'WBP_ShopSellPrice_C:WidgetTree.HorizontalBox_1.HorizontalBoxSlot_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.3"
+      },
+      "bIsVariable": true
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "SetPrice",
+    "Outer": "WBP_ShopSellPrice_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "Price",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "AdditionalPrice",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GreaterEqual_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Conv_IntToText_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_FormatArgumentData",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'FormatArgumentData'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Conv_IntToText_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_FormatArgumentData_1",
+        "Flags": "RF_Public",
+        "ElementSize": 80,
+        "Struct": {
+          "ObjectName": "ScriptStruct'FormatArgumentData'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "K2Node_MakeArray_Array",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ReferenceParm",
+        "Inner": {
+          "Type": "StructProperty",
+          "Name": "K2Node_MakeArray_Array",
+          "Flags": "RF_Public",
+          "ElementSize": 80,
+          "Struct": {
+            "ObjectName": "ScriptStruct'FormatArgumentData'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Format_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "HorizontalBox",
+    "Name": "HorizontalBox_1",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'HorizontalBox'",
+    "Properties": {
+      "Slots": [
+        {
+          "ObjectName": "HorizontalBoxSlot'WBP_ShopSellPrice_C:WidgetTree.HorizontalBox_1.HorizontalBoxSlot_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.4"
+        },
+        {
+          "ObjectName": "HorizontalBoxSlot'WBP_ShopSellPrice_C:WidgetTree.HorizontalBox_1.HorizontalBoxSlot_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.3"
+        }
+      ],
+      "Slot": {
+        "ObjectName": "OverlaySlot'WBP_ShopSellPrice_C:WidgetTree.Overlay_10.OverlaySlot_4'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.11"
+      }
+    }
+  },
+  {
+    "Type": "HorizontalBoxSlot",
+    "Name": "HorizontalBoxSlot_0",
+    "Outer": "HorizontalBox_1",
+    "Class": "UScriptClass'HorizontalBoxSlot'",
+    "Properties": {
+      "Size": {
+        "SizeRule": "ESlateSizeRule::Fill"
+      },
+      "Padding": {
+        "Right": 12.0
+      },
+      "HorizontalAlignment": "EHorizontalAlignment::HAlign_Right",
+      "VerticalAlignment": "EVerticalAlignment::VAlign_Center",
+      "Parent": {
+        "ObjectName": "HorizontalBox'WBP_ShopSellPrice_C:WidgetTree.HorizontalBox_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.2"
+      },
+      "Content": {
+        "ObjectName": "BP_PalTextBlock_C'WBP_ShopSellPrice_C:WidgetTree.Text_Price'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.0"
+      }
+    }
+  },
+  {
+    "Type": "HorizontalBoxSlot",
+    "Name": "HorizontalBoxSlot_1",
+    "Outer": "HorizontalBox_1",
+    "Class": "UScriptClass'HorizontalBoxSlot'",
+    "Properties": {
+      "Padding": {
+        "Left": 4.0
+      },
+      "VerticalAlignment": "EVerticalAlignment::VAlign_Center",
+      "Parent": {
+        "ObjectName": "HorizontalBox'WBP_ShopSellPrice_C:WidgetTree.HorizontalBox_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.2"
+      },
+      "Content": {
+        "ObjectName": "SizeBox'WBP_ShopSellPrice_C:WidgetTree.SizeBox_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.12"
+      }
+    }
+  },
+  {
+    "Type": "Image",
+    "Name": "IconMoney",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Image'",
+    "Properties": {
+      "Brush": {
+        "ImageSize": {
+          "X": 30.0,
+          "Y": 30.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_icon_money'",
+          "ObjectPath": "Pal/Content/Pal/Texture/UI/Main_Menu/T_icon_money.0"
+        }
+      },
+      "ColorAndOpacity": {
+        "R": 0.0,
+        "G": 0.676475,
+        "B": 1.0,
+        "A": 1.0,
+        "Hex": "FF00D7FF"
+      },
+      "Slot": {
+        "ObjectName": "SizeBoxSlot'WBP_ShopSellPrice_C:WidgetTree.SizeBox_0.SizeBoxSlot_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.13"
+      }
+    }
+  },
+  {
+    "Type": "Image",
+    "Name": "Image_BaseGrd",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Image'",
+    "Properties": {
+      "Brush": {
+        "ImageSize": {
+          "X": 128.0,
+          "Y": 2.0
+        },
+        "Margin": {
+          "Left": 0.1,
+          "Top": 0.5,
+          "Bottom": 0.5
+        },
+        "ResourceObject": {
+          "ObjectName": "Material'M_UI_BaseGrdBoth'",
+          "ObjectPath": "Pal/Content/Pal/Material/UI/Ingame/M_UI_BaseGrdBoth.0"
+        }
+      },
+      "ColorAndOpacity": {
+        "R": 0.0,
+        "G": 0.456411,
+        "B": 1.0,
+        "A": 1.0,
+        "Hex": "FF00B4FF"
+      },
+      "Slot": {
+        "ObjectName": "OverlaySlot'WBP_ShopSellPrice_C:WidgetTree.Overlay_10.OverlaySlot_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.9"
+      },
+      "RenderTransformPivot": {
+        "X": 0.0,
+        "Y": 0.5
+      },
+      "bIsVariable": false,
+      "Visibility": "ESlateVisibility::SelfHitTestInvisible"
+    }
+  },
+  {
+    "Type": "Image",
+    "Name": "Image_BaseGrd_1",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Image'",
+    "Properties": {
+      "Brush": {
+        "ImageSize": {
+          "X": 128.0,
+          "Y": 32.0
+        },
+        "Margin": {
+          "Left": 0.1,
+          "Top": 0.5,
+          "Bottom": 0.5
+        },
+        "ResourceObject": {
+          "ObjectName": "Material'M_UI_BaseGrd_Vertical'",
+          "ObjectPath": "Pal/Content/Pal/Material/UI/Ingame/M_UI_BaseGrd_Vertical.0"
+        }
+      },
+      "ColorAndOpacity": {
+        "R": 0.0,
+        "G": 0.456411,
+        "B": 1.0,
+        "A": 0.2,
+        "Hex": "3300B4FF"
+      },
+      "Slot": {
+        "ObjectName": "OverlaySlot'WBP_ShopSellPrice_C:WidgetTree.Overlay_10.OverlaySlot_2'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.10"
+      },
+      "RenderTransformPivot": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "bIsVariable": false,
+      "Visibility": "ESlateVisibility::SelfHitTestInvisible"
+    }
+  },
+  {
+    "Type": "Overlay",
+    "Name": "Overlay_10",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Overlay'",
+    "Properties": {
+      "Slots": [
+        {
+          "ObjectName": "OverlaySlot'WBP_ShopSellPrice_C:WidgetTree.Overlay_10.OverlaySlot_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.10"
+        },
+        {
+          "ObjectName": "OverlaySlot'WBP_ShopSellPrice_C:WidgetTree.Overlay_10.OverlaySlot_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.11"
+        },
+        {
+          "ObjectName": "OverlaySlot'WBP_ShopSellPrice_C:WidgetTree.Overlay_10.OverlaySlot_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.9"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "OverlaySlot",
+    "Name": "OverlaySlot_0",
+    "Outer": "Overlay_10",
+    "Class": "UScriptClass'OverlaySlot'",
+    "Properties": {
+      "HorizontalAlignment": "EHorizontalAlignment::HAlign_Fill",
+      "VerticalAlignment": "EVerticalAlignment::VAlign_Bottom",
+      "Parent": {
+        "ObjectName": "Overlay'WBP_ShopSellPrice_C:WidgetTree.Overlay_10'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.8"
+      },
+      "Content": {
+        "ObjectName": "Image'WBP_ShopSellPrice_C:WidgetTree.Image_BaseGrd'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.6"
+      }
+    }
+  },
+  {
+    "Type": "OverlaySlot",
+    "Name": "OverlaySlot_2",
+    "Outer": "Overlay_10",
+    "Class": "UScriptClass'OverlaySlot'",
+    "Properties": {
+      "HorizontalAlignment": "EHorizontalAlignment::HAlign_Fill",
+      "VerticalAlignment": "EVerticalAlignment::VAlign_Fill",
+      "Parent": {
+        "ObjectName": "Overlay'WBP_ShopSellPrice_C:WidgetTree.Overlay_10'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.8"
+      },
+      "Content": {
+        "ObjectName": "Image'WBP_ShopSellPrice_C:WidgetTree.Image_BaseGrd_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.7"
+      }
+    }
+  },
+  {
+    "Type": "OverlaySlot",
+    "Name": "OverlaySlot_4",
+    "Outer": "Overlay_10",
+    "Class": "UScriptClass'OverlaySlot'",
+    "Properties": {
+      "HorizontalAlignment": "EHorizontalAlignment::HAlign_Center",
+      "VerticalAlignment": "EVerticalAlignment::VAlign_Fill",
+      "Parent": {
+        "ObjectName": "Overlay'WBP_ShopSellPrice_C:WidgetTree.Overlay_10'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.8"
+      },
+      "Content": {
+        "ObjectName": "HorizontalBox'WBP_ShopSellPrice_C:WidgetTree.HorizontalBox_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.2"
+      }
+    }
+  },
+  {
+    "Type": "SizeBox",
+    "Name": "SizeBox_0",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'SizeBox'",
+    "Properties": {
+      "WidthOverride": 30.0,
+      "HeightOverride": 30.0,
+      "bOverride_WidthOverride": true,
+      "bOverride_HeightOverride": true,
+      "Slots": [
+        {
+          "ObjectName": "SizeBoxSlot'WBP_ShopSellPrice_C:WidgetTree.SizeBox_0.SizeBoxSlot_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.13"
+        }
+      ],
+      "Slot": {
+        "ObjectName": "HorizontalBoxSlot'WBP_ShopSellPrice_C:WidgetTree.HorizontalBox_1.HorizontalBoxSlot_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.4"
+      }
+    }
+  },
+  {
+    "Type": "SizeBoxSlot",
+    "Name": "SizeBoxSlot_0",
+    "Outer": "SizeBox_0",
+    "Class": "UScriptClass'SizeBoxSlot'",
+    "Properties": {
+      "Parent": {
+        "ObjectName": "SizeBox'WBP_ShopSellPrice_C:WidgetTree.SizeBox_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.12"
+      },
+      "Content": {
+        "ObjectName": "Image'WBP_ShopSellPrice_C:WidgetTree.IconMoney'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.5"
+      }
+    }
+  },
+  {
+    "Type": "WBP_ShopSellPrice_C",
+    "Name": "Default__WBP_ShopSellPrice_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.WBP_ShopSellPrice_C'",
+    "Properties": {
+      "bHasScriptImplementedTick": false,
+      "bHasScriptImplementedPaint": false
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_ShopSellPrice_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_ShopSellPrice_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.16"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalUserWidget'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_ShopSellPrice_C:SetPrice'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.1"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "IconMoney",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Image'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Text_Price",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_PalTextBlock_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PalTextBlock/BP_PalTextBlock.0"
+        }
+      }
+    ],
+    "FuncMap": {
+      "SetPrice": {
+        "ObjectName": "Function'WBP_ShopSellPrice_C:SetPrice'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.1"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_ShopSellPrice_C'Default__WBP_ShopSellPrice_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.14"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_ShopSellPrice_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "Overlay'WBP_ShopSellPrice_C:WidgetTree.Overlay_10'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/Shop/WBP_ShopSellPrice.8"
+      }
+    }
+  }
+]

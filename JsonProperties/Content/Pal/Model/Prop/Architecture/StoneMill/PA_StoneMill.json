@@ -1,0 +1,202 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "PA_StoneMill",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'PA_StoneMill:SkeletalBodySetup_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/StoneMill/PA_StoneMill.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_StoneMill:SkeletalBodySetup_1'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/StoneMill/PA_StoneMill.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'PA_StoneMill:SkeletalBodySetup_2'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/StoneMill/PA_StoneMill.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_StoneMill:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/StoneMill/PA_StoneMill.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'PA_StoneMill:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/StoneMill/PA_StoneMill.2"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "PA_StoneMill",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "StoneMill_01",
+        "ConstraintBone1": "StoneMill_01",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": -10.466351,
+          "Y": -148.3723,
+          "Z": 116.35252
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "PA_StoneMill",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "StoneMill_02",
+        "ConstraintBone1": "StoneMill_02",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": -10.466351,
+          "Y": 27.689976,
+          "Z": 168.89693
+        },
+        "PriAxis2": {
+          "X": 1.0,
+          "Y": 1.2325952E-32,
+          "Z": -0.0
+        },
+        "SecAxis2": {
+          "X": -1.2325952E-32,
+          "Y": 1.0,
+          "Z": -1.2325952E-32
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "PA_StoneMill",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 28.00981,
+              "Y": -34.017918,
+              "Z": 38.316746
+            },
+            "Rotation": {
+              "Pitch": 9.9392335E-17,
+              "Yaw": -1.198079,
+              "Roll": -66.783745
+            },
+            "Radius": 110.79946,
+            "Length": 137.6526,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "root",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "5B31587A49196214107A249D4895E295"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "PA_StoneMill",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -1.1566976E-06,
+              "Y": 62.01181,
+              "Z": -0.04639917
+            },
+            "Rotation": {
+              "Pitch": 0.29488018,
+              "Yaw": -90.0,
+              "Roll": 27.590635
+            },
+            "Radius": 118.059105,
+            "Length": 118.12245,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "StoneMill_01",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "2519C721424AE169207A72A6A5B2DA01"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "PA_StoneMill",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.96041286,
+              "Y": 4.741069,
+              "Z": -42.86791
+            },
+            "Rotation": {
+              "Pitch": -7.951387E-16,
+              "Yaw": 168.5484,
+              "Roll": -66.00963
+            },
+            "Radius": 65.601135,
+            "Length": 69.994415,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "StoneMill_02",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "7907490E4B9031E361086BAD9FCC8664"
+  }
+]

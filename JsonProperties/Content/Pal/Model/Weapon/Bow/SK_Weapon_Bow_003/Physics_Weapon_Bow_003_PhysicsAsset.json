@@ -1,0 +1,196 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "Physics_Weapon_Bow_003_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1,
+        2
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'Physics_Weapon_Bow_003_PhysicsAsset:SkeletalBodySetup_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/Bow/SK_Weapon_Bow_003/Physics_Weapon_Bow_003_PhysicsAsset.3"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'Physics_Weapon_Bow_003_PhysicsAsset:SkeletalBodySetup_1'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/Bow/SK_Weapon_Bow_003/Physics_Weapon_Bow_003_PhysicsAsset.4"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'Physics_Weapon_Bow_003_PhysicsAsset:SkeletalBodySetup_2'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/Bow/SK_Weapon_Bow_003/Physics_Weapon_Bow_003_PhysicsAsset.5"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'Physics_Weapon_Bow_003_PhysicsAsset:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/Bow/SK_Weapon_Bow_003/Physics_Weapon_Bow_003_PhysicsAsset.1"
+        },
+        {
+          "ObjectName": "PhysicsConstraintTemplate'Physics_Weapon_Bow_003_PhysicsAsset:PhysicsConstraintTemplate_1'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/Bow/SK_Weapon_Bow_003/Physics_Weapon_Bow_003_PhysicsAsset.2"
+        }
+      ],
+      "SolverSettings": {
+        "CullDistance": 1.0,
+        "bUseLinearJointSolver": false
+      },
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "Physics_Weapon_Bow_003_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "upper_limb",
+        "ConstraintBone1": "upper_limb",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": 3.3309648,
+          "Y": 1.0675222E-05,
+          "Z": 29.451778
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_1",
+    "Outer": "Physics_Weapon_Bow_003_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "lower_limb",
+        "ConstraintBone1": "lower_limb",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": 3.3983042,
+          "Y": -6.407479E-06,
+          "Z": -29.612476
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "Physics_Weapon_Bow_003_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 1.9021349,
+              "Y": -0.11179924,
+              "Z": -0.041826498
+            },
+            "Rotation": {
+              "Pitch": 0.20345083,
+              "Yaw": -90.0,
+              "Roll": 1.1374549
+            },
+            "Radius": 4.105156,
+            "Length": 29.92725,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "root",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "9F2B03214C44F322D15D91939F3C52C2"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "Physics_Weapon_Bow_003_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -13.99599,
+              "Y": 0.94930935,
+              "Z": 20.555578
+            },
+            "Rotation": {
+              "Pitch": 0.98493373,
+              "Yaw": -90.0,
+              "Roll": -6.9051614
+            },
+            "Radius": 14.80512,
+            "Length": 48.745636,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "upper_limb",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "8942F6A7499ADE899CD54C873849DC5B"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_2",
+    "Outer": "Physics_Weapon_Bow_003_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": -13.741315,
+              "Y": 0.7172022,
+              "Z": -33.161064
+            },
+            "Rotation": {
+              "Pitch": -1.1032121,
+              "Yaw": -89.99999,
+              "Roll": 14.319545
+            },
+            "Radius": 7.261491,
+            "Length": 35.53946,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "lower_limb",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "AE4222BB462BA99CC5CAE0BF427E47B8"
+  }
+]

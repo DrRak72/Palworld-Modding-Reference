@@ -1,0 +1,510 @@
+[
+  {
+    "Type": "CanvasPanel",
+    "Name": "CanvasPanel_179",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'CanvasPanel'",
+    "Properties": {
+      "Slots": [
+        {
+          "ObjectName": "CanvasPanelSlot'WBP_PalHUDLayout_C:WidgetTree.CanvasPanel_179.CanvasPanelSlot_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.3"
+        },
+        {
+          "ObjectName": "CanvasPanelSlot'WBP_PalHUDLayout_C:WidgetTree.CanvasPanel_179.CanvasPanelSlot_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.4"
+        }
+      ],
+      "Slot": {
+        "ObjectName": "SafeZoneSlot'WBP_PalHUDLayout_C:WidgetTree.SafeZone_0.SafeZoneSlot_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.11"
+      }
+    }
+  },
+  {
+    "Type": "CanvasPanel",
+    "Name": "HUDCanvas",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'CanvasPanel'",
+    "Properties": {
+      "Slot": {
+        "ObjectName": "CanvasPanelSlot'WBP_PalHUDLayout_C:WidgetTree.CanvasPanel_179.CanvasPanelSlot_1'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.4"
+      },
+      "bIsVariable": true
+    }
+  },
+  {
+    "Type": "CanvasPanel",
+    "Name": "WorldHUDCanvas",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'CanvasPanel'",
+    "Properties": {
+      "Slot": {
+        "ObjectName": "CanvasPanelSlot'WBP_PalHUDLayout_C:WidgetTree.CanvasPanel_179.CanvasPanelSlot_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.3"
+      },
+      "bIsVariable": true
+    }
+  },
+  {
+    "Type": "CanvasPanelSlot",
+    "Name": "CanvasPanelSlot_0",
+    "Outer": "CanvasPanel_179",
+    "Class": "UScriptClass'CanvasPanelSlot'",
+    "Properties": {
+      "LayoutData": {
+        "Offsets": {
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "Anchors": {
+          "Maximum": {
+            "X": 1.0,
+            "Y": 1.0
+          }
+        }
+      },
+      "Parent": {
+        "ObjectName": "CanvasPanel'WBP_PalHUDLayout_C:WidgetTree.CanvasPanel_179'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.0"
+      },
+      "Content": {
+        "ObjectName": "CanvasPanel'WBP_PalHUDLayout_C:WidgetTree.WorldHUDCanvas'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.2"
+      }
+    }
+  },
+  {
+    "Type": "CanvasPanelSlot",
+    "Name": "CanvasPanelSlot_1",
+    "Outer": "CanvasPanel_179",
+    "Class": "UScriptClass'CanvasPanelSlot'",
+    "Properties": {
+      "LayoutData": {
+        "Offsets": {
+          "Right": 0.0,
+          "Bottom": 0.0
+        },
+        "Anchors": {
+          "Maximum": {
+            "X": 1.0,
+            "Y": 1.0
+          }
+        }
+      },
+      "Parent": {
+        "ObjectName": "CanvasPanel'WBP_PalHUDLayout_C:WidgetTree.CanvasPanel_179'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.0"
+      },
+      "Content": {
+        "ObjectName": "CanvasPanel'WBP_PalHUDLayout_C:WidgetTree.HUDCanvas'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.1"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "AddHUD",
+    "Outer": "WBP_PalHUDLayout_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalUIHUDLayoutBase:AddHUD'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Widget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "ZOrder",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "AddWorldHUD",
+    "Outer": "WBP_PalHUDLayout_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalUIHUDLayoutBase:AddWorldHUD'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Widget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidgetWorldHUD'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_WBP_PalHUDLayout",
+    "Outer": "WBP_PalHUDLayout_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_Widget_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidgetWorldHUD'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SlotAsCanvasSlot_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_Widget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidgetWorldHUD'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetLayout_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 64,
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnchorData'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_Widget_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SlotAsCanvasSlot_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetSize_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector2D'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_AddChildToCanvas_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_Widget_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_Event_ZOrder",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "ConstParm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_AddChildToCanvas_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanelSlot'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "RemoveHUD",
+    "Outer": "WBP_PalHUDLayout_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalUIHUDLayoutBase:RemoveHUD'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Widget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidget'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "RemoveWorldHUD",
+    "Outer": "WBP_PalHUDLayout_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalUIHUDLayoutBase:RemoveWorldHUD'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Widget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalUserWidgetWorldHUD'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "SafeZone",
+    "Name": "SafeZone_0",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'SafeZone'",
+    "Properties": {
+      "PadLeft": false,
+      "PadRight": false,
+      "PadTop": false,
+      "PadBottom": false,
+      "Slots": [
+        {
+          "ObjectName": "SafeZoneSlot'WBP_PalHUDLayout_C:WidgetTree.SafeZone_0.SafeZoneSlot_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.11"
+        }
+      ],
+      "bIsVariable": false
+    }
+  },
+  {
+    "Type": "SafeZoneSlot",
+    "Name": "SafeZoneSlot_0",
+    "Outer": "SafeZone_0",
+    "Class": "UScriptClass'SafeZoneSlot'",
+    "Properties": {
+      "Parent": {
+        "ObjectName": "SafeZone'WBP_PalHUDLayout_C:WidgetTree.SafeZone_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.10"
+      },
+      "Content": {
+        "ObjectName": "CanvasPanel'WBP_PalHUDLayout_C:WidgetTree.CanvasPanel_179'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.0"
+      }
+    }
+  },
+  {
+    "Type": "WBP_PalHUDLayout_C",
+    "Name": "Default__WBP_PalHUDLayout_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.WBP_PalHUDLayout_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "bHasScriptImplementedTick": false,
+      "bHasScriptImplementedPaint": false
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_PalHUDLayout_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_PalHUDLayout_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.14"
+      },
+      "bClassRequiresNativeTick": true,
+      "UberGraphFunction": {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:ExecuteUbergraph_WBP_PalHUDLayout'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.7"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalUIHUDLayoutBase'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:AddHUD'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.5"
+      },
+      {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:RemoveHUD'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.8"
+      },
+      {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:AddWorldHUD'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.6"
+      },
+      {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:RemoveWorldHUD'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.9"
+      },
+      {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:ExecuteUbergraph_WBP_PalHUDLayout'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.7"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "HUDCanvas",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanel'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WorldHUDCanvas",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'CanvasPanel'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_WBP_PalHUDLayout": {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:ExecuteUbergraph_WBP_PalHUDLayout'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.7"
+      },
+      "RemoveWorldHUD": {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:RemoveWorldHUD'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.9"
+      },
+      "AddWorldHUD": {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:AddWorldHUD'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.6"
+      },
+      "RemoveHUD": {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:RemoveHUD'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.8"
+      },
+      "AddHUD": {
+        "ObjectName": "Function'WBP_PalHUDLayout_C:AddHUD'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.5"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_PalHUDLayout_C'Default__WBP_PalHUDLayout_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.12"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_PalHUDLayout_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "SafeZone'WBP_PalHUDLayout_C:WidgetTree.SafeZone_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/System/WBP_PalHUDLayout.10"
+      }
+    }
+  }
+]

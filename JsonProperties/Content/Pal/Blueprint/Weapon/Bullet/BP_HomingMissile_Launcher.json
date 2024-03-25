@@ -1,0 +1,1230 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_AttackBulletBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.0"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_HomingMissile_Launcher_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.16"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:ExecuteUbergraph_BP_HomingMissile_Launcher'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.2"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_AttackBulletBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:GetExplosionClass'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.4"
+      },
+      {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:GetBulletAttackType'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.3"
+      },
+      {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:SetAttackTarget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.8"
+      },
+      {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.6"
+      },
+      {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.7"
+      },
+      {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:OnDestroy'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.5"
+      },
+      {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:ExecuteUbergraph_BP_HomingMissile_Launcher'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.2"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SM_DefenseFacilityElectricMissile",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Niagara",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SM_MissileExhaust",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsExprosed",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_HomingMissile_Launcher": {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:ExecuteUbergraph_BP_HomingMissile_Launcher'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.2"
+      },
+      "OnDestroy": {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:OnDestroy'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.5"
+      },
+      "ReceiveTick": {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:ReceiveTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.7"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.6"
+      },
+      "SetAttackTarget": {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:SetAttackTarget'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.8"
+      },
+      "GetBulletAttackType": {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:GetBulletAttackType'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.3"
+      },
+      "GetExplosionClass": {
+        "ObjectName": "Function'BP_HomingMissile_Launcher_C:GetExplosionClass'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.4"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_HomingMissile_Launcher_C'Default__BP_HomingMissile_Launcher_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_HomingMissile_Launcher_C",
+    "Name": "Default__BP_HomingMissile_Launcher_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.BP_HomingMissile_Launcher_C'",
+    "Template": {
+      "ObjectName": "BP_AttackBulletBase_C'Default__BP_AttackBulletBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "CollisionComp": {
+        "ObjectName": "SphereComponent'Default__BP_HomingMissile_Launcher_C:SphereComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.17"
+      },
+      "ProjectileMovement": {
+        "ObjectName": "ProjectileMovementComponent'Default__BP_HomingMissile_Launcher_C:ProjectileComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.10"
+      },
+      "RootComponent": {
+        "ObjectName": "SphereComponent'Default__BP_HomingMissile_Launcher_C:SphereComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.17"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_HomingMissile_Launcher",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ClassProperty",
+        "Name": "CallFunc_GetExplosionClass_ExplosionClass",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_ExplosionAttackBase_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Explosion/BP_ExplosionAttackBase.0"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_Event_DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_HitComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OtherCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_Event_Hit",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ConstParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetTransform_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FindOwnerPalCharacter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FinishSpawningActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_ExplosionAttackBase_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Explosion/BP_ExplosionAttackBase.0"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_RandomFloatInRange_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_GetWeaponDamage_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Delay_Duration_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_VariableSet_HomingAccelerationMagnitude_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetBulletAttackType",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AttackBulletBase_C:GetBulletAttackType'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.3"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AttackBulletBase_C:GetBulletAttackType'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.3"
+    },
+    "ChildProperties": [
+      {
+        "Type": "EnumProperty",
+        "Name": "AttackType",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "Enum": {
+          "ObjectName": "Enum'EPalAttackType'",
+          "ObjectPath": "/Script/Pal"
+        },
+        "UnderlyingProp": {
+          "Type": "ByteProperty",
+          "Name": "UnderlyingType",
+          "Flags": "RF_Public",
+          "ElementSize": 1,
+          "Enum": null
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetExplosionClass",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AttackBulletBase_C:GetExplosionClass'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.7"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AttackBulletBase_C:GetExplosionClass'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.7"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ClassProperty",
+        "Name": "ExplosionClass",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_ExplosionAttackBase_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Explosion/BP_ExplosionAttackBase.0"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDestroy",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBullet:OnDestroy'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "HitComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Hit",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveTick",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AttackBulletBase_C:ReceiveTick'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.11"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AttackBulletBase_C:ReceiveTick'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.11"
+    },
+    "ChildProperties": [
+      {
+        "Type": "FloatProperty",
+        "Name": "DeltaSeconds",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetAttackTarget",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Target",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetMainMesh_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkeletalMeshComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "NiagaraComponent",
+    "Name": "Niagara_GEN_VARIABLE",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'NiagaraComponent'",
+    "Properties": {
+      "Asset": {
+        "ObjectName": "NiagaraSystem'NS_Homing_Trail1'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Weapon/Modifier/NS_Homing_Trail1.26"
+      },
+      "OverrideParameters": {
+        "UserParameterRedirects": [
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "Color",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'LinearColor'",
+                  "ObjectPath": "/Script/CoreUObject"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.Color",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'LinearColor'",
+                  "ObjectPath": "/Script/CoreUObject"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "ColorBoost",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.ColorBoost",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "RibbonLenght",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.RibbonLenght",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "RibbonWidth",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.RibbonWidth",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "Scale",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.Scale",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "Smoke_Color",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'LinearColor'",
+                  "ObjectPath": "/Script/CoreUObject"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.Smoke_Color",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'LinearColor'",
+                  "ObjectPath": "/Script/CoreUObject"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "Smoke_Density",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.Smoke_Density",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "SmokeOpacity",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.SmokeOpacity",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "StopParticles",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.StopParticles",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          },
+          {
+            "Key": {
+              "VarData": "",
+              "Name": "Water_Density",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            },
+            "Value": {
+              "VarData": "",
+              "Name": "User.Water_Density",
+              "TypeDef": {
+                "ClassStructOrEnum": {
+                  "ObjectName": "ScriptStruct'NiagaraFloat'",
+                  "ObjectPath": "/Script/Niagara"
+                },
+                "UnderlyingType": 2,
+                "Flags": 0
+              }
+            }
+          }
+        ],
+        "SortedParameterOffsets": [
+          {
+            "Offset": 0,
+            "Name": "User.Color",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'LinearColor'",
+                "ObjectPath": "/Script/CoreUObject"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 16,
+            "Name": "User.ColorBoost",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 20,
+            "Name": "User.RibbonLenght",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 24,
+            "Name": "User.RibbonWidth",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 28,
+            "Name": "User.Scale",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 32,
+            "Name": "User.Smoke_Color",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'LinearColor'",
+                "ObjectPath": "/Script/CoreUObject"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 48,
+            "Name": "User.Smoke_Density",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 52,
+            "Name": "User.SmokeOpacity",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 56,
+            "Name": "User.StopParticles",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          },
+          {
+            "Offset": 60,
+            "Name": "User.Water_Density",
+            "TypeDef": {
+              "ClassStructOrEnum": {
+                "ObjectName": "ScriptStruct'NiagaraFloat'",
+                "ObjectPath": "/Script/Niagara"
+              },
+              "UnderlyingType": 2,
+              "Flags": 0
+            }
+          }
+        ],
+        "ParameterData": [
+          205,
+          204,
+          76,
+          62,
+          51,
+          195,
+          209,
+          62,
+          205,
+          204,
+          76,
+          63,
+          0,
+          0,
+          128,
+          63,
+          0,
+          0,
+          72,
+          66,
+          0,
+          0,
+          0,
+          64,
+          0,
+          0,
+          32,
+          65,
+          0,
+          0,
+          128,
+          63,
+          171,
+          170,
+          122,
+          62,
+          0,
+          0,
+          128,
+          62,
+          85,
+          85,
+          117,
+          62,
+          226,
+          122,
+          148,
+          62,
+          0,
+          0,
+          0,
+          65,
+          205,
+          204,
+          76,
+          62,
+          0,
+          0,
+          128,
+          63,
+          0,
+          0,
+          72,
+          66
+        ]
+      }
+    }
+  },
+  {
+    "Type": "ProjectileMovementComponent",
+    "Name": "ProjectileComp",
+    "Outer": "Default__BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'ProjectileMovementComponent'",
+    "Template": {
+      "ObjectName": "ProjectileMovementComponent'Default__BP_AttackBulletBase_C:ProjectileComp'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.14"
+    },
+    "Properties": {
+      "InitialSpeed": 2500.0,
+      "MaxSpeed": 2500.0,
+      "ProjectileGravityScale": 0.0,
+      "HomingAccelerationMagnitude": 5000.0
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_HomingMissile_Launcher_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.11"
+      },
+      "VariableGuid": "52AA5DC3-4620F607-BB88AB9F-3EDC0BAB",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'NiagaraComponent'",
+        "ObjectPath": "/Script/Niagara"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "NiagaraComponent'BP_HomingMissile_Launcher_C:Niagara_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.9"
+      },
+      "ParentComponentOrVariableName": "SphereComp",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "5C000C5D-4B4AA792-33D4D7A0-C3BCD7D6",
+      "InternalVariableName": "Niagara"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_HomingMissile_Launcher_C:SM_MissileExhaust_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.19"
+      },
+      "ParentComponentOrVariableName": "SphereComp",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "F72EF390-41F638A5-24D08DAA-352AA64D",
+      "InternalVariableName": "SM_MissileExhaust"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_HomingMissile_Launcher_C:SM_DefenseFacilityElectricMissile_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.18"
+      },
+      "ParentComponentOrVariableName": "SphereComp",
+      "bIsParentComponentNative": true,
+      "VariableGuid": "E4CFA7EC-4D0D7BE7-99915DAF-D7CA8C56",
+      "InternalVariableName": "SM_DefenseFacilityElectricMissile"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_HomingMissile_Launcher_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.14"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_HomingMissile_Launcher_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_HomingMissile_Launcher_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.15"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_HomingMissile_Launcher_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.14"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_HomingMissile_Launcher_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_HomingMissile_Launcher_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.15"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_HomingMissile_Launcher_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.12"
+      }
+    }
+  },
+  {
+    "Type": "SphereComponent",
+    "Name": "SphereComp",
+    "Outer": "Default__BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'SphereComponent'",
+    "Template": {
+      "ObjectName": "SphereComponent'Default__BP_AttackBulletBase_C:SphereComp'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_AttackBulletBase.18"
+    },
+    "Properties": {
+      "OnComponentHit": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "BP_HomingMissile_Launcher_C'Default__BP_HomingMissile_Launcher_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.1"
+            },
+            "FunctionName": "OnHit"
+          }
+        ]
+      },
+      "OnComponentBeginOverlap": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "BP_HomingMissile_Launcher_C'Default__BP_HomingMissile_Launcher_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_HomingMissile_Launcher.1"
+            },
+            "FunctionName": "OnHit"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "SM_DefenseFacilityElectricMissile_GEN_VARIABLE",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_DefenseFacilityElectricMissile'",
+        "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityElectric/SM_DefenseFacilityElectricMissile.2"
+      },
+      "RelativeScale3D": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "SM_MissileExhaust_GEN_VARIABLE",
+    "Outer": "BP_HomingMissile_Launcher_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_MissileExhaust'",
+        "ObjectPath": "Pal/Content/Pal/Model/Weapon/StationalyWeapon/MultiMissile/Missle/SM_MissileExhaust.2"
+      },
+      "bGenerateOverlapEvents": false,
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": 141.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "RelativeScale3D": {
+        "X": 4.0,
+        "Y": 10.0,
+        "Z": 4.0
+      }
+    }
+  }
+]

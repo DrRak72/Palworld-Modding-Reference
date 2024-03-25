@@ -1,0 +1,123 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "SK_DefenseFacilityModern_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'SK_DefenseFacilityModern_PhysicsAsset:SkeletalBodySetup_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityModern/SK_DefenseFacilityModern_PhysicsAsset.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'SK_DefenseFacilityModern_PhysicsAsset:SkeletalBodySetup_1'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityModern/SK_DefenseFacilityModern_PhysicsAsset.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'SK_DefenseFacilityModern_PhysicsAsset:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Prop/Architecture/DefenseFacilityModern/SK_DefenseFacilityModern_PhysicsAsset.1"
+        }
+      ],
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "SK_DefenseFacilityModern_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "DefenseFacilityModern_VerricalTurn",
+        "ConstraintBone1": "DefenseFacilityModern_VerricalTurn",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": 0.0,
+          "Y": -5.0039865E-15,
+          "Z": 81.7213
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "SK_DefenseFacilityModern_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 0.20122316,
+              "Y": 1.0010542,
+              "Z": 41.77104
+            },
+            "Rotation": {
+              "Pitch": 1.6013255,
+              "Yaw": -90.0,
+              "Roll": -0.18500058
+            },
+            "Radius": 43.131474,
+            "Length": 43.62003,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "root",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "B6972F83407F9831B788D1A14253507B"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "SK_DefenseFacilityModern_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 31.772879,
+              "Y": -28.348198,
+              "Z": 0.16962856
+            },
+            "Rotation": {
+              "Pitch": 6.3611094E-15,
+              "Yaw": 82.60482,
+              "Roll": -89.919334
+            },
+            "Radius": 54.00535,
+            "Length": 165.78418,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "DefenseFacilityModern_VerricalTurn",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "133B0C344C5D2784BA9712A2DF4A12D5"
+  }
+]

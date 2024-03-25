@@ -1,0 +1,481 @@
+[
+  {
+    "Type": "CanvasPanel",
+    "Name": "CanvasPanel_0",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'CanvasPanel'",
+    "Properties": {
+      "Slots": [
+        {
+          "ObjectName": "CanvasPanelSlot'WBP_InventoryArrow_C:WidgetTree.CanvasPanel_0.CanvasPanelSlot_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.1"
+        }
+      ],
+      "Visibility": "ESlateVisibility::Collapsed"
+    }
+  },
+  {
+    "Type": "CanvasPanelSlot",
+    "Name": "CanvasPanelSlot_0",
+    "Outer": "CanvasPanel_0",
+    "Class": "UScriptClass'CanvasPanelSlot'",
+    "Properties": {
+      "LayoutData": {
+        "Offsets": {
+          "Right": 32.0,
+          "Bottom": 16.0
+        }
+      },
+      "Parent": {
+        "ObjectName": "CanvasPanel'WBP_InventoryArrow_C:WidgetTree.CanvasPanel_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.0"
+      },
+      "Content": {
+        "ObjectName": "Image'WBP_InventoryArrow_C:WidgetTree.ListArrow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.5"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "AnmEvent_Cursor",
+    "Outer": "WBP_InventoryArrow_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_WBP_InventoryArrow",
+    "Outer": "WBP_InventoryArrow_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAnimation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'UMGSequencePlayer'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnClicked__DelegateSignature",
+    "Outer": "WBP_InventoryArrow_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Image",
+    "Name": "ListArrow",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Image'",
+    "Properties": {
+      "Brush": {
+        "ImageSize": {
+          "X": 32.0,
+          "Y": 16.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_prt_inventory_list_arrow'",
+          "ObjectPath": "Pal/Content/Pal/Texture/UI/Main_Menu/T_prt_inventory_list_arrow.0"
+        }
+      },
+      "Slot": {
+        "ObjectName": "CanvasPanelSlot'WBP_InventoryArrow_C:WidgetTree.CanvasPanel_0.CanvasPanelSlot_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.1"
+      }
+    }
+  },
+  {
+    "Type": "MovieScene",
+    "Name": "Anm_ArrowScroll",
+    "Outer": "Anm_ArrowScroll_INST",
+    "Class": "UScriptClass'MovieScene'",
+    "Properties": {
+      "Possessables": [
+        {
+          "Tags": [],
+          "Guid": "FA783911-4FCF27D9-FB91EE92-46279772",
+          "Name": "ListArrow",
+          "ParentGuid": "00000000-00000000-00000000-00000000",
+          "SpawnableObjectBindingID": {
+            "Guid": "00000000-00000000-00000000-00000000",
+            "SequenceID": 0,
+            "ResolveParentIndex": -1
+          }
+        }
+      ],
+      "ObjectBindings": [
+        {
+          "ObjectGuid": "FA783911-4FCF27D9-FB91EE92-46279772",
+          "BindingName": "ListArrow",
+          "Tracks": [
+            {
+              "ObjectName": "MovieScene2DTransformTrack'WBP_InventoryArrow_C:Anm_ArrowScroll_INST.Anm_ArrowScroll.MovieScene2DTransformTrack_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.8"
+            }
+          ]
+        }
+      ],
+      "PlaybackRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 0,
+            "Value": {
+              "Value": 6001
+            }
+          }
+        }
+      },
+      "DisplayRate": {
+        "Numerator": 60
+      },
+      "Signature": "BFBDB06C-43BA2A0C-E59CC5AA-B9A8B976"
+    }
+  },
+  {
+    "Type": "MovieScene2DTransformSection",
+    "Name": "MovieScene2DTransformSection_0",
+    "Outer": "MovieScene2DTransformTrack_0",
+    "Class": "UScriptClass'MovieScene2DTransformSection'",
+    "Properties": {
+      "Translation": {
+        "PreInfinityExtrap": "RCCE_Constant",
+        "PostInfinityExtrap": "RCCE_Constant",
+        "Times": [
+          {
+            "Value": 0
+          },
+          {
+            "Value": 2000
+          },
+          {
+            "Value": 6000
+          }
+        ],
+        "Values": [
+          {
+            "Value": 0.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": -6.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 0.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          }
+        ],
+        "DefaultValue": 0.0,
+        "bHasDefaultValue": false,
+        "TickResolution": {
+          "Numerator": 60000,
+          "Denominator": 1
+        },
+        "bShowCurve": false
+      },
+      "Easing": {
+        "EaseIn": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_InventoryArrow_C:Anm_ArrowScroll_INST.Anm_ArrowScroll.MovieScene2DTransformTrack_0.MovieScene2DTransformSection_0.EaseInFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.9"
+        },
+        "EaseOut": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_InventoryArrow_C:Anm_ArrowScroll_INST.Anm_ArrowScroll.MovieScene2DTransformTrack_0.MovieScene2DTransformSection_0.EaseOutFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.10"
+        }
+      },
+      "SectionRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 6000
+            }
+          }
+        }
+      },
+      "Signature": "10FCDC94-44990C61-73B60897-3802A528"
+    }
+  },
+  {
+    "Type": "MovieScene2DTransformTrack",
+    "Name": "MovieScene2DTransformTrack_0",
+    "Outer": "Anm_ArrowScroll",
+    "Class": "UScriptClass'MovieScene2DTransformTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderTransform",
+        "PropertyPath": "RenderTransform",
+        "bCanUseClassLookup": true
+      },
+      "Sections": [
+        {
+          "ObjectName": "MovieScene2DTransformSection'WBP_InventoryArrow_C:Anm_ArrowScroll_INST.Anm_ArrowScroll.MovieScene2DTransformTrack_0.MovieScene2DTransformSection_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.7"
+        }
+      ],
+      "EvaluationFieldGuid": "D7D363D9-440C361F-E624D498-40E976FF",
+      "EvaluationField": {
+        "Entries": [
+          {
+            "Section": {
+              "ObjectName": "MovieScene2DTransformSection'WBP_InventoryArrow_C:Anm_ArrowScroll_INST.Anm_ArrowScroll.MovieScene2DTransformTrack_0.MovieScene2DTransformSection_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.7"
+            },
+            "Range": {
+              "LowerBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 0
+                }
+              },
+              "UpperBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 6000
+                }
+              }
+            },
+            "ForcedTime": {
+              "Value": -2147483648
+            },
+            "Flags": "ESectionEvaluationFlags::None",
+            "LegacySortOrder": 0
+          }
+        ]
+      },
+      "Signature": "D7D363D9-440C361F-E624D498-40E976FF"
+    }
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseInFunction",
+    "Outer": "MovieScene2DTransformSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseOutFunction",
+    "Outer": "MovieScene2DTransformSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneCompiledData",
+    "Name": "CompiledData",
+    "Outer": "Anm_ArrowScroll_INST",
+    "Class": "UScriptClass'MovieSceneCompiledData'"
+  },
+  {
+    "Type": "WBP_InventoryArrow_C",
+    "Name": "Default__WBP_InventoryArrow_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.WBP_InventoryArrow_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "bHasScriptImplementedTick": false,
+      "bHasScriptImplementedPaint": false
+    }
+  },
+  {
+    "Type": "WidgetAnimation",
+    "Name": "Anm_ArrowScroll_INST",
+    "Outer": "WBP_InventoryArrow_C",
+    "Class": "UScriptClass'WidgetAnimation'",
+    "Properties": {
+      "MovieScene": {
+        "ObjectName": "MovieScene'WBP_InventoryArrow_C:Anm_ArrowScroll_INST.Anm_ArrowScroll'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.6"
+      },
+      "AnimationBindings": [
+        {
+          "WidgetName": "ListArrow",
+          "SlotWidgetName": "None",
+          "AnimationGuid": "FA783911-4FCF27D9-FB91EE92-46279772",
+          "bIsRootWidget": false
+        }
+      ],
+      "DisplayLabel": "Anm_ArrowScroll",
+      "CompiledData": {
+        "ObjectName": "MovieSceneCompiledData'WBP_InventoryArrow_C:Anm_ArrowScroll_INST.CompiledData'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.11"
+      },
+      "Signature": "EFBB90C2-4E9E6161-0601C1BE-2C3B3F97"
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_InventoryArrow_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_InventoryArrow_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.15"
+      },
+      "Animations": [
+        {
+          "ObjectName": "WidgetAnimation'WBP_InventoryArrow_C:Anm_ArrowScroll_INST'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.13"
+        }
+      ],
+      "UberGraphFunction": {
+        "ObjectName": "Function'WBP_InventoryArrow_C:ExecuteUbergraph_WBP_InventoryArrow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.3"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'UserWidget'",
+      "ObjectPath": "/Script/UMG"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_InventoryArrow_C:AnmEvent_Cursor'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.2"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryArrow_C:ExecuteUbergraph_WBP_InventoryArrow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.3"
+      },
+      {
+        "ObjectName": "Function'WBP_InventoryArrow_C:OnClicked__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.4"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Anm_ArrowScroll",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Transient | RepSkip",
+        "PropertyClass": {
+          "ObjectName": "Class'WidgetAnimation'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "ListArrow",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Image'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnClicked",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_InventoryArrow_C:OnClicked__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.4"
+        }
+      }
+    ],
+    "FuncMap": {
+      "OnClicked__DelegateSignature": {
+        "ObjectName": "Function'WBP_InventoryArrow_C:OnClicked__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.4"
+      },
+      "ExecuteUbergraph_WBP_InventoryArrow": {
+        "ObjectName": "Function'WBP_InventoryArrow_C:ExecuteUbergraph_WBP_InventoryArrow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.3"
+      },
+      "AnmEvent_Cursor": {
+        "ObjectName": "Function'WBP_InventoryArrow_C:AnmEvent_Cursor'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.2"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_InventoryArrow_C'Default__WBP_InventoryArrow_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.12"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_InventoryArrow_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "CanvasPanel'WBP_InventoryArrow_C:WidgetTree.CanvasPanel_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Inventory/WBP_InventoryArrow.0"
+      }
+    }
+  }
+]

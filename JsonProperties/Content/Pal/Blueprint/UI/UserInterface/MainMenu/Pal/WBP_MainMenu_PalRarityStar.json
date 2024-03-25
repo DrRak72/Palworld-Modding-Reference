@@ -1,0 +1,1256 @@
+[
+  {
+    "Type": "CanvasPanel",
+    "Name": "PalRarity",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'CanvasPanel'",
+    "Properties": {
+      "Slots": [
+        {
+          "ObjectName": "CanvasPanelSlot'WBP_MainMenu_PalRarityStar_C:WidgetTree.PalRarity.CanvasPanelSlot_11'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.1"
+        },
+        {
+          "ObjectName": "CanvasPanelSlot'WBP_MainMenu_PalRarityStar_C:WidgetTree.PalRarity.CanvasPanelSlot_15'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.2"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "CanvasPanelSlot",
+    "Name": "CanvasPanelSlot_11",
+    "Outer": "PalRarity",
+    "Class": "UScriptClass'CanvasPanelSlot'",
+    "Properties": {
+      "LayoutData": {
+        "Offsets": {
+          "Right": 24.0,
+          "Bottom": 24.0
+        }
+      },
+      "Parent": {
+        "ObjectName": "CanvasPanel'WBP_MainMenu_PalRarityStar_C:WidgetTree.PalRarity'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.0"
+      },
+      "Content": {
+        "ObjectName": "Image'WBP_MainMenu_PalRarityStar_C:WidgetTree.OFF'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.9"
+      }
+    }
+  },
+  {
+    "Type": "CanvasPanelSlot",
+    "Name": "CanvasPanelSlot_15",
+    "Outer": "PalRarity",
+    "Class": "UScriptClass'CanvasPanelSlot'",
+    "Properties": {
+      "LayoutData": {
+        "Offsets": {
+          "Right": 24.0,
+          "Bottom": 24.0
+        }
+      },
+      "Parent": {
+        "ObjectName": "CanvasPanel'WBP_MainMenu_PalRarityStar_C:WidgetTree.PalRarity'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.0"
+      },
+      "Content": {
+        "ObjectName": "Image'WBP_MainMenu_PalRarityStar_C:WidgetTree.ON'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.10"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "AnmEvent_ForceOff",
+    "Outer": "WBP_MainMenu_PalRarityStar_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "AnmEvent_Highlight",
+    "Outer": "WBP_MainMenu_PalRarityStar_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "AnmEvent_OffToOn",
+    "Outer": "WBP_MainMenu_PalRarityStar_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "AnmEvent_OnToOff",
+    "Outer": "WBP_MainMenu_PalRarityStar_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_WBP_MainMenu_PalRarityStar",
+    "Outer": "WBP_MainMenu_PalRarityStar_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAnimation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'UMGSequencePlayer'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAnimation_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'UMGSequencePlayer'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAnimation_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'UMGSequencePlayer'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetActiveRank",
+    "Outer": "WBP_MainMenu_PalRarityStar_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "IsActive",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Image",
+    "Name": "OFF",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Image'",
+    "Properties": {
+      "Brush": {
+        "ImageSize": {
+          "X": 24.0,
+          "Y": 24.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_icon_enemy_rarity_00'",
+          "ObjectPath": "Pal/Content/Pal/Texture/UI/InGame/T_icon_enemy_rarity_00.0"
+        }
+      },
+      "Slot": {
+        "ObjectName": "CanvasPanelSlot'WBP_MainMenu_PalRarityStar_C:WidgetTree.PalRarity.CanvasPanelSlot_11'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.1"
+      },
+      "Visibility": "ESlateVisibility::SelfHitTestInvisible",
+      "RenderOpacity": 0.0
+    }
+  },
+  {
+    "Type": "Image",
+    "Name": "ON",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'Image'",
+    "Properties": {
+      "Brush": {
+        "ImageSize": {
+          "X": 24.0,
+          "Y": 24.0
+        },
+        "ResourceObject": {
+          "ObjectName": "Texture2D'T_icon_enemy_rarity_01'",
+          "ObjectPath": "Pal/Content/Pal/Texture/UI/InGame/T_icon_enemy_rarity_01.0"
+        }
+      },
+      "ColorAndOpacity": {
+        "R": 0.783538,
+        "G": 0.964687,
+        "B": 1.0,
+        "A": 1.0,
+        "Hex": "FFE5FBFF"
+      },
+      "Slot": {
+        "ObjectName": "CanvasPanelSlot'WBP_MainMenu_PalRarityStar_C:WidgetTree.PalRarity.CanvasPanelSlot_15'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.2"
+      },
+      "Visibility": "ESlateVisibility::SelfHitTestInvisible",
+      "RenderOpacity": 0.5
+    }
+  },
+  {
+    "Type": "MovieScene",
+    "Name": "Anm_Highlight",
+    "Outer": "Anm_Highlight_INST",
+    "Class": "UScriptClass'MovieScene'",
+    "Properties": {
+      "Possessables": [
+        {
+          "Tags": [],
+          "Guid": "2CA5DA5A-464BDD35-392EBFA7-67A06E61",
+          "Name": "OFF",
+          "ParentGuid": "00000000-00000000-00000000-00000000",
+          "SpawnableObjectBindingID": {
+            "Guid": "00000000-00000000-00000000-00000000",
+            "SequenceID": 0,
+            "ResolveParentIndex": -1
+          }
+        },
+        {
+          "Tags": [],
+          "Guid": "7FE42EA1-4130BECE-0338EABE-A326BA3A",
+          "Name": "ON",
+          "ParentGuid": "00000000-00000000-00000000-00000000",
+          "SpawnableObjectBindingID": {
+            "Guid": "00000000-00000000-00000000-00000000",
+            "SequenceID": 0,
+            "ResolveParentIndex": -1
+          }
+        }
+      ],
+      "ObjectBindings": [
+        {
+          "ObjectGuid": "2CA5DA5A-464BDD35-392EBFA7-67A06E61",
+          "BindingName": "OFF",
+          "Tracks": [
+            {
+              "ObjectName": "MovieSceneFloatTrack'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight.MovieSceneFloatTrack_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.28"
+            }
+          ]
+        },
+        {
+          "ObjectGuid": "7FE42EA1-4130BECE-0338EABE-A326BA3A",
+          "BindingName": "ON",
+          "Tracks": [
+            {
+              "ObjectName": "MovieSceneFloatTrack'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight.MovieSceneFloatTrack_1'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.29"
+            }
+          ]
+        }
+      ],
+      "PlaybackRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 0,
+            "Value": {
+              "Value": 60000
+            }
+          }
+        }
+      },
+      "DisplayRate": {
+        "Numerator": 60
+      },
+      "Signature": "C4A82849-43B276D4-310243AD-94700F42"
+    }
+  },
+  {
+    "Type": "MovieScene",
+    "Name": "Anm_OFFToON",
+    "Outer": "Anm_OFFToON_INST",
+    "Class": "UScriptClass'MovieScene'",
+    "Properties": {
+      "Possessables": [
+        {
+          "Tags": [],
+          "Guid": "75E14AE3-452ACE7A-12A0D59C-D13F2CE9",
+          "Name": "OFF",
+          "ParentGuid": "00000000-00000000-00000000-00000000",
+          "SpawnableObjectBindingID": {
+            "Guid": "00000000-00000000-00000000-00000000",
+            "SequenceID": 0,
+            "ResolveParentIndex": -1
+          }
+        },
+        {
+          "Tags": [],
+          "Guid": "E48722D9-4CB973B6-888DD3B5-28D107F2",
+          "Name": "ON",
+          "ParentGuid": "00000000-00000000-00000000-00000000",
+          "SpawnableObjectBindingID": {
+            "Guid": "00000000-00000000-00000000-00000000",
+            "SequenceID": 0,
+            "ResolveParentIndex": -1
+          }
+        }
+      ],
+      "ObjectBindings": [
+        {
+          "ObjectGuid": "75E14AE3-452ACE7A-12A0D59C-D13F2CE9",
+          "BindingName": "OFF",
+          "Tracks": [
+            {
+              "ObjectName": "MovieSceneFloatTrack'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieSceneFloatTrack_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.30"
+            }
+          ]
+        },
+        {
+          "ObjectGuid": "E48722D9-4CB973B6-888DD3B5-28D107F2",
+          "BindingName": "ON",
+          "Tracks": [
+            {
+              "ObjectName": "MovieSceneFloatTrack'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieSceneFloatTrack_1'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.31"
+            },
+            {
+              "ObjectName": "MovieScene2DTransformTrack'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieScene2DTransformTrack_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.13"
+            }
+          ]
+        }
+      ],
+      "PlaybackRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 0,
+            "Value": {
+              "Value": 7001
+            }
+          }
+        }
+      },
+      "DisplayRate": {
+        "Numerator": 60
+      },
+      "Signature": "625A95CB-4C5C5BD8-5AE0BFB3-CA87C52D"
+    }
+  },
+  {
+    "Type": "MovieScene2DTransformTrack",
+    "Name": "MovieScene2DTransformTrack_0",
+    "Outer": "Anm_OFFToON",
+    "Class": "UScriptClass'MovieScene2DTransformTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderTransform",
+        "PropertyPath": "RenderTransform",
+        "bCanUseClassLookup": true
+      },
+      "EvaluationFieldGuid": "C4CE1A6F-42C717C5-09CA8E96-EE99D1E8",
+      "Signature": "C4CE1A6F-42C717C5-09CA8E96-EE99D1E8"
+    }
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseInFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseOutFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseInFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseOutFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseInFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseOutFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseInFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseOutFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneCompiledData",
+    "Name": "CompiledData",
+    "Outer": "Anm_Highlight_INST",
+    "Class": "UScriptClass'MovieSceneCompiledData'"
+  },
+  {
+    "Type": "MovieSceneCompiledData",
+    "Name": "CompiledData",
+    "Outer": "Anm_OFFToON_INST",
+    "Class": "UScriptClass'MovieSceneCompiledData'"
+  },
+  {
+    "Type": "MovieSceneFloatSection",
+    "Name": "MovieSceneFloatSection_0",
+    "Outer": "MovieSceneFloatTrack_0",
+    "Class": "UScriptClass'MovieSceneFloatSection'",
+    "Properties": {
+      "FloatCurve": {
+        "PreInfinityExtrap": "RCCE_Constant",
+        "PostInfinityExtrap": "RCCE_Constant",
+        "Times": [
+          {
+            "Value": 0
+          },
+          {
+            "Value": 60000
+          }
+        ],
+        "Values": [
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          }
+        ],
+        "DefaultValue": 0.0,
+        "bHasDefaultValue": false,
+        "TickResolution": {
+          "Numerator": 60000,
+          "Denominator": 1
+        },
+        "bShowCurve": false
+      },
+      "Easing": {
+        "EaseIn": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight.MovieSceneFloatTrack_0.MovieSceneFloatSection_0.EaseInFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.14"
+        },
+        "EaseOut": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight.MovieSceneFloatTrack_0.MovieSceneFloatSection_0.EaseOutFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.15"
+        }
+      },
+      "SectionRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 0,
+            "Value": {
+              "Value": 60000
+            }
+          }
+        }
+      },
+      "Signature": "3F515AAE-47D05506-3641518B-8CFA7483"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatSection",
+    "Name": "MovieSceneFloatSection_0",
+    "Outer": "MovieSceneFloatTrack_1",
+    "Class": "UScriptClass'MovieSceneFloatSection'",
+    "Properties": {
+      "FloatCurve": {
+        "PreInfinityExtrap": "RCCE_Constant",
+        "PostInfinityExtrap": "RCCE_Constant",
+        "Times": [
+          {
+            "Value": 0
+          },
+          {
+            "Value": 30000
+          },
+          {
+            "Value": 60000
+          }
+        ],
+        "Values": [
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 0.3,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          }
+        ],
+        "DefaultValue": 0.0,
+        "bHasDefaultValue": false,
+        "TickResolution": {
+          "Numerator": 60000,
+          "Denominator": 1
+        },
+        "bShowCurve": false
+      },
+      "Easing": {
+        "EaseIn": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight.MovieSceneFloatTrack_1.MovieSceneFloatSection_0.EaseInFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.16"
+        },
+        "EaseOut": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight.MovieSceneFloatTrack_1.MovieSceneFloatSection_0.EaseOutFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.17"
+        }
+      },
+      "SectionRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 0,
+            "Value": {
+              "Value": 60000
+            }
+          }
+        }
+      },
+      "Signature": "FE6B2E44-411AE87F-99725692-1098ACD6"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatSection",
+    "Name": "MovieSceneFloatSection_0",
+    "Outer": "MovieSceneFloatTrack_0",
+    "Class": "UScriptClass'MovieSceneFloatSection'",
+    "Properties": {
+      "FloatCurve": {
+        "PreInfinityExtrap": "RCCE_Constant",
+        "PostInfinityExtrap": "RCCE_Constant",
+        "Times": [
+          {
+            "Value": 0
+          },
+          {
+            "Value": 1000
+          },
+          {
+            "Value": 7000
+          }
+        ],
+        "Values": [
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 0.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 0.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          }
+        ],
+        "DefaultValue": 0.0,
+        "bHasDefaultValue": false,
+        "TickResolution": {
+          "Numerator": 60000,
+          "Denominator": 1
+        },
+        "bShowCurve": false
+      },
+      "Easing": {
+        "EaseIn": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieSceneFloatTrack_0.MovieSceneFloatSection_0.EaseInFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.18"
+        },
+        "EaseOut": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieSceneFloatTrack_0.MovieSceneFloatSection_0.EaseOutFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.19"
+        }
+      },
+      "SectionRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 7000
+            }
+          }
+        }
+      },
+      "Signature": "48325C95-478CD605-8639D9B0-A6769AA2"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatSection",
+    "Name": "MovieSceneFloatSection_0",
+    "Outer": "MovieSceneFloatTrack_1",
+    "Class": "UScriptClass'MovieSceneFloatSection'",
+    "Properties": {
+      "FloatCurve": {
+        "PreInfinityExtrap": "RCCE_Constant",
+        "PostInfinityExtrap": "RCCE_Constant",
+        "Times": [
+          {
+            "Value": 0
+          },
+          {
+            "Value": 1000
+          },
+          {
+            "Value": 7000
+          }
+        ],
+        "Values": [
+          {
+            "Value": 0.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          }
+        ],
+        "DefaultValue": 0.0,
+        "bHasDefaultValue": false,
+        "TickResolution": {
+          "Numerator": 60000,
+          "Denominator": 1
+        },
+        "bShowCurve": false
+      },
+      "Easing": {
+        "EaseIn": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieSceneFloatTrack_1.MovieSceneFloatSection_0.EaseInFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.20"
+        },
+        "EaseOut": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieSceneFloatTrack_1.MovieSceneFloatSection_0.EaseOutFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.21"
+        }
+      },
+      "SectionRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 7000
+            }
+          }
+        }
+      },
+      "Signature": "A2D64AD2-4ED10FBA-802D4193-DA82C208"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatTrack",
+    "Name": "MovieSceneFloatTrack_0",
+    "Outer": "Anm_Highlight",
+    "Class": "UScriptClass'MovieSceneFloatTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderOpacity",
+        "PropertyPath": "RenderOpacity",
+        "bCanUseClassLookup": true
+      },
+      "Sections": [
+        {
+          "ObjectName": "MovieSceneFloatSection'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight.MovieSceneFloatTrack_0.MovieSceneFloatSection_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.24"
+        }
+      ],
+      "EvaluationFieldGuid": "D1822C56-4F382CBE-751548AE-DB0AB459",
+      "EvaluationField": {
+        "Entries": [
+          {
+            "Section": {
+              "ObjectName": "MovieSceneFloatSection'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight.MovieSceneFloatTrack_0.MovieSceneFloatSection_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.24"
+            },
+            "Range": {
+              "LowerBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 0
+                }
+              },
+              "UpperBound": {
+                "Type": "ERangeBoundTypes::Exclusive",
+                "Value": {
+                  "Value": 60000
+                }
+              }
+            },
+            "ForcedTime": {
+              "Value": -2147483648
+            },
+            "Flags": "ESectionEvaluationFlags::None",
+            "LegacySortOrder": 0
+          }
+        ]
+      },
+      "Signature": "D1822C56-4F382CBE-751548AE-DB0AB459"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatTrack",
+    "Name": "MovieSceneFloatTrack_1",
+    "Outer": "Anm_Highlight",
+    "Class": "UScriptClass'MovieSceneFloatTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderOpacity",
+        "PropertyPath": "RenderOpacity",
+        "bCanUseClassLookup": true
+      },
+      "Sections": [
+        {
+          "ObjectName": "MovieSceneFloatSection'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight.MovieSceneFloatTrack_1.MovieSceneFloatSection_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.25"
+        }
+      ],
+      "EvaluationFieldGuid": "81648CF0-4071C468-02AA68A9-A4CC4353",
+      "EvaluationField": {
+        "Entries": [
+          {
+            "Section": {
+              "ObjectName": "MovieSceneFloatSection'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight.MovieSceneFloatTrack_1.MovieSceneFloatSection_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.25"
+            },
+            "Range": {
+              "LowerBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 0
+                }
+              },
+              "UpperBound": {
+                "Type": "ERangeBoundTypes::Exclusive",
+                "Value": {
+                  "Value": 60000
+                }
+              }
+            },
+            "ForcedTime": {
+              "Value": -2147483648
+            },
+            "Flags": "ESectionEvaluationFlags::None",
+            "LegacySortOrder": 0
+          }
+        ]
+      },
+      "Signature": "81648CF0-4071C468-02AA68A9-A4CC4353"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatTrack",
+    "Name": "MovieSceneFloatTrack_0",
+    "Outer": "Anm_OFFToON",
+    "Class": "UScriptClass'MovieSceneFloatTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderOpacity",
+        "PropertyPath": "RenderOpacity",
+        "bCanUseClassLookup": true
+      },
+      "Sections": [
+        {
+          "ObjectName": "MovieSceneFloatSection'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieSceneFloatTrack_0.MovieSceneFloatSection_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.26"
+        }
+      ],
+      "EvaluationFieldGuid": "F72D315C-4A361D6C-6E194C9D-1B4C137F",
+      "EvaluationField": {
+        "Entries": [
+          {
+            "Section": {
+              "ObjectName": "MovieSceneFloatSection'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieSceneFloatTrack_0.MovieSceneFloatSection_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.26"
+            },
+            "Range": {
+              "LowerBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 0
+                }
+              },
+              "UpperBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 7000
+                }
+              }
+            },
+            "ForcedTime": {
+              "Value": -2147483648
+            },
+            "Flags": "ESectionEvaluationFlags::None",
+            "LegacySortOrder": 0
+          }
+        ]
+      },
+      "Signature": "F72D315C-4A361D6C-6E194C9D-1B4C137F"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatTrack",
+    "Name": "MovieSceneFloatTrack_1",
+    "Outer": "Anm_OFFToON",
+    "Class": "UScriptClass'MovieSceneFloatTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderOpacity",
+        "PropertyPath": "RenderOpacity",
+        "bCanUseClassLookup": true
+      },
+      "Sections": [
+        {
+          "ObjectName": "MovieSceneFloatSection'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieSceneFloatTrack_1.MovieSceneFloatSection_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.27"
+        }
+      ],
+      "EvaluationFieldGuid": "4085CE8C-44FAD112-94181CAE-CF7051BF",
+      "EvaluationField": {
+        "Entries": [
+          {
+            "Section": {
+              "ObjectName": "MovieSceneFloatSection'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON.MovieSceneFloatTrack_1.MovieSceneFloatSection_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.27"
+            },
+            "Range": {
+              "LowerBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 0
+                }
+              },
+              "UpperBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 7000
+                }
+              }
+            },
+            "ForcedTime": {
+              "Value": -2147483648
+            },
+            "Flags": "ESectionEvaluationFlags::None",
+            "LegacySortOrder": 0
+          }
+        ]
+      },
+      "Signature": "4085CE8C-44FAD112-94181CAE-CF7051BF"
+    }
+  },
+  {
+    "Type": "WBP_MainMenu_PalRarityStar_C",
+    "Name": "Default__WBP_MainMenu_PalRarityStar_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.WBP_MainMenu_PalRarityStar_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "bHasScriptImplementedTick": false,
+      "bHasScriptImplementedPaint": false
+    }
+  },
+  {
+    "Type": "WidgetAnimation",
+    "Name": "Anm_Highlight_INST",
+    "Outer": "WBP_MainMenu_PalRarityStar_C",
+    "Class": "UScriptClass'WidgetAnimation'",
+    "Properties": {
+      "MovieScene": {
+        "ObjectName": "MovieScene'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.Anm_Highlight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.11"
+      },
+      "AnimationBindings": [
+        {
+          "WidgetName": "OFF",
+          "SlotWidgetName": "None",
+          "AnimationGuid": "2CA5DA5A-464BDD35-392EBFA7-67A06E61",
+          "bIsRootWidget": false
+        },
+        {
+          "WidgetName": "ON",
+          "SlotWidgetName": "None",
+          "AnimationGuid": "7FE42EA1-4130BECE-0338EABE-A326BA3A",
+          "bIsRootWidget": false
+        }
+      ],
+      "DisplayLabel": "Anm_Highlight",
+      "CompiledData": {
+        "ObjectName": "MovieSceneCompiledData'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST.CompiledData'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.22"
+      },
+      "Signature": "BDF6907C-4D0C2B20-BCF3C1BD-16E4D19E"
+    }
+  },
+  {
+    "Type": "WidgetAnimation",
+    "Name": "Anm_OFFToON_INST",
+    "Outer": "WBP_MainMenu_PalRarityStar_C",
+    "Class": "UScriptClass'WidgetAnimation'",
+    "Properties": {
+      "MovieScene": {
+        "ObjectName": "MovieScene'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.Anm_OFFToON'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.12"
+      },
+      "AnimationBindings": [
+        {
+          "WidgetName": "OFF",
+          "SlotWidgetName": "None",
+          "AnimationGuid": "75E14AE3-452ACE7A-12A0D59C-D13F2CE9",
+          "bIsRootWidget": false
+        },
+        {
+          "WidgetName": "ON",
+          "SlotWidgetName": "None",
+          "AnimationGuid": "E48722D9-4CB973B6-888DD3B5-28D107F2",
+          "bIsRootWidget": false
+        }
+      ],
+      "DisplayLabel": "Anm_OFFToON",
+      "CompiledData": {
+        "ObjectName": "MovieSceneCompiledData'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST.CompiledData'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.23"
+      },
+      "Signature": "945A04B7-4305195C-4429E687-8CF5B956"
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_MainMenu_PalRarityStar_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_MainMenu_PalRarityStar_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.36"
+      },
+      "Animations": [
+        {
+          "ObjectName": "WidgetAnimation'WBP_MainMenu_PalRarityStar_C:Anm_OFFToON_INST'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.34"
+        },
+        {
+          "ObjectName": "WidgetAnimation'WBP_MainMenu_PalRarityStar_C:Anm_Highlight_INST'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.33"
+        }
+      ],
+      "UberGraphFunction": {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:ExecuteUbergraph_WBP_MainMenu_PalRarityStar'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.7"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'UserWidget'",
+      "ObjectPath": "/Script/UMG"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:SetActiveRank'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.8"
+      },
+      {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:AnmEvent_OnToOff'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.6"
+      },
+      {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:AnmEvent_OffToOn'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.5"
+      },
+      {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:AnmEvent_ForceOff'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.3"
+      },
+      {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:AnmEvent_Highlight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.4"
+      },
+      {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:ExecuteUbergraph_WBP_MainMenu_PalRarityStar'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.7"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Anm_Highlight",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Transient | RepSkip",
+        "PropertyClass": {
+          "ObjectName": "Class'WidgetAnimation'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Anm_OFFToON",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Transient | RepSkip",
+        "PropertyClass": {
+          "ObjectName": "Class'WidgetAnimation'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OFF",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Image'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "ON",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'Image'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_WBP_MainMenu_PalRarityStar": {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:ExecuteUbergraph_WBP_MainMenu_PalRarityStar'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.7"
+      },
+      "AnmEvent_Highlight": {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:AnmEvent_Highlight'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.4"
+      },
+      "AnmEvent_ForceOff": {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:AnmEvent_ForceOff'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.3"
+      },
+      "AnmEvent_OffToOn": {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:AnmEvent_OffToOn'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.5"
+      },
+      "AnmEvent_OnToOff": {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:AnmEvent_OnToOff'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.6"
+      },
+      "SetActiveRank": {
+        "ObjectName": "Function'WBP_MainMenu_PalRarityStar_C:SetActiveRank'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.8"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_MainMenu_PalRarityStar_C'Default__WBP_MainMenu_PalRarityStar_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.32"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_MainMenu_PalRarityStar_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "CanvasPanel'WBP_MainMenu_PalRarityStar_C:WidgetTree.PalRarity'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/MainMenu/Pal/WBP_MainMenu_PalRarityStar.0"
+      }
+    }
+  }
+]

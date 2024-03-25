@@ -1,0 +1,2407 @@
+[
+  {
+    "Type": "CanvasPanel",
+    "Name": "CanvasPanel_58",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'CanvasPanel'",
+    "Properties": {
+      "Slots": [
+        {
+          "ObjectName": "CanvasPanelSlot'WBP_PartnerSkillInfo_C:WidgetTree.CanvasPanel_58.CanvasPanelSlot_2'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.1"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "CanvasPanelSlot",
+    "Name": "CanvasPanelSlot_2",
+    "Outer": "CanvasPanel_58",
+    "Class": "UScriptClass'CanvasPanelSlot'",
+    "Properties": {
+      "LayoutData": {
+        "Offsets": {
+          "Right": 91.22199,
+          "Bottom": 88.0
+        }
+      },
+      "Parent": {
+        "ObjectName": "CanvasPanel'WBP_PartnerSkillInfo_C:WidgetTree.CanvasPanel_58'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.0"
+      },
+      "Content": {
+        "ObjectName": "WBP_Ingame_PalSkillGauge_C'WBP_PartnerSkillInfo_C:WidgetTree.WBP_Ingame_PalSkillGauge'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.34"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "AnmEvent_HideShow",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "Hide",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Override",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "CanRideCharacter",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "CanRide",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoPalHolder_OtomoPalHolder",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Try_Get_Current_Active_Pal_Actor_Otomo",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalRideMarkerComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "Change Ride Key Guide",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "Ride",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text_1",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_SelectText_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Check Partner Skill Unlocked Timer",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BooleanOR_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_CanRideCharacter_CanRide",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsExistActiveSkill_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Get_Partner_Skill_Name_Text_SkillNameText",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BooleanNOR_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_SelectText_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsRestrictedByItems_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Destruct",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'UserWidget:Destruct'",
+      "ObjectPath": "/Script/UMG"
+    },
+    "FunctionFlags": "FUNC_BlueprintCosmetic | FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "EndExecuteAnmTimer",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetEffectTimeRatio_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_NearlyEqual_FloatFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_NearlyEqual_FloatFloat_B_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_NearlyEqual_FloatFloat_A_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_WBP_PartnerSkillInfo",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPartnerSkillParameterComponent:OnStop__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPartnerSkillParameterComponent:OnCoolDownTimeChanged__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPartnerSkillParameterComponent:OnOverheat__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_3",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPartnerSkillParameterComponent:OnCoolDownCompleted__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_InvalidateTimerHandle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_InvalidateTimerHandle_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_4",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_InvalidateTimerHandle_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_5",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPartnerSkillParameterComponent:OnEffectTimeChanged__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsExistActiveSkill_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsExistActiveSkill_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_CustomEvent_Hide",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_CustomEvent_Override",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_NotEqual_BoolBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAnimation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'UMGSequencePlayer'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_6",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPartnerSkillParameterComponent:OnStart__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Temp_bool_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "Temp_byte_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EUMGSequencePlayMode'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_7",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalPartnerSkillParameterComponent:OnToggleExecute__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "Temp_byte_Variable_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EUMGSequencePlayMode'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "K2Node_Select_Default",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "Enum'EUMGSequencePlayMode'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_PlayAnimation_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'UMGSequencePlayer'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "Get Partner Skill Name Text",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "TextProperty",
+        "Name": "SkillNameText",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "Parm | OutParm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoPalHolder_OtomoPalHolder",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetDatabaseCharacterParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalDatabaseCharacterParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoPalHolder_OtomoPalHolder_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Try_Get_Current_Active_Pal_Actor_Otomo",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacterParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetIndividualParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_GetCharacterID_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_GetTribeIDNameFromCharacterID_outTribeIDName",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "NameProperty",
+        "Name": "CallFunc_GetPartnerSkillMsgID_OutMsgID",
+        "Flags": "RF_Public",
+        "ElementSize": 12
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedText_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetOtomoPalHolder",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtomoPalHolder",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Otomo_Pal_Holder_Component",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetPartnerSkillParameter",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "PartnerSkillParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoPalHolder_OtomoPalHolder",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Try_Get_Current_Active_Pal_Actor_Otomo",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoPalHolder_OtomoPalHolder_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "Hide",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnActivateOtomo",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnInactiveOtomo",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnStartCoop",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsToggleKey_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnStopCoop",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsToggleKey_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReleaseInput",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Setup",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'OnInputAction__DelegateSignature'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOtomoHolderComponent_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalOtomoHolderComponentBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Otomo_Pal_Holder_Component",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_OtomoPalHolderComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'OnInputAction__DelegateSignature'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_OtomoPalHolderComponent_C:OnInactiveOtomoEvent__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.40"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_3",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_OtomoPalHolderComponent_C:OnActivateOtomo__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/OtomoHolder/BP_OtomoPalHolderComponent.38"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetupDisplay",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_CanRideCharacter_CanRide",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsCoolDown_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Not_PreBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetCoolDownTimeMax_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetEffectTimeMax_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetEffectTime_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetCoolDownTime_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Should Show UI",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "ShouldShow",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetEffectTimeMax_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetEffectTime_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_FixedPointFixedPoint_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_BooleanOR_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "Show Effect Time",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPartnerSkillParameter_PartnerSkillParameter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsRestrictedByItems_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ShowCoolDownTime",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ShowSkillExecuteAnm",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "IsExcuting",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_IsValidTimerHandle_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_NotEqual_BoolBool_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ToggleCoopText",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "ShowOriginal",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_Get_Partner_Skill_Name_Text_SkillNameText",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_GetLocalizedTextFromHandle_Text",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      },
+      {
+        "Type": "TextProperty",
+        "Name": "CallFunc_SelectText_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "TriggerInput",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Update Cool Down Time",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "Now",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Max",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Convert_FixedPointToFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Convert_FixedPointToFloat_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_B_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_A_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Update Effect Time",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "Now",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Max",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Convert_FixedPointToFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_NearlyEqual_FloatFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Convert_FixedPointToFloat_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_NearlyEqual_FloatFloat_A_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_B_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_A_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "MovieScene",
+    "Name": "Anm_HideShow",
+    "Outer": "Anm_HideShow_INST",
+    "Class": "UScriptClass'MovieScene'",
+    "Properties": {
+      "Possessables": [
+        {
+          "Tags": [],
+          "Guid": "3E75C287-450CD4D7-E014B68A-115A3F91",
+          "Name": "CanvasPanel_58",
+          "ParentGuid": "00000000-00000000-00000000-00000000",
+          "SpawnableObjectBindingID": {
+            "Guid": "00000000-00000000-00000000-00000000",
+            "SequenceID": 0,
+            "ResolveParentIndex": -1
+          }
+        }
+      ],
+      "ObjectBindings": [
+        {
+          "ObjectGuid": "3E75C287-450CD4D7-E014B68A-115A3F91",
+          "BindingName": "CanvasPanel_58",
+          "Tracks": [
+            {
+              "ObjectName": "MovieSceneFloatTrack'WBP_PartnerSkillInfo_C:Anm_HideShow_INST.Anm_HideShow.MovieSceneFloatTrack_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.33"
+            }
+          ]
+        }
+      ],
+      "PlaybackRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 0,
+            "Value": {
+              "Value": 15001
+            }
+          }
+        }
+      },
+      "DisplayRate": {
+        "Numerator": 20
+      },
+      "Signature": "85751981-4F77CFB5-0D91D1B6-5639B752"
+    }
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseInFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneBuiltInEasingFunction",
+    "Name": "EaseOutFunction",
+    "Outer": "MovieSceneFloatSection_0",
+    "Class": "UScriptClass'MovieSceneBuiltInEasingFunction'"
+  },
+  {
+    "Type": "MovieSceneCompiledData",
+    "Name": "CompiledData",
+    "Outer": "Anm_HideShow_INST",
+    "Class": "UScriptClass'MovieSceneCompiledData'"
+  },
+  {
+    "Type": "MovieSceneFloatSection",
+    "Name": "MovieSceneFloatSection_0",
+    "Outer": "MovieSceneFloatTrack_0",
+    "Class": "UScriptClass'MovieSceneFloatSection'",
+    "Properties": {
+      "FloatCurve": {
+        "PreInfinityExtrap": "RCCE_Constant",
+        "PostInfinityExtrap": "RCCE_Constant",
+        "Times": [
+          {
+            "Value": 0
+          },
+          {
+            "Value": 15000
+          }
+        ],
+        "Values": [
+          {
+            "Value": 1.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          },
+          {
+            "Value": 0.0,
+            "Tangent": {
+              "ArriveTangent": 0.0,
+              "LeaveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangentWeight": 0.0,
+              "TangentWeightMode": 0
+            },
+            "InterpMode": 2,
+            "TangentMode": 0,
+            "PaddingByte": 0
+          }
+        ],
+        "DefaultValue": 0.0,
+        "bHasDefaultValue": false,
+        "TickResolution": {
+          "Numerator": 60000,
+          "Denominator": 1
+        },
+        "bShowCurve": false
+      },
+      "Easing": {
+        "EaseIn": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_PartnerSkillInfo_C:Anm_HideShow_INST.Anm_HideShow.MovieSceneFloatTrack_0.MovieSceneFloatSection_0.EaseInFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.29"
+        },
+        "EaseOut": {
+          "ObjectName": "MovieSceneBuiltInEasingFunction'WBP_PartnerSkillInfo_C:Anm_HideShow_INST.Anm_HideShow.MovieSceneFloatTrack_0.MovieSceneFloatSection_0.EaseOutFunction'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.30"
+        }
+      },
+      "SectionRange": {
+        "Value": {
+          "LowerBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 0
+            }
+          },
+          "UpperBound": {
+            "Type": 1,
+            "Value": {
+              "Value": 15000
+            }
+          }
+        }
+      },
+      "Signature": "8F433FC6-43D14AA9-E2E599A8-4B10AAB8"
+    }
+  },
+  {
+    "Type": "MovieSceneFloatTrack",
+    "Name": "MovieSceneFloatTrack_0",
+    "Outer": "Anm_HideShow",
+    "Class": "UScriptClass'MovieSceneFloatTrack'",
+    "Properties": {
+      "PropertyBinding": {
+        "PropertyName": "RenderOpacity",
+        "PropertyPath": "RenderOpacity",
+        "bCanUseClassLookup": true
+      },
+      "Sections": [
+        {
+          "ObjectName": "MovieSceneFloatSection'WBP_PartnerSkillInfo_C:Anm_HideShow_INST.Anm_HideShow.MovieSceneFloatTrack_0.MovieSceneFloatSection_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.32"
+        }
+      ],
+      "EvaluationFieldGuid": "51DF5033-440D363E-4C211FB1-B5FC7BCB",
+      "EvaluationField": {
+        "Entries": [
+          {
+            "Section": {
+              "ObjectName": "MovieSceneFloatSection'WBP_PartnerSkillInfo_C:Anm_HideShow_INST.Anm_HideShow.MovieSceneFloatTrack_0.MovieSceneFloatSection_0'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.32"
+            },
+            "Range": {
+              "LowerBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 0
+                }
+              },
+              "UpperBound": {
+                "Type": "ERangeBoundTypes::Inclusive",
+                "Value": {
+                  "Value": 15000
+                }
+              }
+            },
+            "ForcedTime": {
+              "Value": -2147483648
+            },
+            "Flags": "ESectionEvaluationFlags::None",
+            "LegacySortOrder": 0
+          }
+        ]
+      },
+      "Signature": "51DF5033-440D363E-4C211FB1-B5FC7BCB"
+    }
+  },
+  {
+    "Type": "WBP_Ingame_PalSkillGauge_C",
+    "Name": "WBP_Ingame_PalSkillGauge",
+    "Outer": "WidgetTree",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/PalGauge/WBP_Ingame_PalSkillGauge.WBP_Ingame_PalSkillGauge_C'",
+    "Template": {
+      "ObjectName": "WBP_Ingame_PalSkillGauge_C'Default__WBP_Ingame_PalSkillGauge_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/PalGauge/WBP_Ingame_PalSkillGauge.338"
+    },
+    "Properties": {
+      "Slot": {
+        "ObjectName": "CanvasPanelSlot'WBP_PartnerSkillInfo_C:WidgetTree.CanvasPanel_58.CanvasPanelSlot_2'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.1"
+      },
+      "Visibility": "ESlateVisibility::SelfHitTestInvisible"
+    }
+  },
+  {
+    "Type": "WBP_PartnerSkillInfo_C",
+    "Name": "Default__WBP_PartnerSkillInfo_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.WBP_PartnerSkillInfo_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "CheckPartnerSkillUnlockedTimer": {
+        "Handle": 0
+      },
+      "IsOverride": true,
+      "RideMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "RIDE_KEYGUIDE_RIDE"
+      },
+      "GetoffMsgID": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "RIDE_KEYGUIDE_GETOFF"
+      },
+      "AnmEndTimer": {
+        "Handle": 0
+      },
+      "CancelMsgId": {
+        "DataTable": {
+          "ObjectName": "DataTable'DT_UI_Common_Text'",
+          "ObjectPath": "Pal/Content/Pal/DataTable/Text/DT_UI_Common_Text.0"
+        },
+        "RowName": "COMMON_CANCEL"
+      },
+      "bHasScriptImplementedTick": false,
+      "bHasScriptImplementedPaint": false
+    }
+  },
+  {
+    "Type": "WidgetAnimation",
+    "Name": "Anm_HideShow_INST",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'WidgetAnimation'",
+    "Properties": {
+      "MovieScene": {
+        "ObjectName": "MovieScene'WBP_PartnerSkillInfo_C:Anm_HideShow_INST.Anm_HideShow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.28"
+      },
+      "AnimationBindings": [
+        {
+          "WidgetName": "CanvasPanel_58",
+          "SlotWidgetName": "None",
+          "AnimationGuid": "3E75C287-450CD4D7-E014B68A-115A3F91",
+          "bIsRootWidget": false
+        }
+      ],
+      "DisplayLabel": "Anm_HideShow",
+      "CompiledData": {
+        "ObjectName": "MovieSceneCompiledData'WBP_PartnerSkillInfo_C:Anm_HideShow_INST.CompiledData'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.31"
+      },
+      "Signature": "EF87EBC2-4224D9CD-E4FBB5A7-DEF84FD0"
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_PartnerSkillInfo_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.38"
+      },
+      "Animations": [
+        {
+          "ObjectName": "WidgetAnimation'WBP_PartnerSkillInfo_C:Anm_HideShow_INST'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.36"
+        }
+      ],
+      "UberGraphFunction": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ExecuteUbergraph_WBP_PartnerSkillInfo'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.8"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalUserWidget'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ToggleCoopText'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.24"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:OnStopCoop'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.16"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:OnStartCoop'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.15"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:EndExecuteAnmTimer'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.7"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ShowSkillExecuteAnm'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.23"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Change Ride Key Guide'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.4"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Setup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.18"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Should Show UI'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.20"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Check Partner Skill Unlocked Timer'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.5"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:CanRideCharacter'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.3"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ShowCoolDownTime'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.22"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Show Effect Time'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.21"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Hide'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.12"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:SetupDisplay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.19"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Update Cool Down Time'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.26"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Update Effect Time'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.27"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Get Partner Skill Name Text'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.9"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:GetPartnerSkillParameter'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.11"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:GetOtomoPalHolder'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.10"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:OnActivateOtomo'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.13"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:OnInactiveOtomo'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.14"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:TriggerInput'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.25"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ReleaseInput'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.17"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Destruct'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.6"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:AnmEvent_HideShow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.2"
+      },
+      {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ExecuteUbergraph_WBP_PartnerSkillInfo'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.8"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Anm_HideShow",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Transient | RepSkip",
+        "PropertyClass": {
+          "ObjectName": "Class'WidgetAnimation'",
+          "ObjectPath": "/Script/UMG"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WBP_Ingame_PalSkillGauge",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_Ingame_PalSkillGauge_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/PalGauge/WBP_Ingame_PalSkillGauge.348"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CurrentPartnerSkillParameter",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalPartnerSkillParameterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "isShowCoolDown",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CheckPartnerSkillUnlockedTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsHiding",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsOverride",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "RideMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "GetoffMsgID",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "NowRiding",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "NowCooping",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CurrentExcuting",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AnmEndTimer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CacheRatio",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CancelMsgId",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'DataTableRowHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_WBP_PartnerSkillInfo": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ExecuteUbergraph_WBP_PartnerSkillInfo'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.8"
+      },
+      "AnmEvent_HideShow": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:AnmEvent_HideShow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.2"
+      },
+      "Destruct": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Destruct'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.6"
+      },
+      "ReleaseInput": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ReleaseInput'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.17"
+      },
+      "TriggerInput": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:TriggerInput'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.25"
+      },
+      "OnInactiveOtomo": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:OnInactiveOtomo'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.14"
+      },
+      "OnActivateOtomo": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:OnActivateOtomo'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.13"
+      },
+      "GetOtomoPalHolder": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:GetOtomoPalHolder'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.10"
+      },
+      "GetPartnerSkillParameter": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:GetPartnerSkillParameter'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.11"
+      },
+      "Get Partner Skill Name Text": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Get Partner Skill Name Text'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.9"
+      },
+      "Update Effect Time": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Update Effect Time'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.27"
+      },
+      "Update Cool Down Time": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Update Cool Down Time'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.26"
+      },
+      "SetupDisplay": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:SetupDisplay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.19"
+      },
+      "Hide": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Hide'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.12"
+      },
+      "Show Effect Time": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Show Effect Time'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.21"
+      },
+      "ShowCoolDownTime": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ShowCoolDownTime'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.22"
+      },
+      "CanRideCharacter": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:CanRideCharacter'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.3"
+      },
+      "Check Partner Skill Unlocked Timer": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Check Partner Skill Unlocked Timer'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.5"
+      },
+      "Should Show UI": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Should Show UI'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.20"
+      },
+      "Setup": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Setup'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.18"
+      },
+      "Change Ride Key Guide": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:Change Ride Key Guide'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.4"
+      },
+      "ShowSkillExecuteAnm": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ShowSkillExecuteAnm'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.23"
+      },
+      "EndExecuteAnmTimer": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:EndExecuteAnmTimer'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.7"
+      },
+      "OnStartCoop": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:OnStartCoop'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.15"
+      },
+      "OnStopCoop": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:OnStopCoop'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.16"
+      },
+      "ToggleCoopText": {
+        "ObjectName": "Function'WBP_PartnerSkillInfo_C:ToggleCoopText'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.24"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_PartnerSkillInfo_C'Default__WBP_PartnerSkillInfo_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.35"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_PartnerSkillInfo_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "CanvasPanel'WBP_PartnerSkillInfo_C:WidgetTree.CanvasPanel_58'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/PartnerSkillInfo/WBP_PartnerSkillInfo.0"
+      }
+    }
+  }
+]

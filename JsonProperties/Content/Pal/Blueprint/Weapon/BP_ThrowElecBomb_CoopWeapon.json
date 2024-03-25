@@ -1,0 +1,606 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ThrowWeaponBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.0"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_ThrowElecBomb_CoopWeapon_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.17"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_ThrowElecBomb_CoopWeapon_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.13"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:ExecuteUbergraph_BP_ThrowElecBomb_CoopWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.2"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ThrowWeaponBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:GetWeaponAttacker'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.5"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:IsEmptyMagazine'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.7"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:GetWeaponDamage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.6"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:On Throw'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.8"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:GetThrowObjectClass'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.4"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:GetEquipSocketName'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.3"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:OnAttachWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.9"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:OnDetachWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.10"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:SetWeaponDamage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.12"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:SetAttacker'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.11"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:ExecuteUbergraph_BP_ThrowElecBomb_CoopWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.2"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SkeletalMesh",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Threw",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "WeaponDmageByOutside",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Attacker",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnTemplate | DisableEditOnInstance | AdvancedDisplay",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_ThrowElecBomb_CoopWeapon": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:ExecuteUbergraph_BP_ThrowElecBomb_CoopWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.2"
+      },
+      "SetAttacker": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:SetAttacker'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.11"
+      },
+      "SetWeaponDamage": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:SetWeaponDamage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.12"
+      },
+      "OnDetachWeapon": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:OnDetachWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.10"
+      },
+      "OnAttachWeapon": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:OnAttachWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.9"
+      },
+      "GetEquipSocketName": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:GetEquipSocketName'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.3"
+      },
+      "GetThrowObjectClass": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:GetThrowObjectClass'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.4"
+      },
+      "On Throw": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:On Throw'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.8"
+      },
+      "GetWeaponDamage": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:GetWeaponDamage'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.6"
+      },
+      "IsEmptyMagazine": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:IsEmptyMagazine'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.7"
+      },
+      "GetWeaponAttacker": {
+        "ObjectName": "Function'BP_ThrowElecBomb_CoopWeapon_C:GetWeaponAttacker'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.5"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "Interfaces": [
+      {
+        "Class": {
+          "ObjectName": "BlueprintGeneratedClass'BPI_CoopWeapon_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Character/Monster/CoopParam/BPI_CoopWeapon.0"
+        },
+        "PointerOffset": 0,
+        "bImplementedByK2": true
+      }
+    ],
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_ThrowElecBomb_CoopWeapon_C'Default__BP_ThrowElecBomb_CoopWeapon_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal",
+      "ImplementedInterfaces": "((Interface=/Script/Engine.BlueprintGeneratedClass'\"/Game/Pal/Blueprint/Character/Monster/CoopParam/BPI_CoopWeapon.BPI_CoopWeapon_C\"'))"
+    }
+  },
+  {
+    "Type": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Name": "Default__BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.BP_ThrowElecBomb_CoopWeapon_C'",
+    "Template": {
+      "ObjectName": "BP_ThrowWeaponBase_C'Default__BP_ThrowWeaponBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "IsUnnecessaryDynamicData": true,
+      "bAlwaysRelevant": true,
+      "bNetUseOwnerRelevancy": true,
+      "bReplicates": true
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_ThrowElecBomb_CoopWeapon",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_AttackerPal",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_attachActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_detachActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_Event_Damageam",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetEquipSocketName",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:GetEquipSocketName'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "NameProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "Parm | OutParm | ReturnParm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetThrowObjectClass",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ThrowWeaponBase_C:GetThrowObjectClass'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.7"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ThrowWeaponBase_C:GetThrowObjectClass'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.7"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ClassProperty",
+        "Name": "ThrowObject",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetWeaponAttacker",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:GetWeaponAttacker'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetWeaponDamage",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:GetWeaponDamage'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Parm | OutParm | ReturnParm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "IsEmptyMagazine",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:IsEmptyMagazine'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "On Throw",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ThrowWeaponBase_C:On Throw'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.9"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ThrowWeaponBase_C:On Throw'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.9"
+    },
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnAttachWeapon",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:OnAttachWeapon'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "attachActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDetachWeapon",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:OnDetachWeapon'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "detachActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetAttacker",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "AttackerPal",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetWeaponDamage",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "Damageam",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'InheritableComponentHandler'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_ThrowElecBomb_CoopWeapon_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.14"
+      },
+      "VariableGuid": "915C7B00-4869654A-A0EAB09F-45EC7683",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SkeletalMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SkeletalMeshComponent'BP_ThrowElecBomb_CoopWeapon_C:SkeletalMesh_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.18"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_ThrowWeaponBase_C",
+      "VariableGuid": "40B9C221-42F579BA-AAF59A97-D092E933",
+      "InternalVariableName": "SkeletalMesh"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_ThrowElecBomb_CoopWeapon_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.16"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_ThrowElecBomb_CoopWeapon_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.16"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_ThrowElecBomb_CoopWeapon_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowElecBomb_CoopWeapon.15"
+      }
+    }
+  },
+  {
+    "Type": "SkeletalMeshComponent",
+    "Name": "SkeletalMesh_GEN_VARIABLE",
+    "Outer": "BP_ThrowElecBomb_CoopWeapon_C",
+    "Class": "UScriptClass'SkeletalMeshComponent'",
+    "Properties": {
+      "AnimationData": {
+        "AnimToPlay": {
+          "ObjectName": "AnimMontage'AM_Hedgehog_Ball'",
+          "ObjectPath": "Pal/Content/Pal/Animation/Character/Monster/Hedgehog/AM_Hedgehog_Ball.0"
+        }
+      },
+      "AnimationMode": "EAnimationMode::AnimationSingleNode",
+      "ClothingSimulationFactory": {
+        "ObjectName": "Class'ClothingSimulationFactoryNv'",
+        "ObjectPath": "/Script/ClothingSystemRuntimeNv"
+      },
+      "SkeletalMesh": {
+        "ObjectName": "SkeletalMesh'SK_Hedgehog'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Hedgehog/SK_Hedgehog.0"
+      },
+      "SkinnedAsset": {
+        "ObjectName": "SkeletalMesh'SK_Hedgehog'",
+        "ObjectPath": "Pal/Content/Pal/Model/Character/Monster/Hedgehog/SK_Hedgehog.0"
+      },
+      "RelativeLocation": {
+        "X": 0.0,
+        "Y": 10.0,
+        "Z": 0.0
+      },
+      "RelativeRotation": {
+        "Pitch": 180.0,
+        "Yaw": 0.0,
+        "Roll": -90.0
+      },
+      "RelativeScale3D": {
+        "X": 0.8,
+        "Y": 0.8,
+        "Z": 0.8
+      }
+    }
+  }
+]

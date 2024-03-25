@@ -1,0 +1,1090 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_CaptureRope_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ThrowWeaponBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.0"
+    },
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_CaptureRope_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.22"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_CaptureRope_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.17"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_CaptureRope_C:ExecuteUbergraph_BP_CaptureRope'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.4"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ThrowWeaponBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:DecrementBullet'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.3"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:FollowToOwner'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.5"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:On End Shoot Animation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.9"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:On Throw'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.10"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:IsSpawnLeftHandRope'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.8"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:GetThrowObjectClass'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.7"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:GetEquipSocketName'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.6"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.16"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:OnAttachWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.11"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:OnDetachWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.12"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:OnFollow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.14"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:OnStartAim'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.15"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:OnEndAim'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.13"
+      },
+      {
+        "ObjectName": "Function'BP_CaptureRope_C:ExecuteUbergraph_BP_CaptureRope'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.4"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Cable",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'CableComponent'",
+          "ObjectPath": "/Script/CableComponent"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "StaticMesh",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "IsAttached",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 1,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AimRotator",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "NoAimRotator",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | BlueprintReadOnly | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "AimLocation",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "NoAimLocation",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 24,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_CaptureRope": {
+        "ObjectName": "Function'BP_CaptureRope_C:ExecuteUbergraph_BP_CaptureRope'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.4"
+      },
+      "OnEndAim": {
+        "ObjectName": "Function'BP_CaptureRope_C:OnEndAim'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.13"
+      },
+      "OnStartAim": {
+        "ObjectName": "Function'BP_CaptureRope_C:OnStartAim'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.15"
+      },
+      "OnFollow": {
+        "ObjectName": "Function'BP_CaptureRope_C:OnFollow'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.14"
+      },
+      "OnDetachWeapon": {
+        "ObjectName": "Function'BP_CaptureRope_C:OnDetachWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.12"
+      },
+      "OnAttachWeapon": {
+        "ObjectName": "Function'BP_CaptureRope_C:OnAttachWeapon'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.11"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_CaptureRope_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.16"
+      },
+      "GetEquipSocketName": {
+        "ObjectName": "Function'BP_CaptureRope_C:GetEquipSocketName'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.6"
+      },
+      "GetThrowObjectClass": {
+        "ObjectName": "Function'BP_CaptureRope_C:GetThrowObjectClass'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.7"
+      },
+      "IsSpawnLeftHandRope": {
+        "ObjectName": "Function'BP_CaptureRope_C:IsSpawnLeftHandRope'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.8"
+      },
+      "On Throw": {
+        "ObjectName": "Function'BP_CaptureRope_C:On Throw'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.10"
+      },
+      "On End Shoot Animation": {
+        "ObjectName": "Function'BP_CaptureRope_C:On End Shoot Animation'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.9"
+      },
+      "FollowToOwner": {
+        "ObjectName": "Function'BP_CaptureRope_C:FollowToOwner'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.5"
+      },
+      "DecrementBullet": {
+        "ObjectName": "Function'BP_CaptureRope_C:DecrementBullet'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.3"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_CaptureRope_C'Default__BP_CaptureRope_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_CaptureRope_C",
+    "Name": "Default__BP_CaptureRope_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.BP_CaptureRope_C'",
+    "Template": {
+      "ObjectName": "BP_ThrowWeaponBase_C'Default__BP_ThrowWeaponBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.1"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "AimRotator": {
+        "Pitch": 80.83427,
+        "Yaw": 89.17895,
+        "Roll": -30.351372
+      },
+      "NoAimRotator": {
+        "Pitch": 62.012054,
+        "Yaw": 106.18399,
+        "Roll": 44.239254
+      },
+      "AimLocation": {
+        "X": -1.117916,
+        "Y": -8.564585,
+        "Z": 3.627433
+      },
+      "NoAimLocation": {
+        "X": -1.934629,
+        "Y": -8.465342,
+        "Z": -0.052247
+      },
+      "WeaponCoopType": "EWeaponCoopType::SupportWeapon"
+    }
+  },
+  {
+    "Type": "CableComponent",
+    "Name": "Cable_GEN_VARIABLE",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'CableComponent'",
+    "Properties": {
+      "EndLocation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "CableLength": 50.0,
+      "CableWidth": 4.0,
+      "NumSides": 3,
+      "OverrideMaterials": [
+        {
+          "ObjectName": "Material'M_Rope'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/Throwable/CaptureTrap/SM_CaptureTrap_001/Material/M_Rope.0"
+        }
+      ],
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "DecrementBullet",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:DecrementBullet'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetItemId_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 44,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalItemId'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_CaptureRope",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_attachActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeTransform_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FindOwnerPalCharacter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FinishSpawningActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_CaptureRopeLeftHand_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRopeLeftHand.0"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetMainMesh_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkeletalMeshComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_IsSpawnLeftHandRope_LeftHand",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_CaptureRopeLeftHand_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRopeLeftHand.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_detachActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetRelativeLocationAndRotation_SweepHitResult",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetRelativeLocationAndRotation_SweepHitResult_1",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "FollowToOwner",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetTransform_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 96,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Transform'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetActorTransform_SweepHitResult",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_K2_SetActorTransform_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetEquipSocketName",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:GetEquipSocketName'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "NameProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "Parm | OutParm | ReturnParm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetThrowObjectClass",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ThrowWeaponBase_C:GetThrowObjectClass'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.7"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ThrowWeaponBase_C:GetThrowObjectClass'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.7"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ClassProperty",
+        "Name": "ThrowObject",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm",
+        "PropertyClass": {
+          "ObjectName": "Class'Class'",
+          "ObjectPath": "/Script/CoreUObject"
+        },
+        "MetaClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "IsSpawnLeftHandRope",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "LeftHand",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_CaptureRopeLeftHand_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRopeLeftHand.0"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Array_Index_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Loop_Counter_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_FindOwnerPalCharacter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetMainMesh_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalSkeletalMeshComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "CallFunc_GetChildrenComponents_Children",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ReferenceParm | ContainsInstancedReference",
+        "Inner": {
+          "Type": "ObjectProperty",
+          "Name": "CallFunc_GetChildrenComponents_Children",
+          "Flags": "RF_Public",
+          "ElementSize": 8,
+          "PropertyFlags": "InstancedReference",
+          "PropertyClass": {
+            "ObjectName": "Class'SceneComponent'",
+            "ObjectPath": "/Script/Engine"
+          }
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Array_Length_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_Array_Get_Item",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Less_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOuterObject_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Object'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Capture_Rope_Left_Hand",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_CaptureRopeLeftHand_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRopeLeftHand.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "On End Shoot Animation",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Montage",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'AnimMontage'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsEmptyMagazine_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "On Throw",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ThrowWeaponBase_C:On Throw'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.9"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ThrowWeaponBase_C:On Throw'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.9"
+    },
+    "ChildProperties": [
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalShooterComponent:OnEndShootingAnimation__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PalShooterComponent'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnAttachWeapon",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:OnAttachWeapon'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "attachActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDetachWeapon",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:OnDetachWeapon'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "detachActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnEndAim",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:OnEndAim'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnFollow",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnStartAim",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalWeaponBase:OnStartAim'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_ThrowWeaponBase_C:ReceiveBeginPlay'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.12"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_ThrowWeaponBase_C:ReceiveBeginPlay'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_ThrowWeaponBase.12"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'InheritableComponentHandler'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_CaptureRope_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.18"
+      },
+      "VariableGuid": "BA3A62F3-4A6BF486-CB5E63A0-AB4F5FF7",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'CableComponent'",
+        "ObjectPath": "/Script/CableComponent"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "CableComponent'BP_CaptureRope_C:Cable_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.2"
+      },
+      "VariableGuid": "261FB2FF-42B3CE54-641ADEB7-EACA49A3",
+      "InternalVariableName": "Cable"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "StaticMeshComponent'BP_CaptureRope_C:StaticMesh_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.23"
+      },
+      "ParentComponentOrVariableName": "DefaultSceneRoot",
+      "ParentComponentOwnerClassName": "BP_ThrowWeaponBase_C",
+      "ChildNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_CaptureRope_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.20"
+        }
+      ],
+      "VariableGuid": "54E21A4A-4F048694-7B84A1A8-E3B3AF47",
+      "InternalVariableName": "StaticMesh"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_CaptureRope_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.21"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_CaptureRope_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.21"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CaptureRope_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.20"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_CaptureRope_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/BP_CaptureRope.19"
+      }
+    }
+  },
+  {
+    "Type": "StaticMeshComponent",
+    "Name": "StaticMesh_GEN_VARIABLE",
+    "Outer": "BP_CaptureRope_C",
+    "Class": "UScriptClass'StaticMeshComponent'",
+    "Properties": {
+      "StaticMesh": {
+        "ObjectName": "StaticMesh'SM_Rope2'",
+        "ObjectPath": "Pal/Content/Pal/Animation/Weapon/CaptureRope/SM_Rope2.2"
+      },
+      "CanCharacterStepUpOn": "ECanBeCharacterBase::ECB_No",
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_WorldStatic",
+        "CollisionEnabled": "ECollisionEnabled::NoCollision",
+        "CollisionProfileName": "NoCollision",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            }
+          ]
+        }
+      },
+      "RelativeLocation": {
+        "X": -5.963088,
+        "Y": -9.249686,
+        "Z": -0.340911
+      },
+      "RelativeRotation": {
+        "Pitch": 75.0121,
+        "Yaw": 107.18431,
+        "Roll": 45.23898
+      }
+    }
+  }
+]

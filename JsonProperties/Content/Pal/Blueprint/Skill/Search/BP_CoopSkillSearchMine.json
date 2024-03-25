@@ -1,0 +1,248 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_CoopSkillSearchMine_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_CoopSkillSearchMine_C:ExecuteUbergraph_BP_CoopSkillSearchMine'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Search/BP_CoopSkillSearchMine.2"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalCoopSkillSearchMapObject'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_CoopSkillSearchMine_C:IsFinished'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Search/BP_CoopSkillSearchMine.3"
+      },
+      {
+        "ObjectName": "Function'BP_CoopSkillSearchMine_C:Start'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Search/BP_CoopSkillSearchMine.4"
+      },
+      {
+        "ObjectName": "Function'BP_CoopSkillSearchMine_C:ExecuteUbergraph_BP_CoopSkillSearchMine'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Search/BP_CoopSkillSearchMine.2"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ArrayProperty",
+        "Name": "SearchMapObjIds",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Inner": {
+          "Type": "NameProperty",
+          "Name": "SearchMapObjIds",
+          "Flags": "RF_Public",
+          "ElementSize": 12
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_CoopSkillSearchMine": {
+        "ObjectName": "Function'BP_CoopSkillSearchMine_C:ExecuteUbergraph_BP_CoopSkillSearchMine'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Search/BP_CoopSkillSearchMine.2"
+      },
+      "Start": {
+        "ObjectName": "Function'BP_CoopSkillSearchMine_C:Start'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Search/BP_CoopSkillSearchMine.4"
+      },
+      "IsFinished": {
+        "ObjectName": "Function'BP_CoopSkillSearchMine_C:IsFinished'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Search/BP_CoopSkillSearchMine.3"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_CoopSkillSearchMine_C'Default__BP_CoopSkillSearchMine_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Skill/Search/BP_CoopSkillSearchMine.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_CoopSkillSearchMine_C",
+    "Name": "Default__BP_CoopSkillSearchMine_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Skill/Search/BP_CoopSkillSearchMine.BP_CoopSkillSearchMine_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "SearchMapObjIds": [
+        "DamagableRock0002",
+        "DamagableRock0003",
+        "DamagableRock0004",
+        "DamagableRock0005",
+        "DamagableRock0006"
+      ],
+      "SearchRangeMaxByRank": [
+        0.0,
+        10000.0,
+        11000.0,
+        13000.0,
+        16000.0,
+        20000.0,
+        25000.0
+      ],
+      "ExtendRangePerSecByRank": [
+        0.0,
+        3000.0,
+        3500.0,
+        4000.0,
+        4500.0,
+        5000.0,
+        5500.0
+      ]
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_CoopSkillSearchMine",
+    "Outer": "BP_CoopSkillSearchMine_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_GetSearchRangeMax_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_Event_Origin",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "K2Node_Event_Rank",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_Event_RequestPlayerUId",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Guid'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "IsFinished",
+    "Outer": "BP_CoopSkillSearchMine_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalCoopSkillSearchBase:IsFinished'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsFinished_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "Start",
+    "Outer": "BP_CoopSkillSearchMine_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalCoopSkillSearchBase:Start'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "Origin",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Rank",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "RequestPlayerUId",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Guid'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  }
+]

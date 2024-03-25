@@ -1,0 +1,260 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_AnimNotify_PlayWingSound_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "BlueprintGeneratedClass'BP_AnimNotify_PlaySound_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlaySound.0"
+    },
+    "SuperStruct": {
+      "ObjectName": "BlueprintGeneratedClass'BP_AnimNotify_PlaySound_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlaySound.0"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_AnimNotify_PlayWingSound_C:MakeSwitchStatePalSize'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlayWingSound.2"
+      },
+      {
+        "ObjectName": "Function'BP_AnimNotify_PlayWingSound_C:Received_Notify'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlayWingSound.3"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StrProperty",
+        "Name": "Switch Group",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      }
+    ],
+    "FuncMap": {
+      "Received_Notify": {
+        "ObjectName": "Function'BP_AnimNotify_PlayWingSound_C:Received_Notify'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlayWingSound.3"
+      },
+      "MakeSwitchStatePalSize": {
+        "ObjectName": "Function'BP_AnimNotify_PlayWingSound_C:MakeSwitchStatePalSize'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlayWingSound.2"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_CollapseCategories | CLASS_Const | CLASS_CompiledFromBlueprint",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_AnimNotify_PlayWingSound_C'Default__BP_AnimNotify_PlayWingSound_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlayWingSound.1"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Const"
+    }
+  },
+  {
+    "Type": "BP_AnimNotify_PlayWingSound_C",
+    "Name": "Default__BP_AnimNotify_PlayWingSound_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlayWingSound.BP_AnimNotify_PlayWingSound_C'",
+    "Template": {
+      "ObjectName": "BP_AnimNotify_PlaySound_C'Default__BP_AnimNotify_PlaySound_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlaySound.1"
+    },
+    "Properties": {
+      "SoundId": {
+        "Key": "Wing_Idle"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "MakeSwitchStatePalSize",
+    "Outer": "BP_AnimNotify_PlayWingSound_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Pal",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalMonsterCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "PalSize",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "Parm | OutParm"
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_GetEnumeratorUserFriendlyName_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_Const"
+  },
+  {
+    "Type": "Function",
+    "Name": "Received_Notify",
+    "Outer": "BP_AnimNotify_PlayWingSound_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'BP_AnimNotify_PlaySound_C:Received_Notify'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlaySound.4"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'BP_AnimNotify_PlaySound_C:Received_Notify'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Notify/BP_AnimNotify_PlaySound.4"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "MeshComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "Animation",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'AnimSequenceBase'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "EventReference",
+        "Flags": "RF_Public",
+        "ElementSize": 40,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'AnimNotifyEventReference'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetOwner_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_GetDisplayName_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsPal_Monster_Character",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalMonsterCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_GetActiveActorFlag_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_Received_Notify_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_MakeSwitchStatePalSize_PalSize",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_GetDisplayName_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_Concat_StrStr_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_Const"
+  }
+]

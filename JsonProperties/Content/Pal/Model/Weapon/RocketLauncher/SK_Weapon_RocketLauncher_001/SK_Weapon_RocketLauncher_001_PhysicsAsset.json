@@ -1,0 +1,127 @@
+[
+  {
+    "Type": "PhysicsAsset",
+    "Name": "SK_Weapon_RocketLauncher_001_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsAsset'",
+    "Properties": {
+      "BoundsBodies": [
+        0,
+        1
+      ],
+      "SkeletalBodySetups": [
+        {
+          "ObjectName": "SkeletalBodySetup'SK_Weapon_RocketLauncher_001_PhysicsAsset:SkeletalBodySetup_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/RocketLauncher/SK_Weapon_RocketLauncher_001/SK_Weapon_RocketLauncher_001_PhysicsAsset.2"
+        },
+        {
+          "ObjectName": "SkeletalBodySetup'SK_Weapon_RocketLauncher_001_PhysicsAsset:SkeletalBodySetup_1'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/RocketLauncher/SK_Weapon_RocketLauncher_001/SK_Weapon_RocketLauncher_001_PhysicsAsset.3"
+        }
+      ],
+      "ConstraintSetup": [
+        {
+          "ObjectName": "PhysicsConstraintTemplate'SK_Weapon_RocketLauncher_001_PhysicsAsset:PhysicsConstraintTemplate_0'",
+          "ObjectPath": "Pal/Content/Pal/Model/Weapon/RocketLauncher/SK_Weapon_RocketLauncher_001/SK_Weapon_RocketLauncher_001_PhysicsAsset.1"
+        }
+      ],
+      "SolverSettings": {
+        "CullDistance": 1.0,
+        "bUseLinearJointSolver": false
+      },
+      "ThumbnailInfo": null
+    }
+  },
+  {
+    "Type": "PhysicsConstraintTemplate",
+    "Name": "PhysicsConstraintTemplate_0",
+    "Outer": "SK_Weapon_RocketLauncher_001_PhysicsAsset",
+    "Class": "UScriptClass'PhysicsConstraintTemplate'",
+    "Properties": {
+      "DefaultInstance": {
+        "JointName": "rocket",
+        "ConstraintBone1": "rocket",
+        "ConstraintBone2": "root",
+        "Pos2": {
+          "X": 32.968945,
+          "Y": -1.9031171E-06,
+          "Z": 14.164438
+        },
+        "ProfileInstance": {
+          "ConeLimit": {
+            "Swing1Motion": "EAngularConstraintMotion::ACM_Limited",
+            "Swing2Motion": "EAngularConstraintMotion::ACM_Limited"
+          },
+          "TwistLimit": {
+            "TwistMotion": "EAngularConstraintMotion::ACM_Limited"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_0",
+    "Outer": "SK_Weapon_RocketLauncher_001_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 4.987876,
+              "Y": 0.0044851303,
+              "Z": 11.490551
+            },
+            "Rotation": {
+              "Pitch": 6.830189E-06,
+              "Yaw": -90.00526,
+              "Roll": -89.056854
+            },
+            "Radius": 21.619413,
+            "Length": 51.9479,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "root",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "363F9EC8467259AD3338ABA3DB3D4D38"
+  },
+  {
+    "Type": "SkeletalBodySetup",
+    "Name": "SkeletalBodySetup_1",
+    "Outer": "SK_Weapon_RocketLauncher_001_PhysicsAsset",
+    "Class": "UScriptClass'SkeletalBodySetup'",
+    "Properties": {
+      "AggGeom": {
+        "SphylElems": [
+          {
+            "Center": {
+              "X": 3.6680703,
+              "Y": 0.012774229,
+              "Z": 1.828619
+            },
+            "Rotation": {
+              "Pitch": 0.0,
+              "Yaw": -90.05083,
+              "Roll": -89.50364
+            },
+            "Radius": 7.7325563,
+            "Length": 32.20392,
+            "RestOffset": 0.0,
+            "Name": "None",
+            "bContributeToMass": true,
+            "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics"
+          }
+        ]
+      },
+      "BoneName": "rocket",
+      "CollisionTraceFlag": "ECollisionTraceFlag::CTF_UseSimpleAsComplex"
+    },
+    "BodySetupGuid": "EA492E5742F0DBD30E1EEC9266EA003F"
+  }
+]

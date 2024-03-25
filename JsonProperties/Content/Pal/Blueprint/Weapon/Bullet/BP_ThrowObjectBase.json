@@ -1,0 +1,1004 @@
+[
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Properties": {
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_ThrowObjectBase_C:SimpleConstructionScript_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.21"
+      },
+      "InheritableComponentHandler": {
+        "ObjectName": "InheritableComponentHandler'BP_ThrowObjectBase_C:InheritableComponentHandler'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.16"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:ExecuteUbergraph_BP_ThrowObjectBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.3"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'PalBullet'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:Play Throw Sound'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.11"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:GetAkOwnerComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.4"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:PlaySoundWithMaterial'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.13"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:PlaySound'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.12"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:IsCountDestroy'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.7"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:IncrementBoundCountAndCheckDestroy'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.6"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:GetMaxBoundCount'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.5"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:IsDestroy'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.8"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:OnEnableGravity'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.10"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:OnBlock'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.9"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:ReceiveActorBeginOverlap'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.14"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.15"
+      },
+      {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:ExecuteUbergraph_BP_ThrowObjectBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.3"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SoundPlayer",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_PalSoundPlayerComponent_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Component/SoundPlayer/BP_PalSoundPlayerComponent.0"
+        }
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "BoundCount",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "EnableGravityInterval",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "DefaultGravityScale",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "ThrowEffect",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraSystem'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_ThrowObjectBase": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:ExecuteUbergraph_BP_ThrowObjectBase'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.3"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:ReceiveBeginPlay'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.15"
+      },
+      "ReceiveActorBeginOverlap": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:ReceiveActorBeginOverlap'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.14"
+      },
+      "OnBlock": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:OnBlock'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.9"
+      },
+      "OnEnableGravity": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:OnEnableGravity'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.10"
+      },
+      "IsDestroy": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:IsDestroy'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.8"
+      },
+      "GetMaxBoundCount": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:GetMaxBoundCount'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.5"
+      },
+      "IncrementBoundCountAndCheckDestroy": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:IncrementBoundCountAndCheckDestroy'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.6"
+      },
+      "IsCountDestroy": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:IsCountDestroy'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.7"
+      },
+      "PlaySound": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:PlaySound'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.12"
+      },
+      "PlaySoundWithMaterial": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:PlaySoundWithMaterial'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.13"
+      },
+      "GetAkOwnerComponent": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:GetAkOwnerComponent'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.4"
+      },
+      "Play Throw Sound": {
+        "ObjectName": "Function'BP_ThrowObjectBase_C:Play Throw Sound'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.11"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_ReplicationDataIsSetUp | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_ThrowObjectBase_C'Default__BP_ThrowObjectBase_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.2"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_PalSoundPlayerComponent_C",
+    "Name": "SoundPlayer_GEN_VARIABLE",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Component/SoundPlayer/BP_PalSoundPlayerComponent.BP_PalSoundPlayerComponent_C'",
+    "Template": {
+      "ObjectName": "BP_PalSoundPlayerComponent_C'Default__BP_PalSoundPlayerComponent_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/Component/SoundPlayer/BP_PalSoundPlayerComponent.1"
+    },
+    "Properties": {
+      "PalSoundSlotClass": {
+        "AssetPathName": "/Game/Pal/Blueprint/Sound/BP_SoundSlot_ThrowWeapon_PalSphere.BP_SoundSlot_ThrowWeapon_PalSphere_C",
+        "SubPathString": ""
+      }
+    }
+  },
+  {
+    "Type": "BP_ThrowObjectBase_C",
+    "Name": "Default__BP_ThrowObjectBase_C",
+    "Class": "BlueprintGeneratedClass'Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.BP_ThrowObjectBase_C'",
+    "Properties": {
+      "UberGraphFrame": {},
+      "EnableGravityInterval": 0.20000000298023224,
+      "ThrowEffect": {
+        "ObjectName": "NiagaraSystem'NS_Throw'",
+        "ObjectPath": "Pal/Content/Pal/Effect/Common/Throw/NS_Throw.44"
+      },
+      "CollisionComp": {
+        "ObjectName": "SphereComponent'Default__BP_ThrowObjectBase_C:SphereComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.22"
+      },
+      "ProjectileMovement": {
+        "ObjectName": "ProjectileMovementComponent'Default__BP_ThrowObjectBase_C:ProjectileComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.17"
+      },
+      "RootComponent": {
+        "ObjectName": "SphereComponent'Default__BP_ThrowObjectBase_C:SphereComp'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.22"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_ThrowObjectBase",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_NotEqual_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_HitComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OtherActor_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_Event_NormalImpulse",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_Event_Hit",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ConstParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_Event_OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeRotFromX_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Rotator'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'PalSoundPlayerComponent:OnGetAkOwnerComponent__DelegateSignature'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_SpawnSystemAtLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'NiagaraComponent'",
+          "ObjectPath": "/Script/Niagara"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_Time_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_VariableSet_ProjectileGravityScale_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "K2Node_VariableSet_DefaultGravityScale_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetAkOwnerComponent",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "Parm | OutParm | ReturnParm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'SceneComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'StaticMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetComponentByClass_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMeshComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "GetMaxBoundCount",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "Count",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Parm | OutParm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "IncrementBoundCountAndCheckDestroy",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsCountDestroy_IsDestroy",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_GetMaxBoundCount_Count",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "Temp_int_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_LessEqual_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "IntProperty",
+        "Name": "CallFunc_Add_IntInt_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "IsCountDestroy",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "BoolProperty",
+        "Name": "IsDestroy",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent | FUNC_BlueprintPure"
+  },
+  {
+    "Type": "Function",
+    "Name": "IsDestroy",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBullet:IsDestroy'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "HitComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherCharacter",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Hit",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "Parm | OutParm | ReturnParm",
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnBlock",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'PalBullet:OnBlock'",
+      "ObjectPath": "/Script/Pal"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "HitComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherComp",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'PrimitiveComponent'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "NormalImpulse",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Hit",
+        "Flags": "RF_Public",
+        "ElementSize": 240,
+        "PropertyFlags": "ConstParm | BlueprintVisible | BlueprintReadOnly | Parm | OutParm | ReferenceParm | ContainsInstancedReference",
+        "Struct": {
+          "ObjectName": "ScriptStruct'HitResult'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_HasOutParms | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnEnableGravity",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Play Throw Sound",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalDataTableRowName_SoundID",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_SoundID'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "PlaySound",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "ID",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_SoundID'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "Options",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalSoundOptions'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "K2Node_MakeStruct_PalSoundOptions",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalSoundOptions'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "PlaySoundWithMaterial",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "ID",
+        "Flags": "RF_Public",
+        "ElementSize": 12,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PalDataTableRowName_SoundID'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "PhysicalMaterial",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Enum": {
+          "ObjectName": "Enum'EPhysicalSurface'",
+          "ObjectPath": "/Script/PhysicsCore"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveActorBeginOverlap",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveActorBeginOverlap'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "OtherActor",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'Actor'",
+          "ObjectPath": "/Script/Engine"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "InheritableComponentHandler",
+    "Name": "InheritableComponentHandler",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'InheritableComponentHandler'"
+  },
+  {
+    "Type": "ProjectileMovementComponent",
+    "Name": "ProjectileComp",
+    "Outer": "Default__BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'ProjectileMovementComponent'"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'SceneComponent'"
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_ThrowObjectBase_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.18"
+      },
+      "VariableGuid": "B4CD03C4-4AC6BA62-4FDEB6B5-0C5D14B0",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Outer": "SimpleConstructionScript_0",
+    "Class": "UScriptClass'SCS_Node'",
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "BlueprintGeneratedClass'BP_PalSoundPlayerComponent_C'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Component/SoundPlayer/BP_PalSoundPlayerComponent.0"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "BP_PalSoundPlayerComponent_C'BP_ThrowObjectBase_C:SoundPlayer_GEN_VARIABLE'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.1"
+      },
+      "VariableGuid": "99FD535D-4E71ED1E-58ADB38C-BA213731",
+      "InternalVariableName": "SoundPlayer"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Outer": "BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_ThrowObjectBase_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.20"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_ThrowObjectBase_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.20"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_ThrowObjectBase_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.19"
+      }
+    }
+  },
+  {
+    "Type": "SphereComponent",
+    "Name": "SphereComp",
+    "Outer": "Default__BP_ThrowObjectBase_C",
+    "Class": "UScriptClass'SphereComponent'",
+    "Properties": {
+      "SphereRadius": 12.0,
+      "AreaClassOverride": {
+        "ObjectName": "Class'NavArea_Obstacle'",
+        "ObjectPath": "/Script/NavigationSystem"
+      },
+      "bUseSystemDefaultObstacleAreaClass": false,
+      "BodyInstance": {
+        "ObjectType": "ECollisionChannel::ECC_GameTraceChannel2",
+        "CollisionEnabled": "ECollisionEnabled::QueryAndPhysics",
+        "CollisionProfileName": "Bullet",
+        "CollisionResponses": {
+          "ResponseArray": [
+            {
+              "Channel": "Pawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Visibility",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Camera",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PhysicsBody",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "Vehicle",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "Attack",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "PlayerPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "ReticleRayCast",
+              "Response": "ECollisionResponse::ECR_Ignore"
+            },
+            {
+              "Channel": "LiftedupPawn",
+              "Response": "ECollisionResponse::ECR_Overlap"
+            },
+            {
+              "Channel": "AttackHitOnly",
+              "Response": "ECollisionResponse::ECR_Block"
+            }
+          ]
+        },
+        "bAutoWeld": false
+      },
+      "OnComponentHit": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "BP_ThrowObjectBase_C'Default__BP_ThrowObjectBase_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.2"
+            },
+            "FunctionName": "OnBlock"
+          }
+        ]
+      },
+      "OnComponentBeginOverlap": {
+        "InvocationList": [
+          {
+            "Object": {
+              "ObjectName": "BP_ThrowObjectBase_C'Default__BP_ThrowObjectBase_C'",
+              "ObjectPath": "Pal/Content/Pal/Blueprint/Weapon/Bullet/BP_ThrowObjectBase.2"
+            },
+            "FunctionName": "OnBeginOverlap"
+          }
+        ]
+      }
+    }
+  }
+]

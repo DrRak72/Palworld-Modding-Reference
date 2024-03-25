@@ -1,0 +1,1445 @@
+[
+  {
+    "Type": "CanvasPanel",
+    "Name": "CanvasPanel_0",
+    "Outer": "WidgetTree",
+    "Class": "UScriptClass'CanvasPanel'",
+    "Properties": {
+      "Slots": [
+        {
+          "ObjectName": "CanvasPanelSlot'WBP_PlayerHPGauge_C:WidgetTree.CanvasPanel_0.CanvasPanelSlot_0'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.1"
+        }
+      ],
+      "Visibility": "ESlateVisibility::HitTestInvisible"
+    }
+  },
+  {
+    "Type": "CanvasPanelSlot",
+    "Name": "CanvasPanelSlot_0",
+    "Outer": "CanvasPanel_0",
+    "Class": "UScriptClass'CanvasPanelSlot'",
+    "Properties": {
+      "bAutoSize": true,
+      "Parent": {
+        "ObjectName": "CanvasPanel'WBP_PlayerHPGauge_C:WidgetTree.CanvasPanel_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.0"
+      },
+      "Content": {
+        "ObjectName": "WBP_GuildGauge_C'WBP_PlayerHPGauge_C:WidgetTree.WBP_GuildGauge'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.18"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "BindFromHandle",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'WBP_IndividualParameterBindWidget_C:BindFromHandle'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/IndividualParamBindWidget/WBP_IndividualParameterBindWidget.1"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'WBP_IndividualParameterBindWidget_C:BindFromHandle'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/IndividualParamBindWidget/WBP_IndividualParameterBindWidget.1"
+    },
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "targetHandle",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterHandle'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetIndividualParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetMaxHP_withBuff_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint64'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Convert_FixedPoint64ToFloat_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetHP_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint64'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetIndividualActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_Convert_FixedPoint64ToFloat_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "DelegateFunction'TimerDynamicDelegate__DelegateSignature'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_SetTimerDelegate_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_B_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Divide_DoubleDouble_A_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_SetPercentForce_percent_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_HasDefaults | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "DelayClose",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "FunctionFlags": "FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "Destruct",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "Super": {
+      "ObjectName": "Function'WBP_IndividualParameterBindWidget_C:Destruct'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/IndividualParamBindWidget/WBP_IndividualParameterBindWidget.3"
+    },
+    "SuperStruct": {
+      "ObjectName": "Function'WBP_IndividualParameterBindWidget_C:Destruct'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/IndividualParamBindWidget/WBP_IndividualParameterBindWidget.3"
+    },
+    "FunctionFlags": "FUNC_BlueprintCosmetic | FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_WBP_PlayerHPGauge",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetGameSetting_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalGameSetting'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_IndividualParameterBindWidget_C:OnUpdateNickName__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/IndividualParamBindWidget/WBP_IndividualParameterBindWidget.22"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_1",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_IndividualParameterBindWidget_C:OnUpdateHP__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/IndividualParamBindWidget/WBP_IndividualParameterBindWidget.16"
+        }
+      },
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate_2",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_IndividualParameterBindWidget_C:OnUpdateLevel__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/IndividualParamBindWidget/WBP_IndividualParameterBindWidget.19"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDelayClose__DelegateSignature",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "Widget",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm | InstancedReference",
+        "PropertyClass": {
+          "ObjectName": "Class'Widget'",
+          "ObjectPath": "/Script/UMG"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_Delegate | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnDyingEnd",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_Status_Dying_C:OnDyingEnd__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Status/BP_Status_Dying.5"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnInitialized",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "SuperStruct": {
+      "ObjectName": "Function'UserWidget:OnInitialized'",
+      "ObjectPath": "/Script/UMG"
+    },
+    "FunctionFlags": "FUNC_BlueprintCosmetic | FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnTimerEvent_CheckActor",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetBindedHandle_targetHandle",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterHandle'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetIndividualActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnTimerEvent_CheckGuild",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ByteProperty",
+        "Name": "Temp_byte_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "UserDefinedEnum'E_PalUIGuildHPGaugeDisplayType'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/EnemyGauge/E_PalUIGuildHPGaugeDisplayType.0"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "Temp_byte_Variable_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "UserDefinedEnum'E_PalUIGuildHPGaugeDisplayType'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/EnemyGauge/E_PalUIGuildHPGaugeDisplayType.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "Temp_bool_Variable",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetGroupManager_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalGroupManager'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetPalmi_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalPlayerCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetBindedHandle_targetHandle",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterHandle'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetIndividualActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsFriend_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetIndividualParameter_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterParameter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetGroupId_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "ConstParm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Guid'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ByteProperty",
+        "Name": "K2Node_Select_Default",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "Enum": {
+          "ObjectName": "UserDefinedEnum'E_PalUIGuildHPGaugeDisplayType'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/EnemyGauge/E_PalUIGuildHPGaugeDisplayType.0"
+        }
+      },
+      {
+        "Type": "StrProperty",
+        "Name": "CallFunc_TryGetGuildName_OutGuildName",
+        "Flags": "RF_Public",
+        "ElementSize": 16
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_TryGetGuildName_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnUpdateHP_Binded",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "nowHP",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint64'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "nowMaxHP",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm",
+        "Struct": {
+          "ObjectName": "ScriptStruct'FixedPoint64'",
+          "ObjectPath": "/Script/Pal"
+        }
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnUpdateLevel_binded",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "newLevel",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "OnUpdateNickName_Binded",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "StrProperty",
+        "Name": "newNickName",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetupByActor",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetBindedHandle_targetHandle",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterHandle'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetIndividualActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetSkeletalMeshAsset_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'SkeletalMesh'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetImportedBounds_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 56,
+        "Struct": {
+          "ObjectName": "ScriptStruct'BoxSphereBounds'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_X",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_Y",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_Z",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakBoxSphereBounds_Origin",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_BreakBoxSphereBounds_BoxExtent",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "CallFunc_BreakBoxSphereBounds_SphereRadius",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Multiply_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Multiply_DoubleDouble_B_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "K2Node_VariableSet_ImportedSphereRadius_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 4
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "SetupDying",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DelegateProperty",
+        "Name": "K2Node_CreateDelegate_OutputDelegate",
+        "Flags": "RF_Public",
+        "ElementSize": 20,
+        "SignatureFunction": {
+          "ObjectName": "Function'BP_Status_Dying_C:OnDyingEnd__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Status/BP_Status_Dying.5"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetBindedHandle_targetHandle",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterHandle'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetIndividualActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetExecutionStatus_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalStatusBase'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "K2Node_DynamicCast_AsBP_Status_Dying",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_Status_Dying_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Status/BP_Status_Dying.0"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "K2Node_DynamicCast_bSuccess",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "UpdateForTick",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "DoubleProperty",
+        "Name": "DeltaTime",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      }
+    ],
+    "FunctionFlags": "FUNC_Public | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "Function",
+    "Name": "UpdateWidgetPosition",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'Function'",
+    "ChildProperties": [
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetBindedHandle_targetHandle",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalIndividualCharacterHandle'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_GetActorRightVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_TryGetIndividualActor_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PalCharacter'",
+          "ObjectPath": "/Script/Pal"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsValid_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector2D_X",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector2D_Y",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Conv_DoubleToVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_K2_GetActorLocation_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_Multiply_VectorVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_X",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_Y",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_Z",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_X_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_Y_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_BreakVector_Z_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Add_DoubleDouble_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Add_DoubleDouble_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Add_DoubleDouble_ReturnValue_2",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Add_DoubleDouble_ReturnValue_3",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_IsVisible_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_MakeVector_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 24,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetLocalPlayerController_ReturnValue_1",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'PlayerController'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CallFunc_ProjectWorldLocationToWidgetPosition_ScreenPosition",
+        "Flags": "RF_Public",
+        "ElementSize": 16,
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector2D'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "BoolProperty",
+        "Name": "CallFunc_ProjectWorldLocationToWidgetPosition_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 1,
+        "FieldSize": 1,
+        "ByteOffset": 0,
+        "ByteMask": 1,
+        "FieldMask": 255,
+        "BoolSize": 1,
+        "bIsNativeBool": true
+      },
+      {
+        "Type": "DoubleProperty",
+        "Name": "CallFunc_Add_DoubleDouble_B_ImplicitCast",
+        "Flags": "RF_Public",
+        "ElementSize": 8
+      }
+    ],
+    "FunctionFlags": "FUNC_Private | FUNC_BlueprintCallable | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "WBP_GuildGauge_C",
+    "Name": "WBP_GuildGauge",
+    "Outer": "WidgetTree",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/EnemyGauge/WBP_GuildGauge.WBP_GuildGauge_C'",
+    "Template": {
+      "ObjectName": "WBP_GuildGauge_C'Default__WBP_GuildGauge_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/EnemyGauge/WBP_GuildGauge.27"
+    },
+    "Properties": {
+      "Slot": {
+        "ObjectName": "CanvasPanelSlot'WBP_PlayerHPGauge_C:WidgetTree.CanvasPanel_0.CanvasPanelSlot_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.1"
+      },
+      "RenderTransform": {
+        "Translation": {
+          "X": -200.0,
+          "Y": -200.0
+        }
+      }
+    }
+  },
+  {
+    "Type": "WBP_PlayerHPGauge_C",
+    "Name": "Default__WBP_PlayerHPGauge_C",
+    "Class": "WidgetBlueprintGeneratedClass'Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.WBP_PlayerHPGauge_C'",
+    "Template": {
+      "ObjectName": "WBP_IndividualParameterBindWidget_C'Default__WBP_IndividualParameterBindWidget_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/IndividualParamBindWidget/WBP_IndividualParameterBindWidget.44"
+    },
+    "Properties": {
+      "UberGraphFrame": {},
+      "DrawOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "CheckActorTimerHandle": {
+        "Handle": 0
+      },
+      "CheckDisplayTypeTimerHandle": {
+        "Handle": 0
+      },
+      "IsBindHP": true,
+      "IsBindNickName": true,
+      "IsBindLevel": true,
+      "IsPlayerCharacter": true,
+      "Visibility": "ESlateVisibility::HitTestInvisible"
+    }
+  },
+  {
+    "Type": "WidgetBlueprintGeneratedClass",
+    "Name": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'WidgetBlueprintGeneratedClass'",
+    "Super": {
+      "ObjectName": "WidgetBlueprintGeneratedClass'WBP_IndividualParameterBindWidget_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/IndividualParamBindWidget/WBP_IndividualParameterBindWidget.45"
+    },
+    "Properties": {
+      "WidgetTree": {
+        "ObjectName": "WidgetTree'WBP_PlayerHPGauge_C:WidgetTree'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.21"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:ExecuteUbergraph_WBP_PlayerHPGauge'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.5"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "WidgetBlueprintGeneratedClass'WBP_IndividualParameterBindWidget_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/CommonWidget/IndividualParamBindWidget/WBP_IndividualParameterBindWidget.45"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnDyingEnd'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.7"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:SetupDying'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.15"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:UpdateWidgetPosition'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.17"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnUpdateLevel_binded'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.12"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnUpdateHP_Binded'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.11"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:SetupByActor'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.14"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:BindFromHandle'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.2"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:UpdateForTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.16"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnUpdateNickName_Binded'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.13"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnTimerEvent_CheckGuild'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.10"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnTimerEvent_CheckActor'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.9"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnInitialized'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.8"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:Destruct'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.4"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:DelayClose'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.3"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:ExecuteUbergraph_WBP_PlayerHPGauge'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.5"
+      },
+      {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnDelayClose__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.6"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "ScriptStruct'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WBP_GuildGauge",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | ExportObject | BlueprintReadOnly | DisableEditOnInstance | InstancedReference | RepSkip | PersistentInstance",
+        "PropertyClass": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'WBP_GuildGauge_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/UserInterface/InGame/EnemyGauge/WBP_GuildGauge.29"
+        }
+      },
+      {
+        "Type": "FloatProperty",
+        "Name": "ImportedSphereRadius",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 4,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance"
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "DrawOffset",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'Vector2D'",
+          "ObjectPath": "/Script/CoreUObject"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CheckActorTimerHandle",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "StructProperty",
+        "Name": "CheckDisplayTypeTimerHandle",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "Struct": {
+          "ObjectName": "ScriptStruct'TimerHandle'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CachedDyingStatus",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance",
+        "PropertyClass": {
+          "ObjectName": "BlueprintGeneratedClass'BP_Status_Dying_C'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/Status/BP_Status_Dying.0"
+        }
+      },
+      {
+        "Type": "MulticastInlineDelegateProperty",
+        "Name": "OnDelayClose",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Edit | BlueprintVisible | DisableEditOnInstance | BlueprintAssignable | BlueprintCallable",
+        "SignatureFunction": {
+          "ObjectName": "Function'WBP_PlayerHPGauge_C:OnDelayClose__DelegateSignature'",
+          "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.6"
+        }
+      }
+    ],
+    "FuncMap": {
+      "OnDelayClose__DelegateSignature": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnDelayClose__DelegateSignature'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.6"
+      },
+      "ExecuteUbergraph_WBP_PlayerHPGauge": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:ExecuteUbergraph_WBP_PlayerHPGauge'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.5"
+      },
+      "DelayClose": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:DelayClose'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.3"
+      },
+      "Destruct": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:Destruct'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.4"
+      },
+      "OnInitialized": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnInitialized'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.8"
+      },
+      "OnTimerEvent_CheckActor": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnTimerEvent_CheckActor'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.9"
+      },
+      "OnTimerEvent_CheckGuild": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnTimerEvent_CheckGuild'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.10"
+      },
+      "OnUpdateNickName_Binded": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnUpdateNickName_Binded'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.13"
+      },
+      "UpdateForTick": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:UpdateForTick'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.16"
+      },
+      "BindFromHandle": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:BindFromHandle'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.2"
+      },
+      "SetupByActor": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:SetupByActor'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.14"
+      },
+      "OnUpdateHP_Binded": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnUpdateHP_Binded'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.11"
+      },
+      "OnUpdateLevel_binded": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnUpdateLevel_binded'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.12"
+      },
+      "UpdateWidgetPosition": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:UpdateWidgetPosition'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.17"
+      },
+      "SetupDying": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:SetupDying'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.15"
+      },
+      "OnDyingEnd": {
+        "ObjectName": "Function'WBP_PlayerHPGauge_C:OnDyingEnd'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.7"
+      }
+    },
+    "ClassFlags": "CLASS_ReplicationDataIsSetUp | CLASS_EditInlineNew | CLASS_CompiledFromBlueprint | CLASS_DefaultToInstanced | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "WBP_PlayerHPGauge_C'Default__WBP_PlayerHPGauge_C'",
+      "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.19"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "WidgetTree",
+    "Name": "WidgetTree",
+    "Outer": "WBP_PlayerHPGauge_C",
+    "Class": "UScriptClass'WidgetTree'",
+    "Properties": {
+      "RootWidget": {
+        "ObjectName": "CanvasPanel'WBP_PlayerHPGauge_C:WidgetTree.CanvasPanel_0'",
+        "ObjectPath": "Pal/Content/Pal/Blueprint/UI/NPCHPGauge/WBP_PlayerHPGauge.0"
+      }
+    }
+  }
+]
