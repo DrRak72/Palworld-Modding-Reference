@@ -3,15 +3,15 @@
 
 class ABP_NPC_Base_C : public APalNPC
 {
-    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0800 (size: 0x8)
-    class UBP_NPCInteractionComponent_C* BP_NPCInteractionComponent;                  // 0x0808 (size: 0x8)
-    class UPalFacialComponent* PalFacial;                                             // 0x0810 (size: 0x8)
-    class UPalNavigationInvokerComponent* PalNavigationInvoker;                       // 0x0818 (size: 0x8)
-    class UPalInteractableSphereComponentNative* BP_InteractableSphere;               // 0x0820 (size: 0x8)
-    class UPalShooterComponent* PalShooter;                                           // 0x0828 (size: 0x8)
-    FBP_NPC_Base_COnDestoryEvent OnDestoryEvent;                                      // 0x0830 (size: 0x10)
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0920 (size: 0x8)
+    class UBP_NPCInteractionComponent_C* BP_NPCInteractionComponent;                  // 0x0928 (size: 0x8)
+    class UPalFacialComponent* PalFacial;                                             // 0x0930 (size: 0x8)
+    class UPalNavigationInvokerComponent* PalNavigationInvoker;                       // 0x0938 (size: 0x8)
+    class UPalInteractableSphereComponentNative* BP_InteractableSphere;               // 0x0940 (size: 0x8)
+    class UPalShooterComponent* PalShooter;                                           // 0x0948 (size: 0x8)
+    FBP_NPC_Base_COnDestoryEvent OnDestoryEvent;                                      // 0x0950 (size: 0x10)
     void OnDestoryEvent(class APalCharacter* Character);
-    TSubclassOf<class UAnimInstance> AnimLayerClass;                                  // 0x0840 (size: 0x8)
+    TSubclassOf<class UAnimInstance> AnimLayerClass;                                  // 0x0960 (size: 0x8)
 
     void SetMaterial(class UMaterialInstance* Material);
     void SetupInteraction();
@@ -25,6 +25,6 @@ class ABP_NPC_Base_C : public APalNPC
     void カスタムイベント_0(class APalCharacter* InCharacter);
     void ExecuteUbergraph_BP_NPC_Base(int32 EntryPoint);
     void OnDestoryEvent__DelegateSignature(class APalCharacter* Character);
-}; // Size: 0x848
+}; // Size: 0x968
 
 #endif

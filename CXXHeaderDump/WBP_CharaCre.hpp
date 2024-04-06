@@ -6,69 +6,67 @@ class UWBP_CharaCre_C : public UUserWidget
     FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0278 (size: 0x8)
     class UWidgetAnimation* Anm_PlayerNameEdit_OffToOn;                               // 0x0280 (size: 0x8)
     class UCanvasPanel* Canvas_PlayerName;                                            // 0x0288 (size: 0x8)
-    class UImage* Image;                                                              // 0x0290 (size: 0x8)
-    class UImage* Image_1;                                                            // 0x0298 (size: 0x8)
-    class UImage* Image_2;                                                            // 0x02A0 (size: 0x8)
-    class UImage* Image_3;                                                            // 0x02A8 (size: 0x8)
-    class UImage* Image_85;                                                           // 0x02B0 (size: 0x8)
-    class UImage* Image_CautionBase;                                                  // 0x02B8 (size: 0x8)
-    class UImage* Image_CautionIcon;                                                  // 0x02C0 (size: 0x8)
-    class UImage* Image_L;                                                            // 0x02C8 (size: 0x8)
-    class UImage* Image_R;                                                            // 0x02D0 (size: 0x8)
-    class UBP_PalTextBlock_C* Text_PlayerName;                                        // 0x02D8 (size: 0x8)
-    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Body;                   // 0x02E0 (size: 0x8)
-    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Finish;                 // 0x02E8 (size: 0x8)
-    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Hair;                   // 0x02F0 (size: 0x8)
-    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Head;                   // 0x02F8 (size: 0x8)
-    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Preset;                 // 0x0300 (size: 0x8)
-    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Voice;                  // 0x0308 (size: 0x8)
-    class UWBP_CommonButton_C* WBP_CommonButton_65;                                   // 0x0310 (size: 0x8)
-    class UWBP_PalCommonScrollList_C* WBP_PalCommonScrollList_Setting;                // 0x0318 (size: 0x8)
-    FWBP_CharaCre_COnChangedTab OnChangedTab;                                         // 0x0320 (size: 0x10)
+    class UImage* Image_85;                                                           // 0x0290 (size: 0x8)
+    class USizeBox* SizeBox_ExitInGame;                                               // 0x0298 (size: 0x8)
+    class USizeBox* SizeBox_ExitNewGame;                                              // 0x02A0 (size: 0x8)
+    class UBP_PalTextBlock_C* Text_PlayerName;                                        // 0x02A8 (size: 0x8)
+    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Body;                   // 0x02B0 (size: 0x8)
+    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Finish;                 // 0x02B8 (size: 0x8)
+    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Finish_InGame;          // 0x02C0 (size: 0x8)
+    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Hair;                   // 0x02C8 (size: 0x8)
+    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Head;                   // 0x02D0 (size: 0x8)
+    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Preset;                 // 0x02D8 (size: 0x8)
+    class UWBP_CharaCre_MenuButton_C* WBP_CharaCre_MenuButton_Voice;                  // 0x02E0 (size: 0x8)
+    class UWBP_CommonButton_C* WBP_CommonButton_65;                                   // 0x02E8 (size: 0x8)
+    class UWBP_PalCommonScrollList_C* WBP_PalCommonScrollList_Setting;                // 0x02F0 (size: 0x8)
+    FWBP_CharaCre_COnChangedTab OnChangedTab;                                         // 0x02F8 (size: 0x10)
     void OnChangedTab(class UWBP_CharaCre_Tab_C* TabWidget);
-    class UWBP_CharaCre_ScrollBoxContentSet_C* ScrollBoxContentSet;                   // 0x0330 (size: 0x8)
-    FWBP_CharaCre_COnLeftRotationButtonClicked OnLeftRotationButtonClicked;           // 0x0338 (size: 0x10)
+    class UWBP_CharaCre_ScrollBoxContentSet_C* ScrollBoxContentSet;                   // 0x0308 (size: 0x8)
+    FWBP_CharaCre_COnLeftRotationButtonClicked OnLeftRotationButtonClicked;           // 0x0310 (size: 0x10)
     void OnLeftRotationButtonClicked();
-    FWBP_CharaCre_COnRightRotationButtonClicked OnRightRotationButtonClicked;         // 0x0348 (size: 0x10)
+    FWBP_CharaCre_COnRightRotationButtonClicked OnRightRotationButtonClicked;         // 0x0320 (size: 0x10)
     void OnRightRotationButtonClicked();
-    FWBP_CharaCre_COnChangedSkinColor OnChangedSkinColor;                             // 0x0358 (size: 0x10)
+    FWBP_CharaCre_COnChangedSkinColor OnChangedSkinColor;                             // 0x0330 (size: 0x10)
     void OnChangedSkinColor(FLinearColor Color);
-    FWBP_CharaCre_COnChangedTorsoSize OnChangedTorsoSize;                             // 0x0368 (size: 0x10)
+    FWBP_CharaCre_COnChangedTorsoSize OnChangedTorsoSize;                             // 0x0340 (size: 0x10)
     void OnChangedTorsoSize(double Size);
-    FWBP_CharaCre_COnChangedLegSize OnChangedLegSize;                                 // 0x0378 (size: 0x10)
+    FWBP_CharaCre_COnChangedLegSize OnChangedLegSize;                                 // 0x0350 (size: 0x10)
     void OnChangedLegSize(double Size);
-    FWBP_CharaCre_COnChangedArmSize OnChangedArmSize;                                 // 0x0388 (size: 0x10)
+    FWBP_CharaCre_COnChangedArmSize OnChangedArmSize;                                 // 0x0360 (size: 0x10)
     void OnChangedArmSize(double Size);
-    FWBP_CharaCre_COnChangedEyeColor OnChangedEyeColor;                               // 0x0398 (size: 0x10)
+    FWBP_CharaCre_COnChangedEyeColor OnChangedEyeColor;                               // 0x0370 (size: 0x10)
     void OnChangedEyeColor(FLinearColor Color);
-    FWBP_CharaCre_COnChangedBrowColor OnChangedBrowColor;                             // 0x03A8 (size: 0x10)
+    FWBP_CharaCre_COnChangedBrowColor OnChangedBrowColor;                             // 0x0380 (size: 0x10)
     void OnChangedBrowColor(FLinearColor Color);
-    FWBP_CharaCre_COnChangedHairColor OnChangedHairColor;                             // 0x03B8 (size: 0x10)
+    FWBP_CharaCre_COnChangedHairColor OnChangedHairColor;                             // 0x0390 (size: 0x10)
     void OnChangedHairColor(FLinearColor Color);
-    FWBP_CharaCre_COnSelectedBodyMesh OnSelectedBodyMesh;                             // 0x03C8 (size: 0x10)
+    FWBP_CharaCre_COnSelectedBodyMesh OnSelectedBodyMesh;                             // 0x03A0 (size: 0x10)
     void OnSelectedBodyMesh(FName MeshPresetRowName);
-    FWBP_CharaCre_COnSelecteddHeadMesh OnSelecteddHeadMesh;                           // 0x03D8 (size: 0x10)
+    FWBP_CharaCre_COnSelecteddHeadMesh OnSelecteddHeadMesh;                           // 0x03B0 (size: 0x10)
     void OnSelecteddHeadMesh(FName MeshPresetRowName);
-    FWBP_CharaCre_COnSelectedHairMesh OnSelectedHairMesh;                             // 0x03E8 (size: 0x10)
+    FWBP_CharaCre_COnSelectedHairMesh OnSelectedHairMesh;                             // 0x03C0 (size: 0x10)
     void OnSelectedHairMesh(FName MeshPresetRowName);
-    FWBP_CharaCre_COnClickedCategoryButton OnClickedCategoryButton;                   // 0x03F8 (size: 0x10)
+    FWBP_CharaCre_COnClickedCategoryButton OnClickedCategoryButton;                   // 0x03D0 (size: 0x10)
     void OnClickedCategoryButton(TEnumAsByte<E_UICharacterMakeCategory::Type> CategoryType);
-    class UWBP_CharaCre_MenuButton_C* LastClickedButton;                              // 0x0408 (size: 0x8)
-    FWBP_CharaCre_COnNotifyOpenSelectColorWindow OnNotifyOpenSelectColorWindow;       // 0x0410 (size: 0x10)
+    class UWBP_CharaCre_MenuButton_C* LastClickedButton;                              // 0x03E0 (size: 0x8)
+    FWBP_CharaCre_COnNotifyOpenSelectColorWindow OnNotifyOpenSelectColorWindow;       // 0x03E8 (size: 0x10)
     void OnNotifyOpenSelectColorWindow();
-    FWBP_CharaCre_COnNotifyCloseSelectColorWIndow OnNotifyCloseSelectColorWIndow;     // 0x0420 (size: 0x10)
+    FWBP_CharaCre_COnNotifyCloseSelectColorWIndow OnNotifyCloseSelectColorWIndow;     // 0x03F8 (size: 0x10)
     void OnNotifyCloseSelectColorWIndow();
-    FWBP_CharaCre_COnClickedEditNameButton OnClickedEditNameButton;                   // 0x0430 (size: 0x10)
+    FWBP_CharaCre_COnClickedEditNameButton OnClickedEditNameButton;                   // 0x0408 (size: 0x10)
     void OnClickedEditNameButton();
-    FWBP_CharaCre_COnSelectedEyeMaterial OnSelectedEyeMaterial;                       // 0x0440 (size: 0x10)
+    FWBP_CharaCre_COnSelectedEyeMaterial OnSelectedEyeMaterial;                       // 0x0418 (size: 0x10)
     void OnSelectedEyeMaterial(FName EyeMaterialName);
-    FWBP_CharaCre_COnClickedCompleteButton OnClickedCompleteButton;                   // 0x0450 (size: 0x10)
+    FWBP_CharaCre_COnClickedCompleteButton OnClickedCompleteButton;                   // 0x0428 (size: 0x10)
     void OnClickedCompleteButton();
-    FWBP_CharaCre_COnSelectedPreset OnSelectedPreset;                                 // 0x0460 (size: 0x10)
+    FWBP_CharaCre_COnSelectedPreset OnSelectedPreset;                                 // 0x0438 (size: 0x10)
     void OnSelectedPreset(FName PresetName);
-    FWBP_CharaCre_COnChangedVoiceID OnChangedVoiceID;                                 // 0x0470 (size: 0x10)
+    FWBP_CharaCre_COnChangedVoiceID OnChangedVoiceID;                                 // 0x0448 (size: 0x10)
     void OnChangedVoiceID(int32 VoiceID);
+    FWBP_CharaCre_COnClickedInGameCompleteButton OnClickedInGameCompleteButton;       // 0x0458 (size: 0x10)
+    void OnClickedInGameCompleteButton();
 
+    void SetIsNewGame(bool IsNewGame);
     void RequestPlaySampleVoice(int32 VoiceID);
     void OnSelectedVoiceID_Internal(int32 VoiceID);
     void OnSelectedPreset_Internal(FName PresetName);
@@ -110,7 +108,9 @@ class UWBP_CharaCre_C : public UUserWidget
     void BndEvt__WBP_CharaCre_WBP_CharaCre_MenuButton_Finish_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature(class UWBP_CharaCre_MenuButton_C* Button);
     void BndEvt__WBP_CharaCre_WBP_CharaCre_MenuButton_Preset_K2Node_ComponentBoundEvent_2_OnClicked__DelegateSignature(class UWBP_CharaCre_MenuButton_C* Button);
     void BndEvt__WBP_CharaCre_WBP_CharaCre_MenuButton_Voice_K2Node_ComponentBoundEvent_3_OnClicked__DelegateSignature(class UWBP_CharaCre_MenuButton_C* Button);
+    void BndEvt__WBP_CharaCre_WBP_CharaCre_MenuButton_Finish_InGame_K2Node_ComponentBoundEvent_4_OnClicked__DelegateSignature(class UWBP_CharaCre_MenuButton_C* Button);
     void ExecuteUbergraph_WBP_CharaCre(int32 EntryPoint);
+    void OnClickedInGameCompleteButton__DelegateSignature();
     void OnChangedVoiceID__DelegateSignature(int32 VoiceID);
     void OnSelectedPreset__DelegateSignature(FName PresetName);
     void OnClickedCompleteButton__DelegateSignature();
@@ -132,6 +132,6 @@ class UWBP_CharaCre_C : public UUserWidget
     void OnRightRotationButtonClicked__DelegateSignature();
     void OnLeftRotationButtonClicked__DelegateSignature();
     void OnChangedTab__DelegateSignature(class UWBP_CharaCre_Tab_C* TabWidget);
-}; // Size: 0x480
+}; // Size: 0x468
 
 #endif

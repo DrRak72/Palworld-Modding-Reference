@@ -3,6 +3,6 @@
 
 class UBP_MultiTalk_Shabby-looking_merchant_C : public UBP_MultiTalk_OrderByName_C
 {
-}; // Size: 0x48
+}; // Size: 0x50
 
 #endif

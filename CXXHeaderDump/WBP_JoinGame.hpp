@@ -3,19 +3,20 @@
 
 class UWBP_JoinGame_C : public UPalUIJoinGameBase
 {
-    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0468 (size: 0x8)
-    class UImage* Image_69;                                                           // 0x0470 (size: 0x8)
-    class UWBP_PalDebugInfo_C* WBP_PalDebugInfo;                                      // 0x0478 (size: 0x8)
-    class UWBP_Title_WorldMenu_Head_C* WBP_Title_WorldMenu_Head;                      // 0x0480 (size: 0x8)
-    class UWBP_Title_WorldSelect_C* WBP_Title_WorldSelect;                            // 0x0488 (size: 0x8)
-    EPalUIServerListSortType SortType;                                                // 0x0490 (size: 0x1)
-    EPalUIServerListFilterType ServerFilterType;                                      // 0x0491 (size: 0x1)
-    FPalUIServerDisplayData ClickedServerInfo;                                        // 0x0498 (size: 0x1A0)
-    FDataTableRowHandle JoinServerDialogMsgID;                                        // 0x0638 (size: 0x10)
-    TSoftObjectPtr<UWBP_Title_WorldSelect_ListContent_C> LastClickedServerButton;     // 0x0648 (size: 0x30)
-    TArray<FString> OfficialServerAddress;                                            // 0x0678 (size: 0x10)
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0490 (size: 0x8)
+    class UImage* Image_69;                                                           // 0x0498 (size: 0x8)
+    class UWBP_PalDebugInfo_C* WBP_PalDebugInfo;                                      // 0x04A0 (size: 0x8)
+    class UWBP_Title_WorldMenu_Head_C* WBP_Title_WorldMenu_Head;                      // 0x04A8 (size: 0x8)
+    class UWBP_Title_WorldSelect_C* WBP_Title_WorldSelect;                            // 0x04B0 (size: 0x8)
+    EPalUIServerListSortType SortType;                                                // 0x04B8 (size: 0x1)
+    EPalUIServerListFilterType ServerFilterType;                                      // 0x04B9 (size: 0x1)
+    FPalUIServerDisplayData ClickedServerInfo;                                        // 0x04C0 (size: 0x1A0)
+    FDataTableRowHandle JoinServerDialogMsgID;                                        // 0x0660 (size: 0x10)
+    TSoftObjectPtr<UWBP_Title_WorldSelect_ListContent_C> LastClickedServerButton;     // 0x0670 (size: 0x30)
+    TArray<FString> OfficialServerAddress;                                            // 0x06A0 (size: 0x10)
+    FString SearchWord;                                                               // 0x06B0 (size: 0x10)
 
-    void RequestGetServerListBP(EPalUIServerListFilterType Type, FString Region, bool IsCleanCache, bool NextPage, FString Word);
+    void RequestGetServerListBP(EPalUIServerListFilterType Type, FString Region, bool IsCleanCache, int32 PageOffset, FString Word, EPalUIServerListSortType SortType);
     void OnCloseJoinServerDialog(bool bResult);
     void OpenJoinServerDialog();
     void OnCancelAction();
@@ -34,11 +35,13 @@ class UWBP_JoinGame_C : public UPalUIJoinGameBase
     void OnClicked_JoinByIPButton(FString Address);
     void カスタムイベント(bool bResult);
     void Construct();
-    void BndEvt__WBP_JoinGame_WBP_Title_WorldSelect_K2Node_ComponentBoundEvent_3_OnSelectedServerSortType__DelegateSignature(EPalUIServerListSortType SortType);
     void カスタムイベント_0(bool bResult);
-    void OnInitialized();
+    void BndEvt__WBP_JoinGame_WBP_Title_WorldSelect_K2Node_ComponentBoundEvent_3_OnSelectedServerSortType__DelegateSignature(EPalUIServerListSortType SortType);
     void パスワード手動入力(class UPalHUDDispatchParameterBase* Param);
+    void Destruct();
+    void OnInitialized();
+    void PreviousButton();
     void ExecuteUbergraph_WBP_JoinGame(int32 EntryPoint);
-}; // Size: 0x688
+}; // Size: 0x6C0
 
 #endif

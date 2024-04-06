@@ -660,7 +660,7 @@ class UExpandableArea : public UWidget
     FSlateBrush BorderBrush;                                                          // 0x0320 (size: 0xD0)
     FSlateColor BorderColor;                                                          // 0x03F0 (size: 0x14)
     bool bIsExpanded;                                                                 // 0x0404 (size: 0x1)
-    float MaxHeight;                                                                  // 0x0408 (size: 0x4)
+    float maxHeight;                                                                  // 0x0408 (size: 0x4)
     FMargin HeaderPadding;                                                            // 0x040C (size: 0x10)
     FMargin AreaPadding;                                                              // 0x041C (size: 0x10)
     FExpandableAreaOnExpansionChanged OnExpansionChanged;                             // 0x0430 (size: 0x10)

@@ -21,7 +21,7 @@ class UWBP_CharacterMake_C : public UPalUICharacterMakeBase
     FPalDataTableRowName_UIInputAction NextCategoryInputAction;                       // 0x0530 (size: 0x8)
     TEnumAsByte<E_UICharacterMakeCategory::Type> LastActivatedCategory;               // 0x0538 (size: 0x1)
     double SVMax;                                                                     // 0x0540 (size: 0x8)
-    class UPalHUDDispatchParameter_CharacterMake* DIspaltchParameter;                 // 0x0548 (size: 0x8)
+    class UPalHUDDispatchParameter_CharacterMake* DispaltchParameter;                 // 0x0548 (size: 0x8)
     FText CachedPlayerName;                                                           // 0x0550 (size: 0x18)
     double RotationSpeed_Pad;                                                         // 0x0568 (size: 0x8)
     double RotationSpeed_MouseDrag;                                                   // 0x0570 (size: 0x8)
@@ -42,7 +42,10 @@ class UWBP_CharacterMake_C : public UPalUICharacterMakeBase
     FVector DefaultBodyCameraLocation;                                                // 0x0608 (size: 0x18)
     FPalDataTableRowName_UIInputAction PlaySampleVoiceInInputAction;                  // 0x0620 (size: 0x8)
     FPalUIActionBindData PlaySampleVoiceActionHandle;                                 // 0x0628 (size: 0x4)
+    bool IsCachingMakeData;                                                           // 0x062C (size: 0x1)
+    class UBP_PalPlayerDataCharacterMake_C* CharacterMakeData;                        // 0x0630 (size: 0x8)
 
+    void OnTriggerCompleteMake();
     void OnTriggerPlaySampleVoice();
     void GetRandomVoiceID(int32& VoiceID);
     void GetNickname(FString& Name);
@@ -88,7 +91,6 @@ class UWBP_CharacterMake_C : public UPalUICharacterMakeBase
     void OnTriggerZoomIn_MOuse();
     void RegisterStaticInputAction();
     void OpenNameEditWindow(FText DefaultName);
-    void Construct();
     void BndEvt__WBP_CharacterMake_WBP_CharaCre_K2Node_ComponentBoundEvent_1_OnLeftRotationButtonClicked__DelegateSignature();
     void BndEvt__WBP_CharacterMake_WBP_CharaCre_K2Node_ComponentBoundEvent_2_OnRightRotationButtonClicked__DelegateSignature();
     void BndEvt__WBP_CharacterMake_WBP_CharaCre_K2Node_ComponentBoundEvent_3_OnChangedSkinColor__DelegateSignature(FLinearColor Color);
@@ -116,7 +118,9 @@ class UWBP_CharacterMake_C : public UPalUICharacterMakeBase
     void BndEvt__WBP_CharacterMake_WBP_CharaCre_K2Node_ComponentBoundEvent_17_OnClickedCompleteButton__DelegateSignature();
     void BndEvt__WBP_CharacterMake_WBP_CharaCre_K2Node_ComponentBoundEvent_18_OnSelectedPreset__DelegateSignature(FName PresetName);
     void BndEvt__WBP_CharacterMake_WBP_CharaCre_K2Node_ComponentBoundEvent_19_OnChangedVoiceID__DelegateSignature(int32 VoiceID);
+    void BndEvt__WBP_CharacterMake_WBP_CharaCre_K2Node_ComponentBoundEvent_20_OnClickedInGameCompleteButton__DelegateSignature();
+    void Destruct();
     void ExecuteUbergraph_WBP_CharacterMake(int32 EntryPoint);
-}; // Size: 0x62C
+}; // Size: 0x638
 
 #endif

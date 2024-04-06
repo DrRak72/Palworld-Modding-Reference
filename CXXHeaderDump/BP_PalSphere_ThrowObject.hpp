@@ -31,6 +31,7 @@ class ABP_PalSphere_ThrowObject_C : public ABP_ThrowCaptureObjectBase_C
     void GetMaxBoundCount(int32& Count);
     void GetBodyClass(TSubclassOf<class ABP_PalCaptureBodyBase_C>& bodyClass);
     void UpdateRotator(double DeltaTime);
+    void UserConstructionScript();
     void BndEvt__BP_CaptureDrone_Sphere_K2Node_ComponentBoundEvent_1_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void BndEvt__BP_CaptureDrone_ThrowObject_ProjectileMovement_K2Node_ComponentBoundEvent_0_OnProjectileBounceDelegate__DelegateSignature(const FHitResult& ImpactResult, const FVector& ImpactVelocity);
     void ReceiveTick(float DeltaSeconds);

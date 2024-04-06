@@ -21,7 +21,13 @@ class UBP_AIAction_CombatPal_C : public UPalAIActionBase
     double WarpStackTimer;                                                            // 0x0198 (size: 0x8)
     FVector WarpStackPrevLocation;                                                    // 0x01A0 (size: 0x18)
     double DeadTimer;                                                                 // 0x01B8 (size: 0x8)
+    double ApproachTimer;                                                             // 0x01C0 (size: 0x8)
+    double Const_ApproachEndTime;                                                     // 0x01C8 (size: 0x8)
+    double NotActionTimer;                                                            // 0x01D0 (size: 0x8)
+    double Const_FanShapeDegree;                                                      // 0x01D8 (size: 0x8)
 
+    void OnPlayAction(class UPalActionBase* action);
+    void NextAction_ByApproachFailure();
     void CheckDeadTimer();
     void GetSelfPalBlackBoard(class UBP_PalAIBlackboard_Common_C*& PalBB);
     void WarpToSpawnerPoint();
@@ -32,7 +38,7 @@ class UBP_AIAction_CombatPal_C : public UPalAIActionBase
     void FindWazaClass(int32 SlotIndex, TSubclassOf<class UPalActionBase>& WazaAction);
     void TargetIsValid(bool& Valid);
     void Get Next Action Slot ID(int32& SlotID);
-    void InterruptAction(int32 SlotID);
+    void Interrupt Action(int32 SlotID);
     void ChangeCombatStartLocation(bool& Change);
     void PlayWazaDarknessStatus();
     void PlayerCameraCheck(bool& AttackAble);
@@ -48,14 +54,14 @@ class UBP_AIAction_CombatPal_C : public UPalAIActionBase
     void SetupSkillSlot();
     void ChangeNextAction();
     void TargetChange();
+    void ActionStart(class APawn* ControlledPawn);
+    void StartNextAction_Event(const class UPalActionComponent* ActionComponent);
     void ActionTick(class APawn* ControlledPawn, float DeltaSeconds);
     void ActionPause(class APawn* ControlledPawn);
     void OnDeadDelegate_Event(FPalDeadInfo DeadInfo);
     void ActionFinished(class APawn* ControlledPawn, TEnumAsByte<EPawnActionResult::Type> WithResult);
-    void StartNextAction_Event(const class UPalActionComponent* ActionComponent);
     void OnChildActionFinished(class UPawnAction* action, TEnumAsByte<EPawnActionResult::Type> WithResult);
-    void ActionStart(class APawn* ControlledPawn);
     void ExecuteUbergraph_BP_AIAction_CombatPal(int32 EntryPoint);
-}; // Size: 0x1C0
+}; // Size: 0x1E0
 
 #endif

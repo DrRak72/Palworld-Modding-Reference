@@ -3,13 +3,13 @@
 
 class ABP_MonsterAIControllerBase_C : public APalAIController
 {
-    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0520 (size: 0x8)
-    class UBP_AIADamageReaction_C* BP_AIADamageReaction;                              // 0x0528 (size: 0x8)
-    TSubclassOf<class UPalAIActionBase> DefaultActionClass;                           // 0x0530 (size: 0x8)
-    TSubclassOf<class UPalAIActionCompositeBase> DefaultRootCompositeActionClass;     // 0x0538 (size: 0x8)
-    bool bPlayDefaultCompositeAction;                                                 // 0x0540 (size: 0x1)
-    bool IsSetupEnd;                                                                  // 0x0541 (size: 0x1)
-    bool IsAutoPlayDefaultAction;                                                     // 0x0542 (size: 0x1)
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0528 (size: 0x8)
+    class UBP_AIADamageReaction_C* BP_AIADamageReaction;                              // 0x0530 (size: 0x8)
+    TSubclassOf<class UPalAIActionBase> DefaultActionClass;                           // 0x0538 (size: 0x8)
+    TSubclassOf<class UPalAIActionCompositeBase> DefaultRootCompositeActionClass;     // 0x0540 (size: 0x8)
+    bool bPlayDefaultCompositeAction;                                                 // 0x0548 (size: 0x1)
+    bool IsSetupEnd;                                                                  // 0x0549 (size: 0x1)
+    bool IsAutoPlayDefaultAction;                                                     // 0x054A (size: 0x1)
 
     void ToLogFontStyleName(EPalMonsterControllerBaseCampLogType logType, FName& StyleName);
     void ShowBaseCampLog_Internal(FPalMonsterControllerBaseCampLogContent& Content);
@@ -21,6 +21,6 @@ class ABP_MonsterAIControllerBase_C : public APalAIController
     void カスタムイベント_0(class APalCharacter* InCharacter);
     void SetupBySpawner();
     void ExecuteUbergraph_BP_MonsterAIControllerBase(int32 EntryPoint);
-}; // Size: 0x543
+}; // Size: 0x54B
 
 #endif

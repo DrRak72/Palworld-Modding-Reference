@@ -17,34 +17,36 @@ class UWBP_IngameConstruction_C : public UUserWidget
     class UWBP_Ingameconstruction_KeyGuide_C* WBP_Ingameconstruction_KeyGuide_2;      // 0x02D0 (size: 0x8)
     class UWBP_Ingameconstruction_KeyGuide_C* WBP_Ingameconstruction_KeyGuide_3;      // 0x02D8 (size: 0x8)
     class UWBP_Ingameconstruction_KeyGuide_C* WBP_Ingameconstruction_KeyGuide_4;      // 0x02E0 (size: 0x8)
-    class UWBP_IngameConstruction_Num_C* WBP_IngameConstruction_Num_0;                // 0x02E8 (size: 0x8)
-    class UWBP_IngameConstruction_Num_C* WBP_IngameConstruction_Num_1;                // 0x02F0 (size: 0x8)
-    class UWBP_IngameConstruction_Num_C* WBP_IngameConstruction_Num_2;                // 0x02F8 (size: 0x8)
-    class UWBP_IngameConstruction_Num_C* WBP_IngameConstruction_Num_3;                // 0x0300 (size: 0x8)
-    class UWBP_PalCommonItemIcon_C* WBP_PalCommonItemIcon;                            // 0x0308 (size: 0x8)
-    class UWBP_PalCommonItemIcon_C* WBP_PalCommonItemIcon_1;                          // 0x0310 (size: 0x8)
-    class UWBP_PalCommonItemIcon_C* WBP_PalCommonItemIcon_2;                          // 0x0318 (size: 0x8)
-    class UWBP_PalCommonItemIcon_C* WBP_PalCommonItemIcon_3;                          // 0x0320 (size: 0x8)
-    TArray<class UWBP_IngameConstruction_Num_C*> ItemNums;                            // 0x0328 (size: 0x10)
-    FDataTableRowHandle keyGuideMsgHandle_Reserve;                                    // 0x0338 (size: 0x10)
-    FDataTableRowHandle keyGuideMsgHandle_ReserveContinue;                            // 0x0348 (size: 0x10)
-    FDataTableRowHandle keyGuideMsgHandle_Cancel;                                     // 0x0358 (size: 0x10)
-    FDataTableRowHandle keyGuideMsgHandle_Close;                                      // 0x0368 (size: 0x10)
-    TArray<class UWBP_PalCommonItemIcon_C*> ItemIconArray;                            // 0x0378 (size: 0x10)
-    FDataTableRowHandle keyGuideMsgHandle_RotateRight;                                // 0x0388 (size: 0x10)
-    FDataTableRowHandle keyGuideMsgHandle_RotateLeft;                                 // 0x0398 (size: 0x10)
+    class UWBP_Ingameconstruction_KeyGuide_C* WBP_Ingameconstruction_KeyGuide_5;      // 0x02E8 (size: 0x8)
+    class UWBP_IngameConstruction_Num_C* WBP_IngameConstruction_Num_0;                // 0x02F0 (size: 0x8)
+    class UWBP_IngameConstruction_Num_C* WBP_IngameConstruction_Num_1;                // 0x02F8 (size: 0x8)
+    class UWBP_IngameConstruction_Num_C* WBP_IngameConstruction_Num_2;                // 0x0300 (size: 0x8)
+    class UWBP_IngameConstruction_Num_C* WBP_IngameConstruction_Num_3;                // 0x0308 (size: 0x8)
+    class UWBP_PalCommonItemIcon_C* WBP_PalCommonItemIcon;                            // 0x0310 (size: 0x8)
+    class UWBP_PalCommonItemIcon_C* WBP_PalCommonItemIcon_1;                          // 0x0318 (size: 0x8)
+    class UWBP_PalCommonItemIcon_C* WBP_PalCommonItemIcon_2;                          // 0x0320 (size: 0x8)
+    class UWBP_PalCommonItemIcon_C* WBP_PalCommonItemIcon_3;                          // 0x0328 (size: 0x8)
+    TArray<class UWBP_IngameConstruction_Num_C*> ItemNums;                            // 0x0330 (size: 0x10)
+    FDataTableRowHandle keyGuideMsgHandle_Reserve;                                    // 0x0340 (size: 0x10)
+    FDataTableRowHandle keyGuideMsgHandle_ReserveContinue;                            // 0x0350 (size: 0x10)
+    FDataTableRowHandle keyGuideMsgHandle_Cancel;                                     // 0x0360 (size: 0x10)
+    FDataTableRowHandle keyGuideMsgHandle_Close;                                      // 0x0370 (size: 0x10)
+    TArray<class UWBP_PalCommonItemIcon_C*> ItemIconArray;                            // 0x0380 (size: 0x10)
+    FDataTableRowHandle keyGuideMsgHandle_RotateRight;                                // 0x0390 (size: 0x10)
+    FDataTableRowHandle keyGuideMsgHandle_RotateLeft;                                 // 0x03A0 (size: 0x10)
 
+    void UpdateDisplayContent(class UPalUIBuildingModel* Model);
     void SetVisibilityOutSideBaseCampWarning(ESlateVisibility NewVisibility);
-    void SetupKeyGuide();
+    void SetupKeyGuide(class UPalUIBuildingModel* Model);
     void SetEnableWarning(bool isEnable);
-    void SetMaterial(int32 Index, FName StaticItemId, int32 ItemCount);
+    void SetMaterial(int32 Index, FName StaticItemId, int32 itemCount);
     void Setup(FPalBuildObjectData inBuildObjectData);
     void SetWarningText(FText InText);
-    void ResetAllUI();
+    void ResetAllUI(class UPalUIBuildingModel* Model);
     void SetBuildObjectName(FText InName);
     void Construct();
     void OnInitialized();
     void ExecuteUbergraph_WBP_IngameConstruction(int32 EntryPoint);
-}; // Size: 0x3A8
+}; // Size: 0x3B0
 
 #endif

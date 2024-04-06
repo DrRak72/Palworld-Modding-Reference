@@ -1,0 +1,8 @@
+#ifndef UE4SS_SDK_BP_SkillEffect_Unique_VolcanicMonster_Ice_IceAttack_Bullet_HPP
+#define UE4SS_SDK_BP_SkillEffect_Unique_VolcanicMonster_Ice_IceAttack_Bullet_HPP
+
+class ABP_SkillEffect_Unique_VolcanicMonster_Ice_IceAttack_Bullet_C : public ABP_SkillEffect_Unique_VolcanicMonster_MagmaAttack_Bullet_C
+{
+}; // Size: 0x410
+
+#endif

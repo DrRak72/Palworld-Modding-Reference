@@ -56,7 +56,7 @@ class UWBP_IngameConstruction_Dismantling_C : public UUserWidget
     void SetWarningText(FText InText);
     void ResetAllUI();
     void InitUI();
-    void SetMaterial(int32 Index, FName StaticItemId, int32 ItemCount);
+    void SetMaterial(int32 Index, FName StaticItemId, int32 itemCount);
     void SetDismantleObjectName(FText InName);
     void Construct();
     void OnInitialized();

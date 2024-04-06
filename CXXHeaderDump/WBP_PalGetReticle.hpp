@@ -33,24 +33,31 @@ class UWBP_PalGetReticle_C : public UUserWidget
     class UImage* gauge_01_Bloom;                                                     // 0x0350 (size: 0x8)
     class UImage* GaugeBaseFlare;                                                     // 0x0358 (size: 0x8)
     class UCanvasPanel* GetPercentNumDecimal;                                         // 0x0360 (size: 0x8)
-    class UBP_PalTextBlock_C* text_Capturerate_SneakBonus;                            // 0x0368 (size: 0x8)
-    class UWBP_PalGetReticle_Arrow_C* WBP_PalGetReticle_Arrow;                        // 0x0370 (size: 0x8)
-    double targetCaptureRate;                                                         // 0x0378 (size: 0x8)
-    double oldCaptureRate;                                                            // 0x0380 (size: 0x8)
-    TArray<class UMaterialInstanceDynamic*> gaugeMaterials;                           // 0x0388 (size: 0x10)
-    class UCurveFloat* displayRateCalcCurve;                                          // 0x0398 (size: 0x8)
-    double rateCalcTimer;                                                             // 0x03A0 (size: 0x8)
-    FVector WorldLocation;                                                            // 0x03A8 (size: 0x18)
-    bool isRelativeWorldLocation;                                                     // 0x03C0 (size: 0x1)
-    TArray<double> RateList;                                                          // 0x03C8 (size: 0x10)
-    class UCurveLinearColor* ColorCurve;                                              // 0x03D8 (size: 0x8)
-    TArray<class UWidgetAnimation*> ShakeAnimArray;                                   // 0x03E0 (size: 0x10)
-    bool isSneakBonus;                                                                // 0x03F0 (size: 0x1)
-    FDataTableRowHandle SneakBonusMsgID;                                              // 0x03F8 (size: 0x10)
-    FDataTableRowHandle CaptureRateMsgID;                                             // 0x0408 (size: 0x10)
-    double OriginalInitialCaptureRate;                                                // 0x0418 (size: 0x8)
-    FTimerHandle ClearTimerHandle;                                                    // 0x0420 (size: 0x8)
+    class UImage* Image_CaptureIcon;                                                  // 0x0368 (size: 0x8)
+    class UImage* Image_Icon_Shadow;                                                  // 0x0370 (size: 0x8)
+    class UOverlay* Overlay_CaptureNum;                                               // 0x0378 (size: 0x8)
+    class UBP_PalTextBlock_C* text_Capturerate_SneakBonus;                            // 0x0380 (size: 0x8)
+    class UBP_PalTextBlock_C* Text_CurrentCaptureNum;                                 // 0x0388 (size: 0x8)
+    class UBP_PalTextBlock_C* Text_MaxCaptureNum;                                     // 0x0390 (size: 0x8)
+    class UBP_PalTextBlock_C* TextCaptured;                                           // 0x0398 (size: 0x8)
+    class UWBP_PalGetReticle_Arrow_C* WBP_PalGetReticle_Arrow;                        // 0x03A0 (size: 0x8)
+    double targetCaptureRate;                                                         // 0x03A8 (size: 0x8)
+    double oldCaptureRate;                                                            // 0x03B0 (size: 0x8)
+    TArray<class UMaterialInstanceDynamic*> gaugeMaterials;                           // 0x03B8 (size: 0x10)
+    class UCurveFloat* displayRateCalcCurve;                                          // 0x03C8 (size: 0x8)
+    double rateCalcTimer;                                                             // 0x03D0 (size: 0x8)
+    FVector WorldLocation;                                                            // 0x03D8 (size: 0x18)
+    bool isRelativeWorldLocation;                                                     // 0x03F0 (size: 0x1)
+    TArray<double> RateList;                                                          // 0x03F8 (size: 0x10)
+    class UCurveLinearColor* ColorCurve;                                              // 0x0408 (size: 0x8)
+    TArray<class UWidgetAnimation*> ShakeAnimArray;                                   // 0x0410 (size: 0x10)
+    bool isSneakBonus;                                                                // 0x0420 (size: 0x1)
+    FDataTableRowHandle SneakBonusMsgID;                                              // 0x0428 (size: 0x10)
+    FDataTableRowHandle CaptureRateMsgID;                                             // 0x0438 (size: 0x10)
+    double OriginalInitialCaptureRate;                                                // 0x0448 (size: 0x8)
+    FTimerHandle ClearTimerHandle;                                                    // 0x0450 (size: 0x8)
 
+    void DisplayCaptureNum(int32 CaptureCount);
     void OnTimer_RemoveSelf();
     void RestartTick();
     void Update Display Rate(double DeltaTime);
@@ -79,6 +86,6 @@ class UWBP_PalGetReticle_C : public UUserWidget
     void OnInitialized();
     void Destruct();
     void ExecuteUbergraph_WBP_PalGetReticle(int32 EntryPoint);
-}; // Size: 0x428
+}; // Size: 0x458
 
 #endif

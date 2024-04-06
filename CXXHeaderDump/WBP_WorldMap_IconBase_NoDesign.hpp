@@ -12,7 +12,10 @@ class UWBP_WorldMap_IconBase_NoDesign_C : public UPalUserWidget
     void OnClicked(class UWBP_WorldMap_IconBase_NoDesign_C* iconWidget);
     FGuid LocationId;                                                                 // 0x0440 (size: 0x10)
     bool IsCallInternalClickEvent;                                                    // 0x0450 (size: 0x1)
+    bool IgnoreMask;                                                                  // 0x0451 (size: 0x1)
 
+    void IsIgnoreMask(bool& IsIgnore);
+    void SetIgnoreMask(bool IsIgnore);
     void SetEnable(bool Enable);
     void OnClicked_Internal();
     void ClickEvent();
@@ -26,6 +29,6 @@ class UWBP_WorldMap_IconBase_NoDesign_C : public UPalUserWidget
     void OnClicked__DelegateSignature(class UWBP_WorldMap_IconBase_NoDesign_C* iconWidget);
     void OnUnhovered__DelegateSignature(class UWBP_WorldMap_IconBase_NoDesign_C* iconWidget);
     void OnHovered__DelegateSignature(class UWBP_WorldMap_IconBase_NoDesign_C* iconWidget);
-}; // Size: 0x451
+}; // Size: 0x452
 
 #endif

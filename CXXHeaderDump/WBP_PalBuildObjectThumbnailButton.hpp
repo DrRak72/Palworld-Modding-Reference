@@ -16,11 +16,11 @@ class UWBP_PalBuildObjectThumbnailButton_C : public UPalUserWidget
     FWBP_PalBuildObjectThumbnailButton_COnHovered OnHovered;                          // 0x0460 (size: 0x10)
     void OnHovered(class UWBP_PalBuildObjectThumbnailButton_C* selfWidget);
     FVector2D DefaultCanvasSize;                                                      // 0x0470 (size: 0x10)
-    FPalBuildObjectData BuildObjectData;                                              // 0x0480 (size: 0x78)
-    FWBP_PalBuildObjectThumbnailButton_COnUnhovered OnUnhovered;                      // 0x04F8 (size: 0x10)
+    FPalBuildObjectData BuildObjectData;                                              // 0x0480 (size: 0x80)
+    FWBP_PalBuildObjectThumbnailButton_COnUnhovered OnUnhovered;                      // 0x0500 (size: 0x10)
     void OnUnhovered(class UWBP_PalBuildObjectThumbnailButton_C* selftWidget);
-    FSlateFontInfo DefaultFontInfo;                                                   // 0x0508 (size: 0x60)
-    double Scale;                                                                     // 0x0568 (size: 0x8)
+    FSlateFontInfo DefaultFontInfo;                                                   // 0x0510 (size: 0x60)
+    double Scale;                                                                     // 0x0570 (size: 0x8)
 
     FVector2D GetScaledCanvasSize();
     void SetScale(double NewScale);
@@ -40,6 +40,6 @@ class UWBP_PalBuildObjectThumbnailButton_C : public UPalUserWidget
     void OnUnhovered__DelegateSignature(class UWBP_PalBuildObjectThumbnailButton_C* selftWidget);
     void OnHovered__DelegateSignature(class UWBP_PalBuildObjectThumbnailButton_C* selfWidget);
     void OnClicked__DelegateSignature(class UWBP_PalBuildObjectThumbnailButton_C* selfWidget);
-}; // Size: 0x570
+}; // Size: 0x578
 
 #endif

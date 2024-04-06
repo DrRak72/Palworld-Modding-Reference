@@ -6,6 +6,7 @@ class UBP_PalCheatManager_C : public UPalCheatManager
     FPointerToUberGraphFrame UberGraphFrame;                                          // 0x00C8 (size: 0x8)
     class AActor* tempPlayer;                                                         // 0x00D0 (size: 0x8)
 
+    void PostAkEventByName(FString EventName);
     void ToggleAllDebugInfo();
     void StartWildPalCombat();
     void TimeStopForBP();

@@ -3,6 +3,6 @@
 
 class UBP_PalDatabaseCharacterParameter_C : public UPalDatabaseCharacterParameter
 {
-}; // Size: 0x160
+}; // Size: 0x170
 
 #endif

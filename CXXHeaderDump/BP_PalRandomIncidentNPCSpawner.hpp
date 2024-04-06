@@ -16,6 +16,7 @@ class ABP_PalRandomIncidentNPCSpawner_C : public APalRandomIncidentNPCSpawner
     FBP_PalRandomIncidentNPCSpawner_CGetWalkPathDelegate GetWalkPathDelegate;         // 0x0598 (size: 0x10)
     void GetWalkPathDelegate(FName NewParam);
     TMap<class UPalIndividualCharacterHandle*, class FVector> SpawnedLocation;        // 0x05A8 (size: 0x50)
+    TMap<class UPalIndividualCharacterHandle*, class FName> OtomoNames;               // 0x05F8 (size: 0x50)
 
     void GetGroupNo(class UPalIndividualCharacterHandle* IndividualHandle, int32& GroupNo);
     void GetSpawnedLocation(class UPalIndividualCharacterHandle* Handle, bool& Found, FVector& SpawnedLocation);
@@ -31,7 +32,7 @@ class ABP_PalRandomIncidentNPCSpawner_C : public APalRandomIncidentNPCSpawner
     void Get Path Name(FPalInstanceID ID, FName& PathName);
     void GetDefaultAction(FPalInstanceID ID, TSubclassOf<class UPalActionBase>& DefaultAction, TSubclassOf<class UPalAIActionBase>& DefaultAIAction);
     void IsSquad(FPalInstanceID ID, bool& IsSquad);
-    void SpawnCharacter(FName RowName, FName CharacterID, FName UniqueName, int32 Level, TSubclassOf<class APalAIController> AIController, FName PathName, FVector Location, double Radius, double RotZ, int32 SpawnPointIndex, int32 SpawnPointCount, class UPalIndividualCharacterHandle*& Handle, FVector& SpawnedLocation);
+    void SpawnCharacter(FName RowName, FName CharacterID, FName UniqueName, FName OtomoName, int32 Level, TSubclassOf<class APalAIController> AIController, FName PathName, FVector Location, double Radius, double RotZ, int32 SpawnPointIndex, int32 SpawnPointCount, class UPalIndividualCharacterHandle*& Handle, FVector& SpawnedLocation);
     void Spawn NPC(FName RowName, FPalRandomIncidentSpawnNPCData SpawnData, int32 SpawnPointIndex, int32 SpawnPointCount);
     void Spawn Monster(FName RowName, FPalRandomIncidentSpawnMonsterData SpawnData, int32 SpawnPointIndex, int32 SpawnPointCount);
     void Get Character(FPalInstanceID ID, class APalCharacter*& Character);
@@ -48,6 +49,6 @@ class ABP_PalRandomIncidentNPCSpawner_C : public APalRandomIncidentNPCSpawner
     void ReceiveEndPlay(TEnumAsByte<EEndPlayReason::Type> EndPlayReason);
     void ExecuteUbergraph_BP_PalRandomIncidentNPCSpawner(int32 EntryPoint);
     void GetWalkPathDelegate__DelegateSignature(FName NewParam);
-}; // Size: 0x5F8
+}; // Size: 0x648
 
 #endif

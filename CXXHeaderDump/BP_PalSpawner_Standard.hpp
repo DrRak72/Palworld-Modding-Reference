@@ -25,6 +25,8 @@ class ABP_PalSpawner_Standard_C : public APalNPCSpawnerBase
     FName SpawnerName;                                                                // 0x0424 (size: 0x8)
     EPalSpawnedCharacterType SpawnerType;                                             // 0x042C (size: 0x1)
 
+    TArray<FPalSpawnerGroupInfo> GetOriginalSpawnGroupList();
+    TArray<FPalSpawnerGroupInfo> GetSpawnGroupList();
     void GetAllSpawnedNPCHandle(TArray<class UPalIndividualCharacterHandle*>& Handles);
     bool IsSuppressedByRandomIncident();
     float GetSpawnPointRadius();
@@ -36,7 +38,6 @@ class ABP_PalSpawner_Standard_C : public APalNPCSpawnerBase
     void Lottery and Spawn Reauest();
     void ExistAliveCharacter(bool& Exist);
     int32 GetMaxMonsterLevel();
-    void GetSpawnGroupList(TArray<FPalSpawnerGroupInfo>& List);
     void IsWorldPartitionLoadComplete(bool& IsLoading);
     void IsCharacterLoading(bool& IsLoading);
     void GetFixedSpawnInfo(FPalSpawnerGroupInfo& Group);

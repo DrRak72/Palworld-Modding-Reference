@@ -14,6 +14,7 @@ class UBP_PalIncidentRandom_C : public UPalRandomIncidentBase
     TArray<FPalRandomIncidentSpawnMonsterData> OutbreakMonsters;                      // 0x01D0 (size: 0x10)
     TArray<FName> OutbreakMonsterNames;                                               // 0x01E0 (size: 0x10)
 
+    void ShowErrorNameDuplication(FName InName);
     void SetupOutbreakData();
     void GetGroupList(TArray<int32>& GroupNo);
     void OnRandomIncidentActionNotify(EPalRandomIncidentActionNotifyType NotifyType);

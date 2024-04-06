@@ -4,7 +4,7 @@
 class ABP_UltimateRiverTool_C : public AActor
 {
     FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0290 (size: 0x8)
-    class USplineComponent* mainSpline;                                               // 0x0298 (size: 0x8)
+    class USplineComponent* MainSpline;                                               // 0x0298 (size: 0x8)
     class USceneComponent* Scene;                                                     // 0x02A0 (size: 0x8)
     bool UpdateBlueprint;                                                             // 0x02A8 (size: 0x1)
     TSubclassOf<class ABP_PrefabBase_C> BasePrefabBlueprint;                          // 0x02B0 (size: 0x8)

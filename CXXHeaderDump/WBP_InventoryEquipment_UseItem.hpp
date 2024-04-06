@@ -20,15 +20,24 @@ class UWBP_InventoryEquipment_UseItem_C : public UPalUserWidgetOverlayUI
     void EndUseItem();
     class UPalStaticItemDataBase* CurrentItem;                                        // 0x04B0 (size: 0x8)
     int32 CachedConsumeAmount;                                                        // 0x04B8 (size: 0x4)
-    bool IsWazaMachine;                                                               // 0x04BC (size: 0x1)
-    bool WazaMachineUsed;                                                             // 0x04BD (size: 0x1)
-    bool MedicineUsed;                                                                // 0x04BE (size: 0x1)
     FDataTableRowHandle SkillLearnedMsgIDHandle;                                      // 0x04C0 (size: 0x10)
     FName TabActionName;                                                              // 0x04D0 (size: 0x8)
     FDataTableRowHandle SickCuredMsgIDHandle;                                         // 0x04D8 (size: 0x10)
     class UPalIndividualCharacterParameter* TempIndividualParameter;                  // 0x04E8 (size: 0x8)
+    TArray<class UPalIndividualCharacterParameter*> ExpChangeBindList;                // 0x04F0 (size: 0x10)
+    bool IsSkipHidePalDetail;                                                         // 0x0500 (size: 0x1)
+    TArray<class UPalIndividualCharacterParameter*> CanLevelupList;                   // 0x0508 (size: 0x10)
+    TArray<class UPalIndividualCharacterParameter*> CanLevelupListCache;              // 0x0518 (size: 0x10)
+    FDataTableRowHandle RankUpMsgIDHandle;                                            // 0x0528 (size: 0x10)
+    bool DialogLiving;                                                                // 0x0538 (size: 0x1)
+    TMap<class EPalItemTypeB, class UAkAudioEvent*> ConsumeAKEventMap;                // 0x0540 (size: 0x50)
+    EPalItemTypeB UsedItemType;                                                       // 0x0590 (size: 0x1)
 
-    void TryPlayEatSound(FName StaticItemId, class UPalIndividualCharacterParameter* TargetCharacterParameter);
+    void SetupCllickSE(class UPalIndividualCharacterHandle* IndividualHandle, class UWBP_Menu_PalList_C* MenuPalList);
+    void WBP_InventoryEquipment_UseItem_AutoGenFunc(int32 addLevel, int32 nowLevel);
+    void SetupPalInteractable(class UPalIndividualCharacterHandle* IndividualHandle, class UWBP_Menu_PalList_C* MenuPalList);
+    bool CanUsePlayer(class UPalIndividualCharacterHandle* PlayerHandle);
+    void Try Use Item Sound(FName StaticItemId, class UPalIndividualCharacterParameter* TargetCharacterParameter);
     class UWidget* BP_GetDesiredFocusTarget();
     void Setup(class UPalItemSlot* SelectedItemSlot);
     void OnInitialized();
@@ -43,8 +52,12 @@ class UWBP_InventoryEquipment_UseItem_C : public UPalUserWidgetOverlayUI
     void OnMedineUsed();
     void ShowPalDetail(class UPalIndividualCharacterHandle* Individual);
     void HidePalDetail();
+    void OnClose();
+    void OnPalExpChange(int32 addExp, int32 nowExp);
+    void OnPalRankChanged(int32 nowRank, int32 oldRank);
+    void OnPalTalentChanged();
     void ExecuteUbergraph_WBP_InventoryEquipment_UseItem(int32 EntryPoint);
     void EndUseItem__DelegateSignature();
-}; // Size: 0x4F0
+}; // Size: 0x591
 
 #endif

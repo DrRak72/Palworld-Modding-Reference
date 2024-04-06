@@ -30,7 +30,7 @@ class UWBP_Ingame_Thermometer_C : public UUserWidget
     void SetRegistRate(int32 HeatRegist, int32 ColdRegist);
     void SetBodyState(EPalBodyTemperatureState NewState);
     void SetTemperature(int32 NewTenperature);
-    void Calc Thermomater Anime Target Time(int32 TargetTenperature, double& TargetTime);
+    void Calc Thermomater Anime Target Time(int32 TargetTenperature, double& targetTime);
     void AnmEvent_ChangeTemperature(int32 TargetTenperature);
     void Construct();
     void Tick(FGeometry MyGeometry, float InDeltaTime);

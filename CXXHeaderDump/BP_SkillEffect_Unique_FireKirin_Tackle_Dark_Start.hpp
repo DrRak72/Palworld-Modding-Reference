@@ -1,0 +1,8 @@
+#ifndef UE4SS_SDK_BP_SkillEffect_Unique_FireKirin_Tackle_Dark_Start_HPP
+#define UE4SS_SDK_BP_SkillEffect_Unique_FireKirin_Tackle_Dark_Start_HPP
+
+class ABP_SkillEffect_Unique_FireKirin_Tackle_Dark_Start_C : public ABP_SkillEffect_Unique_FireKirin_Tackle_Start_C
+{
+}; // Size: 0x3C8
+
+#endif

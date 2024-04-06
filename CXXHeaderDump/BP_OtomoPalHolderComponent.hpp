@@ -18,6 +18,8 @@ class UBP_OtomoPalHolderComponent_C : public UPalOtomoHolderComponentBase
     TSubclassOf<class AAIController> AiClass;                                         // 0x0170 (size: 0x8)
     TArray<class APalCharacter*> ReservePalLocationList;                              // 0x0178 (size: 0x10)
 
+    void InactivateAllPalInArena();
+    void ActivateAllPalInArena(TArray<FTransform>& SpawnTransform);
     void SetOtomoInvokerDisable(class AActor* Otomo, bool isDisable);
     void Update Reserve Pal Location(double DeltaTime);
     void IncrementActiveOtomoCount(class UPalPlayerRecordData* PlayerRecordData, FName CharacterID);

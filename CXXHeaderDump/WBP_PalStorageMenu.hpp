@@ -21,10 +21,12 @@ class UWBP_PalStorageMenu_C : public UPalUIPalBoxBase
     class UPalIndividualCharacterSlot* CachedLastHoveredSlot;                         // 0x04F0 (size: 0x8)
     FName TabActionName;                                                              // 0x04F8 (size: 0x8)
     FPalDataTableRowName_UIInputAction ViewDetailInput;                               // 0x0500 (size: 0x8)
+    TArray<class UPalIndividualCharacterSlot*> LockSlotList;                          // 0x0508 (size: 0x10)
 
+    void OnUpdateSlotHandle(class UPalIndividualCharacterSlot* Slot, class UPalIndividualCharacterHandle* LastHandle);
     void SelectSlot(class UPalIndividualCharacterSlot* Slot, EPalItemSlotPressType PressType);
     void OnViewDetailInput();
-    void OnSendSlotInput();
+    void On Send Slot Input();
     void UnregisterPalOperateInput();
     void RegisterPalOperateInput();
     void OnCursorShortcutNext();
@@ -53,6 +55,6 @@ class UWBP_PalStorageMenu_C : public UPalUIPalBoxBase
     void BndEvt__WBP_PalStorageMenu_WBP_IngameMenu_PalBox_K2Node_ComponentBoundEvent_13_OnRightClickedWorkerSlot__DelegateSignature(class UPalIndividualCharacterSlot* Slot);
     void BndEvt__WBP_PalStorageMenu_WBP_IngameMenu_PalBox_K2Node_ComponentBoundEvent_14_OnSelectedSortType__DelegateSignature(EPalCharacterContainerSortType SortType);
     void ExecuteUbergraph_WBP_PalStorageMenu(int32 EntryPoint);
-}; // Size: 0x508
+}; // Size: 0x518
 
 #endif

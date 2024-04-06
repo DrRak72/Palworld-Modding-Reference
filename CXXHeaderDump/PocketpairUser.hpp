@@ -109,7 +109,7 @@ class UPocketpairUserInfo : public UObject
 
 class UPocketpairUserSubsystem : public UGameInstanceSubsystem
 {
-    class UPocketpairUserInfo* LocalUserInfo;                                         // 0x0048 (size: 0x8)
+    class UPocketpairUserInfo* LocalUserInfo;                                         // 0x0058 (size: 0x8)
 
     void UnlockAchievement(FString ID, float Percent);
     void OnSessionInviteReceived(FString InviteCode);
@@ -123,7 +123,7 @@ class UPocketpairUserSubsystem : public UGameInstanceSubsystem
     FString GetInviteCode();
     FName GetDefaultOnlineSubsystemName();
     void AddPingResultCache(FString Address, int32 Ping);
-}; // Size: 0xE8
+}; // Size: 0xF8
 
 class USanitizeDisplayNameAsyncFunction : public UBlueprintAsyncActionBase
 {

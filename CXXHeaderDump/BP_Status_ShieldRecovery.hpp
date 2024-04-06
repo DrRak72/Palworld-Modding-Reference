@@ -14,7 +14,7 @@ class UBP_Status_ShieldRecovery_C : public UPalStatusBase
 
     void CreateDynamicMaterial();
     void ChangeSheildDamageMaterial();
-    void GetParam(class UPalIndividualCharacterParameter*& IP);
+    void GetParam(class UPalIndividualCharacterParameter*& ip);
     void OnBeginStatus();
     void TickStatus(float DeltaTime);
     void OnEndStatus();

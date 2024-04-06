@@ -4,7 +4,7 @@
 class UWBP_IngameMenuConstruction_InfoItem_C : public UUserWidget
 {
     class UWidgetAnimation* Anim_ON;                                                  // 0x0278 (size: 0x8)
-    class UWidgetAnimation* Anm_OnToOff;                                              // 0x0280 (size: 0x8)
+    class UWidgetAnimation* Anm_ONToOFF;                                              // 0x0280 (size: 0x8)
     class UImage* Base_B;                                                             // 0x0288 (size: 0x8)
     class UImage* Base_G;                                                             // 0x0290 (size: 0x8)
     class UBP_PalTextBlock_C* BP_PalTextBlock_C;                                      // 0x0298 (size: 0x8)

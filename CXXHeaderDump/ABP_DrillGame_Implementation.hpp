@@ -15,6 +15,10 @@ struct FAnimBlueprintGeneratedConstantData : public FAnimBlueprintConstantData
 
 }; // Size: 0xF0
 
+struct FAnimBlueprintGeneratedMutableData : public FAnimBlueprintMutableData
+{
+}; // Size: 0x1
+
 class UABP_DrillGame_Implementation_C : public UAnimInstance
 {
     FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0350 (size: 0x8)

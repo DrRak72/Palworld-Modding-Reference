@@ -1,0 +1,8 @@
+#ifndef UE4SS_SDK_BP_SkillEffect_Unique_GrassPanda_Electric_ElectricPunch_HPP
+#define UE4SS_SDK_BP_SkillEffect_Unique_GrassPanda_Electric_ElectricPunch_HPP
+
+class ABP_SkillEffect_Unique_GrassPanda_Electric_ElectricPunch_C : public ABP_SkillEffect_Unique_GrassPanda_MusclePunch_C
+{
+}; // Size: 0x3E0
+
+#endif

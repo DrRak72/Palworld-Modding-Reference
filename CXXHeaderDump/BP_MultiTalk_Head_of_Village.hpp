@@ -3,6 +3,6 @@
 
 class UBP_MultiTalk_Head_of_Village_C : public UBP_MultiTalk_OrderByName_C
 {
-}; // Size: 0x48
+}; // Size: 0x50
 
 #endif

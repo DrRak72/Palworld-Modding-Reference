@@ -20,6 +20,7 @@ class UWBP_Reticle_Pal_C : public UUserWidget
     FDataTableRowHandle UnassignableMsgId;                                            // 0x02F0 (size: 0x10)
     FDataTableRowHandle DeadPalThrowMsgID;                                            // 0x0300 (size: 0x10)
 
+    void SetThrowableableDetail(FPalUIAimReticleMapObjectThrowableData throwableData);
     void SetOtomoDeadDetail(class UPalIndividualCharacterParameter* TargetIndividualParameter);
     void SetAssignableDetail(FPalUIAimReticleMapObjectAssignableData assignableData);
     void SetVisibilityAssignableDetail(ESlateVisibility NewVisibility);

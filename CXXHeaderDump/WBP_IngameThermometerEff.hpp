@@ -25,7 +25,7 @@ class UWBP_IngameThermometerEff_C : public UUserWidget
     EPalBodyTemperatureState PreviousBodyState;                                       // 0x02FC (size: 0x1)
 
     void PlayTemperatureSound();
-    void Calc Thermomater Anime Target Time(int32 TargetTenperature, double& TargetTime);
+    void Calc Thermomater Anime Target Time(int32 TargetTenperature, double& targetTime);
     void SetTemperantureBodyState(EPalBodyTemperatureState NewBodyState);
     void SetTemperanture(int32 Temperanture);
     void AnmEvent_On();

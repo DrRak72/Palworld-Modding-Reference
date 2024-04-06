@@ -3,6 +3,6 @@
 
 class UBP_PalPlayerInventoryData_C : public UPalPlayerInventoryData
 {
-}; // Size: 0x190
+}; // Size: 0x1A0
 
 #endif

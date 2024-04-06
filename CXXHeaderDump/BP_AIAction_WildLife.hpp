@@ -9,7 +9,7 @@ class UBP_AIAction_WildLife_C : public UBP_AIAction_CanCombatBase_C
     bool InitEnd;                                                                     // 0x0190 (size: 0x1)
     FVector PrePos;                                                                   // 0x0198 (size: 0x18)
     FTimerHandle StackTimerHandle;                                                    // 0x01B0 (size: 0x8)
-    FVector SpawnerLocation;                                                          // 0x01B8 (size: 0x18)
+    FVector spawnerLocation;                                                          // 0x01B8 (size: 0x18)
     double WalkingTimer;                                                              // 0x01D0 (size: 0x8)
     double tempDeltaTime;                                                             // 0x01D8 (size: 0x8)
     bool RestMode;                                                                    // 0x01E0 (size: 0x1)

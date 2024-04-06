@@ -22,9 +22,12 @@ class UWBP_PalBuilding_C : public UPalUIBuilding
     FPalDataTableRowName_UIInputAction CancelBuildingActionInput_ForRadialMenu;       // 0x04E4 (size: 0x8)
     FPalDataTableRowName_UIInputAction BuildRotateRightActionInput;                   // 0x04EC (size: 0x8)
     FPalDataTableRowName_UIInputAction BuildRotateLeftActionInput;                    // 0x04F4 (size: 0x8)
-    bool NewVar;                                                                      // 0x04FC (size: 0x1)
-    FTimerHandle UpdateDisplayTimer;                                                  // 0x0500 (size: 0x8)
+    FPalDataTableRowName_UIInputAction BuildChangeMode;                               // 0x04FC (size: 0x8)
+    bool NewVar;                                                                      // 0x0504 (size: 0x1)
+    FTimerHandle UpdateDisplayTimer;                                                  // 0x0508 (size: 0x8)
 
+    void ChangeModeOff();
+    void ChangeModeOn();
     void UpdateOutsideBaseCampWarning();
     void OnLeaveBaseCamp();
     void OnEnterBaseCamp(class UPalBaseCampModel* Model);
@@ -48,7 +51,8 @@ class UWBP_PalBuilding_C : public UPalUIBuilding
     void Destruct();
     void UpdateDisplay();
     void Construct();
+    void Tick(FGeometry MyGeometry, float InDeltaTime);
     void ExecuteUbergraph_WBP_PalBuilding(int32 EntryPoint);
-}; // Size: 0x508
+}; // Size: 0x510
 
 #endif

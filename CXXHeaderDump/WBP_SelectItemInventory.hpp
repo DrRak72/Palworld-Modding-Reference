@@ -17,7 +17,7 @@ class UWBP_SelectItemInventory_C : public UPalUISelectItemInventoryBase
     class UWidget* BP_GetDesiredFocusTarget();
     void OnFocusedSlot(class UWBP_PalItemSlotButtonBase_C* ButtonBase);
     void ComplateSelect(FPalItemSlotId SlotID, int32 selectNum);
-    void OnComplateSelectNum(EPalUISelectNumResult ResultType, int32 selectedNum);
+    void OnComplateSelectNum(EPalUISelectNumResult resultType, int32 selectedNum);
     void DisplaySelectNumWidget();
     void OnLeftClicked(class UWBP_PalItemSlotButtonBase_C* ButtonBase, EPalItemSlotPressType PressType);
     void OnInitialized();

@@ -3,6 +3,6 @@
 
 class UBP_PalHUDService_C : public UPalHUDService
 {
-}; // Size: 0x98
+}; // Size: 0x108
 
 #endif

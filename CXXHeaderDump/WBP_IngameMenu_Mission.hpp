@@ -23,7 +23,7 @@ class UWBP_IngameMenu_Mission_C : public UPalUIBaseCampTaskBase
     FName TabActionName;                                                              // 0x04E0 (size: 0x8)
     TArray<class UWBP_IngameMenu_MissionList_C*> MissionList;                         // 0x04E8 (size: 0x10)
     FPalBaseCampTaskCheckedData ChedckedData;                                         // 0x04F8 (size: 0x60)
-    FPalBaseCampTaskDataSet taskData;                                                 // 0x0558 (size: 0x28)
+    FPalBaseCampTaskDataSet TaskData;                                                 // 0x0558 (size: 0x28)
     FDataTableRowHandle BuildOBjectNumTaskInfoMsgID;                                  // 0x0580 (size: 0x10)
     FDataTableRowHandle WorkerNumTaskInfoMsgID;                                       // 0x0590 (size: 0x10)
     bool CanLevelup;                                                                  // 0x05A0 (size: 0x1)

@@ -3,12 +3,12 @@
 
 class ABP_MonsterAIController_Otomo_C : public ABP_MonsterAIControllerBase_C
 {
-    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0548 (size: 0x8)
-    int32 OtomoSlotIndex;                                                             // 0x0550 (size: 0x4)
-    TMap<class EPalAIActionType, class UPalAIActionBase*> PlayingAIActionMap;         // 0x0558 (size: 0x50)
-    FTimerHandle RegeneTimer;                                                         // 0x05A8 (size: 0x8)
-    FVector FollowInterpolatedPos;                                                    // 0x05B0 (size: 0x18)
-    double FollowSpeed;                                                               // 0x05C8 (size: 0x8)
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0550 (size: 0x8)
+    int32 OtomoSlotIndex;                                                             // 0x0558 (size: 0x4)
+    TMap<class EPalAIActionType, class UPalAIActionBase*> PlayingAIActionMap;         // 0x0560 (size: 0x50)
+    FTimerHandle RegeneTimer;                                                         // 0x05B0 (size: 0x8)
+    FVector FollowInterpolatedPos;                                                    // 0x05B8 (size: 0x18)
+    double FollowSpeed;                                                               // 0x05D0 (size: 0x8)
 
     TSubclassOf<class UPalAIControllerWorkerModule> GetWorkerModuleClass();
     void OnDamageOtomo(FPalDamageResult DamageResult);
@@ -33,6 +33,6 @@ class ABP_MonsterAIController_Otomo_C : public ABP_MonsterAIControllerBase_C
     void ReceivePossess(class APawn* PossessedPawn);
     void OnTrainer(class APalCharacter* InCharacter);
     void ExecuteUbergraph_BP_MonsterAIController_Otomo(int32 EntryPoint);
-}; // Size: 0x5D0
+}; // Size: 0x5D8
 
 #endif

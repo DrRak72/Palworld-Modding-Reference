@@ -15,6 +15,10 @@ struct FAnimBlueprintGeneratedConstantData : public FAnimBlueprintConstantData
 
 }; // Size: 0xF0
 
+struct FAnimBlueprintGeneratedMutableData : public FAnimBlueprintMutableData
+{
+}; // Size: 0x1
+
 class UABP_JetDragon_Implementation_C : public UPalAnimInstance
 {
     FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0610 (size: 0x8)

@@ -256,6 +256,29 @@ struct FPalAmbientSoundAreaData
 
 }; // Size: 0x28
 
+struct FPalArenaStartParameter
+{
+    FVector Location;                                                                 // 0x0000 (size: 0x18)
+    FQuat Rot;                                                                        // 0x0020 (size: 0x20)
+    EPalAudioStateGroup BattleBGMStateGroup;                                          // 0x0040 (size: 0x1)
+
+}; // Size: 0x50
+
+struct FPalArenaTestParameter
+{
+    class UPalArenaPartyAsset* Player1Data;                                           // 0x0000 (size: 0x8)
+    class UPalArenaPartyAsset* Player2Data;                                           // 0x0008 (size: 0x8)
+    class AActor* Player1StartPoint;                                                  // 0x0010 (size: 0x8)
+    class AActor* Player2StartPoint;                                                  // 0x0018 (size: 0x8)
+    TArray<class AActor*> Player1PalPoint;                                            // 0x0020 (size: 0x10)
+    TArray<class AActor*> Player2PalPoint;                                            // 0x0030 (size: 0x10)
+    EPalAudioStateGroup BattleBGMStateGroup;                                          // 0x0040 (size: 0x1)
+    float RideDelayTime;                                                              // 0x0044 (size: 0x4)
+    bool bRandomPartyMode;                                                            // 0x0048 (size: 0x1)
+    int32 RandomPartyPalLevel;                                                        // 0x004C (size: 0x4)
+
+}; // Size: 0x50
+
 struct FPalArrowSettings
 {
     FColor Color;                                                                     // 0x0000 (size: 0x4)
@@ -376,7 +399,7 @@ struct FPalBaseCampModuleTransportItemRequirement
 {
     EPalBaseCampModuleTransportItemTransportPriority Priority;                        // 0x0000 (size: 0x1)
     TArray<FPalStaticItemIdAndNum> ItemInfo;                                          // 0x0008 (size: 0x10)
-    TArray<EPalItemTypeA> itemTypeA;                                                  // 0x0018 (size: 0x10)
+    TArray<EPalItemTypeA> ItemTypeA;                                                  // 0x0018 (size: 0x10)
     TArray<EPalItemTypeB> ItemTypeB;                                                  // 0x0028 (size: 0x10)
     TArray<EPalBaseCampModuleTransportItemTransportableItemExtraType> ItemExtraTypes; // 0x0038 (size: 0x10)
 
@@ -541,12 +564,23 @@ struct FPalBaseCampWorkerEventMasterData : public FTableRowBase
     bool bAllowInterruptRecoverHungry;                                                // 0x0018 (size: 0x1)
     bool bAllowInterruptSleep;                                                        // 0x0019 (size: 0x1)
     bool bAssignableWork;                                                             // 0x001A (size: 0x1)
+    bool bAssignableFixedWork;                                                        // 0x001B (size: 0x1)
     int32 TriggerSkipCount;                                                           // 0x001C (size: 0x4)
     EPalLogPriority logPriority;                                                      // 0x0020 (size: 0x1)
     EPalLogContentToneType LogTone;                                                   // 0x0021 (size: 0x1)
     bool Invalid;                                                                     // 0x0022 (size: 0x1)
 
 }; // Size: 0x28
+
+struct FPalBaseCampWorkerFindPreferredWorkInfoCache
+{
+    TArray<class UPalWorkBase*> SortedByPriorityDescWorks;                            // 0x0000 (size: 0x10)
+
+}; // Size: 0x10
+
+struct FPalBaseCampWorkerMoveExtraParameter
+{
+}; // Size: 0x90
 
 struct FPalBaseCampWorkerSickMasterData : public FTableRowBase
 {
@@ -556,8 +590,9 @@ struct FPalBaseCampWorkerSickMasterData : public FTableRowBase
     int32 WorkSpeed;                                                                  // 0x0014 (size: 0x4)
     int32 MoveSpeed;                                                                  // 0x0018 (size: 0x4)
     int32 SatietyDecrease;                                                            // 0x001C (size: 0x4)
+    int32 RecoveryProbabilityPercentageInPalBox;                                      // 0x0020 (size: 0x4)
 
-}; // Size: 0x20
+}; // Size: 0x28
 
 struct FPalBaseCampWorkerTaskCheckResponse
 {
@@ -649,9 +684,10 @@ struct FPalBuildObjectData : public FTableRowBase
     bool bIsInstallOnlyOnBase;                                                        // 0x0074 (size: 0x1)
     bool bIsInstallOnlyInDoor;                                                        // 0x0075 (size: 0x1)
     bool bIsInstallOnlyHubAround;                                                     // 0x0076 (size: 0x1)
-    bool bInstallableNoObstacleFromCamera;                                            // 0x0077 (size: 0x1)
+    int32 InstallMaxNumInBaseCamp;                                                    // 0x0078 (size: 0x4)
+    bool bInstallableNoObstacleFromCamera;                                            // 0x007C (size: 0x1)
 
-}; // Size: 0x78
+}; // Size: 0x80
 
 struct FPalBuildObjectDataSetTypeB
 {
@@ -735,6 +771,10 @@ struct FPalCellCoord
     int64 Z;                                                                          // 0x0010 (size: 0x8)
 
 }; // Size: 0x18
+
+struct FPalCharacterAsyncTickFunction : public FTickFunction
+{
+}; // Size: 0x30
 
 struct FPalCharacterCompleteDelegateParameter
 {
@@ -834,55 +874,58 @@ struct FPalCharacterParameterDatabaseRow : public FTableRowBase
     int32 Defense;                                                                    // 0x005C (size: 0x4)
     int32 Support;                                                                    // 0x0060 (size: 0x4)
     int32 CraftSpeed;                                                                 // 0x0064 (size: 0x4)
-    float EnemyReceiveDamageRate;                                                     // 0x0068 (size: 0x4)
-    float CaptureRateCorrect;                                                         // 0x006C (size: 0x4)
-    float ExpRatio;                                                                   // 0x0070 (size: 0x4)
-    float Price;                                                                      // 0x0074 (size: 0x4)
-    FName AIResponse;                                                                 // 0x0078 (size: 0x8)
-    FName AISightResponse;                                                            // 0x0080 (size: 0x8)
-    int32 SlowWalkSpeed;                                                              // 0x0088 (size: 0x4)
-    int32 WalkSpeed;                                                                  // 0x008C (size: 0x4)
-    int32 RunSpeed;                                                                   // 0x0090 (size: 0x4)
-    int32 RideSprintSpeed;                                                            // 0x0094 (size: 0x4)
-    int32 TransportSpeed;                                                             // 0x0098 (size: 0x4)
-    bool IsBoss;                                                                      // 0x009C (size: 0x1)
-    bool IsTowerBoss;                                                                 // 0x009D (size: 0x1)
-    EPalBattleBGMType BattleBGM;                                                      // 0x009E (size: 0x1)
-    bool IgnoreLeanBack;                                                              // 0x009F (size: 0x1)
-    bool IgnoreBlowAway;                                                              // 0x00A0 (size: 0x1)
-    int32 MaxFullStomach;                                                             // 0x00A4 (size: 0x4)
-    float FullStomachDecreaseRate;                                                    // 0x00A8 (size: 0x4)
-    int32 FoodAmount;                                                                 // 0x00AC (size: 0x4)
-    int32 ViewingDistance;                                                            // 0x00B0 (size: 0x4)
-    int32 ViewingAngle;                                                               // 0x00B4 (size: 0x4)
-    float HearingRate;                                                                // 0x00B8 (size: 0x4)
-    bool NooseTrap;                                                                   // 0x00BC (size: 0x1)
-    bool Nocturnal;                                                                   // 0x00BD (size: 0x1)
-    int32 BiologicalGrade;                                                            // 0x00C0 (size: 0x4)
-    bool Predator;                                                                    // 0x00C4 (size: 0x1)
-    bool Edible;                                                                      // 0x00C5 (size: 0x1)
-    int32 Stamina;                                                                    // 0x00C8 (size: 0x4)
-    int32 MaleProbability;                                                            // 0x00CC (size: 0x4)
-    int32 CombiRank;                                                                  // 0x00D0 (size: 0x4)
-    int32 WorkSuitability_EmitFlame;                                                  // 0x00D4 (size: 0x4)
-    int32 WorkSuitability_Watering;                                                   // 0x00D8 (size: 0x4)
-    int32 WorkSuitability_Seeding;                                                    // 0x00DC (size: 0x4)
-    int32 WorkSuitability_GenerateElectricity;                                        // 0x00E0 (size: 0x4)
-    int32 WorkSuitability_Handcraft;                                                  // 0x00E4 (size: 0x4)
-    int32 WorkSuitability_Collection;                                                 // 0x00E8 (size: 0x4)
-    int32 WorkSuitability_Deforest;                                                   // 0x00EC (size: 0x4)
-    int32 WorkSuitability_Mining;                                                     // 0x00F0 (size: 0x4)
-    int32 WorkSuitability_OilExtraction;                                              // 0x00F4 (size: 0x4)
-    int32 WorkSuitability_ProductMedicine;                                            // 0x00F8 (size: 0x4)
-    int32 WorkSuitability_Cool;                                                       // 0x00FC (size: 0x4)
-    int32 WorkSuitability_Transport;                                                  // 0x0100 (size: 0x4)
-    int32 WorkSuitability_MonsterFarm;                                                // 0x0104 (size: 0x4)
-    FName PassiveSkill1;                                                              // 0x0108 (size: 0x8)
-    FName PassiveSkill2;                                                              // 0x0110 (size: 0x8)
-    FName PassiveSkill3;                                                              // 0x0118 (size: 0x8)
-    FName PassiveSkill4;                                                              // 0x0120 (size: 0x8)
+    float EnemyMaxHPRate;                                                             // 0x0068 (size: 0x4)
+    float EnemyReceiveDamageRate;                                                     // 0x006C (size: 0x4)
+    float EnemyInflictDamageRate;                                                     // 0x0070 (size: 0x4)
+    float CaptureRateCorrect;                                                         // 0x0074 (size: 0x4)
+    float ExpRatio;                                                                   // 0x0078 (size: 0x4)
+    float Price;                                                                      // 0x007C (size: 0x4)
+    FName AIResponse;                                                                 // 0x0080 (size: 0x8)
+    FName AISightResponse;                                                            // 0x0088 (size: 0x8)
+    int32 SlowWalkSpeed;                                                              // 0x0090 (size: 0x4)
+    int32 WalkSpeed;                                                                  // 0x0094 (size: 0x4)
+    int32 RunSpeed;                                                                   // 0x0098 (size: 0x4)
+    int32 RideSprintSpeed;                                                            // 0x009C (size: 0x4)
+    int32 TransportSpeed;                                                             // 0x00A0 (size: 0x4)
+    bool IsBoss;                                                                      // 0x00A4 (size: 0x1)
+    bool IsTowerBoss;                                                                 // 0x00A5 (size: 0x1)
+    bool IsRaidBoss;                                                                  // 0x00A6 (size: 0x1)
+    EPalBattleBGMType BattleBGM;                                                      // 0x00A7 (size: 0x1)
+    bool IgnoreLeanBack;                                                              // 0x00A8 (size: 0x1)
+    bool IgnoreBlowAway;                                                              // 0x00A9 (size: 0x1)
+    int32 MaxFullStomach;                                                             // 0x00AC (size: 0x4)
+    float FullStomachDecreaseRate;                                                    // 0x00B0 (size: 0x4)
+    int32 FoodAmount;                                                                 // 0x00B4 (size: 0x4)
+    int32 ViewingDistance;                                                            // 0x00B8 (size: 0x4)
+    int32 ViewingAngle;                                                               // 0x00BC (size: 0x4)
+    float HearingRate;                                                                // 0x00C0 (size: 0x4)
+    bool NooseTrap;                                                                   // 0x00C4 (size: 0x1)
+    bool Nocturnal;                                                                   // 0x00C5 (size: 0x1)
+    int32 BiologicalGrade;                                                            // 0x00C8 (size: 0x4)
+    bool Predator;                                                                    // 0x00CC (size: 0x1)
+    bool Edible;                                                                      // 0x00CD (size: 0x1)
+    int32 Stamina;                                                                    // 0x00D0 (size: 0x4)
+    int32 MaleProbability;                                                            // 0x00D4 (size: 0x4)
+    int32 CombiRank;                                                                  // 0x00D8 (size: 0x4)
+    int32 WorkSuitability_EmitFlame;                                                  // 0x00DC (size: 0x4)
+    int32 WorkSuitability_Watering;                                                   // 0x00E0 (size: 0x4)
+    int32 WorkSuitability_Seeding;                                                    // 0x00E4 (size: 0x4)
+    int32 WorkSuitability_GenerateElectricity;                                        // 0x00E8 (size: 0x4)
+    int32 WorkSuitability_Handcraft;                                                  // 0x00EC (size: 0x4)
+    int32 WorkSuitability_Collection;                                                 // 0x00F0 (size: 0x4)
+    int32 WorkSuitability_Deforest;                                                   // 0x00F4 (size: 0x4)
+    int32 WorkSuitability_Mining;                                                     // 0x00F8 (size: 0x4)
+    int32 WorkSuitability_OilExtraction;                                              // 0x00FC (size: 0x4)
+    int32 WorkSuitability_ProductMedicine;                                            // 0x0100 (size: 0x4)
+    int32 WorkSuitability_Cool;                                                       // 0x0104 (size: 0x4)
+    int32 WorkSuitability_Transport;                                                  // 0x0108 (size: 0x4)
+    int32 WorkSuitability_MonsterFarm;                                                // 0x010C (size: 0x4)
+    FName PassiveSkill1;                                                              // 0x0110 (size: 0x8)
+    FName PassiveSkill2;                                                              // 0x0118 (size: 0x8)
+    FName PassiveSkill3;                                                              // 0x0120 (size: 0x8)
+    FName PassiveSkill4;                                                              // 0x0128 (size: 0x8)
 
-}; // Size: 0x128
+}; // Size: 0x130
 
 struct FPalCharacterParameterStorageSaveData
 {
@@ -929,11 +972,11 @@ struct FPalCharacterStoredParameterId
 
 struct FPalCharacterStoredParameterInfo
 {
-    FPalIndividualCharacterSaveParameter SaveParameter;                               // 0x0000 (size: 0x218)
-    FGameDateTime StoredAt;                                                           // 0x0218 (size: 0x8)
-    FGuid LostPlayerUId;                                                              // 0x0220 (size: 0x10)
+    FPalIndividualCharacterSaveParameter SaveParameter;                               // 0x0000 (size: 0x280)
+    FGameDateTime StoredAt;                                                           // 0x0280 (size: 0x8)
+    FGuid LostPlayerUId;                                                              // 0x0288 (size: 0x10)
 
-}; // Size: 0x230
+}; // Size: 0x298
 
 struct FPalCharacterStoredParameterInfoSaveData
 {
@@ -1136,6 +1179,7 @@ struct FPalDamageRactionInfo
     FVector BlowVelocity;                                                             // 0x0008 (size: 0x18)
     bool IsLeanBackAnime;                                                             // 0x0020 (size: 0x1)
     bool IsStan;                                                                      // 0x0021 (size: 0x1)
+    bool IsLargeDown;                                                                 // 0x0022 (size: 0x1)
     FVector HitLocation;                                                              // 0x0028 (size: 0x18)
 
 }; // Size: 0x40
@@ -1310,6 +1354,13 @@ struct FPalDebugAttachPassiveSkillInfo
 
 }; // Size: 0x10
 
+struct FPalDebugCharacterStatusRank
+{
+    EPalCharacterStatusOperationName OperationName;                                   // 0x0000 (size: 0x1)
+    int32 Rank;                                                                       // 0x0004 (size: 0x4)
+
+}; // Size: 0x8
+
 struct FPalDebugInfoSet
 {
 }; // Size: 0x30
@@ -1328,8 +1379,9 @@ struct FPalDebugOtomoPalInfo
     int32 Rank;                                                                       // 0x000C (size: 0x4)
     TArray<EPalWazaID> WazaList;                                                      // 0x0010 (size: 0x10)
     TArray<FPalDataTableRowName_PassiveSkillData> PassiveSkill;                       // 0x0020 (size: 0x10)
+    TArray<FPalDebugCharacterStatusRank> StatusRank;                                  // 0x0030 (size: 0x10)
 
-}; // Size: 0x30
+}; // Size: 0x40
 
 struct FPalDebugPalCaptureInfo
 {
@@ -1375,8 +1427,28 @@ struct FPalDropItemDatabaseRow : public FTableRowBase
     float Rate5;                                                                      // 0x006C (size: 0x4)
     int32 min5;                                                                       // 0x0070 (size: 0x4)
     int32 Max5;                                                                       // 0x0074 (size: 0x4)
+    FName ItemId6;                                                                    // 0x0078 (size: 0x8)
+    float Rate6;                                                                      // 0x0080 (size: 0x4)
+    int32 min6;                                                                       // 0x0084 (size: 0x4)
+    int32 Max6;                                                                       // 0x0088 (size: 0x4)
+    FName ItemId7;                                                                    // 0x008C (size: 0x8)
+    float Rate7;                                                                      // 0x0094 (size: 0x4)
+    int32 min7;                                                                       // 0x0098 (size: 0x4)
+    int32 Max7;                                                                       // 0x009C (size: 0x4)
+    FName ItemId8;                                                                    // 0x00A0 (size: 0x8)
+    float Rate8;                                                                      // 0x00A8 (size: 0x4)
+    int32 min8;                                                                       // 0x00AC (size: 0x4)
+    int32 Max8;                                                                       // 0x00B0 (size: 0x4)
+    FName ItemId9;                                                                    // 0x00B4 (size: 0x8)
+    float Rate9;                                                                      // 0x00BC (size: 0x4)
+    int32 min9;                                                                       // 0x00C0 (size: 0x4)
+    int32 Max9;                                                                       // 0x00C4 (size: 0x4)
+    FName ItemId10;                                                                   // 0x00C8 (size: 0x8)
+    float Rate10;                                                                     // 0x00D0 (size: 0x4)
+    int32 min10;                                                                      // 0x00D4 (size: 0x4)
+    int32 Max10;                                                                      // 0x00D8 (size: 0x4)
 
-}; // Size: 0x78
+}; // Size: 0xE0
 
 struct FPalDropItemInfo
 {
@@ -1385,9 +1457,9 @@ struct FPalDropItemInfo
 struct FPalDroppedPalProductDataForShop
 {
     FPalCharacterStoredParameterId StoredParameterId;                                 // 0x0000 (size: 0x10)
-    FPalIndividualCharacterSaveParameter SaveParameter;                               // 0x0010 (size: 0x218)
+    FPalIndividualCharacterSaveParameter SaveParameter;                               // 0x0010 (size: 0x280)
 
-}; // Size: 0x228
+}; // Size: 0x290
 
 struct FPalDungeonDataLayerAssetSet
 {
@@ -1486,8 +1558,9 @@ struct FPalDungeonSaveData
     int32 ReservedDataLayerAssetIndex;                                                // 0x0048 (size: 0x4)
     FPalStageInstanceId StageInstanceId;                                              // 0x004C (size: 0x14)
     TArray<FPalMapObjectSaveData> MapObjectSaveData;                                  // 0x0060 (size: 0x10)
+    FGameDateTime RespawnBossTimeAt;                                                  // 0x0070 (size: 0x8)
 
-}; // Size: 0x70
+}; // Size: 0x78
 
 struct FPalDungeonSpawnAreaData : public FTableRowBase
 {
@@ -1801,6 +1874,23 @@ struct FPalFoliageTypeReference : public FTableRowBase
 
 }; // Size: 0x58
 
+struct FPalFoodRegeneEffectParameter
+{
+    EPalFoodStatusEffectType EffectType;                                              // 0x0000 (size: 0x1)
+    int32 Value;                                                                      // 0x0004 (size: 0x4)
+    int32 Interval;                                                                   // 0x0008 (size: 0x4)
+
+}; // Size: 0xC
+
+struct FPalFoodRegeneInfo
+{
+    FName ItemId;                                                                     // 0x0000 (size: 0x8)
+    int32 EffectTime;                                                                 // 0x0008 (size: 0x4)
+    int32 RemainingTime;                                                              // 0x000C (size: 0x4)
+    TArray<FPalFoodRegeneEffectParameter> RegeneEfectParameters;                      // 0x0010 (size: 0x10)
+
+}; // Size: 0x20
+
 struct FPalFunnelCharacterManagementInfo
 {
     FPalInstanceID OwnerCharacterId;                                                  // 0x0000 (size: 0x30)
@@ -1815,6 +1905,16 @@ struct FPalFunnelSkillModuleCollectItemSearchInfo
     float ElapsedTime;                                                                // 0x001C (size: 0x4)
 
 }; // Size: 0x28
+
+struct FPalGainStatusPointsItemDataRow : public FTableRowBase
+{
+    int32 MaxHP;                                                                      // 0x0008 (size: 0x4)
+    int32 MaxSP;                                                                      // 0x000C (size: 0x4)
+    int32 Power;                                                                      // 0x0010 (size: 0x4)
+    int32 WorkSpeed;                                                                  // 0x0014 (size: 0x4)
+    int32 maxInventoryWeight;                                                         // 0x0018 (size: 0x4)
+
+}; // Size: 0x20
 
 struct FPalGameProgressPresetDataTableRow : public FTableRowBase
 {
@@ -1892,6 +1992,12 @@ struct FPalGroupUpdateInfo
     TArray<FGuid> BaseCampIds;                                                        // 0x0050 (size: 0x10)
 
 }; // Size: 0x60
+
+struct FPalGuildEnterRequestLogInfo
+{
+    TArray<FDateTime> RequestAtArray;                                                 // 0x0000 (size: 0x10)
+
+}; // Size: 0x10
 
 struct FPalGuildPalStorageInfo
 {
@@ -1978,8 +2084,9 @@ struct FPalIndividualCharacterCacheParameter
     bool bSleeping;                                                                   // 0x0010 (size: 0x1)
     FGuid InvaderTargetBaseCampId;                                                    // 0x0018 (size: 0x10)
     EPalInvaderType InvaderType;                                                      // 0x0028 (size: 0x1)
+    FString FilteredNickName;                                                         // 0x0030 (size: 0x10)
 
-}; // Size: 0x2C
+}; // Size: 0x40
 
 struct FPalIndividualCharacterEquipItemContainerHandler
 {
@@ -1999,11 +2106,12 @@ struct FPalIndividualCharacterSaveParameter
     TSubclassOf<class APalCharacter> CharacterClass;                                  // 0x0018 (size: 0x8)
     int32 Level;                                                                      // 0x0020 (size: 0x4)
     int32 Rank;                                                                       // 0x0024 (size: 0x4)
-    int32 Rank_HP;                                                                    // 0x0028 (size: 0x4)
-    int32 Rank_Attack;                                                                // 0x002C (size: 0x4)
-    int32 Rank_Defence;                                                               // 0x0030 (size: 0x4)
-    int32 Rank_CraftSpeed;                                                            // 0x0034 (size: 0x4)
-    int32 Exp;                                                                        // 0x0038 (size: 0x4)
+    int32 RankUpExp;                                                                  // 0x0028 (size: 0x4)
+    int32 Rank_HP;                                                                    // 0x002C (size: 0x4)
+    int32 Rank_Attack;                                                                // 0x0030 (size: 0x4)
+    int32 Rank_Defence;                                                               // 0x0034 (size: 0x4)
+    int32 Rank_CraftSpeed;                                                            // 0x0038 (size: 0x4)
+    int32 Exp;                                                                        // 0x003C (size: 0x4)
     FString NickName;                                                                 // 0x0040 (size: 0x10)
     bool IsRarePal;                                                                   // 0x0050 (size: 0x1)
     TArray<EPalWazaID> EquipWaza;                                                     // 0x0058 (size: 0x10)
@@ -2042,19 +2150,22 @@ struct FPalIndividualCharacterSaveParameter
     float FullStomachDecreaseRate_Tribe;                                              // 0x0170 (size: 0x4)
     int32 UnusedStatusPoint;                                                          // 0x0174 (size: 0x4)
     TArray<FPalGotStatusPoint> GotStatusPointList;                                    // 0x0178 (size: 0x10)
-    FFloatContainer DecreaseFullStomachRates;                                         // 0x0188 (size: 0x10)
-    FFloatContainer AffectSanityRates;                                                // 0x0198 (size: 0x10)
-    FFloatContainer CraftSpeedRates;                                                  // 0x01A8 (size: 0x10)
-    FVector LastJumpedLocation;                                                       // 0x01B8 (size: 0x18)
-    FName FoodWithStatusEffect;                                                       // 0x01D0 (size: 0x8)
-    int32 Tiemr_FoodWithStatusEffect;                                                 // 0x01D8 (size: 0x4)
-    EPalWorkSuitability CurrentWorkSuitability;                                       // 0x01DC (size: 0x1)
-    bool bAppliedDeathPenarty;                                                        // 0x01DD (size: 0x1)
-    float PalReviveTimer;                                                             // 0x01E0 (size: 0x4)
-    int32 VoiceID;                                                                    // 0x01E4 (size: 0x4)
-    FPalIndividualCharacterCacheParameter Dynamic;                                    // 0x01E8 (size: 0x2C)
+    TArray<FPalGotStatusPoint> GotExStatusPointList;                                  // 0x0188 (size: 0x10)
+    FFloatContainer DecreaseFullStomachRates;                                         // 0x0198 (size: 0x10)
+    FFloatContainer AffectSanityRates;                                                // 0x01A8 (size: 0x10)
+    FFloatContainer CraftSpeedRates;                                                  // 0x01B8 (size: 0x10)
+    FVector LastJumpedLocation;                                                       // 0x01C8 (size: 0x18)
+    FName FoodWithStatusEffect;                                                       // 0x01E0 (size: 0x8)
+    int32 Tiemr_FoodWithStatusEffect;                                                 // 0x01E8 (size: 0x4)
+    FPalFoodRegeneInfo FoodRegeneEffectInfo;                                          // 0x01F0 (size: 0x20)
+    EPalWorkSuitability CurrentWorkSuitability;                                       // 0x0210 (size: 0x1)
+    FPalWorkSuitabilityPreferenceInfo WorkSuitabilityOptionInfo;                      // 0x0218 (size: 0x18)
+    bool bAppliedDeathPenarty;                                                        // 0x0230 (size: 0x1)
+    float PalReviveTimer;                                                             // 0x0234 (size: 0x4)
+    int32 VoiceID;                                                                    // 0x0238 (size: 0x4)
+    FPalIndividualCharacterCacheParameter Dynamic;                                    // 0x0240 (size: 0x40)
 
-}; // Size: 0x218
+}; // Size: 0x280
 
 struct FPalIndividualCharacterSaveParameterSaveData : public FPalBinaryMemory
 {
@@ -2189,31 +2300,38 @@ struct FPalItemAndSlotUpdateContentSet
 struct FPalItemContainerBelongInfo : public FPalContainerBelongInfo
 {
     FGuid GroupID;                                                                    // 0x0008 (size: 0x10)
+    bool bControllableOthers;                                                         // 0x0018 (size: 0x1)
 
-}; // Size: 0x18
+}; // Size: 0x20
 
 struct FPalItemContainerCreateParameter
 {
     int32 SlotNum;                                                                    // 0x0000 (size: 0x4)
     FPalItemPermission Permission;                                                    // 0x0008 (size: 0x30)
-    FPalItemContainerBelongInfo BelongInfo;                                           // 0x0038 (size: 0x18)
-    TArray<FPalItemAndNum> InitialItems;                                              // 0x0050 (size: 0x10)
-
-}; // Size: 0x60
-
-struct FPalItemContainerInfo : public FPalContainerInfo
-{
-    FPalItemContainerBelongInfo BelongInfo;                                           // 0x0020 (size: 0x18)
-    FPalItemPermission Permission;                                                    // 0x0038 (size: 0x30)
+    FPalItemContainerBelongInfo BelongInfo;                                           // 0x0038 (size: 0x20)
+    TArray<FPalItemAndNum> InitialItems;                                              // 0x0058 (size: 0x10)
 
 }; // Size: 0x68
 
+struct FPalItemContainerFilter
+{
+    TArray<FName> FilterOffList;                                                      // 0x0000 (size: 0x10)
+
+}; // Size: 0x10
+
+struct FPalItemContainerInfo : public FPalContainerInfo
+{
+    FPalItemContainerBelongInfo BelongInfo;                                           // 0x0020 (size: 0x20)
+    FPalItemPermission Permission;                                                    // 0x0040 (size: 0x30)
+
+}; // Size: 0x70
+
 struct FPalItemContainerSaveData : public FPalBinaryMemory
 {
-    FPalItemContainerBelongInfo BelongInfo;                                           // 0x0010 (size: 0x18)
-    TArray<FPalItemSlotSaveData> Slots;                                               // 0x0028 (size: 0x10)
+    FPalItemContainerBelongInfo BelongInfo;                                           // 0x0010 (size: 0x20)
+    TArray<FPalItemSlotSaveData> Slots;                                               // 0x0030 (size: 0x10)
 
-}; // Size: 0x38
+}; // Size: 0x40
 
 struct FPalItemCreateParameter
 {
@@ -2228,6 +2346,21 @@ struct FPalItemData
     class UPalDynamicItemDataBase* DynamicData;                                       // 0x0008 (size: 0x8)
 
 }; // Size: 0x10
+
+struct FPalItemFilterPreference
+{
+    TMap<class FName, class FPalItemFilterPreferenceItem> PreferenceMap;              // 0x0000 (size: 0x50)
+
+}; // Size: 0x50
+
+struct FPalItemFilterPreferenceItem
+{
+    FDataTableRowHandle FilterTextId;                                                 // 0x0000 (size: 0x10)
+    TArray<EPalItemTypeA> TypeA;                                                      // 0x0010 (size: 0x10)
+    TArray<EPalItemTypeB> TypeB;                                                      // 0x0020 (size: 0x10)
+    TArray<EPalItemTypeB> TypeB_Except;                                               // 0x0030 (size: 0x10)
+
+}; // Size: 0x40
 
 struct FPalItemFlowInSplineInfo
 {
@@ -2381,6 +2514,13 @@ struct FPalItemSlotSaveData : public FPalBinaryMemory
     int32 StackCount;                                                                 // 0x003C (size: 0x4)
 
 }; // Size: 0x40
+
+struct FPalItemVisualModelFXInfo
+{
+    class UNiagaraSystem* NiagaraSystem;                                              // 0x0000 (size: 0x8)
+    FTransform LocalTransform;                                                        // 0x0010 (size: 0x60)
+
+}; // Size: 0x70
 
 struct FPalKeyAction
 {
@@ -2672,6 +2812,12 @@ struct FPalMapObjectFoliageInstanceAccessID
 struct FPalMapObjectItemContainerCreateContainerParameter
 {
 }; // Size: 0x70
+
+struct FPalMapObjectItemContainerModuleFilter
+{
+    TArray<FName> FilterOffList;                                                      // 0x0000 (size: 0x10)
+
+}; // Size: 0x10
 
 struct FPalMapObjectItemContainerModuleSlotIndexes
 {
@@ -2990,6 +3136,14 @@ struct FPalNPCTalkDataTableRow : public FTableRowBase
 
 }; // Size: 0x18
 
+struct FPalNPCTalkNotifyInfo
+{
+    class UDataTable* TalkDataTable;                                                  // 0x0000 (size: 0x8)
+    int32 TalkDataIndex;                                                              // 0x0008 (size: 0x4)
+    FName TalkDataSeqenceName;                                                        // 0x000C (size: 0x8)
+
+}; // Size: 0x18
+
 struct FPalNPCTalkSelectedChoiceCommandData
 {
     EPalNPCTalkSelectedChoiceCommand selectedChoiceCommand;                           // 0x0000 (size: 0x1)
@@ -3004,8 +3158,10 @@ struct FPalNPCTalkSystemCustomFunctionParameters
 {
     TScriptInterface<class IPalNPCTalkSystemCustomFunctionInterface> Interface;       // 0x0000 (size: 0x10)
     class UDataTable* FuncParameter;                                                  // 0x0010 (size: 0x8)
+    int32 TalkDataIndex;                                                              // 0x0018 (size: 0x4)
+    FName TalkDataSeqenceName;                                                        // 0x001C (size: 0x8)
 
-}; // Size: 0x18
+}; // Size: 0x28
 
 struct FPalNPCWeaponCombatInfo
 {
@@ -3218,8 +3374,10 @@ struct FPalOptionLocalStaticSettings
     FPalOptionValueFloat RightStickThreshold;                                         // 0x0028 (size: 0x8)
     FPalOptionValueFloat PalRideCameraLengthRate;                                     // 0x0030 (size: 0x8)
     FPalOptionValueFloat FOV;                                                         // 0x0038 (size: 0x8)
+    FPalOptionValueFloat DamageTextScale;                                             // 0x0040 (size: 0x8)
+    FPalOptionValueFloat DamageTextMaxNum;                                            // 0x0048 (size: 0x8)
 
-}; // Size: 0x40
+}; // Size: 0x50
 
 struct FPalOptionPadSettings
 {
@@ -3241,12 +3399,21 @@ struct FPalOptionSaveData
     FPalOptionKeyboardSettings KeyboardSettings;                                      // 0x0000 (size: 0x14)
     FPalOptionPadSettings PadSettings;                                                // 0x0014 (size: 0x1C)
     FPalKeyConfigSettings KeyConfigSettings;                                          // 0x0030 (size: 0x160)
-    FPalOptionCommonSettings CommonSettings;                                          // 0x0190 (size: 0x28)
-    FPalOptionGraphicsSettings GraphicsSettings;                                      // 0x01B8 (size: 0x54)
-    FPalOptionAudioSettings AudioSettings;                                            // 0x020C (size: 0x1C)
-    bool bHasAppliedUserSetting;                                                      // 0x0228 (size: 0x1)
+    FPalOptionUISettings UISettings;                                                  // 0x0190 (size: 0xC)
+    FPalOptionCommonSettings CommonSettings;                                          // 0x01A0 (size: 0x28)
+    FPalOptionGraphicsSettings GraphicsSettings;                                      // 0x01C8 (size: 0x54)
+    FPalOptionAudioSettings AudioSettings;                                            // 0x021C (size: 0x1C)
+    bool bHasAppliedUserSetting;                                                      // 0x0238 (size: 0x1)
 
-}; // Size: 0x230
+}; // Size: 0x240
+
+struct FPalOptionUISettings
+{
+    float DamageTextScale;                                                            // 0x0000 (size: 0x4)
+    int32 DamageTextMaxNum;                                                           // 0x0004 (size: 0x4)
+    bool DisplayTutorial;                                                             // 0x0008 (size: 0x1)
+
+}; // Size: 0xC
 
 struct FPalOptionValueFloat
 {
@@ -3384,9 +3551,12 @@ struct FPalOptionWorldSettings
     FString Region;                                                                   // 0x0100 (size: 0x10)
     bool bUseAuth;                                                                    // 0x0110 (size: 0x1)
     FString BanListURL;                                                               // 0x0118 (size: 0x10)
-    bool WebAPIEnabled;                                                               // 0x0128 (size: 0x1)
-    int32 WebAPIPort;                                                                 // 0x012C (size: 0x4)
+    bool RESTAPIEnabled;                                                              // 0x0128 (size: 0x1)
+    int32 RESTAPIPort;                                                                // 0x012C (size: 0x4)
     bool bShowPlayerList;                                                             // 0x0130 (size: 0x1)
+    EPalAllowConnectPlatform AllowConnectPlatform;                                    // 0x0131 (size: 0x1)
+    bool bIsUseBackupSaveData;                                                        // 0x0132 (size: 0x1)
+    EPalLogFormatType LogFormatType;                                                  // 0x0133 (size: 0x1)
 
 }; // Size: 0x138
 
@@ -3445,7 +3615,7 @@ struct FPalPalShopCreateDataRow : public FTableRowBase
 struct FPalPartnerSkillDatabaseRow : public FTableRowBase
 {
     FName DevName;                                                                    // 0x0008 (size: 0x8)
-    float effectTime;                                                                 // 0x0010 (size: 0x4)
+    float EffectTime;                                                                 // 0x0010 (size: 0x4)
     float CoolDownTime;                                                               // 0x0014 (size: 0x4)
     float ExecCost;                                                                   // 0x0018 (size: 0x4)
     float IdleCost;                                                                   // 0x001C (size: 0x4)
@@ -3505,6 +3675,14 @@ struct FPalPassivePartnerSkillIdAndParameters
 
 }; // Size: 0x50
 
+struct FPalPassivePartnerSkillItemParameter
+{
+    EPalItemTypeA ItemTypeA;                                                          // 0x0000 (size: 0x1)
+    EPalItemTypeB ItemTypeB;                                                          // 0x0001 (size: 0x1)
+    TArray<FPalDataTableRowName_ItemData> ItemIds;                                    // 0x0008 (size: 0x10)
+
+}; // Size: 0x18
+
 struct FPalPassivePartnerSkillParameters
 {
     float DelayTime;                                                                  // 0x0000 (size: 0x4)
@@ -3516,16 +3694,18 @@ struct FPalPassivePartnerSkillParameters
     EPalElementType TargetElementType;                                                // 0x0031 (size: 0x1)
     TArray<FPalDataTableRowName_PalMonsterData> PalIds;                               // 0x0038 (size: 0x10)
     bool bNotAssignSelf;                                                              // 0x0048 (size: 0x1)
+    FPalPassivePartnerSkillItemParameter ItemParam;                                   // 0x0050 (size: 0x18)
 
-}; // Size: 0x50
+}; // Size: 0x70
 
 struct FPalPassivePartnerSkillStatus
 {
     EPalPassivePartnerSkillState State;                                               // 0x0000 (size: 0x1)
     float ElapsedTime;                                                                // 0x0004 (size: 0x4)
     TArray<FName> Flags;                                                              // 0x0008 (size: 0x10)
+    FPalPassivePartnerSkillItemParameter ItemParam;                                   // 0x0018 (size: 0x18)
 
-}; // Size: 0x18
+}; // Size: 0x30
 
 struct FPalPassiveSkillAssignInfo
 {
@@ -3569,8 +3749,9 @@ struct FPalPassiveSkillEffect
     EPalPassiveSkillEffectType Type;                                                  // 0x0000 (size: 0x1)
     float Value;                                                                      // 0x0004 (size: 0x4)
     TArray<FName> Flags;                                                              // 0x0008 (size: 0x10)
+    FPalPassivePartnerSkillItemParameter ItemParam;                                   // 0x0018 (size: 0x18)
 
-}; // Size: 0x18
+}; // Size: 0x30
 
 struct FPalPassiveSkillEffectInfos
 {
@@ -3582,8 +3763,9 @@ struct FPalPassiveSkillSetupInfo
 {
     FName SkillName;                                                                  // 0x0000 (size: 0x8)
     TArray<FName> Flags;                                                              // 0x0008 (size: 0x10)
+    FPalPassivePartnerSkillItemParameter ItemParam;                                   // 0x0018 (size: 0x18)
 
-}; // Size: 0x18
+}; // Size: 0x30
 
 struct FPalPathFollowingBlockDetectionParams
 {
@@ -3679,10 +3861,10 @@ struct FPalPlayerDataInventoryInfo
 struct FPalPlayerDataPalStorageSlotSaveData
 {
     FPalInstanceID IndividualId;                                                      // 0x0000 (size: 0x30)
-    FPalIndividualCharacterSaveParameter CharacterSaveParameter;                      // 0x0030 (size: 0x218)
-    FPalCharacterSlotId SlotID;                                                       // 0x0248 (size: 0x14)
+    FPalIndividualCharacterSaveParameter CharacterSaveParameter;                      // 0x0030 (size: 0x280)
+    FPalCharacterSlotId SlotID;                                                       // 0x02B0 (size: 0x14)
 
-}; // Size: 0x260
+}; // Size: 0x2C8
 
 struct FPalPlayerEquipmentMeshDataRow : public FTableRowBase
 {
@@ -3702,9 +3884,9 @@ struct FPalPlayerInfoForMap
 
 struct FPalPlayerInitializeParameter
 {
-    FPalIndividualCharacterSaveParameter InitParam;                                   // 0x0000 (size: 0x218)
+    FPalIndividualCharacterSaveParameter InitParam;                                   // 0x0000 (size: 0x280)
 
-}; // Size: 0x218
+}; // Size: 0x280
 
 struct FPalPlayerInventorySelectData
 {
@@ -3787,11 +3969,76 @@ struct FPalQuestDataSetRow : public FTableRowBase
 
 }; // Size: 0x38
 
+struct FPalRESTAPIPlayerInfo
+{
+    FString Name;                                                                     // 0x0000 (size: 0x10)
+    FString PlayerId;                                                                 // 0x0010 (size: 0x10)
+    FString UserId;                                                                   // 0x0020 (size: 0x10)
+    FString ip;                                                                       // 0x0030 (size: 0x10)
+    float Ping;                                                                       // 0x0040 (size: 0x4)
+    float location_x;                                                                 // 0x0044 (size: 0x4)
+    float location_y;                                                                 // 0x0048 (size: 0x4)
+    int32 Level;                                                                      // 0x004C (size: 0x4)
+
+}; // Size: 0x50
+
 struct FPalRadialCatalog
 {
     TMap<int32, int32> Catalog;                                                       // 0x0000 (size: 0x50)
 
 }; // Size: 0x50
+
+struct FPalRaidBossDataRow : public FTableRowBase
+{
+    TArray<FPalRaidBossSpawnInfo> InfoList;                                           // 0x0008 (size: 0x10)
+    TMap<FPalDataTableRowName_PalMonsterData, float> EggPalIDAndWeight;               // 0x0018 (size: 0x50)
+    TArray<FPalRaidBossSuccessItemInfo> SuccessItemList;                              // 0x0068 (size: 0x10)
+    TArray<FPalRaidBossSuccessAnyOneItemInfo> SuccessAnyOneItemList;                  // 0x0078 (size: 0x10)
+    FString AchievementId;                                                            // 0x0088 (size: 0x10)
+
+}; // Size: 0x98
+
+struct FPalRaidBossSpawnInfo
+{
+    FPalDataTableRowName_PalMonsterData PalID;                                        // 0x0000 (size: 0x8)
+    int32 Level;                                                                      // 0x0008 (size: 0x4)
+    EPalWazaID WarpWazaID;                                                            // 0x000C (size: 0x1)
+    TArray<EPalWazaID> BaseCampAttackWazaIDs;                                         // 0x0010 (size: 0x10)
+    bool CanModeChange;                                                               // 0x0020 (size: 0x1)
+    EPalStatusID ModeChange_AddStatusToAllWhenModeChgange;                            // 0x0021 (size: 0x1)
+    EPalElementType ModeChange_Element1;                                              // 0x0022 (size: 0x1)
+    EPalElementType ModeChange_Element2;                                              // 0x0023 (size: 0x1)
+    TArray<FName> ModeChange_AddPassiveSkill;                                         // 0x0028 (size: 0x10)
+    TArray<EPalWazaID> ModeChange_AddWaza;                                            // 0x0038 (size: 0x10)
+    TArray<EPalWazaID> ModeChange_RemoveWaza;                                         // 0x0048 (size: 0x10)
+
+}; // Size: 0x58
+
+struct FPalRaidBossSpawnInfoList
+{
+    TArray<FPalRaidBossSpawnInfo> SpawnInfos;                                         // 0x0000 (size: 0x10)
+
+}; // Size: 0x10
+
+struct FPalRaidBossSpawnerInfo
+{
+}; // Size: 0x60
+
+struct FPalRaidBossSuccessAnyOneItemInfo
+{
+    FPalDataTableRowName_ItemData ItemName;                                           // 0x0000 (size: 0x8)
+    int32 Num;                                                                        // 0x0008 (size: 0x4)
+
+}; // Size: 0xC
+
+struct FPalRaidBossSuccessItemInfo
+{
+    FPalDataTableRowName_ItemData ItemName;                                           // 0x0000 (size: 0x8)
+    float Rate;                                                                       // 0x0008 (size: 0x4)
+    int32 Min;                                                                        // 0x000C (size: 0x4)
+    int32 Max;                                                                        // 0x0010 (size: 0x4)
+
+}; // Size: 0x14
 
 struct FPalRandomIncidentSettings : public FTableRowBase
 {
@@ -3848,18 +4095,19 @@ struct FPalRandomIncidentSpawnNPCData : public FTableRowBase
 {
     FPalDataTableRowName_PalHumanData CharacterID;                                    // 0x0008 (size: 0x8)
     FPalDataTableRowName_NPCUniqueData UniqueNPCID;                                   // 0x0010 (size: 0x8)
-    int32 Level;                                                                      // 0x0018 (size: 0x4)
-    int32 Group;                                                                      // 0x001C (size: 0x4)
-    bool IsSquad;                                                                     // 0x0020 (size: 0x1)
-    FVector2D SpawnLocation;                                                          // 0x0028 (size: 0x10)
-    float SpawnRadius;                                                                // 0x0038 (size: 0x4)
-    float RotZ_Degree;                                                                // 0x003C (size: 0x4)
-    FName WalkPathName;                                                               // 0x0040 (size: 0x8)
-    float WalkRadius;                                                                 // 0x0048 (size: 0x4)
-    TSubclassOf<class APalAIController> ControllerClass;                              // 0x0050 (size: 0x8)
-    TSubclassOf<class UPalAIActionBase> DefaultAIActionClass;                         // 0x0058 (size: 0x8)
+    FPalDataTableRowName_PalMonsterData OtomoName;                                    // 0x0018 (size: 0x8)
+    int32 Level;                                                                      // 0x0020 (size: 0x4)
+    int32 Group;                                                                      // 0x0024 (size: 0x4)
+    bool IsSquad;                                                                     // 0x0028 (size: 0x1)
+    FVector2D SpawnLocation;                                                          // 0x0030 (size: 0x10)
+    float SpawnRadius;                                                                // 0x0040 (size: 0x4)
+    float RotZ_Degree;                                                                // 0x0044 (size: 0x4)
+    FName WalkPathName;                                                               // 0x0048 (size: 0x8)
+    float WalkRadius;                                                                 // 0x0050 (size: 0x4)
+    TSubclassOf<class APalAIController> ControllerClass;                              // 0x0058 (size: 0x8)
+    TSubclassOf<class UPalAIActionBase> DefaultAIActionClass;                         // 0x0060 (size: 0x8)
 
-}; // Size: 0x60
+}; // Size: 0x68
 
 struct FPalRandomIncidentWalkPathReferenceData
 {
@@ -3882,8 +4130,9 @@ struct FPalRespawnPointData : public FTableRowBase
     FName SpawnPointID;                                                               // 0x0008 (size: 0x8)
     int32 ResourcesAbundant;                                                          // 0x0010 (size: 0x4)
     int32 PalAbundant;                                                                // 0x0014 (size: 0x4)
+    bool ForPvP;                                                                      // 0x0018 (size: 0x1)
 
-}; // Size: 0x18
+}; // Size: 0x20
 
 struct FPalShopProductRequireItemData
 {
@@ -4080,11 +4329,14 @@ struct FPalStaticItemDataStruct : public FTableRowBase
     int32 MagicAttackValue;                                                           // 0x00F0 (size: 0x4)
     int32 MagicDefenseValue;                                                          // 0x00F4 (size: 0x4)
     FName PassiveSkillName;                                                           // 0x00F8 (size: 0x8)
-    EPalWazaID WazaID;                                                                // 0x0100 (size: 0x1)
-    float CorruptionFactor;                                                           // 0x0104 (size: 0x4)
-    float FloatValue1;                                                                // 0x0108 (size: 0x4)
+    FName PassiveSkillName2;                                                          // 0x0100 (size: 0x8)
+    FName PassiveSkillName3;                                                          // 0x0108 (size: 0x8)
+    FName PassiveSkillName4;                                                          // 0x0110 (size: 0x8)
+    EPalWazaID WazaID;                                                                // 0x0118 (size: 0x1)
+    float CorruptionFactor;                                                           // 0x011C (size: 0x4)
+    float FloatValue1;                                                                // 0x0120 (size: 0x4)
 
-}; // Size: 0x110
+}; // Size: 0x128
 
 struct FPalStaticItemIdAndDynamicItemDataSet
 {
@@ -4106,13 +4358,15 @@ struct FPalStatusAccumulate
 
 struct FPalStatusEffectFoodDataRow : public FTableRowBase
 {
-    int32 effectTime;                                                                 // 0x0008 (size: 0x4)
+    int32 EffectTime;                                                                 // 0x0008 (size: 0x4)
     EPalFoodStatusEffectType EffectType1;                                             // 0x000C (size: 0x1)
     int32 EffectValue1;                                                               // 0x0010 (size: 0x4)
-    EPalFoodStatusEffectType EffectType2;                                             // 0x0014 (size: 0x1)
-    int32 EffectValue2;                                                               // 0x0018 (size: 0x4)
+    int32 Interaval1;                                                                 // 0x0014 (size: 0x4)
+    EPalFoodStatusEffectType EffectType2;                                             // 0x0018 (size: 0x1)
+    int32 EffectValue2;                                                               // 0x001C (size: 0x4)
+    int32 Interaval2;                                                                 // 0x0020 (size: 0x4)
 
-}; // Size: 0x20
+}; // Size: 0x28
 
 struct FPalSyncTeleportRequestParameter
 {
@@ -4122,6 +4376,13 @@ struct FPalSyncTeleportRequestParameter
     bool bIsFadeOutSkip;                                                              // 0x0050 (size: 0x1)
 
 }; // Size: 0x60
+
+struct FPalTalentUpItemDataRow : public FTableRowBase
+{
+    EPalTalentType TalentType;                                                        // 0x0008 (size: 0x1)
+    int32 addValue;                                                                   // 0x000C (size: 0x4)
+
+}; // Size: 0x10
 
 struct FPalTalkTreeDataTableRow : public FTableRowBase
 {
@@ -4206,6 +4467,14 @@ struct FPalUIAimReticleMapObjectAssignableData
     FName targetMapObjectID;                                                          // 0x0004 (size: 0x8)
 
 }; // Size: 0xC
+
+struct FPalUIAimReticleMapObjectThrowableData
+{
+    bool isThrowable;                                                                 // 0x0000 (size: 0x1)
+    FName targetMapObjectID;                                                          // 0x0004 (size: 0x8)
+    EPalMapObjectConcreteModelThrowableType throwableType;                            // 0x000C (size: 0x1)
+
+}; // Size: 0x10
 
 struct FPalUIBackupSaveDisplayData
 {
@@ -4352,13 +4621,14 @@ struct FPalUniqueNPCDatabaseRow : public FTableRowBase
     FName NameTextID;                                                                 // 0x0010 (size: 0x8)
     FName OneTalkDTName;                                                              // 0x0018 (size: 0x8)
     FName TalkBPClass;                                                                // 0x0020 (size: 0x8)
-    EPalGenderType Gender;                                                            // 0x0028 (size: 0x1)
-    EPalNPCSkinColor SkinColor;                                                       // 0x0029 (size: 0x1)
-    EPalNPCFaceType Face;                                                             // 0x002A (size: 0x1)
-    EPalNPCHairStyleType HairStyle;                                                   // 0x002B (size: 0x1)
-    EPalNPCHairColorType HairColor;                                                   // 0x002C (size: 0x1)
-    EPalNPCClothesType Clothes;                                                       // 0x002D (size: 0x1)
-    EPalNPCScaleType Scale;                                                           // 0x002E (size: 0x1)
+    bool IsTransientTalkCount;                                                        // 0x0028 (size: 0x1)
+    EPalGenderType Gender;                                                            // 0x0029 (size: 0x1)
+    EPalNPCSkinColor SkinColor;                                                       // 0x002A (size: 0x1)
+    EPalNPCFaceType Face;                                                             // 0x002B (size: 0x1)
+    EPalNPCHairStyleType HairStyle;                                                   // 0x002C (size: 0x1)
+    EPalNPCHairColorType HairColor;                                                   // 0x002D (size: 0x1)
+    EPalNPCClothesType Clothes;                                                       // 0x002E (size: 0x1)
+    EPalNPCScaleType Scale;                                                           // 0x002F (size: 0x1)
     int32 Level;                                                                      // 0x0030 (size: 0x4)
 
 }; // Size: 0x38
@@ -4401,6 +4671,7 @@ struct FPalWazaDatabaseRaw : public FTableRowBase
     int32 Power;                                                                      // 0x000C (size: 0x4)
     bool IsLeanBack;                                                                  // 0x0010 (size: 0x1)
     EPalPlayerDamageCameraShakeCategory CameraShake;                                  // 0x0011 (size: 0x1)
+    bool IgnoreRaycast;                                                               // 0x0012 (size: 0x1)
     int32 MinRange;                                                                   // 0x0014 (size: 0x4)
     int32 MaxRange;                                                                   // 0x0018 (size: 0x4)
     float CoolTime;                                                                   // 0x001C (size: 0x4)
@@ -4594,6 +4865,13 @@ struct FPalWorkSuitabilityMiningDefineData
     TArray<FPalMiningRankDefineData> MiningDefineData;                                // 0x0018 (size: 0x10)
 
 }; // Size: 0x28
+
+struct FPalWorkSuitabilityPreferenceInfo
+{
+    TArray<EPalWorkSuitability> OffWorkSuitabilityList;                               // 0x0000 (size: 0x10)
+    bool bAllowBaseCampBattle;                                                        // 0x0010 (size: 0x1)
+
+}; // Size: 0x18
 
 struct FPalWorkTypeSet
 {
@@ -4793,6 +5071,12 @@ struct FRidingAnimationInfo
 
 }; // Size: 0x20
 
+struct FSequentialProcessSequenceSet
+{
+    TArray<class USequentialProcessSequenceBase*> Sequences;                          // 0x0000 (size: 0x10)
+
+}; // Size: 0x10
+
 struct FShooterSpringCameraAdditionalOffset
 {
     FName flagName;                                                                   // 0x0000 (size: 0x8)
@@ -4862,8 +5146,11 @@ struct FUITransientData
     bool NewsOpened;                                                                  // 0x0010 (size: 0x1)
     bool IsOpenedSurvivalGuide;                                                       // 0x0011 (size: 0x1)
     bool ServerLobbyDialogOpened;                                                     // 0x0012 (size: 0x1)
+    TArray<FGuid> IgnoreMaskLocationIDArray;                                          // 0x0018 (size: 0x10)
+    TArray<FName> IgnoreMaskLBossSpawnerNameArray;                                    // 0x0028 (size: 0x10)
+    TMap<FName, int32> TransientNPCTalkCountMap;                                      // 0x0038 (size: 0x50)
 
-}; // Size: 0x14
+}; // Size: 0x88
 
 struct FWeaponAnimationInfo
 {
@@ -4921,7 +5208,8 @@ class APalAIController : public AAIController
     bool IsDeadBodyTimeDelate;                                                        // 0x04E8 (size: 0x1)
     bool IsSelfTimeDelate_FromSpawnTime;                                              // 0x04E9 (size: 0x1)
     FTimerHandle SelfDeleteTimerHandle;                                               // 0x04F0 (size: 0x8)
-    bool bShouldCheckStuckByTick;                                                     // 0x04FC (size: 0x1)
+    bool IsSelfTimeDelate_FromSpawnTime_ForVisitor;                                   // 0x04F8 (size: 0x1)
+    bool bShouldCheckStuckByTick;                                                     // 0x0500 (size: 0x1)
 
     void WaitForSeconds(float Time);
     void SimpleMoveToActorWithLineTraceGround(const class AActor* GoalActor);
@@ -4959,7 +5247,7 @@ class APalAIController : public AAIController
     class AActor* CopyTargetFromOtherAI(const class AActor* FromAcotr);
     void AddTargetPlayer_ForEnemy(class AActor* PlayerOrPal);
     void AddTargetNPC(class AActor* NPC);
-}; // Size: 0x520
+}; // Size: 0x528
 
 class APalActionDummyTargetActor : public AActor
 {
@@ -4985,6 +5273,34 @@ class APalAmbientSoundLineBase : public AActor
     class UPalAmbientSoundLineObject* AmbinetSoundLineObject;                         // 0x02A0 (size: 0x8)
 
 }; // Size: 0x2A8
+
+class APalArenaTestManager : public AActor
+{
+    FPalArenaTestParameter TestParameter;                                             // 0x0290 (size: 0x50)
+    TArray<class APalPlayerState*> PlayerStates;                                      // 0x02E0 (size: 0x10)
+    class APalPlayerState* Player1;                                                   // 0x02F0 (size: 0x8)
+    class APalPlayerState* Player2;                                                   // 0x02F8 (size: 0x8)
+
+    void ToggleRandomPartyMode();
+    void Start();
+    void Setup();
+    void SendClientStart();
+    void SendClientSetup();
+    void RidePlayer(class APalPlayerState* PlayerState, int32 RideIndex);
+    void PlayBGM(EPalAudioStateGroup StateGroup);
+    void OtomoInitializeTimer_Server();
+    void OtomoInitializeTimer_Client();
+    void LoadWaza_Client();
+    bool IsOtomoActorInitialized(const class APlayerState* PlayerState);
+    void InactivatePlayerOtomoPal();
+    TArray<FTransform> GetPalSpawnTransform(EPalArenaPlayer ArenaPlayer);
+    class UPalOtomoHolderComponentBase* GetOtomoHolder(const class APlayerState* TargetPlayerState);
+    void GetOffAllPlayer();
+    void EnemyCombatMode();
+    void DelayRidePlayer();
+    TArray<FPalDebugOtomoPalInfo> CreateRandomParty();
+    void ActivatePlayerOtomoPal();
+}; // Size: 0x318
 
 class APalBackWeaponBase : public AActor
 {
@@ -5165,7 +5481,7 @@ class APalBuildObjectInstallChecker : public AActor
     class UPalBuildObjectOverlapChecker* OverlapChecker;                              // 0x02A0 (size: 0x8)
     class UPalBuildObjectInstallStrategyBase* InstallStrategy;                        // 0x02A8 (size: 0x8)
 
-}; // Size: 0x2B0
+}; // Size: 0x2B8
 
 class APalBuildObjectMonsterFarm : public APalBuildObject
 {
@@ -5205,6 +5521,14 @@ class APalBuildObjectPalStorage : public APalBuildObject
     class UStaticMeshComponent* GetAccessPointObject();
     class UBoxComponent* GetAccessPointMovableRange();
 }; // Size: 0x6C8
+
+class APalBuildObjectRaidBossSummon : public APalBuildObject
+{
+
+    void StartPerform();
+    void OnPerformComplete();
+    void BP_PlayPerform();
+}; // Size: 0x580
 
 class APalBullet : public AActor
 {
@@ -5322,13 +5646,12 @@ class APalCharacter : public ACharacter
     bool bIsPalActiveActor;                                                           // 0x070A (size: 0x1)
     bool bIsLocalInitialized;                                                         // 0x070B (size: 0x1)
     bool bIsDisable_ChangeTickInterval_ByImportance;                                  // 0x070C (size: 0x1)
-    FTimerHandle GroundCheckTimerHandle;                                              // 0x0710 (size: 0x8)
-    FVector SpawnLocation_ForServer;                                                  // 0x0718 (size: 0x18)
-    FFlagContainer IsDisableChangeTickInterval;                                       // 0x0730 (size: 0x50)
-    EPalCharacterImportanceType ImportanceType;                                       // 0x0780 (size: 0x1)
-    FTimerHandle CheckIndividualParameterReplicateTimerHandle;                        // 0x0788 (size: 0x8)
-    FName RootCollisionProfileName;                                                   // 0x0790 (size: 0x8)
-    TMap<class EPalCharacterCompleteDelegatePriority, class UPalCharacterOnCompleteInitializeParameterWrapper*> OnCompleteInitializeParameterDelegateMap; // 0x07A0 (size: 0x50)
+    FVector SpawnLocation_ForServer;                                                  // 0x0710 (size: 0x18)
+    FFlagContainer IsDisableChangeTickInterval;                                       // 0x0728 (size: 0x50)
+    EPalCharacterImportanceType ImportanceType;                                       // 0x0778 (size: 0x1)
+    FTimerHandle CheckIndividualParameterReplicateTimerHandle;                        // 0x0780 (size: 0x8)
+    FName RootCollisionProfileName;                                                   // 0x0788 (size: 0x8)
+    TMap<class EPalCharacterCompleteDelegatePriority, class UPalCharacterOnCompleteInitializeParameterWrapper*> OnCompleteInitializeParameterDelegateMap; // 0x0798 (size: 0x50)
 
     void UpdateGroundRayCast();
     void SetVisibleHandAttachMesh(bool Active);
@@ -5343,6 +5666,7 @@ class APalCharacter : public ACharacter
     void ReviveCharacter(FFixedPoint HP);
     void ResetTickInterval();
     void RequestJump();
+    void Play2Montage_WithPlayRate(class UAnimMontage* firstMontage, class UAnimMontage* nextMontage, float PlayRate);
     void Play2Montage(class UAnimMontage* firstMontage, class UAnimMontage* nextMontage);
     void OnTeleport_ToClient(const FVector& Location, const FQuat& Rotation);
     void OnRep_RootCollisionProfileName();
@@ -5356,6 +5680,7 @@ class APalCharacter : public ACharacter
     void OnChangeBattleMode__DelegateSignature(bool bIsBattleMode);
     void OnChangeActiveActor__DelegateSignature(bool bIsActive);
     void OnCaptured__DelegateSignature(class APalCharacter* SelfCharacter, class APalCharacter* Attacker);
+    void LocalInitialized();
     bool IsInitialized();
     bool IsCooping();
     void GetVisual_ExceptMainMesh_SyncAnyway(TArray<class USceneComponent*>& OutComponent);
@@ -5376,7 +5701,7 @@ class APalCharacter : public ACharacter
     void ChangeBattleModeFlag(bool IsBattle);
     void BroadcastOnCompleteInitializeParameter();
     void BindFonctionToOnCompleteInitializeParameter(EPalCharacterCompleteDelegatePriority Priority, FBindFonctionToOnCompleteInitializeParameterCallback Callback);
-}; // Size: 0x7F0
+}; // Size: 0x910
 
 class APalCopyMeshVisualEffect : public AActor
 {
@@ -5549,9 +5874,9 @@ class APalFoliageModelChunk : public AActor
 
 class APalFunnelCharacter : public APalCharacter
 {
-    TSubclassOf<class UPalAIActionFunnelSkillBase> FunnelSkillAIActionClass;          // 0x07F0 (size: 0x8)
-    TSubclassOf<class UPalFunnelSkillModule> FunnelSkillModuleClass;                  // 0x07F8 (size: 0x8)
-    FPalInstanceID OwnerCharacterId;                                                  // 0x0800 (size: 0x30)
+    TSubclassOf<class UPalAIActionFunnelSkillBase> FunnelSkillAIActionClass;          // 0x0908 (size: 0x8)
+    TSubclassOf<class UPalFunnelSkillModule> FunnelSkillModuleClass;                  // 0x0910 (size: 0x8)
+    FPalInstanceID OwnerCharacterId;                                                  // 0x0918 (size: 0x30)
 
     void SetOwnerCharacterId(const FPalInstanceID OwnerCharacterId);
     void SetLocationNearTrainer();
@@ -5568,7 +5893,7 @@ class APalFunnelCharacter : public APalCharacter
     class APalCharacter* GetOwnerPal();
     FName GetCharacterID();
     void ActivateSelf();
-}; // Size: 0x830
+}; // Size: 0x950
 
 class APalGameInstanceViewActor : public AActor
 {
@@ -5578,6 +5903,7 @@ class APalGameInstanceViewActor : public AActor
 
 class APalGameMode : public APalGameModeBase
 {
+    class APlayerStart* CachePlayerStart;                                             // 0x0338 (size: 0x8)
 
     void RestartGame();
     void RespawnPlayer(int32 PlayerIndex);
@@ -5586,8 +5912,9 @@ class APalGameMode : public APalGameModeBase
     void OnEOSLoginDedicatedServerComplete(const class UPocketpairUserInfo* UserInfo, bool bSuccess, FString ErrorStr);
     void OnCompleteCreateSession(const FString ResponseBody, bool bResponseOK, int32 ResponseCode);
     void InitDedicatedServer();
+    class APlayerStart* FindPlayerStartWithTag(const FName& Tag);
     void CreateSession(FString Address);
-}; // Size: 0x380
+}; // Size: 0x388
 
 class APalGameModeBase : public AGameModeBase
 {
@@ -5665,6 +5992,7 @@ class APalGameStateInGame : public APalGameState
     void OnRep_CharacterManagerReplicator();
     void OnRep_BaseCampReplicator();
     void OnRecievedChatMessageDelegate__DelegateSignature(const FPalChatMessage& Message);
+    FString GetWorldSaveDirectoryName();
     FString GetWorldName();
     float GetServerFrameTime();
     int32 GetMaxPlayerNum();
@@ -5854,6 +6182,14 @@ class APalLevelObjectUnlockableFastTravelPoint : public APalLevelObjectActor
     class UAkAudioEvent* GetUnlockAkAudioEvent();
 }; // Size: 0x2E0
 
+class APalLightingVolumeController : public AActor
+{
+    class APPSkyCreator* PPSkyCreator;                                                // 0x0290 (size: 0x8)
+    class APalSkyCreatorLightingVolume* CurrentVolume;                                // 0x0298 (size: 0x8)
+    TArray<class APalSkyCreatorLightingVolume*> Volumes;                              // 0x02E0 (size: 0x10)
+
+}; // Size: 0x360
+
 class APalMapLevelObject : public APalMapObject
 {
     FGuid LevelObjectInstanceId;                                                      // 0x03B8 (size: 0x10)
@@ -5993,8 +6329,8 @@ class APalMapObjectTreasureBox : public APalMapObject
 
 class APalMonsterCharacter : public APalNPC
 {
-    TScriptInterface<class IPalInteractiveObjectComponentInterface> InteractiveObj;   // 0x0810 (size: 0x10)
-    class UPalCharacterLiftupObjectComponent* LiftupObjectComponent;                  // 0x0820 (size: 0x8)
+    TScriptInterface<class IPalInteractiveObjectComponentInterface> InteractiveObj;   // 0x0928 (size: 0x10)
+    class UPalCharacterLiftupObjectComponent* LiftupObjectComponent;                  // 0x0938 (size: 0x8)
 
     void SelectedFeedingItem(const FPalItemSlotId& itemSlotId, const int32 Num);
     void OnTriggerInteract(class AActor* OtherActor, EPalInteractiveObjectIndicatorType IndicatorType);
@@ -6002,7 +6338,7 @@ class APalMonsterCharacter : public APalNPC
     void MasterWazaUpdateWhenLevelUp(int32 addLevel, int32 nowLevel);
     void MasterWazaSetup(class APalCharacter* InCharacter);
     bool IsLiftupObject();
-}; // Size: 0x880
+}; // Size: 0x9A0
 
 class APalMonsterEquipWeaponBase : public APalWeaponBase
 {
@@ -6020,12 +6356,13 @@ class APalMonsterEquipWeaponBase : public APalWeaponBase
 
 class APalNPC : public APalCharacter
 {
-    class UPalNPCWeaponGenerator* WeaponGenerator;                                    // 0x07F0 (size: 0x8)
-    bool IsEnableJumpEffect;                                                          // 0x07F8 (size: 0x1)
-    int32 DefaultVoiceID;                                                             // 0x07FC (size: 0x4)
+    class UPalNPCWeaponGenerator* WeaponGenerator;                                    // 0x0908 (size: 0x8)
+    bool IsEnableJumpEffect;                                                          // 0x0910 (size: 0x1)
+    int32 DefaultVoiceID;                                                             // 0x0914 (size: 0x4)
 
+    void RemoveEnemyFromBattleManager(FPalDeadInfo DeadInfo);
     void OnCompletedInitParam(class APalCharacter* InCharacter);
-}; // Size: 0x800
+}; // Size: 0x920
 
 class APalNPCCampSpawnerBase : public AActor
 {
@@ -6086,8 +6423,10 @@ class APalNPCSpawnerBase : public AActor
     float GetSpawnPointRadius();
     int32 GetSpawnNumRandom_OneTribe(FPalSpawnerOneTribeInfo Info);
     int32 GetSpawnLevelRandom_OneTribe(FPalSpawnerOneTribeInfo Info);
+    TArray<FPalSpawnerGroupInfo> GetSpawnGroupList();
     float GetSpawnerRadiusByType();
     FString GetSpawnDisableDebugInfo();
+    TArray<FPalSpawnerGroupInfo> GetOriginalSpawnGroupList();
     int32 GetMaxMonsterLevel();
     bool GetIsServer();
     bool GetDisableBossSpawnerFlag_FromSaveData(FName KeyName);
@@ -6111,16 +6450,16 @@ class APalNetworkTransmitter : public AActor
     class UPalNetworkItemComponent* Item;                                             // 0x02E8 (size: 0x8)
     class UPalNetworkBaseCampComponent* BaseCamp;                                     // 0x02F0 (size: 0x8)
     class UPalNetworkCharacterContainerComponent* CharacterContainer;                 // 0x02F8 (size: 0x8)
-    class UPalNetworkGroupComponent* Group;                                           // 0x0300 (size: 0x8)
-    class UPalNetworkPlayerComponent* Player;                                         // 0x0308 (size: 0x8)
-    class UPalNetworkCharacterComponent* Character;                                   // 0x0310 (size: 0x8)
-    class UPalNetworkWorkProgressComponent* WorkProgress;                             // 0x0318 (size: 0x8)
-    class UPalNetworkWorldSecurityComponent* WorldSecurity;                           // 0x0320 (size: 0x8)
-    class UPalNetworkBossBattleComponent* BossBattle;                                 // 0x0328 (size: 0x8)
-    class UPalNetworkTimeComponent* Time;                                             // 0x0330 (size: 0x8)
-    class UPalNetworkShopComponent* Shop;                                             // 0x0338 (size: 0x8)
-    class UPalNetworkInvaderComponent* Invader;                                       // 0x0340 (size: 0x8)
-    class UPalNetworkCharacterStatusOperationComponent* CharacterStatusOperation;     // 0x0348 (size: 0x8)
+    class UPalNetworkPlayerComponent* Player;                                         // 0x0300 (size: 0x8)
+    class UPalNetworkCharacterComponent* Character;                                   // 0x0308 (size: 0x8)
+    class UPalNetworkWorkProgressComponent* WorkProgress;                             // 0x0310 (size: 0x8)
+    class UPalNetworkWorldSecurityComponent* WorldSecurity;                           // 0x0318 (size: 0x8)
+    class UPalNetworkBossBattleComponent* BossBattle;                                 // 0x0320 (size: 0x8)
+    class UPalNetworkTimeComponent* Time;                                             // 0x0328 (size: 0x8)
+    class UPalNetworkShopComponent* Shop;                                             // 0x0330 (size: 0x8)
+    class UPalNetworkInvaderComponent* Invader;                                       // 0x0338 (size: 0x8)
+    class UPalNetworkCharacterStatusOperationComponent* CharacterStatusOperation;     // 0x0340 (size: 0x8)
+    class UPalNetworkRaidBossComponent* RaidBoss;                                     // 0x0348 (size: 0x8)
     class UPalNetworkIndividualComponent* NetworkIndividualComponent;                 // 0x0350 (size: 0x8)
     TArray<FPalNetworkTransmitterDelaySpawnInfo> DelayDelegateCallQueue;              // 0x0358 (size: 0x10)
 
@@ -6140,7 +6479,6 @@ class APalNetworkTransmitter : public AActor
     class UPalNetworkMapObjectComponent* GetMapObject();
     class UPalNetworkItemComponent* GetItem();
     class UPalNetworkInvaderComponent* GetInvader();
-    class UPalNetworkGroupComponent* GetGroup();
     class UPalNetworkCharacterStatusOperationComponent* GetCharacterStatusOperation();
     class UPalNetworkCharacterContainerComponent* GetCharacterContainer();
     class UPalNetworkCharacterComponent* GetCharacter();
@@ -6149,61 +6487,92 @@ class APalNetworkTransmitter : public AActor
     void DummyReliableFunction();
     void Debug_RequestLogTreasureBoxLocalPlayerAround_ToServer();
     void Debug_ReceiveLogTreasureBoxLocalPlayerAround_ToRequestPlayer(FString Message);
+    void Debug_LogServerThreadNum_ToServer();
+    void Debug_LogServerThreadNum_ToRequestPlayer(FString Message);
 }; // Size: 0x368
+
+class APalOilRigCannonBase : public AActor
+{
+    float RangeMin;                                                                   // 0x0290 (size: 0x4)
+    float RangeMax;                                                                   // 0x0294 (size: 0x4)
+    float PitchMin;                                                                   // 0x0298 (size: 0x4)
+    float PitchMax;                                                                   // 0x029C (size: 0x4)
+    float YawMax;                                                                     // 0x02A0 (size: 0x4)
+    float PitchSpeed;                                                                 // 0x02A4 (size: 0x4)
+    float YawSpeed;                                                                   // 0x02A8 (size: 0x4)
+    float ChangeTargetInterval;                                                       // 0x02AC (size: 0x4)
+    float BulletSpeed;                                                                // 0x02B0 (size: 0x4)
+    TArray<class AActor*> TargetActors;                                               // 0x02B8 (size: 0x10)
+    class AActor* AimTargetActor;                                                     // 0x02C8 (size: 0x8)
+    float ChangeTargetTimer;                                                          // 0x02D0 (size: 0x4)
+    float CurrentYaw;                                                                 // 0x02D4 (size: 0x4)
+    bool IsShooting;                                                                  // 0x02D8 (size: 0x1)
+    bool IsInConeAimTarget;                                                           // 0x02D9 (size: 0x1)
+
+    void RemoveOverlapCharacter(class AActor* Actor);
+    void ReleaseTrigger_ToAll();
+    void ReleaseTrigger_BP();
+    void PullTrigger_ToAll();
+    void PullTrigger_BP();
+    bool IsShootingGun();
+    class USceneComponent* GetYawMesh();
+    class USceneComponent* GetPitchMesh();
+    bool CanRayCastToTarget();
+    void AddOverlapCharacter(class AActor* Actor);
+}; // Size: 0x2E0
 
 class APalPlayerCharacter : public APalCharacter
 {
-    class UPalShooterComponent* ShooterComponent;                                     // 0x07F8 (size: 0x8)
-    class UPalInteractComponent* InteractComponent;                                   // 0x0800 (size: 0x8)
-    class UPalBuilderComponent* BuilderComponent;                                     // 0x0808 (size: 0x8)
-    class UPalLoadoutSelectorComponent* LoadoutSelectorComponent;                     // 0x0810 (size: 0x8)
-    class UPalInsideBaseCampCheckComponent* InsideBaseCampCheckComponent;             // 0x0818 (size: 0x8)
-    class UPalObjectReplicatorComponent* HighPriorityObjectReplicatorComponent;       // 0x0820 (size: 0x8)
-    FPalPlayerCharacterOnPlayerReviveDelegate OnPlayerReviveDelegate;                 // 0x0828 (size: 0x10)
+    class UPalShooterComponent* ShooterComponent;                                     // 0x0910 (size: 0x8)
+    class UPalInteractComponent* InteractComponent;                                   // 0x0918 (size: 0x8)
+    class UPalBuilderComponent* BuilderComponent;                                     // 0x0920 (size: 0x8)
+    class UPalLoadoutSelectorComponent* LoadoutSelectorComponent;                     // 0x0928 (size: 0x8)
+    class UPalInsideBaseCampCheckComponent* InsideBaseCampCheckComponent;             // 0x0930 (size: 0x8)
+    class UPalObjectReplicatorComponent* HighPriorityObjectReplicatorComponent;       // 0x0938 (size: 0x8)
+    FPalPlayerCharacterOnPlayerReviveDelegate OnPlayerReviveDelegate;                 // 0x0940 (size: 0x10)
     void OnPlayerReviveDelegate(class APalPlayerCharacter* Player);
-    FPalPlayerCharacterOnPlayerRespawnDelegate OnPlayerRespawnDelegate;               // 0x0838 (size: 0x10)
+    FPalPlayerCharacterOnPlayerRespawnDelegate OnPlayerRespawnDelegate;               // 0x0950 (size: 0x10)
     void OnPlayerRespawnDelegate(class APalPlayerCharacter* Player);
-    FPalPlayerCharacterOnPlayerMoveToRespawnLocationDelegate OnPlayerMoveToRespawnLocationDelegate; // 0x0848 (size: 0x10)
+    FPalPlayerCharacterOnPlayerMoveToRespawnLocationDelegate OnPlayerMoveToRespawnLocationDelegate; // 0x0960 (size: 0x10)
     void OnPlayerMoveToRespawnLocationDelegate(class APalPlayerCharacter* Player, FVector Location);
-    FPalPlayerCharacterOnCombatRankDownDelegate OnCombatRankDownDelegate;             // 0x0858 (size: 0x10)
+    FPalPlayerCharacterOnCombatRankDownDelegate OnCombatRankDownDelegate;             // 0x0970 (size: 0x10)
     void OnCombatRankDownDelegate(EPalPlayerBattleFinishType FinishType);
-    FPalPlayerCharacterOnAddRemoveEnemyDelegate OnAddRemoveEnemyDelegate;             // 0x0868 (size: 0x10)
+    FPalPlayerCharacterOnAddRemoveEnemyDelegate OnAddRemoveEnemyDelegate;             // 0x0980 (size: 0x10)
     void OnAddRemoveEnemyDelegate(EPalBattleBGMType Rank, bool IsAdd);
-    FPalPlayerCharacterOnChangeBattleModeDelegate_ForPlayer OnChangeBattleModeDelegate_ForPlayer; // 0x0878 (size: 0x10)
+    FPalPlayerCharacterOnChangeBattleModeDelegate_ForPlayer OnChangeBattleModeDelegate_ForPlayer; // 0x0990 (size: 0x10)
     void OnChangePlayerBattleMode(bool IsBattle);
-    FPalPlayerCharacterOnPlayerDeathAction OnPlayerDeathAction;                       // 0x0888 (size: 0x10)
+    FPalPlayerCharacterOnPlayerDeathAction OnPlayerDeathAction;                       // 0x09A0 (size: 0x10)
     void OnPlayerDeathAction();
-    FPalPlayerCharacterOnChangeBossTowerEntrancePlayer OnChangeBossTowerEntrancePlayer; // 0x0898 (size: 0x10)
+    FPalPlayerCharacterOnChangeBossTowerEntrancePlayer OnChangeBossTowerEntrancePlayer; // 0x09B0 (size: 0x10)
     void OnChangeBossTowerEntrancePlayer(FName BossType, const TArray<class APalPlayerCharacter*>& PlayerList);
-    FPalPlayerCharacterOnChangeBossEntrancePlayer OnChangeBossEntrancePlayer;         // 0x08A8 (size: 0x10)
+    FPalPlayerCharacterOnChangeBossEntrancePlayer OnChangeBossEntrancePlayer;         // 0x09C0 (size: 0x10)
     void OnChangeBossTowerEntrancePlayer(FName BossType, const TArray<class APalPlayerCharacter*>& PlayerList);
-    FPalPlayerCharacterOnCombatStartUIAction OnCombatStartUIAction;                   // 0x08B8 (size: 0x10)
+    FPalPlayerCharacterOnCombatStartUIAction OnCombatStartUIAction;                   // 0x09D0 (size: 0x10)
     void OnCombatStartUIActionDelegate();
-    FPalPlayerCharacterOnChangeRegionArea OnChangeRegionArea;                         // 0x08C8 (size: 0x10)
+    FPalPlayerCharacterOnChangeRegionArea OnChangeRegionArea;                         // 0x09E0 (size: 0x10)
     void OnChangeRegionAreaDelegate(const FName& RegionNameID);
-    FPalPlayerCharacterOnLiftupCampPal OnLiftupCampPal;                               // 0x08D8 (size: 0x10)
+    FPalPlayerCharacterOnLiftupCampPal OnLiftupCampPal;                               // 0x09F0 (size: 0x10)
     void OnLiftupCampPalDelegate(class APalCharacter* LiftingPal);
-    FPalPlayerCharacterOnEndLiftCampPal OnEndLiftCampPal;                             // 0x08E8 (size: 0x10)
+    FPalPlayerCharacterOnEndLiftCampPal OnEndLiftCampPal;                             // 0x0A00 (size: 0x10)
     void OnEndLiftCampPalDelegate();
-    FPalPlayerCharacterOnToggleSleepPlayerBed OnToggleSleepPlayerBed;                 // 0x08F8 (size: 0x10)
+    FPalPlayerCharacterOnToggleSleepPlayerBed OnToggleSleepPlayerBed;                 // 0x0A10 (size: 0x10)
     void OnToggleSleepPlayerBedDelegate(bool IsSleep);
-    FPalPlayerCharacterOnGrapplingCancelPlayerBed OnGrapplingCancelPlayerBed;         // 0x0908 (size: 0x10)
+    FPalPlayerCharacterOnGrapplingCancelPlayerBed OnGrapplingCancelPlayerBed;         // 0x0A20 (size: 0x10)
     void OnToggleGrapplingCancelDelegate(bool CancelEnable);
-    FPalPlayerCharacterOnInsufficientPalStamina OnInsufficientPalStamina;             // 0x0918 (size: 0x10)
+    FPalPlayerCharacterOnInsufficientPalStamina OnInsufficientPalStamina;             // 0x0A30 (size: 0x10)
     void OnInsufficientPalStaminaDelegate();
-    FName LastInsideRegionNameID;                                                     // 0x0928 (size: 0x8)
-    float PlayerCameraYaw;                                                            // 0x0930 (size: 0x4)
-    float PlayerCameraPitch;                                                          // 0x0934 (size: 0x4)
-    bool IsAdjustedLocationByLoad;                                                    // 0x0938 (size: 0x1)
-    class UAnimMontage* IdleAnimMontage;                                              // 0x0940 (size: 0x8)
-    class UPalPlayerBattleSituation* PlayerBattleSituation;                           // 0x0948 (size: 0x8)
-    bool IsNearCommonEnemyFlag;                                                       // 0x0950 (size: 0x1)
-    bool bIsSetRespawnTelemetry;                                                      // 0x0951 (size: 0x1)
-    FTimerHandle InDoorTimerHandle;                                                   // 0x0958 (size: 0x8)
-    TSubclassOf<class UPalPlayerGenderChanger> GenderChangerClass;                    // 0x0968 (size: 0x8)
-    class UPalPlayerGenderChanger* GenderChanger;                                     // 0x0970 (size: 0x8)
-    bool bSpectatorMode;                                                              // 0x0978 (size: 0x1)
-    FPalPlayerDataCharacterMakeInfo CharacterMakeInfo;                                // 0x097C (size: 0x94)
+    FName LastInsideRegionNameID;                                                     // 0x0A40 (size: 0x8)
+    float PlayerCameraYaw;                                                            // 0x0A48 (size: 0x4)
+    float PlayerCameraPitch;                                                          // 0x0A4C (size: 0x4)
+    bool IsAdjustedLocationByLoad;                                                    // 0x0A50 (size: 0x1)
+    class UAnimMontage* IdleAnimMontage;                                              // 0x0A58 (size: 0x8)
+    class UPalPlayerBattleSituation* PlayerBattleSituation;                           // 0x0A60 (size: 0x8)
+    bool IsNearCommonEnemyFlag;                                                       // 0x0A68 (size: 0x1)
+    bool bIsSetRespawnTelemetry;                                                      // 0x0A69 (size: 0x1)
+    TSubclassOf<class UPalPlayerGenderChanger> GenderChangerClass;                    // 0x0A78 (size: 0x8)
+    class UPalPlayerGenderChanger* GenderChanger;                                     // 0x0A80 (size: 0x8)
+    bool bSpectatorMode;                                                              // 0x0A88 (size: 0x1)
+    FPalPlayerDataCharacterMakeInfo CharacterMakeInfo;                                // 0x0A8C (size: 0x94)
 
     void StopIdleAnimation();
     void SetSpectatorMode(bool bSpectator);
@@ -6263,7 +6632,7 @@ class APalPlayerCharacter : public APalCharacter
     void CallRespawnDelegate();
     void CallMoveToRespawnLocationDelegate(FVector Location);
     void AdjustLocationByLoad(class APalCharacter* InCharacter);
-}; // Size: 0xA10
+}; // Size: 0xB20
 
 class APalPlayerController : public ACommonPlayerController
 {
@@ -6319,12 +6688,19 @@ class APalPlayerController : public ACommonPlayerController
     FVector2D MouseNativeAxis;                                                        // 0x0CC8 (size: 0x10)
     FRotator CacheActorRotator;                                                       // 0x0CD8 (size: 0x18)
     class UPalPlayerInputOneFlameCommandList* PlayerInputOneFlameCommandList;         // 0x0D00 (size: 0x8)
+    FGuid GuildFlowUniqueIdClientCache;                                               // 0x0D08 (size: 0x10)
 
+    void UpdateCharacterNickName_ToServer(const FPalInstanceID& InstanceId, FString NewNickName);
     bool TrySwitchOtomo();
     void ThrowPalByOutSide(class AActor* PreOtomoPal);
     void TeleportToSafePoint_ToServer();
     void StartStepCoolDownCoolTimer();
     void StartFlyToServer();
+    void ShooterComponent_StopReload_ToServer(class UPalShooterComponent* Shooter, int32 ID);
+    void ShooterComponent_SetTargetDirection_ToServer(class UPalShooterComponent* Shooter, FVector targetDirection);
+    void ShooterComponent_ReloadWeapon_ToServer(class UPalShooterComponent* Shooter, int32 ID);
+    void ShooterComponent_ChangeIsShooting_ToServer(class UPalShooterComponent* Shooter, int32 ID, bool IsShooting);
+    void ShooterComponent_ChangeIsAiming_ToServer(class UPalShooterComponent* Shooter, int32 ID, bool IsAiming);
     void SetupInternalForSphere_ToServer(int32 ID, class APalSphereBodyBase* Target, class APalCharacter* TargetCharacter);
     void SetupInternalForSphere_ToALL(int32 ID, class APalSphereBodyBase* Target, class APalCharacter* TargetCharacter);
     void SetupInternalForSphere(class APalSphereBodyBase* Target, class APalCharacter* TargetCharacter);
@@ -6345,11 +6721,23 @@ class APalPlayerController : public ACommonPlayerController
     void SendLog_ToClient(const EPalLogPriority Priority, const FText& Text, const FPalLogAdditionalData& AdditionalData);
     void SelfKillPlayer();
     void RPCDummy();
+    void RequestUseReturnToBaseCampItem_ToServer(const FPalItemSlotId& ItemData);
+    void RequestUseReturnToBaseCampItem(const FPalItemSlotId& ItemData);
     void RequestLiftupThrow_ToServer(class AActor* Target);
     void RequestLiftup_ToServer(class APalCharacter* TargetCharacter);
     void RequestFastTravel_ToServer(const FGuid& LocationId);
+    void RequestExitGuild_ToServer();
+    void RequestEnterToPlayerGuild_ToServer(class APalPlayerCharacter* RespondentPlayerCharacter);
+    void RequestChangeGuildName_ToServer(FString NewGuildName);
+    void RequestChangeCharacterMakeInfo_ToServer(const FPalPlayerDataCharacterMakeInfo& NewMakeInfo);
+    void RequestChangeAdminGuild_ToServer(const FGuid& NextAdminPlayerUId);
+    void RequestBanPlayerFromGuild_ToServer(const FGuid& TargetPlayerUId);
     void RemoveCameraRotateSpeedModifierRate(const FName& modifierName);
+    void ReceiveSuccessRequestEnterGuild_ToClient(const EPalGuildJoinRequestResult Result, const FPalInstanceID& EnterPlayerInstanceId);
+    void ReceiveOfferJoinGuildPlayer_ToClient(const FGuid& FlowUniqueId, const FPalInstanceID& RequestPlayerInstanceId);
     void ReceiveLiftupRequestResult_ToClient(EPalLiftupRequestResult Result);
+    void ReceiveFailedRequestGuildWithLog_ToClient(const EPalGuildJoinRequestResult Result);
+    void ReceiveFailedRequestGuildWithAlert_ToClient(const EPalGuildJoinRequestResult Result);
     void PlaySkill(int32 SlotID);
     void PalDeprojectScreenPositionToWorld(FVector& StartLocation, FVector& RayDirection);
     void OnWeaponNotify(EWeaponNotifyType Type);
@@ -6362,6 +6750,7 @@ class APalPlayerController : public ACommonPlayerController
     void OnReleasedThrowPalButtonDelegate__DelegateSignature();
     void OnReleasedSpawnPalButtonDelegate__DelegateSignature();
     void OnReleasedSpawnPalButton();
+    void OnReceiveConfirmResultRequestGuild_ClientInternal(const bool bResponse);
     void OnPressedUseRecoveryItemButton();
     void OnPressedThrowPalButtonDelegate__DelegateSignature();
     void OnPressedSpawnPalButtonDelegate__DelegateSignature();
@@ -6402,6 +6791,7 @@ class APalPlayerController : public ACommonPlayerController
     void OnChangeInstructions();
     void OnActionBegin(const class UPalActionBase* ActionBase);
     void NotifyLiftupCampPal_ToClient(class APalCharacter* TargetCharacter);
+    void NotifyConfirmRequestGuild_ToServer(const FGuid& FlowUniqueId, const bool bResponse);
     void JumpCancelPalThrow(class UPalCharacterMovementComponent* MovementComponent);
     bool IsSwimming();
     bool IsRidingFlyPal();
@@ -6430,7 +6820,7 @@ class APalPlayerController : public ACommonPlayerController
     void Debug_TeleportToBotLocation(int32 botIndex);
     void Debug_TeleportToBotCamp(int32 botIndex);
     void Debug_Teleport2D(const FVector& Location);
-    void Debug_ShowInvaderDeubgLog();
+    void Debug_ShowInvaderDebugLog();
     void Debug_SetPalWorldTimeScale(float Rate);
     void Debug_SetPalWorldTime(int32 Hour);
     void Debug_SetFPSForServer(float fps);
@@ -6452,11 +6842,12 @@ class APalPlayerController : public ACommonPlayerController
     void Debug_AddPartyExp_ToServer(int32 addExp);
     void Debug_AddMoney_ToServer(int64 addValue);
     void Debug_AddExpForALLPlayer_ToServer(int32 addExp);
+    void ConfirmRequestGuild_ToClient(const FGuid& FlowUniqueId, const EPalGuildJoinRequestConfirm ConfirmType);
     bool CanCooping();
     void CallOnCoopReleaseDelegate_ToServer();
     void AddCameraRotateSpeedModifierRate(const FName& modifierName, float Rate);
     void ActivateCurrentOtomoNearThePlayer();
-}; // Size: 0xD08
+}; // Size: 0xD18
 
 class APalPlayerState : public APlayerState
 {
@@ -6475,28 +6866,29 @@ class APalPlayerState : public APlayerState
     FPalInstanceID IndividualHandleId;                                                // 0x04C0 (size: 0x30)
     FVector CachedPlayerLocation;                                                     // 0x04F0 (size: 0x18)
     FQuat CachedPlayerRotation;                                                       // 0x0510 (size: 0x20)
-    class UPalPlayerOtomoData* OtomoData;                                             // 0x0530 (size: 0x8)
-    class UPalPlayerDataCharacterMake* CharacterMakeData;                             // 0x0538 (size: 0x8)
-    class UPalPlayerInventoryData* InventoryData;                                     // 0x0540 (size: 0x8)
-    class UPalPlayerDataPalStorage* PalStorage;                                       // 0x0548 (size: 0x8)
-    class UPalTechnologyData* TechnologyData;                                         // 0x0550 (size: 0x8)
-    class UPalPlayerRecordData* RecordData;                                           // 0x0558 (size: 0x8)
-    bool bIsSelectedInitMapPoint;                                                     // 0x0560 (size: 0x1)
-    bool bDetectedInValidPlayer;                                                      // 0x0561 (size: 0x1)
-    class UPalPlayerLocalRecordData* LocalRecordData;                                 // 0x0568 (size: 0x8)
-    class UPalWorldMapUIData* WorldMapData;                                           // 0x0570 (size: 0x8)
-    class UPalQuestManager* QuestManager;                                             // 0x0578 (size: 0x8)
-    class UPalGroupGuildBase* GuildBelongTo;                                          // 0x0580 (size: 0x8)
-    class UPalNetworkPlayerStateComponent* NetworkComp;                               // 0x05A8 (size: 0x8)
-    class UPalSyncTeleportComponent* SyncTeleportComp;                                // 0x05B0 (size: 0x8)
-    FDateTime StartPlayTime;                                                          // 0x05B8 (size: 0x8)
-    bool bIsNewCharacter;                                                             // 0x05C0 (size: 0x1)
-    class UPalIndividualCharacterHandle* TryCreateIndividualHandleTemporarily;        // 0x05C8 (size: 0x8)
-    FGuid LoginTryingPlayerUId_InServer;                                              // 0x05D0 (size: 0x10)
-    bool bIsCompleteSyncPlayerFromServer_InClient;                                    // 0x05FA (size: 0x1)
-    FPalPlayerAccountInitData AcountInitData;                                         // 0x0600 (size: 0xA8)
-    TArray<FPalLogInfo_DropPal> DropPalInfo;                                          // 0x06A8 (size: 0x10)
-    class UPalDialogParameter_RequestJoinGuild* RequestJoinGuildDialogParameter;      // 0x06B8 (size: 0x8)
+    bool CachedIsPlayerDead;                                                          // 0x0530 (size: 0x1)
+    bool CachedIsPlayerDying;                                                         // 0x0531 (size: 0x1)
+    class UPalPlayerOtomoData* OtomoData;                                             // 0x0538 (size: 0x8)
+    class UPalPlayerDataCharacterMake* CharacterMakeData;                             // 0x0540 (size: 0x8)
+    class UPalPlayerInventoryData* InventoryData;                                     // 0x0548 (size: 0x8)
+    class UPalPlayerDataPalStorage* PalStorage;                                       // 0x0550 (size: 0x8)
+    class UPalTechnologyData* TechnologyData;                                         // 0x0558 (size: 0x8)
+    class UPalPlayerRecordData* RecordData;                                           // 0x0560 (size: 0x8)
+    bool bIsSelectedInitMapPoint;                                                     // 0x0568 (size: 0x1)
+    bool bDetectedInValidPlayer;                                                      // 0x0569 (size: 0x1)
+    class UPalPlayerLocalRecordData* LocalRecordData;                                 // 0x0570 (size: 0x8)
+    class UPalWorldMapUIData* WorldMapData;                                           // 0x0578 (size: 0x8)
+    class UPalQuestManager* QuestManager;                                             // 0x0580 (size: 0x8)
+    class UPalGroupGuildBase* GuildBelongTo;                                          // 0x0588 (size: 0x8)
+    class UPalNetworkPlayerStateComponent* NetworkComp;                               // 0x05B0 (size: 0x8)
+    class UPalSyncTeleportComponent* SyncTeleportComp;                                // 0x05B8 (size: 0x8)
+    FDateTime StartPlayTime;                                                          // 0x05C0 (size: 0x8)
+    bool bIsNewCharacter;                                                             // 0x05C8 (size: 0x1)
+    class UPalIndividualCharacterHandle* TryCreateIndividualHandleTemporarily;        // 0x05D0 (size: 0x8)
+    FGuid LoginTryingPlayerUId_InServer;                                              // 0x05D8 (size: 0x10)
+    bool bIsCompleteSyncPlayerFromServer_InClient;                                    // 0x0602 (size: 0x1)
+    FPalPlayerAccountInitData AcountInitData;                                         // 0x0608 (size: 0xA8)
+    TArray<FPalLogInfo_DropPal> DropPalInfo;                                          // 0x06B0 (size: 0x10)
     TMap<class FGuid, class FTimerHandle> WaitLoadingWorldPartitionTimerMap;          // 0x06C0 (size: 0x50)
     int32 ChatCounter;                                                                // 0x0760 (size: 0x4)
 
@@ -6521,13 +6913,11 @@ class APalPlayerState : public APlayerState
     void RegisterForPalDex_ToClient(const FPalUIPalCaptureInfo& CaptureInfo);
     void RegisterForPalDex_ServerInternal(FPalInstanceID IndividualId);
     void ReceiveNotifyLoginComplete();
-    void OpenRequestJoinGuildDialog_ToClient(const FPalInstanceID& RequestPlayerInstanceId);
     void OnUpdatePlayerInfoInGuildBelongTo(const class UPalGroupGuildBase* Guild, const FGuid& InPlayerUId, const FPalGuildPlayerInfo& InPlayerInfo);
     void OnRep_WinGDKUniqueId();
     void OnRep_PlayerUId();
     void OnRep_GuildBelongTo(class UPalGroupGuildBase* OldValue);
     void OnRelicNumAdded(int32 AddNum);
-    void OnRecievedGuildJoinRequestResult(const EPalGuildJoinRequestResult ResultType, const FPalInstanceID& RequestPlayerInstanceId, const FPalInstanceID& TargerPlayerInstanceId);
     void OnNotifiedReturnToFieldFromStage_ToClient();
     void OnNotifiedEnteredStage_ToClient();
     void OnCreatePlayerIndividualHandle_InServer(FPalInstanceID ID);
@@ -6538,9 +6928,6 @@ class APalPlayerState : public APlayerState
     void OnCompleteLoadWorldPartitionDelegate__DelegateSignature();
     void OnCompleteLoadInitWorldPartitionDelegate__DelegateSignature();
     void OnCompleteLoadInitWorldPartition_InClient(class APalPlayerState* PlayerState);
-    void OnClosedRequestJoinGuildDialog(bool Result);
-    void OnClosedOverBaseCampDialog(bool Result);
-    void OnClosedCheckBaseCampAuthorityDialog(bool Result);
     void NotifyStartInitSelectMap_ToServer();
     void NotifyRunInitialize_ToClient();
     void NotifyRemovedCharacterFromPalBox_ToServer(const FPalInstanceID& IndividualId);
@@ -6555,6 +6942,9 @@ class APalPlayerState : public APlayerState
     void NotifyClientInitializedEssential_ToServer();
     void LoadTitleLevel(bool bIsSaveSuccess);
     bool IsSelectedInitMapPoint();
+    bool IsPlayerDying();
+    bool IsPlayerDead();
+    bool IsPlayerCompletelyDead();
     bool IsInStage();
     bool IsCompleteLoadInitWorldPartition();
     void GrantExpForParty(const int32 ExpValue);
@@ -6592,9 +6982,10 @@ class APalPlayerState : public APlayerState
     void Debug_OnCreatedIndividual(FPalInstanceID ID);
     void Debug_DeleteWorldAndShutdownRemoteServer_ToServer();
     void Debug_DeleteWorldAndShutdownRemoteServer();
-    void Debug_CaptureNewMonsterByDebugOtomoInfo_ToServer(const FPalDebugOtomoPalInfo& Info);
+    void Debug_CaptureNewMonsterByDebugOtomoInfo_ToServer(const FPalDebugOtomoPalInfo& Info, bool bRandomPassiveSkill);
     void Debug_CaptureNewMonster_ToServer(FName CharacterID);
     void Debug_BuildDebugBaseCamp_ToServer(FName CampMode, int32 workerCount);
+    void Debug_BotEnterDungeon_ToServer();
     void CapturePalDelegate__DelegateSignature(const FPalUIPalCaptureInfo& CaptureInfo);
     void CallOrRegisterOnCompleteSyncPlayerFromServer_InClient(FCallOrRegisterOnCompleteSyncPlayerFromServer_InClientDelegate Delegate);
     void CallOrRegisterOnCompleteLoadInitWorldPartition_InClient(FCallOrRegisterOnCompleteLoadInitWorldPartition_InClientDelegate Delegate);
@@ -6707,6 +7098,22 @@ class APalSkillEffectBase : public AActor
     class APalSkillEffectBase* CreateChildSkillEffect(TSubclassOf<class APalSkillEffectBase> EffectClass, FTransform SpawnTransform, FRandomStream RandomStream, ESpawnActorCollisionHandlingMethod collisionMethod, class AActor* ownerActor);
 }; // Size: 0x330
 
+class APalSkyCreatorLightingVolume : public AActor
+{
+    int32 Priority;                                                                   // 0x0290 (size: 0x4)
+    float TransitionSpeed;                                                            // 0x0294 (size: 0x4)
+    FLinearColor RayleighScattering;                                                  // 0x0298 (size: 0x10)
+    float RayleighExponentialDistribution;                                            // 0x02A8 (size: 0x4)
+    FLinearColor LightAlbedo;                                                         // 0x02AC (size: 0x10)
+    FLinearColor LightColor;                                                          // 0x02BC (size: 0x10)
+    float SkyLightIntensity;                                                          // 0x02CC (size: 0x4)
+    bool IsOverrideSkyLightIntensity;                                                 // 0x02D0 (size: 0x1)
+    class APalLightingVolumeController* VolumeController;                             // 0x02D8 (size: 0x8)
+
+    void OnOverlap(class AActor* OtherActor);
+    void OnEndOverlap(class AActor* OtherActor);
+}; // Size: 0x2E0
+
 class APalSkyLightVolume : public AActor
 {
     class USkyLightComponent* Component;                                              // 0x0290 (size: 0x8)
@@ -6724,7 +7131,7 @@ class APalSoundDebugModel : public AActor
 
 class APalSpectator : public APalCharacter
 {
-}; // Size: 0x7F0
+}; // Size: 0x910
 
 class APalSphereBodyBase : public AActor
 {
@@ -7345,6 +7752,12 @@ class UFixedPointMathLibrary : public UBlueprintFunctionLibrary
     FFixedPoint Add_FixedPointFixedPoint(FFixedPoint A, FFixedPoint B);
 }; // Size: 0x28
 
+class ULambdaWrapper : public UObject
+{
+
+    void Dispatch(bool IsSuccess);
+}; // Size: 0x70
+
 class UPaRichTextDecorator_KeyGuideIcon : public URichTextBlockDecorator
 {
 
@@ -7487,7 +7900,7 @@ class UPalAIActionBaseCampInUsingAmusement : public UPalAIActionBaseCampBase
 {
 
     float GetUsingTime();
-}; // Size: 0x150
+}; // Size: 0x1B0
 
 class UPalAIActionBaseCampRecoverHungry : public UPalAIActionBaseCampBase
 {
@@ -7530,11 +7943,11 @@ class UPalAIActionBaseCampRecoverHungryProductFood : public UPalAIActionBaseCamp
 
 class UPalAIActionBaseCampReturnBack : public UPalAIActionBase
 {
-}; // Size: 0x138
+}; // Size: 0x140
 
 class UPalAIActionBaseCampSleep : public UPalAIActionBaseCampBase
 {
-}; // Size: 0x150
+}; // Size: 0x1B0
 
 class UPalAIActionBaseCampSleepActively : public UPalAIActionBaseCampBase
 {
@@ -7790,9 +8203,7 @@ class UPalAIActionOtomoDefault : public UPalAIActionCompositeBase
 
 class UPalAIActionWorkerApproachToWorkArea : public UPalAIActionWorkerChildBase
 {
-
-    void OnReceiveMoveCompleted(FAIRequestID AIRequestID, TEnumAsByte<EPathFollowingResult::Type> Result);
-}; // Size: 0x160
+}; // Size: 0x180
 
 class UPalAIActionWorkerChildBase : public UPalAIActionBase
 {
@@ -7877,6 +8288,19 @@ class UPalAICombatModule_Invader : public UPalAICombatModule
 class UPalAICombatModule_Otomo : public UPalAICombatModule
 {
 }; // Size: 0x28
+
+class UPalAICombatModule_RaidBoss : public UPalAICombatModule
+{
+    class APalMapObject* TargetBaseCampActor;                                         // 0x0028 (size: 0x8)
+    FGuid TargetBaseCampID;                                                           // 0x0030 (size: 0x10)
+    TWeakObjectPtr<class UPalBaseCampModel> TargetCamp;                               // 0x0040 (size: 0x8)
+
+    void Setup_ForBP(FGuid CampID);
+    void OnBattleFinish_forDelegate(class AActor* Actor);
+    bool JudgeReturnCombatStartPosition();
+    class AActor* GetBaseCampActor();
+    class AActor* FindPlayerTarget();
+}; // Size: 0x68
 
 class UPalAICombatModule_Wild : public UPalAICombatModule
 {
@@ -8005,7 +8429,7 @@ class UPalAbilityPassiveSkill : public UObject
     void Initialize(const TArray<FPalPassiveAbilitySkills>& _PassiveSkills);
     void InactivateWorkingSkill();
     class APalPlayerController* GetTrainerController();
-    class APalCharacter* GetTrainerActor();
+    class APalPlayerCharacter* GetTrainerActor();
     class ACharacter* GetTrainer();
     TArray<FName> GetPassiveSkillList();
     class APalCharacter* GetOwner();
@@ -8027,6 +8451,7 @@ class UPalAbilitySkillParameterComponent : public UActorComponent
     void OnActivatedAsWorker();
     void OnActivatedAsPartner();
     void OnActivatedAsOtomoHolder();
+    void InitializedCharacterByFunnel();
 }; // Size: 0xB8
 
 class UPalActionBase : public UObject
@@ -8183,7 +8608,7 @@ class UPalAction_BeThrown : public UPalActionBase
 
 class UPalAction_DrownCheckBase : public UPalStatusBase
 {
-}; // Size: 0x60
+}; // Size: 0x68
 
 class UPalAction_FeedItemToCharacter : public UPalActionBase
 {
@@ -8241,6 +8666,10 @@ class UPalActivatableWidget : public UCommonActivatableWidget
 
 }; // Size: 0x3D0
 
+class UPalActivatableWidgetContainer : public UCommonActivatableWidgetStack
+{
+}; // Size: 0x280
+
 class UPalActiveSkill : public UObject
 {
     FPalActiveSkillOnCoolTimeUpdate OnCoolTimeUpdate;                                 // 0x0028 (size: 0x10)
@@ -8252,7 +8681,8 @@ class UPalActiveSkill : public UObject
     bool IsCooling;                                                                   // 0x0058 (size: 0x1)
     float ReuseCoolTimer;                                                             // 0x005C (size: 0x4)
     EPalWazaID WazaType;                                                              // 0x0060 (size: 0x1)
-    bool IsStopTimer;                                                                 // 0x0061 (size: 0x1)
+    bool IsIgnoreRaycast;                                                             // 0x0061 (size: 0x1)
+    bool IsStopTimer;                                                                 // 0x0062 (size: 0x1)
     float DatabaseCoolTime;                                                           // 0x0064 (size: 0x4)
     bool bIsTransient;                                                                // 0x0068 (size: 0x1)
 
@@ -8280,6 +8710,7 @@ class UPalActiveSkillSlot : public UObject
     void OnChangeEquipWaza(class UPalIndividualCharacterParameter* IndividualParameter);
     bool IsValidSkill(int32 SlotID);
     bool IsTransient(int32 SlotID);
+    bool IsNearMaxRange_AndRayCheck(int32 SlotID, class AActor* TargetActor);
     bool IsNearMaxRange(int32 SlotID, class AActor* TargetActor);
     bool IsFarMinRange(int32 SlotID, class AActor* TargetActor);
     bool IsCoolTimeFinish(int32 SlotID);
@@ -8289,7 +8720,9 @@ class UPalActiveSkillSlot : public UObject
     TArray<int32> GetEnableSlotIDs();
     float GetCoolTimeRate(int32 SlotID);
     float GetCoolTime(int32 SlotID);
+    int32 FindSlotIndexByWazaID(EPalWazaID WazaID);
     int32 FindMostEffectiveSlotID(class AActor* TargetActor);
+    int32 FindFarthestSlotID_IgnoreSlotID(int32 IgnoreID);
     int32 ChoiceEnableSlotIDByRandom();
     bool CanUse(int32 SlotID, class AActor* TargetActor);
 }; // Size: 0x98
@@ -8531,6 +8964,13 @@ class UPalAnimNotify_WeaponNotify : public UAnimNotify
     EWeaponNotifyType WeaponNotifyType;                                               // 0x0038 (size: 0x1)
 
 }; // Size: 0x40
+
+class UPalArenaPartyAsset : public UDataAsset
+{
+    TArray<FPalDebugOtomoPalInfo> PalInfo;                                            // 0x0030 (size: 0x10)
+    int32 RidePalIndex;                                                               // 0x0040 (size: 0x4)
+
+}; // Size: 0x48
 
 class UPalAssetStreamableManager : public UObject
 {
@@ -8826,6 +9266,7 @@ class UPalBaseCampModuleResourceCollector : public UPalBaseCampFunctionModuleBas
 {
     TMap<class FGuid, class FPalBaseCampModuleResourceCollectWorkInfo> MapObjectWorkInfoMap; // 0x0028 (size: 0x50)
 
+    void OnRespawnFoliageInstance(class UPalFoliageInstance* Instance);
     void OnRegisteredMapObjectModel(class UPalMapObjectModel* Model);
     void OnRegisteredFoliageModel_ServerInternal(class UPalFoliageInstance* Instance);
     void OnDestroyedMapObjectModel(class UPalMapObjectModel* Model, const FPalMapObjectDisposeOptions& Options);
@@ -9825,6 +10266,7 @@ class UPalCharacterMovementComponent : public UCharacterMovementComponent
     void OnChangeSliding__DelegateSignature(class UPalCharacterMovementComponent* Component, bool IsInSliding);
     void OnChangeCrouch__DelegateSignature(class UPalCharacterMovementComponent* Component, bool IsInCrouch);
     void OnChangeCrouch(class UPalCharacterMovementComponent* Component, bool IsInCrouch);
+    void OnChangeActiveCharacter(bool bInIsActive);
     void MergeLastLandingLocationCache(const class UPalCharacterMovementComponent* MovementComponent);
     void Jump();
     bool IsStepDisabled();
@@ -9913,6 +10355,7 @@ class UPalCharacterParameterComponent : public UActorComponent
     bool IsSleepAction;                                                               // 0x0188 (size: 0x1)
     FVector WildPalDrinkWaterPoint;                                                   // 0x0190 (size: 0x18)
     bool IsDisableOtomoReturnEffect;                                                  // 0x01A8 (size: 0x1)
+    float MaxHPRate_ForTowerBoss;                                                     // 0x01AC (size: 0x4)
     FHitResult GroundHitResult;                                                       // 0x01B0 (size: 0xE8)
     bool bIsUseGroundRayCast;                                                         // 0x029C (size: 0x1)
     FFlagContainer DisableGroundRayCast;                                              // 0x02A0 (size: 0x50)
@@ -9945,6 +10388,7 @@ class UPalCharacterParameterComponent : public UActorComponent
     TMap<FPalInstanceID, int32> DamageMap;                                            // 0x0490 (size: 0x50)
     bool CanDropItem;                                                                 // 0x04E0 (size: 0x1)
     FFlagContainer DisableNaturalHealing_Component;                                   // 0x04E8 (size: 0x50)
+    bool IsImmortality;                                                               // 0x0538 (size: 0x1)
     TArray<TWeakObjectPtr<AActor>> TrapLegHoldList;                                   // 0x0638 (size: 0x10)
     TArray<TWeakObjectPtr<AActor>> TrapMovingPanelList;                               // 0x0648 (size: 0x10)
     class UPalOtomoAttackStopJudgeByBallList* OtomoAttackStopJudge;                   // 0x0658 (size: 0x8)
@@ -9966,7 +10410,6 @@ class UPalCharacterParameterComponent : public UActorComponent
     void SetMP(FFixedPoint64 NewMP);
     void SetMaxSP(FFixedPoint64 NewMaxSP);
     void SetMaxMP(FFixedPoint64 NewMaxMP);
-    void SetMaxHP(FFixedPoint64 NewMaxHP);
     void SetIsOverrideTarget_ToServer(int32 ID, bool IsOverride);
     void SetIsOverrideTarget_ToALL(int32 ID, bool IsOverride);
     void SetIsOverrideTarget_Innner(bool IsOverride);
@@ -10029,6 +10472,7 @@ class UPalCharacterParameterComponent : public UActorComponent
     int32 GetLegHoldResistLevel();
     bool GetIsCapturedProcessing();
     class UPalIndividualCharacterParameter* GetIndividualParameter();
+    float GetHPRate();
     FFixedPoint64 GetHP();
     FHitResult GetHitGroundResult();
     float GetFullStomach();
@@ -10053,6 +10497,14 @@ class UPalCharacterParameterStorageSubsystem : public UPalWorldSubsystem
 
 }; // Size: 0xE8
 
+class UPalCharacterRankUpUtility : public UBlueprintFunctionLibrary
+{
+
+    void SimulateRankUpCharacterByHandle(const class UObject* WorldContextObject, const class UPalIndividualCharacterHandle* Target, const TArray<class UPalIndividualCharacterHandle*>& Resources, int32& OutToRank, int32& OutToRankUpExp);
+    void SimulateRankUpCharacter(const class UObject* WorldContextObject, const FPalInstanceID& TargetId, const TArray<FPalInstanceID>& ResourceIds, int32& OutToRank, int32& OutToRankUpExp);
+    int32 GetRequiredInitRankCharacterNum(const class UObject* WorldContextObject, const int32 Rank);
+}; // Size: 0x28
+
 class UPalCharacterShop : public UPalShopBase
 {
     TArray<class UPalShopProduct_LostPal*> LocalLostPalProductArray;                  // 0x00B8 (size: 0x10)
@@ -10069,7 +10521,7 @@ class UPalCharacterStatusOperation : public UObject
     int32 GetRequiredMoneyCountForResetCharacterStatus(const class UObject* WorldContextObject, class UPalIndividualCharacterHandle* targetHandle, const EPalCharacterStatusOperationName StatusName);
     void GetRequiredItemCountForCharacterStatus(const class UObject* WorldContextObject, class UPalIndividualCharacterHandle* targetHandle, const EPalCharacterStatusOperationName StatusName, FName& OutStaticItemId, int32& OutItemNum);
     int32 GetCurrentStatusRank(const class UPalIndividualCharacterParameter* TargetIndividualParameter, const EPalCharacterStatusOperationName StatusName);
-    int32 GetCurrentLocalPlayerStatusPoint(const class UObject* WorldContextObject, const FName StatusName);
+    int32 GetCurrentLocalPlayerTotalStatusPoint(const class UObject* WorldContextObject, const FName StatusName);
 }; // Size: 0x28
 
 class UPalChatFilteringWaiter : public UObject
@@ -10107,6 +10559,7 @@ class UPalCheatManager : public UCheatManager
     void UnlockAchievement(FString AchievementId, int32 Progress);
     void UNKO();
     void TriggerBaseCampWorkerEvent(const EPalBaseCampWorkerEventType EventType);
+    void TraceReticleDirectionAllObjectType(const float Length);
     void ToggleVisibleFoliageChunk();
     void ToggleShowReticleLocation();
     void ToggleShowDropItemHitEventLog();
@@ -10153,6 +10606,7 @@ class UPalCheatManager : public UCheatManager
     void SkipCutscene();
     void ShutdownRemoteServer();
     void ShowTargetLocalPlayerEnemyList();
+    void ShowStreamingLevel();
     void ShowSpawnerInfo();
     void ShowPlayers();
     void ShowPlayerMoveSpeed();
@@ -10161,13 +10615,14 @@ class UPalCheatManager : public UCheatManager
     void ShowObjectNameGround();
     void ShowObjectNameForward();
     void ShowMovementMode();
+    void ShowMaxPlayers();
     void ShowMapObjectStatus();
     void ShowMapObjectFoliageStatus();
     void ShowMapObjectConnector();
     void ShowLocalSaveData();
     void ShowLaunchArguments();
     void ShowInviteCode();
-    void ShowInvaderDeubgLog();
+    void ShowInvaderDebugLog();
     void ShowHateArrow();
     void ShowFloorLocation();
     void ShowDialog(FText Msg);
@@ -10184,7 +10639,6 @@ class UPalCheatManager : public UCheatManager
     void ShowActionName();
     void ShowActionAndStatus_ToServer();
     void ShowActionAndStatus();
-    void SetWorldPartitionLoadParameter(float Range, bool bIsActivated);
     void SetVoiceID(int32 VoiceID);
     void SetSunLightShadowDistance(const float InDistance);
     void SetSanityToBaseCampPal(const float Sanity);
@@ -10214,6 +10668,7 @@ class UPalCheatManager : public UCheatManager
     void SetDisableInteractReticleTarget(bool bIsEnable);
     void SetDebugRespawnPointForPlayer(class APalPlayerCharacter* Character, FVector Location);
     void SetDebugFullStomachDecreaseRate(const float Rate);
+    void SetDamageTextMaxNum(int32 Num);
     void SetCharacterName(FString Name);
     void SetCharacterMakeColor(FColor Color);
     void SetCharacterMakeAllRed();
@@ -10225,6 +10680,7 @@ class UPalCheatManager : public UCheatManager
     void SetBaseCampWorkerHpSingle(const float Percentage);
     void SetBaseCampWorkerHp(const float Percentage);
     void SetAlwaysGrantPassiveSkillMode(bool Flag);
+    void SetAllowBaseCampBattle(const bool bAllowBaseCampBattle);
     void SetActivity(FString ConnStr, int32 maxPlayer, int32 currentPlayer);
     void SendChatToBroadcast(FString Text);
     void SaikyoGamePreset();
@@ -10233,10 +10689,12 @@ class UPalCheatManager : public UCheatManager
     void RespawnPlayer();
     void RerollCharacterMake();
     void RequestLogTreasureBoxLocalPlayerAround();
+    void RequestLogServerThreadNum();
     void RequestFillSlotChestToInventory();
     void RequestFillSlotChestFromInventory();
     void RepairEquipment();
     void RandomizePassive_PlayerWeapon();
+    void PrintRealTime();
     void PrintInventoryDynamicItemLog();
     void PrintGameTime();
     void Ping(const FString Address);
@@ -10267,7 +10725,7 @@ class UPalCheatManager : public UCheatManager
     void KillBaseCampWorker();
     void KillAllFriend();
     void KillAllEnemy();
-    void KickPlayer(FString PlayerUIdORSteamId, FText KickReason);
+    void KickPlayer(FString UserId, FText KickReason);
     void JumpToClientStartLocation();
     void JoinInviteCode(FString InviteCode);
     void JoinClientPlayerToServerGuild();
@@ -10293,10 +10751,12 @@ class UPalCheatManager : public UCheatManager
     void InsightsTraceStartForLocal();
     void InitInventory(const FName StaticItemId, const int32 Count);
     void IgnoreRestrictedByItemsForPartnerSkill();
+    void IgnoreDamageCheckByServer();
     void IgnoreBuildRestrictionBaseCamp();
     void HPOneAllCharacter();
     void HideTutorialQuest_BP();
     void HideTutorialQuest();
+    void HideDebugInfo();
     void GetRelic(int32 Count);
     void GetPlanerPal();
     void GetPalEgg(const FName CharacterID);
@@ -10325,6 +10785,7 @@ class UPalCheatManager : public UCheatManager
     void ExitGuildPlayer(FString GuildName, class APalPlayerCharacter* Player);
     void ExitGuildLocalPlayer(FString GuildName);
     void EnterGuildPlayer(FString GuildName, class APalPlayerCharacter* Player);
+    void EnterGuildOtherPlayerBelongTo(const FGuid& TargetPlayerUId);
     void EnterGuildLocalPlayer(FString GuildName);
     void EnterGroup(FString GroupName, FPalInstanceID IndividualId);
     void EnableStatUnit();
@@ -10359,11 +10820,13 @@ class UPalCheatManager : public UCheatManager
     void CreateGuild(FString GuildName);
     void CountPalCharacter();
     void CopyWorldDirectoryName();
+    void CopyPlayerUId();
     void CopyPlayerLocation();
     void CommandToServer(const FString Command);
     void CleatDebugInfoText();
     void CheckFoliageChunkStatus(const bool bShowInstanceDetail, const bool bShowGridDetail);
     void ChangePassive_PlayerWeapon(int32 Index, FName SkillName);
+    void ChangeMaxPlayers(int32 Players);
     void ChangeHUDScale(float Scale);
     void CauseServerCrash();
     void CauseEnsure();
@@ -10377,6 +10840,7 @@ class UPalCheatManager : public UCheatManager
     void BuildDebugBaseCamp(FName Mode);
     void BotOn();
     void BotOff();
+    void BanPlayerFromGuildLocalPlayerBelongTo(const FGuid& TargetPlayerUId);
     void ApplyDebugGameProgress(FName PresetName);
     void AddTechnologyPoints(int32 AddPoints);
     void AddPlayerExp(int32 addExp);
@@ -10389,10 +10853,17 @@ class UPalCheatManager : public UCheatManager
     void AddMapObjectEffectVisualAround(const float Range, const EPalMapObjectVisualEffectType EffectType);
     void AddGameTime_Minutes(const int32 Minutes);
     void AddGameTime_Hours(const int32 Hours);
+    void AddExStatusPoint(int32 Point);
     void AddExpForALLPlayer(int32 addExp);
     void AddBossTechnologyPoints(int32 AddPoints);
     void AddBaseCampEnergyAmount(const EPalEnergyType EnergyType, const float Amount);
 }; // Size: 0xC8
+
+class UPalCheckBox : public UCheckBox
+{
+
+    void ToggleCheck();
+}; // Size: 0xC80
 
 class UPalClimbingComponent : public UActorComponent
 {
@@ -10717,10 +11188,13 @@ class UPalDamageReactionComponent : public UActorComponent
     TSubclassOf<class UPalHitEffectSlot> DamageEffectSlotClass;                       // 0x0158 (size: 0x8)
     class UPalHitEffectSlot* EffectSlot;                                              // 0x0160 (size: 0x8)
     TArray<float> RateList;                                                           // 0x0168 (size: 0x10)
+    TArray<float> LargeDownAbleHPRate;                                                // 0x0178 (size: 0x10)
+    bool DisableLargeDown;                                                            // 0x0188 (size: 0x1)
 
     void SlipDamageAndBlowWhenDead(int32 Damage, FVector Velocity);
     void SlipDamage(int32 Damage, bool ShieldIgnore, EPalDeadType DeadType);
     void ShowDeadDebugLog(FPalDeadInfo DeadInfo);
+    void SetDisableLargeDown();
     void ProcessDeath_ToServer();
     void ProcessDamage_ToServer(const FPalDamageInfo& Info);
     void PopupDamageBySlipDamage_ToALL(int32 Damage);
@@ -10740,6 +11214,7 @@ class UPalDamageReactionComponent : public UActorComponent
     void OnDamageReactionDelegate__DelegateSignature(FPalDamageRactionInfo ReactionInfo);
     void OnDamageDelegate__DelegateSignature(FPalDamageResult DamageResult);
     void OnCaptureStartDelegate__DelegateSignature();
+    bool IsIgnoreElementStatus(EPalAdditionalEffectType Effect);
     void ForceDamageDelegateForCaptureBall(class AActor* Attacker);
     void DeathDamage_ForSelfDestruct(FVector Velocity, EPalWazaID WazaID);
     void CallOnDamageDelegateAlways(FPalDamageResult DamageResult);
@@ -10748,7 +11223,7 @@ class UPalDamageReactionComponent : public UActorComponent
     void ApplyDamageForHP(FPalDamageResult DamageResult);
     void ApplyDamageForDyingHP(FPalDamageResult DamageResult);
     void AddDeadImplus(FPalDamageResult DamageResult);
-}; // Size: 0x178
+}; // Size: 0x190
 
 class UPalDamageText : public UPalUserWidget
 {
@@ -10781,10 +11256,12 @@ class UPalDatabaseCharacterParameter : public UObject
     class UDataTable* PalSizeParameterDataTable;                                      // 0x0118 (size: 0x8)
     class UDataTable* PalCapturedCageDataTable;                                       // 0x0120 (size: 0x8)
     class UDataTable* PalStatusEffectFoodDataTable;                                   // 0x0128 (size: 0x8)
-    class UDataTable* PalCombiUniqueDataTable;                                        // 0x0130 (size: 0x8)
-    TArray<float> TalentMagnificationList;                                            // 0x0140 (size: 0x10)
-    class UPalPettingPresset* PettingPressetInstance;                                 // 0x0150 (size: 0x8)
-    class UPalCombiMonsterParameter* CombiMonsterParameter;                           // 0x0158 (size: 0x8)
+    class UDataTable* PalGainStatusPointsItemDataTable;                               // 0x0130 (size: 0x8)
+    class UDataTable* PalCombiUniqueDataTable;                                        // 0x0138 (size: 0x8)
+    class UDataTable* PalTalentUpItemDataTable;                                       // 0x0140 (size: 0x8)
+    TArray<float> TalentMagnificationList;                                            // 0x0150 (size: 0x10)
+    class UPalPettingPresset* PettingPressetInstance;                                 // 0x0160 (size: 0x8)
+    class UPalCombiMonsterParameter* CombiMonsterParameter;                           // 0x0168 (size: 0x8)
 
     void UpdateApplyDatabaseToIndividualParameter(class UPalIndividualCharacterParameter* IndividualParameter);
     bool SetupSaveParameter(const FName CharacterID, const int32 Level, const FGuid& OwnerPlayerUId, FPalIndividualCharacterSaveParameter& outParameter);
@@ -10814,10 +11291,11 @@ class UPalDatabaseCharacterParameter : public UObject
     int32 GetMeleeAttack(class UPalIndividualCharacterParameter* IndividualParameter);
     void GetLocalizedCharacterName(const FName& CharacterID, FText& OutText);
     bool GetIsTowerBoss(FName RowName);
+    bool GetIsRaidBoss(FName RowName);
     bool GetIsPal(FName RowName);
     bool GetIsBoss(FName RowName);
     int32 GetHPBySaveParameter(const FPalIndividualCharacterSaveParameter& SaveParameter);
-    int32 GetHP(class UPalIndividualCharacterParameter* IndividualParameter);
+    int32 GetHP(const class UPalIndividualCharacterParameter* IndividualParameter);
     float GetHearingRate(FName RowName);
     EPalGenusCategoryType GetGenusCategory(FName RowName);
     int32 GetFoodAmount(FName RowName);
@@ -10836,9 +11314,10 @@ class UPalDatabaseCharacterParameter : public UObject
     FName GetBPClassName(FName RowName);
     TSoftClassPtr<APalCharacter> GetBPClass(FName RowName);
     EPalBattleBGMType GetBattleBGM(FName RowName);
+    bool FindTalentUpItem(FName ItemName, FPalTalentUpItemDataRow& OutData);
     bool FindPalSizeParameter(EPalSizeType CharacterSize, FPalSizeParameterDataRow& RowData);
     int32 CalcCorrectedLevel(const int32 TrainerLevel, const int32 TargetCharacterLevel, const class UObject* WorldContextObject);
-}; // Size: 0x160
+}; // Size: 0x170
 
 class UPalDeadBodyManager : public UObject
 {
@@ -10873,273 +11352,276 @@ class UPalDebugSetting : public UObject
     bool IsRequiredLoadWorldSaveData;                                                 // 0x0040 (size: 0x1)
     FString DefaultLoadWorldSaveDataName;                                             // 0x0048 (size: 0x10)
     bool bIsRequiredLoadLocalWorldSaveData;                                           // 0x0058 (size: 0x1)
-    TMap<int32, FGuid> EditorPlayerSaveDataOverwriteMap;                              // 0x0060 (size: 0x50)
-    FString PlayerAutoSaveDataName;                                                   // 0x00B0 (size: 0x10)
-    FString WorldAutoSaveDataName;                                                    // 0x00C0 (size: 0x10)
-    bool bDontAutoSaveInMulti;                                                        // 0x00D0 (size: 0x1)
-    FName EditorSaveDirectoryName;                                                    // 0x00D4 (size: 0x8)
-    float autoSaveSpan;                                                               // 0x00DC (size: 0x4)
-    bool autoSaveEnable;                                                              // 0x00E0 (size: 0x1)
-    bool bAutoSetTruePalMainStats;                                                    // 0x00E1 (size: 0x1)
-    FPalDataTableRowName_GameProgressPreset PlayerDefaultPreset;                      // 0x00E4 (size: 0x8)
-    int32 PlayerLevel;                                                                // 0x00EC (size: 0x4)
-    int32 ForceFixLevelForWildPal;                                                    // 0x00F0 (size: 0x4)
-    int32 ForceFixTalent;                                                             // 0x00F4 (size: 0x4)
-    TArray<FPalDebugOtomoPalInfo> DefaultOtomoPal;                                    // 0x00F8 (size: 0x10)
-    TArray<FPalDebugPalCaptureInfo> DefaultCapturePalInfos;                           // 0x0108 (size: 0x10)
-    int32 DefaultCapturePalRandomNum;                                                 // 0x0118 (size: 0x4)
-    TArray<FPalDebugItemCreateInfo> DefaultItem;                                      // 0x0120 (size: 0x10)
-    TArray<FPalDebugItemCreateInfo> DefaultLoadoutItem;                               // 0x0130 (size: 0x10)
-    int32 PlayStart_PalWorldTime;                                                     // 0x0140 (size: 0x4)
-    float DebugRate_PalWorldTime;                                                     // 0x0144 (size: 0x4)
-    bool bIgnoreOverWeightMove;                                                       // 0x0148 (size: 0x1)
-    bool bIsDisableReticleShoot;                                                      // 0x0149 (size: 0x1)
-    bool bEquipDefaultWeapon;                                                         // 0x014A (size: 0x1)
-    bool bGetAllBulletItems;                                                          // 0x014B (size: 0x1)
-    bool bIgnoreItemDurabilityDecrease;                                               // 0x014C (size: 0x1)
-    bool bNotConsumeMaterialsInRepair;                                                // 0x014D (size: 0x1)
-    bool bIsMutekiALL;                                                                // 0x014E (size: 0x1)
-    bool bIsMutekiForPlayer;                                                          // 0x014F (size: 0x1)
-    bool bIsMutekiForFriend;                                                          // 0x0150 (size: 0x1)
-    bool bDisableDeathPenalty;                                                        // 0x0151 (size: 0x1)
-    bool bIgnoreRespawnTimer;                                                         // 0x0152 (size: 0x1)
-    bool bIsDisableDyingCountdown;                                                    // 0x0153 (size: 0x1)
-    bool bIsFixedSP;                                                                  // 0x0154 (size: 0x1)
-    bool bDisiablePlayerShield;                                                       // 0x0155 (size: 0x1)
-    bool bIsFullPowerForPlayer;                                                       // 0x0156 (size: 0x1)
-    bool bIsCaptureSuccessAlways;                                                     // 0x0157 (size: 0x1)
-    bool bIsCaptureFailAlways_BounceBall;                                             // 0x0158 (size: 0x1)
-    bool bIsShowActionName;                                                           // 0x0159 (size: 0x1)
-    bool bIsShowCharacterStatus;                                                      // 0x015A (size: 0x1)
-    bool bIsShowCharacterTickInfo;                                                    // 0x015B (size: 0x1)
-    bool bIsWazaCoolTimeFast;                                                         // 0x015C (size: 0x1)
-    bool bIsShowUseRootMotion;                                                        // 0x015D (size: 0x1)
-    bool bIsEnableClimbing;                                                           // 0x015E (size: 0x1)
-    bool bIsDisableFallDamage;                                                        // 0x015F (size: 0x1)
-    bool bIsShowPlayerFallHeight;                                                     // 0x0160 (size: 0x1)
-    bool bIsShowGroundObjectName;                                                     // 0x0161 (size: 0x1)
-    bool bIsShowForwardObjectName;                                                    // 0x0162 (size: 0x1)
-    bool bDisableStatus_Darkness;                                                     // 0x0163 (size: 0x1)
-    bool bIsIgnoreBuildRestrictionBaseCamp;                                           // 0x0164 (size: 0x1)
-    EPalMovementSpeedType ConfirmTransportItemBaseSpeedType;                          // 0x0165 (size: 0x1)
-    float ConfirmTransportItemSpeedMultipleRate;                                      // 0x0168 (size: 0x4)
-    bool bNotConsumeMaterialsInBuild;                                                 // 0x016C (size: 0x1)
-    float BuildRequiredWorkAmount;                                                    // 0x0170 (size: 0x4)
-    bool bIsDisableEnemyEyeSight;                                                     // 0x0174 (size: 0x1)
-    bool bIsEnableNPCDrawRaycastDebug;                                                // 0x0175 (size: 0x1)
-    bool bIsHideScreenMessage;                                                        // 0x0176 (size: 0x1)
-    bool bIsHungerDisable;                                                            // 0x0177 (size: 0x1)
-    bool bIsAllRecipeUnlock;                                                          // 0x0178 (size: 0x1)
-    bool bNotDecreaseWeaponItem;                                                      // 0x0179 (size: 0x1)
-    bool bNotRequiredBulletWhenReload;                                                // 0x017A (size: 0x1)
-    bool bShowReticleLocation;                                                        // 0x017B (size: 0x1)
-    bool bShowAutoAimInfo;                                                            // 0x017C (size: 0x1)
-    bool bIsEnableMouseAutoAim;                                                       // 0x017D (size: 0x1)
-    float MouseSensitivityRate;                                                       // 0x0180 (size: 0x4)
-    int32 CaptureFPS;                                                                 // 0x0184 (size: 0x4)
-    bool bIsDisableDropItem;                                                          // 0x0188 (size: 0x1)
-    bool bShowDropItemHitEvent;                                                       // 0x0189 (size: 0x1)
-    bool bPrintLogGroupsWhenGroupOperated;                                            // 0x018A (size: 0x1)
-    bool bIsSoundRangeVisual;                                                         // 0x018B (size: 0x1)
-    bool bIsToggleHUDWhenEject;                                                       // 0x018C (size: 0x1)
-    bool bIsLookAtDisable;                                                            // 0x018D (size: 0x1)
-    bool bPalBoxInLevelBelongingToServerPlayer;                                       // 0x018E (size: 0x1)
-    bool bCreateGameInstanceViewActor;                                                // 0x018F (size: 0x1)
-    bool bIsFixedLightingControllerTime;                                              // 0x0190 (size: 0x1)
-    float LightingControllerTimeIfFixed;                                              // 0x0194 (size: 0x4)
-    bool bIsShowFloorLocation;                                                        // 0x0198 (size: 0x1)
-    bool bIsShowGroundTilt;                                                           // 0x0199 (size: 0x1)
-    bool bIsDisableShiftKey;                                                          // 0x019A (size: 0x1)
-    bool IsSpawnAlwaysFromSpawner;                                                    // 0x019B (size: 0x1)
-    bool IsDisableSpawner;                                                            // 0x019C (size: 0x1)
-    float OverrideSpawnRadius;                                                        // 0x01A0 (size: 0x4)
-    float OverrideDespawnRadius;                                                      // 0x01A4 (size: 0x4)
-    bool bIsPlayerCompleteSTEALTH;                                                    // 0x01A8 (size: 0x1)
-    bool bIsShowEnemyHate;                                                            // 0x01A9 (size: 0x1)
-    bool bIsShowEnemyHateArrow;                                                       // 0x01AA (size: 0x1)
-    bool bIsShowTargetLocalPlayerList;                                                // 0x01AB (size: 0x1)
-    bool bIsShowMovementMode;                                                         // 0x01AC (size: 0x1)
-    bool bIsShowOrganization;                                                         // 0x01AD (size: 0x1)
-    bool bCanAccessToOtherGuildMapObject;                                             // 0x01AE (size: 0x1)
-    bool bFirstBuildPalBox;                                                           // 0x01AF (size: 0x1)
-    float WorkExtraRate;                                                              // 0x01B0 (size: 0x4)
-    bool bIsDisableFootIK;                                                            // 0x01B4 (size: 0x1)
-    bool bBuildInstallCheckLookToCamera;                                              // 0x01B5 (size: 0x1)
-    bool bBuildFXDebugLog;                                                            // 0x01B6 (size: 0x1)
-    bool bDamageTextStack;                                                            // 0x01B7 (size: 0x1)
-    bool bFootStepNotify_DebugDisplay;                                                // 0x01B8 (size: 0x1)
-    bool bSkipBossCutscene;                                                           // 0x01B9 (size: 0x1)
-    bool bShowRangeDistributeExpAround;                                               // 0x01BA (size: 0x1)
-    bool bNotDropOtomoAtPlayerDeath;                                                  // 0x01BB (size: 0x1)
-    bool bNotDropItemsAtPlayerDeath;                                                  // 0x01BC (size: 0x1)
-    bool bEnableDebugMoveSpeed;                                                       // 0x01BD (size: 0x1)
-    bool bForceToggleDash;                                                            // 0x01BE (size: 0x1)
-    bool bDebugAutoRun;                                                               // 0x01BF (size: 0x1)
-    bool bDrawPlayerInDoor;                                                           // 0x01C0 (size: 0x1)
-    int32 PlayerPalStoragePage;                                                       // 0x01C4 (size: 0x4)
-    bool ShowPlayerMoveSpeed;                                                         // 0x01C8 (size: 0x1)
-    bool bSwimming_DebugDisplay;                                                      // 0x01C9 (size: 0x1)
-    bool bSwimming_NoDecreaseSP;                                                      // 0x01CA (size: 0x1)
-    bool bPartnerSkill_DebugDisplay;                                                  // 0x01CB (size: 0x1)
-    bool bPartnerSkill_NoDecrease;                                                    // 0x01CC (size: 0x1)
-    float PartnerSkill_CooldownSpeedRate;                                             // 0x01D0 (size: 0x4)
-    bool PartnerSkill_IgnoreRestrictedByItems;                                        // 0x01D4 (size: 0x1)
-    bool bNotConsumeMaterialsInCraft;                                                 // 0x01D5 (size: 0x1)
-    bool bSelectableRecipeWhenNothingMaterials;                                       // 0x01D6 (size: 0x1)
-    bool bIgnoreWorkableElementType;                                                  // 0x01D7 (size: 0x1)
-    bool bIgnoreWorkableGenusCategories;                                              // 0x01D8 (size: 0x1)
-    bool bShowDebugWorkAssign;                                                        // 0x01D9 (size: 0x1)
-    bool bShowDebugWorkAssignTarget;                                                  // 0x01DA (size: 0x1)
-    bool bForceRunInWork;                                                             // 0x01DB (size: 0x1)
-    bool bContinueSpeedInTransportWork;                                               // 0x01DC (size: 0x1)
-    bool bNotInterruptTransportingWork;                                               // 0x01DD (size: 0x1)
-    bool bPrintLogWorkerEventDetail;                                                  // 0x01DE (size: 0x1)
-    float BaseCampWorkerEventTriggerInterval;                                         // 0x01E0 (size: 0x4)
-    bool IgnoreBaseCampTask;                                                          // 0x01E4 (size: 0x1)
-    bool bBaseCampSpawnLevelMax;                                                      // 0x01E5 (size: 0x1)
-    bool bBaseCampWorkerSanityDetail;                                                 // 0x01E6 (size: 0x1)
-    float BaseCampWorkerEatTime;                                                      // 0x01E8 (size: 0x4)
-    bool bBaseCampShowCannotTransportTarget;                                          // 0x01EC (size: 0x1)
-    FPalArrowSettings BaseCampCannotTransportTargetArrowSettings;                     // 0x01F0 (size: 0xC)
-    bool bBaseCampMoveModeTeleportForce;                                              // 0x01FC (size: 0x1)
-    bool bShowBaseCampSquaredDistanceFromPlayer;                                      // 0x01FD (size: 0x1)
-    bool bVisibleSpawnPointFromPalBox;                                                // 0x01FE (size: 0x1)
-    int32 fallBackDefense;                                                            // 0x0200 (size: 0x4)
-    bool bDebugLogWorldSecurity;                                                      // 0x0204 (size: 0x1)
-    bool bDebugLogEnableCriminal;                                                     // 0x0205 (size: 0x1)
-    bool bDebugLogEnableWanted;                                                       // 0x0206 (size: 0x1)
-    bool bDebugLogEnableCriminalPlayer;                                               // 0x0207 (size: 0x1)
-    bool bShowDebugWantedSpawnerSphere;                                               // 0x0208 (size: 0x1)
-    bool bTransportGrantedMonsterToPalBox;                                            // 0x0209 (size: 0x1)
-    bool bInvaderDisable;                                                             // 0x020A (size: 0x1)
-    float DebugSpawnWildPal_DistanceFromPlayer;                                       // 0x020C (size: 0x4)
-    EPalStatusID DebugAddStatus;                                                      // 0x0210 (size: 0x1)
-    bool bIsDisplayDebug_PassiveSkill;                                                // 0x0211 (size: 0x1)
-    bool bShowPassiveSkillStatus;                                                     // 0x0212 (size: 0x1)
-    float ShowPassiveSkillStatusRange;                                                // 0x0214 (size: 0x4)
-    bool bIgnorePalPassiveSkill;                                                      // 0x0218 (size: 0x1)
-    TArray<FPalDataTableRowName_PassiveSkillData> PalPassiveSkillOverride;            // 0x0220 (size: 0x10)
-    bool bGrantPassiveSkillAlways;                                                    // 0x0230 (size: 0x1)
-    TMap<class FPalDataTableRowName_PalMonsterData, class FPalDebugAttachPassiveSkillInfo> PassiveSkill_AttachSkill; // 0x0238 (size: 0x50)
-    bool bPassiveSkill_CollectItem_10Sec;                                             // 0x0288 (size: 0x1)
-    bool bPassiveSkill_LifeSteal_DisplayRecoverHp;                                    // 0x0289 (size: 0x1)
-    bool bLogMapObjectFailedSpawn;                                                    // 0x028A (size: 0x1)
-    bool bShowMapObjectStatus;                                                        // 0x028B (size: 0x1)
-    bool bShowMapObjectFoliageStatus;                                                 // 0x028C (size: 0x1)
-    float ShowMapObjectStatusRange;                                                   // 0x0290 (size: 0x4)
-    bool bDisablePalFoliageComponentBeginPlay;                                        // 0x0294 (size: 0x1)
-    bool bShowMapObjectSpawnerStatus;                                                 // 0x0295 (size: 0x1)
-    bool bDisableMapObjectEffect;                                                     // 0x0296 (size: 0x1)
-    bool bDrawDetectMapObjectInDoor;                                                  // 0x0297 (size: 0x1)
-    bool bCanDamageToMapObjectFromSameGroup;                                          // 0x0298 (size: 0x1)
-    int32 MapObjectHpOverride;                                                        // 0x029C (size: 0x4)
-    float FoliageRespawnIntervalOverrideSeconds;                                      // 0x02A0 (size: 0x4)
-    bool bVisibleFoliageChunk;                                                        // 0x02A4 (size: 0x1)
-    bool bShowPalEggStatus;                                                           // 0x02A5 (size: 0x1)
-    float ShowPalEggStatusRange;                                                      // 0x02A8 (size: 0x4)
-    bool bIsHideAllHUD;                                                               // 0x02AC (size: 0x1)
-    bool bIsNowHUDHide;                                                               // 0x02AD (size: 0x1)
-    bool bForceCreateDispatchParameterByHUDService;                                   // 0x02AE (size: 0x1)
-    bool bShowDebugMapIcon;                                                           // 0x02AF (size: 0x1)
-    bool bIsHideUIForPV;                                                              // 0x02B0 (size: 0x1)
-    bool bIsCompletePaldex;                                                           // 0x02B1 (size: 0x1)
-    bool bUseFixedPositionPlayerUI;                                                   // 0x02B2 (size: 0x1)
-    bool bForceShowHPGauge;                                                           // 0x02B3 (size: 0x1)
-    bool bForceWordFilter_ACE;                                                        // 0x02B4 (size: 0x1)
-    EPalACEWordFilterAPIType ForceWordFilterAPIType_ACE;                              // 0x02B5 (size: 0x1)
-    bool bIsFixedRandomSeed;                                                          // 0x02B6 (size: 0x1)
-    int32 actionRandomSeed;                                                           // 0x02B8 (size: 0x4)
-    bool bAvailableBuildObjectInDevelop;                                              // 0x02BC (size: 0x1)
-    bool bShowBuildObjectInstallCheck;                                                // 0x02BD (size: 0x1)
-    TArray<EPalMapObjectOperationResult> IgnoreInstallErrors;                         // 0x02C0 (size: 0x10)
-    bool bDrawDebugInstallConnection;                                                 // 0x02D0 (size: 0x1)
-    bool bUseEagleForGlider;                                                          // 0x02D1 (size: 0x1)
-    bool bEquipDefaultGlider;                                                         // 0x02D2 (size: 0x1)
-    float ExtraHpRegenRateInSleepingBed;                                              // 0x02D4 (size: 0x4)
-    bool bForceDisableLamp;                                                           // 0x02D8 (size: 0x1)
-    bool bForceDisableTimerLight;                                                     // 0x02D9 (size: 0x1)
-    bool bForceDisableTickOptimization;                                               // 0x02DA (size: 0x1)
-    bool bForceDisableDamagePopup;                                                    // 0x02DB (size: 0x1)
-    bool bIsShowTickOptimizationType;                                                 // 0x02DC (size: 0x1)
-    bool bIgnoreFastTravelLock;                                                       // 0x02DD (size: 0x1)
-    TMap<EPalAudioBus, float> AudioBusVolumes;                                        // 0x02E0 (size: 0x50)
-    TMap<class EPalAudioBus, class bool> AudioBusMute;                                // 0x0330 (size: 0x50)
-    bool bIsShowPostAkEvent;                                                          // 0x0380 (size: 0x1)
-    TSubclassOf<class APalSoundDebugModel> SoundDebugModelClass;                      // 0x0388 (size: 0x8)
-    bool bIsMuteForPlayerSoundOnly;                                                   // 0x0390 (size: 0x1)
-    bool bDisplayPlaySoundId;                                                         // 0x0391 (size: 0x1)
-    bool bPlayFootStepSound;                                                          // 0x0392 (size: 0x1)
-    TArray<FName> IgnoreSoundIds;                                                     // 0x0398 (size: 0x10)
-    bool bIsSpawnFootStepEffect;                                                      // 0x03A8 (size: 0x1)
-    bool bIsDisableCameraPitchLimit;                                                  // 0x03A9 (size: 0x1)
-    bool bIsIgnoreNetworkVersionCompatible;                                           // 0x03AA (size: 0x1)
-    bool bIsUseClientOtomoSetting;                                                    // 0x03AB (size: 0x1)
-    TArray<FPalDebugOtomoPalInfo> DefaultOtomoPalForClient;                           // 0x03B0 (size: 0x10)
-    bool bIsForcedSynchronizedMapObject;                                              // 0x03C0 (size: 0x1)
-    bool bEnableCharacterCountInServer;                                               // 0x03C1 (size: 0x1)
-    bool bUseDedicatedServerOptimizeInListenServer;                                   // 0x03C2 (size: 0x1)
-    bool bIsDisableInitRandomCharacterMake;                                           // 0x03C3 (size: 0x1)
-    bool bForceSpawnTreasureBox;                                                      // 0x03C4 (size: 0x1)
-    bool bForceSpawnEnemyCamp;                                                        // 0x03C5 (size: 0x1)
-    bool bForceSpawnPalEgg;                                                           // 0x03C6 (size: 0x1)
-    bool bForceSpawnRarePal;                                                          // 0x03C7 (size: 0x1)
-    bool IgnoreAudio;                                                                 // 0x03C8 (size: 0x1)
-    bool bIsShowAudioSoundPlayer;                                                     // 0x03C9 (size: 0x1)
-    bool bForceSpawnRandomIncident;                                                   // 0x03CA (size: 0x1)
-    bool bForceDisableSpawnRandomIncident;                                            // 0x03CB (size: 0x1)
-    FString ForceSpawnRandomIncidentName;                                             // 0x03D0 (size: 0x10)
-    bool bShowRandomIncidentSpawnArea;                                                // 0x03E0 (size: 0x1)
-    bool bShowRandomIncidentEndArea;                                                  // 0x03E1 (size: 0x1)
-    bool bShowRandomIncidentExcludeArea;                                              // 0x03E2 (size: 0x1)
-    bool bInvadeSetting_Override;                                                     // 0x03E3 (size: 0x1)
-    float InvadeProbability_Override;                                                 // 0x03E4 (size: 0x4)
-    int32 InvadeOccurablePlayerLevel_Override;                                        // 0x03E8 (size: 0x4)
-    FString ForceOccurInvaderName;                                                    // 0x03F0 (size: 0x10)
-    EPalBiomeType Biome_Override;                                                     // 0x0400 (size: 0x1)
-    int32 InvadeJudgmentInterval_Minutes_Override;                                    // 0x0404 (size: 0x4)
-    int32 InvadeCollTime_Max_Minutes_Override;                                        // 0x0408 (size: 0x4)
-    int32 InvadeCollTime_Min_Minutes_Override;                                        // 0x040C (size: 0x4)
-    int32 InvadeReturnTime_Minutes_Override;                                          // 0x0410 (size: 0x4)
-    int32 InvadeStartPoint_BaseCampRadius_Min_cm_Override;                            // 0x0414 (size: 0x4)
-    int32 InvadeStartPoint_BaseCampRadius_Max_cm_Override;                            // 0x0418 (size: 0x4)
-    float VisitorNPCProbability_Override;                                             // 0x041C (size: 0x4)
-    FString ForceOccurVisitorNPCName;                                                 // 0x0420 (size: 0x10)
-    int32 VisitorNPCReturnTime_Minutes_Override;                                      // 0x0430 (size: 0x4)
-    bool bIsDisableCrossKeyQuickSwitch;                                               // 0x0434 (size: 0x1)
-    bool bIsEnableAirRolling;                                                         // 0x0435 (size: 0x1)
-    bool bIsEnablePalWarp;                                                            // 0x0436 (size: 0x1)
-    bool bDungeonDevelopFlag;                                                         // 0x0437 (size: 0x1)
-    bool bIsDisableOptionWorldLoadConfig;                                             // 0x0438 (size: 0x1)
-    bool bIsShowNightSkipLog;                                                         // 0x0439 (size: 0x1)
-    bool bIsApplyOptionWorldModePreset;                                               // 0x043A (size: 0x1)
-    bool bShowAnimRateScale;                                                          // 0x043B (size: 0x1)
-    float ShowAnimRateScaleRange;                                                     // 0x043C (size: 0x4)
-    bool bIsParallelForUpdateActiveTiles;                                             // 0x0440 (size: 0x1)
-    bool bIsDisablePlayerTeleportTimeout;                                             // 0x0441 (size: 0x1)
-    bool bUseMalePlayer;                                                              // 0x0442 (size: 0x1)
-    bool bEnableLoadingScreen;                                                        // 0x0443 (size: 0x1)
-    FPalDebugSettingOnLoadingScreenVisibilityChanged OnLoadingScreenVisibilityChanged; // 0x0448 (size: 0x10)
+    FGuid EditorServerPlayerUIdOverwrite;                                             // 0x005C (size: 0x10)
+    TMap<int32, FGuid> EditorPlayerSaveDataOverwriteMap;                              // 0x0070 (size: 0x50)
+    FString PlayerAutoSaveDataName;                                                   // 0x00C0 (size: 0x10)
+    FString WorldAutoSaveDataName;                                                    // 0x00D0 (size: 0x10)
+    bool bDontAutoSaveInMulti;                                                        // 0x00E0 (size: 0x1)
+    FName EditorSaveDirectoryName;                                                    // 0x00E4 (size: 0x8)
+    float autoSaveSpan;                                                               // 0x00EC (size: 0x4)
+    bool autoSaveEnable;                                                              // 0x00F0 (size: 0x1)
+    bool bAutoSetTruePalMainStats;                                                    // 0x00F1 (size: 0x1)
+    FPalDataTableRowName_GameProgressPreset PlayerDefaultPreset;                      // 0x00F4 (size: 0x8)
+    int32 PlayerLevel;                                                                // 0x00FC (size: 0x4)
+    int32 ForceFixLevelForWildPal;                                                    // 0x0100 (size: 0x4)
+    int32 ForceFixTalent;                                                             // 0x0104 (size: 0x4)
+    TArray<FPalDebugOtomoPalInfo> DefaultOtomoPal;                                    // 0x0108 (size: 0x10)
+    TArray<FPalDebugPalCaptureInfo> DefaultCapturePalInfos;                           // 0x0118 (size: 0x10)
+    int32 DefaultCapturePalRandomNum;                                                 // 0x0128 (size: 0x4)
+    TArray<FPalDebugItemCreateInfo> DefaultItem;                                      // 0x0130 (size: 0x10)
+    TArray<FPalDebugItemCreateInfo> DefaultLoadoutItem;                               // 0x0140 (size: 0x10)
+    int32 PlayStart_PalWorldTime;                                                     // 0x0150 (size: 0x4)
+    float DebugRate_PalWorldTime;                                                     // 0x0154 (size: 0x4)
+    bool bIgnoreOverWeightMove;                                                       // 0x0158 (size: 0x1)
+    bool bIsDisableReticleShoot;                                                      // 0x0159 (size: 0x1)
+    bool bEquipDefaultWeapon;                                                         // 0x015A (size: 0x1)
+    bool bGetAllBulletItems;                                                          // 0x015B (size: 0x1)
+    bool bIgnoreItemDurabilityDecrease;                                               // 0x015C (size: 0x1)
+    bool bNotConsumeMaterialsInRepair;                                                // 0x015D (size: 0x1)
+    bool bIgnoreDamageCheckByServer;                                                  // 0x015E (size: 0x1)
+    bool bIsMutekiALL;                                                                // 0x015F (size: 0x1)
+    bool bIsMutekiForPlayer;                                                          // 0x0160 (size: 0x1)
+    bool bIsMutekiForFriend;                                                          // 0x0161 (size: 0x1)
+    bool bDisableDeathPenalty;                                                        // 0x0162 (size: 0x1)
+    bool bIgnoreRespawnTimer;                                                         // 0x0163 (size: 0x1)
+    bool bIsDisableDyingCountdown;                                                    // 0x0164 (size: 0x1)
+    bool bIsFixedSP;                                                                  // 0x0165 (size: 0x1)
+    bool bDisiablePlayerShield;                                                       // 0x0166 (size: 0x1)
+    bool bIsFullPowerForPlayer;                                                       // 0x0167 (size: 0x1)
+    bool bIsCaptureSuccessAlways;                                                     // 0x0168 (size: 0x1)
+    bool bIsCaptureFailAlways_BounceBall;                                             // 0x0169 (size: 0x1)
+    bool bIsShowActionName;                                                           // 0x016A (size: 0x1)
+    bool bIsShowCharacterStatus;                                                      // 0x016B (size: 0x1)
+    bool bIsShowCharacterTickInfo;                                                    // 0x016C (size: 0x1)
+    bool bIsWazaCoolTimeFast;                                                         // 0x016D (size: 0x1)
+    bool bIsShowUseRootMotion;                                                        // 0x016E (size: 0x1)
+    bool bIsEnableClimbing;                                                           // 0x016F (size: 0x1)
+    bool bIsDisableFallDamage;                                                        // 0x0170 (size: 0x1)
+    bool bIsShowPlayerFallHeight;                                                     // 0x0171 (size: 0x1)
+    bool bIsShowGroundObjectName;                                                     // 0x0172 (size: 0x1)
+    bool bIsShowForwardObjectName;                                                    // 0x0173 (size: 0x1)
+    bool bDisableStatus_Darkness;                                                     // 0x0174 (size: 0x1)
+    bool bIsIgnoreBuildRestrictionBaseCamp;                                           // 0x0175 (size: 0x1)
+    EPalMovementSpeedType ConfirmTransportItemBaseSpeedType;                          // 0x0176 (size: 0x1)
+    float ConfirmTransportItemSpeedMultipleRate;                                      // 0x0178 (size: 0x4)
+    bool bNotConsumeMaterialsInBuild;                                                 // 0x017C (size: 0x1)
+    float BuildRequiredWorkAmount;                                                    // 0x0180 (size: 0x4)
+    bool bIsDisableEnemyEyeSight;                                                     // 0x0184 (size: 0x1)
+    bool bIsEnableNPCDrawRaycastDebug;                                                // 0x0185 (size: 0x1)
+    bool bIsHideScreenMessage;                                                        // 0x0186 (size: 0x1)
+    bool bIsHungerDisable;                                                            // 0x0187 (size: 0x1)
+    bool bIsAllRecipeUnlock;                                                          // 0x0188 (size: 0x1)
+    bool bNotDecreaseWeaponItem;                                                      // 0x0189 (size: 0x1)
+    bool bNotRequiredBulletWhenReload;                                                // 0x018A (size: 0x1)
+    bool bShowReticleLocation;                                                        // 0x018B (size: 0x1)
+    bool bShowAutoAimInfo;                                                            // 0x018C (size: 0x1)
+    bool bIsEnableMouseAutoAim;                                                       // 0x018D (size: 0x1)
+    float MouseSensitivityRate;                                                       // 0x0190 (size: 0x4)
+    int32 CaptureFPS;                                                                 // 0x0194 (size: 0x4)
+    bool bIsDisableDropItem;                                                          // 0x0198 (size: 0x1)
+    bool bShowDropItemHitEvent;                                                       // 0x0199 (size: 0x1)
+    bool bPrintLogGroupsWhenGroupOperated;                                            // 0x019A (size: 0x1)
+    bool bIsSoundRangeVisual;                                                         // 0x019B (size: 0x1)
+    bool bIsToggleHUDWhenEject;                                                       // 0x019C (size: 0x1)
+    bool bIsLookAtDisable;                                                            // 0x019D (size: 0x1)
+    bool bPalBoxInLevelBelongingToServerPlayer;                                       // 0x019E (size: 0x1)
+    bool bCreateGameInstanceViewActor;                                                // 0x019F (size: 0x1)
+    bool bIsFixedLightingControllerTime;                                              // 0x01A0 (size: 0x1)
+    float LightingControllerTimeIfFixed;                                              // 0x01A4 (size: 0x4)
+    bool bIsShowFloorLocation;                                                        // 0x01A8 (size: 0x1)
+    bool bIsShowGroundTilt;                                                           // 0x01A9 (size: 0x1)
+    bool bIsDisableShiftKey;                                                          // 0x01AA (size: 0x1)
+    bool IsSpawnAlwaysFromSpawner;                                                    // 0x01AB (size: 0x1)
+    bool IsDisableSpawner;                                                            // 0x01AC (size: 0x1)
+    bool bIsEnableRandomizeSpawner;                                                   // 0x01AD (size: 0x1)
+    float OverrideSpawnRadius;                                                        // 0x01B0 (size: 0x4)
+    float OverrideDespawnRadius;                                                      // 0x01B4 (size: 0x4)
+    bool bIsPlayerCompleteSTEALTH;                                                    // 0x01B8 (size: 0x1)
+    bool bIsShowEnemyHate;                                                            // 0x01B9 (size: 0x1)
+    bool bIsShowEnemyHateArrow;                                                       // 0x01BA (size: 0x1)
+    bool bIsShowTargetLocalPlayerList;                                                // 0x01BB (size: 0x1)
+    bool bIsShowMovementMode;                                                         // 0x01BC (size: 0x1)
+    bool bIsShowOrganization;                                                         // 0x01BD (size: 0x1)
+    bool bCanAccessToOtherGuildMapObject;                                             // 0x01BE (size: 0x1)
+    int32 ExpireGuildEnterRequestLogInfoMinutes;                                      // 0x01C0 (size: 0x4)
+    bool bFirstBuildPalBox;                                                           // 0x01C4 (size: 0x1)
+    float WorkExtraRate;                                                              // 0x01C8 (size: 0x4)
+    bool bIsDisableFootIK;                                                            // 0x01CC (size: 0x1)
+    bool bBuildInstallCheckLookToCamera;                                              // 0x01CD (size: 0x1)
+    bool bBuildFXDebugLog;                                                            // 0x01CE (size: 0x1)
+    bool bDamageTextStack;                                                            // 0x01CF (size: 0x1)
+    bool bFootStepNotify_DebugDisplay;                                                // 0x01D0 (size: 0x1)
+    bool bSkipBossCutscene;                                                           // 0x01D1 (size: 0x1)
+    bool bShowRangeDistributeExpAround;                                               // 0x01D2 (size: 0x1)
+    bool bNotDropOtomoAtPlayerDeath;                                                  // 0x01D3 (size: 0x1)
+    bool bNotDropItemsAtPlayerDeath;                                                  // 0x01D4 (size: 0x1)
+    bool bEnableDebugMoveSpeed;                                                       // 0x01D5 (size: 0x1)
+    bool bForceToggleDash;                                                            // 0x01D6 (size: 0x1)
+    bool bDebugAutoRun;                                                               // 0x01D7 (size: 0x1)
+    bool bDrawPlayerInDoor;                                                           // 0x01D8 (size: 0x1)
+    int32 PlayerPalStoragePage;                                                       // 0x01DC (size: 0x4)
+    bool ShowPlayerMoveSpeed;                                                         // 0x01E0 (size: 0x1)
+    bool bSwimming_DebugDisplay;                                                      // 0x01E1 (size: 0x1)
+    bool bSwimming_NoDecreaseSP;                                                      // 0x01E2 (size: 0x1)
+    bool bPartnerSkill_DebugDisplay;                                                  // 0x01E3 (size: 0x1)
+    bool bPartnerSkill_NoDecrease;                                                    // 0x01E4 (size: 0x1)
+    float PartnerSkill_CooldownSpeedRate;                                             // 0x01E8 (size: 0x4)
+    bool PartnerSkill_IgnoreRestrictedByItems;                                        // 0x01EC (size: 0x1)
+    bool bNotConsumeMaterialsInCraft;                                                 // 0x01ED (size: 0x1)
+    bool bSelectableRecipeWhenNothingMaterials;                                       // 0x01EE (size: 0x1)
+    bool bIgnoreWorkableElementType;                                                  // 0x01EF (size: 0x1)
+    bool bIgnoreWorkableGenusCategories;                                              // 0x01F0 (size: 0x1)
+    bool bShowDebugWorkAssign;                                                        // 0x01F1 (size: 0x1)
+    bool bShowDebugWorkAssignTarget;                                                  // 0x01F2 (size: 0x1)
+    bool bForceRunInWork;                                                             // 0x01F3 (size: 0x1)
+    bool bContinueSpeedInTransportWork;                                               // 0x01F4 (size: 0x1)
+    bool bNotInterruptTransportingWork;                                               // 0x01F5 (size: 0x1)
+    bool bPrintLogWorkerEventDetail;                                                  // 0x01F6 (size: 0x1)
+    float BaseCampWorkerEventTriggerInterval;                                         // 0x01F8 (size: 0x4)
+    bool IgnoreBaseCampTask;                                                          // 0x01FC (size: 0x1)
+    bool bBaseCampSpawnLevelMax;                                                      // 0x01FD (size: 0x1)
+    bool bBaseCampWorkerSanityDetail;                                                 // 0x01FE (size: 0x1)
+    float BaseCampWorkerEatTime;                                                      // 0x0200 (size: 0x4)
+    bool bBaseCampShowCannotTransportTarget;                                          // 0x0204 (size: 0x1)
+    FPalArrowSettings BaseCampCannotTransportTargetArrowSettings;                     // 0x0208 (size: 0xC)
+    bool bBaseCampMoveModeTeleportForce;                                              // 0x0214 (size: 0x1)
+    bool bShowBaseCampSquaredDistanceFromPlayer;                                      // 0x0215 (size: 0x1)
+    bool bVisibleSpawnPointFromPalBox;                                                // 0x0216 (size: 0x1)
+    int32 fallBackDefense;                                                            // 0x0218 (size: 0x4)
+    bool bDebugLogWorldSecurity;                                                      // 0x021C (size: 0x1)
+    bool bDebugLogEnableCriminal;                                                     // 0x021D (size: 0x1)
+    bool bDebugLogEnableWanted;                                                       // 0x021E (size: 0x1)
+    bool bDebugLogEnableCriminalPlayer;                                               // 0x021F (size: 0x1)
+    bool bShowDebugWantedSpawnerSphere;                                               // 0x0220 (size: 0x1)
+    bool bTransportGrantedMonsterToPalBox;                                            // 0x0221 (size: 0x1)
+    bool bInvaderDisable;                                                             // 0x0222 (size: 0x1)
+    float DebugSpawnWildPal_DistanceFromPlayer;                                       // 0x0224 (size: 0x4)
+    EPalStatusID DebugAddStatus;                                                      // 0x0228 (size: 0x1)
+    bool bIsDisplayDebug_PassiveSkill;                                                // 0x0229 (size: 0x1)
+    bool bShowPassiveSkillStatus;                                                     // 0x022A (size: 0x1)
+    float ShowPassiveSkillStatusRange;                                                // 0x022C (size: 0x4)
+    bool bIgnorePalPassiveSkill;                                                      // 0x0230 (size: 0x1)
+    TArray<FPalDataTableRowName_PassiveSkillData> PalPassiveSkillOverride;            // 0x0238 (size: 0x10)
+    bool bGrantPassiveSkillAlways;                                                    // 0x0248 (size: 0x1)
+    TMap<class FPalDataTableRowName_PalMonsterData, class FPalDebugAttachPassiveSkillInfo> PassiveSkill_AttachSkill; // 0x0250 (size: 0x50)
+    bool bPassiveSkill_CollectItem_10Sec;                                             // 0x02A0 (size: 0x1)
+    bool bPassiveSkill_LifeSteal_DisplayRecoverHp;                                    // 0x02A1 (size: 0x1)
+    bool bLogMapObjectFailedSpawn;                                                    // 0x02A2 (size: 0x1)
+    bool bShowMapObjectStatus;                                                        // 0x02A3 (size: 0x1)
+    bool bShowMapObjectFoliageStatus;                                                 // 0x02A4 (size: 0x1)
+    float ShowMapObjectStatusRange;                                                   // 0x02A8 (size: 0x4)
+    bool bDisablePalFoliageComponentBeginPlay;                                        // 0x02AC (size: 0x1)
+    bool bShowMapObjectSpawnerStatus;                                                 // 0x02AD (size: 0x1)
+    bool bDisableMapObjectEffect;                                                     // 0x02AE (size: 0x1)
+    bool bDrawDetectMapObjectInDoor;                                                  // 0x02AF (size: 0x1)
+    bool bCanDamageToMapObjectFromSameGroup;                                          // 0x02B0 (size: 0x1)
+    int32 MapObjectHpOverride;                                                        // 0x02B4 (size: 0x4)
+    float FoliageRespawnIntervalOverrideSeconds;                                      // 0x02B8 (size: 0x4)
+    bool bVisibleFoliageChunk;                                                        // 0x02BC (size: 0x1)
+    bool bShowPalEggStatus;                                                           // 0x02BD (size: 0x1)
+    float ShowPalEggStatusRange;                                                      // 0x02C0 (size: 0x4)
+    bool bIsHideAllHUD;                                                               // 0x02C4 (size: 0x1)
+    bool bIsNowHUDHide;                                                               // 0x02C5 (size: 0x1)
+    bool bForceCreateDispatchParameterByHUDService;                                   // 0x02C6 (size: 0x1)
+    bool bShowDebugMapIcon;                                                           // 0x02C7 (size: 0x1)
+    bool bIsHideUIForPV;                                                              // 0x02C8 (size: 0x1)
+    bool bIsCompletePaldex;                                                           // 0x02C9 (size: 0x1)
+    bool bUseFixedPositionPlayerUI;                                                   // 0x02CA (size: 0x1)
+    bool bForceShowHPGauge;                                                           // 0x02CB (size: 0x1)
+    bool bForceWordFilter_ACE;                                                        // 0x02CC (size: 0x1)
+    EPalACEWordFilterAPIType ForceWordFilterAPIType_ACE;                              // 0x02CD (size: 0x1)
+    bool bIsFixedRandomSeed;                                                          // 0x02CE (size: 0x1)
+    int32 actionRandomSeed;                                                           // 0x02D0 (size: 0x4)
+    bool bAvailableBuildObjectInDevelop;                                              // 0x02D4 (size: 0x1)
+    bool bShowBuildObjectInstallCheck;                                                // 0x02D5 (size: 0x1)
+    TArray<EPalMapObjectOperationResult> IgnoreInstallErrors;                         // 0x02D8 (size: 0x10)
+    bool bDrawDebugInstallConnection;                                                 // 0x02E8 (size: 0x1)
+    bool bUseEagleForGlider;                                                          // 0x02E9 (size: 0x1)
+    bool bEquipDefaultGlider;                                                         // 0x02EA (size: 0x1)
+    float ExtraHpRegenRateInSleepingBed;                                              // 0x02EC (size: 0x4)
+    bool bForceDisableLamp;                                                           // 0x02F0 (size: 0x1)
+    bool bForceDisableTimerLight;                                                     // 0x02F1 (size: 0x1)
+    bool bForceDisableTickOptimization;                                               // 0x02F2 (size: 0x1)
+    bool bForceDisableDamagePopup;                                                    // 0x02F3 (size: 0x1)
+    bool bIsShowTickOptimizationType;                                                 // 0x02F4 (size: 0x1)
+    bool bIgnoreFastTravelLock;                                                       // 0x02F5 (size: 0x1)
+    TMap<EPalAudioBus, float> AudioBusVolumes;                                        // 0x02F8 (size: 0x50)
+    TMap<class EPalAudioBus, class bool> AudioBusMute;                                // 0x0348 (size: 0x50)
+    bool bIsShowPostAkEvent;                                                          // 0x0398 (size: 0x1)
+    TSubclassOf<class APalSoundDebugModel> SoundDebugModelClass;                      // 0x03A0 (size: 0x8)
+    bool bIsMuteForPlayerSoundOnly;                                                   // 0x03A8 (size: 0x1)
+    bool bDisplayPlaySoundId;                                                         // 0x03A9 (size: 0x1)
+    bool bPlayFootStepSound;                                                          // 0x03AA (size: 0x1)
+    TArray<FName> IgnoreSoundIds;                                                     // 0x03B0 (size: 0x10)
+    bool bIsSpawnFootStepEffect;                                                      // 0x03C0 (size: 0x1)
+    bool bIsDisableCameraPitchLimit;                                                  // 0x03C1 (size: 0x1)
+    bool bIsIgnoreNetworkVersionCompatible;                                           // 0x03C2 (size: 0x1)
+    bool bIsUseClientOtomoSetting;                                                    // 0x03C3 (size: 0x1)
+    TArray<FPalDebugOtomoPalInfo> DefaultOtomoPalForClient;                           // 0x03C8 (size: 0x10)
+    bool bIsForcedSynchronizedMapObject;                                              // 0x03D8 (size: 0x1)
+    bool bEnableCharacterCountInServer;                                               // 0x03D9 (size: 0x1)
+    bool bUseDedicatedServerOptimizeInListenServer;                                   // 0x03DA (size: 0x1)
+    bool bIsDisableInitRandomCharacterMake;                                           // 0x03DB (size: 0x1)
+    bool bForceSpawnTreasureBox;                                                      // 0x03DC (size: 0x1)
+    bool bForceSpawnEnemyCamp;                                                        // 0x03DD (size: 0x1)
+    bool bForceSpawnPalEgg;                                                           // 0x03DE (size: 0x1)
+    bool bForceSpawnRarePal;                                                          // 0x03DF (size: 0x1)
+    bool IgnoreAudio;                                                                 // 0x03E0 (size: 0x1)
+    bool bIsShowAudioSoundPlayer;                                                     // 0x03E1 (size: 0x1)
+    bool bForceSpawnRandomIncident;                                                   // 0x03E2 (size: 0x1)
+    bool bForceDisableSpawnRandomIncident;                                            // 0x03E3 (size: 0x1)
+    FString ForceSpawnRandomIncidentName;                                             // 0x03E8 (size: 0x10)
+    bool bShowRandomIncidentSpawnArea;                                                // 0x03F8 (size: 0x1)
+    bool bShowRandomIncidentEndArea;                                                  // 0x03F9 (size: 0x1)
+    bool bShowRandomIncidentExcludeArea;                                              // 0x03FA (size: 0x1)
+    bool bInvadeSetting_Override;                                                     // 0x03FB (size: 0x1)
+    float InvadeProbability_Override;                                                 // 0x03FC (size: 0x4)
+    int32 InvadeOccurablePlayerLevel_Override;                                        // 0x0400 (size: 0x4)
+    FString ForceOccurInvaderName;                                                    // 0x0408 (size: 0x10)
+    EPalBiomeType Biome_Override;                                                     // 0x0418 (size: 0x1)
+    int32 InvadeJudgmentInterval_Minutes_Override;                                    // 0x041C (size: 0x4)
+    int32 InvadeCollTime_Max_Minutes_Override;                                        // 0x0420 (size: 0x4)
+    int32 InvadeCollTime_Min_Minutes_Override;                                        // 0x0424 (size: 0x4)
+    int32 InvadeReturnTime_Minutes_Override;                                          // 0x0428 (size: 0x4)
+    int32 InvadeStartPoint_BaseCampRadius_Min_cm_Override;                            // 0x042C (size: 0x4)
+    int32 InvadeStartPoint_BaseCampRadius_Max_cm_Override;                            // 0x0430 (size: 0x4)
+    float VisitorNPCProbability_Override;                                             // 0x0434 (size: 0x4)
+    FString ForceOccurVisitorNPCName;                                                 // 0x0438 (size: 0x10)
+    int32 VisitorNPCReturnTime_Minutes_Override;                                      // 0x0448 (size: 0x4)
+    bool bIsDisableCrossKeyQuickSwitch;                                               // 0x044C (size: 0x1)
+    bool bIsEnableAirRolling;                                                         // 0x044D (size: 0x1)
+    bool bIsEnablePalWarp;                                                            // 0x044E (size: 0x1)
+    bool bDungeonDevelopFlag;                                                         // 0x044F (size: 0x1)
+    bool bIsDisableOptionWorldLoadConfig;                                             // 0x0450 (size: 0x1)
+    bool bIsShowNightSkipLog;                                                         // 0x0451 (size: 0x1)
+    bool bIsApplyOptionWorldModePreset;                                               // 0x0452 (size: 0x1)
+    bool bShowAnimRateScale;                                                          // 0x0453 (size: 0x1)
+    float ShowAnimRateScaleRange;                                                     // 0x0454 (size: 0x4)
+    bool bIsParallelForUpdateActiveTiles;                                             // 0x0458 (size: 0x1)
+    bool bIsDisablePlayerTeleportTimeout;                                             // 0x0459 (size: 0x1)
+    bool bUseMalePlayer;                                                              // 0x045A (size: 0x1)
+    bool bEnableLoadingScreen;                                                        // 0x045B (size: 0x1)
+    FPalDebugSettingOnLoadingScreenVisibilityChanged OnLoadingScreenVisibilityChanged; // 0x0460 (size: 0x10)
     void OnLoadingScreenVisibilityChangedDelegate(bool Visible);
-    bool bIsSkipCharacterMake;                                                        // 0x0458 (size: 0x1)
-    bool bDrawHitCollision;                                                           // 0x0459 (size: 0x1)
-    bool bDisableGrapplingCoolDown;                                                   // 0x045A (size: 0x1)
-    bool bDrawGrapplingLine;                                                          // 0x045B (size: 0x1)
-    bool bDrawGrapplingHitPoint;                                                      // 0x045C (size: 0x1)
-    bool bDrawAmbientSoundLinePlayLocation;                                           // 0x045D (size: 0x1)
-    bool bDrawAmbientSoundActivateTrigger;                                            // 0x045E (size: 0x1)
-    bool bDrawDefenseAttackableRange;                                                 // 0x045F (size: 0x1)
-    bool bShowDefenseAttackTarget;                                                    // 0x0460 (size: 0x1)
-    float ShowDefenseRange;                                                           // 0x0464 (size: 0x4)
-    float WorldPartitionLoadCheckRange;                                               // 0x0468 (size: 0x4)
-    bool WorldPartitionLoadActivatedCheck;                                            // 0x046C (size: 0x1)
-    bool bDisableInteractRecicleTarget;                                               // 0x046D (size: 0x1)
-    bool bShowStageDeathPenaltyLocation;                                              // 0x046E (size: 0x1)
-    bool bForceLocationTeleport;                                                      // 0x046F (size: 0x1)
-    bool bShowInvaderDeubgLog;                                                        // 0x0470 (size: 0x1)
-    bool bForceToggleInteract;                                                        // 0x0471 (size: 0x1)
-    bool bShowInteractPoints;                                                         // 0x0472 (size: 0x1)
+    bool bIsSkipCharacterMake;                                                        // 0x0470 (size: 0x1)
+    bool bDrawHitCollision;                                                           // 0x0471 (size: 0x1)
+    bool bDisableGrapplingCoolDown;                                                   // 0x0472 (size: 0x1)
+    bool bDrawGrapplingLine;                                                          // 0x0473 (size: 0x1)
+    bool bDrawGrapplingHitPoint;                                                      // 0x0474 (size: 0x1)
+    bool bDrawAmbientSoundLinePlayLocation;                                           // 0x0475 (size: 0x1)
+    bool bDrawAmbientSoundActivateTrigger;                                            // 0x0476 (size: 0x1)
+    bool bDrawDefenseAttackableRange;                                                 // 0x0477 (size: 0x1)
+    bool bShowDefenseAttackTarget;                                                    // 0x0478 (size: 0x1)
+    float ShowDefenseRange;                                                           // 0x047C (size: 0x4)
+    bool bDisableInteractRecicleTarget;                                               // 0x0480 (size: 0x1)
+    bool bShowStageDeathPenaltyLocation;                                              // 0x0481 (size: 0x1)
+    bool bForceLocationTeleport;                                                      // 0x0482 (size: 0x1)
+    bool bShowInvaderDebugLog;                                                        // 0x0483 (size: 0x1)
+    bool bShowStreamingLevel;                                                         // 0x0484 (size: 0x1)
+    bool bShowInteractPoints;                                                         // 0x0485 (size: 0x1)
+    bool bEnableArenaTest;                                                            // 0x0486 (size: 0x1)
 
-}; // Size: 0x478
+}; // Size: 0x488
 
 class UPalDebugWindowSetting : public UDataAsset
 {
@@ -11188,6 +11670,7 @@ class UPalDefine : public UBlueprintFunctionLibrary
     FName Socket_EquipWeapon1();
     FName Socket_BulletMuzzle();
     FName Socket_BodyCenter();
+    FName Socket_AimTarget();
     FName NP_PlayerCenterPosition();
     FName MS_HumanHeadName();
     FName MS_HumanHairName();
@@ -11246,12 +11729,10 @@ class UPalDialogParameterDialog : public UPalDialogParameterBase
 
 class UPalDialogParameter_RequestJoinGuild : public UPalDialogParameterDialog
 {
-    FGuid RequestPlayerUId;                                                           // 0x0088 (size: 0x10)
-    FPalInstanceID RequestPlayerInstanceId;                                           // 0x0098 (size: 0x30)
-    FGuid TargetPlayerUId;                                                            // 0x00C8 (size: 0x10)
-    FPalInstanceID TargetPlayerInstanceId;                                            // 0x00D8 (size: 0x30)
+    FGuid TargetPlayerUId;                                                            // 0x0088 (size: 0x10)
+    FPalInstanceID TargetPlayerInstanceId;                                            // 0x0098 (size: 0x30)
 
-}; // Size: 0x108
+}; // Size: 0xC8
 
 class UPalDialogParameter_RequestMapObjectDismantle : public UPalDialogParameterDialog
 {
@@ -11390,9 +11871,9 @@ class UPalDynamicItemWorldSubsystem : public UPalWorldSubsystem
 class UPalDynamicPalEggItemDataBase : public UPalDynamicItemDataBase
 {
     FName CharacterID;                                                                // 0x0068 (size: 0x8)
-    FPalIndividualCharacterSaveParameter SaveParameter;                               // 0x0070 (size: 0x218)
+    FPalIndividualCharacterSaveParameter SaveParameter;                               // 0x0070 (size: 0x280)
 
-}; // Size: 0x288
+}; // Size: 0x2F0
 
 class UPalDynamicWeaponItemDataBase : public UPalDynamicItemDataBase
 {
@@ -11534,6 +12015,7 @@ class UPalExpDatabase : public UObject
     int32 GetDropExp(int32 Level, FName RowName);
     void DistributionExpValue_forPlayerParty_Server(int32 ExpValue, TArray<class APalPlayerCharacter*> GiftPlayerList, bool isCallDelegate);
     int32 CalcPaldexBonusExp(const FName CharacterID, int32 CaptureCount, class APalPlayerState* captureOwnerState);
+    int32 CalcNeedLevelUpExp(int32 TotalEXP, bool IsPlayer);
     int32 CalcLevelFromTotalExp(int32 TotalEXP, bool IsPlayer);
     void AddExpValue_forPlayerParty_Server(int32 ExpValue, TArray<class APalPlayerCharacter*> GiftPlayerList, bool isCallDelegate);
     void AddExp_forPlayerParty_TowerBoss(class UPalIndividualCharacterHandle* DeadEnemyHandle, TArray<class APalPlayerCharacter*> GiftPlayerList, bool isCallDelegate);
@@ -11590,11 +12072,15 @@ class UPalFlyMeshHeightCtrlComponent : public UActorComponent
     bool bIsHighFlingCache;                                                           // 0x00B5 (size: 0x1)
     class USkeletalMeshComponent* SK;                                                 // 0x00B8 (size: 0x8)
 
+    void ToLand_All(float Duration);
     void ToLand(float Duration);
+    void ToFly_All(float Duration);
     void ToFly(float Duration);
     void SetupMesh();
+    void OnUpdatePlayerHp(FFixedPoint64 nowHP, FFixedPoint64 nowMaxHP);
     void OnRep_bIsHighFling();
     void OnInitializedCharacter(class APalCharacter* OwnerCharacter);
+    void OnDead(FPalDeadInfo Info);
     void OnChangeBattleMode(bool bIsBattleMode);
     bool IsFlying();
     void HighFlingEnd_Server();
@@ -11602,7 +12088,7 @@ class UPalFlyMeshHeightCtrlComponent : public UActorComponent
     void HighFlingEnd();
     float GetDefaultMeshLocationZ();
     void Debug_ForceHighFlingEnd();
-}; // Size: 0xE0
+}; // Size: 0xE8
 
 class UPalFoliageDamageReactionComponent : public UActorComponent
 {
@@ -11782,59 +12268,61 @@ class UPalGameInstance : public UGameInstance
     class UPalWazaDatabase* WazaDatabase;                                             // 0x0448 (size: 0x8)
     TSubclassOf<class UPalBattleManager> BattleManagerClass;                          // 0x0450 (size: 0x8)
     TSubclassOf<class UPalBossBattleManager> BossBattleManagerClass;                  // 0x0458 (size: 0x8)
-    TSubclassOf<class UPalPlayerDataStorage> PlayerDataStorageClass;                  // 0x0460 (size: 0x8)
-    class UPalPlayerDataStorage* PlayerDataStorage;                                   // 0x0468 (size: 0x8)
-    TSubclassOf<class UPalHUDService> HUDServiceClass;                                // 0x0470 (size: 0x8)
-    class UPalHUDService* HUDService;                                                 // 0x0478 (size: 0x8)
-    TSubclassOf<class UPalExpDatabase> ExpDatabaseClass;                              // 0x0480 (size: 0x8)
-    class UPalExpDatabase* ExpDatabase;                                               // 0x0488 (size: 0x8)
-    TSubclassOf<class UPalDatabaseCharacterParameter> DatabaseCharacterParameterClass; // 0x0490 (size: 0x8)
-    class UPalDatabaseCharacterParameter* DatabaseCharacterParameter;                 // 0x0498 (size: 0x8)
-    TSubclassOf<class UPalAssetStreamableManager> AssetStreamableManagerClass;        // 0x04A0 (size: 0x8)
-    class UPalAssetStreamableManager* AssetStreamableManager;                         // 0x04A8 (size: 0x8)
-    TSubclassOf<class UPalPassiveSkillManager> PassiveSkillManagerClass;              // 0x04B0 (size: 0x8)
-    class UPalPassiveSkillManager* PassiveSkillManager;                               // 0x04B8 (size: 0x8)
-    TSubclassOf<class UPalDataTableRowIdMapper> DataTableRowIdMapperClass;            // 0x04C0 (size: 0x8)
-    class UPalDataTableRowIdMapper* DataTableRowIdMapper;                             // 0x04C8 (size: 0x8)
-    TSubclassOf<class UPalDeadBodyManager> DeadBodyManagerClass;                      // 0x04D0 (size: 0x8)
-    class UPalDeadBodyManager* DeadBodyManager;                                       // 0x04D8 (size: 0x8)
-    TSubclassOf<class UPalBulletCreator> BulletCreatorClass;                          // 0x04E0 (size: 0x8)
-    class UPalBulletCreator* BulletCreator;                                           // 0x04E8 (size: 0x8)
-    TSubclassOf<class UPalPlayerManager> PlayerManagerClass;                          // 0x04F0 (size: 0x8)
-    TSubclassOf<class UPalSaveGameManager> SaveGameManagerClass;                      // 0x04F8 (size: 0x8)
-    class UPalSaveGameManager* SaveGameManager;                                       // 0x0500 (size: 0x8)
-    TSubclassOf<class UPalVisualEffectDataBase> VisualEffectDataBaseClass;            // 0x0508 (size: 0x8)
-    class UPalVisualEffectDataBase* VisualEffectDataBase;                             // 0x0510 (size: 0x8)
-    TSubclassOf<class UPalEventNotifySystem> EventNotifySystemClass;                  // 0x0518 (size: 0x8)
-    TSubclassOf<class UPalWorldSecuritySystem> WorldSecuritySystemClass;              // 0x0520 (size: 0x8)
-    TSubclassOf<class UPalLocationManager> LocationManagerClass;                      // 0x0528 (size: 0x8)
-    TSubclassOf<class UPalNPCManager> NPCManagerClass;                                // 0x0530 (size: 0x8)
-    class UPalNPCManager* NPCManager;                                                 // 0x0538 (size: 0x8)
-    TSubclassOf<class UPalDeathPenaltyManager> DeathPenaltyManagerClass;              // 0x0540 (size: 0x8)
-    class UPalDeathPenaltyManager* DeathPenaltyManager;                               // 0x0548 (size: 0x8)
-    TSubclassOf<class UPalCoopSkillSearchSystem> CoopSkillSearchSystemClass;          // 0x0550 (size: 0x8)
-    class UPalCoopSkillSearchSystem* CoopSkillSearchSystem;                           // 0x0558 (size: 0x8)
-    TSubclassOf<class UPalCharacterImportanceManager> CharacterImportanceManagerClass; // 0x0560 (size: 0x8)
-    class UPalCharacterImportanceManager* CharacterImportanceManager;                 // 0x0568 (size: 0x8)
-    TSubclassOf<class UPalAudioSettingSystem> AudioSettingClass;                      // 0x0570 (size: 0x8)
-    class UPalAudioSettingSystem* AudioSettingSystem;                                 // 0x0578 (size: 0x8)
-    TSubclassOf<class UPalCharacterParameterStorageSubsystem> CharacterParameterStorageSubsystemClass; // 0x0580 (size: 0x8)
-    TSubclassOf<class UPalTutorialManager> TutorialManagerClass;                      // 0x0588 (size: 0x8)
-    TSubclassOf<class UPalObjectCollector> ObjectCollectorClass;                      // 0x0590 (size: 0x8)
-    TSubclassOf<class UPalActionDummyTargetManager> ActionDummyTargetManager;         // 0x0598 (size: 0x8)
-    TSubclassOf<class UPalLogManager> LogManagerClass;                                // 0x05A0 (size: 0x8)
-    int32 revisionNum;                                                                // 0x05A8 (size: 0x4)
-    FPalGameInstanceFxiedCharacterMakeDataDelegate FxiedCharacterMakeDataDelegate;    // 0x05B0 (size: 0x10)
+    TSubclassOf<class UPalRaidBossManager> RaidBossManagerClass;                      // 0x0460 (size: 0x8)
+    TSubclassOf<class UPalOilrigManager> OilrigManagerClass;                          // 0x0468 (size: 0x8)
+    TSubclassOf<class UPalPlayerDataStorage> PlayerDataStorageClass;                  // 0x0470 (size: 0x8)
+    class UPalPlayerDataStorage* PlayerDataStorage;                                   // 0x0478 (size: 0x8)
+    TSubclassOf<class UPalHUDService> HUDServiceClass;                                // 0x0480 (size: 0x8)
+    class UPalHUDService* HUDService;                                                 // 0x0488 (size: 0x8)
+    TSubclassOf<class UPalExpDatabase> ExpDatabaseClass;                              // 0x0490 (size: 0x8)
+    class UPalExpDatabase* ExpDatabase;                                               // 0x0498 (size: 0x8)
+    TSubclassOf<class UPalDatabaseCharacterParameter> DatabaseCharacterParameterClass; // 0x04A0 (size: 0x8)
+    class UPalDatabaseCharacterParameter* DatabaseCharacterParameter;                 // 0x04A8 (size: 0x8)
+    TSubclassOf<class UPalAssetStreamableManager> AssetStreamableManagerClass;        // 0x04B0 (size: 0x8)
+    class UPalAssetStreamableManager* AssetStreamableManager;                         // 0x04B8 (size: 0x8)
+    TSubclassOf<class UPalPassiveSkillManager> PassiveSkillManagerClass;              // 0x04C0 (size: 0x8)
+    class UPalPassiveSkillManager* PassiveSkillManager;                               // 0x04C8 (size: 0x8)
+    TSubclassOf<class UPalDataTableRowIdMapper> DataTableRowIdMapperClass;            // 0x04D0 (size: 0x8)
+    class UPalDataTableRowIdMapper* DataTableRowIdMapper;                             // 0x04D8 (size: 0x8)
+    TSubclassOf<class UPalDeadBodyManager> DeadBodyManagerClass;                      // 0x04E0 (size: 0x8)
+    class UPalDeadBodyManager* DeadBodyManager;                                       // 0x04E8 (size: 0x8)
+    TSubclassOf<class UPalBulletCreator> BulletCreatorClass;                          // 0x04F0 (size: 0x8)
+    class UPalBulletCreator* BulletCreator;                                           // 0x04F8 (size: 0x8)
+    TSubclassOf<class UPalPlayerManager> PlayerManagerClass;                          // 0x0500 (size: 0x8)
+    TSubclassOf<class UPalSaveGameManager> SaveGameManagerClass;                      // 0x0508 (size: 0x8)
+    class UPalSaveGameManager* SaveGameManager;                                       // 0x0510 (size: 0x8)
+    TSubclassOf<class UPalVisualEffectDataBase> VisualEffectDataBaseClass;            // 0x0518 (size: 0x8)
+    class UPalVisualEffectDataBase* VisualEffectDataBase;                             // 0x0520 (size: 0x8)
+    TSubclassOf<class UPalEventNotifySystem> EventNotifySystemClass;                  // 0x0528 (size: 0x8)
+    TSubclassOf<class UPalWorldSecuritySystem> WorldSecuritySystemClass;              // 0x0530 (size: 0x8)
+    TSubclassOf<class UPalLocationManager> LocationManagerClass;                      // 0x0538 (size: 0x8)
+    TSubclassOf<class UPalNPCManager> NPCManagerClass;                                // 0x0540 (size: 0x8)
+    class UPalNPCManager* NPCManager;                                                 // 0x0548 (size: 0x8)
+    TSubclassOf<class UPalDeathPenaltyManager> DeathPenaltyManagerClass;              // 0x0550 (size: 0x8)
+    class UPalDeathPenaltyManager* DeathPenaltyManager;                               // 0x0558 (size: 0x8)
+    TSubclassOf<class UPalCoopSkillSearchSystem> CoopSkillSearchSystemClass;          // 0x0560 (size: 0x8)
+    class UPalCoopSkillSearchSystem* CoopSkillSearchSystem;                           // 0x0568 (size: 0x8)
+    TSubclassOf<class UPalCharacterImportanceManager> CharacterImportanceManagerClass; // 0x0570 (size: 0x8)
+    class UPalCharacterImportanceManager* CharacterImportanceManager;                 // 0x0578 (size: 0x8)
+    TSubclassOf<class UPalAudioSettingSystem> AudioSettingClass;                      // 0x0580 (size: 0x8)
+    class UPalAudioSettingSystem* AudioSettingSystem;                                 // 0x0588 (size: 0x8)
+    TSubclassOf<class UPalCharacterParameterStorageSubsystem> CharacterParameterStorageSubsystemClass; // 0x0590 (size: 0x8)
+    TSubclassOf<class UPalTutorialManager> TutorialManagerClass;                      // 0x0598 (size: 0x8)
+    TSubclassOf<class UPalObjectCollector> ObjectCollectorClass;                      // 0x05A0 (size: 0x8)
+    TSubclassOf<class UPalActionDummyTargetManager> ActionDummyTargetManager;         // 0x05A8 (size: 0x8)
+    TSubclassOf<class UPalLogManager> LogManagerClass;                                // 0x05B0 (size: 0x8)
+    int32 revisionNum;                                                                // 0x05B8 (size: 0x4)
+    FPalGameInstanceFxiedCharacterMakeDataDelegate FxiedCharacterMakeDataDelegate;    // 0x05C0 (size: 0x10)
     void FxiedCharacterMakeData(const FPalPlayerDataCharacterMakeInfo& MakeInfo);
-    FPalGameInstanceFxiedCharacterNameDelegate FxiedCharacterNameDelegate;            // 0x05C0 (size: 0x10)
+    FPalGameInstanceFxiedCharacterNameDelegate FxiedCharacterNameDelegate;            // 0x05D0 (size: 0x10)
     void FxiedCharacterName(FString Name);
-    TArray<TScriptInterface<IPalGameSystemNeedSync>> NeedWorldSyncSystems;            // 0x05D0 (size: 0x10)
-    TSubclassOf<class UPalPersistentSoundPlayer> TitleBGMPlayerClass;                 // 0x0600 (size: 0x8)
-    class UPalPersistentSoundPlayer* TitleBGMPlayer;                                  // 0x0608 (size: 0x8)
-    FString SelectedWorldName;                                                        // 0x0610 (size: 0x10)
-    FString SelectedWorldSaveDirectoryName;                                           // 0x0620 (size: 0x10)
-    bool bIsNewGame;                                                                  // 0x0630 (size: 0x1)
-    FPalOptionWorldSettings NewGameWorldSetting;                                      // 0x0638 (size: 0x138)
+    TArray<TScriptInterface<IPalGameSystemNeedSync>> NeedWorldSyncSystems;            // 0x05E0 (size: 0x10)
+    TSubclassOf<class UPalPersistentSoundPlayer> TitleBGMPlayerClass;                 // 0x0610 (size: 0x8)
+    class UPalPersistentSoundPlayer* TitleBGMPlayer;                                  // 0x0618 (size: 0x8)
+    FString SelectedWorldName;                                                        // 0x0620 (size: 0x10)
+    FString SelectedWorldSaveDirectoryName;                                           // 0x0630 (size: 0x10)
+    bool bIsNewGame;                                                                  // 0x0640 (size: 0x1)
+    FPalOptionWorldSettings NewGameWorldSetting;                                      // 0x0648 (size: 0x138)
 
     void ShowUIMultiplayRestriction(bool bOverrideChecking);
     void ShowCharacterMakeScreen();
@@ -11843,6 +12331,7 @@ class UPalGameInstance : public UGameInstance
     void SetIsNewGame();
     bool SelectWorldSaveDirectoryName(FString WorldSaveDirectoryName);
     bool SelectWorld(FString WorldName);
+    void OverrideLoadMap(const TSoftObjectPtr<UWorld>& World);
     void OnPawnLocalPlayerControllerChanged__DelegateSignature(class APawn* Pawn, class AController* Controller);
     void OnInitializeCompleteSystem();
     void OnCompletedJoinSession(bool IsSuccess, JoinSessionResultType Type);
@@ -11861,7 +12350,7 @@ class UPalGameInstance : public UGameInstance
     void CheckInvite();
     void ApplicationHasReactivated();
     void ApplicationHasEnteredForeground();
-}; // Size: 0x770
+}; // Size: 0x780
 
 class UPalGameLocalSettings : public UObject
 {
@@ -11903,7 +12392,8 @@ class UPalGameSetting : public UBlueprintFunctionLibrary
     float CharacterStayingSecondsInSpa;                                               // 0x00C4 (size: 0x4)
     int32 PalBoxPageNum;                                                              // 0x00C8 (size: 0x4)
     int32 PalBoxSlotNumInPage;                                                        // 0x00CC (size: 0x4)
-    float PlayerBattleJudge_EnemyDistance;                                            // 0x00D0 (size: 0x4)
+    int32 PalBoxTimePeriodRecoverySick;                                               // 0x00D0 (size: 0x4)
+    float PlayerBattleJudge_EnemyDistance;                                            // 0x00D4 (size: 0x4)
     TMap<int32, float> BodyTemperature_SlipDamage_Percent;                            // 0x00D8 (size: 0x50)
     TMap<int32, float> BodyTemperature_StomachDecreaceRate;                           // 0x0128 (size: 0x50)
     TSoftObjectPtr<UNiagaraSystem> SleepFXDefault;                                    // 0x0178 (size: 0x30)
@@ -12011,15 +12501,16 @@ class UPalGameSetting : public UBlueprintFunctionLibrary
     int32 PlayerDeath_DropOtomoNum;                                                   // 0x0384 (size: 0x4)
     float PlayerDeath_DropOtomoRange;                                                 // 0x0388 (size: 0x4)
     int32 PlayerDeath_DropOtomoDisappearHours;                                        // 0x038C (size: 0x4)
-    float PlayerDyingDamagePerTime;                                                   // 0x0390 (size: 0x4)
-    int32 ElementStatus_ResistanceInitialValue;                                       // 0x0394 (size: 0x4)
-    float ElementStatus_AutoDecreasePerSecond;                                        // 0x0398 (size: 0x4)
-    int32 ElementStatus_ResetResistanceSecond;                                        // 0x039C (size: 0x4)
-    int32 BuildExp;                                                                   // 0x03A0 (size: 0x4)
-    int32 CraftExp;                                                                   // 0x03A4 (size: 0x4)
-    int32 PickupItemOnLevelExp;                                                       // 0x03A8 (size: 0x4)
-    int32 MapObjectDestroyProceedExp;                                                 // 0x03AC (size: 0x4)
-    float MapObjectDistributeExpRange;                                                // 0x03B0 (size: 0x4)
+    int32 PlayerDeath_DropItemStorage_HoursCanOpen;                                   // 0x0390 (size: 0x4)
+    float PlayerDyingDamagePerTime;                                                   // 0x0394 (size: 0x4)
+    int32 ElementStatus_ResistanceInitialValue;                                       // 0x0398 (size: 0x4)
+    float ElementStatus_AutoDecreasePerSecond;                                        // 0x039C (size: 0x4)
+    int32 ElementStatus_ResetResistanceSecond;                                        // 0x03A0 (size: 0x4)
+    int32 BuildExp;                                                                   // 0x03A4 (size: 0x4)
+    int32 CraftExp;                                                                   // 0x03A8 (size: 0x4)
+    int32 PickupItemOnLevelExp;                                                       // 0x03AC (size: 0x4)
+    int32 MapObjectDestroyProceedExp;                                                 // 0x03B0 (size: 0x4)
+    float MapObjectDistributeExpRange;                                                // 0x03B4 (size: 0x4)
     TMap<int32, int32> OtomoExp_LevelDifferenceMap;                                   // 0x03B8 (size: 0x50)
     int32 OtomoExp_HigherPlayerLevel;                                                 // 0x0408 (size: 0x4)
     int32 CaptureExpBonus_Tier1_TableReferenceNum;                                    // 0x040C (size: 0x4)
@@ -12123,9 +12614,10 @@ class UPalGameSetting : public UBlueprintFunctionLibrary
     EPalCharacterImportanceType BaseCampWorkerMoveModeChangeThreshold;                // 0x074C (size: 0x1)
     int32 BaseCampWorkerDirectorTickForAssignWorkByCount;                             // 0x0750 (size: 0x4)
     float BaseCampWorkerTimeDetectContinuousStuck;                                    // 0x0754 (size: 0x4)
-    float BaseCampWorkerLookToTargetWork;                                             // 0x0758 (size: 0x4)
-    float ReviveWorkAdditionalRange;                                                  // 0x075C (size: 0x4)
-    float WorkAroundRangeDefault;                                                     // 0x0760 (size: 0x4)
+    float BaseCampWorkerMaxTimeReturnBack;                                            // 0x0758 (size: 0x4)
+    float BaseCampWorkerLookToTargetWork;                                             // 0x075C (size: 0x4)
+    float ReviveWorkAdditionalRange;                                                  // 0x0760 (size: 0x4)
+    float WorkAroundRangeDefault;                                                     // 0x0764 (size: 0x4)
     TArray<EPalWorkType> IssueNotifyWorkTypes;                                        // 0x0768 (size: 0x10)
     float WorkAmountByManMonth;                                                       // 0x0778 (size: 0x4)
     float WorkNotifyDelayTime;                                                        // 0x077C (size: 0x4)
@@ -12152,185 +12644,189 @@ class UPalGameSetting : public UBlueprintFunctionLibrary
     FPalWorkSuitabilityDeforestDefineData WorkSuitabilityDefineData_Deforest;         // 0x0AA0 (size: 0x28)
     FPalWorkSuitabilityMiningDefineData WorkSuitabilityDefineData_Mining;             // 0x0AC8 (size: 0x28)
     int32 DropItemWaitInsertMaxNumPerTick;                                            // 0x0AF0 (size: 0x4)
-    FPalDungeonMarkerPointSpawnParameter DungeonSpawnParameterDefault;                // 0x0AF4 (size: 0x10)
-    float GamePad_NotAimCameraRotateSpeed_DegreePerSecond;                            // 0x0B04 (size: 0x4)
-    float GamePad_AimCameraRotateSpeed_DegreePerSecond;                               // 0x0B08 (size: 0x4)
-    float Mouse_NotAimCameraRotateSpeed;                                              // 0x0B0C (size: 0x4)
-    float Mouse_AimCameraRotateSpeed;                                                 // 0x0B10 (size: 0x4)
-    float YawCameraMaxSpeedRate;                                                      // 0x0B14 (size: 0x4)
-    float TimeForCameraMaxSpeed;                                                      // 0x0B18 (size: 0x4)
-    float AimInterpInterval;                                                          // 0x0B1C (size: 0x4)
-    int32 InvaderSelfDeleteAddTime;                                                   // 0x0B20 (size: 0x4)
-    float InvadeProbability;                                                          // 0x0B24 (size: 0x4)
-    int32 InvadeOccurablePlayerLevel;                                                 // 0x0B28 (size: 0x4)
-    int32 InvadeJudgmentInterval_Minutes;                                             // 0x0B2C (size: 0x4)
-    int32 InvadeCollTime_Max_Minutes;                                                 // 0x0B30 (size: 0x4)
-    int32 InvadeCollTime_Min_Minutes;                                                 // 0x0B34 (size: 0x4)
-    int32 InvadeReturnTime_Minutes;                                                   // 0x0B38 (size: 0x4)
-    int32 InvadeStartPoint_BaseCampRadius_Min_cm;                                     // 0x0B3C (size: 0x4)
-    int32 InvadeStartPoint_BaseCampRadius_Max_cm;                                     // 0x0B40 (size: 0x4)
-    float VisitorNPCProbability;                                                      // 0x0B44 (size: 0x4)
-    int32 VisitorNPCReturnTime_Minutes;                                               // 0x0B48 (size: 0x4)
-    float RidingAimOpacity;                                                           // 0x0B4C (size: 0x4)
-    float hideUITimeWhenNotConflict;                                                  // 0x0B50 (size: 0x4)
-    float firstCapturedUIDisplayTime;                                                 // 0x0B54 (size: 0x4)
-    float capturedUIDisplayTime;                                                      // 0x0B58 (size: 0x4)
-    float firstActivatedOtomoInfoDisplayTime;                                         // 0x0B5C (size: 0x4)
-    float playerLevelUpUIDIsplayTime;                                                 // 0x0B60 (size: 0x4)
-    float playerExpGaugeUIDisplayTime;                                                // 0x0B64 (size: 0x4)
-    float otomoExpGaugeUIDisplayTime;                                                 // 0x0B68 (size: 0x4)
-    float npcGaugeDisplayDistance;                                                    // 0x0B6C (size: 0x4)
-    float npcGaugeDisplayRange_CameraSight;                                           // 0x0B70 (size: 0x4)
-    float GuildMemberGaugeDisplayDIstance;                                            // 0x0B74 (size: 0x4)
-    float downPlayerLoupeDisplayDistance;                                             // 0x0B78 (size: 0x4)
-    float downPlayerGaugeDisplayRange_CameraSight;                                    // 0x0B7C (size: 0x4)
-    FVector2D ReticleOffsetRate;                                                      // 0x0B80 (size: 0x10)
-    int32 lowHealthEffectParcent;                                                     // 0x0B90 (size: 0x4)
-    TMap<EPalDamageTextType, int32> damageTextMargineMap;                             // 0x0B98 (size: 0x50)
-    float DamageTextDisplayLength;                                                    // 0x0BE8 (size: 0x4)
-    FVector2D damageTextMaxOffset;                                                    // 0x0BF0 (size: 0x10)
-    float damageTextOffsetInterpolationLength;                                        // 0x0C00 (size: 0x4)
-    TMap<EPalDamageTextType, float> damageTextScaleMap;                               // 0x0C08 (size: 0x50)
-    FVector2D damageTextRandomOffset;                                                 // 0x0C58 (size: 0x10)
-    int32 strongEnemyMarkLevel;                                                       // 0x0C68 (size: 0x4)
-    float otomoInteractUIDisplayDistance;                                             // 0x0C6C (size: 0x4)
-    float enemyMarkUIMinScale;                                                        // 0x0C70 (size: 0x4)
-    float enemyMarkScaleInterpolationLength;                                          // 0x0C74 (size: 0x4)
-    FVector2D npcHPGaugeGlobalOffset;                                                 // 0x0C78 (size: 0x10)
-    float delayGaugeStartTime;                                                        // 0x0C88 (size: 0x4)
-    float delayGaugeProgressPerSecond;                                                // 0x0C8C (size: 0x4)
-    float inventoryWeaponRangeMaxBorder;                                              // 0x0C90 (size: 0x4)
-    float inventoryWeaponStabilityMinBorder;                                          // 0x0C94 (size: 0x4)
-    float inventoryWeaponAccuracyMinBorder;                                           // 0x0C98 (size: 0x4)
-    float worldmapUIMaskClearSize;                                                    // 0x0C9C (size: 0x4)
-    float worldmapUIFTMergeDistance;                                                  // 0x0CA0 (size: 0x4)
-    int32 worldmapUIMaxMarker;                                                        // 0x0CA4 (size: 0x4)
-    float NPCHPGaugeUpdateSpan;                                                       // 0x0CA8 (size: 0x4)
-    float CaptureFailedUIDisplayTime;                                                 // 0x0CAC (size: 0x4)
-    TArray<FPalDataTableRowName_ItemData> CaptureSphereSortArray;                     // 0x0CB0 (size: 0x10)
-    float OpenGameOverUITime;                                                         // 0x0CC0 (size: 0x4)
-    float BlockRespawnTime;                                                           // 0x0CC4 (size: 0x4)
-    float InventoryWeightAlertRate;                                                   // 0x0CC8 (size: 0x4)
-    float InventoryWeightGaugeDIsplayTime;                                            // 0x0CCC (size: 0x4)
-    float OtomoLevelUpNoticeUIDisplayTime;                                            // 0x0CD0 (size: 0x4)
-    float OtomoMasteredWazaNoticeUIDisplayTime;                                       // 0x0CD4 (size: 0x4)
-    float ProgressGaugeInterpolationSpeed;                                            // 0x0CD8 (size: 0x4)
-    float TeleportFadeInTime;                                                         // 0x0CDC (size: 0x4)
-    float TeleportFadeOutTime;                                                        // 0x0CE0 (size: 0x4)
-    float PlayerTeleportTimeoutTime;                                                  // 0x0CE4 (size: 0x4)
-    TArray<float> PassiveSkillAppendNumWeights;                                       // 0x0CE8 (size: 0x10)
-    bool bIsEggLauncherExplosion;                                                     // 0x0CF8 (size: 0x1)
-    float ThrowPalBattleRadius;                                                       // 0x0CFC (size: 0x4)
-    float ThrowPalWorkRadius;                                                         // 0x0D00 (size: 0x4)
-    float RopeHitPowe;                                                                // 0x0D04 (size: 0x4)
-    float RopePullPower;                                                              // 0x0D08 (size: 0x4)
-    float DefaultMaxInventoryWeight;                                                  // 0x0D0C (size: 0x4)
-    float RaycastLengthForDetectIndoor;                                               // 0x0D10 (size: 0x4)
-    float MapObjectConnectAnyPlaceRaycastLength;                                      // 0x0D14 (size: 0x4)
-    float ShootingTargetRayCastDistance;                                              // 0x0D18 (size: 0x4)
-    TArray<float> CaptureJudgeRateArray;                                              // 0x0D20 (size: 0x10)
-    int32 CaptureBallBoundCountMax;                                                   // 0x0D30 (size: 0x4)
-    TArray<FName> ExceptCapturedItemList;                                             // 0x0D38 (size: 0x10)
-    TMap<EPalCaptureSphereLevelType, int32> CaptureSphereLevelMap;                    // 0x0D48 (size: 0x50)
-    TMap<EPalStatusID, float> CaptureRateAddByStatusMap;                              // 0x0D98 (size: 0x50)
-    float IgnoreFirstCaptureFailedHPRate;                                             // 0x0DE8 (size: 0x4)
-    float CaptureRateAdd_ByLegHold;                                                   // 0x0DEC (size: 0x4)
-    float LongPressInterval;                                                          // 0x0DF0 (size: 0x4)
-    float LongPressInterval_EnemyCampCage;                                            // 0x0DF4 (size: 0x4)
-    float LongPressInterval_GetHatchedPal;                                            // 0x0DF8 (size: 0x4)
-    float CrouchLockAttenuation;                                                      // 0x0DFC (size: 0x4)
-    bool IsEnableCharacterWazaScale;                                                  // 0x0E00 (size: 0x1)
-    bool IsOverrideDamageAdditiveAnimation;                                           // 0x0E01 (size: 0x1)
-    float BlinkInterval;                                                              // 0x0E04 (size: 0x4)
-    float CrimeStateMaintainDurationBaseDefault;                                      // 0x0E08 (size: 0x4)
-    int32 technologyPointPerLevel;                                                    // 0x0E0C (size: 0x4)
-    int32 bossTechnologyPointPerTowerBoss;                                            // 0x0E10 (size: 0x4)
-    int32 bossTechnologyPointPerNormalBoss;                                           // 0x0E14 (size: 0x4)
-    TArray<FPalDataTableRowName_RecipeTechnologyData> DefaultUnlockTechnology;        // 0x0E18 (size: 0x10)
-    int32 DefaultTechnologyPoint;                                                     // 0x0E28 (size: 0x4)
-    int32 TechnologyPoint_UnlockFastTravel;                                           // 0x0E2C (size: 0x4)
-    float DecreaseSanity_DamagedMultiply;                                             // 0x0E30 (size: 0x4)
-    int32 FullStomachPercent_RecoverySanity;                                          // 0x0E34 (size: 0x4)
-    float RecoverySanity_FullStomach;                                                 // 0x0E38 (size: 0x4)
-    float DecreaseSanity_Hunger;                                                      // 0x0E3C (size: 0x4)
-    float DecreaseSanity_Starvation;                                                  // 0x0E40 (size: 0x4)
-    bool Spawner_IsCheckLoadedWorldPartition;                                         // 0x0E44 (size: 0x1)
-    float SpawnerDisableDistanceCM_FromBaseCamp;                                      // 0x0E48 (size: 0x4)
-    float Spawner_DefaultSpawnRadius_S;                                               // 0x0E4C (size: 0x4)
-    float Spawner_DefaultSpawnRadius_M;                                               // 0x0E50 (size: 0x4)
-    float Spawner_DefaultSpawnRadius_L;                                               // 0x0E54 (size: 0x4)
-    float Spawner_DefaultSpawnRadius_NPC;                                             // 0x0E58 (size: 0x4)
-    float Spawner_DefaultDespawnDistance_S;                                           // 0x0E5C (size: 0x4)
-    float Spawner_DefaultDespawnDistance_M;                                           // 0x0E60 (size: 0x4)
-    float Spawner_DefaultDespawnDistance_L;                                           // 0x0E64 (size: 0x4)
-    float Spawner_DefaultDespawnDistance_NPC;                                         // 0x0E68 (size: 0x4)
-    class UDataTable* CharacterHeadMeshDataTable;                                     // 0x0E70 (size: 0x8)
-    class UDataTable* CharacterBodyMeshDataTable;                                     // 0x0E78 (size: 0x8)
-    class UDataTable* CharacterHairMeshDataTable;                                     // 0x0E80 (size: 0x8)
-    class UDataTable* CharacterEquipmentArmorMeshDataTable;                           // 0x0E88 (size: 0x8)
-    class UDataTable* CharacterEyeMaterialDataTable;                                  // 0x0E90 (size: 0x8)
-    float CharacterMakeColorLimit_SV;                                                 // 0x0E98 (size: 0x4)
-    bool IsAutoEquipMasteredWaza;                                                     // 0x0E9C (size: 0x1)
-    bool ActiveUNKO;                                                                  // 0x0E9D (size: 0x1)
-    int32 MaxSpawnableDeathPenaltyChest;                                              // 0x0EA0 (size: 0x4)
-    FName BuildObjectInstallStrategy_SinkAllowCollisionPresetName;                    // 0x0EA4 (size: 0x8)
-    float MapObjectShakeTimeOnDamaged;                                                // 0x0EAC (size: 0x4)
-    FVector MapObjectShakeOffsetOnDamaged;                                            // 0x0EB0 (size: 0x18)
-    int32 MapObjectOutlineByReticleTargetting;                                        // 0x0EC8 (size: 0x4)
-    int32 MapObjectOutlineByInteractable;                                             // 0x0ECC (size: 0x4)
-    FPalMapObjectRepairInfo MapObjectRepairInfo;                                      // 0x0ED0 (size: 0x10)
-    float FoliageExtentsXY;                                                           // 0x0EE0 (size: 0x4)
-    int32 FoliageChunkSeparateScale;                                                  // 0x0EE4 (size: 0x4)
-    float MapObjectHPDisplayDistance;                                                 // 0x0EE8 (size: 0x4)
-    float MapObjectHPDisplayTime;                                                     // 0x0EEC (size: 0x4)
-    float MapObjectGateLockTime;                                                      // 0x0EF0 (size: 0x4)
-    bool bDirectObtainFromTreasureBox;                                                // 0x0EF4 (size: 0x1)
-    float MapObjectEffectTriggerAccumulate_Burn;                                      // 0x0EF8 (size: 0x4)
-    float MapObjectEffect_Burn_DamageHpRate;                                          // 0x0EFC (size: 0x4)
-    FVector MapObjectEffect_Burn_DamageAroundRange;                                   // 0x0F00 (size: 0x18)
-    float MapObjectEffect_Burn_DamageAroundInterval;                                  // 0x0F18 (size: 0x4)
-    float MapObjectEffect_Burn_DamageAroundDamageValue;                               // 0x0F1C (size: 0x4)
-    float MapObjectEffect_Burn_DamageAroundAccumulateValue;                           // 0x0F20 (size: 0x4)
-    float MapObjectEffect_Burn_DamageAroundAccumulateValue_ForCharacter;              // 0x0F24 (size: 0x4)
-    int32 PasswordLockFailedMaxNum;                                                   // 0x0F28 (size: 0x4)
-    float MapObjectItemChestCorruptionRateFromWorkSpeed;                              // 0x0F2C (size: 0x4)
-    FPalOptimizeParameter RuntimeOptimizeParameter;                                   // 0x0F30 (size: 0x490)
-    TMap<int32, FPalWorldSecurityWantedPoliceSettingData> WorldSecurityWantedPoliceSettingDataMap; // 0x13C0 (size: 0x50)
-    TMap<int32, FPalWorldSecurityWantedPoliceSettingData> WorldSecurityWantedPoliceSettingDataMapForDS; // 0x1410 (size: 0x50)
-    int32 StatusPointPerLevel;                                                        // 0x1460 (size: 0x4)
-    float AddMaxHPPerStatusPoint;                                                     // 0x1464 (size: 0x4)
-    float AddMaxSPPerStatusPoint;                                                     // 0x1468 (size: 0x4)
-    float AddPowerPerStatusPoint;                                                     // 0x146C (size: 0x4)
-    float AddMaxInventoryWeightPerStatusPoint;                                        // 0x1470 (size: 0x4)
-    float AddCaptureLevelPerStatusPoint;                                              // 0x1474 (size: 0x4)
-    float AddWorkSpeedPerStatusPoint;                                                 // 0x1478 (size: 0x4)
-    float AddMaxHPPerHPRank;                                                          // 0x147C (size: 0x4)
-    float AddAttackPerAttackRank;                                                     // 0x1480 (size: 0x4)
-    float AddDefencePerDefenceRank;                                                   // 0x1484 (size: 0x4)
-    float AddWorkSpeedPerWorkSpeedRank;                                               // 0x1488 (size: 0x4)
-    TArray<float> Combi_TalentInheritNum;                                             // 0x1490 (size: 0x10)
-    TArray<float> Combi_PassiveInheritNum;                                            // 0x14A0 (size: 0x10)
-    TArray<float> Combi_PassiveRandomAddNum;                                          // 0x14B0 (size: 0x10)
-    TArray<FPalEggRankInfo> PalEggRankInfoArray;                                      // 0x14C0 (size: 0x10)
-    TMap<class EPalElementType, class FPalDataTableRowName_MapObjectData> PalEggMapObjectIdMap; // 0x14D0 (size: 0x50)
-    TMap<int32, float> PalEggHatchingSpeedRateByTemperature;                          // 0x1520 (size: 0x50)
-    class UFont* DebugInfoFont;                                                       // 0x1570 (size: 0x8)
-    int32 MaxGuildNameLength;                                                         // 0x1578 (size: 0x4)
-    float JoinGuildRequestInteractLongPushTime;                                       // 0x157C (size: 0x4)
-    float TutorialMinDisplayTime;                                                     // 0x1580 (size: 0x4)
-    float TutorialDisplayTime;                                                        // 0x1584 (size: 0x4)
-    TMap<EPalUIRewardDisplayType, float> CommonRewardDisplayTime;                     // 0x1588 (size: 0x50)
-    float DeadBodyDestroySecond;                                                      // 0x15D8 (size: 0x4)
-    float EnemyCampRespawnCoolTime;                                                   // 0x15DC (size: 0x4)
-    float EnemyCampDespawnDelayTime;                                                  // 0x15E0 (size: 0x4)
-    float PalBoxReviveTime;                                                           // 0x15E4 (size: 0x4)
-    float AfterNPCTalkDelayTime_Interact;                                             // 0x15E8 (size: 0x4)
-    float MinSprintThreshold;                                                         // 0x15EC (size: 0x4)
-    float MaxSprintThreshold;                                                         // 0x15F0 (size: 0x4)
-    float MinHPGaugeDisplayTime;                                                      // 0x15F4 (size: 0x4)
-    float ToggleInteractMoveDelay;                                                    // 0x15F8 (size: 0x4)
-    class UDataTable* SoundSourceDataTable;                                           // 0x1600 (size: 0x8)
-    TMap<class EPalPlatformType, class TSubclassOf<UPalOptimizeParameterSetting>> OptimizeParameterSettingClass; // 0x1608 (size: 0x50)
+    FPalItemFilterPreference ItemFilterPreference;                                    // 0x0AF8 (size: 0x50)
+    FPalDungeonMarkerPointSpawnParameter DungeonSpawnParameterDefault;                // 0x0B48 (size: 0x10)
+    float GamePad_NotAimCameraRotateSpeed_DegreePerSecond;                            // 0x0B58 (size: 0x4)
+    float GamePad_AimCameraRotateSpeed_DegreePerSecond;                               // 0x0B5C (size: 0x4)
+    float Mouse_NotAimCameraRotateSpeed;                                              // 0x0B60 (size: 0x4)
+    float Mouse_AimCameraRotateSpeed;                                                 // 0x0B64 (size: 0x4)
+    float YawCameraMaxSpeedRate;                                                      // 0x0B68 (size: 0x4)
+    float TimeForCameraMaxSpeed;                                                      // 0x0B6C (size: 0x4)
+    float AimInterpInterval;                                                          // 0x0B70 (size: 0x4)
+    int32 InvaderSelfDeleteAddTime;                                                   // 0x0B74 (size: 0x4)
+    int32 VisitorSelfDeleteTime;                                                      // 0x0B78 (size: 0x4)
+    float InvadeProbability;                                                          // 0x0B7C (size: 0x4)
+    int32 InvadeOccurablePlayerLevel;                                                 // 0x0B80 (size: 0x4)
+    int32 InvadeJudgmentInterval_Minutes;                                             // 0x0B84 (size: 0x4)
+    int32 InvadeCollTime_Max_Minutes;                                                 // 0x0B88 (size: 0x4)
+    int32 InvadeCollTime_Min_Minutes;                                                 // 0x0B8C (size: 0x4)
+    int32 InvadeReturnTime_Minutes;                                                   // 0x0B90 (size: 0x4)
+    int32 InvadeStartPoint_BaseCampRadius_Min_cm;                                     // 0x0B94 (size: 0x4)
+    int32 InvadeStartPoint_BaseCampRadius_Max_cm;                                     // 0x0B98 (size: 0x4)
+    float VisitorNPCProbability;                                                      // 0x0B9C (size: 0x4)
+    int32 VisitorNPCReturnTime_Minutes;                                               // 0x0BA0 (size: 0x4)
+    float RidingAimOpacity;                                                           // 0x0BA4 (size: 0x4)
+    float hideUITimeWhenNotConflict;                                                  // 0x0BA8 (size: 0x4)
+    float firstCapturedUIDisplayTime;                                                 // 0x0BAC (size: 0x4)
+    float capturedUIDisplayTime;                                                      // 0x0BB0 (size: 0x4)
+    float firstActivatedOtomoInfoDisplayTime;                                         // 0x0BB4 (size: 0x4)
+    float playerLevelUpUIDIsplayTime;                                                 // 0x0BB8 (size: 0x4)
+    float playerExpGaugeUIDisplayTime;                                                // 0x0BBC (size: 0x4)
+    float otomoExpGaugeUIDisplayTime;                                                 // 0x0BC0 (size: 0x4)
+    float npcGaugeDisplayDistance;                                                    // 0x0BC4 (size: 0x4)
+    float npcGaugeDisplayRange_CameraSight;                                           // 0x0BC8 (size: 0x4)
+    float GuildMemberGaugeDisplayDIstance;                                            // 0x0BCC (size: 0x4)
+    float downPlayerLoupeDisplayDistance;                                             // 0x0BD0 (size: 0x4)
+    float downPlayerGaugeDisplayRange_CameraSight;                                    // 0x0BD4 (size: 0x4)
+    FVector2D ReticleOffsetRate;                                                      // 0x0BD8 (size: 0x10)
+    int32 lowHealthEffectParcent;                                                     // 0x0BE8 (size: 0x4)
+    TMap<EPalDamageTextType, int32> damageTextMargineMap;                             // 0x0BF0 (size: 0x50)
+    float DamageTextDisplayLength;                                                    // 0x0C40 (size: 0x4)
+    FVector2D damageTextMaxOffset;                                                    // 0x0C48 (size: 0x10)
+    float damageTextOffsetInterpolationLength;                                        // 0x0C58 (size: 0x4)
+    TMap<EPalDamageTextType, float> damageTextScaleMap;                               // 0x0C60 (size: 0x50)
+    FVector2D damageTextRandomOffset;                                                 // 0x0CB0 (size: 0x10)
+    int32 strongEnemyMarkLevel;                                                       // 0x0CC0 (size: 0x4)
+    float otomoInteractUIDisplayDistance;                                             // 0x0CC4 (size: 0x4)
+    float enemyMarkUIMinScale;                                                        // 0x0CC8 (size: 0x4)
+    float enemyMarkScaleInterpolationLength;                                          // 0x0CCC (size: 0x4)
+    FVector2D npcHPGaugeGlobalOffset;                                                 // 0x0CD0 (size: 0x10)
+    float delayGaugeStartTime;                                                        // 0x0CE0 (size: 0x4)
+    float delayGaugeProgressPerSecond;                                                // 0x0CE4 (size: 0x4)
+    float inventoryWeaponRangeMaxBorder;                                              // 0x0CE8 (size: 0x4)
+    float inventoryWeaponStabilityMinBorder;                                          // 0x0CEC (size: 0x4)
+    float inventoryWeaponAccuracyMinBorder;                                           // 0x0CF0 (size: 0x4)
+    float worldmapUIMaskClearSize;                                                    // 0x0CF4 (size: 0x4)
+    float worldmapUIFTMergeDistance;                                                  // 0x0CF8 (size: 0x4)
+    int32 worldmapUIMaxMarker;                                                        // 0x0CFC (size: 0x4)
+    float NPCHPGaugeUpdateSpan;                                                       // 0x0D00 (size: 0x4)
+    float CaptureFailedUIDisplayTime;                                                 // 0x0D04 (size: 0x4)
+    TArray<FPalDataTableRowName_ItemData> CaptureSphereSortArray;                     // 0x0D08 (size: 0x10)
+    float OpenGameOverUITime;                                                         // 0x0D18 (size: 0x4)
+    float BlockRespawnTime;                                                           // 0x0D1C (size: 0x4)
+    float InventoryWeightAlertRate;                                                   // 0x0D20 (size: 0x4)
+    float InventoryWeightGaugeDIsplayTime;                                            // 0x0D24 (size: 0x4)
+    float OtomoLevelUpNoticeUIDisplayTime;                                            // 0x0D28 (size: 0x4)
+    float OtomoMasteredWazaNoticeUIDisplayTime;                                       // 0x0D2C (size: 0x4)
+    float ProgressGaugeInterpolationSpeed;                                            // 0x0D30 (size: 0x4)
+    float TeleportFadeInTime;                                                         // 0x0D34 (size: 0x4)
+    float TeleportFadeOutTime;                                                        // 0x0D38 (size: 0x4)
+    float PlayerTeleportTimeoutTime;                                                  // 0x0D3C (size: 0x4)
+    TArray<float> PassiveSkillAppendNumWeights;                                       // 0x0D40 (size: 0x10)
+    bool bIsEggLauncherExplosion;                                                     // 0x0D50 (size: 0x1)
+    float ThrowPalBattleRadius;                                                       // 0x0D54 (size: 0x4)
+    float ThrowPalWorkRadius;                                                         // 0x0D58 (size: 0x4)
+    float RopeHitPowe;                                                                // 0x0D5C (size: 0x4)
+    float RopePullPower;                                                              // 0x0D60 (size: 0x4)
+    float DefaultMaxInventoryWeight;                                                  // 0x0D64 (size: 0x4)
+    float RaycastLengthForDetectIndoor;                                               // 0x0D68 (size: 0x4)
+    float MapObjectConnectAnyPlaceRaycastLength;                                      // 0x0D6C (size: 0x4)
+    float ShootingTargetRayCastDistance;                                              // 0x0D70 (size: 0x4)
+    TArray<float> CaptureJudgeRateArray;                                              // 0x0D78 (size: 0x10)
+    int32 CaptureBallBoundCountMax;                                                   // 0x0D88 (size: 0x4)
+    TArray<FName> ExceptCapturedItemList;                                             // 0x0D90 (size: 0x10)
+    TMap<EPalCaptureSphereLevelType, int32> CaptureSphereLevelMap;                    // 0x0DA0 (size: 0x50)
+    TMap<EPalStatusID, float> CaptureRateAddByStatusMap;                              // 0x0DF0 (size: 0x50)
+    float IgnoreFirstCaptureFailedHPRate;                                             // 0x0E40 (size: 0x4)
+    float CaptureRateAdd_ByLegHold;                                                   // 0x0E44 (size: 0x4)
+    float LongPressInterval;                                                          // 0x0E48 (size: 0x4)
+    float LongPressInterval_EnemyCampCage;                                            // 0x0E4C (size: 0x4)
+    float LongPressInterval_StartRaidBoss;                                            // 0x0E50 (size: 0x4)
+    float LongPressInterval_GetHatchedPal;                                            // 0x0E54 (size: 0x4)
+    float CrouchLockAttenuation;                                                      // 0x0E58 (size: 0x4)
+    bool IsEnableCharacterWazaScale;                                                  // 0x0E5C (size: 0x1)
+    bool IsOverrideDamageAdditiveAnimation;                                           // 0x0E5D (size: 0x1)
+    float BlinkInterval;                                                              // 0x0E60 (size: 0x4)
+    float CrimeStateMaintainDurationBaseDefault;                                      // 0x0E64 (size: 0x4)
+    int32 technologyPointPerLevel;                                                    // 0x0E68 (size: 0x4)
+    int32 bossTechnologyPointPerTowerBoss;                                            // 0x0E6C (size: 0x4)
+    int32 bossTechnologyPointPerNormalBoss;                                           // 0x0E70 (size: 0x4)
+    TArray<FPalDataTableRowName_RecipeTechnologyData> DefaultUnlockTechnology;        // 0x0E78 (size: 0x10)
+    int32 DefaultTechnologyPoint;                                                     // 0x0E88 (size: 0x4)
+    int32 TechnologyPoint_UnlockFastTravel;                                           // 0x0E8C (size: 0x4)
+    float DecreaseSanity_DamagedMultiply;                                             // 0x0E90 (size: 0x4)
+    int32 FullStomachPercent_RecoverySanity;                                          // 0x0E94 (size: 0x4)
+    float RecoverySanity_FullStomach;                                                 // 0x0E98 (size: 0x4)
+    float DecreaseSanity_Hunger;                                                      // 0x0E9C (size: 0x4)
+    float DecreaseSanity_Starvation;                                                  // 0x0EA0 (size: 0x4)
+    bool Spawner_IsCheckLoadedWorldPartition;                                         // 0x0EA4 (size: 0x1)
+    float SpawnerDisableDistanceCM_FromBaseCamp;                                      // 0x0EA8 (size: 0x4)
+    float Spawner_DefaultSpawnRadius_S;                                               // 0x0EAC (size: 0x4)
+    float Spawner_DefaultSpawnRadius_M;                                               // 0x0EB0 (size: 0x4)
+    float Spawner_DefaultSpawnRadius_L;                                               // 0x0EB4 (size: 0x4)
+    float Spawner_DefaultSpawnRadius_NPC;                                             // 0x0EB8 (size: 0x4)
+    float Spawner_DefaultDespawnDistance_S;                                           // 0x0EBC (size: 0x4)
+    float Spawner_DefaultDespawnDistance_M;                                           // 0x0EC0 (size: 0x4)
+    float Spawner_DefaultDespawnDistance_L;                                           // 0x0EC4 (size: 0x4)
+    float Spawner_DefaultDespawnDistance_NPC;                                         // 0x0EC8 (size: 0x4)
+    class UDataTable* CharacterHeadMeshDataTable;                                     // 0x0ED0 (size: 0x8)
+    class UDataTable* CharacterBodyMeshDataTable;                                     // 0x0ED8 (size: 0x8)
+    class UDataTable* CharacterHairMeshDataTable;                                     // 0x0EE0 (size: 0x8)
+    class UDataTable* CharacterEquipmentArmorMeshDataTable;                           // 0x0EE8 (size: 0x8)
+    class UDataTable* CharacterEyeMaterialDataTable;                                  // 0x0EF0 (size: 0x8)
+    float CharacterMakeColorLimit_SV;                                                 // 0x0EF8 (size: 0x4)
+    bool IsAutoEquipMasteredWaza;                                                     // 0x0EFC (size: 0x1)
+    bool ActiveUNKO;                                                                  // 0x0EFD (size: 0x1)
+    int32 MaxSpawnableDeathPenaltyChest;                                              // 0x0F00 (size: 0x4)
+    FName BuildObjectInstallStrategy_SinkAllowCollisionPresetName;                    // 0x0F04 (size: 0x8)
+    float MapObjectShakeTimeOnDamaged;                                                // 0x0F0C (size: 0x4)
+    FVector MapObjectShakeOffsetOnDamaged;                                            // 0x0F10 (size: 0x18)
+    int32 MapObjectOutlineByReticleTargetting;                                        // 0x0F28 (size: 0x4)
+    int32 MapObjectOutlineByInteractable;                                             // 0x0F2C (size: 0x4)
+    FPalMapObjectRepairInfo MapObjectRepairInfo;                                      // 0x0F30 (size: 0x10)
+    float FoliageExtentsXY;                                                           // 0x0F40 (size: 0x4)
+    int32 FoliageChunkSeparateScale;                                                  // 0x0F44 (size: 0x4)
+    float MapObjectHPDisplayDistance;                                                 // 0x0F48 (size: 0x4)
+    float MapObjectHPDisplayTime;                                                     // 0x0F4C (size: 0x4)
+    float MapObjectGateLockTime;                                                      // 0x0F50 (size: 0x4)
+    bool bDirectObtainFromTreasureBox;                                                // 0x0F54 (size: 0x1)
+    float MapObjectEffectTriggerAccumulate_Burn;                                      // 0x0F58 (size: 0x4)
+    float MapObjectEffect_Burn_DamageHpRate;                                          // 0x0F5C (size: 0x4)
+    FVector MapObjectEffect_Burn_DamageAroundRange;                                   // 0x0F60 (size: 0x18)
+    float MapObjectEffect_Burn_DamageAroundInterval;                                  // 0x0F78 (size: 0x4)
+    float MapObjectEffect_Burn_DamageAroundDamageValue;                               // 0x0F7C (size: 0x4)
+    float MapObjectEffect_Burn_DamageAroundAccumulateValue;                           // 0x0F80 (size: 0x4)
+    float MapObjectEffect_Burn_DamageAroundAccumulateValue_ForCharacter;              // 0x0F84 (size: 0x4)
+    int32 PasswordLockFailedMaxNum;                                                   // 0x0F88 (size: 0x4)
+    float MapObjectItemChestCorruptionRateFromWorkSpeed;                              // 0x0F8C (size: 0x4)
+    FPalOptimizeParameter RuntimeOptimizeParameter;                                   // 0x0F90 (size: 0x490)
+    TMap<int32, FPalWorldSecurityWantedPoliceSettingData> WorldSecurityWantedPoliceSettingDataMap; // 0x1420 (size: 0x50)
+    TMap<int32, FPalWorldSecurityWantedPoliceSettingData> WorldSecurityWantedPoliceSettingDataMapForDS; // 0x1470 (size: 0x50)
+    int32 StatusPointPerLevel;                                                        // 0x14C0 (size: 0x4)
+    float AddMaxHPPerStatusPoint;                                                     // 0x14C4 (size: 0x4)
+    float AddMaxSPPerStatusPoint;                                                     // 0x14C8 (size: 0x4)
+    float AddPowerPerStatusPoint;                                                     // 0x14CC (size: 0x4)
+    float AddMaxInventoryWeightPerStatusPoint;                                        // 0x14D0 (size: 0x4)
+    float AddCaptureLevelPerStatusPoint;                                              // 0x14D4 (size: 0x4)
+    float AddWorkSpeedPerStatusPoint;                                                 // 0x14D8 (size: 0x4)
+    float AddMaxHPPerHPRank;                                                          // 0x14DC (size: 0x4)
+    float AddAttackPerAttackRank;                                                     // 0x14E0 (size: 0x4)
+    float AddDefencePerDefenceRank;                                                   // 0x14E4 (size: 0x4)
+    float AddWorkSpeedPerWorkSpeedRank;                                               // 0x14E8 (size: 0x4)
+    int32 MaxUseablePoint_SumStatusPointAndExStatusPoint_PerParameter;                // 0x14EC (size: 0x4)
+    TArray<float> Combi_TalentInheritNum;                                             // 0x14F0 (size: 0x10)
+    TArray<float> Combi_PassiveInheritNum;                                            // 0x1500 (size: 0x10)
+    TArray<float> Combi_PassiveRandomAddNum;                                          // 0x1510 (size: 0x10)
+    TArray<FPalEggRankInfo> PalEggRankInfoArray;                                      // 0x1520 (size: 0x10)
+    TMap<class EPalElementType, class FPalDataTableRowName_MapObjectData> PalEggMapObjectIdMap; // 0x1530 (size: 0x50)
+    TMap<int32, float> PalEggHatchingSpeedRateByTemperature;                          // 0x1580 (size: 0x50)
+    class UFont* DebugInfoFont;                                                       // 0x15D0 (size: 0x8)
+    int32 MaxGuildNameLength;                                                         // 0x15D8 (size: 0x4)
+    float JoinGuildRequestInteractLongPushTime;                                       // 0x15DC (size: 0x4)
+    float TutorialMinDisplayTime;                                                     // 0x15E0 (size: 0x4)
+    float TutorialDisplayTime;                                                        // 0x15E4 (size: 0x4)
+    TMap<EPalUIRewardDisplayType, float> CommonRewardDisplayTime;                     // 0x15E8 (size: 0x50)
+    float DeadBodyDestroySecond;                                                      // 0x1638 (size: 0x4)
+    float EnemyCampRespawnCoolTime;                                                   // 0x163C (size: 0x4)
+    float EnemyCampDespawnDelayTime;                                                  // 0x1640 (size: 0x4)
+    float PalBoxReviveTime;                                                           // 0x1644 (size: 0x4)
+    float AfterNPCTalkDelayTime_Interact;                                             // 0x1648 (size: 0x4)
+    float MinSprintThreshold;                                                         // 0x164C (size: 0x4)
+    float MaxSprintThreshold;                                                         // 0x1650 (size: 0x4)
+    float MinHPGaugeDisplayTime;                                                      // 0x1654 (size: 0x4)
+    float ToggleInteractMoveDelay;                                                    // 0x1658 (size: 0x4)
+    class UDataTable* SoundSourceDataTable;                                           // 0x1660 (size: 0x8)
+    TMap<class EPalPlatformType, class TSubclassOf<UPalOptimizeParameterSetting>> OptimizeParameterSettingClass; // 0x1668 (size: 0x50)
 
     bool TryGetWorkSuitabilityDefineData(const EPalWorkSuitability WorkSuitability, FPalWorkSuitabilityDefineData& outDefineData);
     bool IsSoundMuteable(FName RowName);
@@ -12346,7 +12842,7 @@ class UPalGameSetting : public UBlueprintFunctionLibrary
     float GetCaptureRateByStatus_ForGameSettingBP(const class AActor* TargetPal);
     int32 GetCaptureLevelBySphereType(EPalCaptureSphereLevelType SphereType);
     float CalcCaptureRate(float captureItemLevel, const class UPalIndividualCharacterHandle* targetHandle, const class UPalIndividualCharacterHandle* throwCharacterHandle);
-}; // Size: 0x1658
+}; // Size: 0x16B8
 
 class UPalGameStateReplicatorBase : public UObject
 {
@@ -12512,8 +13008,9 @@ class UPalGroupGuild : public UPalGroupGuildBase
     FPalFastGuildPlayerInfoRepInfoArray PlayerInfoRepInfoArray;                       // 0x0248 (size: 0x148)
     FGuid AdminPlayerUId;                                                             // 0x0390 (size: 0x10)
 
+    void OnFilteredPlayerInfo(class UPlGuildPlayerInfoFilteringWaiter* Waiter, const FPalGuildPlayerInfo& FilteredInfo);
     void OnChangedGuildMemberNickName(class UPalIndividualCharacterParameter* Parameter, FString NickName);
-}; // Size: 0x3A0
+}; // Size: 0x3B0
 
 class UPalGroupGuildBase : public UPalGroupOrganization
 {
@@ -12527,7 +13024,6 @@ class UPalGroupGuildBase : public UPalGroupOrganization
 
     void UpdatedGuildNameDelegate__DelegateSignature(FString NewGuildName);
     void ReturnSelfDelegate__DelegateSignature(class UPalGroupGuildBase* Self);
-    EPalGroupOperationResult RequestDismantleBaseCamp(const FGuid& BaseCampId);
     void OnRep_Guildname();
     void OnRep_BaseCampLevel(int32 OldValue);
     void OnReceivedWordFilteringResult(const FString ResponseBody, bool bResponseOK, int32 ResponseCode);
@@ -12551,9 +13047,12 @@ class UPalGroupManager : public UPalWorldSubsystem
     TMap<class FGuid, class UPalGroupGuildBase*> GuildMap;                            // 0x00C8 (size: 0x50)
     TMap<class EPalOrganizationType, class EPalGroupType> StaticOrganizationGroupTypeMap; // 0x0118 (size: 0x50)
     TMap<class EPalOrganizationType, class FGuid> StaticOrganizationGroupIdMap;       // 0x0168 (size: 0x50)
+    TMap<class FGuid, class UPalGuildRequestFlowBase*> GuildRequestFlowMap;           // 0x01C8 (size: 0x50)
+    TMap<class FGuid, class FPalGuildEnterRequestLogInfo> GuildEnterRequestLogInfoMap; // 0x0218 (size: 0x50)
 
     bool TryGetGuildName(const FGuid& GroupID, FString& OutGuildName);
     bool TryGetGroupName(const FGuid& GroupID, FString& OutGroupName);
+    void OnFinishedGuildRequest_ServerInternal(class UPalGuildRequestFlowBase* Flow);
     bool IsInGuild(const class AActor* TargetActor);
     bool IsExistGroup(FString GroupName);
     FGuid GetOrganizationGroupId(const class UObject* WorldContextObject, const EPalOrganizationType OrganizationType);
@@ -12562,7 +13061,7 @@ class UPalGroupManager : public UPalWorldSubsystem
     void Debug_RequestEnterGroup(const FPalInstanceID& IndividualId, const FGuid& GroupID, FDebug_RequestEnterGroupCallback Callback);
     void Debug_RequestDisposeGroup(const FGuid& GroupID, FDebug_RequestDisposeGroupCallback Callback);
     class UPalGroupBase* Debug_GetFirstGroupByType(const EPalGroupType Type);
-}; // Size: 0x1C8
+}; // Size: 0x268
 
 class UPalGroupNeutral : public UPalGroupBase
 {
@@ -12590,6 +13089,65 @@ class UPalGroupUtility : public UBlueprintFunctionLibrary
     FGuid GetGroupIdByIndividualId(const class UObject* WorldContextObject, const FPalInstanceID& IndividualId);
 }; // Size: 0x28
 
+class UPalGuildChangeAdminRequestFlow : public UPalGuildRequestFlowBase
+{
+    FGuid TargetGuildId;                                                              // 0x0070 (size: 0x10)
+    FGuid NextAdminPlayerUId;                                                         // 0x0080 (size: 0x10)
+    FGuid ApplicantPlayerUId;                                                         // 0x0090 (size: 0x10)
+
+}; // Size: 0xA0
+
+class UPalGuildChangeAdminRequestSequence_ChangeAdminMainProcess : public USequentialProcessSequenceBase
+{
+}; // Size: 0x40
+
+class UPalGuildChangeAdminRequestSequence_Trigger : public USequentialProcessSequenceBase
+{
+}; // Size: 0x40
+
+class UPalGuildEnterRequestFlow : public UPalGuildRequestFlowBase
+{
+    FGuid ApplicantPlayerUId;                                                         // 0x0070 (size: 0x10)
+    FGuid RespondentPlayerUId;                                                        // 0x0080 (size: 0x10)
+
+}; // Size: 0x90
+
+class UPalGuildEnterRequestSequence_ConfirmEnterGuildToApplicantPlayer : public UPalGuildRequestFlowSequenceWaitForConfirmPlayer
+{
+}; // Size: 0x70
+
+class UPalGuildEnterRequestSequence_ConfirmLoseBaseCampToApplicantPlayer : public UPalGuildRequestFlowSequenceWaitForConfirmPlayer
+{
+}; // Size: 0x68
+
+class UPalGuildEnterRequestSequence_EnterGuildMainProcess : public USequentialProcessSequenceBase
+{
+}; // Size: 0x40
+
+class UPalGuildEnterRequestSequence_ExitGuildMainProcess : public USequentialProcessSequenceBase
+{
+}; // Size: 0x40
+
+class UPalGuildEnterRequestSequence_OfferEnterGuildToRespondentPlayer : public UPalGuildRequestFlowSequenceWaitForConfirmPlayer
+{
+}; // Size: 0x68
+
+class UPalGuildEnterRequestSequence_Trigger : public USequentialProcessSequenceBase
+{
+}; // Size: 0x40
+
+class UPalGuildExitRequestFlow : public UPalGuildRequestFlowBase
+{
+    FGuid TargetGuildId;                                                              // 0x0070 (size: 0x10)
+    FGuid TargetPlayerUId;                                                            // 0x0080 (size: 0x10)
+    FGuid ApplicantPlayerUId;                                                         // 0x0090 (size: 0x10)
+
+}; // Size: 0xA0
+
+class UPalGuildExitRequestSequence_Trigger : public USequentialProcessSequenceBase
+{
+}; // Size: 0x40
+
 class UPalGuildJoinRequestResultUtility : public UObject
 {
 }; // Size: 0x28
@@ -12606,6 +13164,22 @@ class UPalGuildPlayerInfoUtility : public UBlueprintFunctionLibrary
 
     bool IsValid(const FPalGuildPlayerInfo& PlayerInfo);
 }; // Size: 0x28
+
+class UPalGuildRequestFlowBase : public USequentialProcessSystem
+{
+    FGuid FlowId;                                                                     // 0x0060 (size: 0x10)
+
+    void ReturnSelfDelegate__DelegateSignature(class UPalGuildRequestFlowBase* Flow);
+    void OnFinishFlow();
+}; // Size: 0x70
+
+class UPalGuildRequestFlowSequenceWaitForConfirmPlayer : public USequentialProcessSequenceBase_WaitOneProcess
+{
+    FGuid PlayerUIdWaitFor;                                                           // 0x0048 (size: 0x10)
+    class USequentialProcessSequenceBase* NextSequenceIfConfirmYes;                   // 0x0058 (size: 0x8)
+    float ProgressTime;                                                               // 0x0060 (size: 0x4)
+
+}; // Size: 0x68
 
 class UPalHUDDispatchParame_JoinGameInputCode : public UPalHUDDispatchParameterBase
 {
@@ -12629,7 +13203,7 @@ class UPalHUDDispatchParameter_Authentication : public UPalHUDDispatchParameter_
 
 class UPalHUDDispatchParameter_BaseCampTask : public UPalHUDDispatchParameterBase
 {
-    FGuid TargetBaseCampId;                                                           // 0x0038 (size: 0x10)
+    FGuid TargetBaseCampID;                                                           // 0x0038 (size: 0x10)
 
 }; // Size: 0x48
 
@@ -12642,6 +13216,7 @@ class UPalHUDDispatchParameter_CharacterDisplay : public UPalHUDDispatchParamete
 class UPalHUDDispatchParameter_CharacterMake : public UPalHUDDispatchParameterBase
 {
     bool bIsNewGame;                                                                  // 0x0038 (size: 0x1)
+    bool bIsRemake;                                                                   // 0x0039 (size: 0x1)
 
 }; // Size: 0x40
 
@@ -12782,10 +13357,16 @@ class UPalHUDDispatchParameter_Signboard : public UPalHUDDispatchParameter_MapOb
 
 }; // Size: 0x70
 
+class UPalHUDDispatchParameter_WorkSuitabilityPreference : public UPalHUDDispatchParameterBase
+{
+    class UPalUIWorkSuitabilitySettingModel* Model;                                   // 0x0038 (size: 0x8)
+
+}; // Size: 0x40
+
 class UPalHUDDispatchParameter_WorkerRadialMenu : public UPalHUDDispatchParameterBase
 {
     class UPalIndividualCharacterHandle* IndividualHandle;                            // 0x0038 (size: 0x8)
-    EPalWorkerRadialMenuResult ResultType;                                            // 0x0040 (size: 0x1)
+    EPalWorkerRadialMenuResult resultType;                                            // 0x0040 (size: 0x1)
 
 }; // Size: 0x48
 
@@ -12822,8 +13403,8 @@ class UPalHUDService : public UObject
     void OnApplicationActivationStateChangedDelegate(bool bIsFocused);
     FPalHUDServiceOnInvalidatePlayerInputGuard OnInvalidatePlayerInputGuard;          // 0x0060 (size: 0x10)
     void InvalidatePlayerInputGuard();
-    FUITransientData TransientData;                                                   // 0x0070 (size: 0x14)
-    TScriptInterface<class IPalHUDServiceProviderInterface> ServiceProvider;          // 0x0088 (size: 0x10)
+    FUITransientData TransientData;                                                   // 0x0070 (size: 0x88)
+    TScriptInterface<class IPalHUDServiceProviderInterface> ServiceProvider;          // 0x00F8 (size: 0x10)
 
     void StartFadeOut(EPalFadeWidgetLayerType LayerType);
     void StartFadeIn(EPalFadeWidgetLayerType LayerType, class UPalHUDDispatchParameter_FadeWidget* FadeParameter);
@@ -12855,7 +13436,7 @@ class UPalHUDService : public UObject
     FGuid AddHUD(TSubclassOf<class UPalUserWidget> WidgetClass, const EPalHUDWidgetPriority Priority, class UPalHUDDispatchParameterBase* Parameter);
     void ActivatePlayerInputGuard();
     void ActivateFocusCursor(class UWidget* TargetWidget);
-}; // Size: 0x98
+}; // Size: 0x108
 
 class UPalHate : public UObject
 {
@@ -13014,7 +13595,7 @@ class UPalIncidentDynamicParameter : public UObject
 
 class UPalIncidentDynamicParameterInvader : public UPalIncidentDynamicParameter
 {
-    FGuid TargetBaseCampId;                                                           // 0x0030 (size: 0x10)
+    FGuid TargetBaseCampID;                                                           // 0x0030 (size: 0x10)
 
 }; // Size: 0x40
 
@@ -13089,9 +13670,11 @@ class UPalIncidentSystem : public UPalWorldSubsystem
     TArray<class UPalIncidentBase*> ResidentIncidents;                                // 0x0108 (size: 0x10)
     TArray<class UPalIncidentNotifyListener*> Listeners;                              // 0x0118 (size: 0x10)
 
+    void TalkCustomFunction_AttackToPlayer(class APalPlayerCharacter* TalkPlayer, class APalCharacter* TargetNPC, const class UDataTable* CunstomFuncParam);
     class UPalIncidentList* RequestIncidents(const TArray<FName>& Incidents, class UObject* OccuredObject, class UObject* OwnerObject, class UPalIncidentDynamicParameter* Parameter);
     class UPalIncidentBase* RequestIncident(FName IncidentId, class UObject* OccuredObject, class UObject* OwnerObject, class UPalIncidentDynamicParameter* Parameter);
     void NotifyIncidentState(EPalIncidentState NotifyType, const FPalIncidentNotifyParameter& Parameter);
+    void LotteryItemAndNum(const class UDataTable* PresentLotteryDataTable, FName& OutItemName, int32& OutNum);
     bool IsIncidentBeginAllowed(class UPalIncidentBase* Incident);
     void IncidentStateNotify__DelegateSignature(EPalIncidentState IncidentState, const FPalIncidentNotifyParameter& Parameter);
     class UPalIncidentBase* GenerateIncident(FPalIncidentInitializeParameter& InitializeParam);
@@ -13142,79 +13725,86 @@ class UPalIndividualCharacterParameter : public UObject
     void UpdateLevelDelegate(int32 addLevel, int32 nowLevel);
     FPalIndividualCharacterParameterOnUpdateRankDelegate OnUpdateRankDelegate;        // 0x0038 (size: 0x10)
     void UpdateRankDelegate(int32 nowRank, int32 oldRank);
-    FPalIndividualCharacterParameterOnAddExpDelegate OnAddExpDelegate;                // 0x0048 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateRankUpExpDelegate OnUpdateRankUpExpDelegate; // 0x0048 (size: 0x10)
+    void UpdateRankUpExpDelegate(int32 nowRankUpExp, int32 oldRankUpExp);
+    FPalIndividualCharacterParameterOnAddExpDelegate OnAddExpDelegate;                // 0x0058 (size: 0x10)
     void AddExpDelegate(int32 addExp, int32 nowExp);
-    FPalIndividualCharacterParameterOnUpdateHPDelegate OnUpdateHPDelegate;            // 0x0058 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateHPDelegate OnUpdateHPDelegate;            // 0x0068 (size: 0x10)
     void UpdateHPDelegate(FFixedPoint64 nowHP, FFixedPoint64 nowMaxHP);
-    FPalIndividualCharacterParameterOnUpdateSPDelegate OnUpdateSPDelegate;            // 0x0068 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateSPDelegate OnUpdateSPDelegate;            // 0x0078 (size: 0x10)
     void UpdateSPDelegate(FFixedPoint64 nowSP, FFixedPoint64 nowMaxSP, bool isOverHeated);
-    FPalIndividualCharacterParameterOnUpdateFullStomachDelegate OnUpdateFullStomachDelegate; // 0x0078 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateFullStomachDelegate OnUpdateFullStomachDelegate; // 0x0088 (size: 0x10)
     void UpdateFullStomachDelegate(float Current, float Last);
-    FPalIndividualCharacterParameterOnUpdateHungerTypeDelegate OnUpdateHungerTypeDelegate; // 0x0088 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateHungerTypeDelegate OnUpdateHungerTypeDelegate; // 0x0098 (size: 0x10)
     void UpdateHungerTypeDelegate(EPalStatusHungerType Current, EPalStatusHungerType Last);
-    FPalIndividualCharacterParameterOnUpdateNickNameDelegate OnUpdateNickNameDelegate; // 0x0098 (size: 0x10)
-    void UpdateNickNameDelegate(FString newNickName);
-    FPalIndividualCharacterParameterOnUpdateNickNameWithParameterDelegate OnUpdateNickNameWithParameterDelegate; // 0x00A8 (size: 0x10)
-    void UpdateNickNameWithParameterDelegate(class UPalIndividualCharacterParameter* IndividualParameter, FString newNickName);
-    FPalIndividualCharacterParameterOnUpdateShieldMaxHPDelegate OnUpdateShieldMaxHPDelegate; // 0x00B8 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateNickNameDelegate OnUpdateNickNameDelegate; // 0x00A8 (size: 0x10)
+    void UpdateNickNameDelegate(FString NewNickName);
+    FPalIndividualCharacterParameterOnUpdateNickNameWithParameterDelegate OnUpdateNickNameWithParameterDelegate; // 0x00B8 (size: 0x10)
+    void UpdateNickNameWithParameterDelegate(class UPalIndividualCharacterParameter* IndividualParameter, FString NewNickName);
+    FPalIndividualCharacterParameterOnUpdateShieldMaxHPDelegate OnUpdateShieldMaxHPDelegate; // 0x00C8 (size: 0x10)
     void UpdateShieldMaxHPDelegate(FFixedPoint64 nowShieldMaxHP);
-    FPalIndividualCharacterParameterOnUpdateShieldHPDelegate OnUpdateShieldHPDelegate; // 0x00C8 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateShieldHPDelegate OnUpdateShieldHPDelegate; // 0x00D8 (size: 0x10)
     void UpdateShieldHPDelegate(FFixedPoint64 nowShieldMaxHP, FFixedPoint64 nowShieldHP);
-    FPalIndividualCharacterParameterOnShieldDamageDelegate OnShieldDamageDelegate;    // 0x00D8 (size: 0x10)
+    FPalIndividualCharacterParameterOnShieldDamageDelegate OnShieldDamageDelegate;    // 0x00E8 (size: 0x10)
     void ShieldDamageDelegate(int32 Damage, bool IsShieldBroken);
-    FPalIndividualCharacterParameterOnUpdateSanityDelegate OnUpdateSanityDelegate;    // 0x00E8 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateSanityDelegate OnUpdateSanityDelegate;    // 0x00F8 (size: 0x10)
     void UpdateSanityDelegate(float nowSanity, float oldSanity);
-    FPalIndividualCharacterParameterOnUpdateUnusedStatusPoint OnUpdateUnusedStatusPoint; // 0x00F8 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateUnusedStatusPoint OnUpdateUnusedStatusPoint; // 0x0108 (size: 0x10)
     void UpdateUnusedStatusPointDelegate(int32 UnusedPoint);
-    FPalIndividualCharacterParameterOnUpdateStatusPointDelegate OnUpdateStatusPointDelegate; // 0x0108 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateStatusPointDelegate OnUpdateStatusPointDelegate; // 0x0118 (size: 0x10)
     void UpdateStatusPointDelegate(FName StatusName, int32 prevPoint, int32 newPoint);
-    FPalIndividualCharacterParameterOnChangeBuffDelegate OnChangeBuffDelegate;        // 0x0118 (size: 0x10)
+    FPalIndividualCharacterParameterOnChangeBuffDelegate OnChangeBuffDelegate;        // 0x0128 (size: 0x10)
     void ChangeBuffStatusDelegate();
-    FPalIndividualCharacterParameterOnConditionChangedDelegate OnConditionChangedDelegate; // 0x0128 (size: 0x10)
+    FPalIndividualCharacterParameterOnConditionChangedDelegate OnConditionChangedDelegate; // 0x0138 (size: 0x10)
     void ConditionChangedDelegate();
-    FPalIndividualCharacterParameterOnWorkSuitabilityChangedDelegate OnWorkSuitabilityChangedDelegate; // 0x0138 (size: 0x10)
+    FPalIndividualCharacterParameterOnWorkSuitabilityChangedDelegate OnWorkSuitabilityChangedDelegate; // 0x0148 (size: 0x10)
     void WorkSuitabilityChangedDelegate();
-    FPalIndividualCharacterParameterOnGotStatusPointListChangedDelegate OnGotStatusPointListChangedDelegate; // 0x0148 (size: 0x10)
+    FPalIndividualCharacterParameterOnGotStatusPointListChangedDelegate OnGotStatusPointListChangedDelegate; // 0x0158 (size: 0x10)
     void GotStatusPointListChangedDelegate();
-    FPalIndividualCharacterParameterOnStatusRankChangedDelegate OnStatusRankChangedDelegate; // 0x0158 (size: 0x10)
+    FPalIndividualCharacterParameterOnStatusRankChangedDelegate OnStatusRankChangedDelegate; // 0x0168 (size: 0x10)
     void StatusRankChangedDelegate();
-    FPalIndividualCharacterParameterOnInvaderTargetChanged OnInvaderTargetChanged;    // 0x0168 (size: 0x10)
+    FPalIndividualCharacterParameterOnInvaderTargetChanged OnInvaderTargetChanged;    // 0x0178 (size: 0x10)
     void InvaderTargetChangedDelegate();
-    FPalIndividualCharacterParameterOnTriedConsumeFoodDelegate OnTriedConsumeFoodDelegate; // 0x0178 (size: 0x10)
+    FPalIndividualCharacterParameterOnTriedConsumeFoodDelegate OnTriedConsumeFoodDelegate; // 0x0188 (size: 0x10)
     void TriedConsumeFoodDelegate();
-    FPalIndividualCharacterParameterOnUpdateGroupIdDelegate OnUpdateGroupIdDelegate;  // 0x0188 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateGroupIdDelegate OnUpdateGroupIdDelegate;  // 0x0198 (size: 0x10)
     void UpdateGroupIdDelegate(const FGuid& NewGroupId);
-    FPalIndividualCharacterParameterOnUpdateReviveTimerDelegate OnUpdateReviveTimerDelegate; // 0x0198 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateReviveTimerDelegate OnUpdateReviveTimerDelegate; // 0x01A8 (size: 0x10)
     void UpdateReviveTimerDelegate(float NowReviveTimer);
-    FPalIndividualCharacterParameterOnEndMedicalBedDelegate OnEndMedicalBedDelegate;  // 0x01A8 (size: 0x10)
+    FPalIndividualCharacterParameterOnUpdateWorkSuitabilityOptionDelegate OnUpdateWorkSuitabilityOptionDelegate; // 0x01B8 (size: 0x10)
+    void UpdateWorkSuitabilityOptionDelegate(const FPalWorkSuitabilityPreferenceInfo& NewWorkSuitabilityOption);
+    FPalIndividualCharacterParameterOnTalentChangedDelegate OnTalentChangedDelegate;  // 0x01C8 (size: 0x10)
+    void TalentChangedDelegate();
+    FPalIndividualCharacterParameterOnEndMedicalBedDelegate OnEndMedicalBedDelegate;  // 0x01D8 (size: 0x10)
     void EndMedicalBedDelegate();
-    FPalIndividualCharacterParameterOnRevivedDelegate OnRevivedDelegate;              // 0x01B8 (size: 0x10)
+    FPalIndividualCharacterParameterOnRevivedDelegate OnRevivedDelegate;              // 0x01E8 (size: 0x10)
     void OnRevivedDelegate(class UPalIndividualCharacterParameter* IndividualParameter);
-    FPalIndividualCharacterParameterOnDeadBodyDelegate OnDeadBodyDelegate;            // 0x01C8 (size: 0x10)
+    FPalIndividualCharacterParameterOnDeadBodyDelegate OnDeadBodyDelegate;            // 0x01F8 (size: 0x10)
     void DeadBodyDelegate(class UPalIndividualCharacterHandle* IndividualHandle);
-    class APalCharacter* IndividualActor;                                             // 0x01D8 (size: 0x8)
-    FPalInstanceID IndividualId;                                                      // 0x01E0 (size: 0x30)
-    TMap<int32, APalCharacter*> PhantomActorMap;                                      // 0x0210 (size: 0x50)
-    TArray<FPalPhantomReplicateInfo> PhantomActorReplicateArray;                      // 0x0260 (size: 0x10)
-    FPalIndividualCharacterSaveParameter SaveParameter;                               // 0x0270 (size: 0x218)
-    FPalIndividualCharacterParameterOnAddEquipWazaDelegate OnAddEquipWazaDelegate;    // 0x0490 (size: 0x10)
+    class APalCharacter* IndividualActor;                                             // 0x0208 (size: 0x8)
+    FPalInstanceID IndividualId;                                                      // 0x0210 (size: 0x30)
+    TMap<int32, APalCharacter*> PhantomActorMap;                                      // 0x0240 (size: 0x50)
+    TArray<FPalPhantomReplicateInfo> PhantomActorReplicateArray;                      // 0x0290 (size: 0x10)
+    FPalIndividualCharacterSaveParameter SaveParameter;                               // 0x02A0 (size: 0x280)
+    FPalIndividualCharacterParameterOnAddEquipWazaDelegate OnAddEquipWazaDelegate;    // 0x0528 (size: 0x10)
     void AddEquipWazaDelegate(EPalWazaID WazaID);
-    FPalIndividualCharacterParameterOnChangeEquipWazaDelegate OnChangeEquipWazaDelegate; // 0x04A0 (size: 0x10)
+    FPalIndividualCharacterParameterOnChangeEquipWazaDelegate OnChangeEquipWazaDelegate; // 0x0538 (size: 0x10)
     void ChangeEquipWazaDelegate(class UPalIndividualCharacterParameter* IndividualParameter);
-    FPalIndividualCharacterParameterOnChangeMasteredWazaDelegate OnChangeMasteredWazaDelegate; // 0x04B0 (size: 0x10)
+    FPalIndividualCharacterParameterOnChangeMasteredWazaDelegate OnChangeMasteredWazaDelegate; // 0x0548 (size: 0x10)
     void ChangeMasteredWazaDelegate(class UPalIndividualCharacterParameter* IndividualParameter, EPalWazaID WazaID);
-    bool IsWaitResponseWordFiltering;                                                 // 0x04C0 (size: 0x1)
-    FString WaitingFilterNickName;                                                    // 0x04C8 (size: 0x10)
-    FString NextFilterNickName;                                                       // 0x04D8 (size: 0x10)
-    FFlagContainer DisableNaturalHealing;                                             // 0x0548 (size: 0x50)
-    FFloatContainer AdditionalNatureHealingRate;                                      // 0x0598 (size: 0x10)
-    FPalIndividualCharacterSaveParameter SaveParameterMirror;                         // 0x05A8 (size: 0x218)
-    class UPalItemContainer* EquipItemContainer;                                      // 0x07C0 (size: 0x8)
-    FGuid BaseCampId;                                                                 // 0x07C8 (size: 0x10)
-    FString Debug_CurrentAIActionName;                                                // 0x07D8 (size: 0x10)
+    bool IsWaitResponseWordFiltering;                                                 // 0x0558 (size: 0x1)
+    FString WaitingFilterNickName;                                                    // 0x0560 (size: 0x10)
+    FString NextFilterNickName;                                                       // 0x0570 (size: 0x10)
+    FFlagContainer DisableNaturalHealing;                                             // 0x05E0 (size: 0x50)
+    FFloatContainer AdditionalNatureHealingRate;                                      // 0x0630 (size: 0x10)
+    FPalIndividualCharacterSaveParameter SaveParameterMirror;                         // 0x0640 (size: 0x280)
+    class UPalItemContainer* EquipItemContainer;                                      // 0x08C0 (size: 0x8)
+    FGuid BaseCampId;                                                                 // 0x08C8 (size: 0x10)
+    FString Debug_CurrentAIActionName;                                                // 0x08D8 (size: 0x10)
 
     void WorkSuitabilityChangedDelegate__DelegateSignature();
     void UseItemInSlot(const FPalItemSlotIdAndNum SlotIdAndNum);
+    void UpdateWorkSuitabilityOptionDelegate__DelegateSignature(const FPalWorkSuitabilityPreferenceInfo& NewWorkSuitabilityOption);
     void UpdateUnusedStatusPointDelegate__DelegateSignature(int32 UnusedPoint);
     void UpdateStatusPointDelegate__DelegateSignature(FName StatusName, int32 prevPoint, int32 newPoint);
     void UpdateSPDelegate__DelegateSignature(FFixedPoint64 nowSP, FFixedPoint64 nowMaxSP, bool isOverHeated);
@@ -13222,9 +13812,10 @@ class UPalIndividualCharacterParameter : public UObject
     void UpdateShieldHPDelegate__DelegateSignature(FFixedPoint64 nowShieldMaxHP, FFixedPoint64 nowShieldHP);
     void UpdateSanityDelegate__DelegateSignature(float nowSanity, float oldSanity);
     void UpdateReviveTimerDelegate__DelegateSignature(float NowReviveTimer);
+    void UpdateRankUpExpDelegate__DelegateSignature(int32 nowRankUpExp, int32 oldRankUpExp);
     void UpdateRankDelegate__DelegateSignature(int32 nowRank, int32 oldRank);
-    void UpdateNickNameWithParameterDelegate__DelegateSignature(class UPalIndividualCharacterParameter* IndividualParameter, FString newNickName);
-    void UpdateNickNameDelegate__DelegateSignature(FString newNickName);
+    void UpdateNickNameWithParameterDelegate__DelegateSignature(class UPalIndividualCharacterParameter* IndividualParameter, FString NewNickName);
+    void UpdateNickNameDelegate__DelegateSignature(FString NewNickName);
     void UpdateLevelDelegate__DelegateSignature(int32 addLevel, int32 nowLevel);
     void UpdateHungerTypeDelegate__DelegateSignature(EPalStatusHungerType Current, EPalStatusHungerType Last);
     void UpdateHPDelegate__DelegateSignature(FFixedPoint64 nowHP, FFixedPoint64 nowMaxHP);
@@ -13232,6 +13823,7 @@ class UPalIndividualCharacterParameter : public UObject
     void UpdateFullStomachDelegate__DelegateSignature(float Current, float Last);
     bool TryFindEatItem(const FPalContainerId& ContainerId, int32& SlotIndex);
     void TriedConsumeFoodDelegate__DelegateSignature();
+    void TalentChangedDelegate__DelegateSignature();
     void StoreIndividualActorInfoToSaveParameter();
     void StatusRankChangedDelegate__DelegateSignature();
     void StartRemainderOfLifeTimer();
@@ -13244,9 +13836,11 @@ class UPalIndividualCharacterParameter : public UObject
     void SetNoFallDamageHeightLastJumpedLocation();
     void SetLastJumpedLocation(FVector Location);
     void SetInvaderData(EPalInvaderType InvaderType, const FGuid InBaseCampId);
+    void SetExStatusPoint(FName StatusName, int32 Point);
     void SetDisableNaturalHealing(FName Key, bool Disable);
     void SetDecreaseFullStomachRates(const FName Name, float Rate);
     void ResetLastJumpedLocation();
+    void RemoveEquipWaza(EPalWazaID WazaID);
     void RemoveDecreaseFullStomachRates(const FName Name);
     void PartyPalMealInventoryFood();
     void OnRevivedDelegate__DelegateSignature(class UPalIndividualCharacterParameter* IndividualParameter);
@@ -13255,6 +13849,8 @@ class UPalIndividualCharacterParameter : public UObject
     void OnRep_IndividualActor();
     void OnReceivedWordFilteringResult(const FString ResponseBody, bool bResponseOK, int32 ResponseCode);
     void NaturalUpdateSaveParameter(const EPalCharacterNaturalUpdateType Type);
+    bool IsStatusPointAllMax();
+    bool IsStatusPointAddable(FName StatusName, int32& AddablePoint);
     bool IsSleeping();
     bool IsRarePal();
     bool IsNoFallDamageLastJumpedLocation();
@@ -13276,6 +13872,7 @@ class UPalIndividualCharacterParameter : public UObject
     EPalBaseCampWorkerSickType GetWorkerSick();
     int32 GetUnusedStatusPoint();
     EPalTribeID GetTribeID();
+    int32 GetTotalStatusPoint(FName StatusName);
     void GetStatusPointList(TArray<FPalGotStatusPoint>& OutPointList);
     int32 GetStatusPoint(FName StatusName);
     int32 GetShotAttack_withBuff();
@@ -13285,8 +13882,10 @@ class UPalIndividualCharacterParameter : public UObject
     FPalIndividualCharacterSaveParameter GetSaveParameter();
     float GetSanityValue();
     float GetSanityRate();
+    FPalFoodRegeneInfo GetRegeneItemName();
     float GetRatePassiveSkill(EPalPassiveSkillEffectType EffectType);
     float GetRatePartnerSkill(EPalPassiveSkillEffectType EffectType);
+    int32 GetRankUpExp();
     int32 GetRank();
     EPalStatusPhysicalHealthType GetPhysicalHealth();
     TArray<FName> GetPassiveSkillList();
@@ -13310,10 +13909,12 @@ class UPalIndividualCharacterParameter : public UObject
     float GetFullStomachDecreasingRate();
     float GetFullStomach();
     float GetFoodStatusRate(EPalFoodStatusEffectType EffectType);
+    int32 GetExStatusPoint(FName StatusName);
     int32 GetExp();
     TArray<EPalWazaID> GetEquipWaza();
     FPalContainerId GetEquipItemContainerId();
     FPalIndividualCharacterEquipItemContainerHandler GetEquipItemContainerHandler();
+    TArray<EPalWazaID> GetEquipableWaza();
     float GetEffectFoodTimeRate();
     FName GetEffectFoodName();
     int32 GetDefense_withBuff();
@@ -13343,12 +13944,13 @@ class UPalIndividualCharacterParameter : public UObject
     void ChangeMasteredWazaDelegate__DelegateSignature(class UPalIndividualCharacterParameter* IndividualParameter, EPalWazaID WazaID);
     void ChangeEquipWazaDelegate__DelegateSignature(class UPalIndividualCharacterParameter* IndividualParameter);
     void ChangeBuffStatusDelegate__DelegateSignature();
+    bool CanAddTalentByItem(FName ItemName);
     void AddPassiveSkill(FName AddSkill, FName OverrideSkill);
     void AddHP(FFixedPoint64 PlusHP);
     void AddExpDelegate__DelegateSignature(int32 addExp, int32 nowExp);
     void AddEquipWazaDelegate__DelegateSignature(EPalWazaID WazaID);
     void AddEquipWaza(EPalWazaID WazaID);
-}; // Size: 0x7E8
+}; // Size: 0x8E8
 
 class UPalIndividualCharacterParameterUtility : public UBlueprintFunctionLibrary
 {
@@ -13367,9 +13969,9 @@ class UPalIndividualCharacterReferenceSlot : public UPalIndividualCharacterSlot
 
 class UPalIndividualCharacterSaveParameterObject : public UObject
 {
-    FPalIndividualCharacterSaveParameter SaveParameter;                               // 0x0028 (size: 0x218)
+    FPalIndividualCharacterSaveParameter SaveParameter;                               // 0x0028 (size: 0x280)
 
-}; // Size: 0x240
+}; // Size: 0x2A8
 
 class UPalIndividualCharacterSaveParameterUtility : public UObject
 {
@@ -13578,7 +14180,7 @@ class UPalInteractiveObjectSphereComponent : public USphereComponent
 class UPalInvaderBaseCampObserver : public UObject
 {
     class UPalBaseCampModel* TargetBaseCamp;                                          // 0x0028 (size: 0x8)
-    FGuid TargetBaseCampId;                                                           // 0x0030 (size: 0x10)
+    FGuid TargetBaseCampID;                                                           // 0x0030 (size: 0x10)
     bool bIsInvading;                                                                 // 0x0040 (size: 0x1)
     bool bIsCoolTime;                                                                 // 0x0041 (size: 0x1)
     float CoolTimeFinish;                                                             // 0x0044 (size: 0x4)
@@ -13657,19 +14259,26 @@ class UPalItemContainer : public UPalContainerBase
 {
     FPalItemContainerOnUpdateContentsDelegate OnUpdateContentsDelegate;               // 0x0050 (size: 0x10)
     void UpdateContentsDelegate(class UPalItemContainer* Container);
-    TArray<class UPalItemSlot*> ItemSlotArray;                                        // 0x0060 (size: 0x10)
-    FPalItemPermission Permission;                                                    // 0x0070 (size: 0x30)
-    float CorruptionMultiplier;                                                       // 0x00A0 (size: 0x4)
+    FPalItemContainerOnUpdateFilterPreferenceDelegate OnUpdateFilterPreferenceDelegate; // 0x0060 (size: 0x10)
+    void UpdateContentsDelegate(class UPalItemContainer* Container);
+    TArray<class UPalItemSlot*> ItemSlotArray;                                        // 0x0070 (size: 0x10)
+    FPalItemPermission Permission;                                                    // 0x0080 (size: 0x30)
+    float CorruptionMultiplier;                                                       // 0x00B0 (size: 0x4)
+    FPalItemContainerFilter FilterPreference;                                         // 0x00B8 (size: 0x10)
+    FPalItemContainerBelongInfo BelongInfo;                                           // 0x00C8 (size: 0x20)
 
     void UpdateContentsDelegate__DelegateSignature(class UPalItemContainer* Container);
     void OnUpdateSlotContent(class UPalItemSlot* Slot);
     void OnRep_Permission();
     void OnRep_ItemSlotArray();
+    void OnRep_FilterPreference();
     int32 Num();
     FPalItemPermission GetPermission();
     int32 GetItemStackCount(const FName StaticItemId);
+    FPalItemContainerFilter GetFilterPreference();
+    TArray<FName> GetFilterOffList();
     class UPalItemSlot* Get(const int32 Index);
-}; // Size: 0xA8
+}; // Size: 0xE8
 
 class UPalItemContainerManager : public UPalWorldSubsystem
 {
@@ -13810,6 +14419,7 @@ class UPalItemUtility : public UBlueprintFunctionLibrary
     class UPalItemSlot* CreateLocalItemSlot(class UObject* WorldContextObject, const FName StaticItemId, const int32 Stack);
     void CollectLocalPlayerControllableItemInfos(const class UObject* WorldContextObject, TArray<FName> StaticItemIds, TArray<FPalStaticItemIdAndNum>& OutItemInfos, const bool bIncludeInRangeBaseCamp);
     bool CanUseHealItem(const class UObject* WorldContextObject, FName staticItemName, class UPalIndividualCharacterParameter* targetParameter);
+    bool CanItemLevelUp(const class UPalStaticItemDataBase* ItemData, class UPalIndividualCharacterParameter* targetParameter);
 }; // Size: 0x28
 
 class UPalLandingTypeUtility : public UBlueprintFunctionLibrary
@@ -13871,8 +14481,6 @@ class UPalLoadoutSelectorComponent : public UPalItemSelectorComponent
     TArray<class APalWeaponBase*> spawnedWeaponsArray;                                // 0x0170 (size: 0x10)
     TMap<class FName, class APalWeaponBase*> spawnedBallMap;                          // 0x0180 (size: 0x50)
     class APalWeaponBase* DummyBall;                                                  // 0x01D0 (size: 0x8)
-    EPalPlayerInventoryType replicatedPrimaryTargetInventoryType;                     // 0x01D8 (size: 0x1)
-    int32 replicatedCurrentItemSlotIndex;                                             // 0x01DC (size: 0x4)
 
     void TryEquipNowSelectedWeapon_ToAll();
     bool TryEquipNowSelectedWeapon();
@@ -13885,9 +14493,9 @@ class UPalLoadoutSelectorComponent : public UPalItemSelectorComponent
     void RemoveItem__DelegateSignature(EPalPlayerInventoryType inventoryType, int32 Index);
     void OnUpdateWeaponLoadoutSlot(class UPalItemSlot* itemSlot);
     void OnUpdateInventorySlot(class UPalItemSlot* itemSlot);
-    void OnRep_PrimaryTargetInventoryType();
-    void OnRep_CurrentItemSlotIndex();
+    void OnRemoveEquipItem_ByTransmitter();
     void OnRemoveEquipItem(EPalPlayerInventoryType inventoryType, int32 Index);
+    void OnEquipItem_ByTransmitter(EPalPlayerInventoryType inventoryType, int32 Index);
     void OnEquipItem(EPalPlayerInventoryType inventoryType, int32 Index);
     EPalPlayerInventoryType GetPrimaryInventoryType();
     TMap<class FName, class APalWeaponBase*> GetPalSphereActorMap();
@@ -13906,7 +14514,7 @@ class UPalLoadoutSelectorComponent : public UPalItemSelectorComponent
     void ChangeNextBallLoadout();
     void AttachSpawnOtomoPalThrowWeapon_ToServer(int32 issuerID, bool IsAttach, bool ShouldEquipDummyWeapon);
     void AttachSpawnOtomoPalThrowWeapon_ToAll(int32 issuerID, bool IsAttach, bool ShouldEquipDummyWeapon);
-}; // Size: 0x240
+}; // Size: 0x238
 
 class UPalLocalPlayer : public UCommonLocalPlayer
 {
@@ -13933,6 +14541,7 @@ class UPalLocationBase : public UObject
     bool IsShowInCompass();
     bool IsRequestedPlayer(const FGuid& LocalPlayerUId);
     EPalLocationType GetType();
+    FGuid GetLocationId();
 }; // Size: 0x50
 
 class UPalLocationCreateParameter : public UObject
@@ -14057,7 +14666,7 @@ class UPalLocationPoint_Character : public UPalLocationPoint
 {
     FPalInstanceID IndividualId;                                                      // 0x0050 (size: 0x30)
     EPalCharacterLocationType CharacterLocationType;                                  // 0x0080 (size: 0x1)
-    FGuid TargetBaseCampId;                                                           // 0x0084 (size: 0x10)
+    FGuid TargetBaseCampID;                                                           // 0x0084 (size: 0x10)
     FName CharacterID;                                                                // 0x0094 (size: 0x8)
 
     void OnDestroyedTarget(class AActor* Target);
@@ -14119,17 +14728,21 @@ class UPalLogManager : public UPalWorldSubsystem
     float normalLogDisplayTime;                                                       // 0x0070 (size: 0x4)
     float importantLogDisplayTime;                                                    // 0x0074 (size: 0x4)
     float veryImportantLogDisplayTime;                                                // 0x0078 (size: 0x4)
-    TMap<class FGuid, class FPalLogDataSet> veryImportantLogMap;                      // 0x0080 (size: 0x50)
-    TSubclassOf<class UPalStaticLogCollector> staticLogCollectorClass;                // 0x00D0 (size: 0x8)
-    class UPalStaticLogCollector* staticLogCollector;                                 // 0x00D8 (size: 0x8)
-    FPalLogManagerOnAddedNormalLogDelegate OnAddedNormalLogDelegate;                  // 0x00E0 (size: 0x10)
+    float DeathLogShortDisplayTime;                                                   // 0x007C (size: 0x4)
+    float DeathLogLongDisplayTime;                                                    // 0x0080 (size: 0x4)
+    TMap<class FGuid, class FPalLogDataSet> veryImportantLogMap;                      // 0x0088 (size: 0x50)
+    TSubclassOf<class UPalStaticLogCollector> staticLogCollectorClass;                // 0x00D8 (size: 0x8)
+    class UPalStaticLogCollector* staticLogCollector;                                 // 0x00E0 (size: 0x8)
+    FPalLogManagerOnAddedNormalLogDelegate OnAddedNormalLogDelegate;                  // 0x00E8 (size: 0x10)
     void AddedNormalLogDelegate(const FText& LogText, const FPalLogAdditionalData& logAdditionalData);
-    FPalLogManagerOnAddedImportantLogDelegate OnAddedImportantLogDelegate;            // 0x00F0 (size: 0x10)
+    FPalLogManagerOnAddedImportantLogDelegate OnAddedImportantLogDelegate;            // 0x00F8 (size: 0x10)
     void AddedImportantLogDelegate(const FText& LogText, const FPalLogAdditionalData& logAdditionalData);
-    FPalLogManagerOnAddedVeryImportantLogDelegate OnAddedVeryImportantLogDelegate;    // 0x0100 (size: 0x10)
+    FPalLogManagerOnAddedVeryImportantLogDelegate OnAddedVeryImportantLogDelegate;    // 0x0108 (size: 0x10)
     void AddedVeryImportantLogDelegate(const FGuid& logId, const FText& LogText, const FPalLogAdditionalData& logAdditionalData);
-    FPalLogManagerOnRemovedVeryImportantLogDelegate OnRemovedVeryImportantLogDelegate; // 0x0110 (size: 0x10)
+    FPalLogManagerOnRemovedVeryImportantLogDelegate OnRemovedVeryImportantLogDelegate; // 0x0118 (size: 0x10)
     void RemovedVeryImportantLogDelegate(const FGuid& logId);
+    FPalLogManagerOnAddedDeathLogDelegate OnAddedDeathLogDelegate;                    // 0x0128 (size: 0x10)
+    void AddedDeathLogDelegate(const FText& LogText, const TSoftObjectPtr<UTexture2D> Icon);
 
     bool RemoveVeryImportantLog(const FGuid& targetLogId);
     void RemovedVeryImportantLogDelegate__DelegateSignature(const FGuid& logId);
@@ -14137,7 +14750,9 @@ class UPalLogManager : public UPalWorldSubsystem
     void AddedVeryImportantLogDelegate__DelegateSignature(const FGuid& logId, const FText& LogText, const FPalLogAdditionalData& logAdditionalData);
     void AddedNormalLogDelegate__DelegateSignature(const FText& LogText, const FPalLogAdditionalData& logAdditionalData);
     void AddedImportantLogDelegate__DelegateSignature(const FText& LogText, const FPalLogAdditionalData& logAdditionalData);
-}; // Size: 0x120
+    void AddedDeathLogDelegate__DelegateSignature(const FText& LogText, const TSoftObjectPtr<UTexture2D> Icon);
+    void AddDeathLog(const FText& LogText, const TSoftObjectPtr<UTexture2D> Icon);
+}; // Size: 0x138
 
 class UPalLogUtility : public UBlueprintFunctionLibrary
 {
@@ -14159,8 +14774,10 @@ class UPalLogUtility : public UBlueprintFunctionLibrary
     void AddWorkerCompleteBuildLog(const class UObject* WorldContextObject, const class UPalIndividualCharacterHandle* workerHandle, const FName& buildedMapObjectName);
     void AddSkillLog(const class UObject* WorldContextObject, EPalLogType logType, const FPalLogInfo_Skill& Info);
     void AddMealLog(const class UObject* WorldContextObject, const FPalMealLogDisplayData& DisplayData);
+    void AddItemsGetLog(const class UObject* WorldContextObject, const TArray<FPalItemAndNum>& ItemAndNumArray);
     void AddItemGetLog(const class UObject* WorldContextObject, const FPalStaticItemIdAndNum& ItemIDAndNum);
     void AddDropPalLog(const class UObject* WorldContextObject, const FPalLogInfo_DropPal& LogInfo);
+    void AddDeathLog(const class UObject* WorldContextObject, const class UPalIndividualCharacterHandle* CharacterHandle);
 }; // Size: 0x28
 
 class UPalLogWidget : public UPalUserWidget
@@ -14251,7 +14868,7 @@ class UPalMapObjectAmusementModel : public UPalMapObjectConcreteModelBase
 class UPalMapObjectAmusementParameterComponent : public UActorComponent
 {
     float AffectSanityRate;                                                           // 0x00A0 (size: 0x4)
-    TSubclassOf<class UPalAIActionBase> AIActionClass;                                // 0x00A8 (size: 0x8)
+    TSubclassOf<class UPalAIActionBaseCampInUsingAmusement> AIActionClass;            // 0x00A8 (size: 0x8)
 
 }; // Size: 0xB0
 
@@ -14342,6 +14959,14 @@ class UPalMapObjectCharacterContainerModule : public UPalMapObjectConcreteModelM
     class UPalIndividualCharacterContainer* GetContainer();
 }; // Size: 0x38
 
+class UPalMapObjectCharacterMakeModel : public UPalMapObjectConcreteModelBase
+{
+    TSubclassOf<class UPalUserWidgetOverlayUI> CharacterMakeWidget;                   // 0x0218 (size: 0x8)
+
+    void OnCloseCheckDialog(bool Result);
+    void OnCloseCharacterMake(class UPalHUDDispatchParameterBase* Parameter);
+}; // Size: 0x220
+
 class UPalMapObjectCharacterStatusOperatorModel : public UPalMapObjectConcreteModelBase
 {
 }; // Size: 0x218
@@ -14415,14 +15040,14 @@ class UPalMapObjectConvertItemModel : public UPalMapObjectConcreteModelBase
     TArray<EPalItemTypeB> TargetTypesB;                                               // 0x02B8 (size: 0x10)
     int32 TargetRankMax;                                                              // 0x02C8 (size: 0x4)
     bool IsPickUpInteractable;                                                        // 0x02CC (size: 0x1)
+    bool bCanTransportOutProduct;                                                     // 0x02CD (size: 0x1)
 
     void UpdateSettingDelegate__DelegateSignature(class UPalMapObjectConvertItemModel* Model);
     void UpdateRecipeDelegate__DelegateSignature(class UPalMapObjectConvertItemModel* Model);
-    void RequestUpdateRecipe(const FName RecipeID, const int32 ProductNum);
-    void RequestChangeRecipe_ServerInternal(const int32 RequestPlayerId, const FPalNetArchive& Archive);
-    void RequestCancel();
     void RecieveUpdateRecipeRequestResultDelegate__DelegateSignature(EPalMapObjectConvertItemModelRequestResult Result);
+    void ReceivePickupProductResult_Client(const FPalNetArchive& Archive);
     void ReceivedPickProductResult(class UPalItemSlot* Slot);
+    void PickupProduct_ServerInternal(const int32 RequestPlayerId);
     void OnUpdateEnergyModuleState(class UPalMapObjectEnergyModule* EnergyModule);
     void OnUpdateContainerContentInServer(class UPalItemContainer* Container);
     void OnStartWorkAnyone_ServerInternal(class UPalWorkBase* Work, const FPalInstanceID& WorkerIndividualId);
@@ -14443,6 +15068,8 @@ class UPalMapObjectConvertItemModel : public UPalMapObjectConcreteModelBase
     FName GetCurrentRecipeId();
     FPalItemRecipe GetCurrentRecipe();
     void FinishConvertDelegate__DelegateSignature(class UPalMapObjectConvertItemModel* Model);
+    void ChangeRecipe_ServerInternal(const int32 RequestPlayerId, const FPalNetArchive& Archive);
+    void Cancel_ServerInternal(const int32 RequestPlayerId);
     float CalcRequiredAmount(const float BaseRequiredAmount);
     void AddConvertItemResultLog(const FPalNetArchive& Archive);
 }; // Size: 0x2D0
@@ -14462,14 +15089,14 @@ class UPalMapObjectDamagedScarecrowModel : public UPalMapObjectConcreteModelBase
 
 class UPalMapObjectDeathDroppedCharacterModel : public UPalMapObjectPickableCharacterModelBase
 {
-    FPalMapObjectDeathDroppedCharacterModelOnNotifiedGuildUpdateInClientDelegate OnNotifiedGuildUpdateInClientDelegate; // 0x0458 (size: 0x10)
+    FPalMapObjectDeathDroppedCharacterModelOnNotifiedGuildUpdateInClientDelegate OnNotifiedGuildUpdateInClientDelegate; // 0x04C0 (size: 0x10)
     void ReturnSelfDelegate(class UPalMapObjectDeathDroppedCharacterModel* Model);
-    FGuid OwnerPlayerUId;                                                             // 0x0468 (size: 0x10)
+    FGuid OwnerPlayerUId;                                                             // 0x04D0 (size: 0x10)
 
     void ReturnSelfDelegate__DelegateSignature(class UPalMapObjectDeathDroppedCharacterModel* Model);
     void OnChangedPlayerInfoInLocalPlayerGuild_ClientInternal(class APalPlayerState* LocalPlayerState);
     bool IsSameGuildInLocalPlayer();
-}; // Size: 0x478
+}; // Size: 0x4E0
 
 class UPalMapObjectDeathPenaltyStorageModel : public UPalMapObjectItemStorageModel
 {
@@ -14477,11 +15104,13 @@ class UPalMapObjectDeathPenaltyStorageModel : public UPalMapObjectItemStorageMod
     void ReturnSelfDelegate(class UPalMapObjectDeathPenaltyStorageModel* Model);
     FGuid OwnerPlayerUId;                                                             // 0x0230 (size: 0x10)
     FGuid LocationId;                                                                 // 0x0240 (size: 0x10)
+    FDateTime CreatedAtRealTime;                                                      // 0x0250 (size: 0x8)
+    bool bCanOpenByProgressTime;                                                      // 0x0258 (size: 0x1)
 
     void ReturnSelfDelegate__DelegateSignature(class UPalMapObjectDeathPenaltyStorageModel* Model);
     void OnChangedPlayerInfoInLocalPlayerGuild_ClientInternal(class APalPlayerState* LocalPlayerState);
     bool IsSameGuildInLocalPlayer();
-}; // Size: 0x250
+}; // Size: 0x260
 
 class UPalMapObjectDefenseBulletLauncherModel : public UPalMapObjectDefenseModelBase
 {
@@ -14754,23 +15383,29 @@ class UPalMapObjectHatchingEggModel : public UPalMapObjectConcreteModelBase
     void UpdateHatchedCharacterDelegate(class UPalMapObjectHatchingEggModel* Model);
     FPalMapObjectHatchingEggModelOnUpdateHatchTemperaturDelegate OnUpdateHatchTemperaturDelegate; // 0x0230 (size: 0x10)
     void UpdateHatchTemperatureDelegate(int32 Temperature);
-    FPalIndividualCharacterSaveParameter HatchedCharacterSaveParameter;               // 0x0240 (size: 0x218)
-    bool bWorkable;                                                                   // 0x0458 (size: 0x1)
-    TSubclassOf<class UPalUserWidgetOverlayUI> MenuUIWidgetClass;                     // 0x0460 (size: 0x8)
-    int32 CurrentPalEggTemperatureDiff;                                               // 0x0468 (size: 0x4)
+    FPalMapObjectHatchingEggModelOnUpdateWorkableDelegate OnUpdateWorkableDelegate;   // 0x0240 (size: 0x10)
+    void UpdateWorkableDelegate(bool Workable);
+    FPalIndividualCharacterSaveParameter HatchedCharacterSaveParameter;               // 0x0250 (size: 0x280)
+    bool bWorkable;                                                                   // 0x04D0 (size: 0x1)
+    TSubclassOf<class UPalUserWidgetOverlayUI> MenuUIWidgetClass;                     // 0x04D8 (size: 0x8)
+    int32 CurrentPalEggTemperatureDiff;                                               // 0x04E0 (size: 0x4)
+    class UPalDynamicPalEggItemDataBase* HatchedPalEggData;                           // 0x04E8 (size: 0x8)
 
     void UpdateWorkAmountBySec(const float NewWorkAmountBySec);
+    void UpdateWorkableDelegate__DelegateSignature(bool Workable);
     void UpdateHatchTemperatureDelegate__DelegateSignature(int32 Temperature);
     void UpdateHatchedCharacterDelegate__DelegateSignature(class UPalMapObjectHatchingEggModel* Model);
     void SetTemperatureDiff(int32 TemperatureDiff);
+    void OnUpdateEnergyModuleState(class UPalMapObjectEnergyModule* EnergyModule);
     void OnUpdateContainerContentInServer(class UPalItemContainer* Container);
     void OnRep_HatchTemperatureDiff();
     void OnRep_HatchedCharacterSaveParameter();
     void OnFinishWorkInServer(class UPalWorkBase* Work);
     void ObtainHatchedCharacter_ServerInternal(const int32 RequestPlayerId);
+    bool IsWorkable();
     int32 GetTemperatureDiff();
     bool GetPalEggRankInfo(FPalEggRankInfo& OutPalEggRankInfo);
-}; // Size: 0x470
+}; // Size: 0x4F0
 
 class UPalMapObjectHatchingEggParameterComponent : public UActorComponent
 {
@@ -14814,11 +15449,11 @@ class UPalMapObjectItemChest_AffectCorruption : public UPalMapObjectItemChestMod
 
 class UPalMapObjectItemContainerModule : public UPalMapObjectConcreteModelModuleBase
 {
-    class UPalItemContainer* TargetContainer;                                         // 0x0040 (size: 0x8)
-    bool bDropItemAtDisposed;                                                         // 0x0048 (size: 0x1)
-    TArray<FPalMapObjectItemContainerModuleSlotIndexes> SlotAttributeIndexes;         // 0x0050 (size: 0x10)
-    TArray<EPalMapObjectItemContainerSlotAttribute> AllSlotAttribute;                 // 0x0060 (size: 0x10)
-    EPalContainerUsageType UsageType;                                                 // 0x00F0 (size: 0x1)
+    class UPalItemContainer* TargetContainer;                                         // 0x0060 (size: 0x8)
+    bool bDropItemAtDisposed;                                                         // 0x0068 (size: 0x1)
+    TArray<FPalMapObjectItemContainerModuleSlotIndexes> SlotAttributeIndexes;         // 0x0070 (size: 0x10)
+    TArray<EPalMapObjectItemContainerSlotAttribute> AllSlotAttribute;                 // 0x0080 (size: 0x10)
+    EPalContainerUsageType UsageType;                                                 // 0x0110 (size: 0x1)
 
     void UpdateContentsMulticastDelegate__DelegateSignature(class UPalMapObjectItemContainerModule* Module);
     void UpdateContentsDelegate__DelegateSignature(class UPalMapObjectItemContainerModule* Module);
@@ -14826,12 +15461,17 @@ class UPalMapObjectItemContainerModule : public UPalMapObjectConcreteModelModule
     bool TryGetContainer(class UPalItemContainer*& OutContainer);
     void RequestSortContainer_ServerInternal();
     void RequestSortContainer();
+    void RequestChangeFilter_ServerInternal(const int32 RequestPlayerId, const FPalNetArchive& Archive);
+    void RequestChangeAllFilterUncheck_ServerInternal();
+    void RequestChangeAllFilterCheck_ServerInternal();
+    void OnUpdateFilterPreference(class UPalItemContainer* Container);
     void OnUpdateContents(class UPalItemContainer* Container);
     void OnRep_TargetContainer();
+    TArray<FName> GetFilterOffList();
     FPalContainerId GetContainerId();
     class UPalItemContainer* GetContainer();
     void BindUpdateContents(FBindUpdateContentsDelegate Delegate);
-}; // Size: 0x100
+}; // Size: 0x120
 
 class UPalMapObjectItemConverterParameterComponent : public UActorComponent
 {
@@ -15178,9 +15818,10 @@ class UPalMapObjectModelInitializeExtraParameterDropItem : public UPalMapObjectM
 
 class UPalMapObjectModelInitializeExtraParameterInitialCharacter : public UPalMapObjectModelInitializeExtraParameterBase
 {
-    FPalIndividualCharacterSaveParameter CharacterSaveParameter;                      // 0x0028 (size: 0x218)
+    FPalIndividualCharacterSaveParameter CharacterSaveParameter;                      // 0x0028 (size: 0x280)
+    bool CreateLocationPoint;                                                         // 0x02A8 (size: 0x1)
 
-}; // Size: 0x240
+}; // Size: 0x2B0
 
 class UPalMapObjectModelInitializeExtraParameterInitialItem : public UPalMapObjectModelInitializeExtraParameterBase
 {
@@ -15319,15 +15960,15 @@ class UPalMapObjectPasswordLockModule : public UPalMapObjectConcreteModelModuleB
 class UPalMapObjectPickableCharacterModelBase : public UPalMapObjectConcreteModelBase
 {
     FPalCharacterStoredParameterId StoredParameterId;                                 // 0x0218 (size: 0x10)
-    FPalIndividualCharacterSaveParameter ForRead_CharacterSaveParameter;              // 0x0228 (size: 0x218)
-    FGuid LocationId;                                                                 // 0x0440 (size: 0x10)
+    FPalIndividualCharacterSaveParameter ForRead_CharacterSaveParameter;              // 0x0228 (size: 0x280)
+    FGuid LocationId;                                                                 // 0x04A8 (size: 0x10)
 
     void RequestPickup_ServerInternal(const int32 RequestPlayerId);
     void RequestPickup();
     void OnRemovedStoredCharacter_ServerInternal(const FPalCharacterStoredParameterId& RemovedID);
     void OnDisappearTimeAt();
     FPalIndividualCharacterSaveParameter GetCharacterSaveParameter();
-}; // Size: 0x458
+}; // Size: 0x4C0
 
 class UPalMapObjectPickableItemModelBase : public UPalMapObjectConcreteModelBase
 {
@@ -15350,15 +15991,16 @@ class UPalMapObjectPickupItemOnLevelModel : public UPalMapObjectPickableItemMode
 
 class UPalMapObjectPickupItemPalEggParameterComponent : public UPalMapObjectPickupItemParameterComponent
 {
-    FPalMapObjectPickupItemPalEggData PalEggData;                                     // 0x00B0 (size: 0x8)
+    FPalMapObjectPickupItemPalEggData PalEggData;                                     // 0x00B8 (size: 0x8)
 
-}; // Size: 0xB8
+}; // Size: 0xC0
 
 class UPalMapObjectPickupItemParameterComponent : public UPalMapObjectPickupItemParameterComponentBase
 {
     TArray<FPalMapObjectPickupItemData> DropItems;                                    // 0x00A0 (size: 0x10)
+    bool bForceIgnoreSaveItemContainer;                                               // 0x00B0 (size: 0x1)
 
-}; // Size: 0xB0
+}; // Size: 0xB8
 
 class UPalMapObjectPickupItemParameterComponentBase : public UActorComponent
 {
@@ -15408,12 +16050,27 @@ class UPalMapObjectProductItemModel : public UPalMapObjectConcreteModelBase
     float WorkSpeedAdditionalRate;                                                    // 0x023C (size: 0x4)
 
     void SimpleDelegate__DelegateSignature(class UPalMapObjectProductItemModel* Model);
+    void ReceivePickupItemResult_Client(const FPalNetArchive& Archive);
+    void PickupItem_ServerInternal(const int32 PlayerId);
     void OnUpdateContainerContent(class UPalItemContainer* Container);
     void OnFinishWorkInServer(class UPalWorkBase* Work);
     FName GetProductItemId();
     class UPalItemContainer* GetItemContainer();
     float CalcRequiredAmount(const float BaseRequiredAmount);
 }; // Size: 0x240
+
+class UPalMapObjectRaidBossSummon : public UPalMapObjectConcreteModelBase
+{
+    FGuid SummonRequestPlayerUId;                                                     // 0x0228 (size: 0x10)
+
+    void RequestSummonRaidBoss_ServerInternal(const int32 RequestPlayerId);
+    void RaidBossSummonDelegate__DelegateSignature();
+    void OnReceiveConfirmSummonRaidBossResult(const bool bResult);
+}; // Size: 0x238
+
+class UPalMapObjectRaidBossSummonParameterComponent : public UActorComponent
+{
+}; // Size: 0xA0
 
 class UPalMapObjectRankUpCharacterModel : public UPalMapObjectConcreteModelBase
 {
@@ -15616,6 +16273,7 @@ class UPalMapObjectUtility : public UBlueprintFunctionLibrary
     EPalMapObjectOperationResult SelectPriorityResult(EPalMapObjectOperationResult Result1, EPalMapObjectOperationResult Result2);
     FString MapObjectOperationResultToString(const EPalMapObjectOperationResult Result);
     bool IsContainsCollisionProfiles(const class UPrimitiveComponent* Component, const TArray<FName>& CollisionProfiles);
+    void GetItemVisualModelFX(TSubclassOf<class AActor> actorClass, TArray<FPalItemVisualModelFXInfo>& OutFXInfos);
 }; // Size: 0x28
 
 class UPalMapObjectVisualEffectComponent : public UActorComponent
@@ -15985,6 +16643,7 @@ class UPalNPCManager : public UObject
     void SetEnemyCampStatus(FName KeyName, FPalEnemyCampStatus EnemyCampStatus);
     void RemoveGroupWhenDestoryActor(class AActor* DestoryActor);
     void NPCSpawnCallback__DelegateSignature(FPalInstanceID ID);
+    bool IsTransientTalkCount(class APalCharacter* Character);
     bool IsTalkable(class APalCharacter* Character);
     EPalNPCTalkUIType GetTalkUIType(class APalCharacter* Character);
     class UDataTable* GetNPCTalkDTFromTalkUIType(EPalNPCTalkUIType TalkUIType);
@@ -16003,6 +16662,7 @@ class UPalNPCMultiTalkHandle : public UObject
 {
     FName TalkId;                                                                     // 0x0028 (size: 0x8)
 
+    void SetIsTransientTalkCount(bool IsTransient);
     void OnFinishOneTalk();
     void IncrementTalkCountRecord();
     FName GetTalkId();
@@ -16010,7 +16670,7 @@ class UPalNPCMultiTalkHandle : public UObject
     class UPalPlayerDataStorage* GetPlayerDataStorage();
     class UPalPlayerLocalRecordData* GetLocalRecordData();
     int32 GetCurrentTalkCount();
-}; // Size: 0x30
+}; // Size: 0x38
 
 class UPalNPCTalkComponent : public UActorComponent
 {
@@ -16041,6 +16701,7 @@ class UPalNPCTalkSystem : public UObject
     class UDataTable* FuncParam;                                                      // 0x00C0 (size: 0x8)
     EPalNPCTalkCustomFunctionResult CustomFuncResult;                                 // 0x00C8 (size: 0x1)
     int32 CustomFuncChoseIndex;                                                       // 0x00CC (size: 0x4)
+    int32 CustomFuncTalkDataIndex;                                                    // 0x00D0 (size: 0x4)
 
     void SetCustomFunctionResult_Implementation(EPalNPCTalkCustomFunctionResult Result);
     void SetCustomFunctionChoseIndex_Implementation(int32 Index);
@@ -16049,7 +16710,7 @@ class UPalNPCTalkSystem : public UObject
     bool ChangeSeqence(FName targetSeqenceName);
     bool CallCustomFunc();
     void AddArgument_Implementation(FString Key, const FText& Text);
-}; // Size: 0xD0
+}; // Size: 0xD8
 
 class UPalNPCWeaponGenerator : public UObject
 {
@@ -16098,6 +16759,8 @@ class UPalNetworkBaseCampComponent : public UActorComponent
     void RequestModule_Server_FVector(const FGuid& BaseCampId, const EPalBaseCampModuleType ModuleType, const FName FunctionName, FVector Value);
     void RequestModule_Server_FPalNetArchive(const FGuid& BaseCampId, const EPalBaseCampModuleType ModuleType, const FName FunctionName, FPalNetArchive Value);
     void RequestModule_Server_bool(const FGuid& BaseCampId, const EPalBaseCampModuleType ModuleType, const FName FunctionName, bool Value);
+    void RequestChangeWorkSuitability_ToServer(const FPalInstanceID& TargetIndividualId, const EPalWorkSuitability WorkSuitability, const bool bOn);
+    void RequestChangeBaseCampBattle_ToServer(const FPalInstanceID& TargetIndividualId, const bool bOn);
     void Request_Server_void(const FGuid& BaseCampId, const FName FunctionName);
     void Request_Server_int32(const FGuid& BaseCampId, const FName FunctionName, int32 Value);
     void Request_Server_FVector(const FGuid& BaseCampId, const FName FunctionName, FVector Value);
@@ -16130,6 +16793,7 @@ class UPalNetworkBaseCampComponent : public UActorComponent
     void BroadcastBaseCampLog_Server(const FPalMonsterControllerBaseCampLogContent& LogContent);
     void BroadcastAddBaseCampBurningLog_Server(const FGuid& BaseCampId);
     void AddBaseCampWorkerLog_Client(EPalLogType DisplayLogType, const FPalInstanceID& WorkerCharacterInstanceId, const FName& EventDataID);
+    void AddBaseCampWorkerDeathLog_Client(const FPalInstanceID& WorkerCharacterInstanceId);
     void AddBaseCampLog_Client(const FPalMonsterControllerBaseCampLogContent& LogContent);
     void AddBaseCampBurningLog_Client(const FGuid& BaseCampId);
 }; // Size: 0xC0
@@ -16154,6 +16818,9 @@ class UPalNetworkCharacterComponent : public UActorComponent
     void ReflectAction_ToClient(class APalCharacter* Character, FActionDynamicParameter Param, TSubclassOf<class UPalActionBase> actionClass);
     void NotifyTalkStart_ToServer(class APalPlayerCharacter* TalkPlayer, class APalCharacter* TargetNPC);
     void NotifyTalkEnd_ToServer(class APalPlayerCharacter* TalkPlayer, class APalCharacter* TargetNPC);
+    void NotifyCustomFunction_ToServer(class APalPlayerCharacter* TalkPlayer, class APalCharacter* TargetNPC, const FPalNPCTalkNotifyInfo& TalkNotifyInfo);
+    void ArenaStart_ToClient(const FPalArenaStartParameter& StartParam);
+    void ArenaSetup_ToClient();
 }; // Size: 0xA0
 
 class UPalNetworkCharacterContainerComponent : public UActorComponent
@@ -16194,29 +16861,19 @@ class UPalNetworkComponentUtility : public UObject
 {
 }; // Size: 0x28
 
-class UPalNetworkGroupComponent : public UActorComponent
-{
-
-    void RequestJoinGuildRequestForPlayer_ToServer(const FGuid& RequestPlayerUId, const FGuid& TargetPlayerUId);
-    void RequestJoinGuildForPlayer_ToServer(const FGuid& RequestPlayerUId, const FGuid& TargetPlayerUId);
-    void RequestExitGuild_ToServer(const FGuid& TargetPlayerUId);
-    void RequestChangeGuildName_ToServer(const FGuid& GroupID, FString NewGuildName);
-    void RequestChangeGuildAdmin_ToServer(const FGuid& RequestPlayerUId, const FGuid& TargetPlayerUId);
-    void NotifyJoinGuildRequestResult_ToServer(const FGuid& RequestPlayerUId, const FGuid& NotifyTargetPlayerUId, EPalGuildJoinRequestResult ResultType);
-}; // Size: 0xA0
-
 class UPalNetworkIndividualComponent : public UActorComponent
 {
 
-    void UpdateCharacterParameter_ToServer(const FPalInstanceID& ID, const FPalNetArchive& parameterArchive, FGuid Guid);
+    void UseItemInSlotToCharacter_ToServer(const FPalInstanceID& ID, const FPalItemSlotIdAndNum SlotAndNum);
+    void UseGainStatusPointsItem_ToServer(const FPalInstanceID& ID, const FName ItemId, const int32 Num);
     void UpdateCharacterParameter_ToAll(const FPalInstanceID& ID, const FPalNetArchive& parameterArchive, FGuid Guid);
-    void UpdateCharacterNickName_ToServer(const FPalInstanceID& ID, FString newNickName);
-    void SpawnPhantomActor_ToServer(FPalInstanceID ID, FNetworkActorSpawnParameters SpawnParameter, FGuid Guid);
+    void UpdateCharacterParameter_ServerInternal(const FPalInstanceID& ID, const FPalNetArchive& parameterArchive, FGuid Guid);
     void SpawnPhantomActor_ToALL(FPalInstanceID ID, int32 PhantomId, class AActor* Actor, FGuid Guid);
     void SpawnPhantomActor_SyncCheck(FPalInstanceID ID, int32 PhantomId, FGuid Guid);
-    void SpawnIndividualActor_ToServer(FPalInstanceID ID, FNetworkActorSpawnParameters SpawnParameter, FGuid Guid);
+    void SpawnPhantomActor_ServerInternal(FPalInstanceID ID, FNetworkActorSpawnParameters SpawnParameter, FGuid Guid);
     void SpawnIndividualActor_ToALL(FPalInstanceID ID, class AActor* Actor, FGuid Guid);
     void SpawnIndividualActor_SyncCheck(FPalInstanceID ID, FGuid Guid);
+    void SpawnIndividualActor_ServerInternal(FPalInstanceID ID, FNetworkActorSpawnParameters SpawnParameter, FGuid Guid);
     void SetWorkerSick_ToServer(const FPalInstanceID& ID, EPalBaseCampWorkerSickType SickType);
     void ResetStatusPoint_ToServer(const FPalInstanceID& ID);
     void ReplaceEquipWaza_ToServer(const FPalInstanceID& ID, const EPalWazaID OldWaza, const EPalWazaID NewWaza);
@@ -16224,20 +16881,25 @@ class UPalNetworkIndividualComponent : public UActorComponent
     void RemoveEquipWaza_ToServer(const FPalInstanceID& ID, const EPalWazaID TargetWaza);
     void RaiseToMainActor_ToServer(FPalInstanceID ID, int32 PhantomId, FGuid Guid);
     void RaiseToMainActor_ToALL(FPalInstanceID ID, int32 PhantomId, FGuid Guid);
+    void NotifyAddedMasteredWaza_ToAll(const FPalInstanceID& ID, EPalWazaID WazaID);
+    void LevelUp_ToServer(const FPalInstanceID& ID, int32 Level);
+    void GainExp_ToServer(const FPalInstanceID& ID, int32 Exp);
     void EatItem_ToServer(const FPalInstanceID& ID, const class UPalStaticConsumeItemData* ItemData, int32 Num);
-    void DropToPhantomActor_ToServer(FPalInstanceID ID, FGuid Guid);
     void DropToPhantomActor_ToALL(FPalInstanceID ID, int32 PhantomId, FGuid Guid);
-    void DespawnPhantomActor_ToServer(FPalInstanceID ID, int32 PhantomId, FGuid Guid);
+    void DropToPhantomActor_ServerInternal(FPalInstanceID ID, FGuid Guid);
     void DespawnPhantomActor_ToALL(FPalInstanceID ID, int32 PhantomId, FGuid Guid);
     void DespawnPhantomActor_SyncCheck(FPalInstanceID ID, int32 PhantomId, FGuid Guid);
-    void DespawnIndividualActor_ToServer(FPalInstanceID ID, FGuid Guid);
+    void DespawnPhantomActor_ServerInternal(FPalInstanceID ID, int32 PhantomId, FGuid Guid);
     void DespawnIndividualActor_ToALL(FPalInstanceID ID, FGuid Guid);
     void DespawnIndividualActor_SyncCheck(FPalInstanceID ID, FGuid Guid);
-    void CreateIndividualID_ToServer(FPalIndividualCharacterSaveParameter initParameter, FGuid Guid, int32 RequestPlayerId);
+    void DespawnIndividualActor_ServerInternal(FPalInstanceID ID, FGuid Guid);
     void CreateIndividualID_ToALL(FPalIndividualCharacterSaveParameter initParameter, FPalInstanceID ID, FGuid Guid);
     void CreateIndividualID_SyncCheck(FPalInstanceID ID, FGuid Guid);
-    void CreateFixedIndividualID_ToServer(FPalInstanceID ID, FPalIndividualCharacterSaveParameter initParameter, FGuid Guid, int32 RequestPlayerId);
+    void CreateIndividualID_ServerInternal(FPalIndividualCharacterSaveParameter initParameter, FGuid Guid, int32 RequestPlayerId);
+    void CreateFixedIndividualID_ServerInternal(FPalInstanceID ID, FPalIndividualCharacterSaveParameter initParameter, FGuid Guid, int32 RequestPlayerId);
     void BroadcastChangeOwnerCharacter_ToAll(FPalInstanceID ID, const FGuid& PlayerUId, FDateTime OwnedTime);
+    void AddTalent_ToServer(const FPalInstanceID& ID, const class UPalStaticItemDataBase* ItemData);
+    void AddRank_ToServer(const FPalInstanceID& ID, const class UPalStaticItemDataBase* ItemData);
     void AddPlayerCharacterStatusPoint_ToServer(const FPalInstanceID& ID, const TArray<FPalGotStatusPoint>& AddStatusPointArray);
     void AddMasteredWaza_ToServer(const FPalInstanceID& ID, EPalWazaID WazaID);
     void AddHighPriorityList_ToServer(const FPalInstanceID& ID, class APalCharacter* TargetPlayer);
@@ -16259,13 +16921,13 @@ class UPalNetworkItemComponent : public UActorComponent
     TMap<class FGuid, class FPalNetworkItemOperationParameter> ItemOperationParamMap; // 0x0140 (size: 0x50)
     TMap<class FGuid, class FPalNetworkParameter> OperationParamMap;                  // 0x0190 (size: 0x50)
 
-    void RequestSwap_ToServer(const FGuid& RequestID, const FPalItemAndSlot& SlotA, const FPalItemPermission& APermission, const FPalItemAndSlot& SlotB, const FPalItemPermission& BPermission);
+    void RequestSwap_ToServer(const FGuid& RequestID, const FPalItemSlotId& SlotA, const FPalItemSlotId& SlotB);
     void RequestProduceWithSlot_ToServer(const FGuid& RequestID, const FPalStaticItemIdAndNum& ProductData, const FPalItemAndSlot& To, const FPalNetArchive& CreateParamArchive);
     void RequestProduce_ToServer(const FGuid& RequestID, const FPalStaticItemIdAndNum& ProductData, const FPalContainerId& ContainerId, const FPalNetArchive& CreateParamArchive);
-    void RequestMoveToContainer_ToServer(const FGuid& RequestID, const FPalItemId& ItemId, const FPalContainerId& ToContainerId, const FPalItemPermission& ToPermission, const TArray<FPalSlotItemAndNum>& Froms);
-    void RequestMove_ToServer(const FGuid& RequestID, const FPalItemId& ItemId, const FPalItemAndSlot& To, const FPalItemPermission& ToPermission, const TArray<FPalSlotItemAndNum>& Froms);
+    void RequestMoveToContainer_ToServer(const FGuid& RequestID, const FPalContainerId& ToContainerId, const TArray<FPalItemSlotIdAndNum>& Froms);
+    void RequestMove_ToServer(const FGuid& RequestID, const FPalItemSlotId& To, const TArray<FPalItemSlotIdAndNum>& Froms);
     void RequestDrop_ToServer(const TArray<FPalItemSlotIdAndNum>& DropSlotAndNumArray, const FVector& DropLocation, bool IsAutoPickup);
-    void RequestDispose_ToServer(const FGuid& RequestID, const FPalSlotItemAndNum& SlotInfo);
+    void RequestDispose_ToServer(const FGuid& RequestID, const FPalItemSlotIdAndNum& SlotInfo);
     void ReceiveProduceWithSlotResult_ToRequestClient(const FGuid& RequestID, const EPalItemOperationResult Result);
     void ReceiveProduceResult_ToRequestClient(const FGuid& RequestID, const EPalItemOperationResult Result);
 }; // Size: 0x1E0
@@ -16353,12 +17015,15 @@ class UPalNetworkPlayerComponent : public UActorComponent
     void RequestAddTechnolgyPointByItem_ToServer(const FPalItemSlotId& ConsumeItemSlotID);
     void RequestAddTechnolgyPoint_ToServer(const int32 AddPoint);
     void RequestAddItem_ToServer(const FName StaticItemId, const int32 Count, bool isAssignPassive);
+    void RequestAddBossTechnolgyPointByItem_ToServer(const FPalItemSlotId& ConsumeItemSlotID);
     void RegisterRespawnLocation_ToServer(const FGuid& PlayerUId, const FVector& Location);
     void ReceiveExitStageRequestResult_ToRequestClient(const EPalStageRequestResult Result);
     void ReceiveEnterStageRequestResult_ToRequestClient(const FPalStageInstanceId& StageInstanceId, const EPalStageRequestResult Result);
+    void NotifyUnlockAchievement_ToClient(FString AchievementId);
     void NotifyStartCrime_ToClient(FGuid CrimeInstanceId);
     void NotifyReportCriminal_ToClient(class UPalIndividualCharacterHandle* CriminalHandle, const TArray<FName>& CrimeIds);
     void NotifyReleaseWanted_ToClient(class UPalIndividualCharacterHandle* CriminalHandle);
+    void NotifyQuestCompleted(TSubclassOf<class UPalQuestData> CompletedQuestDataClass);
     void NotifyEndCrime_ToClient(FGuid CrimeInstanceId);
     void LoadoutSelectorRemoveEquipItem(class UPalLoadoutSelectorComponent* LoadoutSelector);
     void LoadoutSelectorEquipItem(class UPalLoadoutSelectorComponent* LoadoutSelector, EPalPlayerInventoryType inventoryType, int32 Index);
@@ -16375,6 +17040,10 @@ class UPalNetworkPlayerStateComponent : public UActorComponent
 
 }; // Size: 0xF0
 
+class UPalNetworkRaidBossComponent : public UActorComponent
+{
+}; // Size: 0xA0
+
 class UPalNetworkShopComponent : public UActorComponent
 {
 
@@ -16385,7 +17054,7 @@ class UPalNetworkShopComponent : public UActorComponent
     void RequestBuyProduct_ToServer(const FPalInstanceID& RequestPlayerInstanceId, const FGuid& ShopID, const FGuid& ProductId, int32 BuyNum);
     void RequestBuyLostPal_ToServer(const FGuid& RequestPlayerUId, const FPalCharacterStoredParameterId& StoredParameterId);
     void RemoveShopData_ToServer(const FGuid& RemoveShopID);
-    void RecieveBuyResult_ToClient(EPalShopBuyResultType ResultType);
+    void RecieveBuyResult_ToClient(EPalShopBuyResultType resultType);
     void ReceiveDroppedPalProductData_ToClient(const TArray<FPalDroppedPalProductDataForShop>& CollectedData);
 }; // Size: 0xA0
 
@@ -16438,22 +17107,32 @@ class UPalObjectCollector : public UPalWorldSubsystem
     TArray<class APalMapObjectSpawnerBase*> MapObject_SpawnerBase;                    // 0x0100 (size: 0x10)
     TMap<class APalCharacter*, class FPalCharacterList> NearestCharacter_FromPlayer;  // 0x0110 (size: 0x50)
     TArray<class APalMapObjectSpawnerBase*> NearestSpawnerBase;                       // 0x0160 (size: 0x10)
-    TMap<class APalCharacter*, class FPalCharacterList> CalculationNearestCharacter_FromPlayer; // 0x0170 (size: 0x50)
-    TArray<class APalMapObjectSpawnerBase*> CalculationNearSpawnerBase_FromPlayer;    // 0x01C0 (size: 0x10)
-    TArray<FVector> BaseCampLocationList;                                             // 0x01D0 (size: 0x10)
-    bool bIsUpdateBaseCamp;                                                           // 0x01E0 (size: 0x1)
-    TArray<class APalMapObjectSpawnerBase*> CalculationNearSpawnerBase_FromBaseCamp;  // 0x01E8 (size: 0x10)
-    float NearStartDistanceForSpawnerBase;                                            // 0x01F8 (size: 0x4)
-    float NearEndDistanceForSpawnerBase;                                              // 0x01FC (size: 0x4)
-    float NearDistanceForSpawnerBaseFromBaseCamp;                                     // 0x0200 (size: 0x4)
+    TMap<class APalCharacter*, class FPalCharacterList> CalculationNearestCharacter_FromPlayer; // 0x0198 (size: 0x50)
+    TArray<class APalMapObjectSpawnerBase*> CalculationNearSpawnerBase_FromPlayer;    // 0x01E8 (size: 0x10)
+    TArray<FVector> BaseCampLocationList;                                             // 0x01F8 (size: 0x10)
+    bool bIsUpdateBaseCamp;                                                           // 0x0208 (size: 0x1)
+    TArray<class APalMapObjectSpawnerBase*> CalculationNearSpawnerBase_FromBaseCamp;  // 0x0210 (size: 0x10)
+    float NearStartDistanceForSpawnerBase;                                            // 0x0280 (size: 0x4)
+    float NearEndDistanceForSpawnerBase;                                              // 0x0284 (size: 0x4)
+    float NearDistanceForSpawnerBaseFromBaseCamp;                                     // 0x0288 (size: 0x4)
 
-}; // Size: 0x208
+    TArray<FPalSpawnerGroupInfo> GetRandomSpawnerGroupInfo(FVector spawnerLocation);
+}; // Size: 0x290
 
 class UPalObjectReplicatorComponent : public UActorComponent
 {
     TArray<class UObject*> ReplicateObject;                                           // 0x00A0 (size: 0x10)
 
 }; // Size: 0xB0
+
+class UPalOilrigManager : public UPalWorldSubsystem
+{
+    class AActor* CurrentShootingTower;                                               // 0x0070 (size: 0x8)
+
+    void RemoveShootingTower(class AActor* Tower);
+    bool IsShootingAnyTower();
+    void AddShootingTower(class AActor* Tower);
+}; // Size: 0x78
 
 class UPalOnlineSubsystemSteam : public UObject
 {
@@ -16474,9 +17153,9 @@ class UPalOptionReplicator : public UPalGameStateReplicatorBase
 
 class UPalOptionSaveGame : public USaveGame
 {
-    FPalOptionSaveData OptionSaveData;                                                // 0x0028 (size: 0x230)
+    FPalOptionSaveData OptionSaveData;                                                // 0x0028 (size: 0x240)
 
-}; // Size: 0x258
+}; // Size: 0x268
 
 class UPalOptionSubsystem : public UPalWorldSubsystem
 {
@@ -16490,25 +17169,29 @@ class UPalOptionSubsystem : public UPalWorldSubsystem
     void OnChangeWorldSettingsDelegate(const FPalOptionWorldSettings& PrevSettings, const FPalOptionWorldSettings& NewSettings);
     FPalOptionSubsystemOnChangeKeyConfigDelegate OnChangeKeyConfigDelegate;           // 0x00B0 (size: 0x10)
     void OnChangeKeyConfigDelegate(const FPalKeyConfigSettings& PrevSettings, const FPalKeyConfigSettings& NewSettings);
-    FPalOptionSubsystemOnChangeScreenRatioDelegate OnChangeScreenRatioDelegate;       // 0x00C0 (size: 0x10)
+    FPalOptionSubsystemOnChangeUISettingDelegate OnChangeUISettingDelegate;           // 0x00C0 (size: 0x10)
+    void OnChangeUISettingDelegate(const FPalOptionUISettings& PrevSettings, const FPalOptionUISettings& NewSettings);
+    FPalOptionSubsystemOnChangeScreenRatioDelegate OnChangeScreenRatioDelegate;       // 0x00D0 (size: 0x10)
     void OnChangeScreenRatioDelegate(float newRatio);
-    FPalOptionWorldStaticSettings OptionWorldStaticSettings;                          // 0x00D0 (size: 0xF0)
-    FPalOptionLocalStaticSettings OptionLocalStaticSettings;                          // 0x01C0 (size: 0x40)
-    FPalOptionWorldSettings OptionWorldSettings;                                      // 0x0200 (size: 0x138)
-    FPalOptionWorldSettings OptionWorldSettingsCache;                                 // 0x0338 (size: 0x138)
-    FPalOptionGraphicsSettings GraphicsSettings;                                      // 0x0470 (size: 0x54)
-    FPalOptionAudioSettings AudioSettings;                                            // 0x04C4 (size: 0x1C)
-    FPalOptionCommonSettings CommonSettings;                                          // 0x04E0 (size: 0x28)
-    FPalOptionKeyboardSettings KeyboardSettings;                                      // 0x0508 (size: 0x14)
-    FPalOptionPadSettings PadSettings;                                                // 0x051C (size: 0x1C)
-    FPalKeyConfigSettings KeyConfigSettings;                                          // 0x0538 (size: 0x160)
-    float BaseFov;                                                                    // 0x06B8 (size: 0x4)
-    FString Namespace;                                                                // 0x06D0 (size: 0x10)
-    class UDataTable* OptionWorldPresetTable;                                         // 0x06E8 (size: 0x8)
-    class UDataTable* OptionWorldModePresetTable;                                     // 0x06F0 (size: 0x8)
-    class UDataTable* OptionGraphicsPresetTable;                                      // 0x06F8 (size: 0x8)
-    TSubclassOf<class APalPlayerCharacter> PalPlayerCharacterClass;                   // 0x0700 (size: 0x8)
+    FPalOptionWorldStaticSettings OptionWorldStaticSettings;                          // 0x00E0 (size: 0xF0)
+    FPalOptionLocalStaticSettings OptionLocalStaticSettings;                          // 0x01D0 (size: 0x50)
+    FPalOptionWorldSettings OptionWorldSettings;                                      // 0x0220 (size: 0x138)
+    FPalOptionWorldSettings OptionWorldSettingsCache;                                 // 0x0358 (size: 0x138)
+    FPalOptionGraphicsSettings GraphicsSettings;                                      // 0x0490 (size: 0x54)
+    FPalOptionAudioSettings AudioSettings;                                            // 0x04E4 (size: 0x1C)
+    FPalOptionCommonSettings CommonSettings;                                          // 0x0500 (size: 0x28)
+    FPalOptionKeyboardSettings KeyboardSettings;                                      // 0x0528 (size: 0x14)
+    FPalOptionPadSettings PadSettings;                                                // 0x053C (size: 0x1C)
+    FPalKeyConfigSettings KeyConfigSettings;                                          // 0x0558 (size: 0x160)
+    FPalOptionUISettings UISettings;                                                  // 0x06B8 (size: 0xC)
+    float BaseFov;                                                                    // 0x06E8 (size: 0x4)
+    FString Namespace;                                                                // 0x06F0 (size: 0x10)
+    class UDataTable* OptionWorldPresetTable;                                         // 0x0718 (size: 0x8)
+    class UDataTable* OptionWorldModePresetTable;                                     // 0x0720 (size: 0x8)
+    class UDataTable* OptionGraphicsPresetTable;                                      // 0x0728 (size: 0x8)
+    TSubclassOf<class APalPlayerCharacter> PalPlayerCharacterClass;                   // 0x0730 (size: 0x8)
 
+    void SetUISettings(const FPalOptionUISettings& InUISettings);
     void SetPadSettings(const FPalOptionPadSettings& InPadSettings);
     void SetOptionWorldSettings(const FPalOptionWorldSettings& InOptionWorldSettings);
     void SetKeyConfigSettings(const FPalKeyConfigSettings& InKeyConfigSettings);
@@ -16520,11 +17203,13 @@ class UPalOptionSubsystem : public UPalWorldSubsystem
     void RefreshBanList();
     void OnCompletedGetBanlist(FString ResponseBody, bool bResponseOK, int32 ResponseCode);
     void OnChangeWorldSettingsDelegate__DelegateSignature(const FPalOptionWorldSettings& PrevSettings, const FPalOptionWorldSettings& NewSettings);
+    void OnChangeUISettingDelegate__DelegateSignature(const FPalOptionUISettings& PrevSettings, const FPalOptionUISettings& NewSettings);
     void OnChangeScreenRatioDelegate__DelegateSignature(float newRatio);
     void OnChangePadDelegate__DelegateSignature(const FPalOptionPadSettings& PrevSettings, const FPalOptionPadSettings& NewSettings);
     void OnChangeKeyConfigDelegate__DelegateSignature(const FPalKeyConfigSettings& PrevSettings, const FPalKeyConfigSettings& NewSettings);
     void OnChangeKeyboardDelegate__DelegateSignature(const FPalOptionKeyboardSettings& PrevSettings, const FPalOptionKeyboardSettings& NewSettings);
     void OnChangeGraphicsDelegate__DelegateSignature(const FPalOptionGraphicsSettings& PrevSettings, const FPalOptionGraphicsSettings& NewSettings);
+    FPalOptionUISettings GetUISettings();
     void GetSupportScreenSizes(TArray<FIntPoint>& SupportResolutions, TEnumAsByte<EWindowMode::Type> WindowMode);
     FPalOptionPadSettings GetPadSettings();
     FPalOptionWorldStaticSettings GetOptionWorldStaticSettings();
@@ -16541,7 +17226,7 @@ class UPalOptionSubsystem : public UPalWorldSubsystem
     void ApplyWorldModePreset(FPalOptionWorldSettings& OutSettings, bool bIsPvP);
     void ApplyGraphicsPresetByBenchMark(FPalOptionGraphicsSettings& OutSettings);
     void ApplyGraphicsPreset(FPalOptionGraphicsSettings& OutSettings, EPalOptionGraphicsLevel GraphicsLevel);
-}; // Size: 0x710
+}; // Size: 0x740
 
 class UPalOtomoAttackStopJudgeByBall : public UObject
 {
@@ -16671,7 +17356,7 @@ class UPalPartnerSkillParameterComponent : public UActorComponent
     FPalPartnerSkillParameterComponentOnCoolDownCompleted OnCoolDownCompleted;        // 0x00B0 (size: 0x10)
     void OnCoolDownCompleted();
     FPalPartnerSkillParameterComponentOnEffectTimeChanged OnEffectTimeChanged;        // 0x00C0 (size: 0x10)
-    void OnEffectTimeChanged(FFixedPoint effectTime, FFixedPoint effectTimeMax);
+    void OnEffectTimeChanged(FFixedPoint EffectTime, FFixedPoint effectTimeMax);
     FPalPartnerSkillParameterComponentOnCoolDownTimeChanged OnCoolDownTimeChanged;    // 0x00D0 (size: 0x10)
     void OnCoolDownTimeChanged(FFixedPoint CoolDownTime, FFixedPoint coolDownTimeMax);
     FPalPartnerSkillParameterComponentOnStart OnStart;                                // 0x00E0 (size: 0x10)
@@ -16685,7 +17370,7 @@ class UPalPartnerSkillParameterComponent : public UActorComponent
     TArray<FPalDataTableRowName_ItemData> RestrictionItems;                           // 0x0120 (size: 0x10)
     FName SkillName;                                                                  // 0x0130 (size: 0x8)
     EPalWazaID WazaID;                                                                // 0x0138 (size: 0x1)
-    FFixedPoint effectTime;                                                           // 0x013C (size: 0x4)
+    FFixedPoint EffectTime;                                                           // 0x013C (size: 0x4)
     FFixedPoint effectTimeMax;                                                        // 0x0140 (size: 0x4)
     FFixedPoint ExecCost;                                                             // 0x0144 (size: 0x4)
     FFixedPoint IdleCost;                                                             // 0x0148 (size: 0x4)
@@ -16730,7 +17415,7 @@ class UPalPartnerSkillParameterComponent : public UActorComponent
     void OnInactivatedAsPartner();
     void OnInactivatedAsOtomoHolder();
     void OnExec();
-    void OnEffectTimeChanged__DelegateSignature(FFixedPoint effectTime, FFixedPoint effectTimeMax);
+    void OnEffectTimeChanged__DelegateSignature(FFixedPoint EffectTime, FFixedPoint effectTimeMax);
     void OnCoolDownTimeChanged__DelegateSignature(FFixedPoint CoolDownTime, FFixedPoint coolDownTimeMax);
     void OnCoolDownCompleted__DelegateSignature();
     void OnComplated();
@@ -16766,7 +17451,7 @@ class UPalPartnerSkillParameterComponent : public UActorComponent
     void CallOnStartSearchEffect_ToAll(const FGuid& RequestPlayerUId, const FPalCoopSkillSearchEffectParameter& EffectParam);
     void CallOnStart_ToAll();
     void CallOnOverheat_ToAll();
-    void CallOnEffectTimeChanged_ToAll(FFixedPoint effectTime, FFixedPoint effectTimeMax);
+    void CallOnEffectTimeChanged_ToAll(FFixedPoint EffectTime, FFixedPoint effectTimeMax);
     void CallOnCoolDownTimeChanged_ToAll(FFixedPoint CoolDownTime, FFixedPoint coolDownTimeMax);
     void CallOnCoolDownCompleted_ToAll();
 }; // Size: 0x208
@@ -16802,7 +17487,7 @@ class UPalPartnerSkillPassiveSkill : public UObject
     void Initialize(const TArray<FPalPassivePartnerSkillIdAndParameters>& _PassiveSkills);
     void InactivateWorkingSkill();
     class APalPlayerController* GetTrainerController();
-    class APalCharacter* GetTrainerActor();
+    class APalPlayerCharacter* GetTrainerActor();
     class ACharacter* GetTrainer();
     TArray<FName> GetPassiveSkillList();
     class APalCharacter* GetOwner();
@@ -16898,6 +17583,7 @@ class UPalPlayerAccount : public UObject
     class UPalTechnologyData* TechnologyData;                                         // 0x0100 (size: 0x8)
     class UPalPlayerRecordData* RecordData;                                           // 0x0108 (size: 0x8)
     bool bIsSelectedInitMapPoint;                                                     // 0x0110 (size: 0x1)
+    bool bShouldSaveOnNextTime;                                                       // 0x0111 (size: 0x1)
 
 }; // Size: 0x120
 
@@ -16945,7 +17631,7 @@ class UPalPlayerDataPalStorage : public UObject
     void OnRep_TargetContainer();
     void GetSlotsInPage(const int32 PageIndex, TArray<class UPalIndividualCharacterSlot*>& Slots);
     class UPalIndividualCharacterSlot* GetSlot(const int32 PageIndex, const int32 SlotIndex);
-}; // Size: 0x58
+}; // Size: 0x60
 
 class UPalPlayerDataStorage : public UObject
 {
@@ -17032,20 +17718,23 @@ class UPalPlayerInventoryData : public UObject
     void FixedWeightInventoryDelegate(float nowWeight);
     FPalPlayerInventoryDataOnMaxWeightBuffedDelegate OnMaxWeightBuffedDelegate;       // 0x00B0 (size: 0x10)
     void MaxWeightBuffedDelegate();
-    FPalPlayerInventoryDataOnPickupItemDelegate OnPickupItemDelegate;                 // 0x00C0 (size: 0x10)
+    FPalPlayerInventoryDataOnCurrentWeightBuffedDelegate OnCurrentWeightBuffedDelegate; // 0x00C0 (size: 0x10)
+    void CurrentWeightBuffedDelegate(float ChangedWeight);
+    FPalPlayerInventoryDataOnPickupItemDelegate OnPickupItemDelegate;                 // 0x00D0 (size: 0x10)
     void PickupItemDelegate(TArray<FPalItemAndNum>& ItemInfos);
-    FPalPlayerInventoryDataOnGetItemFromConvertItemMapObject OnGetItemFromConvertItemMapObject; // 0x00D0 (size: 0x10)
+    FPalPlayerInventoryDataOnGetItemFromConvertItemMapObject OnGetItemFromConvertItemMapObject; // 0x00E0 (size: 0x10)
     void PickupItemDelegate(TArray<FPalItemAndNum>& ItemInfos);
-    FPalPlayerDataInventoryInfo inventoryInfo;                                        // 0x00E0 (size: 0x60)
-    FTimerHandle FullInventoryLogGuardTimerHandle;                                    // 0x0148 (size: 0x8)
-    float NowItemWeight;                                                              // 0x0150 (size: 0x4)
-    float maxInventoryWeight;                                                         // 0x0154 (size: 0x4)
-    float maxInventoryWeight_Cached;                                                  // 0x0158 (size: 0x4)
-    class UPalItemContainerMultiHelper* InventoryMultiHelper;                         // 0x0160 (size: 0x8)
-    float PassiveBuffedMaxWeight;                                                     // 0x0168 (size: 0x4)
-    FGuid OwnerPlayerUId;                                                             // 0x016C (size: 0x10)
-    class UPalMoneyData* moneyData;                                                   // 0x0180 (size: 0x8)
-    class UAkAudioEvent* EquipmentBreakAudioEvent;                                    // 0x0188 (size: 0x8)
+    FPalPlayerDataInventoryInfo inventoryInfo;                                        // 0x00F0 (size: 0x60)
+    FTimerHandle FullInventoryLogGuardTimerHandle;                                    // 0x0158 (size: 0x8)
+    float NowItemWeight;                                                              // 0x0160 (size: 0x4)
+    float maxInventoryWeight;                                                         // 0x0164 (size: 0x4)
+    float maxInventoryWeight_Cached;                                                  // 0x0168 (size: 0x4)
+    class UPalItemContainerMultiHelper* InventoryMultiHelper;                         // 0x0170 (size: 0x8)
+    float PassiveBuffedMaxWeight;                                                     // 0x0178 (size: 0x4)
+    float PassiveBuffedCurrentWeight;                                                 // 0x017C (size: 0x4)
+    FGuid OwnerPlayerUId;                                                             // 0x0180 (size: 0x10)
+    class UPalMoneyData* moneyData;                                                   // 0x0190 (size: 0x8)
+    class UAkAudioEvent* EquipmentBreakAudioEvent;                                    // 0x0198 (size: 0x8)
 
     void UpdateWeightInventoryDelegate__DelegateSignature(float nowWeight);
     void UpdateMaxWeightInventoryDelegate__DelegateSignature(float maxWeight);
@@ -17059,7 +17748,7 @@ class UPalPlayerInventoryData : public UObject
     EPalPlayerEquipItemSlotType TryGetEquipmentTypeFromStaticItemID(const FName& StaticItemId);
     bool TryGetEquipmentContainerIDFromStaticItemID(const FName& StaticItemId, FPalContainerId& outContainerId);
     bool TryGetEmptySlot(EPalPlayerInventoryType inventoryType, class UPalItemSlot*& emptySlot);
-    bool TryGetContainerIdFromItemType(EPalItemTypeA itemTypeA, FPalContainerId& outContainerId);
+    bool TryGetContainerIdFromItemType(EPalItemTypeA ItemTypeA, FPalContainerId& outContainerId);
     bool TryGetContainerIDFromInventoryType(const EPalPlayerInventoryType inventoryType, FPalContainerId& outContainerId);
     bool TryGetContainerFromStaticItemID(const FName& StaticItemId, class UPalItemContainer*& OutContainer);
     bool TryGetContainerFromInventoryType(const EPalPlayerInventoryType inventoryType, class UPalItemContainer*& OutContainer);
@@ -17085,6 +17774,7 @@ class UPalPlayerInventoryData : public UObject
     void OnRep_maxInventoryWeight();
     void OnRep_InventoryInfo();
     void OnRep_BuffMaxWeight();
+    void OnRep_BuffCurrentWeight();
     void OnOnUpdateStatusPoint(FName StatusName, int32 prevPoint, int32 newPoint);
     void OnEndPassiveSkill(EPalPassiveSkillEffectType EffectType);
     void MaxWeightBuffedDelegate__DelegateSignature();
@@ -17092,17 +17782,19 @@ class UPalPlayerInventoryData : public UObject
     bool IsEquipSlot(class UPalItemSlot* CheckSlot);
     bool IsEquip(EPalPlayerEquipItemSlotType equipmentSlotType, const FName& StaticItemId);
     int32 GetUnlockedFoodEquipSlotNum();
+    float GetPassiveBuffedItemWeight(const class UPalStaticItemDataBase* Item);
     float GetNowItemWeight();
-    void GetItemInfoByItemTypeA(TArray<EPalItemTypeA> itemTypeA, TArray<FPalItemAndNum>& OutItemInfos);
+    void GetItemInfoByItemTypeA(TArray<EPalItemTypeA> ItemTypeA, TArray<FPalItemAndNum>& OutItemInfos);
     EPalPlayerInventoryType GetInventoryTypeFromStaticItemID(const FName& StaticItemId);
-    EPalPlayerInventoryType GetInventoryTypeFromItemTypeA(const EPalItemTypeA itemTypeA);
+    EPalPlayerInventoryType GetInventoryTypeFromItemTypeA(const EPalItemTypeA ItemTypeA);
     void FixedWeightInventoryDelegate__DelegateSignature(float nowWeight);
+    void CurrentWeightBuffedDelegate__DelegateSignature(float ChangedWeight);
     int32 CountItemNum(const FName& StaticItemId);
     bool CanEquip(EPalPlayerEquipItemSlotType equipmentSlotType, const FName& StaticItemId);
     bool CanCheckPalTalentsByInventoryItem();
     EPalItemOperationResult AddItem_ServerInternal(const FName StaticItemId, const int32 Count, bool isAssignPassive);
     void AddFullInventoryLog_Client();
-}; // Size: 0x190
+}; // Size: 0x1A0
 
 class UPalPlayerLocalRecordData : public UObject
 {
@@ -17248,6 +17940,10 @@ class UPalPlayerRecordDataUtility : public UBlueprintFunctionLibrary
     bool GetRecordData_Bool(const FPalPlayerRecordDataRepInfoArray_BoolVal& RecordData, const FName Key);
 }; // Size: 0x28
 
+class UPalPlayerUIDCommandlet : public UCommandlet
+{
+}; // Size: 0x80
+
 class UPalPlayerUtility : public UBlueprintFunctionLibrary
 {
 
@@ -17299,6 +17995,10 @@ class UPalProgressBar : public UProgressBar
     void SetFillImage(const FSlateBrush& NewImage);
 }; // Size: 0x440
 
+class UPalProjectileMovementComponent : public UProjectileMovementComponent
+{
+}; // Size: 0x240
+
 class UPalQuestBlock : public UObject
 {
     FPalQuestBlockOnUpdatedBlockDelegate OnUpdatedBlockDelegate;                      // 0x0028 (size: 0x10)
@@ -17309,6 +18009,7 @@ class UPalQuestBlock : public UObject
 
     void UpdatedBlockDelegate__DelegateSignature(class UPalQuestBlock* UpdatedQuestBlock);
     void Setup();
+    void SetCanComplete(bool Flag);
     void OnSetup_ForBP();
     void OnSetup();
     void OnComplete_ForBP();
@@ -17336,7 +18037,7 @@ class UPalQuestBlock_CheckBossDefeat : public UPalQuestBlock
     FTimerHandle CheckTimerHandle;                                                    // 0x0058 (size: 0x8)
 
     void CheckFlag();
-}; // Size: 0x60
+}; // Size: 0x70
 
 class UPalQuestBlock_CheckPalCaptureNum : public UPalQuestBlock
 {
@@ -17400,6 +18101,14 @@ class UPalQuestBlock_CountWorker : public UPalQuestBlock
     void OnTimer_CheckBaseCampWorker();
 }; // Size: 0x60
 
+class UPalQuestBlock_DefeatWildBoss : public UPalQuestBlock
+{
+    FName BossSpawnerName;                                                            // 0x0050 (size: 0x8)
+    FTimerHandle CheckTimerHandle;                                                    // 0x0058 (size: 0x8)
+
+    void CheckFlag();
+}; // Size: 0x60
+
 class UPalQuestBlock_DetectCapturePal : public UPalQuestBlock
 {
     int32 RequireCount;                                                               // 0x0050 (size: 0x4)
@@ -17425,6 +18134,22 @@ class UPalQuestBlock_DetectMeal : public UPalQuestBlock
 
     void OnTriedMeal();
 }; // Size: 0x58
+
+class UPalQuestBlock_FastTravelCount : public UPalQuestBlock
+{
+    int32 RequireUnlockCount;                                                         // 0x0050 (size: 0x4)
+    FTimerHandle CheckTimerHandle;                                                    // 0x0058 (size: 0x8)
+
+    void CheckFlag();
+}; // Size: 0x60
+
+class UPalQuestBlock_HasItem : public UPalQuestBlock
+{
+    TMap<FPalDataTableRowName_ItemData, int32> RequireItemMap;                        // 0x0050 (size: 0x50)
+    FTimerHandle CheckTimerHandle;                                                    // 0x00A0 (size: 0x8)
+
+    void CheckItem();
+}; // Size: 0xA8
 
 class UPalQuestBlock_OpenSurvivalGuide : public UPalQuestBlock
 {
@@ -17454,6 +18179,7 @@ class UPalQuestData : public UObject
     void ProgressInternal();
     void OnUpdatedQuestBlock(class UPalQuestBlock* UpdatedBlock);
     void OnCompletedQuestBlock(class UPalQuestBlock* CompletedBlock);
+    void InitializeWithoutLoadQuestBlock(int32 BlockIndex, const FName& InQuestName);
     void Initialize(int32 BlockIndex, const FName& InQuestName);
     void GetQuestDataName(FName& outName);
     void GetQuestBlock(class UPalQuestBlock*& OutBlock);
@@ -17485,12 +18211,16 @@ class UPalQuestManager : public UObject
 class UPalQuestRewardGiver : public UObject
 {
 
-    void TakeReward();
+    void TakeReward(class APalPlayerState* PlayerState);
 }; // Size: 0x28
 
 class UPalRCONSubsystem : public UGameInstanceSubsystem
 {
 }; // Size: 0x1C0
+
+class UPalRESTAPISubsystem : public UGameInstanceSubsystem
+{
+}; // Size: 0x40
 
 class UPalRadarChartWidgetBase : public UPalCustomPrimitiveWidget
 {
@@ -17518,6 +18248,57 @@ class UPalRagdollPreset : public UObject
     float AngularDamping;                                                             // 0x003C (size: 0x4)
 
 }; // Size: 0x40
+
+class UPalRaidBossComponent : public UActorComponent
+{
+    TArray<class UPalIndividualCharacterHandle*> RaidBossPalList;                     // 0x00A0 (size: 0x10)
+    TArray<class UPalIndividualCharacterHandle*> DeadRaidBossPalList;                 // 0x00B0 (size: 0x10)
+    FGuid BaseCanpID;                                                                 // 0x00C0 (size: 0x10)
+    FVector BaseCampLocation;                                                         // 0x00D0 (size: 0x18)
+    float RemainBattleTimer;                                                          // 0x00E8 (size: 0x4)
+    EPalRaidBossBattleStateType CurrentState;                                         // 0x00EC (size: 0x1)
+    FPalRaidBossSpawnerInfo SpawnerInfo;                                              // 0x00F0 (size: 0x60)
+    FName StartItemName;                                                              // 0x0150 (size: 0x8)
+    FGuid StartRequestPlayerUID;                                                      // 0x0158 (size: 0x10)
+
+    void SpawnRaidBoss_BP(FPalRaidBossSpawnInfoList SpawnInfo, const FTransform& SpawnTransform, TArray<class UPalIndividualCharacterHandle*>& OutIndividualHandle);
+    void OnSpawnBossPal(class AActor* Pal);
+    void OnDisposeBaseCamp(class UPalBaseCampModel* Model);
+    void OnDeadPal(FPalDeadInfo DeadInfo);
+    void OnCapturePal(class APalCharacter* SelfCharacter, class APalCharacter* Attacker);
+    bool IsValidPlayerInCamp(class APalPlayerCharacter* Player);
+    FName GetStartItemName();
+    float GetRemainTimer();
+    FGuid GetCampID();
+    class APalPlayerCharacter* FindInRangePlayers(TArray<class APalPlayerCharacter*>& Players, bool OnlyAlive);
+    void CallOnEnd_ToAll(EPalRaidBossBattleFinishType FinishType);
+    void AddGroupCharacter(class UPalIndividualCharacterHandle* PalHandle);
+}; // Size: 0x170
+
+class UPalRaidBossManager : public UPalWorldSubsystem
+{
+    FPalRaidBossManagerOnRaidBossBattleStartDelegate OnRaidBossBattleStartDelegate;   // 0x0070 (size: 0x10)
+    void OnRaidBossBattleStartDelegate(FGuid CampID);
+    FPalRaidBossManagerOnRaidBossBattleFinishDelegate OnRaidBossBattleFinishDelegate; // 0x0080 (size: 0x10)
+    void OnRaidBossBattleFinishDelegate(FGuid CampID, EPalRaidBossBattleFinishType FinishType);
+    class UDataTable* RaidBossDataTable;                                              // 0x0090 (size: 0x8)
+    float TimeLimit;                                                                  // 0x0098 (size: 0x4)
+    float BattleAreaRadius;                                                           // 0x009C (size: 0x4)
+    int32 NPCTargetCount_ForForcePlayerTarget;                                        // 0x00A0 (size: 0x4)
+    TArray<float> LargeDownHPRate;                                                    // 0x00A8 (size: 0x10)
+    TSubclassOf<class AActor> RaidBossBattleActorClass;                               // 0x00B8 (size: 0x8)
+    TMap<class FGuid, class UPalRaidBossComponent*> RaidComponentMap;                 // 0x00C0 (size: 0x50)
+    FGuid GroupGuid;                                                                  // 0x0110 (size: 0x10)
+
+    void OnRaidBossBattleStartDelegate__DelegateSignature(FGuid CampID);
+    void OnRaidBossBattleFinishDelegate__DelegateSignature(FGuid CampID, EPalRaidBossBattleFinishType FinishType);
+    bool IsRaidBossOfferItem(FName ItemName);
+    int32 GetNPCTargetCount_ForForcePlayerTarget();
+    class UPalRaidBossComponent* FindRaidComponent_ByBuildObject(class APalMapObject* BuildObject);
+    class UPalRaidBossComponent* FindRaidComponent(FGuid BaseCampId);
+    FPalRaidBossSpawnInfo FindRaidBossInfoByCharacterID(FName CharacterID);
+    FPalRaidBossDataRow FindRaidBossData(FName ItemName);
+}; // Size: 0x120
 
 class UPalRandomIncidentActionBase : public UObject
 {
@@ -17787,6 +18568,7 @@ class UPalSaveGameManager : public UObject
     bool IsLoadedWorldOptionData();
     bool IsLoadedWorldData();
     bool IsLoadedLocalWorldData();
+    bool IsExistSocialId(FSocialId ID);
     bool IsAppliedPlayerData();
     TArray<FString> GetWorldNames();
     TMap<class FString, class FPalWorldBaseInfoData> GetWorldBaseInfoMap();
@@ -17922,6 +18704,7 @@ class UPalShooterComponent : public UActorComponent
     bool bIsHoldTrigger;                                                              // 0x096E (size: 0x1)
     bool bBufferedInput;                                                              // 0x096F (size: 0x1)
     bool bIsShootingHold;                                                             // 0x0970 (size: 0x1)
+    bool bIsAttachRequest;                                                            // 0x0971 (size: 0x1)
     class APalWeaponBase* NPCWeapon;                                                  // 0x0988 (size: 0x8)
     float CurrentBulletBlurRate;                                                      // 0x0990 (size: 0x4)
     float RapidFireBlur;                                                              // 0x0994 (size: 0x4)
@@ -17939,6 +18722,7 @@ class UPalShooterComponent : public UActorComponent
     void SetUsedLeftHand(FName flagName, bool bIsUsed);
     void SetupInputComponent(class UInputComponent* InputComponent);
     void SetTargetDirection_ToServer(FVector targetDirection);
+    void SetTargetDirection_ByServer(FVector targetDirection);
     void SetTargetDirection(const FVector& Direction);
     void SetShootingHold(bool IsHold);
     void SetOverrideWeaponType(EPalWeaponType Type);
@@ -18122,7 +18906,7 @@ class UPalShopBase : public UObject
 class UPalShopManager : public UPalWorldSubsystem
 {
     FPalShopManagerOnRecievedBuyResultDelegate OnRecievedBuyResultDelegate;           // 0x0078 (size: 0x10)
-    void RecievedBuyResultDelegate(const EPalShopBuyResultType ResultType);
+    void RecievedBuyResultDelegate(const EPalShopBuyResultType resultType);
     FPalShopManagerOnReceivedDroppedPalDataDelegate OnReceivedDroppedPalDataDelegate; // 0x0088 (size: 0x10)
     void ReceivedDroppedPalDataDelegate(const TArray<FPalDroppedPalProductDataForShop>& ReceivedData);
     TMap<class FGuid, class UPalShopBase*> CreatedItemShopMap_ForServer;              // 0x0098 (size: 0x50)
@@ -18161,17 +18945,17 @@ class UPalShopProductBase : public UObject
 
 class UPalShopProduct_LostPal : public UPalShopProduct_PalSaveParameter
 {
-}; // Size: 0x2A0
+}; // Size: 0x308
 
 class UPalShopProduct_PalSaveParameter : public UPalShopProductBase
 {
-    FPalIndividualCharacterSaveParameter ProductPalSaveParameter;                     // 0x0068 (size: 0x218)
-    FGuid ReservedPlayerUID;                                                          // 0x0280 (size: 0x10)
+    FPalIndividualCharacterSaveParameter ProductPalSaveParameter;                     // 0x0068 (size: 0x280)
+    FGuid ReservedPlayerUID;                                                          // 0x02E8 (size: 0x10)
 
     void OnCreatedBuyPal(FPalInstanceID CreatedPalInstanceID);
     void GetProductPalParameter(FPalIndividualCharacterSaveParameter& outParameter);
     int32 GetPrice();
-}; // Size: 0x290
+}; // Size: 0x2F8
 
 class UPalShopProduct_TradeItem : public UPalShopProductBase
 {
@@ -18484,87 +19268,88 @@ class UPalStateMachineStateBase_BlueprintBase : public UPalStateMachineStateBase
 
 class UPalStaticArmorItemData : public UPalStaticItemDataBase
 {
-    int32 AttackValue;                                                                // 0x0158 (size: 0x4)
-    int32 DefenseValue;                                                               // 0x015C (size: 0x4)
-    int32 HPValue;                                                                    // 0x0160 (size: 0x4)
-    int32 ShieldValue;                                                                // 0x0164 (size: 0x4)
+    int32 AttackValue;                                                                // 0x0170 (size: 0x4)
+    int32 DefenseValue;                                                               // 0x0174 (size: 0x4)
+    int32 HPValue;                                                                    // 0x0178 (size: 0x4)
+    int32 ShieldValue;                                                                // 0x017C (size: 0x4)
 
     int32 GetShieldValue();
     int32 GetHPValue();
     int32 GetDefenseValue();
     int32 GetAttackValue();
-}; // Size: 0x168
+}; // Size: 0x180
 
 class UPalStaticCharacterParameterComponent : public UActorComponent
 {
     TMap<class EPalAIActionType, class TSubclassOf<UPalAIActionBase>> AIActionMap;    // 0x00A0 (size: 0x50)
     float CallApproachWalkSpeedMultiplier;                                            // 0x00F0 (size: 0x4)
-    TArray<class UAnimMontage*> RandomRestMontage;                                    // 0x00F8 (size: 0x10)
-    TArray<FPalRandomRestInfo> RandomRestMontageInfos;                                // 0x0108 (size: 0x10)
-    TMap<class EPalGeneralAnimSequenceType, class UAnimSequence*> GeneralAnimSequenceMap; // 0x0118 (size: 0x50)
-    TMap<class EPalGeneralMontageType, class UAnimMontage*> GeneralMontageMap;        // 0x0168 (size: 0x50)
-    TMap<class EPalGeneralBlendSpaceType, class UBlendSpace*> GeneralBlendSpaceMap;   // 0x01B8 (size: 0x50)
-    TMap<class EPalRagdollPresetType, class TSubclassOf<UPalRagdollPreset>> RagdollPresetMap; // 0x0208 (size: 0x50)
-    TMap<class EPalActionType, class UAnimMontage*> ActionMontageMap;                 // 0x0258 (size: 0x50)
-    TArray<class UAnimMontage*> EmoteList;                                            // 0x02A8 (size: 0x10)
-    TMap<class EPalWazaID, class TSoftClassPtr<UPalActionBase>> WazaActionDeclarationMap; // 0x02B8 (size: 0x50)
-    TMap<class EPalWazaID, class TSubclassOf<UPalActionBase>> WazaActionInstancedMap; // 0x0308 (size: 0x50)
-    float CaptureSuccessRate;                                                         // 0x0358 (size: 0x4)
-    bool IsPal;                                                                       // 0x035C (size: 0x1)
-    float SkillEffectScale;                                                           // 0x0360 (size: 0x4)
-    FVector SkillEffectOffsetScale;                                                   // 0x0368 (size: 0x18)
-    float FollowSideDistanceRate;                                                     // 0x0380 (size: 0x4)
-    TMap<TEnumAsByte<EPhysicalSurface>, FFootStampInfo> FootStampMap;                 // 0x0388 (size: 0x50)
-    float StepVelocityXY;                                                             // 0x03D8 (size: 0x4)
-    float StepVelocityZ;                                                              // 0x03DC (size: 0x4)
-    FName HeadBoneName;                                                               // 0x03E0 (size: 0x8)
-    FName PhysicsBodyRootName;                                                        // 0x03E8 (size: 0x8)
-    FName ToolAttachBoneName;                                                         // 0x03F0 (size: 0x8)
-    FVector2D HPGaugeUIOffset;                                                        // 0x03F8 (size: 0x10)
-    float ExclamationMarkOffsetZ;                                                     // 0x0408 (size: 0x4)
-    EPalMonsterMovementType MovementType;                                             // 0x040C (size: 0x1)
-    float Weight_KG;                                                                  // 0x0410 (size: 0x4)
-    int32 Mass_Scale;                                                                 // 0x0414 (size: 0x4)
-    float IsGroundCrossRange;                                                         // 0x0418 (size: 0x4)
-    TMap<class EPalPhysicsBoneType, class FName> PhysicsBoneNameMap;                  // 0x0420 (size: 0x50)
-    bool IsUncapturable;                                                              // 0x0470 (size: 0x1)
-    bool IsBackWalkForwardAnime;                                                      // 0x0471 (size: 0x1)
-    bool IsRightLeft_WakeupFromRagdoll;                                               // 0x0472 (size: 0x1)
-    FVector GetupMotion_UtubuseOrRight_0FramePelvisLocation;                          // 0x0478 (size: 0x18)
-    FVector GetupMotion_AomukeOrLeft_0FramePelvisLocation;                            // 0x0490 (size: 0x18)
-    FName Ragdoll_RightLeftGetup_ForwardTailName;                                     // 0x04A8 (size: 0x8)
-    FName Ragdoll_RightLeftGetup_RightLegName;                                        // 0x04B0 (size: 0x8)
-    EPalPettingSizeType PettingSize;                                                  // 0x04B8 (size: 0x1)
-    float PettingDistance;                                                            // 0x04BC (size: 0x4)
-    float PettingStartAddDistance;                                                    // 0x04C0 (size: 0x4)
-    float PettingEndLeaveDistance;                                                    // 0x04C4 (size: 0x4)
-    float PettingCameraCenterDistance_Override;                                       // 0x04C8 (size: 0x4)
-    float PettingCameraHeight_Override;                                               // 0x04CC (size: 0x4)
-    float PettingCameraArmLength_Override;                                            // 0x04D0 (size: 0x4)
-    EPalSizeType Size;                                                                // 0x04D4 (size: 0x1)
-    float Ragdoll_GravityRate;                                                        // 0x04D8 (size: 0x4)
-    bool IsLookatIKAble;                                                              // 0x04DC (size: 0x1)
-    float SmallDamageAnimationApplyRate;                                              // 0x04E0 (size: 0x4)
-    float SmallDamageAnimationPlayRate;                                               // 0x04E4 (size: 0x4)
-    FShooterSpringCameraParameter CameraOffsetInLiftup;                               // 0x04E8 (size: 0x20)
-    bool IsForcedTurnWhenDamageReaction;                                              // 0x0508 (size: 0x1)
-    bool DisableNPCDamageRolling;                                                     // 0x0509 (size: 0x1)
-    TSoftClassPtr<UPalSoundSlot> PalSoundSlotClass;                                   // 0x0510 (size: 0x30)
-    FName AkAttachPointName;                                                          // 0x0540 (size: 0x8)
-    TSoftClassPtr<UPalFootStepEffectAssetBase> PalFootStepEffectAssetClass;           // 0x0548 (size: 0x30)
-    FPalStaticCharacterInfo_SpawnItem SpawnItem;                                      // 0x0578 (size: 0x50)
-    class UPalSoundSlot* PalSoundSlotCache;                                           // 0x05C8 (size: 0x8)
-    class UPalFootStepEffectAssetBase* PalFootStepEffectAssetCache;                   // 0x05D0 (size: 0x8)
-    TSubclassOf<class UPalActionBase> MissWazaAction;                                 // 0x05D8 (size: 0x8)
-    bool IsBoss_Database;                                                             // 0x05E0 (size: 0x1)
-    bool IsTowerBoss_Database;                                                        // 0x05E1 (size: 0x1)
-    EPalSpawnedCharacterType SpawnedCharacterType;                                    // 0x05E2 (size: 0x1)
+    TArray<FPalRandomRestInfo> RandomRestMontageInfos;                                // 0x00F8 (size: 0x10)
+    TMap<class EPalGeneralAnimSequenceType, class UAnimSequence*> GeneralAnimSequenceMap; // 0x0108 (size: 0x50)
+    TMap<class EPalGeneralMontageType, class UAnimMontage*> GeneralMontageMap;        // 0x0158 (size: 0x50)
+    TMap<class EPalGeneralBlendSpaceType, class UBlendSpace*> GeneralBlendSpaceMap;   // 0x01A8 (size: 0x50)
+    TMap<class EPalRagdollPresetType, class TSubclassOf<UPalRagdollPreset>> RagdollPresetMap; // 0x01F8 (size: 0x50)
+    TMap<class EPalActionType, class UAnimMontage*> ActionMontageMap;                 // 0x0248 (size: 0x50)
+    TArray<class UAnimMontage*> EmoteList;                                            // 0x0298 (size: 0x10)
+    TMap<class EPalWazaID, class TSoftClassPtr<UPalActionBase>> WazaActionDeclarationMap; // 0x02A8 (size: 0x50)
+    TMap<class EPalWazaID, class TSubclassOf<UPalActionBase>> WazaActionInstancedMap; // 0x02F8 (size: 0x50)
+    float CaptureSuccessRate;                                                         // 0x0348 (size: 0x4)
+    bool IsPal;                                                                       // 0x034C (size: 0x1)
+    float SkillEffectScale;                                                           // 0x0350 (size: 0x4)
+    FVector SkillEffectOffsetScale;                                                   // 0x0358 (size: 0x18)
+    float FollowSideDistanceRate;                                                     // 0x0370 (size: 0x4)
+    TMap<TEnumAsByte<EPhysicalSurface>, FFootStampInfo> FootStampMap;                 // 0x0378 (size: 0x50)
+    float StepVelocityXY;                                                             // 0x03C8 (size: 0x4)
+    float StepVelocityZ;                                                              // 0x03CC (size: 0x4)
+    FName HeadBoneName;                                                               // 0x03D0 (size: 0x8)
+    FName PhysicsBodyRootName;                                                        // 0x03D8 (size: 0x8)
+    FName ToolAttachBoneName;                                                         // 0x03E0 (size: 0x8)
+    FVector2D HPGaugeUIOffset;                                                        // 0x03E8 (size: 0x10)
+    float ExclamationMarkOffsetZ;                                                     // 0x03F8 (size: 0x4)
+    EPalMonsterMovementType MovementType;                                             // 0x03FC (size: 0x1)
+    float Weight_KG;                                                                  // 0x0400 (size: 0x4)
+    int32 Mass_Scale;                                                                 // 0x0404 (size: 0x4)
+    float IsGroundCrossRange;                                                         // 0x0408 (size: 0x4)
+    TMap<class EPalPhysicsBoneType, class FName> PhysicsBoneNameMap;                  // 0x0410 (size: 0x50)
+    bool IsUncapturable;                                                              // 0x0460 (size: 0x1)
+    bool IsBackWalkForwardAnime;                                                      // 0x0461 (size: 0x1)
+    bool IsRightLeft_WakeupFromRagdoll;                                               // 0x0462 (size: 0x1)
+    FVector GetupMotion_UtubuseOrRight_0FramePelvisLocation;                          // 0x0468 (size: 0x18)
+    FVector GetupMotion_AomukeOrLeft_0FramePelvisLocation;                            // 0x0480 (size: 0x18)
+    FName Ragdoll_RightLeftGetup_ForwardTailName;                                     // 0x0498 (size: 0x8)
+    FName Ragdoll_RightLeftGetup_RightLegName;                                        // 0x04A0 (size: 0x8)
+    EPalPettingSizeType PettingSize;                                                  // 0x04A8 (size: 0x1)
+    float PettingDistance;                                                            // 0x04AC (size: 0x4)
+    float PettingStartAddDistance;                                                    // 0x04B0 (size: 0x4)
+    float PettingEndLeaveDistance;                                                    // 0x04B4 (size: 0x4)
+    float PettingCameraCenterDistance_Override;                                       // 0x04B8 (size: 0x4)
+    float PettingCameraHeight_Override;                                               // 0x04BC (size: 0x4)
+    float PettingCameraArmLength_Override;                                            // 0x04C0 (size: 0x4)
+    EPalSizeType Size;                                                                // 0x04C4 (size: 0x1)
+    float Ragdoll_GravityRate;                                                        // 0x04C8 (size: 0x4)
+    bool IsLookatIKAble;                                                              // 0x04CC (size: 0x1)
+    float SmallDamageAnimationApplyRate;                                              // 0x04D0 (size: 0x4)
+    float SmallDamageAnimationPlayRate;                                               // 0x04D4 (size: 0x4)
+    FShooterSpringCameraParameter CameraOffsetInLiftup;                               // 0x04D8 (size: 0x20)
+    bool IsForcedTurnWhenDamageReaction;                                              // 0x04F8 (size: 0x1)
+    bool DisableNPCDamageRolling;                                                     // 0x04F9 (size: 0x1)
+    TSoftClassPtr<UPalSoundSlot> PalSoundSlotClass;                                   // 0x0500 (size: 0x30)
+    FName AkAttachPointName;                                                          // 0x0530 (size: 0x8)
+    TSoftClassPtr<UPalFootStepEffectAssetBase> PalFootStepEffectAssetClass;           // 0x0538 (size: 0x30)
+    FPalStaticCharacterInfo_SpawnItem SpawnItem;                                      // 0x0568 (size: 0x50)
+    class UPalSoundSlot* PalSoundSlotCache;                                           // 0x05B8 (size: 0x8)
+    class UPalFootStepEffectAssetBase* PalFootStepEffectAssetCache;                   // 0x05C0 (size: 0x8)
+    TSubclassOf<class UPalActionBase> MissWazaAction;                                 // 0x05C8 (size: 0x8)
+    bool IsBoss_Database;                                                             // 0x05D0 (size: 0x1)
+    bool IsTowerBoss_Database;                                                        // 0x05D1 (size: 0x1)
+    bool IsRaidBoss_Database;                                                         // 0x05D2 (size: 0x1)
+    EPalSpawnedCharacterType SpawnedCharacterType;                                    // 0x05D3 (size: 0x1)
 
     void SetSpawnedCharacterType(EPalSpawnedCharacterType SpawnedType);
     void LoadWazaActionClass(EPalWazaID WazaID);
     bool IsTowerBossPal();
     bool IsSwimPal();
     bool IsRarePal();
+    bool IsRaidBossPal();
     bool IsFlyPal();
     bool IsBossPal_Database_ExceptRare();
     bool IsBossPal_Database();
@@ -18574,22 +19359,22 @@ class UPalStaticCharacterParameterComponent : public UActorComponent
     FPalRandomRestInfo GetRandomRestInfo();
     float GetCaptureRate_ByCharacterID();
     class UAnimMontage* FindMontange(const EPalActionType ActionType, bool& bExist);
-}; // Size: 0x5E8
+}; // Size: 0x5D8
 
 class UPalStaticConsumeItemData : public UPalStaticItemDataBase
 {
-    int32 RestoreHP;                                                                  // 0x0158 (size: 0x4)
-    int32 RestoreSP;                                                                  // 0x015C (size: 0x4)
-    int32 RestoreSatiety;                                                             // 0x0160 (size: 0x4)
-    int32 RestoreSanity;                                                              // 0x0164 (size: 0x4)
-    EPalWazaID WazaID;                                                                // 0x0168 (size: 0x1)
+    int32 RestoreHP;                                                                  // 0x0170 (size: 0x4)
+    int32 RestoreSP;                                                                  // 0x0174 (size: 0x4)
+    int32 RestoreSatiety;                                                             // 0x0178 (size: 0x4)
+    int32 RestoreSanity;                                                              // 0x017C (size: 0x4)
+    EPalWazaID WazaID;                                                                // 0x0180 (size: 0x1)
 
     EPalWazaID GetWazaID();
     int32 GetRestoreSP();
     int32 GetRestoreSatiety();
     int32 GetRestoreSanity();
     int32 GetRestoreHP();
-}; // Size: 0x170
+}; // Size: 0x188
 
 class UPalStaticItemDataAsset : public UDataAsset
 {
@@ -18618,24 +19403,31 @@ class UPalStaticItemDataBase : public UObject
     float Weight;                                                                     // 0x011C (size: 0x4)
     float Durability;                                                                 // 0x0120 (size: 0x4)
     FName PassiveSkill;                                                               // 0x0124 (size: 0x8)
-    float CorruptionFactor;                                                           // 0x012C (size: 0x4)
-    float FloatValue1;                                                                // 0x0130 (size: 0x4)
-    FName OverrideNameMsgID;                                                          // 0x0134 (size: 0x8)
-    FName OverrideDescMsgID;                                                          // 0x013C (size: 0x8)
+    FName PassiveSkill2;                                                              // 0x012C (size: 0x8)
+    FName PassiveSkill3;                                                              // 0x0134 (size: 0x8)
+    FName PassiveSkill4;                                                              // 0x013C (size: 0x8)
+    float CorruptionFactor;                                                           // 0x0144 (size: 0x4)
+    float FloatValue1;                                                                // 0x0148 (size: 0x4)
+    FName OverrideNameMsgID;                                                          // 0x014C (size: 0x8)
+    FName OverrideDescMsgID;                                                          // 0x0154 (size: 0x8)
 
     bool UseItem(class UPalDynamicItemDataBase* DynamicItemData, const class UObject* WorldContextObject);
     bool IsCorruptible();
     bool HasDynamicItemClass();
     bool HasActorClass();
     TSoftClassPtr<AActor> GetVisualBlueprintClass(const class UObject* WorldContextObject);
+    FName GetPassiveSkill4();
+    FName GetPassiveSkill3();
+    FName GetPassiveSkill2();
     FName GetPassiveSkill();
     void GetNameMsgId(FName& OutMsgID);
     int32 GetMaxStackCount();
     FName GetId();
     TSubclassOf<class UPalDynamicItemDataBase> GetDynamicItemDataClass();
     void GetDescriptionMsgId(FName& OutMsgID);
+    void GetAllPassiveSkill(TArray<FName>& OutArray);
     TSoftClassPtr<AActor> GetActorClass();
-}; // Size: 0x158
+}; // Size: 0x170
 
 class UPalStaticItemDataManager : public UObject
 {
@@ -18663,16 +19455,16 @@ class UPalStaticLogCollector : public UObject
 
 class UPalStaticWeaponItemData : public UPalStaticItemDataBase
 {
-    int32 MagazineSize;                                                               // 0x0158 (size: 0x4)
-    float SneakAttackRate;                                                            // 0x015C (size: 0x4)
-    int32 AttackValue;                                                                // 0x0160 (size: 0x4)
-    int32 DefenseValue;                                                               // 0x0164 (size: 0x4)
+    int32 MagazineSize;                                                               // 0x0170 (size: 0x4)
+    float SneakAttackRate;                                                            // 0x0174 (size: 0x4)
+    int32 AttackValue;                                                                // 0x0178 (size: 0x4)
+    int32 DefenseValue;                                                               // 0x017C (size: 0x4)
 
     int32 GetWeaponDefense();
     int32 GetWeaponBaseDamage();
     float GetSneakAttackRate();
     int32 GetMaxMagazineSize();
-}; // Size: 0x168
+}; // Size: 0x180
 
 class UPalStatusBase : public UObject
 {
@@ -18724,8 +19516,10 @@ class UPalStatusComponent : public UActorComponent
     void OnRemoveStatus(const class UPalStatusComponent* StatusComponent, EPalStatusID StatusId);
     TArray<class UPalStatusBase*> ExecutionStatusList;                                // 0x0110 (size: 0x10)
     TArray<class UPalStatusBase*> ExecutionStatusListCache;                           // 0x0120 (size: 0x10)
+    TArray<EPalStatusID> DisableAddStatusIDs;                                         // 0x0130 (size: 0x10)
 
     void SomeStatus_ToAll(EPalStatusID StatusId, FStatusDynamicParameter Param);
+    void SetDisableAddStatusIDs(TArray<EPalStatusID> StatusIDs);
     void RemoveStatus_ToServer(EPalStatusID StatusId, int32 issuerID);
     void RemoveStatus(EPalStatusID StatusId);
     void OnRep_ExecutionStatusList();
@@ -18737,7 +19531,7 @@ class UPalStatusComponent : public UActorComponent
     void AddStatusParameter(EPalStatusID StatusId, FStatusDynamicParameter Param);
     void AddStatus_ToServer(EPalStatusID StatusId, FStatusDynamicParameter Param, int32 issuerID);
     void AddStatus(EPalStatusID StatusId);
-}; // Size: 0x130
+}; // Size: 0x140
 
 class UPalStatusHungerTypeUtility : public UBlueprintFunctionLibrary
 {
@@ -18788,7 +19582,7 @@ class UPalSyncTeleportComponent : public UActorComponent
 
 class UPalTalkWidgetParameter : public UPalHUDDispatchParameterBase
 {
-    class UDataTable* talkDataTable;                                                  // 0x0038 (size: 0x8)
+    class UDataTable* TalkDataTable;                                                  // 0x0038 (size: 0x8)
     FName startTalkSequence;                                                          // 0x0040 (size: 0x8)
     class AActor* talker;                                                             // 0x0048 (size: 0x8)
     class UPalIncidentBase* talkIncident;                                             // 0x0050 (size: 0x8)
@@ -18832,6 +19626,7 @@ class UPalTechnologyData : public UObject
 
     void RequestUnlockRecipeTechnology(const FName& UnlockTechnologyName);
     void RequestAddTechnologyPointByItem(const FPalItemSlotId& ConsumeSlotId);
+    void RequestAddBossTechnologyPointByItem(const FPalItemSlotId& ConsumeSlotId);
     void RemoveNewUnlockedFlag(const FName& technologyName);
     void OnUpdateTechnologyPoint__DelegateSignature(int32 TechnologyPoint);
     void OnUpdateLocalPlayerLevel(int32 addLevel, int32 nowLevel);
@@ -19037,6 +19832,7 @@ class UPalUIAimReticleBase : public UPalUserWidget
 {
 
     void TickDisplayOutline(const FHitResult& HitResult);
+    void IsThrowableToHitResult(const FHitResult& HitResult, class UPalCharacterParameterComponent* checkCharacterParam, FPalUIAimReticleMapObjectThrowableData& outThrowableData);
     void IsAssignableToHitResult(const FHitResult& HitResult, class UPalCharacterParameterComponent* checkCharacterParam, FPalUIAimReticleMapObjectAssignableData& outAssignableData);
 }; // Size: 0x410
 
@@ -19074,7 +19870,7 @@ class UPalUIBaseCampTaskBase : public UPalUserWidgetOverlayUI
     class UPalBaseCampTaskChecker* taskChecker;                                       // 0x0450 (size: 0x8)
 
     bool TryBaseCampLevelUp();
-    void SetTargetBaseCampID(const FGuid& TargetBaseCampId);
+    void SetTargetBaseCampID(const FGuid& TargetBaseCampID);
     bool IsCampLevelMax();
     bool GetNowLevelTaskData(FPalBaseCampTaskDataSet& outTaskData);
     class UPalBaseCampModel* GetBaseCampModel();
@@ -19159,11 +19955,16 @@ class UPalUIBuildingModel : public UObject
 {
     FName BuildObjectId;                                                              // 0x0028 (size: 0x8)
 
+    bool ShouldDisplayWarningForBuildObject();
+    bool ShouldDisplayChangeBuildingModeGuide();
     void Setup(const FName InBuildObjectId);
     void RotateTarget(const bool bRight);
     void OnUpdateInventory(class UPalItemContainer* Container);
+    bool IsOutsideBaseCamp();
+    bool IsExistBaseCamp();
     void FinishBuilding();
     void Dispose();
+    void ChangeMode(const bool bOn);
     void BuildObject(const bool bContinuously);
 }; // Size: 0x30
 
@@ -19212,7 +20013,7 @@ class UPalUICharacterStatus : public UPalUserWidgetOverlayUI
 
     void RemoveActiveSkill(class UPalIndividualCharacterHandle* targetHandle, EPalWazaID targetWazaID);
     void DropCharacter(class UPalIndividualCharacterHandle* targetHandle);
-    void ChangeNickname(class UPalIndividualCharacterHandle* targetHandle, const FText& newNickName);
+    void ChangeNickname(class UPalIndividualCharacterHandle* targetHandle, const FText& NewNickName);
     void ChangeActiveSkill(class UPalIndividualCharacterHandle* targetHandle, EPalWazaID changeWazaID, EPalWazaID newWazaID);
     void AddActiveSkill(class UPalIndividualCharacterHandle* targetHandle, EPalWazaID newWazaID);
 }; // Size: 0x430
@@ -19234,18 +20035,21 @@ class UPalUICompassIconBase : public UPalUserWidget
 
 class UPalUIConvertItemModel : public UObject
 {
-    class UPalUIProductSettingModel* ProductSettingModel;                             // 0x0028 (size: 0x8)
-    TWeakObjectPtr<class UPalMapObjectConvertItemModel> WeakConvertItemModel;         // 0x0030 (size: 0x8)
+    FPalUIConvertItemModelOnUpdateCanTransportOut OnUpdateCanTransportOut;            // 0x0028 (size: 0x10)
+    void ReturnBoolDelegate(bool bOn);
+    class UPalUIProductSettingModel* ProductSettingModel;                             // 0x0038 (size: 0x8)
+    TWeakObjectPtr<class UPalMapObjectConvertItemModel> WeakConvertItemModel;         // 0x0040 (size: 0x8)
+    bool bCanTransportOut;                                                            // 0x0048 (size: 0x1)
 
     void UpdateProductSetting_TransportToStorage(const bool bOn);
-    void UpdateProductSetting();
     bool TryGetConcreteModel(class UPalMapObjectConvertItemModel*& Model);
     void StartProduction();
+    void ReturnBoolDelegate__DelegateSignature(bool bOn);
     void Initialize(class UPalMapObjectConvertItemModel* InModel);
     FText GetBuildObjectName();
     EPalUIConvertItemRequestStartResponse CanStartProduction();
     void CancelProduct();
-}; // Size: 0x38
+}; // Size: 0x50
 
 class UPalUIDamageTextBase : public UPalUserWidget
 {
@@ -19393,29 +20197,41 @@ class UPalUIInsideBaseCampCanvas : public UPalUserWidget
     void OnEnterPalBoxAreaDelegate();
     FPalUIInsideBaseCampCanvasOnLeavePalBoxAreaDelegate OnLeavePalBoxAreaDelegate;    // 0x0418 (size: 0x10)
     void OnLeavePalBoxAreaDelegate();
-    class UPalBaseCampTaskChecker* taskChecker;                                       // 0x0428 (size: 0x8)
-    float palboxAreaRange;                                                            // 0x0430 (size: 0x4)
-    TSubclassOf<class UPalLogWidgetBase> allTaskCompletedLogClass;                    // 0x0438 (size: 0x8)
-    FGuid lastInsideBaseCampID;                                                       // 0x0440 (size: 0x10)
-    TMap<class FPalDataTableRowName_ItemData, class FPalInsideBaseCampUI_DisplayItemInfo> displayItemInfoMap; // 0x0450 (size: 0x50)
-    FPalBaseCampTaskCheckedData CachedTaskCheckData;                                  // 0x04A0 (size: 0x60)
+    FPalUIInsideBaseCampCanvasOnUpdateInsideBaseCampWokerBattleType OnUpdateInsideBaseCampWokerBattleType; // 0x0428 (size: 0x10)
+    void OnUpdateInsideBaseCampWokerBattleType(EPalBaseCampWorkerDirectionBattleType BattleType);
+    class UPalBaseCampTaskChecker* taskChecker;                                       // 0x0438 (size: 0x8)
+    float palboxAreaRange;                                                            // 0x0440 (size: 0x4)
+    TSubclassOf<class UPalLogWidgetBase> allTaskCompletedLogClass;                    // 0x0448 (size: 0x8)
+    FGuid lastInsideBaseCampID;                                                       // 0x0450 (size: 0x10)
+    TMap<class FPalDataTableRowName_ItemData, class FPalInsideBaseCampUI_DisplayItemInfo> displayItemInfoMap; // 0x0460 (size: 0x50)
+    FPalBaseCampTaskCheckedData CachedTaskCheckData;                                  // 0x04B0 (size: 0x60)
+    TArray<TWeakObjectPtr<UPalMapObjectBaseCampWorkerDirectorModel>> WeakBaseCampWorkerDirectorModelArray; // 0x0518 (size: 0x10)
+    TArray<TWeakObjectPtr<UPalMapObjectBaseCampPassiveWorkHardModel>> WeakBaseCampWorkHardModelArray; // 0x0528 (size: 0x10)
 
     void UnregisterTaskProgressEvent(const class UPalBaseCampModel* Model);
+    void ResetCollectedBaseCampWorkerInfo();
     void ResetCachedTaskCheckData();
     void RemoveAllTaskCompletedLog();
     void RegisterTaskProgressEvent();
+    void OnUpdateInsideBaseCampWokerBattleType__DelegateSignature(EPalBaseCampWorkerDirectionBattleType BattleType);
+    void OnUpdateBaseCampWorkerDirectorBattleType(class UPalMapObjectBaseCampWorkerDirectorModel* Model);
     void OnNotAvailableInsideBaseCampMapObjectConcreteModel(class UPalMapObjectConcreteModelBase* ConcreteModel);
     void OnLeavePalBoxAreaDelegate__DelegateSignature();
     void OnEnterPalBoxAreaDelegate__DelegateSignature();
     void OnAvailableInsideBaseCampMapObjectConcreteModel(class UPalMapObjectConcreteModelBase* ConcreteModel);
+    bool IsExistWorkHardModel();
+    bool IsExistWorkerDirectorModel();
+    EPalBaseCampPassiveEffectWorkHardType GetWorkHardType();
     bool GetTaskData(FPalBaseCampTaskDataSet& outTaskData);
+    FGuid GetLocalPlayerGroupID();
     class UPalBaseCampModel* GetInsideBaseCampModel();
     void GetBaseCampPalSlots(TArray<class UPalIndividualCharacterSlot*>& OutSlots);
     int32 GetBaseCampPalBedCount();
+    void CollectBaseCampWorkerInfo();
     bool CheckTask(FPalBaseCampTaskCheckedData& outCheckedData);
     void CheckItemNum(TMap<FName, int64>& outItemNumMap, int64& outFoodNum);
     void CheckInsidePalBox();
-}; // Size: 0x518
+}; // Size: 0x550
 
 class UPalUIInventoryEquipment : public UPalUserWidget
 {
@@ -19424,6 +20240,7 @@ class UPalUIInventoryEquipment : public UPalUserWidget
     void SwapEquipmentByLiftItem(EPalPlayerEquipItemSlotType slotType);
     void RequestUpdatePlayerStatusPoint(const TMap<FName, int32>& AddPointMap);
     void QuickSortInventory();
+    void ChangeLocalPlayerNickname(FString NewName);
 }; // Size: 0x458
 
 class UPalUIInventoryModel : public UObject
@@ -19468,6 +20285,22 @@ class UPalUIItemBoxModel : public UObject
 {
 }; // Size: 0x28
 
+class UPalUIItemChestFilterModel : public UObject
+{
+    FPalUIItemChestFilterModelOnUpdateFilterPreferenceDelegate OnUpdateFilterPreferenceDelegate; // 0x0028 (size: 0x10)
+    void PalUIItemChestFilterMulticastDelegate(class UPalMapObjectItemContainerModule* Module);
+    TWeakObjectPtr<class UPalMapObjectConcreteModelBase> WeakTargetModel;             // 0x0038 (size: 0x8)
+
+    void Setup(class UPalMapObjectConcreteModelBase* InConcreteModel);
+    void RequestChangeFilter(const FName InFilterName, const bool bOn);
+    void RequestAllUncheck();
+    void RequestAllCheck();
+    void OnUpdateFilterPreference(class UPalMapObjectItemContainerModule* Module);
+    class UPalMapObjectItemContainerModule* GetItemContainerModule();
+    TMap<class FName, class FName> GetFilterIdAndDisplayTextId();
+    void Dispose();
+}; // Size: 0x40
+
 class UPalUIItemPossessStatusIndicator : public UPalUserWidgetWorldHUD
 {
 }; // Size: 0x408
@@ -19495,9 +20328,13 @@ class UPalUIJoinGameBase : public UPalUserWidgetOverlayUI
     int32 PageSize;                                                                   // 0x044C (size: 0x4)
     bool IsNextPage;                                                                  // 0x0450 (size: 0x1)
     TArray<FPalUIServerDisplayData> CachedServerDisplayInfo;                          // 0x0458 (size: 0x10)
+    FString InputIPAddress;                                                           // 0x0468 (size: 0x10)
+    bool IsCheckedInputPassword;                                                      // 0x0478 (size: 0x1)
+    FString SaveConfigCategoryName;                                                   // 0x0480 (size: 0x10)
 
+    void SaveConfigValue();
     void RequestOfficialServerIPRange();
-    void RequestGetServerList(EPalUIServerListFilterType Type, FString Region, bool IsCleanCache, bool NextPage, FString SearchWord);
+    void RequestGetServerList(EPalUIServerListFilterType Type, EPalUIServerListSortType SortType, FString Region, bool IsCleanCache, int32 PageOffset, FString SearchWord);
     void OnCompleteOfficialServerIPRange(const FString ResponseBody, bool bResponseOK, int32 ResponseCode);
     void OnCompleteGetServerListEvent();
     void OnCompleteFindSessions(bool IsSuccess, const TArray<FBlueprintSessionResult>& Results, FString ErrorStr);
@@ -19505,7 +20342,7 @@ class UPalUIJoinGameBase : public UPalUserWidgetOverlayUI
     void ConnectServerByAddress(FString Address, int32 Port);
     void ConnectServer(const FPalUIServerDisplayData& ServerDisplayData);
     void CollectServerDisplayInfo(const FPalUIServerDataCollectInfo& CollectInfo, TArray<FPalUIServerDisplayData>& OutServerInfo);
-}; // Size: 0x468
+}; // Size: 0x490
 
 class UPalUIJoinGameInputCodeBase : public UPalUserWidgetOverlayUI
 {
@@ -19531,8 +20368,8 @@ class UPalUILiftSlotModel : public UObject
     void OnUpdateCountDelegate(int32 Count);
     FPalUILiftSlotModelOnFailedItemOperationDelegate OnFailedItemOperationDelegate;   // 0x0068 (size: 0x10)
     void OnFailedItemOperationDelegate();
-    FPalItemSlotId ItemSourceSlotId;                                                  // 0x0078 (size: 0x14)
-    FPalItemAndNum ItemInfo;                                                          // 0x008C (size: 0x2C)
+    FPalItemSlotId SourceItemSlotId;                                                  // 0x0078 (size: 0x14)
+    FPalItemAndNum SourceLiftItemInfo;                                                // 0x008C (size: 0x2C)
     class UPalIndividualCharacterSlot* CharacterSlot;                                 // 0x00D0 (size: 0x8)
 
     void SelectItemSlot(const FPalItemSlotId SlotID, const EPalItemSlotPressType Type);
@@ -19707,20 +20544,22 @@ class UPalUIPalCharacterRankUpModel : public UObject
     void OnUpdateTargetSlot(class UPalIndividualCharacterReferenceSlot* Slot, FPalInstanceID LastIndividualId);
     void OnUpdateTargetCharacterRank(const int32 nowRank, const int32 oldRank);
     void OnUpdateResourceSlot(class UPalIndividualCharacterReferenceSlot* Slot, FPalInstanceID LastIndividualId);
-    void OnClickTargetCharacterSlot();
-    void OnClickResourceCharacterSlot(const int32 SlotIndex);
     void ModelDelegate__DelegateSignature(class UPalUIPalCharacterRankUpModel* Model);
     bool IsSelectableSlotInternal(const class UPalIndividualCharacterSlot* Slot);
+    bool IsOverflowResourcesForTarget();
+    bool IsFilledResourcesForTarget();
     void InvokeRankUp();
     class UPalIndividualCharacterReferenceSlot* GetTargetSlot();
     class UPalIndividualCharacterReferenceSlot* GetSlot(const int32 SlotIndex);
     void GetResourceSlots(TArray<class UPalIndividualCharacterSlot*>& Slots);
+    int32 GetCurrentResourceCount();
     void Dispose();
     class UPalIndividualCharacterParameter* CreatePredicateTargetCharacterParameter();
     void ClearSelected();
     void ClearResourceCharacters();
     EPalUIPalCharacterRankUpRequestResult CanInvokeRankUp();
-}; // Size: 0x90
+    void CalcRankByCurrentSelectForUI(int32& OutToRank, int32& OutToRankUpExp, int32& OutTotalRankUpExp);
+}; // Size: 0x88
 
 class UPalUIPalFarmSelectCropModel : public UObject
 {
@@ -19916,7 +20755,7 @@ class UPalUISelectItemInventoryBase : public UPalUserWidgetOverlayUI
 class UPalUISelectNumParameter : public UPalHUDDispatchParameterBase
 {
     FPalUISelectNumParameterComplateCallBack complateCallBack;                        // 0x0038 (size: 0x10)
-    void PalUISelecteNumComplateDelegate(EPalUISelectNumResult ResultType, int32 selectedNum);
+    void PalUISelecteNumComplateDelegate(EPalUISelectNumResult resultType, int32 selectedNum);
     FPalUISelectNumParameterChangedNumCallBacl changedNumCallBacl;                    // 0x0048 (size: 0x10)
     void PalUISelectNumChangedNumDelegate(int32 nowSelectedNum);
     int32 MinNum;                                                                     // 0x0058 (size: 0x4)
@@ -19967,7 +20806,7 @@ class UPalUIStatusModel : public UObject
     FText GetDisplayDefaultName(int32 Index);
     FText GetDisplayCoopActionName(int32 Index);
     FText GetDisplayActiveSkillName(int32 Index, int32 skillIndex);
-    void ChangeNickname(int32 Index, FString newNickName);
+    void ChangeNickname(int32 Index, FString NewNickName);
     void ChangeIndex(uint8 Index);
     void ChangedIndex__DelegateSignature();
 }; // Size: 0x50
@@ -20029,7 +20868,7 @@ class UPalUIUtility : public UBlueprintFunctionLibrary
     FName GetMapObjectNameTextId(const class UObject* WorldContextObject, const FName& MapObjectName);
     void GetMapObjectName(const class UObject* WorldContextObject, const FName& MapObjectName, FText& outName);
     FSlateBrush GetKeyIconByKey(const class UObject* WorldContextObject, const FKey Key, ECommonInputType InputType);
-    void GetItemTypeAName(const class UObject* WorldContextObject, const EPalItemTypeA itemTypeA, FText& outName);
+    void GetItemTypeAName(const class UObject* WorldContextObject, const EPalItemTypeA ItemTypeA, FText& outName);
     void GetItemName(const class UObject* WorldContextObject, const FName& StaticItemId, FText& outName);
     void GetItemDescription(const class UObject* WorldContextObject, const FName& StaticItemId, FText& outName);
     void GetInventoryCategoryName(const class UObject* WorldContextObject, EPalPlayerInventoryType inventoryType, FText& outName);
@@ -20039,9 +20878,27 @@ class UPalUIUtility : public UBlueprintFunctionLibrary
     void GetBuildObjectCategoryAName(const class UObject* WorldContextObject, const EPalBuildObjectTypeA TypeA, FText& outName);
     void GetBaseCampEventName(const class UObject* WorldContextObject, const EPalBaseCampWorkerEventType EventType, FText& outName);
     void GetAllTagFromText(const class UObject* WorldContextObject, const FText& targetText, TArray<FString>& outTagArray);
+    void GetAdditionalEffectName(const class UObject* WorldContextObject, EPalAdditionalEffectType EffectType, FText& outName);
     class UPalUserWidget* FindOwningActivatableWidget(const class UObject* WorldContextObject, const class UWidget* Widget);
     float ConvertReviveTimerToUIDisplayRemainReviveTime(const class UObject* WorldContextObject, float ReviveTimer);
 }; // Size: 0x28
+
+class UPalUIWorkSuitabilitySelect : public UPalUserWidgetOverlayUI
+{
+    TWeakObjectPtr<class UPalHUDDispatchParameter_WorkSuitabilityPreference> MyHUDDispatchParameter; // 0x0430 (size: 0x8)
+
+    void RequestChangeSuitabilitySetting(const class UPalIndividualCharacterSlot* TargetCharacterSlot, EPalWorkSuitability SuitabilityType, bool IsOn);
+    void RequestChangeBattleSetting(const class UPalIndividualCharacterSlot* TargetCharacterSlot, bool CanBattle);
+    bool GetTargetCharacterContainer(class UPalIndividualCharacterContainer*& OutContainer);
+}; // Size: 0x438
+
+class UPalUIWorkSuitabilitySettingModel : public UObject
+{
+
+    void RequestChangeWorkSuitability(const FPalInstanceID& TargetIndividualId, const EPalWorkSuitability WorkSuitability, const bool bOn);
+    void RequestChangeBaseCampBattle(const FPalInstanceID& TargetIndividualId, const bool bOn);
+    class UPalIndividualCharacterContainer* GetTargetBaseCampWorkerCharacterContainer();
+}; // Size: 0x30
 
 class UPalUIWorkerSimpleDetailCanvas : public UPalUserWidget
 {
@@ -20314,12 +21171,13 @@ class UPalUtility : public UBlueprintFunctionLibrary
     bool IsForceQuitOnDisconnect(const class UObject* WorldContextObject);
     bool IsExistsInDoor(class AActor* TargetActor, const TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, const float DrawDebugDuration);
     bool IsEnemy(const class AActor* ActorA, const class AActor* ActorB);
+    bool IsEnableRandomizeSpawner(const class UObject* WorldContextObject);
     bool IsEnableBotLocationFlag(const class UObject* WorldContextObject);
     bool IsElementWeak(EPalElementType AttackType, EPalElementType defenceType);
     bool IsElementStrong(EPalElementType AttackType, EPalElementType defenceType);
     bool IsEditorPreviewActor(class AActor* Actor);
     bool IsEditorBuild();
-    bool IsDying(class AActor* Actor);
+    bool IsDyingPlayer(const class APalPlayerCharacter* PlayerCharacter);
     bool IsDevelopmentBuild();
     bool IsDestructionByCompleteBuilt(const class UObject* WorldContextObject);
     bool IsDedicatedServer(const class UObject* WorldContextObject);
@@ -20337,7 +21195,7 @@ class UPalUtility : public UBlueprintFunctionLibrary
     bool IsApplicablePowerOnlyToDamageValue(class AActor* Reciever);
     bool IsApplicableDamage(class UObject* Causer, class AActor* Receiver, class UPrimitiveComponent* ReceivedComponent);
     bool IsAllLevelLoaded(const class UObject* WorldContextObject);
-    bool IsAliveFriendPlayers_ByUId(const class UObject* WorldContextObject, FGuid PlayerUId);
+    bool IsAliveOrDyingFriendPlayers_ByUId(const class UObject* WorldContextObject, FGuid PlayerUId);
     bool IsAIAttackAbleByPlayerCamera(const class AActor* SelfActor, const class AActor* TargetActor);
     bool InWazaMaxRange(class APalCharacter* Attacker, EPalWazaID Waza, FVector TargetLocation, float TargetRadius);
     void InitializeHumanBoneInfo(class UPalAnimInstance* AnimInstance);
@@ -20351,9 +21209,11 @@ class UPalUtility : public UBlueprintFunctionLibrary
     bool InConeShapAndDitance_Actor(const class AActor* SelfActor, const class AActor* TargetActor, float Degree, float Distance);
     bool InConeShapAndDitance(FVector SelfLocation, FRotator SelfRotator, FVector TargetLocation, float Degree, float Distance);
     void HeadBillboardEffectSetTransform(class APalCharacter* Character, class USceneComponent* Effect, const FVector AddOffset);
-    bool HasAliveFriendPlayers(class AActor* My);
+    bool HasResponseToChannelByPalObjectType(class APalCharacter* Character, EPalObjectTypeQuery Type, TEnumAsByte<ECollisionResponse> Response);
+    bool HasAliveFriendPlayers(class APalCharacter* My);
     void GiveExpToAroundPlayerCharacter(const class UObject* WorldContextObject, const FVector& Center, float Radius, float Exp, bool bCallDelegate);
     void GiveExpToAroundCharacter(const class UObject* WorldContextObject, const FVector& Center, float Radius, float Exp, TSubclassOf<class APalCharacter> CharacterClass, bool bCallDelegate);
+    void GiftItem_FromOtomoCutMeat(const class AActor* Otomo, const class AActor* Trainer);
     class UPalWorldSecuritySystem* GetWorldSecuritySystem(const class UObject* WorldContextObject);
     class UPalWorldObjectRecordWorldSubsystem* GetWorldObjectRecorder(const class UObject* WorldContextObject);
     float GetWorkSpeed(class APalCharacter* Character);
@@ -20377,30 +21237,38 @@ class UPalUtility : public UBlueprintFunctionLibrary
     class USignificanceManager* GetSignificanceManager(const class UObject* WorldContextObject);
     class UPalShopManager* GetShopManager(const class UObject* WorldContextObject);
     FString GetServerWorldDisplayName(const class UObject* WorldContextObject);
+    EPalLogFormatType GetServerLogFormatType(const class UObject* WorldContextObject);
     class UPalSaveGameManager* GetSaveGameManager(const class UObject* WorldContextObject);
     float GetSafeZero(float Value);
     float GetRTTJitter(const class UObject* WorldContextObject);
+    class UPalRESTAPISubsystem* GetRESTAPISubsystem(const class UObject* WorldContextObject);
     FTransform GetRelativeTransformFromRoot(class USceneComponent* SceneComponent);
     class UPalPlayerRecordData* GetRecordDataByPlayerUID(const class UObject* WorldContextObject, FGuid PlayerUId);
     class UPalRCONSubsystem* GetRCONSubsystem(const class UObject* WorldContextObject);
     float GetRangeToGround(class AActor* Actor);
     void GetRandomPointList(int32 pointNum, int32 maxLoopCount, float minXPos, float maxXPos, float minYPos, float maxYPos, float SizeX, float SizeY, FRandomStream RandomStream, TArray<FVector2D>& outPointArray);
+    class UPalRaidBossManager* GetRaidBossManager(const class UObject* WorldContextObject);
+    FString GetPlayerUniqueIdToString(const FUniqueNetIdRepl& UserId);
+    FGuid GetPlayerUIdByString(const class UObject* WorldContextObject, FString PlayerUIdOrSteamId);
     FGuid GetPlayerUIDByActor(const class AActor* playerActor);
+    class APalPlayerState* GetPlayerStateByUserId(const class UObject* WorldContextObject, FString UserId);
+    class APalPlayerState* GetPlayerStateByPlayerUid(const class UObject* WorldContextObject, const FGuid& PlayerUId);
     class APalPlayerState* GetPlayerStateByPlayer(const class APalPlayerCharacter* Player);
     class APalPlayerState* GetPlayerState(const class AActor* Player);
     class UPalPlayerManager* GetPlayerManager(const class UObject* WorldContextObject);
     TArray<FString> GetPlayerListDisplayMessages(const class UObject* WorldContextObject);
     FString GetPlayerListDisplayMessage(const class UObject* WorldContextObject);
     TArray<FPlayerListItem> GetPlayerList(const class UObject* WorldContextObject);
-    FGuid GetPlayerGUIDByPlayerUIDOrSteamId(const class UObject* WorldContextObject, FString PlayerUIdORSteamId);
     int32 GetPlayerEquipmentShield(const class UObject* WorldContextObject, FGuid PlayerUId);
     void GetPlayerEquipmentPassiveList(const class UObject* WorldContextObject, FGuid PlayerUId, TArray<FName>& outPassiveList);
     int32 GetPlayerEquipmentHP(const class UObject* WorldContextObject, FGuid PlayerUId);
     int32 GetPlayerEquipmentDefense(const class UObject* WorldContextObject, FGuid PlayerUId);
     class UPalPlayerDataStorage* GetPlayerDataStorage(const class UObject* WorldContextObject);
+    class APalPlayerController* GetPlayerControllerByPlayerUId(const class UObject* WorldContextObject, const FGuid& PlayerUId);
     class APalPlayerController* GetPlayerControllerByPlayerId(const class UObject* WorldContextObject, const int32 PlayerId);
     class APawn* GetPlayerControlledPawn(const class UObject* WorldContextObject);
     class APalCharacter* GetPlayerControlledCharacter(const class UObject* WorldContextObject);
+    class APalPlayerCharacter* GetPlayerCharacterByPlayerUID(const class UObject* WorldContextObject, const FGuid PlayerUId);
     class APalPlayerCharacter* GetPlayerCharacterByPlayerIndex(const class UObject* WorldContextObject, const int32 PlayerIndex);
     class ACharacter* GetPlayerCharacterByPlayerId(const class UObject* WorldContextObject, const int32 PlayerId);
     class APalPlayerCharacter* GetPlayerCharacter(const class UObject* WorldContextObject);
@@ -20435,6 +21303,7 @@ class UPalUtility : public UBlueprintFunctionLibrary
     FPalOptionPadSettings GetOptionPadSettings(const class UObject* WorldContextObject);
     FPalOptionKeyboardSettings GetOptionKeyboardSettings(const class UObject* WorldContextObject);
     FPalOptionGraphicsSettings GetOptionGraphicsSettings(const class UObject* WorldContextObject);
+    class UPalOilrigManager* GetOilrigManager(const class UObject* WorldContextObject);
     bool GetOffFromPal(class AActor* RiderActor, bool bIsSkipAnimation, bool bNoAnimCancel);
     int32 GetNumPlayers(const class UObject* WorldContextObject);
     class UPalNPCManager* GetNPCManager(const class UObject* WorldContextObject);
@@ -20471,7 +21340,7 @@ class UPalUtility : public UBlueprintFunctionLibrary
     class UPalInvaderManager* GetInvaderManager(const class UObject* WorldContextObject);
     float GetInPacketLoss(const class UObject* WorldContextObject);
     bool GetInitializedPlayerSaveParemter(const class UObject* WorldContextObject, const int32 Level, FPalIndividualCharacterSaveParameter& outParameter);
-    bool GetInitializedCharacterSaveParemter_DebugDefaultParamSetup(const class UObject* WorldContextObject, const FName CharacterID, const FName UniqueNPCID, const int32 Level, const FGuid& OwnerPlayerUId, FPalIndividualCharacterSaveParameter& outParameter, bool DisableRandomPassiveSkilll, TArray<EPalWazaID> WazaList, TArray<FName> PassiveSkillList, int32 Rank, bool RarePalAble);
+    bool GetInitializedCharacterSaveParemter_DebugDefaultParamSetup(const class UObject* WorldContextObject, const FName CharacterID, const FName UniqueNPCID, const int32 Level, const FGuid& OwnerPlayerUId, FPalIndividualCharacterSaveParameter& outParameter, bool DisableRandomPassiveSkilll, TArray<EPalWazaID> WazaList, TArray<FName> PassiveSkillList, int32 Rank, TArray<FPalDebugCharacterStatusRank> StatusRank, bool RarePalAble);
     bool GetInitializedCharacterSaveParemter(const class UObject* WorldContextObject, const FName CharacterID, const FName UniqueNPCID, const int32 Level, const FGuid& OwnerPlayerUId, FPalIndividualCharacterSaveParameter& outParameter, bool DisableRandomPassiveSkill, bool RarePalAble);
     FPalInstanceID GetIndividualIDByActor(const class AActor* Actor);
     FPalInstanceID GetIndividualID(const class UPalIndividualCharacterHandle* Handle);
@@ -20483,6 +21352,7 @@ class UPalUtility : public UBlueprintFunctionLibrary
     FName GetHairAttachAccessorySocketName(const class UObject* WorldContextObject, const FName& HairEquipmentName, const FName& BodyTypeName);
     class UPalGroupManager* GetGroupManager(const class UObject* WorldContextObject);
     class UPalGameSetting* GetGameSetting(const class UObject* WorldContextObject);
+    TArray<FName> GetGainStatusItemEffectStatus(const class UObject* WorldContextObject, const FName ItemId);
     class UPalFunnelCharacterManager* GetFunnelCharacterManager(const class UObject* WorldContextObject);
     FVector GetFloorLocationByActor(class AActor* TargetActor);
     FVector GetFloorHitLocationByActor(class AActor* TargetActor);
@@ -20493,6 +21363,7 @@ class UPalUtility : public UBlueprintFunctionLibrary
     TEnumAsByte<ECollisionChannel> GetEngineCollisionChannelByPalTraceType(EPalTraceTypeQuery Type);
     TEnumAsByte<ECollisionChannel> GetEngineCollisionChannelByPalObjectType(EPalObjectTypeQuery Type);
     TEnumAsByte<ECollisionChannel> GetEngineCollisionChannel(EPalObjectTypeQuery channnel);
+    TArray<class APalCharacter*> GetEnemiesByLocation2D(const class UObject* WorldContextObject, FVector Location, class APalCharacter* myCharacter, float minDistance, float MaxDistance, float minHeight, float maxHeight);
     TArray<class APalCharacter*> GetEnemiesByLocation(const class UObject* WorldContextObject, FVector Location, class APalCharacter* myCharacter, float minDistance, float MaxDistance);
     float GetElementMultiplay(const class UObject* WorldContextObject, EPalElementType AttackElementType, EPalElementType defenceTypeA, EPalElementType defenceTypeB);
     EHumanBone GetEHumanBoneFromBoneName(FName BoneName);
@@ -20536,6 +21407,7 @@ class UPalUtility : public UBlueprintFunctionLibrary
     bool GetAttachInformationByBodyLocation(class AActor* Character, EPalBodyLocationType bodyLocationType, class USceneComponent*& AttachComponent, FName& attachBoneName, FTransform& attachRelativeTransform);
     class UPalAssetStreamableManager* GetAssetStreamableManager(const class UObject* WorldContextObject);
     bool GetArrivableLocation(class UObject* WorldContextObject, const FVector& StartLocation, const FVector& TargetLocation, const float OffsetZUp, const float OffsetZUnder, EPalTraceTypeQuery TraceTypeQuery, const float Range, FVector& OutLocation, float& OutDistance, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType);
+    FString GetAPIBaseURL(const class UObject* WorldContextObject);
     void GetAllPlayerStates(const class UObject* WorldContextObject, TArray<class APalPlayerState*>& OutPlayerStates);
     void GetAllPlayerCharacters(const class UObject* WorldContextObject, TArray<class APalCharacter*>& OutPlayers);
     void GetAllControlledCharacters(const class UObject* WorldContextObject, TArray<class APalCharacter*>& OutCharacters);
@@ -20557,10 +21429,9 @@ class UPalUtility : public UBlueprintFunctionLibrary
     FText EnumToLocalizedText(const class UObject* WorldContextObject, FString EnumStr, const EPalLocalizeTextCategory TextCategory, const FString TextIdPrefix);
     void EmitSoundForAIListener(FName SoundFName, class AActor* EmitterCharacter, FVector EmitLocation, float VolumeRate);
     void Editor_AddCharacterToImportanceManager(class APalCharacter* Character);
-    void DropItem_FromOtomoCutMeat(const class AActor* Otomo, const class AActor* Trainer);
     void DropItem_FromEnemyDeath(const class AActor* EnemyActor, const class AActor* LastAttacker);
     void DropCharactersCircularly_ServerInternal(const class UObject* WorldContextObject, const TArray<class UPalIndividualCharacterHandle*>& IndividualHandles, const FVector& Location, const FPalDropCharacterExtraParameter ExtraParameter);
-    void DropCharacter_ServerInternal(const class UObject* WorldContextObject, const FPalInstanceID& IndividualId, FVector DropLocation, const FGuid& RequestPlayerUId);
+    void DropCharacter_ServerInternal(const class UObject* WorldContextObject, const FPalInstanceID& IndividualId, FVector DropLocation, const FGuid& RequestPlayerUId, bool CreateLocation);
     FGuid DialogWithParameter(const class UObject* WorldContextObject, class UPalDialogParameterDialog* Parameter);
     FGuid Dialog(const class UObject* WorldContextObject, const FText Message, const EPalDialogType DialogType, FDialogCallback Callback, const bool bNegativeDefault);
     void DestroyActorIncludingAttachedActors(class AActor* Actor);
@@ -20576,6 +21447,8 @@ class UPalUtility : public UBlueprintFunctionLibrary
     bool ClipboardCopy(FString String);
     void ClearCharacterRagdoll(class APalCharacter* Character);
     void ChangeDefaultLandMovementModeForWalking(class APalCharacter* Character);
+    bool CanUseTargetRankUp(const class UObject* WorldContextObject, class UPalIndividualCharacterParameter* IndividualParameter, const class UPalStaticItemDataBase* Item);
+    bool CanUseTargetPalExpItem(const class UObject* WorldContextObject, class UPalIndividualCharacterParameter* IndividualParameter, const class UPalStaticItemDataBase* Item);
     bool CanUseTargetMedicine(const class UObject* WorldContextObject, class UPalIndividualCharacterParameter* IndividualParameter, const class UPalStaticItemDataBase* Item);
     bool CanSpawnDashEffect(class AActor* dashActor);
     bool CanNooseTrap(class AActor* Actor);
@@ -20637,6 +21510,7 @@ class UPalVisualEffectBase : public UObject
     TArray<EPalVisualEffectID> ConflictIDList;                                        // 0x0040 (size: 0x10)
     EPalVisualEffectID VisualEffectID;                                                // 0x0050 (size: 0x1)
     FPalVisualEffectDynamicParameter DynamicParameter;                                // 0x0058 (size: 0x10)
+    bool IsCallEndOnComponentEndPlay;                                                 // 0x0068 (size: 0x1)
 
     void TickVisualEffect(float DeltaTime);
     void TerminatingTickVisualEffect(float DeltaTime);
@@ -20656,7 +21530,7 @@ class UPalVisualEffectBase : public UObject
     class APalCharacter* GetCharacter();
     void GetAllMesh(TArray<class USceneComponent*>& OutComponent);
     bool CanDeleteInstance();
-}; // Size: 0x68
+}; // Size: 0x70
 
 class UPalVisualEffectComponent : public UActorComponent
 {
@@ -20682,6 +21556,7 @@ class UPalVisualEffectComponent : public UActorComponent
     void OnRemoveVisualEffect__DelegateSignature(const class UPalVisualEffectComponent* VisualEffectComponent, EPalVisualEffectID VisualEffectID);
     void OnCompleteVisualEffect__DelegateSignature(const class UPalVisualEffectComponent* VisualEffectComponent, EPalVisualEffectID VisualEffectID, class UPalVisualEffectBase* VisualEffect);
     void OnAddVisualEffect__DelegateSignature(const class UPalVisualEffectComponent* VisualEffectComponent, EPalVisualEffectID VisualEffectID, class UPalVisualEffectBase* VisualEffect);
+    void EndPlay(const TEnumAsByte<EEndPlayReason::Type> EndPlayReason);
     void BeginPlay();
     class UPalVisualEffectBase* AddVisualEffectForActor_Local(class AActor* Actor, EPalVisualEffectID VisualEffectID, FPalVisualEffectDynamicParameter Parameter);
     class UPalVisualEffectBase* AddVisualEffectForActor(class AActor* Actor, EPalVisualEffectID VisualEffectID, FPalVisualEffectDynamicParameter Parameter);
@@ -21001,18 +21876,18 @@ class UPalWorkProgressManager : public UPalWorldSubsystem
 
 class UPalWorkProgressTransformBase : public UObject
 {
-}; // Size: 0x28
+}; // Size: 0x30
 
 class UPalWorkProgressTransformCharacter : public UPalWorkProgressTransformBase
 {
-    FPalInstanceID IndividualId;                                                      // 0x0028 (size: 0x30)
+    FPalInstanceID IndividualId;                                                      // 0x0030 (size: 0x30)
     FTransform TransformCache;                                                        // 0x0060 (size: 0x60)
 
 }; // Size: 0xC0
 
 class UPalWorkProgressTransformMapObject : public UPalWorkProgressTransformBase
 {
-    FGuid MapObjectInstanceId;                                                        // 0x0028 (size: 0x10)
+    FGuid MapObjectInstanceId;                                                        // 0x0030 (size: 0x10)
     FTransform TransformCache;                                                        // 0x0040 (size: 0x60)
     bool bCached;                                                                     // 0x00A0 (size: 0x1)
     bool bShouldSearchForFoliage;                                                     // 0x00AC (size: 0x1)
@@ -21245,10 +22120,48 @@ class UPalWorldSubsystem : public UWorldSubsystem
 
 }; // Size: 0x70
 
+class UPlGuildPlayerInfoFilteringWaiter : public UObject
+{
+    FPlGuildPlayerInfoFilteringWaiterOnFilteredGuildPlayerInfoDelegate OnFilteredGuildPlayerInfoDelegate; // 0x0028 (size: 0x10)
+    void OnFilteredGuildPlayerInfoDelegate(class UPlGuildPlayerInfoFilteringWaiter* Waiter, const FPalGuildPlayerInfo& FilteredInfo);
+    FPalGuildPlayerInfo PlayerInfo;                                                   // 0x0038 (size: 0x20)
+    FGuid PlayerUId;                                                                  // 0x0058 (size: 0x10)
+
+    void OnReceivedWordFilteringResult(const FString ResponseBody, bool bResponseOK, int32 ResponseCode);
+    void OnFilteredGuildPlayerInfoDelegate__DelegateSignature(class UPlGuildPlayerInfoFilteringWaiter* Waiter, const FPalGuildPlayerInfo& FilteredInfo);
+}; // Size: 0x68
+
 class UReactivePropertyFloatUtility : public UObject
 {
 
     void BindProperty(FReactivePropertyFloat& Property, FBindPropertyDelegate Delegate);
 }; // Size: 0x28
+
+class USequentialProcessHandle : public UObject
+{
+    TArray<class USequentialProcessHandle*> ChildProcessHandles;                      // 0x0058 (size: 0x10)
+
+}; // Size: 0x70
+
+class USequentialProcessSequenceBase : public UObject
+{
+    TArray<class USequentialProcessHandle*> ProcessHandles;                           // 0x0030 (size: 0x10)
+
+}; // Size: 0x40
+
+class USequentialProcessSequenceBase_WaitOneProcess : public USequentialProcessSequenceBase
+{
+    class USequentialProcessHandle* SelfManagedProcessHandle;                         // 0x0040 (size: 0x8)
+
+}; // Size: 0x48
+
+class USequentialProcessSystem : public UObject
+{
+    TArray<FSequentialProcessSequenceSet> SequenceSets;                               // 0x0038 (size: 0x10)
+    int32 CurrentSequenceIndex;                                                       // 0x0048 (size: 0x4)
+
+    void OnChangeProcessState(class USequentialProcessHandle* ChangedProcessHandle);
+    void OnChangeProcessProgressRate(class USequentialProcessHandle* ChangedProcessHandle);
+}; // Size: 0x50
 
 #endif

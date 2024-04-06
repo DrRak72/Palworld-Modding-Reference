@@ -14,6 +14,7 @@ class UBP_AIAction_TurnAndEncount_C : public UPalAIActionBase
     double Const_TurnEndTime;                                                         // 0x0160 (size: 0x8)
     class UPalActionBase* TurnAction;                                                 // 0x0168 (size: 0x8)
     double tempDeltaTime;                                                             // 0x0170 (size: 0x8)
+    TSubclassOf<class UPalAIActionBase> CombatAIActionClass;                          // 0x0178 (size: 0x8)
 
     void ActionStart(class APawn* ControlledPawn);
     void ActionTick(class APawn* ControlledPawn, float DeltaSeconds);
@@ -22,6 +23,6 @@ class UBP_AIAction_TurnAndEncount_C : public UPalAIActionBase
     void ActionPause(class APawn* ControlledPawn);
     void ActionResume(class APawn* ControlledPawn);
     void ExecuteUbergraph_BP_AIAction_TurnAndEncount(int32 EntryPoint);
-}; // Size: 0x178
+}; // Size: 0x180
 
 #endif

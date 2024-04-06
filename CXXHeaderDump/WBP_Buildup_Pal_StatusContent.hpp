@@ -31,7 +31,7 @@ class UWBP_Buildup_Pal_StatusContent_C : public UUserWidget
     int32 Item Count;                                                                 // 0x0328 (size: 0x4)
 
     void UpdateSufficiency(bool IsSufficient);
-    void Set Info(int32 IconIndex, int32 ItemCount, int32 CurrentRank, bool IsSufficent);
+    void Set Info(int32 IconIndex, int32 itemCount, int32 CurrentRank, bool IsSufficent);
     void GetItemAndNum(int32& ItemIndex, int32& Num);
     void Get Status(EPalCharacterStatusOperationName& Status);
     void BndEvt__WBP_Buildup_Pal_StatusContent_WBP_PalInvisibleButton_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button);

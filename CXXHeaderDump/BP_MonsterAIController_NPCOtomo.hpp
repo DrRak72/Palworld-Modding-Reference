@@ -3,15 +3,15 @@
 
 class ABP_MonsterAIController_NPCOtomo_C : public ABP_MonsterAIControllerBase_C
 {
-    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0548 (size: 0x8)
-    class UPalAISensorComponent* PalAISensor;                                         // 0x0550 (size: 0x8)
-    bool IsOnpossessed;                                                               // 0x0558 (size: 0x1)
-    class APalCharacter* TrainerNPC;                                                  // 0x0560 (size: 0x8)
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0550 (size: 0x8)
+    class UPalAISensorComponent* PalAISensor;                                         // 0x0558 (size: 0x8)
+    bool IsOnpossessed;                                                               // 0x0560 (size: 0x1)
+    class APalCharacter* TrainerNPC;                                                  // 0x0568 (size: 0x8)
 
     void GetMyBB(class UBP_PalAIBlackboard_Common_C*& PalBrackboard);
     void GetLeaderBB(class UBP_PalAIBlackboard_Common_C*& LeaderPalBrackboard);
     void ReceivePossess(class APawn* PossessedPawn);
     void ExecuteUbergraph_BP_MonsterAIController_NPCOtomo(int32 EntryPoint);
-}; // Size: 0x568
+}; // Size: 0x570
 
 #endif

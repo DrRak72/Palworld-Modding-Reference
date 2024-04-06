@@ -22,6 +22,7 @@ class UBP_PalIncidentNPCTalk_C : public UBP_PalIncidentBase_C
     FGuid ItemShopUIID;                                                               // 0x01E4 (size: 0x10)
     FGuid PalShopUIID;                                                                // 0x01F4 (size: 0x10)
 
+    void CustomFunctionToServer(FPalNPCTalkSystemCustomFunctionParameters Param);
     void OpenPalShop_Internal(class UPalVenderDataComponent* VenderDataComponent);
     void OnRegisteredPalShopEvent();
     void OpenItemShop_Internal(class UPalVenderDataComponent* VenderDataComponent);

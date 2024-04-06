@@ -235,6 +235,13 @@ struct FAkPS4AdvancedInitializationSettings : public FAkAdvancedInitializationSe
 
 }; // Size: 0x38
 
+struct FAkPS5AdvancedInitializationSettings : public FAkAdvancedInitializationSettingsWithMultiCoreRendering
+{
+    bool UseHardwareCodecLowLatencyMode;                                              // 0x0030 (size: 0x1)
+    bool bVorbisHwAcceleration;                                                       // 0x0031 (size: 0x1)
+
+}; // Size: 0x34
+
 struct FAkPluginInfo
 {
     FString Name;                                                                     // 0x0000 (size: 0x10)
@@ -692,6 +699,10 @@ class UAkComponent : public UAkGameObject
     float GetAttenuationRadius();
 }; // Size: 0x490
 
+class UAkDPXInitializationSettings : public UAkPS5InitializationSettings
+{
+}; // Size: 0xF0
+
 class UAkDurationCallbackInfo : public UAkEventCallbackInfo
 {
     float Duration;                                                                   // 0x0038 (size: 0x4)
@@ -1014,6 +1025,18 @@ class UAkPS4InitializationSettings : public UObject
 }; // Size: 0xF0
 
 class UAkPS4PlatformInfo : public UAkPlatformInfo
+{
+}; // Size: 0x70
+
+class UAkPS5InitializationSettings : public UObject
+{
+    FAkCommonInitializationSettings CommonSettings;                                   // 0x0030 (size: 0x60)
+    FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;           // 0x0090 (size: 0x28)
+    FAkPS5AdvancedInitializationSettings AdvancedSettings;                            // 0x00B8 (size: 0x34)
+
+}; // Size: 0xF0
+
+class UAkPS5PlatformInfo : public UAkPlatformInfo
 {
 }; // Size: 0x70
 

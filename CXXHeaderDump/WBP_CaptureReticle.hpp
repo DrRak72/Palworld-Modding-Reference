@@ -7,7 +7,7 @@ class UWBP_CaptureReticle_C : public UPalUserWidget
     class UCanvasPanel* Canvas_Root;                                                  // 0x0410 (size: 0x8)
     class UWBP_PalGetReticle_C* WBP_PalGetReticle;                                    // 0x0418 (size: 0x8)
     class UWBP_Reticle_Cancel_C* WBP_Reticle_Cancel;                                  // 0x0420 (size: 0x8)
-    class APalPlayerController* localController;                                      // 0x0428 (size: 0x8)
+    class APalPlayerController* LocalController;                                      // 0x0428 (size: 0x8)
     TArray<TEnumAsByte<EObjectTypeQuery>> traceObjectTypeQueryArray;                  // 0x0430 (size: 0x10)
     TEnumAsByte<EPalCaptureReticleSeqence::Type> reticleSeqence;                      // 0x0440 (size: 0x1)
     TSoftObjectPtr<APalMonsterCharacter> NowTargetMonster;                            // 0x0448 (size: 0x30)

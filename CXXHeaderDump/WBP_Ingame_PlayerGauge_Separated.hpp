@@ -51,10 +51,10 @@ class UWBP_Ingame_PlayerGauge_Separated_C : public UUserWidget
     class UWBP_Ingame_TimeZone_C* WBP_Ingame_TimeZone;                                // 0x03E0 (size: 0x8)
     class UWBP_IngameHungerGauge_C* WBP_IngameHungerGauge;                            // 0x03E8 (size: 0x8)
     class UWBP_IngameStatusPoint_C* WBP_IngameStatusPoint;                            // 0x03F0 (size: 0x8)
-    class UWBP_InventoryEquipment_StatusBuffTimer_C* WBP_InventoryEquipment_StatusBuffTimer; // 0x03F8 (size: 0x8)
-    class UWBP_PlayerInputKeyGuideIcon_C* WBP_PlayerInputKeyGuideIcon_ChangeBallAiming; // 0x0400 (size: 0x8)
-    class UWBP_PlayerInputKeyGuideIcon_C* WBP_PlayerInputKeyGuideIcon_ChangeBallAiming_1; // 0x0408 (size: 0x8)
-    class UWBP_PlayerInputKeyGuideIcon_C* WBP_PlayerInputKeyGuideIcon_ChangeBallStatic; // 0x0410 (size: 0x8)
+    class UWBP_PlayerInputKeyGuideIcon_C* WBP_PlayerInputKeyGuideIcon_ChangeBallAiming; // 0x03F8 (size: 0x8)
+    class UWBP_PlayerInputKeyGuideIcon_C* WBP_PlayerInputKeyGuideIcon_ChangeBallAiming_1; // 0x0400 (size: 0x8)
+    class UWBP_PlayerInputKeyGuideIcon_C* WBP_PlayerInputKeyGuideIcon_ChangeBallStatic; // 0x0408 (size: 0x8)
+    class UWBP_StatusBuffTimerContainer_C* WBP_StatusBuffTimerContainer;              // 0x0410 (size: 0x8)
     class UPalUIDelayGaugeCalculator* HpDelayGauge;                                   // 0x0418 (size: 0x8)
     class UPalUIDelayGaugeCalculator* ShieldDelayGauge;                               // 0x0420 (size: 0x8)
     TSoftObjectPtr<APalWeaponBase> nowHasWeapon;                                      // 0x0428 (size: 0x30)
@@ -73,6 +73,7 @@ class UWBP_Ingame_PlayerGauge_Separated_C : public UUserWidget
     bool IsNothingBall;                                                               // 0x04E3 (size: 0x1)
     bool IsFirstUpdateHP;                                                             // 0x04E4 (size: 0x1)
     class UPalItemSlot* CurrentGrenadeSlot;                                           // 0x04E8 (size: 0x8)
+    double NoPalSphereNoticeDIsplayTime;                                              // 0x04F0 (size: 0x8)
 
     void CREATEDELEGATE_PROXYFUNCTION_1(float RemainingTime, float CoolDownTime);
     void CREATEDELEGATE_PROXYFUNCTION_0(float RemainingTime, float CoolDownTime);
@@ -117,18 +118,18 @@ class UWBP_Ingame_PlayerGauge_Separated_C : public UUserWidget
     void SetupBulletGauge(int32 MagazineSize);
     void Setup Bullet Info(class APalWeaponBase* WeaponBase);
     void BindWeaponEvent(class APalWeaponBase* WeaponBase);
-    void UnbindLastEquipedWeaponEvent();
+    void Unbind Last Equiped Weapon Event();
     void Update Weapon(class APalWeaponBase* WeaponBase);
     void UpdateShield(FFixedPoint64 maxShield, FFixedPoint64 nowShield);
     void UpdateSP(FFixedPoint64 nowSP, FFixedPoint64 MaxSP, bool isOverHeated);
-    void UpdateHP(FFixedPoint64 nowHP, FFixedPoint64 MaxHP);
-    void AnmEvent_TriggerDamage();
+    void Update HP(FFixedPoint64 nowHP, FFixedPoint64 MaxHP);
     void AnmEvent_UseBullet();
     void AnmEvent_ShowHideLeft(bool Hide);
     void AnmEvent_ShowHideRight(bool Hide);
     void Tick(FGeometry MyGeometry, float InDeltaTime);
     void OnInitialized();
+    void AnmEvent_TriggerDamage();
     void ExecuteUbergraph_WBP_Ingame_PlayerGauge_Separated(int32 EntryPoint);
-}; // Size: 0x4F0
+}; // Size: 0x4F8
 
 #endif

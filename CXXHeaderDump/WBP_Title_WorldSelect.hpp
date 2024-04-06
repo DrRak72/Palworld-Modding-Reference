@@ -27,61 +27,65 @@ class UWBP_Title_WorldSelect_C : public UUserWidget
     class UWBP_GuildHeadButton_C* WBP_NextButton;                                     // 0x0320 (size: 0x8)
     class UWBP_PalCommonScrollList_C* WBP_PalCommonScrollList;                        // 0x0328 (size: 0x8)
     class UWBP_PalInvisibleButton_C* WBP_PalInvisibleButton_OpenDirectory;            // 0x0330 (size: 0x8)
-    class UWBP_GuildHeadButton_C* WBP_SearchButton;                                   // 0x0338 (size: 0x8)
-    class UWBP_GuildHeadButton_C* WBP_SortoComboBox;                                  // 0x0340 (size: 0x8)
-    class UWBP_GuildHeadButton_C* WBP_SortoComboBox_Region;                           // 0x0348 (size: 0x8)
-    class UWBP_Title_SettingsButton_C* WBP_Title_SettingsButton_DeleteCharacter;      // 0x0350 (size: 0x8)
-    class UWBP_Title_SettingsButton_C* WBP_Title_SettingsButton_DeleteWorld;          // 0x0358 (size: 0x8)
-    class UWBP_Title_SettingsButton_C* WBP_Title_SettingsButton_Start;                // 0x0360 (size: 0x8)
-    class UWBP_Title_SettingsButton_C* WBP_Title_SettingsButton_WorldSetting;         // 0x0368 (size: 0x8)
-    class UWBP_Title_SettingsButton_C* WBP_Title_SettingsButtonBackupSelect;          // 0x0370 (size: 0x8)
-    class UWBP_Title_WorldSelectButton_C* WBP_Title_WorldSelectButton_ServerList_Community; // 0x0378 (size: 0x8)
-    class UWBP_Title_WorldSelectButton_C* WBP_Title_WorldSelectButton_ServerList_Help_Server; // 0x0380 (size: 0x8)
-    class UWBP_Title_WorldSelectButton_C* WBP_Title_WorldSelectButton_ServerList_History; // 0x0388 (size: 0x8)
-    class UWBP_Title_WorldSelectButton_C* WBP_Title_WorldSelectButton_ServerList_Official; // 0x0390 (size: 0x8)
-    class UWBP_Title_WorldSelectButton_C* WBP_Title_WorldSelectButton_ServerList_StatusPage; // 0x0398 (size: 0x8)
-    FWBP_Title_WorldSelect_COnClickedWorldButton OnClickedWorldButton;                // 0x03A0 (size: 0x10)
+    class UWBP_GuildHeadButton_C* WBP_PreviousButton;                                 // 0x0338 (size: 0x8)
+    class UWBP_GuildHeadButton_C* WBP_SearchButton;                                   // 0x0340 (size: 0x8)
+    class UWBP_GuildHeadButton_C* WBP_SortoComboBox;                                  // 0x0348 (size: 0x8)
+    class UWBP_GuildHeadButton_C* WBP_SortoComboBox_Region;                           // 0x0350 (size: 0x8)
+    class UWBP_Title_SettingsButton_C* WBP_Title_SettingsButton_DeleteCharacter;      // 0x0358 (size: 0x8)
+    class UWBP_Title_SettingsButton_C* WBP_Title_SettingsButton_DeleteWorld;          // 0x0360 (size: 0x8)
+    class UWBP_Title_SettingsButton_C* WBP_Title_SettingsButton_Start;                // 0x0368 (size: 0x8)
+    class UWBP_Title_SettingsButton_C* WBP_Title_SettingsButton_WorldSetting;         // 0x0370 (size: 0x8)
+    class UWBP_Title_SettingsButton_C* WBP_Title_SettingsButtonBackupSelect;          // 0x0378 (size: 0x8)
+    class UWBP_Title_WorldSelectButton_C* WBP_Title_WorldSelectButton_ServerList_Community; // 0x0380 (size: 0x8)
+    class UWBP_Title_WorldSelectButton_C* WBP_Title_WorldSelectButton_ServerList_Help_Server; // 0x0388 (size: 0x8)
+    class UWBP_Title_WorldSelectButton_C* WBP_Title_WorldSelectButton_ServerList_History; // 0x0390 (size: 0x8)
+    class UWBP_Title_WorldSelectButton_C* WBP_Title_WorldSelectButton_ServerList_Official; // 0x0398 (size: 0x8)
+    class UWBP_Title_WorldSelectButton_C* WBP_Title_WorldSelectButton_ServerList_StatusPage; // 0x03A0 (size: 0x8)
+    FWBP_Title_WorldSelect_COnClickedWorldButton OnClickedWorldButton;                // 0x03A8 (size: 0x10)
     void OnClickedWorldButton(class UWBP_Title_WorldSelect_ListContent_C* ButtonWidget);
-    FWBP_Title_WorldSelect_COnClickedNewWorldButton OnClickedNewWorldButton;          // 0x03B0 (size: 0x10)
+    FWBP_Title_WorldSelect_COnClickedNewWorldButton OnClickedNewWorldButton;          // 0x03B8 (size: 0x10)
     void OnClickedNewWorldButton(class UWBP_Title_WorldSelect_CreateWorld_ListContent_C* ButtonWidget);
-    FWBP_Title_WorldSelect_COnClickedStartWorldButton OnClickedStartWorldButton;      // 0x03C0 (size: 0x10)
+    FWBP_Title_WorldSelect_COnClickedStartWorldButton OnClickedStartWorldButton;      // 0x03C8 (size: 0x10)
     void OnClickedStartWorldButton();
-    bool IsOpenedLocalWorldMenu;                                                      // 0x03D0 (size: 0x1)
-    class UWBP_Title_WorldSelect_ListContent_C* CachedLastClickedWorldButton;         // 0x03D8 (size: 0x8)
-    FWBP_Title_WorldSelect_COnClickedWorldSettingButton OnClickedWorldSettingButton;  // 0x03E0 (size: 0x10)
+    bool IsOpenedLocalWorldMenu;                                                      // 0x03D8 (size: 0x1)
+    class UWBP_Title_WorldSelect_ListContent_C* CachedLastClickedWorldButton;         // 0x03E0 (size: 0x8)
+    FWBP_Title_WorldSelect_COnClickedWorldSettingButton OnClickedWorldSettingButton;  // 0x03E8 (size: 0x10)
     void OnClickedWorldSettingButton();
-    class UWBP_Title_SettingsButton_C* CachedLastClickLocalWorldMenuButton;           // 0x03F0 (size: 0x8)
-    FWBP_Title_WorldSelect_COnClickedDeleteWorldButton OnClickedDeleteWorldButton;    // 0x03F8 (size: 0x10)
+    class UWBP_Title_SettingsButton_C* CachedLastClickLocalWorldMenuButton;           // 0x03F8 (size: 0x8)
+    FWBP_Title_WorldSelect_COnClickedDeleteWorldButton OnClickedDeleteWorldButton;    // 0x0400 (size: 0x10)
     void OnClickedDeleteWorldButton();
-    FWBP_Title_WorldSelect_COnClickedServerButton OnClickedServerButton;              // 0x0408 (size: 0x10)
+    FWBP_Title_WorldSelect_COnClickedServerButton OnClickedServerButton;              // 0x0410 (size: 0x10)
     void OnClickedServerButton(class UWBP_Title_WorldSelect_ListContent_C* Widget);
-    FDataTableRowHandle ServerSearchHintTextMsgID;                                    // 0x0418 (size: 0x10)
-    FDataTableRowHandle ServerSearchButtonMsgID;                                      // 0x0428 (size: 0x10)
-    FWBP_Title_WorldSelect_COnClickedServerSearchButton OnClickedServerSearchButton;  // 0x0438 (size: 0x10)
+    FDataTableRowHandle ServerSearchHintTextMsgID;                                    // 0x0420 (size: 0x10)
+    FDataTableRowHandle ServerSearchButtonMsgID;                                      // 0x0430 (size: 0x10)
+    FWBP_Title_WorldSelect_COnClickedServerSearchButton OnClickedServerSearchButton;  // 0x0440 (size: 0x10)
     void OnClickedServerSearchButton(FString SearchWord);
-    FWBP_Title_WorldSelect_COnSelectedServerSortType OnSelectedServerSortType;        // 0x0448 (size: 0x10)
+    FWBP_Title_WorldSelect_COnSelectedServerSortType OnSelectedServerSortType;        // 0x0450 (size: 0x10)
     void OnSelectedServerSortType(EPalUIServerListSortType SortType);
-    TMap<class EPalUIServerListSortType, class FDataTableRowHandle> SortTypeMsgIDMap; // 0x0458 (size: 0x50)
-    TMap<class FString, class EPalUIServerListSortType> SortTypeStringTypeMap;        // 0x04A8 (size: 0x50)
-    TMap<class EPalUIServerListFilterType, class FDataTableRowHandle> FilterTypeMsgIDMap; // 0x04F8 (size: 0x50)
-    TMap<class FString, class EPalUIServerListFilterType> FilterStringTypeMap;        // 0x0548 (size: 0x50)
-    FWBP_Title_WorldSelect_COnClickedServerList_OfficialButton OnClickedServerList_OfficialButton; // 0x0598 (size: 0x10)
+    TMap<class EPalUIServerListSortType, class FDataTableRowHandle> SortTypeMsgIDMap; // 0x0460 (size: 0x50)
+    TMap<class FString, class EPalUIServerListSortType> SortTypeStringTypeMap;        // 0x04B0 (size: 0x50)
+    TMap<class EPalUIServerListFilterType, class FDataTableRowHandle> FilterTypeMsgIDMap; // 0x0500 (size: 0x50)
+    TMap<class FString, class EPalUIServerListFilterType> FilterStringTypeMap;        // 0x0550 (size: 0x50)
+    FWBP_Title_WorldSelect_COnClickedServerList_OfficialButton OnClickedServerList_OfficialButton; // 0x05A0 (size: 0x10)
     void OnClickedServerList_OfficialButton();
-    FWBP_Title_WorldSelect_COnClickedServerList_CommunityButton OnClickedServerList_CommunityButton; // 0x05A8 (size: 0x10)
+    FWBP_Title_WorldSelect_COnClickedServerList_CommunityButton OnClickedServerList_CommunityButton; // 0x05B0 (size: 0x10)
     void OnClickedServerList_CommunityButton();
-    FWBP_Title_WorldSelect_COnClickedServerList_HistoryButton OnClickedServerList_HistoryButton; // 0x05B8 (size: 0x10)
+    FWBP_Title_WorldSelect_COnClickedServerList_HistoryButton OnClickedServerList_HistoryButton; // 0x05C0 (size: 0x10)
     void OnClickedServerList_HistoryButton();
-    FDataTableRowHandle ServerNextButtonMsgID;                                        // 0x05C8 (size: 0x10)
-    FWBP_Title_WorldSelect_COnClickedServerList_NextButton OnClickedServerList_NextButton; // 0x05D8 (size: 0x10)
+    FDataTableRowHandle ServerNextButtonMsgID;                                        // 0x05D0 (size: 0x10)
+    FWBP_Title_WorldSelect_COnClickedServerList_NextButton OnClickedServerList_NextButton; // 0x05E0 (size: 0x10)
     void OnClickedServerList_NextButton();
-    FDataTableRowHandle ServerConnectButtonMsgID;                                     // 0x05E8 (size: 0x10)
-    FWBP_Title_WorldSelect_COnClicked_JoinByIPButton OnClicked_JoinByIPButton;        // 0x05F8 (size: 0x10)
+    FDataTableRowHandle ServerConnectButtonMsgID;                                     // 0x05F0 (size: 0x10)
+    FWBP_Title_WorldSelect_COnClicked_JoinByIPButton OnClicked_JoinByIPButton;        // 0x0600 (size: 0x10)
     void OnClicked_JoinByIPButton(FString Address);
-    FWBP_Title_WorldSelect_COnClickedOpenDirectoryButton OnClickedOpenDirectoryButton; // 0x0608 (size: 0x10)
+    FWBP_Title_WorldSelect_COnClickedOpenDirectoryButton OnClickedOpenDirectoryButton; // 0x0610 (size: 0x10)
     void OnClickedOpenDirectoryButton(class UWBP_Title_WorldSelect_ListContent_C* SelectedWorldButton);
-    TMap<class FString, class UWBP_Title_WorldSelect_ListContent_C*> World Directory Name; // 0x0618 (size: 0x50)
-    FWBP_Title_WorldSelect_COnClickedSelectBackupButton OnClickedSelectBackupButton;  // 0x0668 (size: 0x10)
+    TMap<class FString, class UWBP_Title_WorldSelect_ListContent_C*> World Directory Name; // 0x0620 (size: 0x50)
+    FWBP_Title_WorldSelect_COnClickedSelectBackupButton OnClickedSelectBackupButton;  // 0x0670 (size: 0x10)
     void OnClickedSelectBackupButton(class UWBP_Title_WorldSelect_ListContent_C* SelectedWorldButton);
+    FDataTableRowHandle ServerPreviousButtonMsgID;                                    // 0x0680 (size: 0x10)
+    FWBP_Title_WorldSelect_COnClickedServerList_PreviousButton OnClickedServerList_PreviousButton; // 0x0690 (size: 0x10)
+    void OnClickedServerList_PreviousButton();
 
     void Update Local World List Content(FString WorldPathName, FPalUILocalWorldDisplayData DisplayData);
     void GetSelectRegion(FString& Region);
@@ -110,6 +114,7 @@ class UWBP_Title_WorldSelect_C : public UUserWidget
     void BndEvt__WBP_Title_WorldSelect_WBP_Title_WorldSelectButton_ServerList_Community_K2Node_ComponentBoundEvent_4_OnClicked__DelegateSignature();
     void BndEvt__WBP_Title_WorldSelect_WBP_SortoComboBox_Region_K2Node_ComponentBoundEvent_5_OnSelected__DelegateSignature(FString SelectedOption);
     void BndEvt__WBP_Title_WorldSelect_WBP_NextButton_K2Node_ComponentBoundEvent_7_OnClickedSingleButton__DelegateSignature();
+    void BndEvt__WBP_Title_WorldSelect_WBP_PreviousButton_K2Node_ComponentBoundEvent_6_OnClickedSingleButton__DelegateSignature();
     void Construct();
     void Destruct();
     void BndEvt__WBP_Title_WorldSelect_WBP_Title_SettingsButton_DeleteWorld_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
@@ -123,6 +128,7 @@ class UWBP_Title_WorldSelect_C : public UUserWidget
     void BndEvt__WBP_Title_WorldSelect_WBP_PalInvisibleButton_OpenDirectory_K2Node_ComponentBoundEvent_6_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button);
     void BndEvt__WBP_Title_WorldSelect_WBP_Title_SettingsButtonBackupSelect_K2Node_ComponentBoundEvent_7_OnClicked__DelegateSignature();
     void ExecuteUbergraph_WBP_Title_WorldSelect(int32 EntryPoint);
+    void OnClickedServerList_PreviousButton__DelegateSignature();
     void OnClickedSelectBackupButton__DelegateSignature(class UWBP_Title_WorldSelect_ListContent_C* SelectedWorldButton);
     void OnClickedOpenDirectoryButton__DelegateSignature(class UWBP_Title_WorldSelect_ListContent_C* SelectedWorldButton);
     void OnClicked_JoinByIPButton__DelegateSignature(FString Address);
@@ -138,6 +144,6 @@ class UWBP_Title_WorldSelect_C : public UUserWidget
     void OnClickedStartWorldButton__DelegateSignature();
     void OnClickedNewWorldButton__DelegateSignature(class UWBP_Title_WorldSelect_CreateWorld_ListContent_C* ButtonWidget);
     void OnClickedWorldButton__DelegateSignature(class UWBP_Title_WorldSelect_ListContent_C* ButtonWidget);
-}; // Size: 0x678
+}; // Size: 0x6A0
 
 #endif

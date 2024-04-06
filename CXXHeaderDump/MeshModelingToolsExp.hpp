@@ -1797,7 +1797,7 @@ class USculptMaxBrushOpProps : public UMeshSculptBrushOpProps
 {
     float Strength;                                                                   // 0x00A8 (size: 0x4)
     float Falloff;                                                                    // 0x00AC (size: 0x4)
-    float MaxHeight;                                                                  // 0x00B0 (size: 0x4)
+    float maxHeight;                                                                  // 0x00B0 (size: 0x4)
     bool bUseFixedHeight;                                                             // 0x00B4 (size: 0x1)
     float FixedHeight;                                                                // 0x00B8 (size: 0x4)
 
@@ -1805,7 +1805,7 @@ class USculptMaxBrushOpProps : public UMeshSculptBrushOpProps
 
 class USculptMaxBrushProperties : public UInteractiveToolPropertySet
 {
-    float MaxHeight;                                                                  // 0x00A8 (size: 0x4)
+    float maxHeight;                                                                  // 0x00A8 (size: 0x4)
     bool bFreezeCurrentHeight;                                                        // 0x00AC (size: 0x1)
 
 }; // Size: 0xB0

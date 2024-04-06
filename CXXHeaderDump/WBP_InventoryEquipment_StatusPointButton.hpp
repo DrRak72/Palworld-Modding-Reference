@@ -4,12 +4,12 @@
 class UWBP_InventoryEquipment_StatusPointButton_C : public UPalUserWidget
 {
     FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0408 (size: 0x8)
-    class UCanvasPanel* CanvasPanel_DecrementButton;                                  // 0x0410 (size: 0x8)
-    class UCanvasPanel* CanvasPanel_IncrementButton;                                  // 0x0418 (size: 0x8)
-    class UImage* Icon;                                                               // 0x0420 (size: 0x8)
-    class UImage* Image_ParamArrow;                                                   // 0x0428 (size: 0x8)
-    class USizeBox* SizeBox_Arrow;                                                    // 0x0430 (size: 0x8)
-    class UBP_PalTextBlock_C* Text_BonusPoint;                                        // 0x0438 (size: 0x8)
+    class UBP_PalRichTextBlock_C* BP_PalRichTextBlock_BonusPoint;                     // 0x0410 (size: 0x8)
+    class UCanvasPanel* CanvasPanel_DecrementButton;                                  // 0x0418 (size: 0x8)
+    class UCanvasPanel* CanvasPanel_IncrementButton;                                  // 0x0420 (size: 0x8)
+    class UImage* Icon;                                                               // 0x0428 (size: 0x8)
+    class UImage* Image_ParamArrow;                                                   // 0x0430 (size: 0x8)
+    class USizeBox* SizeBox_Arrow;                                                    // 0x0438 (size: 0x8)
     class UBP_PalTextBlock_C* Text_Main;                                              // 0x0440 (size: 0x8)
     class UBP_PalTextBlock_C* Text_Param;                                             // 0x0448 (size: 0x8)
     class UWBP_PalInvisibleButton_C* WBP_PalInvisibleButton;                          // 0x0450 (size: 0x8)

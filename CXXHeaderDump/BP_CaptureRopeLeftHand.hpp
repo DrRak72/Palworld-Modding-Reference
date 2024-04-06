@@ -1,0 +1,17 @@
+#ifndef UE4SS_SDK_BP_CaptureRopeLeftHand_HPP
+#define UE4SS_SDK_BP_CaptureRopeLeftHand_HPP
+
+class ABP_CaptureRopeLeftHand_C : public AActor
+{
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0290 (size: 0x8)
+    class UStaticMeshComponent* StaticMesh;                                           // 0x0298 (size: 0x8)
+    class USceneComponent* DefaultSceneRoot;                                          // 0x02A0 (size: 0x8)
+    TArray<TSoftObjectPtr<ABP_CaptureRopeBullet_C>> RopeBulletList;                   // 0x02A8 (size: 0x10)
+
+    void DestroyCheck();
+    void AddRopeBullet(class ABP_CaptureRopeBullet_C* Rope);
+    void ReceiveTick(float DeltaSeconds);
+    void ExecuteUbergraph_BP_CaptureRopeLeftHand(int32 EntryPoint);
+}; // Size: 0x2B8
+
+#endif

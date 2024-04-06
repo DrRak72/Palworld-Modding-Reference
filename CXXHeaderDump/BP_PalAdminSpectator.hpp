@@ -3,6 +3,6 @@
 
 class ABP_PalAdminSpectator_C : public APalSpectator
 {
-}; // Size: 0x7F0
+}; // Size: 0x910
 
 #endif

@@ -3,6 +3,6 @@
 
 class UBP_Status_DrownCheck_C : public UPalAction_DrownCheckBase
 {
-}; // Size: 0x60
+}; // Size: 0x68
 
 #endif

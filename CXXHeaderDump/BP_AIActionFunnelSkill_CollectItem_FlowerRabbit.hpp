@@ -1,0 +1,8 @@
+#ifndef UE4SS_SDK_BP_AIActionFunnelSkill_CollectItem_FlowerRabbit_HPP
+#define UE4SS_SDK_BP_AIActionFunnelSkill_CollectItem_FlowerRabbit_HPP
+
+class UBP_AIActionFunnelSkill_CollectItem_FlowerRabbit_C : public UBP_AIActionFunnelSkill_CollectItem_C
+{
+}; // Size: 0x158
+
+#endif

@@ -11,6 +11,7 @@ class UBP_Status_WithVisualEffect_C : public UPalStatusBase
     FName CommonFlagName;                                                             // 0x0054 (size: 0x8)
     bool IsHideEffect;                                                                // 0x005C (size: 0x1)
 
+    void IsIgnoreElement(EPalAdditionalEffectType AddEffect, bool& Ignore);
     void HideReAddEffectWhenCapture();
     void ResetDamageDown();
     void ResetDamageUp();

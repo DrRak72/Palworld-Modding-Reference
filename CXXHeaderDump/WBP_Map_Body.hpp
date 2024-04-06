@@ -60,7 +60,7 @@ class UWBP_Map_Body_C : public UPalUserWidget
     void Adjust Scroll Local Player Position();
     void SetupPlayerIcon(TArray<class UWBP_Map_IconPlayer_C*>& PlayerIcons);
     void Setup(FVector MinLandScapePosition, FVector MaxLandScapePosition);
-    void Add Icon By Location(class UWBP_WorldMap_IconBase_NoDesign_C* Widget, FVector WorldLocation, bool& Added);
+    void Add Icon By Location(class UWBP_WorldMap_IconBase_NoDesign_C* Widget, FVector WorldLocation, bool IgnoreMask, bool& Added);
     FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void OnClickedAnyIcon_Internal(class UWBP_WorldMap_IconBase_NoDesign_C* iconWidget);
     void OnUnhoveredAnyIcon_Internal(class UWBP_WorldMap_IconBase_NoDesign_C* iconWidget);

@@ -3,6 +3,6 @@
 
 class UBP_AIAction_BaseCampWorker_Approach_C : public UBP_AIAction_Worker_Approach_C
 {
-}; // Size: 0x160
+}; // Size: 0x180
 
 #endif

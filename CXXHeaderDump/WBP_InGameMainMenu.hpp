@@ -19,6 +19,7 @@ class UWBP_InGameMainMenu_C : public UPalUserWidgetOverlayUI
     void SelectInventoryEquipmentTab();
     void SelectOptionTab();
     void OnAllNewFlagCleared_PalDex();
+    void On Update Player Status Point();
     void On Unused Status Points Changed(int32 UnusedPoint);
     void SetupAllAttentionDot();
     void Setup Attention Dot(TEnumAsByte<EPalUIInGameMainMenuTabType::Type> Tab);

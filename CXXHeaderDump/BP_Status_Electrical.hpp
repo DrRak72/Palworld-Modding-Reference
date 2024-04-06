@@ -8,7 +8,6 @@ class UBP_Status_Electrical_C : public UBP_Status_WithVisualEffect_C
 
     void PlayElecShockAction();
     void OnBeginStatus();
-    void OnEndStatus();
     void OnBeginSomeStatus();
     void ExecuteUbergraph_BP_Status_Electrical(int32 EntryPoint);
 }; // Size: 0x70

@@ -21,8 +21,8 @@ class UWBP_Ingame_Incubator_C : public UPalUIMapObjectStatusIndicatorBase
     class UBP_PalTextBlock_C* Text_Buff_Value;                                        // 0x0480 (size: 0x8)
     class UBP_PalTextBlock_C* Text_EggName;                                           // 0x0488 (size: 0x8)
     class UBP_PalTextBlock_C* Text_Status;                                            // 0x0490 (size: 0x8)
-    class UWBP_DroppedPalInfoWIdget_C* WBP_DroppedPalInfoWIdget;                      // 0x0498 (size: 0x8)
-    class UWBP_PalCommonItemIcon_C* WBP_PalCommonItemIcon;                            // 0x04A0 (size: 0x8)
+    class UWBP_PalCommonItemIcon_C* WBP_PalCommonItemIcon;                            // 0x0498 (size: 0x8)
+    class UWBP_RequirePalInfo_C* WBP_RequirePalInfo;                                  // 0x04A0 (size: 0x8)
     class UPalMapObjectHatchingEggModel* Model;                                       // 0x04A8 (size: 0x8)
     int32 LastNum;                                                                    // 0x04B0 (size: 0x4)
     FDataTableRowHandle UnusedMsgId;                                                  // 0x04B8 (size: 0x10)
@@ -33,19 +33,21 @@ class UWBP_Ingame_Incubator_C : public UPalUIMapObjectStatusIndicatorBase
     TArray<FDataTableRowHandle> TemperatureMsgIds;                                    // 0x04F0 (size: 0x10)
     bool HasEgg;                                                                      // 0x0500 (size: 0x1)
     bool HasChara;                                                                    // 0x0501 (size: 0x1)
+    bool LackPower;                                                                   // 0x0502 (size: 0x1)
 
+    void UpdatePowerSuffcient(class UPalMapObjectEnergyModule* Module);
     void RatioToPersentOffsetText(double Ratio, FText& Persent);
     void UpdateEggDisplay();
     void Set Second(int32 RemainingSecond);
     void OnUpdateHatchTemperature(int32 TempDiff);
     void OnUpdateHatchedCharacter(class UPalMapObjectHatchingEggModel* Model);
     void OnUpdateItemContainer(class UPalItemContainer* Container);
-    void OnUpdateWorkAmount(class UPalWorkProgress* WorkProgress);
+    void On Update Work Amount(class UPalWorkProgress* WorkProgress);
     void OnSetup();
     void DisplayCheck();
     void Destruct();
     void Construct();
     void ExecuteUbergraph_WBP_Ingame_Incubator(int32 EntryPoint);
-}; // Size: 0x502
+}; // Size: 0x503
 
 #endif

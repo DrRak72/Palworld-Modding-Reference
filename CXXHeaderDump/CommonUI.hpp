@@ -258,7 +258,7 @@ class UCommonBoundActionButton : public UCommonButtonBase
 class UCommonButtonBase : public UCommonUserWidget
 {
     int32 MinWidth;                                                                   // 0x02A0 (size: 0x4)
-    int32 MinHeight;                                                                  // 0x02A4 (size: 0x4)
+    int32 minHeight;                                                                  // 0x02A4 (size: 0x4)
     TSubclassOf<class UCommonButtonStyle> Style;                                      // 0x02A8 (size: 0x8)
     bool bHideInputAction;                                                            // 0x02B0 (size: 0x1)
     FSlateSound PressedSlateSoundOverride;                                            // 0x02B8 (size: 0x18)
@@ -413,7 +413,7 @@ class UCommonButtonInternalBase : public UButton
     FCommonButtonInternalBaseOnDoubleClicked OnDoubleClicked;                         // 0x05F8 (size: 0x10)
     void OnButtonClickedEvent();
     int32 MinWidth;                                                                   // 0x0628 (size: 0x4)
-    int32 MinHeight;                                                                  // 0x062C (size: 0x4)
+    int32 minHeight;                                                                  // 0x062C (size: 0x4)
     bool bButtonEnabled;                                                              // 0x0630 (size: 0x1)
     bool bInteractionEnabled;                                                         // 0x0631 (size: 0x1)
 
@@ -433,7 +433,7 @@ class UCommonButtonStyle : public UObject
     FMargin ButtonPadding;                                                            // 0x06B0 (size: 0x10)
     FMargin CustomPadding;                                                            // 0x06C0 (size: 0x10)
     int32 MinWidth;                                                                   // 0x06D0 (size: 0x4)
-    int32 MinHeight;                                                                  // 0x06D4 (size: 0x4)
+    int32 minHeight;                                                                  // 0x06D4 (size: 0x4)
     TSubclassOf<class UCommonTextStyle> NormalTextStyle;                              // 0x06D8 (size: 0x8)
     TSubclassOf<class UCommonTextStyle> NormalHoveredTextStyle;                       // 0x06E0 (size: 0x8)
     TSubclassOf<class UCommonTextStyle> SelectedTextStyle;                            // 0x06E8 (size: 0x8)

@@ -16,6 +16,7 @@ class UWBP_OptionSettingsOverLayWindow_C : public UPalUserWidgetOverlayUI
     TMap<class FPalKeyAction, class FName> ReverseAxisMap;                            // 0x04A0 (size: 0x50)
     FName BackActionName;                                                             // 0x04F0 (size: 0x8)
 
+    FEventReply OnMouseButtonDown(FGeometry MyGeometry, const FPointerEvent& MouseEvent);
     void OnKeySetting(FKey NewKey);
     FEventReply OnKeyDown(FGeometry MyGeometry, FKeyEvent InKeyEvent);
     class UWidget* BP_GetDesiredFocusTarget();

@@ -55,7 +55,7 @@ class AStemSpline_BP_C : public AActor
     class UStaticMesh* splineMesh_Start;                                              // 0x0428 (size: 0x8)
     class UStaticMesh* splineMesh_End;                                                // 0x0430 (size: 0x8)
     class UStaticMesh* splineMesh_LowPoly;                                            // 0x0438 (size: 0x8)
-    class USplineComponent* mainSpline;                                               // 0x0440 (size: 0x8)
+    class USplineComponent* MainSpline;                                               // 0x0440 (size: 0x8)
     TArray<int32> occupiedLengths;                                                    // 0x0448 (size: 0x10)
     FVector startPointSeekDirection;                                                  // 0x0458 (size: 0x18)
     double splineEndScale;                                                            // 0x0470 (size: 0x8)
@@ -126,23 +126,23 @@ class AStemSpline_BP_C : public AActor
     void SetMainDirectionVector();
     void AddSkelMeshesAlongSpline(class USplineComponent* SplineComp);
     void [SubStem]-DoCheckSegment(FVector StartLocation, FVector relativeNormal, int32 currentSubLevel);
-    void SeekForBridge(FVector StartLoc, FVector startNormal, bool& bridgeBuilt, TArray<FVector>& bridgePoints, FVector& newSurfaceNormal);
+    void SeekForBridge(FVector StartLoc, FVector StartNormal, bool& bridgeBuilt, TArray<FVector>& bridgePoints, FVector& newSurfaceNormal);
     void (Bridge)_TraceTowardsDirection(FVector StartLocation, FVector relativeNormal, FVector Direction, bool& hitSomething, FVector& LastLocation, FVector& HitLocation, FVector& HitNormal, FVector& traceDirection);
-    void FindBridgeEdge(int32 maxSegmentChecks, FVector fromWhere, FVector startNormal, FVector Direction, bool& Found, FVector& edgeLocation, FVector& edgeNormal);
+    void FindBridgeEdge(int32 maxSegmentChecks, FVector fromWhere, FVector StartNormal, FVector Direction, bool& Found, FVector& edgeLocation, FVector& edgeNormal);
     void WorldLocToSplineTimeApprox(FVector worldLoc, int32 Iterations, double distanceTolerance_, class USplineComponent* SplineComponent, double StartTime, double EndTime, double& bestTime);
-    void FindClosestVector(TArray<FVector>& inArray, FVector toVector, int32& closestValueIndex_);
+    void FindClosestVector(TArray<FVector>& inArray, FVector ToVector, int32& closestValueIndex_);
     void CheckIfContainsVectorInDistance(TArray<FVector>& Array, double InDistance, FVector Vector, bool& Contains?);
     void FindClosestValue(TArray<double>& inArray, double toValue, int32& closestValueIndex_);
     void CheckIfContainsValueInRange(TArray<double>& Array, double Range: Min, double Range: Max, bool& Contains?);
     void AddMeshesAlongSpline(class USplineComponent* SplineComp);
-    void AddSubStem(FVector StartLoc, FVector startNormal, int32 currentSubLevel);
+    void AddSubStem(FVector StartLoc, FVector StartNormal, int32 currentSubLevel);
     void AddSplineMeshes(class USplineComponent* SplineComponent);
     void AddSplinePoints();
     void SearchForEdge(FVector searchStartLocation, FVector searchDirectionNormal, bool forSubstem, bool& FoundAnEdge_, FVector& foundEdgeLocation, FVector& foundEdgeNormal);
     void DoCheckSegment(FVector StartLocation, FVector relativeNormal);
     void TraceDown(FVector StartLocation, FVector relativeNormal, bool forBridgeSeek, FVector& HitLocation, FVector& HitNormal, bool& hitSomething);
     void TraceTowardsDirection(FVector StartLocation, FVector relativeNormal, bool forSubstem, FVector& HitLocation, FVector& HitNormal, FVector& LastLocation, FVector& traceDirection, bool& hitSomething, bool& targetReached);
-    void FindStartPoint(FVector& StartLoc, FVector& startNormal);
+    void FindStartPoint(FVector& StartLoc, FVector& StartNormal);
     void UserConstructionScript();
 }; // Size: 0x680
 

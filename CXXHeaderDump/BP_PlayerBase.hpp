@@ -3,12 +3,12 @@
 
 class ABP_PlayerBase_C : public APalPlayerCharacter
 {
-    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0A10 (size: 0x8)
-    class UCapsuleComponent* DeadColllision;                                          // 0x0A18 (size: 0x8)
-    class UBP_PalTimerPointLightComponent_C* PlayerLight;                             // 0x0A20 (size: 0x8)
-    class UPalRiderComponent* Rider Component;                                        // 0x0A28 (size: 0x8)
-    bool bIsInCapturedCage;                                                           // 0x0A30 (size: 0x1)
-    class ABP_Lamp_C* Lantern;                                                        // 0x0A38 (size: 0x8)
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0B20 (size: 0x8)
+    class UCapsuleComponent* DeadColllision;                                          // 0x0B28 (size: 0x8)
+    class UBP_PalTimerPointLightComponent_C* PlayerLight;                             // 0x0B30 (size: 0x8)
+    class UPalRiderComponent* Rider Component;                                        // 0x0B38 (size: 0x8)
+    bool bIsInCapturedCage;                                                           // 0x0B40 (size: 0x1)
+    class ABP_Lamp_C* Lantern;                                                        // 0x0B48 (size: 0x8)
 
     void CreateLantern();
     void SetPlayerLightEnable(bool isEnable);
@@ -25,6 +25,6 @@ class ABP_PlayerBase_C : public APalPlayerCharacter
     void ReceiveEndPlay(TEnumAsByte<EEndPlayReason::Type> EndPlayReason);
     void BndEvt__BP_PlayerBase_CharacterMovement_K2Node_ComponentBoundEvent_2_OnJumpDelegate__DelegateSignature(class UPalCharacterMovementComponent* Component);
     void ExecuteUbergraph_BP_PlayerBase(int32 EntryPoint);
-}; // Size: 0xA40
+}; // Size: 0xB50
 
 #endif

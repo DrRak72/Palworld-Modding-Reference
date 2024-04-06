@@ -5,7 +5,7 @@ class UWBP_PalCutsceneOverlay_C : public UPalUserWidgetOverlayUI
 {
     FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0430 (size: 0x8)
     FPalDataTableRowName_UIInputAction SkipInput;                                     // 0x0438 (size: 0x8)
-    FTimerHandle HideTImerHandle;                                                     // 0x0440 (size: 0x8)
+    FTimerHandle HideTimerHandle;                                                     // 0x0440 (size: 0x8)
     FPalUIActionBindData InputActionHandle;                                           // 0x0448 (size: 0x4)
     bool isDisplaying;                                                                // 0x044C (size: 0x1)
 

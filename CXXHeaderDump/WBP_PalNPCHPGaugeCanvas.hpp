@@ -42,7 +42,7 @@ class UWBP_PalNPCHPGaugeCanvas_C : public UPalUINPCHPGaugeCanvasBase
     void OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
     void GetCameraLocationAndForwardVector(FVector& Location, FVector& ForwardVector);
     void IsAiming(bool& IsAiming);
-    void OnBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+    void On Begin Overlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     void Add Player Gauge(class APalCharacter* TargetCharacter);
     void AddNormalPalGauge(class APalCharacter* TargetCharacter);
     void AddBossGauge(class APalCharacter* TargetCharacter);

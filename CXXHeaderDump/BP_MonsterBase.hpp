@@ -3,19 +3,19 @@
 
 class ABP_MonsterBase_C : public APalMonsterCharacter
 {
-    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0880 (size: 0x8)
-    class UPalAbilitySkillParameterComponent* PalAbilitySkillParameter;               // 0x0888 (size: 0x8)
-    class UMotionWarpingComponent* MotionWarping;                                     // 0x0890 (size: 0x8)
-    class UBP_PalCryComponent_C* BP_PalCryComponent;                                  // 0x0898 (size: 0x8)
-    class UPalPartnerSkillParameterComponent* PalPartnerSkillParameter;               // 0x08A0 (size: 0x8)
-    class UPalNavigationInvokerComponent* PalNavigationInvoker;                       // 0x08A8 (size: 0x8)
-    class UPalInteractableSphereComponentNative* BP_InteractableSphere;               // 0x08B0 (size: 0x8)
-    class UPalFacialComponent* PalFacial;                                             // 0x08B8 (size: 0x8)
-    TEnumAsByte<ECollisionChannel> CapsuleCollisionChannel;                           // 0x08C0 (size: 0x1)
-    FName CollisionProfileNameCache;                                                  // 0x08C4 (size: 0x8)
-    class UNiagaraComponent* FlyEffect;                                               // 0x08D0 (size: 0x8)
-    double EffectiveAttackLogTimer;                                                   // 0x08D8 (size: 0x8)
-    FBP_MonsterBase_COnInflictDamageEvent OnInflictDamageEvent;                       // 0x08E0 (size: 0x10)
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x09A0 (size: 0x8)
+    class UPalAbilitySkillParameterComponent* PalAbilitySkillParameter;               // 0x09A8 (size: 0x8)
+    class UMotionWarpingComponent* MotionWarping;                                     // 0x09B0 (size: 0x8)
+    class UBP_PalCryComponent_C* BP_PalCryComponent;                                  // 0x09B8 (size: 0x8)
+    class UPalPartnerSkillParameterComponent* PalPartnerSkillParameter;               // 0x09C0 (size: 0x8)
+    class UPalNavigationInvokerComponent* PalNavigationInvoker;                       // 0x09C8 (size: 0x8)
+    class UPalInteractableSphereComponentNative* BP_InteractableSphere;               // 0x09D0 (size: 0x8)
+    class UPalFacialComponent* PalFacial;                                             // 0x09D8 (size: 0x8)
+    TEnumAsByte<ECollisionChannel> CapsuleCollisionChannel;                           // 0x09E0 (size: 0x1)
+    FName CollisionProfileNameCache;                                                  // 0x09E4 (size: 0x8)
+    class UNiagaraComponent* FlyEffect;                                               // 0x09F0 (size: 0x8)
+    double EffectiveAttackLogTimer;                                                   // 0x09F8 (size: 0x8)
+    FBP_MonsterBase_COnInflictDamageEvent OnInflictDamageEvent;                       // 0x0A00 (size: 0x10)
     void OnInflictDamageEvent(FPalDamageResult DamageResult);
 
     void OnLanded_Proc(class UPalCharacterMovementComponent* Component, FHitResult Hit);
@@ -46,6 +46,6 @@ class ABP_MonsterBase_C : public APalMonsterCharacter
     void OnUpdateLevelDelegate_イベント_0(int32 addLevel, int32 nowLevel);
     void ExecuteUbergraph_BP_MonsterBase(int32 EntryPoint);
     void OnInflictDamageEvent__DelegateSignature(FPalDamageResult DamageResult);
-}; // Size: 0x8F0
+}; // Size: 0xA10
 
 #endif

@@ -3,16 +3,16 @@
 
 class ABP_NPCAIController_C : public APalAIController
 {
-    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0520 (size: 0x8)
-    class UBP_OtomoPalHolderComponentForNPC_C* BP_OtomoPalHolderComponentForNPC;      // 0x0528 (size: 0x8)
-    class UPalAISensorComponent* PalAISensor;                                         // 0x0530 (size: 0x8)
-    class UBP_AIADamageReaction_C* BP_AIADamageReaction;                              // 0x0538 (size: 0x8)
-    TSubclassOf<class UPalAIActionBase> DefaultActionClass;                           // 0x0540 (size: 0x8)
-    class UPalNPCAIWeaponHandle* WeaponHandle;                                        // 0x0548 (size: 0x8)
-    class UBP_PalIncidentNotifyListener_C* IncidentNotifyListener;                    // 0x0550 (size: 0x8)
-    TArray<FName> Filter Incident Ids;                                                // 0x0558 (size: 0x10)
-    FF_NPC_PathWalkArray PathWalk;                                                    // 0x0568 (size: 0x10)
-    FName OtomoName;                                                                  // 0x0578 (size: 0x8)
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0528 (size: 0x8)
+    class UBP_OtomoPalHolderComponentForNPC_C* BP_OtomoPalHolderComponentForNPC;      // 0x0530 (size: 0x8)
+    class UPalAISensorComponent* PalAISensor;                                         // 0x0538 (size: 0x8)
+    class UBP_AIADamageReaction_C* BP_AIADamageReaction;                              // 0x0540 (size: 0x8)
+    TSubclassOf<class UPalAIActionBase> DefaultActionClass;                           // 0x0548 (size: 0x8)
+    class UPalNPCAIWeaponHandle* WeaponHandle;                                        // 0x0550 (size: 0x8)
+    class UBP_PalIncidentNotifyListener_C* IncidentNotifyListener;                    // 0x0558 (size: 0x8)
+    TArray<FName> Filter Incident Ids;                                                // 0x0560 (size: 0x10)
+    FF_NPC_PathWalkArray PathWalk;                                                    // 0x0570 (size: 0x10)
+    FName OtomoName;                                                                  // 0x0580 (size: 0x8)
 
     void GetMyBB(class UBP_PalAIBlackboard_Common_C*& PalBrackboard);
     void GetLeaderBB(class UBP_PalAIBlackboard_Common_C*& LeaderPalBrackboard);
@@ -47,6 +47,6 @@ class ABP_NPCAIController_C : public APalAIController
     void NotifyTalkStart(class APalPlayerCharacter* TalkPlayer);
     void NotifyTalkEnd(class APalPlayerCharacter* TalkPlayer);
     void ExecuteUbergraph_BP_NPCAIController(int32 EntryPoint);
-}; // Size: 0x580
+}; // Size: 0x588
 
 #endif

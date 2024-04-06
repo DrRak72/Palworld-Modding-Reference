@@ -3,6 +3,6 @@
 
 class UBP_PalUIConvertItemModel_C : public UPalUIConvertItemModel
 {
-}; // Size: 0x38
+}; // Size: 0x50
 
 #endif

@@ -10,6 +10,8 @@ class UWBP_InventoryEquipment_ForDisplay_C : public UPalUIInventoryEquipment
     FPalDataTableRowName_UIInputAction SimulateStatusPointInput;                      // 0x0478 (size: 0x8)
     FPalDataTableRowName_UIInputAction ConfirmStatusPointInput;                       // 0x0480 (size: 0x8)
 
+    void OnCloseChangePlayerNameWindow(class UPalHUDDispatchParameterBase* Param);
+    void OpenNameEditWindow();
     void OnEndGlide();
     void OnStartGlide();
     void Try Start Simulate Status Point();
@@ -26,6 +28,7 @@ class UWBP_InventoryEquipment_ForDisplay_C : public UPalUIInventoryEquipment
     void BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_3_OnRequestSwapEquipment__DelegateSignature(EPalPlayerEquipItemSlotType EquipType);
     void BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_4_OnClickedSortButton__DelegateSignature();
     void Destruct();
+    void BndEvt__WBP_InventoryEquipment_ForDisplay_WBP_InventoryEquipment_K2Node_ComponentBoundEvent_5_OnClickedChangePlayerNameButton__DelegateSignature();
     void ExecuteUbergraph_WBP_InventoryEquipment_ForDisplay(int32 EntryPoint);
 }; // Size: 0x488
 

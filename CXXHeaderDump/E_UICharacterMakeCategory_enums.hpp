@@ -7,7 +7,8 @@ namespace E_UICharacterMakeCategory {
         NewEnumerator4 = 4,
         NewEnumerator5 = 5,
         NewEnumerator6 = 6,
-        E_MAX = 7,
+        NewEnumerator7 = 7,
+        E_MAX = 8,
     };
 }
 

@@ -20,7 +20,7 @@ class UWBP_PalPlayerInventoryScrollList_C : public UWBP_PalItemScrollList_C
     void ClearFiltering();
     void FilteringFromInventoryType(TArray<EPalPlayerInventoryType>& displayTypes, bool& IsEmptyDisplaySlot);
     void FilteringFromItemTypeB(TArray<EPalItemTypeB>& displayTypesB, bool isEmptySlotDIsplay);
-    void FilteringFromItemTypeA(TArray<EPalItemTypeA>& displayTypesA, bool isEmptySlotDIsplay);
+    void FIlteringFromItemTypeA(TArray<EPalItemTypeA>& displayTypesA, bool isEmptySlotDIsplay);
     void OnLeftCllicked(class UWBP_PalItemSlotButtonBase_C* ButtonBase, EPalItemSlotPressType PressType);
     void Setup(class UPalUIInventoryModel* useModel);
     void Construct();

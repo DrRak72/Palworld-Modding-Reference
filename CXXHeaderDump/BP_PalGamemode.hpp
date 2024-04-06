@@ -3,9 +3,9 @@
 
 class ABP_PalGamemode_C : public APalGameMode
 {
-    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0380 (size: 0x8)
-    class USceneComponent* DefaultSceneRoot;                                          // 0x0388 (size: 0x8)
-    FName DefaultPlayerStartTag;                                                      // 0x0390 (size: 0x8)
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0388 (size: 0x8)
+    class USceneComponent* DefaultSceneRoot;                                          // 0x0390 (size: 0x8)
+    FName DefaultPlayerStartTag;                                                      // 0x0398 (size: 0x8)
 
     class AActor* ChoosePlayerStart(class AController* Player);
     class AActor* SpawmDummyNavInvoker(FTransform Transform);
@@ -14,6 +14,6 @@ class ABP_PalGamemode_C : public APalGameMode
     void ReceiveBeginPlay();
     void カスタムイベント_0(int32 SoundRadius, FVector EmitLocation, class AActor* Emitter);
     void ExecuteUbergraph_BP_PalGamemode(int32 EntryPoint);
-}; // Size: 0x398
+}; // Size: 0x3A0
 
 #endif

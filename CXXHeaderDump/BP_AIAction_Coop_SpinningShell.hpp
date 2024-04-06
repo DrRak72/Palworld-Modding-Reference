@@ -7,7 +7,7 @@ class UBP_AIAction_Coop_SpinningShell_C : public UBP_AIAction_OtomoFollow_C
     class UPalActionBase* PlayedAction;                                               // 0x0210 (size: 0x8)
 
     void OnCancel();
-    void onCoopEnd();
+    void OnCoopEnd();
     void OnCoopStart();
     void ActionStart(class APawn* ControlledPawn);
     void ActionResume(class APawn* ControlledPawn);

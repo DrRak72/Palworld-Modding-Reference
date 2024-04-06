@@ -31,14 +31,17 @@ class UWBP_IngameMenu_Chest_C : public UUserWidget
     void OnUnhoveredTargetContainerSlot();
     FWBP_IngameMenu_Chest_COnClickedCloseButton OnClickedCloseButton;                 // 0x0348 (size: 0x10)
     void OnClickedCloseButton();
+    FWBP_IngameMenu_Chest_COnClickedPreferenceButton OnClickedPreferenceButton;       // 0x0358 (size: 0x10)
+    void OnClickedPreferenceButton();
 
+    class UWidget* CustomNavi_ToPreferenceOrCloseButton(EUINavigation Navigation);
     void GetTargetContainerLastHoveredFocusTarget(class UWidget*& Widget);
     void GetInventoryLastHoveredFocusTarget(class UWidget*& Widget);
     class UWidget* CustomNavi_ToTargetContainerSortButton(EUINavigation Navigation);
     class UWidget* CustomNavi_ToCloseButton(EUINavigation Navigation);
     void GetTargetContainerTopFocustTarget(class UWidget*& FocusTarget);
     void GetInventoryTopFocustTarget(class UWidget*& FocusTarget);
-    void OnLeftClickedTargetContainerSLot(class UWBP_PalItemSlotButtonBase_C* ButtonBase, EPalItemSlotPressType PressType);
+    void OnLeftClickedTargetContainerSlot(class UWBP_PalItemSlotButtonBase_C* ButtonBase, EPalItemSlotPressType PressType);
     void Setup(class UBP_PalInventoryModel_C* Model, class UPalItemContainer* TargetContainer);
     void SetTagetContainerDisplayName(FText TargetContainerName);
     void SetupTargetItemContainer(class UPalItemContainer* TargetContainer);
@@ -54,6 +57,7 @@ class UWBP_IngameMenu_Chest_C : public UUserWidget
     void BndEvt__WBP_IngameMenu_Chest_WBP_PalItemScrollList_K2Node_ComponentBoundEvent_6_OnEndHoveredSlot__DelegateSignature(class UWBP_PalItemSlotButtonBase_C* ButtonBase);
     void BndEvt__WBP_IngameMenu_Chest_WBP_Menu_btn_K2Node_ComponentBoundEvent_7_OnButtonClicked__DelegateSignature();
     void ExecuteUbergraph_WBP_IngameMenu_Chest(int32 EntryPoint);
+    void OnClickedPreferenceButton__DelegateSignature();
     void OnClickedCloseButton__DelegateSignature();
     void OnUnhoveredTargetContainerSlot__DelegateSignature();
     void OnHoveredTargetContainerSlot__DelegateSignature(class UWBP_PalItemSlotButtonBase_C* SlotButton);
@@ -62,6 +66,6 @@ class UWBP_IngameMenu_Chest_C : public UUserWidget
     void OnClickedTargetContainerSortButton__DelegateSignature();
     void OnClickedQuickMoveButton__DelegateSignature();
     void OnClickedInventorySortButton__DelegateSignature();
-}; // Size: 0x358
+}; // Size: 0x368
 
 #endif

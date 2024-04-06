@@ -26,18 +26,18 @@ class UWBP_Graphic_Settings_C : public UUserWidget
     class UWBP_OptionSettings_ListContent_C* WBP_OptionSettings_TextureQuality;       // 0x0318 (size: 0x8)
     class UWBP_OptionSettings_ListContent_C* WBP_OptionSettings_VSync;                // 0x0320 (size: 0x8)
     FPalOptionGraphicsSettings Graphics Settings Cache;                               // 0x0328 (size: 0x54)
-    FPalOptionLocalStaticSettings LocalStaticSettingCache;                            // 0x037C (size: 0x40)
-    TArray<FDataTableRowHandle> ScreenSettingMsgIds;                                  // 0x03C0 (size: 0x10)
-    TArray<FDataTableRowHandle> LevelMsgIds;                                          // 0x03D0 (size: 0x10)
-    TArray<FDataTableRowHandle> LevelMsgIds_Graphic;                                  // 0x03E0 (size: 0x10)
-    bool SomethingChanged;                                                            // 0x03F0 (size: 0x1)
-    TMap<int32, TEnumAsByte<EAntiAliasingMethod>> AAMap;                              // 0x03F8 (size: 0x50)
-    TArray<FString> AASettings;                                                       // 0x0448 (size: 0x10)
-    TMap<int32, FString> FPSSelection;                                                // 0x0458 (size: 0x50)
-    FDataTableRowHandle NoLimitlMsgId;                                                // 0x04A8 (size: 0x10)
-    TArray<FIntPoint> SupportResolutions;                                             // 0x04B8 (size: 0x10)
-    TArray<FDataTableRowHandle> DLSSLevelMsgIds;                                      // 0x04C8 (size: 0x10)
-    TMap<int32, UDLSSMode> DLSSMap;                                                   // 0x04D8 (size: 0x50)
+    FPalOptionLocalStaticSettings LocalStaticSettingCache;                            // 0x037C (size: 0x50)
+    TArray<FDataTableRowHandle> ScreenSettingMsgIds;                                  // 0x03D0 (size: 0x10)
+    TArray<FDataTableRowHandle> LevelMsgIds;                                          // 0x03E0 (size: 0x10)
+    TArray<FDataTableRowHandle> LevelMsgIds_Graphic;                                  // 0x03F0 (size: 0x10)
+    bool SomethingChanged;                                                            // 0x0400 (size: 0x1)
+    TMap<int32, TEnumAsByte<EAntiAliasingMethod>> AAMap;                              // 0x0408 (size: 0x50)
+    TArray<FString> AASettings;                                                       // 0x0458 (size: 0x10)
+    TMap<int32, FString> FPSSelection;                                                // 0x0468 (size: 0x50)
+    FDataTableRowHandle NoLimitlMsgId;                                                // 0x04B8 (size: 0x10)
+    TArray<FIntPoint> SupportResolutions;                                             // 0x04C8 (size: 0x10)
+    TArray<FDataTableRowHandle> DLSSLevelMsgIds;                                      // 0x04D8 (size: 0x10)
+    TMap<int32, UDLSSMode> DLSSMap;                                                   // 0x04E8 (size: 0x50)
 
     void GetDisplayGraphicLevel(FPalOptionGraphicsSettings GraphicLevel, EPalOptionGraphicsLevel& Graphicsレベル);
     void Construct();
@@ -64,6 +64,6 @@ class UWBP_Graphic_Settings_C : public UUserWidget
     void OnMaxFPSChanged(int32 Selection);
     void OnCommonQualityChanged(int32 Selection);
     void ExecuteUbergraph_WBP_Graphic_Settings(int32 EntryPoint);
-}; // Size: 0x528
+}; // Size: 0x538
 
 #endif

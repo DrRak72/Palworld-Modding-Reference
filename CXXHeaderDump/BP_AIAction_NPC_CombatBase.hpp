@@ -7,12 +7,13 @@ class UBP_AIAction_NPC_CombatBase_C : public UPalAIActionBase
     class AActor* TargetActor;                                                        // 0x0138 (size: 0x8)
     class APalCharacter* SelfActor;                                                   // 0x0140 (size: 0x8)
     class UPalAICombatModule* CombatModule;                                           // 0x0148 (size: 0x8)
-    FVector SpawnerLocation;                                                          // 0x0150 (size: 0x18)
+    FVector spawnerLocation;                                                          // 0x0150 (size: 0x18)
     double ReturnTerritoryRadius;                                                     // 0x0168 (size: 0x8)
     double tempDeltaTime;                                                             // 0x0170 (size: 0x8)
     class UPalStateMachine* StateMachine;                                             // 0x0178 (size: 0x8)
     bool IsMeleeWeapon;                                                               // 0x0180 (size: 0x1)
 
+    void Is Alive Target Actor(bool& Alive);
     void IsEndCurrentState(bool& IsEnd);
     void FindTargetNearPoint(TArray<FVector>& PointList);
     void GetWeaponHandleRef(class UPalNPCAIWeaponHandle*& WeaponHandle);

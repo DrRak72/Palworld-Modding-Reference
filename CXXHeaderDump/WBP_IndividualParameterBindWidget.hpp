@@ -20,7 +20,7 @@ class UWBP_IndividualParameterBindWidget_C : public UPalUserWidget
     FWBP_IndividualParameterBindWidget_COnUpdateHunger OnUpdateHunger;                // 0x0468 (size: 0x10)
     void OnUpdateHunger(double nowHunger, double nowMaxHunger);
     FWBP_IndividualParameterBindWidget_COnUpdateNickName OnUpdateNickName;            // 0x0478 (size: 0x10)
-    void OnUpdateNickName(FString newNickName);
+    void OnUpdateNickName(FString NewNickName);
     FWBP_IndividualParameterBindWidget_COnUpdateSanity OnUpdateSanity;                // 0x0488 (size: 0x10)
     void OnUpdateSanity(double nowSanity, double nowMaxSanity);
     FWBP_IndividualParameterBindWidget_COnUpdateExp OnUpdateExp;                      // 0x0498 (size: 0x10)
@@ -57,7 +57,13 @@ class UWBP_IndividualParameterBindWidget_C : public UPalUserWidget
     FWBP_IndividualParameterBindWidget_COnUpdateStatusPoint OnUpdateStatusPoint;      // 0x0538 (size: 0x10)
     void OnUpdateStatusPoint();
     FPalInstanceID SyncId;                                                            // 0x0548 (size: 0x30)
+    bool IsBindTalent;                                                                // 0x0578 (size: 0x1)
+    FWBP_IndividualParameterBindWidget_COnUpdateTalent OnUpdateTalent;                // 0x0580 (size: 0x10)
+    void OnUpdateTalent();
+    FWBP_IndividualParameterBindWidget_COnUpdateWorkSuitabilityOption OnUpdateWorkSuitabilityOption; // 0x0590 (size: 0x10)
+    void OnUpdateWorkSuitabilityOption(FPalWorkSuitabilityPreferenceInfo Info);
 
+    void OnUpdateWorkSuitabilityOption_Internal(const FPalWorkSuitabilityPreferenceInfo& NewWorkSuitabilityOption);
     void SyncBind(FPalInstanceID InstanceId);
     void On Update Trainer Level Internal(int32 addLevel, int32 nowLevel);
     void OnUpdateStatusPoint_Internal();
@@ -78,7 +84,8 @@ class UWBP_IndividualParameterBindWidget_C : public UPalUserWidget
     void OnUpdateExp_Internal(int32 addExp, int32 nowExp);
     void OnCheckCondition_Internal();
     void OnUpdateSanity_Internal(float nowSanity, float oldSanity);
-    void OnUpdateNickName_Internal(FString newNickName);
+    void OnUpdateTalent_Internal();
+    void OnUpdateNickName_Internal(FString NewNickName);
     void Unbind();
     void On Update Hunger Internal(float Current, float Last);
     void OnUpdateSP_Internal(FFixedPoint64 nowSP, FFixedPoint64 nowMaxSP, bool isOverHeated);
@@ -89,6 +96,8 @@ class UWBP_IndividualParameterBindWidget_C : public UPalUserWidget
     void BindFromHandle(class UPalIndividualCharacterHandle* targetHandle);
     void Destruct();
     void ExecuteUbergraph_WBP_IndividualParameterBindWidget(int32 EntryPoint);
+    void OnUpdateWorkSuitabilityOption__DelegateSignature(FPalWorkSuitabilityPreferenceInfo Info);
+    void OnUpdateTalent__DelegateSignature();
     void OnUpdateStatusPoint__DelegateSignature();
     void OnUpdateSoulRank__DelegateSignature();
     void OnUpdateBuff__DelegateSignature();
@@ -98,10 +107,10 @@ class UWBP_IndividualParameterBindWidget_C : public UPalUserWidget
     void OnUpdateLevel__DelegateSignature(int32 NewLevel);
     void OnUpdateExp__DelegateSignature(int32 addExp, int32 oldExp, double nowExpRate);
     void OnUpdateSanity__DelegateSignature(double nowSanity, double nowMaxSanity);
-    void OnUpdateNickName__DelegateSignature(FString newNickName);
+    void OnUpdateNickName__DelegateSignature(FString NewNickName);
     void OnUpdateHunger__DelegateSignature(double nowHunger, double nowMaxHunger);
     void OnUpdateSP__DelegateSignature(FFixedPoint64 nowSP, FFixedPoint64 nowMaxSP, bool isOverHeated);
     void OnUpdateHP__DelegateSignature(FFixedPoint64 nowHP, FFixedPoint64 nowMaxHP);
-}; // Size: 0x578
+}; // Size: 0x5A0
 
 #endif

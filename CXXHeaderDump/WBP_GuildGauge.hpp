@@ -21,7 +21,7 @@ class UWBP_GuildGauge_C : public UUserWidget
     void SetLevel(int32 Level);
     void SetHP(FFixedPoint64 nowHP, FFixedPoint64 MaxHP);
     void Set Display Type(TEnumAsByte<E_PalUIGuildHPGaugeDisplayType::Type> NewDisplayType);
-    void SetNickName(FString newNickName);
+    void SetNickName(FString NewNickName);
     void UpdateForTick(double DeltaTime);
     void OnInitialized();
     void ExecuteUbergraph_WBP_GuildGauge(int32 EntryPoint);

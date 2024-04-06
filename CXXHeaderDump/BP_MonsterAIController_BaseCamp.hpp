@@ -3,8 +3,8 @@
 
 class ABP_MonsterAIController_BaseCamp_C : public ABP_MonsterAIControllerBase_C
 {
-    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0548 (size: 0x8)
-    FVector SpawnedPosition;                                                          // 0x0550 (size: 0x18)
+    FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0550 (size: 0x8)
+    FVector SpawnedPosition;                                                          // 0x0558 (size: 0x18)
 
     TSubclassOf<class UPalAIControllerWorkerModule> GetWorkerModuleClass();
     class UPalAIActionBase* SetBaseCampActionByClass(TSubclassOf<class UPalAIActionBase> actionClass);
@@ -49,6 +49,6 @@ class ABP_MonsterAIController_BaseCamp_C : public ABP_MonsterAIControllerBase_C
     void InterruptSleepActivelyAction(const FPalAIActionBaseCampSleepActivelyParameter& Parameter);
     void TerminateBaseCampActionByClass(TSubclassOf<class UPalAIActionBase> actionClass);
     void ExecuteUbergraph_BP_MonsterAIController_BaseCamp(int32 EntryPoint);
-}; // Size: 0x568
+}; // Size: 0x570
 
 #endif

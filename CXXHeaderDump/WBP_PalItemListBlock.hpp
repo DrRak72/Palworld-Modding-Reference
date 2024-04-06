@@ -36,7 +36,7 @@ class UWBP_PalItemListBlock_C : public UPalUserWidget
     void GetFocusTarget(class UWidget*& NewParam);
     void ClearFiltering();
     void FilteringFromItemTypeB(TArray<EPalItemTypeB>& displayItemTypesB, bool isEmptySlotDIsplay);
-    void FilteringFromItemTypeA(TArray<EPalItemTypeA>& displayTypesA, bool isEmptySlotDIsplay);
+    void FIlteringFromItemTypeA(TArray<EPalItemTypeA>& displayTypesA, bool isEmptySlotDIsplay);
     void OnUnfocusedSlot_Internal(class UWBP_PalItemSlotButtonBase_C* ButtonBase);
     void OnFocusedSlot_Internal(class UWBP_PalItemSlotButtonBase_C* ButtonBase);
     void Focus();

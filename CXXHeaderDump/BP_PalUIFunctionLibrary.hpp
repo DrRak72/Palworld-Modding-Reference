@@ -4,6 +4,9 @@
 class UBP_PalUIFunctionLibrary_C : public UBlueprintFunctionLibrary
 {
 
+    void CanUseItemInInventory(FName StaticItemId, class UObject* __WorldContext, bool& CanUse);
+    void GetWorkDetailName(class UPalIndividualCharacterHandle* Handle, bool NotBattle, class UObject* __WorldContext, FText& OutText);
+    void IsDislayWorkSuitability_ForUI(EPalWorkSuitability Suitability, class UObject* __WorldContext, bool& ShouldDisplay);
     void GetTalentValueTextMaterial(int32 TalentValue, class UObject* __WorldContext, class UMaterialInstance*& FontMaterial);
     void SetupTalentText(class UBP_PalTextBlock_C* TalentHP_ValueText, class UBP_PalTextBlock_C* TalentATK_ValueText, class UBP_PalTextBlock_C* TalentDEF_ValueText, int32 TalentHP, int32 TalentATK, int32 TalentDEF, class UObject* __WorldContext);
     void ChangeTextFontMaterialInstance(class UPalTextBlockBase* targetTextBlock, class UMaterialInstance* NewMaterial, class UObject* __WorldContext);

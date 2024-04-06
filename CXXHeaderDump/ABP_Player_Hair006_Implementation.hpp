@@ -12,6 +12,10 @@ struct FAnimBlueprintGeneratedConstantData : public FAnimBlueprintConstantData
 
 }; // Size: 0xD8
 
+struct FAnimBlueprintGeneratedMutableData : public FAnimBlueprintMutableData
+{
+}; // Size: 0x1
+
 class UABP_Player_Hair006_Implementation_C : public UAnimInstance
 {
     FPointerToUberGraphFrame UberGraphFrame;                                          // 0x0350 (size: 0x8)

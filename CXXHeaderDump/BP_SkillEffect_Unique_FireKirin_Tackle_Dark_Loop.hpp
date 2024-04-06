@@ -1,0 +1,8 @@
+#ifndef UE4SS_SDK_BP_SkillEffect_Unique_FireKirin_Tackle_Dark_Loop_HPP
+#define UE4SS_SDK_BP_SkillEffect_Unique_FireKirin_Tackle_Dark_Loop_HPP
+
+class ABP_SkillEffect_Unique_FireKirin_Tackle_Dark_Loop_C : public ABP_SkillEffect_Unique_FireKirin_Tackle_Loop_C
+{
+}; // Size: 0x3D0
+
+#endif

@@ -18,7 +18,7 @@ class UWBP_ConvertItemMenuScrollListBlock_C : public UPalUserWidget
     void OnClicked_Internal(class UWBP_PalConvertItemMenu_RecipeSlotButton_C* Widget);
     void SetCategoryName(FText categoryNameText);
     void CreateRecipeIconWidget(FName RecipeID, class UWBP_PalConvertItemMenu_RecipeSlotButton_C*& createdWidget);
-    void AddRecipeList(TArray<FName>& RecipeIDArray);
+    void AddRecipeList(TArray<FName>& recipeIDArray);
     void OnUnhoveredAnyContent__DelegateSignature(class UWBP_PalConvertItemMenu_RecipeSlotButton_C* Widget);
     void OnHoveredAnyContent__DelegateSignature(class UWBP_PalConvertItemMenu_RecipeSlotButton_C* Widget);
     void OnClickedAnyContent__DelegateSignature(class UWBP_PalConvertItemMenu_RecipeSlotButton_C* Widget);
